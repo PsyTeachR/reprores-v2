@@ -10,8 +10,8 @@
 exercise <- function(chapter, filename = NULL, answers = FALSE) {
   tag <- c("intro", "data", "ggplot", "tidyr", "dplyr", "joins", "func", "sim", "glm")
   fname <- sprintf("book/exercises/%02d_%s_%s.Rmd",
-                      chapter, tag[chapter],
-                      ifelse(answers, "answers", "exercise"))
+                   chapter, tag[chapter],
+                   ifelse(answers, "answers", "exercise"))
   f <- system.file(fname, package = "dataskills")
   
   if (f == "") stop("Exercise ", chapter, " doesn't exist")

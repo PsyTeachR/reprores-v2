@@ -35,13 +35,24 @@
             "@type": "PropertyValue",
             "name": "user_sex",
             "description": "The user's sex/gender (male, female, nonbinary, na)",
-            "dataType": "string"
+            "dataType": "string",
+            "levels": {
+                "female": "female",
+                "male": "male"
+            },
+            "levelsOrdered": false
         },
         {
             "@type": "PropertyValue",
             "name": "user_status",
             "description": "The user's status (test, guest, registered, student,res, super, admin)",
-            "dataType": "string"
+            "dataType": "string",
+            "levels": {
+                "guest": "guest",
+                "registered": "registered",
+                "student": "student"
+            },
+            "levelsOrdered": false
         },
         {
             "@type": "PropertyValue",
@@ -59,12 +70,12 @@
             "@type": "PropertyValue",
             "name": "q_id",
             "description": "The unique ID of the question in the questionnaire",
-            "dataType": "int"
+            "dataType": "string"
         },
         {
             "@type": "PropertyValue",
             "name": "order",
-            "description": "The order the trial was shown in (for experiments with randomised order)",
+            "description": "The order the trial was shown in (for questionnaires with randomised order)",
             "dataType": "int"
         },
         {

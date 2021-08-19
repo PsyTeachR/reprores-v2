@@ -88,8 +88,9 @@ Create a new project called "website".
 
 In the "website" project, create a new Rmarkdown document called "index.Rmd". Do the following in this document:
 
-* Write a short paragraph describing your research interest. 
+* Edit the YAML header to output tables using knitr and to use a custom theme.
+* Write a short paragraph describing your research interests. 
 * Include a bullet-point list of links to websites that are useful for your research. 
 * Add an image of anything relevant.
-* Include a code chunk at the end that displays a fortune from the fortunes package. 
+* Include a code chunk at the end that displays a small table of fortunes from the fortunes package. 
 * Knit this document to html.

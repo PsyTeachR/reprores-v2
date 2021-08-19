@@ -1,7 +1,7 @@
 {
     "@context": "https://schema.org/",
     "@type": "Dataset",
-    "name": "Experimentum Project Experiments",
+    "name": "Experimentum Project Experiment",
     "schemaVersion": "Psych-DS 0.1.0",
     "author": "Lisa DeBruine",
     "description": "Data from a demo experiment on Experimentum <https://debruine.github.io/experimentum/>. Subjects are shown pairs of upright and inverted Mooney faces and asked to click on the upright face.",
@@ -35,13 +35,27 @@
             "@type": "PropertyValue",
             "name": "user_sex",
             "description": "The user's sex/gender (male, female, nonbinary, na)",
-            "dataType": "string"
+            "dataType": "string",
+            "levels": {
+                "male": "male",
+                "female": "female",
+                "nonbinary": "nonbinary"
+            },
+            "levelsOrdered": false
         },
         {
             "@type": "PropertyValue",
             "name": "user_status",
             "description": "The user's status (test, guest, registered, student,res, super, admin)",
-            "dataType": "string"
+            "dataType": "string",
+            "levels": {
+                "student": "student",
+                "guest": "guest",
+                "registered": "registered",
+                "super": "super",
+                "test": "test"
+            },
+            "levelsOrdered": false
         },
         {
             "@type": "PropertyValue",
@@ -71,7 +85,7 @@
             "@type": "PropertyValue",
             "name": "dv",
             "description": "The response",
-            "dataType": "int"
+            "dataType": "string"
         },
         {
             "@type": "PropertyValue",
@@ -83,7 +97,7 @@
             "@type": "PropertyValue",
             "name": "side",
             "description": "The side of presentation (for multi-stimulus trials)",
-            "dataType": "int"
+            "dataType": "string"
         },
         {
             "@type": "PropertyValue",

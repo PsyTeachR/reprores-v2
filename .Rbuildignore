@@ -7,3 +7,4 @@
 ^README\.Rmd$
 ^README\.html$
 ^\.zenodo\.json$
+^_render_book.R$

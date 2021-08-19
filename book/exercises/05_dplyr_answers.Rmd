@@ -11,11 +11,6 @@ knitr::opts_chunk$set(echo = TRUE,
                       error = TRUE)
 library(tidyverse)
 library(ukbabynames)
-
-# install the class package dataskills to access built-in data
-# devtools::install_github("psyteachr/msc-data-skills)
-# or download data from the website
-# https://psyteachr.github.io/msc-data-skills/data/data.zip
 ```
 
 Edit the code chunks below and knit the document. You can pipe your objects to `glimpse()` or `print()` to display them.

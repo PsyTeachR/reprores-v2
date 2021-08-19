@@ -11,11 +11,7 @@ knitr::opts_chunk$set(echo = TRUE,
                       error = TRUE)
 library(tidyverse)
 library(ukbabynames)
-
-# install the class package dataskills to access built-in data
-# devtools::install_github("psyteachr/msc-data-skills)
-# or download data from the website
-# https://psyteachr.github.io/msc-data-skills/data/data.zip
+library(dataskills)
 ```
 
 Edit the code chunks below and knit the document. You can pipe your objects to `glimpse()` or `print()` to display them.
@@ -194,12 +190,12 @@ ggplot(babies_per_year, aes(year, tot, color = sex)) +
 
 ## Select helpers
 
-Load the dataset [dataskills::personality](https://psyteachr.github.io/msc-data-skills/data/personality.csv).
+Load the dataset [personality](https://psyteachr.github.io/psyteachr/data/personality.csv).
 
 Select only the personality question columns (not the user_id or date).
 
 ```{r SH1}
-q_only <- dataskills::personality %>%
+q_only <- personality %>%
   select(-user_id, -date) %>%
   glimpse()
 ```
@@ -207,7 +203,7 @@ q_only <- dataskills::personality %>%
 Select the `user_id` column and all of the columns with questions about openness.
 
 ```{r SH2}
-openness <- dataskills::personality %>%
+openness <- personality %>%
   select(user_id, starts_with("Op")) %>%
   glimpse()
 ```
@@ -215,7 +211,7 @@ openness <- dataskills::personality %>%
 Select the `user_id` column and all of the columns with the first question for each personality trait.
 
 ```{r SH3}
-q1 <- dataskills::personality %>%
+q1 <- personality %>%
   select(user_id, ends_with("1")) %>%
   glimpse()
 ```
@@ -266,13 +262,13 @@ There are several ways to complete the following two tasks. Different people wil
 
 ### Question 16
 
-Load the dataset [dataskills::family_composition](https://psyteachr.github.io/msc-data-skills/data/family_composition.csv) from last week's exercise.
+Load the dataset [family_composition](https://psyteachr.github.io/psyteachr/data/family_composition.csv) from last week's exercise.
 
 Calculate how many siblings of each sex each person has, narrow the dataset down to people with fewer than 6 siblings, and generate at least two different ways to graph this.
 
 ```{r Q16a}
 
-family <- dataskills::family_composition %>%
+family <- family_composition %>%
   gather("sibtype", "n", oldbro:twinsis) %>%
   separate(sibtype, c("sibage", "sibsex"), sep = -3)
 
@@ -310,7 +306,7 @@ ggplot(sib6, aes(bro, sis)) +
 
 ### Question 17
 
-Use the dataset [dataskills::eye_descriptions](https://psyteachr.github.io/msc-data-skills/data/eye_descriptions.csv) from last week's exercise.
+Use the dataset [eye_descriptions](https://psyteachr.github.io/msc-data-skills/data/eye_descriptions.csv) from last week's exercise.
 
 Create a list of the 10 most common descriptions from the eyes dataset. Remove useless descriptions and merge redundant descriptions.
     

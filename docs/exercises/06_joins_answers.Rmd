@@ -7,8 +7,9 @@ output: html_document
 ```{r setup, include=FALSE}
 # please do not alter this code chunk
 knitr::opts_chunk$set(echo = TRUE, message = FALSE, error  = TRUE)
-library("tidyverse")
-library("lubridate")
+library(tidyverse)
+library(lubridate)
+library(dataskills)
 set.seed(1379) # makes sure random numbers are reproducible
 ```
 
@@ -18,17 +19,23 @@ Edit the code chunks below and knit the document. You can pipe your objects to `
 
 ### Question 1A
 
-Load the following data from the dataskills package (or access the linked CSV files online). Each participant is identified by a unique `user_id`.
+Load the following data or access the linked CSV files online. Each participant is identified by a unique `user_id`.
 
-* [`disgust_scores`](https://psyteachr.github.io/msc-data-skills/data/disgust_scores.csv)
-* [`personality_scores`](https://psyteachr.github.io/msc-data-skills/data/personality_scores.csv)
-* [`users`](https://psyteachr.github.io/msc-data-skills/data/users.csv)
+* [`disgust_scores`](https://psyteachr.github.io/psyteachr/data/disgust_scores.csv)
+* [`personality_scores`](https://psyteachr.github.io/psyteachr/data/personality_scores.csv)
+* [`users`](https://psyteachr.github.io/psyteachr/data/users.csv)
 
 
 ```{r ex-1a}
-data("disgust_scores", package = "dataskills")
-data("personality_scores", package = "dataskills")
-data("users", package = "dataskills")
+data("disgust_scores")
+data("personality_scores")
+data("users")
+
+# or 
+
+disgust_scores <- read_csv("https://psyteachr.github.io/psyteachr/data/disgust_scores.csv")
+personality_scores <- read_csv("https://psyteachr.github.io/psyteachr/data/personality_scores.csv")
+users <- read_csv("https://psyteachr.github.io/psyteachr/data/users.csv")
 ```
 
 ### Question 1B
@@ -155,10 +162,10 @@ study6 <- users %>%
 
 ### Question 7
 
-Load new user data from [dataskills::users2](https://psyteachr.github.io/msc-data-skills/data/users2.csv). Bind them into a single table called `users_all`.
+Load new user data from [users2](https://psyteachr.github.io/psyteachr/data/users2.csv). Bind them into a single table called `users_all`.
 
 ```{r ex-7}
-data("users2", package = "dataskills")
+data("users2")
 users_all <- bind_rows(users, users2) %>%
   glimpse()
 ```

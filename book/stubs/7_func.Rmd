@@ -32,7 +32,6 @@ You will learn about functions and iteration by using simulation to calculate a 
 
 ## Resources
 
-* [Iteration & Function](https://psyteachr.github.io/msc-data-skills/func.html) in Data Skills for Reproducible Science
 * Chapters 19 and 21 of [R for Data Science](http://r4ds.had.co.nz)
 * [RStudio Apply Functions Cheatsheet](https://github.com/rstudio/cheatsheets/raw/master/purrr.pdf)
 

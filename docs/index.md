@@ -1,6 +1,6 @@
 --- 
 title: Data Skills for Reproducible Science
-date: "2021-01-06"
+date: "2021-08-17"
 site: bookdown::bookdown_site
 documentclass: book
 bibliography: [book.bib]
@@ -12,7 +12,7 @@ description: "This course provides an overview of skills needed for reproducible
 # Overview {-}
 
 <img src="images/data_skills.png" style="width: 200px; float: right;"
-     alt="Hex sticker, blue, text: MSC DATA SKILLS">
+     alt="Hex sticker, blue, text: DATA SKILLS">
 
 This course provides an overview of skills needed for reproducible research and open science using the statistical programming language R. Students will learn about data visualisation, data tidying and wrangling, archiving, iteration and functions, probability and data simulations, general linear models, and reproducible workflows. Learning is reinforced through weekly assignments that involve working with different types of data.
 
@@ -38,12 +38,12 @@ By the end of this course students will be able to:
 * [Data Skills Videos](https://www.youtube.com/playlist?list=PLA2iRWVwbpTIweEBHD2dOKjZHK1atRmXt){target="_blank"}
     Each chapter has several short video lectures for the main learning outcomes at the playlist . The videos are captioned and watching with the captioning on is a useful way to learn the jargon of computational reproducibility. If you cannot access YouTube, the videos are available on the course Teams and Moodle sites or by request from the instructor.
 
-* [dataskills](https://github.com/psyteachr/msc-data-skills){target="_blank"}
+* [dataskills2](https://github.com/psyteachr/dataskills2){target="_blank"}
     This is a custom R package for this course. You can install it with the code below. It will download all of the packages that are used in the book, along with an offline copy of this book, the shiny apps used in the book, and the exercises.
     
     
     ```r
-    devtools::install_github("psyteachr/msc-data-skills")
+    devtools::install_github("psyteachr/dataskills2")
     ```
 
 * [glossary](https://github.com/psyteachr/glossary){target="_blank"}
@@ -54,22 +54,20 @@ By the end of this course students will be able to:
 
 The overview below lists the beginner learning outcomes only. Some lessons have additional learning outcomes for intermediate or advanced students.
 
-1. [Getting Started](#intro)
+0. [Getting Started](#intro)
     1. Understand the components of the [RStudio IDE](#rstudio_ide)
     2. Type commands into the [console](#console)
     3. Understand [function syntax](#function_syx)
     4. Install a [package](#install-package)
-    5. Organise a [project](#projects)
-    6. Create and compile an [Rmarkdown document](#rmarkdown)
-
-2. [Working with Data](#data)
-    1. Load [built-in datasets](#builtin)
-    2. [Import data](#import_data) from CSV and Excel files
-    3. Create a [data table](#tables)
-    4. Understand the use the [basic data types](#data_types)
-    5. Understand and use the [basic container types](#containers) (list, vector)
-    6. Use [vectorized operations](#vectorized_ops)
-    7. Be able to [troubleshoot](#Troubleshooting) common data import problems
+    
+1. [Reproducible Workflows](#repro)
+    1. Organise a [project](#projects)
+    2. Create and compile an [Rmarkdown document](#rmarkdown)
+    3. Edit the YAML header to add table of contents and other options
+    4. Include a table 
+    5. Include a figure 
+    6. Report the output of an analysis using inline R
+    7. Add a bibliography and in-line citations
 
 3. [Data Visualisation](#ggplot)
     1. Understand what types of graphs are best for [different types of data](#vartypes)
@@ -77,6 +75,15 @@ The overview below lists the beginner learning outcomes only. Some lessons have 
     3. Set custom [labels](#custom-labels),  [colours](#custom-colours), and [themes](#themes)
     4. [Combine plots](combo_plots) on the same plot, as facets, or as a grid using cowplot
     5. [Save plots](#ggsave) as an image file
+    
+3. [Working with Data](#data)
+    1. Load [built-in datasets](#builtin)
+    2. [Import data](#import_data) from CSV and Excel files
+    3. Create a [data table](#tables)
+    4. Understand the use the [basic data types](#data_types)
+    5. Understand and use the [basic container types](#containers) (list, vector)
+    6. Use [vectorized operations](#vectorized_ops)
+    7. Be able to [troubleshoot](#Troubleshooting) common data import problems
 
 4. [Tidy Data](#tidyr)
     1. Understand the concept of [tidy data](#tidy-data)
@@ -94,21 +101,8 @@ The overview below lists the beginner learning outcomes only. Some lessons have 
     2. Be able to use the 2 filtering join verbs: [`semi_join()`](#semi_join), [`anti_join()`](#anti_join)
     3. Be able to use the 2 binding join verbs: [`bind_rows()`](#bind_rows), [`bind_cols()`](#bind_cols)
     4. Be able to use the 3 set operations: [`intersect()`](#intersect), [`union()`](#union), [`setdiff()`](#setdiff)
-
-7. [Iteration & Functions](#func)
-    1. Work with [iteration functions](#iteration-functions): `rep()`, `seq()`, and `replicate()`
-    2. Use [`map()` and `apply()` functions](#map-apply) 
-    3. Write your own [custom functions](#custom-functions) with `function()`
-    4. Set [default values](#defaults) for the arguments in your functions
-
-8. [Probability & Simulation](#sim)
-    1. Generate and plot data randomly sampled from common distributions: uniform, binomial, normal, poisson
-    2. Generate related variables from a [multivariate](#mvdist) distribution
-    3. Define the following statistical terms: [p-value](#p-value), [alpha](#alpha), [power](#power), smallest effect size of interest ([SESOI](#sesoi)), [false positive](#false-pos) (type I error), [false negative](#false-neg) (type II error), confidence interval ([CI](#conf-inf))
-    4. Test sampled distributions against a null hypothesis using: [exact binomial test](#exact-binom), [t-test](#t-test) (1-sample, independent samples, paired samples), [correlation](#correlation) (pearson, kendall and spearman)
-    5. [Calculate power](#calc-power-binom) using iteration and a sampling function
-
-9. [Introduction to GLM](#glm)
+    
+7. [Introduction to GLM](#glm)
     1. Define the [components](#glm-components) of the GLM
     2. [Simulate data](#sim-glm) using GLM equations
     3. Identify the model parameters that correspond to the data-generation parameters
@@ -116,14 +110,18 @@ The overview below lists the beginner learning outcomes only. Some lessons have 
     5. [Predict new values](#predict) using the model
     6. Explain the differences among [coding schemes](#coding-schemes) 
 
-10. [Reproducible Workflows](#repro)
-    1. Create a reproducible script in R Markdown
-    2. Edit the YAML header to add table of contents and other options
-    3. Include a table 
-    4. Include a figure 
-    5. Use `source()` to include code from an external file 
-    6. Report the output of an analysis using inline R
+8. [Iteration & Functions](#func)
+    1. Work with [iteration functions](#iteration-functions): `rep()`, `seq()`, and `replicate()`
+    2. Use [`map()` and `apply()` functions](#map-apply) 
+    3. Write your own [custom functions](#custom-functions) with `function()`
+    4. Set [default values](#defaults) for the arguments in your functions
 
+9. [Probability & Simulation](#sim)
+    1. Generate and plot data randomly sampled from common distributions: uniform, binomial, normal, poisson
+    2. Generate related variables from a [multivariate](#mvdist) distribution
+    3. Define the following statistical terms: [p-value](#p-value), [alpha](#alpha), [power](#power), smallest effect size of interest ([SESOI](#sesoi)), [false positive](#false-pos) (type I error), [false negative](#false-neg) (type II error), confidence interval ([CI](#conf-inf))
+    4. Test sampled distributions against a null hypothesis using: [exact binomial test](#exact-binom), [t-test](#t-test) (1-sample, independent samples, paired samples), [correlation](#correlation) (pearson, kendall and spearman)
+    5. [Calculate power](#calc-power-binom) using iteration and a sampling function
 
 
 ## Formative Exercises
@@ -145,8 +143,7 @@ Download all [exercises and data files](exercises/msc-data-skills-exercises.zip)
 
 ## I found a bug!
 
-This book is a work in progress, so you might find errors. Please help me fix them! The best way is to open an [issue on github](https://github.com/PsyTeachR/msc-data-skills/issues){target="_blank"} that describes the error
-, but you can also mention it on the class Teams forum or [email Lisa](mailto:lisa.debruine@glasgow.ac.uk?subject=msc-data-skills).
+This book is a work in progress, so you might find errors. Please help me fix them! The best way is to open an [issue on github](https://github.com/PsyTeachR/dataskills2/issues){target="_blank"} that describes the error, but you can also mention it on the class Teams forum or [email Lisa](mailto:lisa.debruine@glasgow.ac.uk?subject=dataskills).
 
 ## Other Resources 
 
