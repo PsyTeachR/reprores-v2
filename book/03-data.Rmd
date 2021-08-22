@@ -607,12 +607,12 @@ tidiest
 
 ## Exercises {#exercises-data}
 
-Download the [exercises](exercises/03_data_exercise.Rmd). See the [answers](exercises/03_data_answers.Rmd) only after you've attempted all the questions.
+Download the [exercises](exercises/04_data_exercise.Rmd). See the [answers](exercises/04_data_answers.Rmd) only after you've attempted all the questions.
 
 ```{r, eval = FALSE}
 # run this to access the exercise
-reprores::exercise(3)
+reprores::exercise(4)
 
 # run this to access the answers
-reprores::exercise(3, answers = TRUE)
+reprores::exercise(4, answers = TRUE)
 ```

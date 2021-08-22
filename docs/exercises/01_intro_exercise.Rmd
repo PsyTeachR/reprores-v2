@@ -81,17 +81,3 @@ The code below has an error and won't run. Fix the code.
 fortune::fortune()
 ```
 
-## Organise a project
-
-Create a new project called "website".
-
-## Create and compile an Rmarkdown document
-
-In the "website" project, create a new Rmarkdown document called "index.Rmd". Do the following in this document:
-
-* Edit the YAML header to output tables using kable and to use a custom theme.
-* Write a short paragraph describing your research interests. 
-* Include a bullet-point list of links to websites that are useful for your research. 
-* Add an image of anything relevant.
-* Include a code chunk at the end that displays a small table of fortunes from the fortunes package. 
-* Knit this document to html.
