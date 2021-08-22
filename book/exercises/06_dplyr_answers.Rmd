@@ -1,0 +1,375 @@
+---
+title: 'Formative Exercise 05: Data Wrangling'
+output: 
+  html_document:
+    df_print: kable
+---
+
+```{r setup, include=FALSE}
+# please do not alter this code chunk
+knitr::opts_chunk$set(echo = TRUE,
+                      message = FALSE, 
+                      error = TRUE)
+
+library(tidyverse)
+library(ukbabynames)
+library(reprores)
+
+# install the class package reprores to access built-in data
+# devtools::install_github("psyteachr/reprores-v2)
+# or download data from the website
+# https://psyteachr.github.io/reprores/data/data.zip
+```
+
+Edit the code chunks below and knit the document. You can pipe your objects to `glimpse()` or `print()` to display them.
+
+## UK Baby Names
+
+Here we will convert the data table `scotbabynames` from the ukbabynames package to a tibble and assign it the variable name `sbn`. Use this data tibble for questions 1-13.
+
+```{r sbn}
+# do not alter this code chunk
+sbn <- as_tibble(scotbabynames) # convert to a tibble
+```
+
+
+### Question 1
+
+How many records are in the dataset?
+
+```{r Q1}
+nrecords <- nrow(sbn)
+
+## or: 
+
+nrecords <- count(sbn) %>% pull(n) %>% print()
+```
+
+### Question 2
+
+Remove the column `rank` from the dataset.
+
+```{r Q2}
+norank <- sbn %>%
+  select(-rank) %>%
+  glimpse()
+```
+
+### Question 3
+
+What is the range of birth years contained in the dataset? Use `summarise` to make a table with two columns: `minyear` and `maxyear`.
+
+```{r Q3}
+birth_range <- sbn %>%
+  summarise(minyear = min(year),
+            maxyear = max(year)) %>%
+  print()
+```
+
+### Question 4
+
+Make a table of only the data from babies named Hermione.
+
+```{r Q4}
+hermiones <- sbn %>%
+  filter(name == "Hermione") %>%
+  print()
+```
+
+### Question 5
+
+Sort the dataset by sex and then by year (descending) and then by rank (descending).
+
+```{r Q5}
+sorted_babies <- sbn %>%
+  arrange(sex, desc(year), desc(rank)) %>%
+  glimpse()
+```
+
+### Question 6
+
+Create a new numeric column, `decade`, that contains the decade of birth (1990, 2000, 2010).  Hint: see `?floor`
+
+```{r Q6}
+sbn_decade <- sbn %>%
+  mutate(decade = floor(year / 10) * 10)
+
+# alternatively
+sbn_decade <- sbn %>%
+  mutate(decade = substr(year, 1, 3) %>% paste0("0") %>% as.integer()) %>%
+  glimpse()
+
+```
+
+### Question 7
+
+Make a table of only the data from male babies named Courtney that were born between 1988 and 2001 (inclusive).
+
+```{r Q7}
+courtney <- sbn %>%
+  filter(name == "Courtney", sex == "M",
+         year >= 1988, year <= 2001) %>%
+  print()
+```
+
+
+### Question 8
+
+How many distinct names are represented in the dataset? Make sure `distinct_names` is an integer, not a data table.
+
+```{r Q8}
+distinct_names <- n_distinct(sbn$name)
+
+# or
+
+distinct_names <- sbn %>%
+  distinct(name) %>%
+  count() %>%
+  pull() %>%
+  print()
+```
+
+### Question 9
+
+Make a table of only the data from the Scottish female babies named Frankie that were born before 1990 or after 2015. Order it by year.
+
+```{r Q9}
+frankie <- sbn %>%
+  filter(nation == "Scotland",
+         name == "Frankie", 
+         sex == "F",
+         (year < 1990) | (year > 2015)) %>%
+  arrange(year) %>%
+  print()
+```
+
+### Question 10
+
+How many total babies in the dataset were named 'Emily'? Make sure `emily` is an integer, not a data table.
+
+```{r Q10}
+emily <- sbn %>%
+  filter(name == "Emily") %>%
+  summarise(total = sum(n)) %>%
+  pull(total) %>%
+  print()
+```
+
+### Question 11
+
+How many distinct names are there for each sex?
+
+```{r Q11}
+names_per_sex <- sbn %>% 
+  group_by(sex) %>%
+  distinct(name) %>%
+  count() %>%
+  print()
+```
+
+### Question 12
+
+What is the most popular name in the `sbn` dataset? Make sure `most_popular_scottish_name` is a character vector, not a table.
+
+```{r Q12}
+most_popular_scottish_name <- sbn %>%
+  # calculate the total number of babies per name
+  group_by(name) %>%
+  summarise(total = sum(n), .groups = "drop") %>%
+  # find the top name
+  arrange(desc(total)) %>%
+  slice(1) %>%
+  # pull the name vector from the table
+  pull(name)
+
+## alternatively, this will give you all the top names if there are ties
+most_popular_scottish_name <- sbn %>%
+  group_by(name) %>%
+  summarise(total = sum(n), .groups = "drop") %>%
+  filter(rank(total) == max(rank(total))) %>%
+  pull(name) %>% 
+  print()
+
+```
+
+### Question 12b
+
+What is the most popular name for each nation and sex in the `ukbabynames` dataset? Make a table with the columns `nation`, `male` and `female`, with three rows: one for each nation.
+
+```{r Q12b}
+most_popular <- ukbabynames %>%
+  # calculate the total number of babies per name:sex:nation
+  group_by(nation, sex, name) %>%
+  summarise(total = sum(n), .groups = "drop") %>%
+  # find the top name per sex:nation
+  group_by(nation, sex) %>%
+  arrange(desc(total)) %>%
+  slice(1) %>%
+  ungroup() %>%
+  # rearrange the table from long to wide
+  select(-total) %>% # check what happens if you leave this out
+  spread(key = sex, value = name) %>%
+  # fix the names
+  select(nation, male = M, female = F) %>%
+  print()
+
+```
+
+### Question 13
+
+How many babies were born each year for each sex?  Make a plot where the y-axis starts at 0 so you have the right perspective on changes.
+
+```{r Q13}
+babies_per_year <- sbn %>%
+  group_by(year, sex) %>%
+  summarise(total = sum(n), .groups = "drop")
+
+ggplot(babies_per_year, aes(year, total, color = sex)) +
+  geom_line() +
+  ylim(0, 36000)
+```
+
+## Select helpers
+
+Load the dataset [reprores::personality](https://psyteachr.github.io/reprores/data/personality.csv).
+
+Select only the personality question columns (not the user_id or date).
+
+```{r SH1}
+q_only <- reprores::personality %>%
+  select(-user_id, -date) %>%
+  glimpse()
+```
+
+Select the `user_id` column and all of the columns with questions about openness.
+
+```{r SH2}
+openness <- reprores::personality %>%
+  select(user_id, starts_with("Op")) %>%
+  glimpse()
+```
+
+Select the `user_id` column and all of the columns with the first question for each personality trait.
+
+```{r SH3}
+q1 <- reprores::personality %>%
+  select(user_id, ends_with("1")) %>%
+  glimpse()
+```
+
+
+## Window fuctions
+
+The code below sets up a fake dataset where 10 subjects respond to 20 trials with a `dv` on a 5-point Likert scale. 
+
+```{r window-setup}
+set.seed(10)
+
+fake_data <- tibble(
+  subj_id = rep(1:10, each = 20),
+  trial = rep(1:20, times = 10),
+  dv = sample.int(5, 10*20, TRUE)
+)
+```
+
+### Question 14
+
+You want to know how many times each subject responded with the same dv as their last trial. For example, if someone responded 2,3,3,3,4 for five trials they would have repeated their previous response on the third and fourth trials. Use an offset function to determine how many times each subject repeated a response.
+
+```{r window}
+repeated_data <- fake_data %>%
+  group_by(subj_id) %>%
+  mutate(repeated = dv == lag(dv)) %>%
+  summarise(repeats = sum(repeated, na.rm = TRUE),
+            .groups = "drop") %>%
+  print()
+```
+
+### Question 15
+
+Create a table `too_many_repeats` with the subject who have the two highest-ranked and second-highest ranked unique `repeats` values from `repeated_data` using ranking functions. For example, if 3 people are tied for the highest value and 2 people are tied for the next-highest value, the table would return 5 people. (_Hint: check the differences among `rank()`, `min_rank()` and `dense_rank()`_)
+
+```{r}
+too_many_repeats <- repeated_data %>%
+  mutate(rank = dense_rank(repeats)) %>%
+  filter(rank == max(rank) | rank == max(rank)-1) %>%
+  print()
+```
+
+
+## Advanced Questions
+
+There are several ways to complete the following two tasks. Different people will solve them different ways, but you should be able to tell if your answers make sense.
+
+### Question 16
+
+Load the dataset [reprores::family_composition](https://psyteachr.github.io/reprores/data/family_composition.csv) from last week's exercise.
+
+Calculate how many siblings of each sex each person has, narrow the dataset down to people with fewer than 6 siblings, and generate at least two different ways to graph this.
+
+```{r Q16-data}
+# get total number of brothers and sisters per person
+sib6 <- reprores::family_composition %>%
+  gather("sibtype", "n", oldbro:twinsis) %>%
+  separate(sibtype, c("sibage", "sibsex"), sep = -3) %>%
+  group_by(user_id, sex, sibsex) %>%
+  summarise(n = sum(n), .groups = "drop") %>%
+  group_by(user_id) %>%
+  filter(sex %in% c("male", "female"), sum(n) < 6)
+
+# transform to wide format
+sib6_wide <- sib6 %>%
+  spread(sibsex, n)
+```
+
+
+```{r Q16-plot1}
+ggplot(sib6, aes(n, fill = sibsex)) +
+  geom_histogram(binwidth = 1, colour = "black", position = "dodge") +
+  scale_fill_discrete(name = "", labels = c("Brothers", "Sisters")) +
+  labs(x = "Number of Siblings",
+       y = "Number of Participants")
+
+```
+    
+```{r Q16-plot2}
+ggplot(sib6_wide, aes(bro, sis)) +
+  geom_count() +
+  labs(x = "Number of brothers",
+       y = "Number of sisters")
+```
+
+```{r Q16-plot3}
+ggplot(sib6_wide, aes(bro, sis)) +
+  geom_bin2d(binwidth = c(1,1), show.legend = FALSE) +
+  stat_bin2d(geom = "text", aes(label = ..count..), 
+             binwidth = c(1, 1), color = "white") +
+  labs(x = "Number of brothers",
+       y = "Number of sisters")
+```   
+
+
+### Question 17
+
+Use the dataset [reprores::eye_descriptions](https://psyteachr.github.io/reprores/data/eye_descriptions.csv) from last week's exercise.
+
+Create a list of the 10 most common descriptions from the eyes dataset. Remove useless descriptions and merge redundant descriptions.
+    
+```{r Q17}
+eyes <- reprores::eye_descriptions %>%
+  gather("face_id", "description", t1:t50) %>%
+  separate(description, c("d1", "d2", "d3", "d4"), sep = "(,|;|\\/)+", extra = "merge", fill = "right") %>%
+  gather("desc_n", "description", d1:d4) %>%
+  filter(!is.na(description)) %>%          # gets rid of rows with no description
+  mutate(
+    description = trimws(description),     # get rid of white space around string
+    description = tolower(description)     # make all characters lowercase
+  ) %>%
+  group_by(description) %>%
+  summarise(n = n(), .groups = "drop") %>% # count occurrences of each description
+  arrange(desc(n)) %>%                     # sort by count (descending)
+  filter(nchar(description) > 1) %>%       # get rid of 1-character descriptions
+  filter(row_number() < 11) %>%
+  print()
+```
+

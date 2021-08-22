@@ -6,7 +6,7 @@
 #' @export
 #'
 app <- function(name, ...) {
-  appDir <- system.file(paste0("apps/", name), package = "dataskills")
+  appDir <- system.file(paste0("apps/", name), package = "reprores")
   if (appDir == "") stop("The shiny app ", name, " does not exist")
   shiny::runApp(appDir, ...)
 }

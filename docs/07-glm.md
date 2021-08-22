@@ -27,7 +27,6 @@
 
 ## Resources {#resources9}
 
-* [Stub for this lesson](stubs/9_glm.Rmd)
 * [Jeff Miller and Patricia Haden, Statistical Analysis with the Linear Model (free online textbook)](http://www.otago.ac.nz/psychology/otago039309.pdf)
 * [lecture slides introducing the General Linear Model](slides/08_glm_slides.pdf)
 * [GLM shiny app](http://rstudio2.psy.gla.ac.uk/Dale/GLM)
@@ -77,11 +76,11 @@ A good way to learn about linear models is to <a class='glossary' target='_blank
 
 We'll start with a very simple linear model that just has a single categorical factor with two levels. Let's say we're predicting reaction times for congruent and incongruent trials in a Stroop task for a single participant. Average reaction time (`mu`) is 800ms, and is 50ms faster for congruent than incongruent trials (`effect`). 
 
-<div class="warning">
+::: {.warning data-latex=""}
 A **factor** is a categorical variable that is used to divide subjects into groups, usually to draw some comparison. Factors are composed of different **levels**. Do not confuse factors with levels!
 
 In the example above, trial type is a <select class='webex-solveme' data-answer='["factor"]'> <option></option> <option>factor</option> <option>level</option></select>, incongrunt is a <select class='webex-solveme' data-answer='["level"]'> <option></option> <option>factor</option> <option>level</option></select>, and congruent is a <select class='webex-solveme' data-answer='["level"]'> <option></option> <option>factor</option> <option>level</option></select>.
-</div>
+:::
 
 You need to represent <a class='glossary' target='_blank' title='Data that can only take certain values, such as types of pet.' href='https://psyteachr.github.io/glossary/c#categorical'>categorical</a> factors with numbers. The numbers, or <a class='glossary' target='_blank' title='How to represent categorical variables with numbers for use in models' href='https://psyteachr.github.io/glossary/c#coding-scheme'>coding scheme</a> you choose will affect the numbers you get out of the analysis and how you need to interpret them. Here, we will <a class='glossary' target='_blank' title='A coding scheme for categorical variables that contrasts each group mean with the mean of all the group means.' href='https://psyteachr.github.io/glossary/e#effect-code'>effect code</a> the trial types so that congruent trials are coded as +0.5, and incongruent trials are coded as -0.5.
 
@@ -114,9 +113,9 @@ dat <- data.frame(
   )
 ```
 
-<div class="info">
-<p>The <code>!!!</code> (triple bang) in the code <code>recode(trial_type, !!!trial_types)</code> is a way to expand the vector <code>trial_types &lt;- c("congruent" = 0.5, "incongruent" = -0.5)</code>. It’s equivalent to <code>recode(trial_type, "congruent" = 0.5, "incongruent" = -0.5)</code>. This pattern avoids making mistakes with recoding because there is only one place where you set up the category to code mapping (in the <code>trial_types</code> vector).</p>
-</div>
+::: {.info data-latex=""}
+The `!!!` (triple bang) in the code `recode(trial_type, !!!trial_types)` is a way to expand the vector `trial_types <- c("congruent" = 0.5, "incongruent" = -0.5)`. It's equivalent to `recode(trial_type, "congruent" = 0.5, "incongruent" = -0.5)`. This pattern avoids making mistakes with recoding because there is only one place where you set up the category to code mapping (in the `trial_types` vector).
+:::
 
 Last but not least, always plot simulated data to make sure it looks like you expect.
 
@@ -166,9 +165,9 @@ summary(my_lm)
 
 Notice how the **estimate** for the `(Intercept)` is close to the value we set for `mu` and the estimate for `trial_type.e` is close to the value we set for `effect`.
 
-<div class="try">
-<p>Change the values of <code>mu</code> and <code>effect</code>, resimulate the data, and re-run the linear model. What happens to the estimates?</p>
-</div>
+::: {.try data-latex=""}
+Change the values of `mu` and `effect`, resimulate the data, and re-run the linear model. What happens to the estimates?
+:::
 
 ### Residuals {#residuals}
 
@@ -206,9 +205,9 @@ ggplot(dat) +
 <p class="caption">(\#fig:res-err-plot)Model residuals should be very similar to the simulated error</p>
 </div>
 
-<div class="try">
-<p>What happens to the residuals if you fit a model that ignores trial type (e.g., <code>lm(Y ~ 1, data = dat)</code>)?</p>
-</div>
+::: {.try data-latex=""}
+What happens to the residuals if you fit a model that ignores trial type (e.g., `lm(Y ~ 1, data = dat)`)?
+:::
 
 ### Predict New Values {#predict}
 
@@ -242,9 +241,10 @@ predict(my_lm, newdata = tibble(trial_type.e = 0.5))
 ```
 
 
-<div class="info">
-<p>If you look up this function using <code>?predict</code>, you will see that “The function invokes particular methods which depend on the class of the first argument.” What this means is that <code>predict()</code> works differently depending on whether you’re predicting from the output of <code>lm()</code> or other analysis functions. You can search for help on the lm version with <code>?predict.lm</code>.</p>
-</div>
+::: {.info data-latex=""}
+If you look up this function using `?predict`, you will see that "The function invokes particular methods which depend on the class of the first argument."
+What this means is that `predict()` works differently depending on whether you're predicting from the output of `lm()` or other analysis functions. You can search for help on the lm version with `?predict.lm`.
+:::
 
 
 
@@ -338,9 +338,9 @@ t.test(RT ~ trial_type.e, data = dat, var.equal = TRUE)
 ##           757.2228           819.1605
 ```
 
-<div class="try">
-<p>What happens when you use other codings for trial type in the t-test above? Which coding maps onto the results of the t-test best?</p>
-</div>
+::: {.try data-latex=""}
+What happens when you use other codings for trial type in the t-test above? Which coding maps onto the results of the t-test best?
+:::
 
 ### ANOVA
 
@@ -552,12 +552,12 @@ aov(Y ~ grp, data = dat) %>% summary(intercept = TRUE)
 
 
 
-<div class="try">
-<p>Using the code above, write your own function that takes a table of data and returns the ANOVA results table like above.</p>
-</div>
+::: {.try data-latex=""}
+Using the code above, write your own function that takes a table of data and returns the ANOVA results table like above.
+:::
 
 
-## Glossary {#glossary9}
+## Glossary {#glossary-glm}
 
 
 
@@ -578,15 +578,15 @@ aov(Y ~ grp, data = dat) %>% summary(intercept = TRUE)
 
 
 
-## Exercises {#exercises9}
+## Exercises {#exercises-glm}
 
-Download the [exercises](exercises/09_glm_exercise.Rmd). See the [answers](exercises/09_glm_answers.Rmd) only after you've attempted all the questions.
+Download the [exercises](exercises/07_glm_exercise.Rmd). See the [answers](exercises/07_glm_answers.Rmd) only after you've attempted all the questions.
 
 
 ```r
 # run this to access the exercise
-dataskills::exercise(9)
+reprores::exercise(7)
 
 # run this to access the answers
-dataskills::exercise(9, answers = TRUE)
+reprores::exercise(7, answers = TRUE)
 ```

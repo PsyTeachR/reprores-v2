@@ -12,7 +12,8 @@ knitr::opts_chunk$set(
   fig.width  = 8, 
   fig.height = 5, 
   fig.align = 'center',
-  fig.cap=''
+  fig.cap='',
+  dpi = 96
 )
 
 # make docs directory and include .nojekyll file for github

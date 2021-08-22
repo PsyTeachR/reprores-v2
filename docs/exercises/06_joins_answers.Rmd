@@ -1,7 +1,8 @@
 ---
-title: 'Formative Exercise 06: MSc Data Skills Course'
-author: "Psychology, University of Glasgow"
-output: html_document
+title: 'Formative Exercise 06: Data Relations'
+output: 
+  html_document:
+    df_print: kable
 ---
 
 ```{r setup, include=FALSE}
@@ -9,8 +10,13 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE, message = FALSE, error  = TRUE)
 library(tidyverse)
 library(lubridate)
-library(dataskills)
+library(reprores)
 set.seed(1379) # makes sure random numbers are reproducible
+
+# install the class package reprores to access built-in data
+# devtools::install_github("psyteachr/reprores-v2)
+# or download data from the website
+# https://psyteachr.github.io/reprores/data/data.zip
 ```
 
 Edit the code chunks below and knit the document. You can pipe your objects to `glimpse()` or `print()` to display them.
@@ -19,7 +25,7 @@ Edit the code chunks below and knit the document. You can pipe your objects to `
 
 ### Question 1A
 
-Load the following data or access the linked CSV files online. Each participant is identified by a unique `user_id`.
+Load the following data from the reprores package (or access the linked CSV files online). Each participant is identified by a unique `user_id`.
 
 * [`disgust_scores`](https://psyteachr.github.io/psyteachr/data/disgust_scores.csv)
 * [`personality_scores`](https://psyteachr.github.io/psyteachr/data/personality_scores.csv)

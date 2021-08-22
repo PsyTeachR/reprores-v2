@@ -34,8 +34,7 @@
 
 ## Resources {#resources8}
 
-* [Stub for this lesson](stubs/8_sim.Rmd)
-* [Distribution Shiny App](http://shiny.psy.gla.ac.uk/debruine/simulate/) (or run `dataskills::app("simulate")`
+* [Distribution Shiny App](http://shiny.psy.gla.ac.uk/debruine/simulate/) (or run `reprores::app("simulate")`
 * [Simulation tutorials](https://debruine.github.io/tutorials/sim-data.html)
 * [Chapter 21: Iteration](http://r4ds.had.co.nz/iteration.html)  of *R for Data Science*
 * [Improving your statistical inferences](https://www.coursera.org/learn/statistical-inferences/) on Coursera (week 1)
@@ -64,9 +63,9 @@ First, we need to understand some different ways data might be distributed and h
 
 The `r glossary("uniform distribution")` is the simplest distribution. All numbers in the range have an equal probability of being sampled.
 
-```{block type="try"}
+::: {.try data-latex=""}
 Take a minute to think of things in your own research that are uniformly distributed.
-```
+:::
 
 #### Continuous distribution
 
@@ -168,9 +167,9 @@ ggplot() +
   )
 ```
 
-```{block, type="try"}
+::: {.try data-latex=""}
 Run the simulation above several times, noting how the histogram changes. Try changing the values of `n`, `size`, and `prob`.
-```
+:::
 
 
 ### Normal Distribution {#normal}
@@ -203,9 +202,9 @@ ggplot() +
   )
 ```
 
-```{block, type="info"}
+::: {.info data-latex=""}
 Run the simulation above several times, noting how the density plot changes. What do the vertical lines represent? Try changing the values of `n`, `mean`, and `sd`.
-```
+:::
 
 
 ### Poisson Distribution {#poisson}
@@ -243,9 +242,9 @@ A `r glossary("bivariate normal")` distribution is two normally distributed vect
 
 What if we want to sample from a population with specific relationships between variables? We can sample from a bivariate normal distribution using `mvrnorm()` from the `MASS` package. 
 
-```{block, type = "warning"}
+::: {.warning data-latex=""}
 Don't load MASS with the `library()` function because it will create a conflict with the `select()` function from dplyr and you will always need to preface it with `dplyr::`. Just use `MASS::mvrnorm()`.
-```
+:::
 
 You need to know how many observations you want to simulate (`n`) the means of the two variables (`mu`) and you need to calculate a `r glossary("covariance matrix")` (`sigma`) from the correlation between the variables (`rho`) and their standard deviations (`sd`).
 
@@ -400,15 +399,15 @@ If you are using null hypothesis significance testing (`r glossary("NHST")`), th
 
 The probability that a test concludes there is an effect when there is really no effect (e.g., concludes a fair coin is biased) is called the `r glossary("false positive")` rate (or `r glossary("Type I Error")` Rate). The `r glossary("alpha")` is the false positive rate we accept for a test. The probability that a test concludes there is no effect when there really is one (e.g., concludes a biased coin is fair) is called the `r glossary("false negative")` rate (or `r glossary("Type II Error")` Rate). The `r glossary("beta")` is the false negative rate we accept for a test.
 
-```{block type="info"}
+::: {.info data-latex=""}
 The false positive rate is not the overall probability of getting a false positive, but the probability of a false positive *under the null hypothesis*. Similarly, the false negative rate is the probability of a false negative *under the alternative hypothesis*. Unless we know the probability that we are testing a null effect, we can't say anything about the overall probability of false positives or negatives. If 100% of the hypotheses we test are false, then all significant effects are false positives, but if all of the hypotheses we test are true, then all of the positives are true positives and the overall false positive rate is 0.
-```
+:::
 
 ### Power and SESOI {#power}
 
 `r glossary("Power")` is equal to 1 minus beta (i.e., the `r glossary("true positive")` rate), and depends on the effect size, how many samples we take (n), and what we set alpha to. For any test, if you specify all but one of these values, you can calculate the last. The effect size you use in power calculations should be the smallest effect size of interest (`r glossary("SESOI")`). See [@TOSTtutorial](https://doi.org/10.1177/2515245918770963) for a tutorial on methods for choosing an SESOI. 
 
-<div class="try">
+::: {.try data-latex=""}
 Let's say you want to be able to detect at least a 15% difference from chance (50%) in a coin's fairness, and you want your test to have a 5% chance of false positives and a 10% chance of false negatives. What are the following values?
 
 * alpha = `r fitb(c("0.05", ".05", "5%"))`
@@ -417,15 +416,15 @@ Let's say you want to be able to detect at least a 15% difference from chance (5
 * false negative rate = `r fitb(c("0.1", "0.10", ".1", ".10", "10%"))`
 * power = `r fitb(c("0.9", "0.90", ".9", ".90", "90%"))`
 * SESOI = `r fitb(c("0.15", ".15", "15%"))`
-</div>
+:::
 
 ### Confidence Intervals {#conf-int}
 
 The `r glossary("confidence interval")` is a range around some value (such as a mean) that has some probability of containing the parameter, if you repeated the process many times. Traditionally in psychology, we use 95% confidence intervals, but you can calculate CIs for any percentage.
 
-<div class="info">
+::: {.info data-latex=""}
 A 95% CI does *not* mean that there is a 95% probability that the true mean lies within this range, but that, if you repeated the study many times and calculated the CI this same way every time, you'd expect the true mean to be inside the CI in 95% of the studies. This seems like a subtle distinction, but can lead to some misunderstandings. See [@Morey2016](https://link.springer.com/article/10.3758/s13423-015-0947-8) for more detailed discussion.
-</div>
+:::
 
 ## Tests
 
@@ -452,7 +451,7 @@ binom.test(biased_coin, n, p = 0.5)
 
 ```
 
-```{block, type="info"}
+::: {.info data-latex=""}
 Run the code above several times, noting the p-values for the fair and biased coins. Alternatively, you can [simulate coin flips](http://shiny.psy.gla.ac.uk/debruine/coinsim/) online and build up a graph of results and p-values. 
 
 * How does the p-value vary for the fair and biased coins?
@@ -460,7 +459,7 @@ Run the code above several times, noting the p-values for the fair and biased co
 * What criterion would you use to tell if the observed data indicate the coin is fair or biased?
 * How often do you conclude the fair coin is biased (false positives)? 
 * How often do you conclude the biased coin is fair (false negatives)?
-```
+:::
 
 
 #### Sampling function {#sampling-binom}
@@ -504,9 +503,9 @@ mean(my_reps < alpha)
 
 ```
 
-```{block, type="info"}
+::: {.info data-latex=""}
 `1e4` is just scientific notation for a 1 followed by 4 zeros (`10000`). When you're running simulations, you usually want to run a lot of them. It's a pain to keep track of whether you've typed 5 or 6 zeros (100000 vs 1000000) and this will change your running time by an order of magnitude.
-```
+:::
 
 You can plot the distribution of p-values.
 
@@ -544,9 +543,9 @@ t_ind <- t.test(a, b, paired = FALSE)
 t_ind
 ```
 
-```{block, type="warning"}
+::: {.warning data-latex=""}
 The `paired` argument defaults to `FALSE`, but it's good practice to always explicitly set it so you are never confused about what type of test you are performing.
-```
+:::
 
 #### Sampling function {#sampling-t}
 
@@ -593,9 +592,9 @@ power <- mean(my_reps < alpha)
 power
 ```
 
-```{block, type="try"}
+::: {.try data-latex=""}
 Run the code above several times. How much does the power value fluctuate? How many replications do you need to run to get a reliable estimate of power?
-```
+:::
 
 Compare your power estimate from simluation to a power calculation using `power.t.test()`. Here, `delta` is the difference between `m1` and `m2` above.
 
@@ -620,14 +619,14 @@ ggplot() +
   )
 ```
 
-```{block, type="try"}
+::: {.try data-latex=""}
 What do you think the distribution of p-values is 
 when there is no effect (i.e., the means are identical)? Check this yourself.
-```
+:::
 
-```{block, type="warning"}
+::: {.warning data-latex=""}
 Make sure the `boundary` argument is set to `0` for p-value histograms. See what happens with a null effect if `boundary` is not set.
-```
+:::
 
 
 ### Correlation {#correlation}
@@ -645,9 +644,9 @@ dat <- rnorm_multi(
 cor(dat$x, dat$y)
 ```
 
-```{block type="try"}
+::: {.try data-latex=""}
 Set `n` to a large number like 1e6 so that the correlations are less affected by chance. Change the value of the **mean** for `a`, `x`, or `y`. Does it change the correlation between `x` and `y`? What happens when you increase or decrease the **sd**? Can you work out any rules here?
-```
+:::
 
 `cor()` defaults to Pearson's correlations. Set the `method` argument to use Kendall or Spearman correlations.
 
@@ -752,9 +751,9 @@ ggplot(sim_height) +
 
 ```
 
-```{block, type="try"}
+::: {.try data-latex=""}
 Run the simulation above several times, noting how the density plot changes. Try changing the age you're simulating.
-```
+:::
 
 ### Analyse simulated data
 
@@ -806,9 +805,9 @@ mean(my_reps < alpha)
 
 What if we want to find out what sample size will give us 80% power? We can try trial and error. We know the number should be slightly larger than 50. But you can search more systematically by repeating your power calculation for a range of sample sizes. 
 
-```{block, type="info"}
+::: {.info data-latex=""}
 This might seem like overkill for a t-test, where you can easily look up sample size calculators online, but it is a valuable skill to learn for when your analyses become more complicated.
-```
+:::
 
 Start with a relatively low number of replications and/or more spread-out samples to estimate where you should be looking more specifically. Then you can repeat with a narrower/denser range of sample sizes and more iterations.
 
@@ -850,18 +849,18 @@ ggplot(power_table, aes(n, power)) +
 
 ```
 
-## Glossary {#glossary8}
+## Glossary {#glossary-sim}
 
 `r glossary_table()`
 
-## Exercises {#exercises8}
+## Exercises {#exercises-sim}
 
-Download the [exercises](exercises/08_sim_exercise.Rmd). See the [answers](exercises/08_sim_answers.Rmd) only after you've attempted all the questions.
+Download the [exercises](exercises/09_sim_exercise.Rmd). See the [answers](exercises/09_sim_answers.Rmd) only after you've attempted all the questions.
 
 ```{r, eval = FALSE}
 # run this to access the exercise
-dataskills::exercise(8)
+reprores::exercise(9)
 
 # run this to access the answers
-dataskills::exercise(8, answers = TRUE)
+reprores::exercise(9, answers = TRUE)
 ```

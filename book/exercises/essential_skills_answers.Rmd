@@ -84,11 +84,11 @@ a_to_e_1 <- paste0(a_to_e, 1:5)
 
 You can load data straight from a website using the URL. Use tidyverse functions for reading CSV and Excel files to create the following variables:
 
-* `infmort`: load data in the CSV file "https://psyteachr.github.io/msc-data-skills/data/infmort.csv" using the URL
-* `matmort`: download the excel file [matmort.xls](https://psyteachr.github.io/msc-data-skills/data/matmort.xls) into a directory called `data` in the same directory as this file and load the local file using a function from the package `readxl`
+* `infmort`: load data in the CSV file "https://psyteachr.github.io/reprores/data/infmort.csv" using the URL
+* `matmort`: download the excel file [matmort.xls](https://psyteachr.github.io/reprores/data/matmort.xls) into a directory called `data` in the same directory as this file and load the local file using a function from the package `readxl`
 
 ```{r loading-data, echo = TRUE}
-infmort <- read_csv("https://psyteachr.github.io/msc-data-skills/data/infmort.csv")
+infmort <- read_csv("https://psyteachr.github.io/reprores/data/infmort.csv")
 matmort <- read_xls("data/matmort.xls")
 ```
 

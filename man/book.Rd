@@ -2,10 +2,10 @@
 % Please edit documentation in R/book.R
 \name{book}
 \alias{book}
-\title{Open the Data Skills book}
+\title{Open the Data Skills for Reproducible Research book}
 \usage{
 book()
 }
 \description{
-Open the Data Skills book
+Open the Data Skills for Reproducible Research book
 }

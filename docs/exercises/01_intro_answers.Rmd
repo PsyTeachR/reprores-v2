@@ -1,12 +1,15 @@
 ---
-title: 'Exercise 01: MSc Data Skills Course'
-author: "Psychology, University of Glasgow"
-output: html_document
+title: 'Exercise 01: Intro'
+output: 
+  html_document:
+    df_print: kable
 ---
 
 ```{r setup, include=FALSE}
 # please do not alter this code chunk
-knitr::opts_chunk$set(echo = TRUE, message = FALSE, error = TRUE)
+knitr::opts_chunk$set(echo = TRUE,
+                      message = FALSE, 
+                      error = TRUE)
 ```
 
 Edit the code chunks below and knit the document.
@@ -64,7 +67,7 @@ my_dir <- paste("my", "project", "directory", sep = "/")
 
 ## Install a package
 
-Install the CRAN package called "fortunes". Run the code to do and include it in the code chunk below, but comment it out. It is bad practice to write a script that installs a package without the user having the option to cancel. Also, some packages take a long time to load, so you won't want to install them every time you run a script.
+Install the CRAN package called "fortunes". Run the code to do this and include it in the code chunk below, but comment it out. It is bad practice to write a script that installs a package without the user having the option to cancel. Also, some packages take a long time to load, so you won't want to install them every time you run a script.
 
 ```{r Q6}
 # comment out the installation code
@@ -88,7 +91,7 @@ Create a new project called "website".
 
 In the "website" project, create a new Rmarkdown document called "index.Rmd". Do the following in this document:
 
-* Edit the YAML header to output tables using knitr and to use a custom theme.
+* Edit the YAML header to output tables using kable and to use a custom theme.
 * Write a short paragraph describing your research interests. 
 * Include a bullet-point list of links to websites that are useful for your research. 
 * Add an image of anything relevant.

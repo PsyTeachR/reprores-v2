@@ -1,7 +1,8 @@
 bookdown::gitbook: 
   default: true
-  smart: false
+  md_extensions: -smart
   includes:
+    in_header: include/header.html
     after_body: [include/footer.html, include/webex.js]
   css: [include/psyteachr.css, include/style.css, include/webex.css]
   config:
@@ -9,7 +10,7 @@ bookdown::gitbook:
       collapse: section
       scroll_highlight: yes
       before: |
-        <li><a href="./">Data Skills for Reproducible Science</a></li>
+        <li><a href="./">Data Skills for Reproducible Research</a></li>
         <li><a href="https://zenodo.org/badge/latestdoi/166541547"><img src="https://zenodo.org/badge/166541547.svg" alt="DOI"></a></li>
         <li><a href="https://www.youtube.com/playlist?list=PLA2iRWVwbpTIweEBHD2dOKjZHK1atRmXt">Video Playlist</a></li>
       after: |

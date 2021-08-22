@@ -3,21 +3,21 @@ output: github_document
 always_allow_html: yes
 ---
 
-# dataskills
+# reprores
 <!-- rmarkdown v1 -->
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-This R package contains the datasets needed for the University of Glasgow MSc course [Data Skills for Reproducible Science](https://psyteachr.github.io/dataskills2/)
+This R package contains the datasets needed for the University of Glasgow MSc course [Data Skills for Reproducible Science](https://psyteachr.github.io/reprores/)
 
 ## Installation
 
-You can install the newest version of dataskills from [GitHub](https://github.com/psyteachr/dataskills2) with:
+You can install the newest version of reprores from [GitHub](https://github.com/psyteachr/reprores-v2) with:
 
 ``` r
-devtools::install_github("psyteachr/dataskills2")
+devtools::install_github("psyteachr/reprores-v2")
 ```
 
-You can access the book online at <https://psyteachr.github.io/dataskills2/>, but you can access a local version with the function `dataskills::book()`.
+You can access the book online at <https://psyteachr.github.io/reprores/>, but you can access a local version with the function `reprores::book()`.
 
 ## Citing
 

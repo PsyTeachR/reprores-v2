@@ -29,19 +29,19 @@
 ```r
 # libraries needed for these examples
 library(tidyverse)
-library(dataskills2)
+library(reprores)
 ```
 
 ## Data tables
 
 ### Built-in data {#builtin}
 
-R comes with built-in datasets. Some packages, like tidyr and dataskills, also contain data. The `data()` function lists the datasets available in a package.
+R comes with built-in datasets. Some packages, like tidyr and reprores, also contain data. The `data()` function lists the datasets available in a package.
 
 
 ```r
-# lists datasets in dataskills
-data(package = "dataskills")
+# lists datasets in reprores
+data(package = "reprores")
 ```
 
 Type the name of a dataset into the console to see the data. Type `?smalldata` into the console to see the dataset description.
@@ -272,14 +272,12 @@ write_csv(avatar, "avatar.csv")
 
 This will save the data in CSV format to your working directory.
 
-<div class="try">
-<ul>
-<li>Create a new table called <code>family</code> with the first name, last name, and age of your family members.</li>
-<li>Save it to a CSV file called “family.csv”.</li>
-<li>Clear the object from your environment by restarting R or with the code <code>remove(family)</code>.</li>
-<li>Load the data back in and view it.</li>
-</ul>
-</div>
+::: {.try data-latex=""}
+* Create a new table called `family` with the first name, last name, and age of your family members. 
+* Save it to a CSV file called "family.csv". 
+* Clear the object from your environment by restarting R or with the code `remove(family)`.
+* Load the data back in and view it.
+:::
 
 We'll be working with <a class='glossary' target='_blank' title='Data in a rectangular table format, where each row has an entry for each column.' href='https://psyteachr.github.io/glossary/t#tabular-data'>tabular data</a> a lot in this class, but tabular data is made up of <a class='glossary' target='_blank' title='A type of data structure that is basically a list of things like T/F values, numbers, or strings.' href='https://psyteachr.github.io/glossary/v#vector'>vectors</a>, which group together data with the same basic <a class='glossary' target='_blank' title='The kind of data represented by an object.' href='https://psyteachr.github.io/glossary/d#data-type'>data type</a>. The following sections explain some of this terminology to help you understand the functions we'll be learning to process and analyse data.
 
@@ -376,15 +374,15 @@ is.logical(10 > 5)
 ## [1] TRUE
 ```
 
-<div class="info">
-<p>You might also see logical values abbreviated as <code>T</code> and <code>F</code>, or <code>0</code> and <code>1</code>. This can cause some problems down the road, so we will always spell out the whole thing.</p>
-</div>
+::: {.info data-latex=""}
+You might also see logical values abbreviated as `T` and `F`, or `0` and `1`. This can cause some problems down the road, so we will always spell out the whole thing.
+:::
 
 
 
 
 
-<div class="try">
+::: {.try data-latex=""}
 What data types are these:
 
 * `100` <select class='webex-solveme' data-answer='["double"]'> <option></option> <option>integer</option> <option>double</option> <option>character</option> <option>logical</option> <option>factor</option></select>
@@ -398,7 +396,7 @@ What data types are these:
 * `FALSE` <select class='webex-solveme' data-answer='["logical"]'> <option></option> <option>integer</option> <option>double</option> <option>character</option> <option>logical</option> <option>factor</option></select>
 * `1 == 2` <select class='webex-solveme' data-answer='["logical"]'> <option></option> <option>integer</option> <option>double</option> <option>character</option> <option>logical</option> <option>factor</option></select>
 
-</div>
+:::
 
 ## Basic container types {#containers}
 
@@ -422,17 +420,17 @@ c("this", "is", "cool")
 ## [1] 1 2 3 4 5 6
 ```
 
-<div class="try">
+::: {.try data-latex=""}
 What happens when you mix types? What class is the variable `mixed`?
 
 ```r
 mixed <- c(2, "good", 2L, "b", TRUE)
 ```
-</div>
+:::
 
-<div class="warning">
-<p>You can’t mix data types in a vector; all elements of the vector must be the same data type. If you mix them, R will “coerce” them so that they are all the same. If you mix doubles and integers, the integers will be changed to doubles. If you mix characters and numeric types, the numbers will be coerced to characters, so <code>10</code> would turn into “10”.</p>
-</div>
+::: {.warning data-latex=""}
+You can't mix data types in a vector; all elements of the vector must be the same data type. If you mix them, R will "coerce" them so that they are all the same. If you mix doubles and integers, the integers will be changed to doubles. If you mix characters and numeric types, the numbers will be coerced to characters, so `10` would turn into "10".
+:::
 
 #### Selecting values from a vector
 
@@ -460,14 +458,15 @@ LETTERS[word]
 ## [1] "R" "S" "T" "U" "D" "I" "O"
 ```
 
-<div class="try">
+::: {.try data-latex=""}
+
 Can you decode the secret message?
 
 ```r
 secret <- c(14, 5, 22, 5, 18, 7, 15, 14, 14, 1, 7, 9, 22, 5, 25, 15, 21, 21, 16)
 ```
 
-</div>
+:::
 
 You can also create 'named' vectors, where each element has a name. For example:
 
@@ -494,9 +493,9 @@ vec[c("third", "second", "second")]
 ##  100.1  -13.2  -13.2
 ```
 
-<div class="info">
-<p>We can get the vector of names using the <code>names()</code> function, and we can set or change them using something like <code>names(vec2) &lt;- c("n1", "n2", "n3")</code>.</p>
-</div>
+::: {.info data-latex=""}
+We can get the vector of names using the `names()` function, and we can set or change them using something like `names(vec2) <- c("n1", "n2", "n3")`.
+:::
 
 Another way to access elements is by using a logical vector within the square brackets. This will pull out the elements of the vector for which the corresponding element of the logical vector is `TRUE`. If the logical vector doesn't have the same length as the original, it will repeat. You can find out how long a vector is using the `length()` function.
 
@@ -654,7 +653,8 @@ data_types$logical
 ## [1] TRUE
 ```
 
-<div class="try">
+::: {.try data-latex=""}
+
 Explore the 5 ways shown below to extract a value from a list. What data type is each object? What is the difference between the single and double brackets? Which one is the same as the dollar sign?
 
 
@@ -666,7 +666,7 @@ name2    <- data_types[["double"]]
 dollar   <- data_types$double
 ```
 
-</div>
+:::
 
 ### Tables {#tables}
 
@@ -735,7 +735,7 @@ friendly   <- avatar$friendly  # by column name
 
 What if you import some data and it guesses the wrong column type? The most common reason is that a numeric column has some non-numbers in it somewhere. Maybe someone wrote a note in an otherwise numeric column. Columns have to be all one data type, so if there are any characters, the whole column is converted to character strings, and numbers like `1.2` get represented as "1.2", which will cause very weird errors like `"100" < "9" == TRUE`. You can catch this by looking at the output from `read_csv()` or using `glimpse()` to check your data.
 
-The data directory you created with `dataskills::getdata()` contains a file called "mess.csv". Let's try loading this dataset.
+The data directory you created with `reprores::getdata()` contains a file called "mess.csv". Let's try loading this dataset.
 
 
 ```r
@@ -902,7 +902,7 @@ tidiest
 ```
 
 
-## Glossary {#glossary2}
+## Glossary {#glossary-data}
 
 
 
@@ -932,15 +932,15 @@ tidiest
 
 
 
-## Exercises {#exercises2}
+## Exercises {#exercises-data}
 
-Download the [exercises](exercises/02_data_exercise.Rmd). See the [answers](exercises/02_data_answers.Rmd) only after you've attempted all the questions.
+Download the [exercises](exercises/03_data_exercise.Rmd). See the [answers](exercises/03_data_answers.Rmd) only after you've attempted all the questions.
 
 
 ```r
 # run this to access the exercise
-dataskills::exercise(2)
+reprores::exercise(3)
 
 # run this to access the answers
-dataskills::exercise(2, answers = TRUE)
+reprores::exercise(3, answers = TRUE)
 ```

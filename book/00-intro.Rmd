@@ -1,9 +1,9 @@
-# Getting Started {#intro -}
+# **0** Getting Started {#intro -}
 
 <img src="images/memes/rstudio.png" class="meme right"
      alt="A line drawing of a person looking at a computer with a magnifying glass. The text reads 'I just installed RStudio. I'm a data scientist now.'">
 
-## Learning Objectives {#ilo_intro}
+## Learning Objectives {#ilo-intro}
 
 1. Understand the components of the [RStudio IDE](#rstudio_ide) [(video)](https://youtu.be/CbA6ZVlJE78){class="video"}
 2. Type commands into the [console](#console) [(video)](https://youtu.be/wbI4c_7y0kE){class="video"}
@@ -11,7 +11,7 @@
 4. Install a [package](#install-package) [(video)](https://youtu.be/u_pvHnqkVCE){class="video"}
 
 
-## Resources {#resources1}
+## Resources {#resources-intro}
 
 * [Chapter 1: Introduction](http://r4ds.had.co.nz/introduction.html) in *R for Data Science*
 * [RStudio IDE Cheatsheet](https://github.com/rstudio/cheatsheets/raw/master/rstudio-ide.pdf)
@@ -316,11 +316,13 @@ power.t.test(n = NULL, delta = NULL, sd = 1, sig.level = 0.05,
              strict = FALSE, tol = .Machine$double.eps^0.25)
 ```
 
-<div class="try">
+::: {.try data-latex=""}
+
 * What is the default value for `sd`? `r mcq(c("NULL", answer = 1, 0.05, "two.sample"))`
 * What is the default value for `type`? `r mcq(c("NULL", answer = "two.sample", "one.sample", "paired"))`
 * Which is equivalent to `power.t.test(100, 0.5)`? `r mcq(c("power.t.test(100, 0.5, sig.level = 1, sd = 0.05)", "power.t.test()", "power.t.test(n = 100)", answer="power.t.test(delta = 0.5, n = 100)"))`
-</div>
+
+:::
 
 ### Getting help {#help}
 
@@ -337,10 +339,11 @@ help("rnorm", package="stats")
 
 When the package isn't loaded or you aren't sure what package the function is in, use the shortcut `??function_name`.
 
-<div class="try">
+::: {.try data-latex=""}
+
 * What is the first argument to the `mean` function? `r mcq(c("trim", "na.rm", "mean", answer="x"))`
 * What package is `read_excel` in? `r mcq(c("readr", answer="readxl", "base", "stats"))`
-</div>
+:::
 
 ## Add-on packages {#install-package}
 
@@ -406,13 +409,13 @@ knitr::include_graphics("images/01/packages.png")
 # install devtools if you get
 # Error in loadNamespace(name) : there is no package called ‘devtools’
 # install.packages("devtools")
-devtools::install_github("psyteachr/dataskills2")
+devtools::install_github("psyteachr/reprores-v2")
 ```
 
-After you install the dataskills package, load it using the `library()` function. You can then try out some of the functions below.
+After you install the reprores package, load it using the `library()` function. You can then try out some of the functions below.
 
-```{r dataskills, eval = FALSE}
-library(dataskills)
+```{r reprores, eval = FALSE}
+library(reprores)
 
 # opens a local copy of this book in your web browser
 book()
@@ -426,10 +429,10 @@ exercise(1)
 
 
 ::: {.try data-latex=""}
-How many different ways can you find to discover what functions are available in the dataskills package?
+How many different ways can you find to discover what functions are available in the reprores package?
 :::
 
-Loading dataskills automatically loads the `psyteachr` package, which contains datasets that we will be using in future lessons. `getdata()` creates a directory called "data" with all of the class datasets.
+Reprores contains datasets that we will be using in future lessons. `getdata()` creates a directory called "data" with all of the class datasets.
 
 ```{r, eval = FALSE}
 # loads the disgust dataset
@@ -445,7 +448,7 @@ getdata("data")
 
 
 
-## Glossary  {#glossary1}
+## Glossary  {#glossaryintro}
 
 Each chapter ends with a glossary table defining the jargon introduced in this chapter. The links below take you to the [glossary book](https://psyteachr.github.io/glossary), which you can also download for offline use with `devtools::install_github("psyteachr/glossary")` and access the glossary offline with `glossary::book()`.
 

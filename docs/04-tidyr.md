@@ -37,7 +37,7 @@
 ```r
 # libraries needed
 library(tidyverse)
-library(dataskills2)
+library(reprores)
 
 set.seed(8675309) # makes sure random numbers are reproducible
 ```
@@ -122,7 +122,7 @@ Table: (\#tab:long-data)Long data
 |A  |Q3   |     3|
 |B  |Q3   |     6|
 
-<div class="try">
+::: {.try data-latex=""}
 
 Create a long version of the following table.
 
@@ -151,7 +151,7 @@ Your answer doesn't need to have the same column headers or be in the same order
 </div>
 
 
-</div>
+:::
 
 
 ## Pivot Functions {#pivot}
@@ -160,11 +160,11 @@ The pivot functions allow you to transform a data table from wide to long or lon
 
 ### Load Data
 
-We will used the dataset `personality` from the dataskills package (or download the data from [personality.csv](./data/personality.csv)). These data are from a 5-factor (personality) personality questionnaire. Each question is labelled with the domain (Op = openness, Co = conscientiousness, Ex = extroversion, Ag = agreeableness, and Ne = neuroticism) and the question number.
+We will used the dataset `personality` from the reprores package (or download the data from [personality.csv](./data/personality.csv)). These data are from a 5-factor (personality) personality questionnaire. Each question is labelled with the domain (Op = openness, Co = conscientiousness, Ex = extroversion, Ag = agreeableness, and Ne = neuroticism) and the question number.
 
 
 ```r
-data("personality", package = "dataskills")
+data("personality", package = "reprores")
 ```
 
 
@@ -211,12 +211,11 @@ personality_long <- pivot_longer(
 ## $ score   <dbl> 3, 4, 0, 6, 3, 3, 3, 3, 0, 2, 1, 3, 3, 2, 2, 1, 3, 3, 1, 3, 0,…
 ```
 
-<div class="info">
-<p>You can pipe a data table to <code>glimpse()</code> at the end to have a quick look at it. It will still save to the object.</p>
-</div>
+::: {.info data-latex=""}
+You can pipe a data table to `glimpse()` at the end to have a quick look at it. It will still save to the object.
+:::
 
-<div class="try">
-
+::: {.try data-latex=""}
 What would you set `names_sep` to in order to split the `cols` headers listed below into the results?
 
 
@@ -228,8 +227,7 @@ What would you set `names_sep` to in order to split the `cols` headers listed be
 | `A1`, `A2`, `B1`, `B2` | `c("condition", "version")` | <select class='webex-solveme' data-answer='["1"]'> <option></option> <option>A</option> <option>B</option> <option>1</option> <option>2</option> <option>_</option></select> |
 | `cat-day&pre`, `cat-day&post`, `cat-night&pre`, `cat-night&post`, `dog-day&pre`, `dog-day&post`, `dog-night&pre`, `dog-night&post` | `c("pet", "time", "condition")` | <select class='webex-solveme' data-answer='["-","-|&"]'> <option></option> <option>-</option> <option>&</option> <option>-|&</option> <option>c(3, 7)</option></select> |
 
-
-</div>
+:::
 
 
 ### pivot_wider() {#pivot_wider}
@@ -366,9 +364,9 @@ personality_sep <- separate(
 ```
 
 
-<div class="warning">
+::: {.warning data-latex=""}
 If you want to separate just at full stops, you need to use `sep = "\\."`, not `sep = "."`. The two slashes **escape** the full stop, making it interpreted as a literal full stop and not the regular expression for any character.
-</div>
+:::
 
 ### unite() {#unite} 
 
@@ -522,9 +520,9 @@ data
 ## 10    10  0.559   2.10
 ```
 
-<div class="warning">
-<p>You <em>can</em> name each object <code>data</code> and keep replacing the old data object with the new one at each step. This will keep your environment clean, but I don’t recommend it because it makes it too easy to accidentally run your code out of order when you are running line-by-line for development or debugging.</p>
-</div>
+::: {.warning data-latex=""}
+You *can* name each object `data` and keep replacing the old data object with the new one at each step. This will keep your environment clean, but I don't recommend it because it makes it too easy to accidentally run your code out of order when you are running line-by-line for development or debugging.
+:::
 
 One way to avoid extra objects is to nest your functions, literally replacing each data object with the code that generated it in the previous step. This can be fine for very short chains.
 
@@ -595,9 +593,9 @@ You can read this code from top to bottom as follows:
 
 You can make intermediate objects whenever you need to break up your code because it's getting too complicated or you need to debug something.
 
-<div class="info">
-<p>You can debug a pipe by highlighting from the beginning to just before the pipe you want to stop at. Try this by highlighting from <code>data &lt;-</code> to the end of the <code>separate</code> function and typing cmd-return. What does <code>data</code> look like now?</p>
-</div>
+::: {.info data-latex=""}
+You can debug a pipe by highlighting from the beginning to just before the pipe you want to stop at. Try this by highlighting from `data <-` to the end of the `separate` function and typing cmd-return. What does `data` look like now?
+:::
 
 
 Chain all the steps above using pipes.
@@ -616,10 +614,10 @@ personality_reshaped <- personality %>%
 
 ### Load Data 
 
-Get data on infant and maternal mortality rates from the dataskills2 package. If you don't have the package, you can download them here:
+Get data on infant and maternal mortality rates from the reprores package. If you don't have the package, you can download them here:
 
-* [infant mortality](https://psyteachr.github.io/psyteachr/data/infmort.csv)  
-* [maternal mortality](https://psyteachr.github.io/psyteachr/data/matmort.xls)  
+* [infant mortality](https://psyteachr.github.io/reprores/data/infmort.csv)  
+* [maternal mortality](https://psyteachr.github.io/reprores/data/matmort.xls)  
 
 
 ```r
@@ -683,9 +681,9 @@ matmort_long <- matmort %>%
 ## $ stats   <chr> "1 340 [ 878 - 1 950]", "1 100 [ 745 - 1 570]", "396 [ 253 -  …
 ```
 
-<div class="info">
-<p>You can put <code>matmort</code> at the first argument to <code>pivot_longer()</code>; you don’t have to pipe it in. But when I’m working on data processing I often find myself needing to insert or rearrange steps and I constantly introduce errors by forgetting to take the first argument out of a pipe chain, so now I start with the original data table and pipe from there.</p>
-</div>
+::: {.info data-latex=""}
+You can put `matmort` at the first argument to `pivot_longer()`; you don't have to pipe it in. But when I'm working on data processing I often find myself needing to insert or rearrange steps and I constantly introduce errors by forgetting to take the first argument out of a pipe chain, so now I start with the original data table and pipe from there.
+:::
 
 Alternatively, you can use the `gather()` function.
 
@@ -733,15 +731,18 @@ matmort_split <- matmort_long %>%
 ## $ ci_hi   <chr> "1950", "88", "327", "2020", "80", "65", "9", "10", "74", "61"…
 ```
 
-<div class="info">
-<p>The <code>gsub(pattern, replacement, x)</code> function is a flexible way to do search and replace. The example above replaces all occurances of the <code>pattern</code> " " (a space), with the <code>replacement</code> "" (nothing), in the string <code>x</code> (the <code>stats</code> column). Use <code>sub()</code> instead if you only want to replace the first occurance of a pattern. We only used a simple pattern here, but you can use more complicated <a href="https://stat.ethz.ch/R-manual/R-devel/library/base/html/regex.html">regex</a> patterns to replace, for example, all even numbers (e.g., <code>gsub("[:02468:]", "*", "id = 123456")</code>) or all occurances of the word colour in US or UK spelling (e.g., <code>gsub("colo(u)?r", "***", "replace color, colour, or colours, but not collors")</code>).</p>
-</div>
+::: {.info data-latex=""}
+The `gsub(pattern, replacement, x)` function is a 
+flexible way to do search and replace. The example above replaces all occurances of the `pattern` " " (a space), with the `replacement` "" (nothing), in the string `x` (the `stats` column). Use `sub()` instead if you only want to replace the first occurance of a pattern. We only used a simple pattern here, but you can use more complicated [regex](https://stat.ethz.ch/R-manual/R-devel/library/base/html/regex.html) patterns to replace, for example, all even numbers (e.g., `gsub("[:02468:]", "*", "id = 123456")`) or all occurances of the word colour in US or UK spelling 
+(e.g., `gsub("colo(u)?r", "***", "replace color, colour, or colours, but not collors")`).
+:::
 
 #### Handle spare columns with `extra` {#extra}
 
-<div class="warning">
-<p>The previous example should have given you an error warning about “Additional pieces discarded in 543 rows”. This is because <code>separate</code> splits the column at the brackets and dashes, so the text <code>100[90-110]</code> would split into four values <code>c("100", "90", "110", "")</code>, but we only specified 3 new columns. The fourth value is always empty (just the part after the last bracket), so we are happy to drop it, but <code>separate</code> generates a warning so you don’t do that accidentally. You can turn off the warning by adding the <code>extra</code> argument and setting it to “drop”. Look at the help for <code>??tidyr::separate</code> to see what the other options do.</p>
-</div>
+::: {.warning data-latex=""}
+The previous example should have given you an error warning about 
+"Additional pieces discarded in 543 rows". This is because `separate` splits the column at the brackets and dashes, so the text `100[90-110]` would split into four values `c("100", "90", "110", "")`, but we only specified 3 new columns. The fourth value is always empty (just the part after the last bracket), so we are happy to drop it, but `separate` generates a warning so you don't do that accidentally. You can turn off the warning by adding the `extra` argument and setting it to "drop". Look at the help for `??tidyr::separate` to see what the other options do.
+:::
 
 
 
@@ -785,10 +786,11 @@ infmort_split <- infmort %>%
 
 **Wait, that didn't work at all!** It split the column on spaces, brackets, _and_ full stops. We just want to split on the spaces, brackets and dashes. So we need to manually set `sep` to what the delimiters are. Also, once there are more than a few arguments specified for a function, it's easier to read them if you put one argument on each line.
 
-{#regex}
-<div class="warning">
-<p>You can use <a href="https://stat.ethz.ch/R-manual/R-devel/library/base/html/regex.html">regular expressions</a> to separate complex columns. Here, we want to separate on dashes and brackets. You can separate on a list of delimiters by putting them in parentheses, separated by “|”. It’s a little more complicated because brackets have a special meaning in regex, so you need to “escape” the left one with two backslashes “\\”.</p>
-</div>
+#### {#regex -}
+::: {.warning data-latex=""}
+You can use [regular expressions](https://stat.ethz.ch/R-manual/R-devel/library/base/html/regex.html) 
+to separate complex columns. Here, we want to separate on dashes and brackets. You can separate on a list of delimiters by putting them in parentheses, separated by "|". It's a little more complicated because brackets have a special meaning in regex, so you need to "escape" the left one with two backslashes "\\\\".
+:::
 
 
 ```r
@@ -866,7 +868,7 @@ We can chain all the steps for `matmort` above together, since we don't need tho
 
 
 ```r
-matmort2<- dataskills::matmort %>%
+matmort2 <- matmort %>%
   gather("Year", "stats", `1990`:`2015`) %>%
   mutate(stats = gsub(" ", "", stats)) %>%
   separate(
@@ -917,9 +919,9 @@ matmort_wide <- matmort2 %>%
 ## # … with 532 more rows
 ```
 
-<div class="warning">
-<p>Nope, that didn’t work at all, but it’s a really common mistake when spreading data. This is because <code>spread</code> matches on all the remaining columns, so Afghanistan with <code>ci_low</code> of 253 is treated as a different observation than Afghanistan with <code>ci_low</code> of 745.</p>
-</div>
+::: {.warning data-latex=""}
+Nope, that didn't work at all, but it's a really common mistake when spreading data. This is because `spread` matches on all the remaining columns, so Afghanistan with `ci_low` of 253 is treated as a different observation than Afghanistan with `ci_low` of 745. 
+:::
 
 This is where `pivot_wider()` can be very useful. You can set `values_from` to multiple column names and their names will be added to the `names_from` values. 
 
@@ -953,7 +955,7 @@ glimpse(matmort_wide)
 
 Students in the Institute of Neuroscience and Psychology at the University of Glasgow can use the online experiment builder platform, [Experimentum](https://debruine.github.io/experimentum/). The platform is also [open source on github](https://github.com/debruine/experimentum) for anyone who can install it on a web server. It allows you to group questionnaires and experiments into **projects** with randomisation and counterbalancing. Data for questionnaires and experiments are downloadable in long format, but researchers often need to put them in wide format for analysis.
 
-Look at the help menu for built-in dataset `dataskills::experimentum_quests` to learn what each column is. Subjects are asked questions about dogs to test the different questionnaire response types.
+Look at the help menu for built-in dataset `experimentum_quests` to learn what each column is. Subjects are asked questions about dogs to test the different questionnaire response types.
 
 * current: Do you own a dog? (yes/no)  
 * past: Have you ever owned a dog? (yes/no)  
@@ -968,7 +970,7 @@ To get the dataset into wide format, where each question is in a separate column
 
 
 ```r
-q <- dataskills::experimentum_quests %>%
+q <- experimentum_quests %>%
   pivot_wider(id_cols = session_id:user_age,
               names_from = q_name,
               values_from = dv) %>%
@@ -994,9 +996,9 @@ q <- dataskills::experimentum_quests %>%
 ## #   good <int>, country <chr>, text <chr>, good_borzoi <int>, time <chr>
 ```
 
-<div class="info">
-<p>The responses in the <code>dv</code> column have multiple types (e.g., <code>r glossary("integer")</code>, <code>r glossary("double")</code>, and <code>r glossary("character")</code>), but they are all represented as character strings when they’re in the same column. After you spread the data to wide format, each column should be given the ocrrect data type. The function <code>type.convert()</code> makes a best guess at what type each new column should be and converts it. The argument <code>as.is = TRUE</code> converts columns where none of the numbers have decimal places to integers.</p>
-</div>
+::: {.info data-latex=""}
+The responses in the `dv` column have multiple types (e.g., <a class='glossary' target='_blank' title='A data type representing whole numbers.' href='https://psyteachr.github.io/glossary/i#integer'>integer</a>, <a class='glossary' target='_blank' title='A data type representing a real decimal number' href='https://psyteachr.github.io/glossary/d#double'>double</a>, and <a class='glossary' target='_blank' title='A data type representing strings of text.' href='https://psyteachr.github.io/glossary/c#character'>character</a>), but they are all represented as character strings when they're in the same column. After you spread the data to wide format, each column should be given the ocrrect data type. The function `type.convert()` makes a best guess at what type each new column should be and converts it. The argument `as.is = TRUE` converts columns where none of the numbers have decimal places to integers.
+:::
 
 
 ## Glossary {#glossary4}
@@ -1005,6 +1007,9 @@ q <- dataskills::experimentum_quests %>%
 
 |term                                                                                                          |definition                                                               |
 |:-------------------------------------------------------------------------------------------------------------|:------------------------------------------------------------------------|
+|<a class='glossary' target='_blank' href='https://psyteachr.github.io/glossary/c#character'>character</a>     |A data type representing strings of text.                                |
+|<a class='glossary' target='_blank' href='https://psyteachr.github.io/glossary/d#double'>double</a>           |A data type representing a real decimal number                           |
+|<a class='glossary' target='_blank' href='https://psyteachr.github.io/glossary/i#integer'>integer</a>         |A data type representing whole numbers.                                  |
 |<a class='glossary' target='_blank' href='https://psyteachr.github.io/glossary/l#long'>long</a>               |Data where each observation is on a separate row                         |
 |<a class='glossary' target='_blank' href='https://psyteachr.github.io/glossary/o#observation'>observation</a> |All of the data about a single trial or question.                        |
 |<a class='glossary' target='_blank' href='https://psyteachr.github.io/glossary/v#value'>value</a>             |A single number or piece of data.                                        |
@@ -1021,8 +1026,8 @@ Download the [exercises](exercises/04_tidyr_exercise.Rmd). See the [answers](exe
 
 ```r
 # run this to access the exercise
-dataskills::exercise(4)
+reprores::exercise(4)
 
 # run this to access the answers
-dataskills::exercise(4, answers = TRUE)
+reprores::exercise(4, answers = TRUE)
 ```

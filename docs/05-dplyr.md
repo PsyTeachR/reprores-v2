@@ -40,20 +40,20 @@
 # libraries needed for these examples
 library(tidyverse)
 library(lubridate)
-library(dataskills2)
+library(reprores)
 set.seed(8675309) # makes sure random numbers are reproducible
 ```
 
 
 ### The `disgust` dataset {#data-disgust}
 
-These examples will use data from `dataskills::disgust`, which contains data from the [Three Domain Disgust Scale](http://digitalrepository.unm.edu/cgi/viewcontent.cgi?article=1139&context=psy_etds). Each participant is identified by a unique `user_id` and each questionnaire completion has a unique `id`. Look at the Help for this dataset to see the individual questions.
+These examples will use data from `reprores::disgust`, which contains data from the [Three Domain Disgust Scale](http://digitalrepository.unm.edu/cgi/viewcontent.cgi?article=1139&context=psy_etds). Each participant is identified by a unique `user_id` and each questionnaire completion has a unique `id`. Look at the Help for this dataset to see the individual questions.
 
 
 ```r
-data("disgust", package = "dataskills")
+data("disgust", package = "reprores")
 
-#disgust <- read_csv("https://psyteachr.github.io/msc-data-skills/data/disgust.csv")
+#disgust <- read_csv("https://psyteachr.github.io/reprores/data/disgust.csv")
 ```
 
 
@@ -516,7 +516,7 @@ After that, we can spread out the 3 domains, calculate the total score, remove a
 
 
 ```r
-disgust_tidy <- dataskills::disgust %>%
+disgust_tidy <- reprores::disgust %>%
   gather("question", "score", moral1:pathogen7) %>%
   separate(question, c("domain","q_num"), sep = -1) %>%
   group_by(id, user_id, date, domain) %>%
@@ -950,8 +950,8 @@ Download the [exercises](exercises/05_dplyr_exercise.Rmd). See the [answers](exe
 
 ```r
 # run this to access the exercise
-dataskills::exercise(5)
+reprores::exercise(5)
 
 # run this to access the answers
-dataskills::exercise(5, answers = TRUE)
+reprores::exercise(5, answers = TRUE)
 ```

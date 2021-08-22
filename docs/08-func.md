@@ -451,10 +451,9 @@ reported # still "not changed"
 
 ### Warnings and errors {#warnings-errors}
 
-<div class="try">
-What happens when you omit the argument for <code>p</code>? Or if you set <code>p</code> to 1.5 or “a”?
-</p>
-</div>
+::: {.try data-latex=""}
+What happens when you omit the argument for `p`? Or if you set `p` to 1.5 or "a"?</p>
+:::
 
 You might want to add a more specific warning and stop running the function code if someone enters a value that isn't a number. You can do this with the `stop()` function.
 
@@ -612,9 +611,9 @@ tibble(
 ## # … with 2 more variables: method <chr>, alternative <chr>
 ```
 
-<div class="info">
-<p>In the pipeline above, <code>t.test(score~group, data = .)</code> uses the <code>.</code> notation to change the location of the piped-in data table from it’s default position as the first argument to a different position.</p>
-</div>
+::: {.info data-latex=""}
+In the pipeline above, `t.test(score~group, data = .)` uses the `.` notation to change the location of the piped-in data table from it's default position as the first argument to a different position. 
+:::
 
 Finally, we can extract a single value from this results table using `pull()`.
 
@@ -688,9 +687,9 @@ You can use the `set.seed` function before you run a function that uses random n
 set.seed(90201)
 ```
 
-<div class="warning">
-<p>Make sure you don’t ever use <code>set.seed()</code> <strong>inside</strong> of a simulation function, or you will just simulate the exact same data over and over again.</p>
-</div>
+::: {.warning data-latex=""}
+Make sure you don't ever use `set.seed()` **inside** of a simulation function, or you will just simulate the exact same data over and over again.
+:::
 
 <div class="figure" style="text-align: center">
 <img src="images/memes/seed_alignment.png" alt="&amp;commat;KellyBodwin" width="100%" />
@@ -769,7 +768,7 @@ Calculate power via simulation and `power.t.test` for the following tests:
 * 40 subjects/group, A: m = 0, SD = 1; B: m = 0.2, SD = 1
 * 20 subjects/group, A: m = 10, SD = 1; B: m = 12, SD = 1.5
 
-## Glossary {#glossary7}
+## Glossary {#glossary-func}
 
 
 
@@ -784,15 +783,15 @@ Calculate power via simulation and `power.t.test` for the following tests:
 
 
 
-## Exercises {#exercises7}
+## Exercises {#exercises-func}
 
-Download the [exercises](exercises/07_func_exercise.Rmd). See the [answers](exercises/07_func_answers.Rmd) only after you've attempted all the questions.
+Download the [exercises](exercises/08_func_exercise.Rmd). See the [answers](exercises/08_func_answers.Rmd) only after you've attempted all the questions.
 
 
 ```r
 # run this to access the exercise
-dataskills::exercise(7)
+reprores::exercise(8)
 
 # run this to access the answers
-dataskills::exercise(7, answers = TRUE)
+reprores::exercise(8, answers = TRUE)
 ```

@@ -28,18 +28,18 @@
 ```{r, results = 'hide', warning = FALSE, message = FALSE}
 # libraries needed for these examples
 library(tidyverse)
-library(dataskills)
+library(reprores)
 ```
 
 ## Data tables
 
 ### Built-in data {#builtin}
 
-R comes with built-in datasets. Some packages, like tidyr and dataskills, also contain data. The `data()` function lists the datasets available in a package.
+R comes with built-in datasets. Some packages, like tidyr and reprores, also contain data. The `data()` function lists the datasets available in a package.
 
 ```{r built-in-data}
-# lists datasets in dataskills
-data(package = "dataskills")
+# lists datasets in reprores
+data(package = "reprores")
 ```
 
 Type the name of a dataset into the console to see the data. Type `?smalldata` into the console to see the dataset description.
@@ -182,12 +182,12 @@ write_csv(avatar, "avatar.csv")
 
 This will save the data in CSV format to your working directory.
 
-```{block, type="try"}
+::: {.try data-latex=""}
 * Create a new table called `family` with the first name, last name, and age of your family members. 
 * Save it to a CSV file called "family.csv". 
 * Clear the object from your environment by restarting R or with the code `remove(family)`.
 * Load the data back in and view it.
-```
+:::
 
 We'll be working with `r glossary("tabular data")` a lot in this class, but tabular data is made up of `r glossary("vector", "vectors")`, which group together data with the same basic `r glossary("data type")`. The following sections explain some of this terminology to help you understand the functions we'll be learning to process and analyse data.
 
@@ -247,9 +247,9 @@ When you compare two values with an `r glossary("operator")`, such as checking t
 is.logical(10 > 5)
 ```
 
-```{block type = "info"}
+::: {.info data-latex=""}
 You might also see logical values abbreviated as `T` and `F`, or `0` and `1`. This can cause some problems down the road, so we will always spell out the whole thing.
-```
+:::
 
 
 
@@ -261,7 +261,7 @@ logi <- c("integer", "double", "character", answer = "logical", "factor")
 fac <- c("integer", "double", "character", "logical", answer = "factor")
 ```
 
-<div class="try">
+::: {.try data-latex=""}
 What data types are these:
 
 * `100` `r mcq(dbl)`
@@ -275,7 +275,7 @@ What data types are these:
 * `FALSE` `r mcq(logi)`
 * `1 == 2` `r mcq(logi)`
 
-</div>
+:::
 
 ## Basic container types {#containers}
 
@@ -292,16 +292,16 @@ c("this", "is", "cool")
 1:6 # shortcut to make a vector of all integers x:y
 ```
 
-<div class="try">
+::: {.try data-latex=""}
 What happens when you mix types? What class is the variable `mixed`?
 ```{r}
 mixed <- c(2, "good", 2L, "b", TRUE)
 ```
-</div>
+:::
 
-```{block, type="warning"}
+::: {.warning data-latex=""}
 You can't mix data types in a vector; all elements of the vector must be the same data type. If you mix them, R will "coerce" them so that they are all the same. If you mix doubles and integers, the integers will be changed to doubles. If you mix characters and numeric types, the numbers will be coerced to characters, so `10` would turn into "10".
-```
+:::
 
 #### Selecting values from a vector
 
@@ -319,13 +319,14 @@ word <- c(18, 19, 20, 21, 4, 9, 15)
 LETTERS[word]
 ```
 
-<div class="try">
+::: {.try data-latex=""}
+
 Can you decode the secret message?
 ```{r}
 secret <- c(14, 5, 22, 5, 18, 7, 15, 14, 14, 1, 7, 9, 22, 5, 25, 15, 21, 21, 16)
 ```
 
-</div>
+:::
 
 You can also create 'named' vectors, where each element has a name. For example:
 
@@ -340,9 +341,9 @@ We can then access elements by name using a character vector within the square b
 vec[c("third", "second", "second")]
 ```
 
-```{block, type="info"}
+::: {.info data-latex=""}
 We can get the vector of names using the `names()` function, and we can set or change them using something like `names(vec2) <- c("n1", "n2", "n3")`.
-```
+:::
 
 Another way to access elements is by using a logical vector within the square brackets. This will pull out the elements of the vector for which the corresponding element of the logical vector is `TRUE`. If the logical vector doesn't have the same length as the original, it will repeat. You can find out how long a vector is using the `length()` function.
 
@@ -443,7 +444,8 @@ You can refer to elements of a list using square brackets like a vector, but you
 data_types$logical
 ```
 
-<div class="try">
+::: {.try data-latex=""}
+
 Explore the 5 ways shown below to extract a value from a list. What data type is each object? What is the difference between the single and double brackets? Which one is the same as the dollar sign?
 
 ```{r}
@@ -454,7 +456,7 @@ name2    <- data_types[["double"]]
 dollar   <- data_types$double
 ```
 
-</div>
+:::
 
 ### Tables {#tables}
 
@@ -514,7 +516,7 @@ friendly   <- avatar$friendly  # by column name
 
 What if you import some data and it guesses the wrong column type? The most common reason is that a numeric column has some non-numbers in it somewhere. Maybe someone wrote a note in an otherwise numeric column. Columns have to be all one data type, so if there are any characters, the whole column is converted to character strings, and numbers like `1.2` get represented as "1.2", which will cause very weird errors like `"100" < "9" == TRUE`. You can catch this by looking at the output from `read_csv()` or using `glimpse()` to check your data.
 
-The data directory you created with `dataskills::getdata()` contains a file called "mess.csv". Let's try loading this dataset.
+The data directory you created with `reprores::getdata()` contains a file called "mess.csv". Let's try loading this dataset.
 
 ```{r}
 mess <- read_csv("data/mess.csv")
@@ -599,18 +601,18 @@ tidiest
 ```
 
 
-## Glossary {#glossary2}
+## Glossary {#glossary-data}
 
 `r glossary_table()`
 
-## Exercises {#exercises2}
+## Exercises {#exercises-data}
 
-Download the [exercises](exercises/02_data_exercise.Rmd). See the [answers](exercises/02_data_answers.Rmd) only after you've attempted all the questions.
+Download the [exercises](exercises/03_data_exercise.Rmd). See the [answers](exercises/03_data_answers.Rmd) only after you've attempted all the questions.
 
 ```{r, eval = FALSE}
 # run this to access the exercise
-dataskills::exercise(2)
+reprores::exercise(3)
 
 # run this to access the answers
-dataskills::exercise(2, answers = TRUE)
+reprores::exercise(3, answers = TRUE)
 ```

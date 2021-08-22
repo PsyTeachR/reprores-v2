@@ -4,26 +4,26 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 1 Reproducible Workflows | Data Skills for Reproducible Science</title>
-  <meta name="description" content="This course provides an overview of skills needed for reproducible research and open science using the statistical programming language R. Students will learn about data visualisation, data tidying and wrangling, archiving, iteration and functions, probability and data simulations, general linear models, and reproducible workflows. Learning is reinforced through weekly assignments that involve working with different types of data." />
+  <title>Chapter 1 Reproducible Workflows | Data Skills for Reproducible Research</title>
+  <meta name="description" content="This book provides an overview of skills needed for reproducible research and open science using the statistical programming language R and tidyverse packages. It covers data visualisation, data tidying and wrangling, archiving, iteration and functions, probability and data simulations, general linear models, and reproducible workflows." />
   <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 1 Reproducible Workflows | Data Skills for Reproducible Science" />
+  <meta property="og:title" content="Chapter 1 Reproducible Workflows | Data Skills for Reproducible Research" />
   <meta property="og:type" content="book" />
   
   
-  <meta property="og:description" content="This course provides an overview of skills needed for reproducible research and open science using the statistical programming language R. Students will learn about data visualisation, data tidying and wrangling, archiving, iteration and functions, probability and data simulations, general linear models, and reproducible workflows. Learning is reinforced through weekly assignments that involve working with different types of data." />
+  <meta property="og:description" content="This book provides an overview of skills needed for reproducible research and open science using the statistical programming language R and tidyverse packages. It covers data visualisation, data tidying and wrangling, archiving, iteration and functions, probability and data simulations, general linear models, and reproducible workflows." />
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 1 Reproducible Workflows | Data Skills for Reproducible Science" />
+  <meta name="twitter:title" content="Chapter 1 Reproducible Workflows | Data Skills for Reproducible Research" />
   
-  <meta name="twitter:description" content="This course provides an overview of skills needed for reproducible research and open science using the statistical programming language R. Students will learn about data visualisation, data tidying and wrangling, archiving, iteration and functions, probability and data simulations, general linear models, and reproducible workflows. Learning is reinforced through weekly assignments that involve working with different types of data." />
+  <meta name="twitter:description" content="This book provides an overview of skills needed for reproducible research and open science using the statistical programming language R and tidyverse packages. It covers data visualisation, data tidying and wrangling, archiving, iteration and functions, probability and data simulations, general linear models, and reproducible workflows." />
   
 
 
 
-<meta name="date" content="2021-08-17" />
+<meta name="date" content="2021-08-22" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -59,6 +59,23 @@
 <script src="libs/crosstalk-1.1.1/js/crosstalk.min.js"></script>
 <link href="libs/plotly-htmlwidgets-css-1.57.1/plotly-htmlwidgets.css" rel="stylesheet" />
 <script src="libs/plotly-main-1.57.1/plotly-latest.min.js"></script>
+<meta property="og:title" content="Chapter 1 Reproducible Workflows | Data Skills for Reproducible Research">
+<meta property="og:description" content="This book provides an overview of skills needed for reproducible research and open science using the statistical programming language R and tidyverse packages. It covers data visualisation, data tidying and wrangling, archiving, iteration and functions, probability and data simulations, general linear models, and reproducible workflows.">
+<meta property="og:image" content="https://psyteachr.github.io/reprores-v2/images/twitter_card.png">
+<meta property="og:url" content="https://psyteachr.github.io/reprores-v2/">
+<meta property="twitter:card" content="summary_large_image">
+
+<link rel="shortcut icon" href="https://psyteachr.github.io/reprores-v2/images/logo.png">
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-6NP3MF25W3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-6NP3MF25W3');
+</script>
 
 
 <style type="text/css">
@@ -164,57 +181,53 @@ div.csl-indent {
       <nav role="navigation">
 
 <ul class="summary">
-<li><a href="./">Data Skills for Reproducible Science</a></li>
+<li><a href="./">Data Skills for Reproducible Research</a></li>
 <li><a href="https://zenodo.org/badge/latestdoi/166541547"><img src="https://zenodo.org/badge/166541547.svg" alt="DOI"></a></li>
 <li><a href="https://www.youtube.com/playlist?list=PLA2iRWVwbpTIweEBHD2dOKjZHK1atRmXt">Video Playlist</a></li>
 
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Overview</a>
 <ul>
-<li class="chapter" data-level="0.1" data-path="index.html"><a href="index.html#course-aims"><i class="fa fa-check"></i><b>0.1</b> Course Aims</a></li>
-<li class="chapter" data-level="0.2" data-path="index.html"><a href="index.html#intended-learning-outcomes"><i class="fa fa-check"></i><b>0.2</b> Intended Learning Outcomes</a></li>
-<li class="chapter" data-level="0.3" data-path="index.html"><a href="index.html#course-resources"><i class="fa fa-check"></i><b>0.3</b> Course Resources</a></li>
-<li class="chapter" data-level="0.4" data-path="index.html"><a href="index.html#course-outline"><i class="fa fa-check"></i><b>0.4</b> Course Outline</a></li>
-<li class="chapter" data-level="0.5" data-path="index.html"><a href="index.html#formative-exercises"><i class="fa fa-check"></i><b>0.5</b> Formative Exercises</a></li>
-<li class="chapter" data-level="0.6" data-path="index.html"><a href="index.html#i-found-a-bug"><i class="fa fa-check"></i><b>0.6</b> I found a bug!</a></li>
-<li class="chapter" data-level="0.7" data-path="index.html"><a href="index.html#other-resources"><i class="fa fa-check"></i><b>0.7</b> Other Resources</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#course-resources"><i class="fa fa-check"></i>Course Resources</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#i-found-a-bug"><i class="fa fa-check"></i>I found a bug!</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#other-resources"><i class="fa fa-check"></i>Other Resources</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i>Getting Started</a>
+<li><a href="intro.html#intro"><strong>0</strong> Getting Started</a>
 <ul>
-<li class="chapter" data-level="0.8" data-path="intro.html"><a href="intro.html#ilo_intro"><i class="fa fa-check"></i><b>0.8</b> Learning Objectives</a></li>
-<li class="chapter" data-level="0.9" data-path="intro.html"><a href="intro.html#resources1"><i class="fa fa-check"></i><b>0.9</b> Resources</a></li>
-<li class="chapter" data-level="0.10" data-path="intro.html"><a href="intro.html#what-is-r"><i class="fa fa-check"></i><b>0.10</b> What is R?</a>
+<li class="chapter" data-level="0.1" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>0.1</b> Learning Objectives</a></li>
+<li class="chapter" data-level="0.2" data-path="intro.html"><a href="intro.html#resources-intro"><i class="fa fa-check"></i><b>0.2</b> Resources</a></li>
+<li class="chapter" data-level="0.3" data-path="intro.html"><a href="intro.html#what-is-r"><i class="fa fa-check"></i><b>0.3</b> What is R?</a>
 <ul>
-<li class="chapter" data-level="0.10.1" data-path="intro.html"><a href="intro.html#rconsole"><i class="fa fa-check"></i><b>0.10.1</b> The Base R Console</a></li>
-<li class="chapter" data-level="0.10.2" data-path="intro.html"><a href="intro.html#rstudio_ide"><i class="fa fa-check"></i><b>0.10.2</b> RStudio</a></li>
-<li class="chapter" data-level="0.10.3" data-path="intro.html"><a href="intro.html#configure-rstudio"><i class="fa fa-check"></i><b>0.10.3</b> Configure RStudio</a></li>
+<li class="chapter" data-level="0.3.1" data-path="intro.html"><a href="intro.html#rconsole"><i class="fa fa-check"></i><b>0.3.1</b> The Base R Console</a></li>
+<li class="chapter" data-level="0.3.2" data-path="intro.html"><a href="intro.html#rstudio_ide"><i class="fa fa-check"></i><b>0.3.2</b> RStudio</a></li>
+<li class="chapter" data-level="0.3.3" data-path="intro.html"><a href="intro.html#configure-rstudio"><i class="fa fa-check"></i><b>0.3.3</b> Configure RStudio</a></li>
 </ul></li>
-<li class="chapter" data-level="0.11" data-path="intro.html"><a href="intro.html#getting-started"><i class="fa fa-check"></i><b>0.11</b> Getting Started</a>
+<li class="chapter" data-level="0.4" data-path="intro.html"><a href="intro.html#getting-started"><i class="fa fa-check"></i><b>0.4</b> Getting Started</a>
 <ul>
-<li class="chapter" data-level="0.11.1" data-path="intro.html"><a href="intro.html#console"><i class="fa fa-check"></i><b>0.11.1</b> Console commands</a></li>
-<li class="chapter" data-level="0.11.2" data-path="intro.html"><a href="intro.html#vars"><i class="fa fa-check"></i><b>0.11.2</b> Objects</a></li>
-<li class="chapter" data-level="0.11.3" data-path="intro.html"><a href="intro.html#the-environment"><i class="fa fa-check"></i><b>0.11.3</b> The environment</a></li>
-<li class="chapter" data-level="0.11.4" data-path="intro.html"><a href="intro.html#whitespace"><i class="fa fa-check"></i><b>0.11.4</b> Whitespace</a></li>
-<li class="chapter" data-level="0.11.5" data-path="intro.html"><a href="intro.html#function_syx"><i class="fa fa-check"></i><b>0.11.5</b> Function syntax</a></li>
-<li class="chapter" data-level="0.11.6" data-path="intro.html"><a href="intro.html#help"><i class="fa fa-check"></i><b>0.11.6</b> Getting help</a></li>
+<li class="chapter" data-level="0.4.1" data-path="intro.html"><a href="intro.html#console"><i class="fa fa-check"></i><b>0.4.1</b> Console commands</a></li>
+<li class="chapter" data-level="0.4.2" data-path="intro.html"><a href="intro.html#vars"><i class="fa fa-check"></i><b>0.4.2</b> Objects</a></li>
+<li class="chapter" data-level="0.4.3" data-path="intro.html"><a href="intro.html#the-environment"><i class="fa fa-check"></i><b>0.4.3</b> The environment</a></li>
+<li class="chapter" data-level="0.4.4" data-path="intro.html"><a href="intro.html#whitespace"><i class="fa fa-check"></i><b>0.4.4</b> Whitespace</a></li>
+<li class="chapter" data-level="0.4.5" data-path="intro.html"><a href="intro.html#function_syx"><i class="fa fa-check"></i><b>0.4.5</b> Function syntax</a></li>
+<li class="chapter" data-level="0.4.6" data-path="intro.html"><a href="intro.html#help"><i class="fa fa-check"></i><b>0.4.6</b> Getting help</a></li>
 </ul></li>
-<li class="chapter" data-level="0.12" data-path="intro.html"><a href="intro.html#install-package"><i class="fa fa-check"></i><b>0.12</b> Add-on packages</a>
+<li class="chapter" data-level="0.5" data-path="intro.html"><a href="intro.html#install-package"><i class="fa fa-check"></i><b>0.5</b> Add-on packages</a>
 <ul>
-<li class="chapter" data-level="0.12.1" data-path="intro.html"><a href="intro.html#installing-a-package"><i class="fa fa-check"></i><b>0.12.1</b> Installing a package</a></li>
-<li class="chapter" data-level="0.12.2" data-path="intro.html"><a href="intro.html#loading-a-package"><i class="fa fa-check"></i><b>0.12.2</b> Loading a package</a></li>
-<li class="chapter" data-level="0.12.3" data-path="intro.html"><a href="intro.html#install-from-github"><i class="fa fa-check"></i><b>0.12.3</b> Install from GitHub</a></li>
+<li class="chapter" data-level="0.5.1" data-path="intro.html"><a href="intro.html#installing-a-package"><i class="fa fa-check"></i><b>0.5.1</b> Installing a package</a></li>
+<li class="chapter" data-level="0.5.2" data-path="intro.html"><a href="intro.html#loading-a-package"><i class="fa fa-check"></i><b>0.5.2</b> Loading a package</a></li>
+<li class="chapter" data-level="0.5.3" data-path="intro.html"><a href="intro.html#install-from-github"><i class="fa fa-check"></i><b>0.5.3</b> Install from GitHub</a></li>
 </ul></li>
-<li class="chapter" data-level="0.13" data-path="intro.html"><a href="intro.html#glossary1"><i class="fa fa-check"></i><b>0.13</b> Glossary</a></li>
+<li class="chapter" data-level="0.6" data-path="intro.html"><a href="intro.html#glossaryintro"><i class="fa fa-check"></i><b>0.6</b> Glossary</a></li>
 </ul></li>
 <li class="chapter" data-level="1" data-path="repro.html"><a href="repro.html"><i class="fa fa-check"></i><b>1</b> Reproducible Workflows</a>
 <ul>
-<li class="chapter" data-level="1.1" data-path="repro.html"><a href="repro.html#ilo_repro"><i class="fa fa-check"></i><b>1.1</b> Learning Objectives</a>
+<li class="chapter" data-level="1.1" data-path="repro.html"><a href="repro.html#ilo-repro"><i class="fa fa-check"></i><b>1.1</b> Learning Objectives</a>
 <ul>
 <li class="chapter" data-level="1.1.1" data-path="repro.html"><a href="repro.html#basic"><i class="fa fa-check"></i><b>1.1.1</b> Basic</a></li>
 <li class="chapter" data-level="1.1.2" data-path="repro.html"><a href="repro.html#intermediate"><i class="fa fa-check"></i><b>1.1.2</b> Intermediate</a></li>
 </ul></li>
-<li class="chapter" data-level="1.2" data-path="repro.html"><a href="repro.html#resources10"><i class="fa fa-check"></i><b>1.2</b> Resources</a></li>
-<li class="chapter" data-level="1.3" data-path="repro.html"><a href="repro.html#setup_repro"><i class="fa fa-check"></i><b>1.3</b> Setup</a></li>
+<li class="chapter" data-level="1.2" data-path="repro.html"><a href="repro.html#resources-repro"><i class="fa fa-check"></i><b>1.2</b> Resources</a></li>
+<li class="chapter" data-level="1.3" data-path="repro.html"><a href="repro.html#setup-repro"><i class="fa fa-check"></i><b>1.3</b> Setup</a></li>
 <li class="chapter" data-level="1.4" data-path="repro.html"><a href="repro.html#why-learn-reproducible-reports"><i class="fa fa-check"></i><b>1.4</b> Why learn reproducible reports?</a></li>
 <li class="chapter" data-level="1.5" data-path="repro.html"><a href="repro.html#projects"><i class="fa fa-check"></i><b>1.5</b> Organising a project</a>
 <ul>
@@ -230,8 +243,8 @@ div.csl-indent {
 <li class="chapter" data-level="1.6.6" data-path="repro.html"><a href="repro.html#output-formats"><i class="fa fa-check"></i><b>1.6.6</b> Output Formats</a></li>
 <li class="chapter" data-level="1.6.7" data-path="repro.html"><a href="repro.html#computational-reproducibility"><i class="fa fa-check"></i><b>1.6.7</b> Computational Reproducibility</a></li>
 </ul></li>
-<li class="chapter" data-level="1.7" data-path="repro.html"><a href="repro.html#glossary_repro"><i class="fa fa-check"></i><b>1.7</b> Glossary</a></li>
-<li class="chapter" data-level="1.8" data-path="repro.html"><a href="repro.html#exercises_repro"><i class="fa fa-check"></i><b>1.8</b> Exercises</a></li>
+<li class="chapter" data-level="1.7" data-path="repro.html"><a href="repro.html#glossary-repro"><i class="fa fa-check"></i><b>1.7</b> Glossary</a></li>
+<li class="chapter" data-level="1.8" data-path="repro.html"><a href="repro.html#exercises-repro"><i class="fa fa-check"></i><b>1.8</b> Exercises</a></li>
 <li class="chapter" data-level="1.9" data-path="repro.html"><a href="repro.html#references"><i class="fa fa-check"></i><b>1.9</b> References</a></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="ggplot.html"><a href="ggplot.html"><i class="fa fa-check"></i><b>2</b> Data Visualisation</a>
@@ -261,10 +274,11 @@ div.csl-indent {
 </ul></li>
 <li class="chapter" data-level="2.8" data-path="ggplot.html"><a href="ggplot.html#customisation"><i class="fa fa-check"></i><b>2.8</b> Customisation</a>
 <ul>
-<li class="chapter" data-level="2.8.1" data-path="ggplot.html"><a href="ggplot.html#custom-labels"><i class="fa fa-check"></i><b>2.8.1</b> Labels</a></li>
-<li class="chapter" data-level="2.8.2" data-path="ggplot.html"><a href="ggplot.html#custom-colours"><i class="fa fa-check"></i><b>2.8.2</b> Colours</a></li>
-<li class="chapter" data-level="2.8.3" data-path="ggplot.html"><a href="ggplot.html#themes"><i class="fa fa-check"></i><b>2.8.3</b> Themes</a></li>
-<li class="chapter" data-level="2.8.4" data-path="ggplot.html"><a href="ggplot.html#ggsave"><i class="fa fa-check"></i><b>2.8.4</b> Save as file</a></li>
+<li class="chapter" data-level="2.8.1" data-path="ggplot.html"><a href="ggplot.html#custom-size"><i class="fa fa-check"></i><b>2.8.1</b> Size and Position</a></li>
+<li class="chapter" data-level="2.8.2" data-path="ggplot.html"><a href="ggplot.html#custom-labels"><i class="fa fa-check"></i><b>2.8.2</b> Labels</a></li>
+<li class="chapter" data-level="2.8.3" data-path="ggplot.html"><a href="ggplot.html#custom-colours"><i class="fa fa-check"></i><b>2.8.3</b> Colours</a></li>
+<li class="chapter" data-level="2.8.4" data-path="ggplot.html"><a href="ggplot.html#themes"><i class="fa fa-check"></i><b>2.8.4</b> Themes</a></li>
+<li class="chapter" data-level="2.8.5" data-path="ggplot.html"><a href="ggplot.html#ggsave"><i class="fa fa-check"></i><b>2.8.5</b> Save as file</a></li>
 </ul></li>
 <li class="chapter" data-level="2.9" data-path="ggplot.html"><a href="ggplot.html#combo_plots"><i class="fa fa-check"></i><b>2.9</b> Combination Plots</a>
 <ul>
@@ -272,7 +286,7 @@ div.csl-indent {
 <li class="chapter" data-level="2.9.2" data-path="ggplot.html"><a href="ggplot.html#violin-point-range-plot"><i class="fa fa-check"></i><b>2.9.2</b> Violin-point-range plot</a></li>
 <li class="chapter" data-level="2.9.3" data-path="ggplot.html"><a href="ggplot.html#violin-jitter-plot"><i class="fa fa-check"></i><b>2.9.3</b> Violin-jitter plot</a></li>
 <li class="chapter" data-level="2.9.4" data-path="ggplot.html"><a href="ggplot.html#scatter-line-graph"><i class="fa fa-check"></i><b>2.9.4</b> Scatter-line graph</a></li>
-<li class="chapter" data-level="2.9.5" data-path="ggplot.html"><a href="ggplot.html#cowplot"><i class="fa fa-check"></i><b>2.9.5</b> Grid of plots</a></li>
+<li class="chapter" data-level="2.9.5" data-path="ggplot.html"><a href="ggplot.html#plot_grid"><i class="fa fa-check"></i><b>2.9.5</b> Grid of plots</a></li>
 </ul></li>
 <li class="chapter" data-level="2.10" data-path="ggplot.html"><a href="ggplot.html#overlap"><i class="fa fa-check"></i><b>2.10</b> Overlapping Discrete Data</a>
 <ul>
@@ -287,8 +301,8 @@ div.csl-indent {
 <li class="chapter" data-level="2.11.4" data-path="ggplot.html"><a href="ggplot.html#geom_tile"><i class="fa fa-check"></i><b>2.11.4</b> Correlation Heatmap</a></li>
 </ul></li>
 <li class="chapter" data-level="2.12" data-path="ggplot.html"><a href="ggplot.html#plotly"><i class="fa fa-check"></i><b>2.12</b> Interactive Plots</a></li>
-<li class="chapter" data-level="2.13" data-path="ggplot.html"><a href="ggplot.html#glossary3"><i class="fa fa-check"></i><b>2.13</b> Glossary</a></li>
-<li class="chapter" data-level="2.14" data-path="ggplot.html"><a href="ggplot.html#exercises3"><i class="fa fa-check"></i><b>2.14</b> Exercises</a></li>
+<li class="chapter" data-level="2.13" data-path="ggplot.html"><a href="ggplot.html#glossary-ggplot"><i class="fa fa-check"></i><b>2.13</b> Glossary</a></li>
+<li class="chapter" data-level="2.14" data-path="ggplot.html"><a href="ggplot.html#exercises-ggplot"><i class="fa fa-check"></i><b>2.14</b> Exercises</a></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="data.html"><a href="data.html"><i class="fa fa-check"></i><b>3</b> Working with Data</a>
 <ul>
@@ -315,119 +329,119 @@ div.csl-indent {
 <li class="chapter" data-level="3.6.3" data-path="repro.html"><a href="repro.html#tables"><i class="fa fa-check"></i><b>3.6.3</b> Tables</a></li>
 </ul></li>
 <li class="chapter" data-level="3.7" data-path="data.html"><a href="data.html#troubleshooting"><i class="fa fa-check"></i><b>3.7</b> Troubleshooting</a></li>
-<li class="chapter" data-level="3.8" data-path="data.html"><a href="data.html#glossary2"><i class="fa fa-check"></i><b>3.8</b> Glossary</a></li>
-<li class="chapter" data-level="3.9" data-path="data.html"><a href="data.html#exercises2"><i class="fa fa-check"></i><b>3.9</b> Exercises</a></li>
+<li class="chapter" data-level="3.8" data-path="data.html"><a href="data.html#glossary-data"><i class="fa fa-check"></i><b>3.8</b> Glossary</a></li>
+<li class="chapter" data-level="3.9" data-path="data.html"><a href="data.html#exercises-data"><i class="fa fa-check"></i><b>3.9</b> Exercises</a></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="tidyr.html"><a href="tidyr.html"><i class="fa fa-check"></i><b>4</b> Tidy Data</a>
+<li class="chapter" data-level="4" data-path="joins.html"><a href="joins.html"><i class="fa fa-check"></i><b>4</b> Data Relations</a>
 <ul>
-<li class="chapter" data-level="4.1" data-path="tidyr.html"><a href="tidyr.html#ilo4"><i class="fa fa-check"></i><b>4.1</b> Learning Objectives</a>
+<li class="chapter" data-level="4.1" data-path="joins.html"><a href="joins.html#ilo-joins"><i class="fa fa-check"></i><b>4.1</b> Learning Objectives</a></li>
+<li class="chapter" data-level="4.2" data-path="joins.html"><a href="joins.html#resources6"><i class="fa fa-check"></i><b>4.2</b> Resources</a></li>
+<li class="chapter" data-level="4.3" data-path="joins.html"><a href="joins.html#setup-joins"><i class="fa fa-check"></i><b>4.3</b> Setup</a></li>
+<li class="chapter" data-level="4.4" data-path="joins.html"><a href="joins.html#data-1"><i class="fa fa-check"></i><b>4.4</b> Data</a></li>
+<li class="chapter" data-level="4.5" data-path="joins.html"><a href="joins.html#mutating-joins"><i class="fa fa-check"></i><b>4.5</b> Mutating Joins</a>
 <ul>
-<li class="chapter" data-level="4.1.1" data-path="tidyr.html"><a href="tidyr.html#basic-2"><i class="fa fa-check"></i><b>4.1.1</b> Basic</a></li>
-<li class="chapter" data-level="4.1.2" data-path="tidyr.html"><a href="tidyr.html#advanced"><i class="fa fa-check"></i><b>4.1.2</b> Advanced</a></li>
+<li class="chapter" data-level="4.5.1" data-path="joins.html"><a href="joins.html#left_join"><i class="fa fa-check"></i><b>4.5.1</b> left_join()</a></li>
+<li class="chapter" data-level="4.5.2" data-path="joins.html"><a href="joins.html#right_join"><i class="fa fa-check"></i><b>4.5.2</b> right_join()</a></li>
+<li class="chapter" data-level="4.5.3" data-path="joins.html"><a href="joins.html#inner_join"><i class="fa fa-check"></i><b>4.5.3</b> inner_join()</a></li>
+<li class="chapter" data-level="4.5.4" data-path="joins.html"><a href="joins.html#full_join"><i class="fa fa-check"></i><b>4.5.4</b> full_join()</a></li>
 </ul></li>
-<li class="chapter" data-level="4.2" data-path="tidyr.html"><a href="tidyr.html#resources4"><i class="fa fa-check"></i><b>4.2</b> Resources</a></li>
-<li class="chapter" data-level="4.3" data-path="tidyr.html"><a href="tidyr.html#setup4"><i class="fa fa-check"></i><b>4.3</b> Setup</a></li>
-<li class="chapter" data-level="4.4" data-path="tidyr.html"><a href="tidyr.html#tidy-data"><i class="fa fa-check"></i><b>4.4</b> Tidy Data</a>
+<li class="chapter" data-level="4.6" data-path="joins.html"><a href="joins.html#filtering-joins"><i class="fa fa-check"></i><b>4.6</b> Filtering Joins</a>
 <ul>
-<li class="chapter" data-level="4.4.1" data-path="tidyr.html"><a href="tidyr.html#three-rules"><i class="fa fa-check"></i><b>4.4.1</b> Three Rules</a></li>
-<li class="chapter" data-level="4.4.2" data-path="tidyr.html"><a href="tidyr.html#wide_long"><i class="fa fa-check"></i><b>4.4.2</b> Wide versus long</a></li>
+<li class="chapter" data-level="4.6.1" data-path="joins.html"><a href="joins.html#semi_join"><i class="fa fa-check"></i><b>4.6.1</b> semi_join()</a></li>
+<li class="chapter" data-level="4.6.2" data-path="joins.html"><a href="joins.html#anti_join"><i class="fa fa-check"></i><b>4.6.2</b> anti_join()</a></li>
 </ul></li>
-<li class="chapter" data-level="4.5" data-path="tidyr.html"><a href="tidyr.html#pivot"><i class="fa fa-check"></i><b>4.5</b> Pivot Functions</a>
+<li class="chapter" data-level="4.7" data-path="joins.html"><a href="joins.html#binding-joins"><i class="fa fa-check"></i><b>4.7</b> Binding Joins</a>
 <ul>
-<li class="chapter" data-level="4.5.1" data-path="tidyr.html"><a href="tidyr.html#load-data"><i class="fa fa-check"></i><b>4.5.1</b> Load Data</a></li>
-<li class="chapter" data-level="4.5.2" data-path="tidyr.html"><a href="tidyr.html#pivot_longer"><i class="fa fa-check"></i><b>4.5.2</b> pivot_longer()</a></li>
-<li class="chapter" data-level="4.5.3" data-path="tidyr.html"><a href="tidyr.html#pivot_wider"><i class="fa fa-check"></i><b>4.5.3</b> pivot_wider()</a></li>
+<li class="chapter" data-level="4.7.1" data-path="joins.html"><a href="joins.html#bind_rows"><i class="fa fa-check"></i><b>4.7.1</b> bind_rows()</a></li>
+<li class="chapter" data-level="4.7.2" data-path="joins.html"><a href="joins.html#bind_cols"><i class="fa fa-check"></i><b>4.7.2</b> bind_cols()</a></li>
 </ul></li>
-<li class="chapter" data-level="4.6" data-path="tidyr.html"><a href="tidyr.html#tidy-verbs"><i class="fa fa-check"></i><b>4.6</b> Tidy Verbs</a>
+<li class="chapter" data-level="4.8" data-path="joins.html"><a href="joins.html#set-operations"><i class="fa fa-check"></i><b>4.8</b> Set Operations</a>
 <ul>
-<li class="chapter" data-level="4.6.1" data-path="tidyr.html"><a href="tidyr.html#gather"><i class="fa fa-check"></i><b>4.6.1</b> gather()</a></li>
-<li class="chapter" data-level="4.6.2" data-path="tidyr.html"><a href="tidyr.html#separate"><i class="fa fa-check"></i><b>4.6.2</b> separate()</a></li>
-<li class="chapter" data-level="4.6.3" data-path="tidyr.html"><a href="tidyr.html#unite"><i class="fa fa-check"></i><b>4.6.3</b> unite()</a></li>
-<li class="chapter" data-level="4.6.4" data-path="tidyr.html"><a href="tidyr.html#spread"><i class="fa fa-check"></i><b>4.6.4</b> spread()</a></li>
+<li class="chapter" data-level="4.8.1" data-path="joins.html"><a href="joins.html#intersect"><i class="fa fa-check"></i><b>4.8.1</b> intersect()</a></li>
+<li class="chapter" data-level="4.8.2" data-path="joins.html"><a href="joins.html#union"><i class="fa fa-check"></i><b>4.8.2</b> union()</a></li>
+<li class="chapter" data-level="4.8.3" data-path="joins.html"><a href="joins.html#setdiff"><i class="fa fa-check"></i><b>4.8.3</b> setdiff()</a></li>
 </ul></li>
-<li class="chapter" data-level="4.7" data-path="tidyr.html"><a href="tidyr.html#pipes"><i class="fa fa-check"></i><b>4.7</b> Pipes</a></li>
-<li class="chapter" data-level="4.8" data-path="tidyr.html"><a href="tidyr.html#more-complex-example"><i class="fa fa-check"></i><b>4.8</b> More Complex Example</a>
+<li class="chapter" data-level="4.9" data-path="joins.html"><a href="joins.html#glossary-joins"><i class="fa fa-check"></i><b>4.9</b> Glossary</a></li>
+<li class="chapter" data-level="4.10" data-path="joins.html"><a href="joins.html#exercises-joins"><i class="fa fa-check"></i><b>4.10</b> Exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="tidyr.html"><a href="tidyr.html"><i class="fa fa-check"></i><b>5</b> Tidy Data</a>
 <ul>
-<li class="chapter" data-level="4.8.1" data-path="tidyr.html"><a href="tidyr.html#load-data-1"><i class="fa fa-check"></i><b>4.8.1</b> Load Data</a></li>
-<li class="chapter" data-level="4.8.2" data-path="tidyr.html"><a href="tidyr.html#wide-to-long"><i class="fa fa-check"></i><b>4.8.2</b> Wide to Long</a></li>
-<li class="chapter" data-level="4.8.3" data-path="tidyr.html"><a href="tidyr.html#one-piece-of-data-per-column"><i class="fa fa-check"></i><b>4.8.3</b> One Piece of Data per Column</a></li>
-<li class="chapter" data-level="4.8.4" data-path="tidyr.html"><a href="tidyr.html#all-in-one-step"><i class="fa fa-check"></i><b>4.8.4</b> All in one step</a></li>
-<li class="chapter" data-level="4.8.5" data-path="tidyr.html"><a href="tidyr.html#columns-by-year"><i class="fa fa-check"></i><b>4.8.5</b> Columns by Year</a></li>
-<li class="chapter" data-level="4.8.6" data-path="tidyr.html"><a href="tidyr.html#experimentum-data"><i class="fa fa-check"></i><b>4.8.6</b> Experimentum Data</a></li>
-</ul></li>
-<li class="chapter" data-level="4.9" data-path="tidyr.html"><a href="tidyr.html#glossary4"><i class="fa fa-check"></i><b>4.9</b> Glossary</a></li>
-<li class="chapter" data-level="4.10" data-path="tidyr.html"><a href="tidyr.html#exercises4"><i class="fa fa-check"></i><b>4.10</b> Exercises</a></li>
-</ul></li>
-<li class="chapter" data-level="5" data-path="dplyr.html"><a href="dplyr.html"><i class="fa fa-check"></i><b>5</b> Data Wrangling</a>
+<li class="chapter" data-level="5.1" data-path="tidyr.html"><a href="tidyr.html#ilo-tidyr"><i class="fa fa-check"></i><b>5.1</b> Learning Objectives</a>
 <ul>
-<li class="chapter" data-level="5.1" data-path="dplyr.html"><a href="dplyr.html#ilo5"><i class="fa fa-check"></i><b>5.1</b> Learning Objectives</a>
-<ul>
-<li class="chapter" data-level="5.1.1" data-path="dplyr.html"><a href="dplyr.html#basic-3"><i class="fa fa-check"></i><b>5.1.1</b> Basic</a></li>
-<li class="chapter" data-level="5.1.2" data-path="dplyr.html"><a href="dplyr.html#intermediate-2"><i class="fa fa-check"></i><b>5.1.2</b> Intermediate</a></li>
+<li class="chapter" data-level="5.1.1" data-path="tidyr.html"><a href="tidyr.html#basic-2"><i class="fa fa-check"></i><b>5.1.1</b> Basic</a></li>
+<li class="chapter" data-level="5.1.2" data-path="tidyr.html"><a href="tidyr.html#advanced"><i class="fa fa-check"></i><b>5.1.2</b> Advanced</a></li>
 </ul></li>
-<li class="chapter" data-level="5.2" data-path="dplyr.html"><a href="dplyr.html#resources5"><i class="fa fa-check"></i><b>5.2</b> Resources</a></li>
-<li class="chapter" data-level="5.3" data-path="dplyr.html"><a href="dplyr.html#setup5"><i class="fa fa-check"></i><b>5.3</b> Setup</a>
+<li class="chapter" data-level="5.2" data-path="tidyr.html"><a href="tidyr.html#resources-tidyr"><i class="fa fa-check"></i><b>5.2</b> Resources</a></li>
+<li class="chapter" data-level="5.3" data-path="tidyr.html"><a href="tidyr.html#setup-tidyr"><i class="fa fa-check"></i><b>5.3</b> Setup</a></li>
+<li class="chapter" data-level="5.4" data-path="tidyr.html"><a href="tidyr.html#tidy-data"><i class="fa fa-check"></i><b>5.4</b> Tidy Data</a>
 <ul>
-<li class="chapter" data-level="5.3.1" data-path="dplyr.html"><a href="dplyr.html#data-disgust"><i class="fa fa-check"></i><b>5.3.1</b> The <code>disgust</code> dataset</a></li>
+<li class="chapter" data-level="5.4.1" data-path="tidyr.html"><a href="tidyr.html#three-rules"><i class="fa fa-check"></i><b>5.4.1</b> Three Rules</a></li>
+<li class="chapter" data-level="5.4.2" data-path="tidyr.html"><a href="tidyr.html#wide_long"><i class="fa fa-check"></i><b>5.4.2</b> Wide versus long</a></li>
 </ul></li>
-<li class="chapter" data-level="5.4" data-path="dplyr.html"><a href="dplyr.html#six-main-dplyr-verbs"><i class="fa fa-check"></i><b>5.4</b> Six main dplyr verbs</a>
+<li class="chapter" data-level="5.5" data-path="tidyr.html"><a href="tidyr.html#pivot"><i class="fa fa-check"></i><b>5.5</b> Pivot Functions</a>
 <ul>
-<li class="chapter" data-level="5.4.1" data-path="dplyr.html"><a href="dplyr.html#select"><i class="fa fa-check"></i><b>5.4.1</b> select()</a></li>
-<li class="chapter" data-level="5.4.2" data-path="dplyr.html"><a href="dplyr.html#filter"><i class="fa fa-check"></i><b>5.4.2</b> filter()</a></li>
-<li class="chapter" data-level="5.4.3" data-path="dplyr.html"><a href="dplyr.html#arrange"><i class="fa fa-check"></i><b>5.4.3</b> arrange()</a></li>
-<li class="chapter" data-level="5.4.4" data-path="dplyr.html"><a href="dplyr.html#mutate"><i class="fa fa-check"></i><b>5.4.4</b> mutate()</a></li>
-<li class="chapter" data-level="5.4.5" data-path="dplyr.html"><a href="dplyr.html#summarise"><i class="fa fa-check"></i><b>5.4.5</b> summarise()</a></li>
-<li class="chapter" data-level="5.4.6" data-path="dplyr.html"><a href="dplyr.html#group_by"><i class="fa fa-check"></i><b>5.4.6</b> group_by()</a></li>
-<li class="chapter" data-level="5.4.7" data-path="dplyr.html"><a href="dplyr.html#all-together"><i class="fa fa-check"></i><b>5.4.7</b> All Together</a></li>
+<li class="chapter" data-level="5.5.1" data-path="tidyr.html"><a href="tidyr.html#load-data"><i class="fa fa-check"></i><b>5.5.1</b> Load Data</a></li>
+<li class="chapter" data-level="5.5.2" data-path="tidyr.html"><a href="tidyr.html#pivot_longer"><i class="fa fa-check"></i><b>5.5.2</b> pivot_longer()</a></li>
+<li class="chapter" data-level="5.5.3" data-path="tidyr.html"><a href="tidyr.html#pivot_wider"><i class="fa fa-check"></i><b>5.5.3</b> pivot_wider()</a></li>
 </ul></li>
-<li class="chapter" data-level="5.5" data-path="dplyr.html"><a href="dplyr.html#additional-dplyr-one-table-verbs"><i class="fa fa-check"></i><b>5.5</b> Additional dplyr one-table verbs</a>
+<li class="chapter" data-level="5.6" data-path="tidyr.html"><a href="tidyr.html#tidy-verbs"><i class="fa fa-check"></i><b>5.6</b> Tidy Verbs</a>
 <ul>
-<li class="chapter" data-level="5.5.1" data-path="dplyr.html"><a href="dplyr.html#rename"><i class="fa fa-check"></i><b>5.5.1</b> rename()</a></li>
-<li class="chapter" data-level="5.5.2" data-path="dplyr.html"><a href="dplyr.html#distinct"><i class="fa fa-check"></i><b>5.5.2</b> distinct()</a></li>
-<li class="chapter" data-level="5.5.3" data-path="dplyr.html"><a href="dplyr.html#count"><i class="fa fa-check"></i><b>5.5.3</b> count()</a></li>
-<li class="chapter" data-level="5.5.4" data-path="dplyr.html"><a href="dplyr.html#slice"><i class="fa fa-check"></i><b>5.5.4</b> slice()</a></li>
-<li class="chapter" data-level="5.5.5" data-path="dplyr.html"><a href="dplyr.html#pull"><i class="fa fa-check"></i><b>5.5.5</b> pull()</a></li>
+<li class="chapter" data-level="5.6.1" data-path="tidyr.html"><a href="tidyr.html#gather"><i class="fa fa-check"></i><b>5.6.1</b> gather()</a></li>
+<li class="chapter" data-level="5.6.2" data-path="tidyr.html"><a href="tidyr.html#separate"><i class="fa fa-check"></i><b>5.6.2</b> separate()</a></li>
+<li class="chapter" data-level="5.6.3" data-path="tidyr.html"><a href="tidyr.html#unite"><i class="fa fa-check"></i><b>5.6.3</b> unite()</a></li>
+<li class="chapter" data-level="5.6.4" data-path="tidyr.html"><a href="tidyr.html#spread"><i class="fa fa-check"></i><b>5.6.4</b> spread()</a></li>
 </ul></li>
-<li class="chapter" data-level="5.6" data-path="dplyr.html"><a href="dplyr.html#window"><i class="fa fa-check"></i><b>5.6</b> Window functions</a>
+<li class="chapter" data-level="5.7" data-path="tidyr.html"><a href="tidyr.html#pipes"><i class="fa fa-check"></i><b>5.7</b> Pipes</a></li>
+<li class="chapter" data-level="5.8" data-path="tidyr.html"><a href="tidyr.html#more-complex-example"><i class="fa fa-check"></i><b>5.8</b> More Complex Example</a>
 <ul>
-<li class="chapter" data-level="5.6.1" data-path="dplyr.html"><a href="dplyr.html#ranking-functions"><i class="fa fa-check"></i><b>5.6.1</b> Ranking functions</a></li>
-<li class="chapter" data-level="5.6.2" data-path="dplyr.html"><a href="dplyr.html#offset-functions"><i class="fa fa-check"></i><b>5.6.2</b> Offset functions</a></li>
-<li class="chapter" data-level="5.6.3" data-path="dplyr.html"><a href="dplyr.html#cumulative-aggregates"><i class="fa fa-check"></i><b>5.6.3</b> Cumulative aggregates</a></li>
+<li class="chapter" data-level="5.8.1" data-path="tidyr.html"><a href="tidyr.html#load-data-1"><i class="fa fa-check"></i><b>5.8.1</b> Load Data</a></li>
+<li class="chapter" data-level="5.8.2" data-path="tidyr.html"><a href="tidyr.html#wide-to-long"><i class="fa fa-check"></i><b>5.8.2</b> Wide to Long</a></li>
+<li class="chapter" data-level="5.8.3" data-path="tidyr.html"><a href="tidyr.html#one-piece-of-data-per-column"><i class="fa fa-check"></i><b>5.8.3</b> One Piece of Data per Column</a></li>
+<li class="chapter" data-level="5.8.4" data-path="tidyr.html"><a href="tidyr.html#all-in-one-step"><i class="fa fa-check"></i><b>5.8.4</b> All in one step</a></li>
+<li class="chapter" data-level="5.8.5" data-path="tidyr.html"><a href="tidyr.html#columns-by-year"><i class="fa fa-check"></i><b>5.8.5</b> Columns by Year</a></li>
+<li class="chapter" data-level="5.8.6" data-path="tidyr.html"><a href="tidyr.html#experimentum-data"><i class="fa fa-check"></i><b>5.8.6</b> Experimentum Data</a></li>
 </ul></li>
-<li class="chapter" data-level="5.7" data-path="dplyr.html"><a href="dplyr.html#glossary5"><i class="fa fa-check"></i><b>5.7</b> Glossary</a></li>
-<li class="chapter" data-level="5.8" data-path="dplyr.html"><a href="dplyr.html#exercises5"><i class="fa fa-check"></i><b>5.8</b> Exercises</a></li>
+<li class="chapter" data-level="5.9" data-path="tidyr.html"><a href="tidyr.html#glossary-tidyr"><i class="fa fa-check"></i><b>5.9</b> Glossary</a></li>
+<li class="chapter" data-level="5.10" data-path="tidyr.html"><a href="tidyr.html#exercises-tidyr"><i class="fa fa-check"></i><b>5.10</b> Exercises</a></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="joins.html"><a href="joins.html"><i class="fa fa-check"></i><b>6</b> Data Relations</a>
+<li class="chapter" data-level="6" data-path="dplyr.html"><a href="dplyr.html"><i class="fa fa-check"></i><b>6</b> Data Wrangling</a>
 <ul>
-<li class="chapter" data-level="6.1" data-path="joins.html"><a href="joins.html#ilo6"><i class="fa fa-check"></i><b>6.1</b> Learning Objectives</a></li>
-<li class="chapter" data-level="6.2" data-path="joins.html"><a href="joins.html#resources6"><i class="fa fa-check"></i><b>6.2</b> Resources</a></li>
-<li class="chapter" data-level="6.3" data-path="joins.html"><a href="joins.html#setup6"><i class="fa fa-check"></i><b>6.3</b> Setup</a></li>
-<li class="chapter" data-level="6.4" data-path="joins.html"><a href="joins.html#data-1"><i class="fa fa-check"></i><b>6.4</b> Data</a></li>
-<li class="chapter" data-level="6.5" data-path="joins.html"><a href="joins.html#mutating-joins"><i class="fa fa-check"></i><b>6.5</b> Mutating Joins</a>
+<li class="chapter" data-level="6.1" data-path="dplyr.html"><a href="dplyr.html#ilo-dplyr"><i class="fa fa-check"></i><b>6.1</b> Learning Objectives</a>
 <ul>
-<li class="chapter" data-level="6.5.1" data-path="joins.html"><a href="joins.html#left_join"><i class="fa fa-check"></i><b>6.5.1</b> left_join()</a></li>
-<li class="chapter" data-level="6.5.2" data-path="joins.html"><a href="joins.html#right_join"><i class="fa fa-check"></i><b>6.5.2</b> right_join()</a></li>
-<li class="chapter" data-level="6.5.3" data-path="joins.html"><a href="joins.html#inner_join"><i class="fa fa-check"></i><b>6.5.3</b> inner_join()</a></li>
-<li class="chapter" data-level="6.5.4" data-path="joins.html"><a href="joins.html#full_join"><i class="fa fa-check"></i><b>6.5.4</b> full_join()</a></li>
+<li class="chapter" data-level="6.1.1" data-path="dplyr.html"><a href="dplyr.html#basic-3"><i class="fa fa-check"></i><b>6.1.1</b> Basic</a></li>
+<li class="chapter" data-level="6.1.2" data-path="dplyr.html"><a href="dplyr.html#intermediate-2"><i class="fa fa-check"></i><b>6.1.2</b> Intermediate</a></li>
 </ul></li>
-<li class="chapter" data-level="6.6" data-path="joins.html"><a href="joins.html#filtering-joins"><i class="fa fa-check"></i><b>6.6</b> Filtering Joins</a>
+<li class="chapter" data-level="6.2" data-path="dplyr.html"><a href="dplyr.html#resources5"><i class="fa fa-check"></i><b>6.2</b> Resources</a></li>
+<li class="chapter" data-level="6.3" data-path="dplyr.html"><a href="dplyr.html#setup-dplyr"><i class="fa fa-check"></i><b>6.3</b> Setup</a>
 <ul>
-<li class="chapter" data-level="6.6.1" data-path="joins.html"><a href="joins.html#semi_join"><i class="fa fa-check"></i><b>6.6.1</b> semi_join()</a></li>
-<li class="chapter" data-level="6.6.2" data-path="joins.html"><a href="joins.html#anti_join"><i class="fa fa-check"></i><b>6.6.2</b> anti_join()</a></li>
+<li class="chapter" data-level="6.3.1" data-path="dplyr.html"><a href="dplyr.html#data-disgust"><i class="fa fa-check"></i><b>6.3.1</b> The <code>disgust</code> dataset</a></li>
 </ul></li>
-<li class="chapter" data-level="6.7" data-path="joins.html"><a href="joins.html#binding-joins"><i class="fa fa-check"></i><b>6.7</b> Binding Joins</a>
+<li class="chapter" data-level="6.4" data-path="dplyr.html"><a href="dplyr.html#six-main-dplyr-verbs"><i class="fa fa-check"></i><b>6.4</b> Six main dplyr verbs</a>
 <ul>
-<li class="chapter" data-level="6.7.1" data-path="joins.html"><a href="joins.html#bind_rows"><i class="fa fa-check"></i><b>6.7.1</b> bind_rows()</a></li>
-<li class="chapter" data-level="6.7.2" data-path="joins.html"><a href="joins.html#bind_cols"><i class="fa fa-check"></i><b>6.7.2</b> bind_cols()</a></li>
+<li class="chapter" data-level="6.4.1" data-path="dplyr.html"><a href="dplyr.html#select"><i class="fa fa-check"></i><b>6.4.1</b> select()</a></li>
+<li class="chapter" data-level="6.4.2" data-path="dplyr.html"><a href="dplyr.html#filter"><i class="fa fa-check"></i><b>6.4.2</b> filter()</a></li>
+<li class="chapter" data-level="6.4.3" data-path="dplyr.html"><a href="dplyr.html#arrange"><i class="fa fa-check"></i><b>6.4.3</b> arrange()</a></li>
+<li class="chapter" data-level="6.4.4" data-path="dplyr.html"><a href="dplyr.html#mutate"><i class="fa fa-check"></i><b>6.4.4</b> mutate()</a></li>
+<li class="chapter" data-level="6.4.5" data-path="dplyr.html"><a href="dplyr.html#summarise"><i class="fa fa-check"></i><b>6.4.5</b> summarise()</a></li>
+<li class="chapter" data-level="6.4.6" data-path="dplyr.html"><a href="dplyr.html#group_by"><i class="fa fa-check"></i><b>6.4.6</b> group_by()</a></li>
+<li class="chapter" data-level="6.4.7" data-path="dplyr.html"><a href="dplyr.html#all-together"><i class="fa fa-check"></i><b>6.4.7</b> All Together</a></li>
 </ul></li>
-<li class="chapter" data-level="6.8" data-path="joins.html"><a href="joins.html#set-operations"><i class="fa fa-check"></i><b>6.8</b> Set Operations</a>
+<li class="chapter" data-level="6.5" data-path="dplyr.html"><a href="dplyr.html#additional-dplyr-one-table-verbs"><i class="fa fa-check"></i><b>6.5</b> Additional dplyr one-table verbs</a>
 <ul>
-<li class="chapter" data-level="6.8.1" data-path="joins.html"><a href="joins.html#intersect"><i class="fa fa-check"></i><b>6.8.1</b> intersect()</a></li>
-<li class="chapter" data-level="6.8.2" data-path="joins.html"><a href="joins.html#union"><i class="fa fa-check"></i><b>6.8.2</b> union()</a></li>
-<li class="chapter" data-level="6.8.3" data-path="joins.html"><a href="joins.html#setdiff"><i class="fa fa-check"></i><b>6.8.3</b> setdiff()</a></li>
+<li class="chapter" data-level="6.5.1" data-path="dplyr.html"><a href="dplyr.html#rename"><i class="fa fa-check"></i><b>6.5.1</b> rename()</a></li>
+<li class="chapter" data-level="6.5.2" data-path="dplyr.html"><a href="dplyr.html#distinct"><i class="fa fa-check"></i><b>6.5.2</b> distinct()</a></li>
+<li class="chapter" data-level="6.5.3" data-path="dplyr.html"><a href="dplyr.html#count"><i class="fa fa-check"></i><b>6.5.3</b> count()</a></li>
+<li class="chapter" data-level="6.5.4" data-path="dplyr.html"><a href="dplyr.html#slice"><i class="fa fa-check"></i><b>6.5.4</b> slice()</a></li>
+<li class="chapter" data-level="6.5.5" data-path="dplyr.html"><a href="dplyr.html#pull"><i class="fa fa-check"></i><b>6.5.5</b> pull()</a></li>
 </ul></li>
-<li class="chapter" data-level="6.9" data-path="joins.html"><a href="joins.html#glossary6"><i class="fa fa-check"></i><b>6.9</b> Glossary</a></li>
-<li class="chapter" data-level="6.10" data-path="joins.html"><a href="joins.html#exercises6"><i class="fa fa-check"></i><b>6.10</b> Exercises</a></li>
+<li class="chapter" data-level="6.6" data-path="dplyr.html"><a href="dplyr.html#window"><i class="fa fa-check"></i><b>6.6</b> Window functions</a>
+<ul>
+<li class="chapter" data-level="6.6.1" data-path="dplyr.html"><a href="dplyr.html#ranking-functions"><i class="fa fa-check"></i><b>6.6.1</b> Ranking functions</a></li>
+<li class="chapter" data-level="6.6.2" data-path="dplyr.html"><a href="dplyr.html#offset-functions"><i class="fa fa-check"></i><b>6.6.2</b> Offset functions</a></li>
+<li class="chapter" data-level="6.6.3" data-path="dplyr.html"><a href="dplyr.html#cumulative-aggregates"><i class="fa fa-check"></i><b>6.6.3</b> Cumulative aggregates</a></li>
+</ul></li>
+<li class="chapter" data-level="6.7" data-path="dplyr.html"><a href="dplyr.html#glossary-dplyr"><i class="fa fa-check"></i><b>6.7</b> Glossary</a></li>
+<li class="chapter" data-level="6.8" data-path="dplyr.html"><a href="dplyr.html#exercises-dplyr"><i class="fa fa-check"></i><b>6.8</b> Exercises</a></li>
 </ul></li>
 <li class="chapter" data-level="7" data-path="glm.html"><a href="glm.html"><i class="fa fa-check"></i><b>7</b> Introduction to GLM</a>
 <ul>
@@ -458,8 +472,8 @@ div.csl-indent {
 <li class="chapter" data-level="7.6.1" data-path="glm.html"><a href="glm.html#means-variability-and-deviation-scores"><i class="fa fa-check"></i><b>7.6.1</b> Means, Variability, and Deviation Scores</a></li>
 <li class="chapter" data-level="7.6.2" data-path="glm.html"><a href="glm.html#decomp"><i class="fa fa-check"></i><b>7.6.2</b> Decomposition matrices</a></li>
 </ul></li>
-<li class="chapter" data-level="7.7" data-path="glm.html"><a href="glm.html#glossary9"><i class="fa fa-check"></i><b>7.7</b> Glossary</a></li>
-<li class="chapter" data-level="7.8" data-path="glm.html"><a href="glm.html#exercises9"><i class="fa fa-check"></i><b>7.8</b> Exercises</a></li>
+<li class="chapter" data-level="7.7" data-path="glm.html"><a href="glm.html#glossary-glm"><i class="fa fa-check"></i><b>7.7</b> Glossary</a></li>
+<li class="chapter" data-level="7.8" data-path="glm.html"><a href="glm.html#exercises-glm"><i class="fa fa-check"></i><b>7.8</b> Exercises</a></li>
 </ul></li>
 <li class="chapter" data-level="8" data-path="func.html"><a href="func.html"><i class="fa fa-check"></i><b>8</b> Iteration &amp; Functions</a>
 <ul>
@@ -497,8 +511,8 @@ div.csl-indent {
 <li class="chapter" data-level="8.6.7" data-path="func.html"><a href="func.html#seed"><i class="fa fa-check"></i><b>8.6.7</b> Set seed</a></li>
 <li class="chapter" data-level="8.6.8" data-path="func.html"><a href="func.html#add-arguments"><i class="fa fa-check"></i><b>8.6.8</b> Add arguments</a></li>
 </ul></li>
-<li class="chapter" data-level="8.7" data-path="func.html"><a href="func.html#glossary7"><i class="fa fa-check"></i><b>8.7</b> Glossary</a></li>
-<li class="chapter" data-level="8.8" data-path="func.html"><a href="func.html#exercises7"><i class="fa fa-check"></i><b>8.8</b> Exercises</a></li>
+<li class="chapter" data-level="8.7" data-path="func.html"><a href="func.html#glossary-func"><i class="fa fa-check"></i><b>8.7</b> Glossary</a></li>
+<li class="chapter" data-level="8.8" data-path="func.html"><a href="func.html#exercises-func"><i class="fa fa-check"></i><b>8.8</b> Exercises</a></li>
 </ul></li>
 <li class="chapter" data-level="9" data-path="sim.html"><a href="sim.html"><i class="fa fa-check"></i><b>9</b> Probability &amp; Simulation</a>
 <ul>
@@ -547,8 +561,8 @@ div.csl-indent {
 <li class="chapter" data-level="9.8.6" data-path="sim.html"><a href="sim.html#one-tailed-prediction"><i class="fa fa-check"></i><b>9.8.6</b> One-tailed prediction</a></li>
 <li class="chapter" data-level="9.8.7" data-path="sim.html"><a href="sim.html#range-of-sample-sizes"><i class="fa fa-check"></i><b>9.8.7</b> Range of sample sizes</a></li>
 </ul></li>
-<li class="chapter" data-level="9.9" data-path="sim.html"><a href="sim.html#glossary8"><i class="fa fa-check"></i><b>9.9</b> Glossary</a></li>
-<li class="chapter" data-level="9.10" data-path="sim.html"><a href="sim.html#exercises8"><i class="fa fa-check"></i><b>9.10</b> Exercises</a></li>
+<li class="chapter" data-level="9.9" data-path="sim.html"><a href="sim.html#glossary-sim"><i class="fa fa-check"></i><b>9.9</b> Glossary</a></li>
+<li class="chapter" data-level="9.10" data-path="sim.html"><a href="sim.html#exercises-sim"><i class="fa fa-check"></i><b>9.10</b> Exercises</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="acknowledgements.html"><a href="acknowledgements.html"><i class="fa fa-check"></i>Acknowledgements</a>
 <ul>
@@ -582,7 +596,7 @@ div.csl-indent {
       <div class="body-inner">
         <div class="book-header" role="navigation">
           <h1>
-            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Data Skills for Reproducible Science</a>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Data Skills for Reproducible Research</a>
           </h1>
         </div>
 
@@ -594,7 +608,7 @@ div.csl-indent {
 <h1><span class="header-section-number">Chapter 1</span> Reproducible Workflows</h1>
 <p><img src="images/memes/repro_reports.jpg" class="meme right"
      alt="Top left: young spongebob; top right: Using Base R for your analysis and copy pasting yur results into tables in Word; middle left: older angry spongebob in workout clothes; middle right: learning how to use dplyr visualize data with ggplot2 and report your analysis in rmarkdown documents; bottom left: muscular spongebob shirtless in a boxing ring; bottom right: wielding the entire might of the tidyverse (with 50 hex stickers)"></p>
-<div id="ilo_repro" class="section level2" number="1.1">
+<div id="ilo-repro" class="section level2" number="1.1">
 <h2><span class="header-section-number">1.1</span> Learning Objectives</h2>
 <div id="basic" class="section level3" number="1.1.1">
 <h3><span class="header-section-number">1.1.1</span> Basic</h3>
@@ -616,7 +630,7 @@ div.csl-indent {
 </ol>
 </div>
 </div>
-<div id="resources10" class="section level2" number="1.2">
+<div id="resources-repro" class="section level2" number="1.2">
 <h2><span class="header-section-number">1.2</span> Resources</h2>
 <ul>
 <li><a href="http://r4ds.had.co.nz/r-markdown.html">Chapter 27: R Markdown</a> in <em>R for Data Science</em></li>
@@ -628,7 +642,7 @@ div.csl-indent {
 <li><a href="https://codeocean.com/">Code Ocean</a> for Computational Reproducibility</li>
 </ul>
 </div>
-<div id="setup_repro" class="section level2" number="1.3">
+<div id="setup-repro" class="section level2" number="1.3">
 <h2><span class="header-section-number">1.3</span> Setup</h2>
 <div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb44-1"><a href="repro.html#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
 <span id="cb44-2"><a href="repro.html#cb44-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(knitr)</span>
@@ -640,19 +654,19 @@ div.csl-indent {
 <p>Have you ever worked on a report, creating a summary table for the demographics, making beautiful plots, getting the analysis just right, and copying all the relevant numbers into your manuscript, only to find out that you forgot to exclude a test run and have to redo everything?</p>
 <p>An R Markdown document produces a <a class='glossary' target='_blank' title='The extent to which the findings of a study can be repeated in some other context' href='https://psyteachr.github.io/glossary/r#reproducibility'>reproducible</a> report that fixes this problem. Although this requires a bit of extra effort at the start, it will more than pay you back by allowing you to update your entire report with the push of a button whenever anything changes.</p>
 <p>Studies also show that many, if not most, papers in the scientific literature have reporting errors. For example, more than half of over 250,000 psychology papers published between 1985 and 2013 have at least one value that is statistically incompatible (e.g., a p-value that is not possible given a t-value and degrees of freedom) <span class="citation">(<a href="#ref-nuijten2016prevalence" role="doc-biblioref">Nuijten et al. 2016</a>)</span>. Reproducible reports help avoid transcription and rounding errors.</p>
-<p>We will make reproducible reports following the principles of <a href="https://en.wikipedia.org/wiki/Literate_programming">literate programming</a>. The basic idea is to have the text of the report together in a single document along with the code needed to perform all analyses and generate the tables. The report is then “compiled” from the original format into some other, more portable format, such as HTML or PDF. This is different from traditional cutting and pasting approaches where, for instance, you create a graph in Microsoft Excel or a statistics program like SPSS and then paste it into Microsoft Word.</p>
+<p>We will make reproducible reports following the principles of <a href="https://en.wikipedia.org/wiki/Literate_programming">literate programming</a>. The basic idea is to have the text of the report together in a single document along with the code needed to perform all analyses and generate the tables. The report is then "compiled" from the original format into some other, more portable format, such as HTML or PDF. This is different from traditional cutting and pasting approaches where, for instance, you create a graph in Microsoft Excel or a statistics program like SPSS and then paste it into Microsoft Word.</p>
 </div>
 <div id="projects" class="section level2" number="1.5">
 <h2><span class="header-section-number">1.5</span> Organising a project</h2>
 <p>First, we need to get orgainsed.</p>
 <p><a class='glossary' target='_blank' title='A way to organise related files in RStudio' href='https://psyteachr.github.io/glossary/p#project'>Projects</a> in RStudio are a way to group all of the files you need for one project. Most projects include scripts, data files, and output files like the PDF version of the script or images.</p>
 <div class="try">
-<p>Make a new directory where you will keep all of your materials for this class. If you’re using a lab computer, make sure you make this directory in your network drive so you can access it from other computers.</p>
+<p>Make a new directory where you will keep all of your materials for this class. If you're using a lab computer, make sure you make this directory in your network drive so you can access it from other computers.</p>
 <p>Choose <strong><code>New Project...</code></strong> under the <strong><code>File</code></strong> menu to create a new project called <code>01-repro</code> in this directory.</p>
 </div>
 <div id="working-directory" class="section level3" number="1.5.1">
 <h3><span class="header-section-number">1.5.1</span> Working Directory</h3>
-<p>Where should you put all of your files? When developing an analysis, you usually want to have all of your scripts and data files in one subtree of your computer’s directory structure. Usually there is a single <a class='glossary' target='_blank' title='The filepath where R is currently reading and writing files.' href='https://psyteachr.github.io/glossary/w#working-directory'>working directory</a> where your data and scripts are stored.</p>
+<p>Where should you put all of your files? When developing an analysis, you usually want to have all of your scripts and data files in one subtree of your computer's directory structure. Usually there is a single <a class='glossary' target='_blank' title='The filepath where R is currently reading and writing files.' href='https://psyteachr.github.io/glossary/w#working-directory'>working directory</a> where your data and scripts are stored.</p>
 <p>Your script should only reference files in three locations, using the appropriate format.</p>
 <table>
 <colgroup>
@@ -668,15 +682,15 @@ div.csl-indent {
 <tbody>
 <tr class="odd">
 <td>on the web</td>
-<td>“<a href="https://psyteachr.github.io/psyteachr/data/disgust_scores.csv" class="uri">https://psyteachr.github.io/psyteachr/data/disgust_scores.csv</a>”</td>
+<td>"<a href="https://psyteachr.github.io/psyteachr/data/disgust_scores.csv" class="uri">https://psyteachr.github.io/psyteachr/data/disgust_scores.csv</a>"</td>
 </tr>
 <tr class="even">
 <td>in the working directory</td>
-<td>“disgust_scores.csv”</td>
+<td>"disgust_scores.csv"</td>
 </tr>
 <tr class="odd">
 <td>in a subdirectory</td>
-<td>“data/disgust_scores.csv”</td>
+<td>"data/disgust_scores.csv"</td>
 </tr>
 </tbody>
 </table>
@@ -687,7 +701,7 @@ div.csl-indent {
 <p>If you are working with R scripts, store your main script file in the top-level directory and manually set your working directory to that location. You will have to reset the working directory each time you open RStudio, unless you create a <a class='glossary' target='_blank' title='A way to organise related files in RStudio' href='https://psyteachr.github.io/glossary/p#project'>project</a> and access the script from the project.</p>
 <p>For instance, if you are on a Windows machine your data and scripts are in the directory <code>C:\Carla's_files\thesis2\my_thesis\new_analysis</code>, you will set your working directory in one of two ways: (1) by going to the <code>Session</code> pull down menu in RStudio and choosing <code>Set Working Directory</code>, or (2) by typing <code>setwd("C:\Carla's_files\thesis2\my_thesis\new_analysis")</code> in the console window.</p>
 <div class="warning">
-<p>It’s tempting to make your life simple by putting the <code>setwd()</code> command in your script. Don’t do this! Others will not have the same directory tree as you (and when your laptop dies and you get a new one, neither will you).</p>
+<p>It's tempting to make your life simple by putting the <code>setwd()</code> command in your script. Don't do this! Others will not have the same directory tree as you (and when your laptop dies and you get a new one, neither will you).</p>
 <p>When manually setting the working directory, always do so by using the <strong><code>Session &gt; Set Working Directory</code></strong> pull-down option or by typing <code>setwd()</code> in the console.</p>
 </div>
 <p>If your script needs a file in a subdirectory of <code>new_analysis</code>, say, <code>data/questionnaire.csv</code>, load it in using a <a class='glossary' target='_blank' title='The location of a file in relation to the working directory.' href='https://psyteachr.github.io/glossary/r#relative-path'>relative path</a> so that it is accessible if you move the folder <code>new_analysis</code> to another location or computer:</p>
@@ -711,9 +725,7 @@ Figure 1.1: A reproducible script.
 </div>
 <p>If you open up a new R Markdown file from a template, you will see an example document with several code blocks in it. To create an HTML or PDF report from an R Markdown (Rmd) document, you compile it. Compiling a document is called <a class='glossary' target='_blank' title='To create an HTML, PDF, or Word document from an R Markdown (Rmd) document' href='https://psyteachr.github.io/glossary/k#knit'>knitting</a> in RStudio. There is a button that looks like a ball of yarn with needles through it that you click on to compile your file into a report.</p>
 <div class="try">
-<p>
-Create a new R Markdown file from the <strong><code>File &gt; New File &gt; R Markdown…</code></strong> menu. Change the title and author, then click the knit button to create an html file.
-</p>
+<p>Create a new R Markdown file from the <strong><code>File &gt; New File &gt; R Markdown...</code></strong> menu. Change the title and author, then click the knit button to create an html file.</p>
 </div>
 <div id="yaml-header" class="section level3" number="1.6.1">
 <h3><span class="header-section-number">1.6.1</span> YAML Header</h3>
@@ -733,8 +745,8 @@ output:
     toc_depth: 3
     number_sections: false
 ---</code></pre>
-<p>The <code>df_print: kable</code> option prints data frames using <code>knitr::kable</code>. You’ll learn below how to further customise tables.</p>
-<p>The built-in themes are: “cerulean,” “cosmo,” “flatly,” “journal,” “lumen,” “paper,” “readable,” “sandstone,” “simplex,” “spacelab,” “united,” and “yeti.” You can <a href="http://www.datadreaming.org/post/r-markdown-theme-gallery/">view and download more themes</a>.</p>
+<p>The <code>df_print: kable</code> option prints data frames using <code>knitr::kable</code>. You'll learn below how to further customise tables.</p>
+<p>The built-in themes are: "cerulean", "cosmo", "flatly", "journal", "lumen", "paper", "readable", "sandstone", "simplex", "spacelab", "united", and "yeti". You can <a href="http://www.datadreaming.org/post/r-markdown-theme-gallery/">view and download more themes</a>.</p>
 <p class="alert alert-info">
 Try changing the values from <code>false</code> to <code>true</code> to see what the options do.
 </p>
@@ -765,15 +777,18 @@ Try changing the values from <code>false</code> to <code>true</code> to see what
 <ul>
 <li><code>fig.width  = 8</code> : default figure width is 8 inches (you can change this for individual figures)</li>
 <li><code>fig.height = 5</code> : default figure height is 5 inches</li>
-<li><code>fig.path   = 'images/'</code> : figures are saved in the directory “images”</li>
+<li><code>fig.path   = 'images/'</code> : figures are saved in the directory "images"</li>
 <li><code>echo       = FALSE</code> : do not show code chunks in the rendered document</li>
 <li><code>warning    = FALSE</code> : do not show any function warnings</li>
 <li><code>message    = FALSE</code> : do not show any function messages</li>
 <li><code>cache      = FALSE</code> : run all the code to create all of the images and objects each time you knit (set to <code>TRUE</code> if you have time-consuming code)</li>
 </ul>
-<p>You can also add the packages you need in this chunk using <code>library()</code>. Often when you are working on a script, you will realize that you need to load another add-on package. Don’t bury the call to <code>library(package_I_need)</code> way down in the script. Put it in the top, so the user has an overview of what packages are needed.</p>
+<div class="info">
+<p>Find a list of the current chunk options by typing <code>str(knitr::opts_chunk$get())</code> in the console.</p>
+</div>
+<p>You can also add the packages you need in this chunk using <code>library()</code>. Often when you are working on a script, you will realize that you need to load another add-on package. Don't bury the call to <code>library(package_I_need)</code> way down in the script. Put it in the top, so the user has an overview of what packages are needed.</p>
 <div class="try">
-<p>We’ll be using function from the package <code>tidyverse</code>, so load that in your setup chunk.</p>
+<p>We'll be using function from the package <code>tidyverse</code>, so load that in your setup chunk.</p>
 </div>
 </div>
 <div id="structure" class="section level3" number="1.6.3">
@@ -788,12 +803,12 @@ Try changing the values from <code>false</code> to <code>true</code> to see what
 <li>save anything you need to save</li>
 </ul>
 <div class="try">
-<p>Delete the default text and add some structure to your document by creating headers and subheaders. We’re going to load some data, create a summary table, plot the data, and analyse it.</p>
+<p>Delete the default text and add some structure to your document by creating headers and subheaders. We're going to load some data, create a summary table, plot the data, and analyse it.</p>
 </div>
 </div>
 <div id="code-chunks" class="section level3" number="1.6.4">
 <h3><span class="header-section-number">1.6.4</span> Code Chunks</h3>
-<p>You can include <a class='glossary' target='_blank' title='A section of code in an R Markdown file' href='https://psyteachr.github.io/glossary/c#chunk'>code chunks</a> that create and display images, tables, or computations to include in your text. Let’s start by loading some data.</p>
+<p>You can include <a class='glossary' target='_blank' title='A section of code in an R Markdown file' href='https://psyteachr.github.io/glossary/c#chunk'>code chunks</a> that create and display images, tables, or computations to include in your text. Let's start by loading some data.</p>
 <p>First, create a code chunk in your document. This code loads some data from the web.</p>
 <div class="sourceCode" id="cb50"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb50-1"><a href="repro.html#cb50-1" aria-hidden="true" tabindex="-1"></a>pets <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;https://psyteachr.github.io/psyteachr/data/pets.csv&quot;</span>)</span></code></pre></div>
 <pre><code>## 
@@ -816,13 +831,13 @@ Try changing the values from <code>false</code> to <code>true</code> to see what
 <span id="cb52-5"><a href="repro.html#cb52-5" aria-hidden="true" tabindex="-1"></a>sd <span class="ot">&lt;-</span> <span class="fu">sd</span>(pets<span class="sc">$</span>score) <span class="co"># the SD for score for all pets</span></span>
 <span id="cb52-6"><a href="repro.html#cb52-6" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb52-7"><a href="repro.html#cb52-7" aria-hidden="true" tabindex="-1"></a>simulated_scores <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(n, mu, sd)</span></code></pre></div>
-<p>It’s usually good practice to start a code chunk with a comment that explains what you’re doing there, especially if the code is not explained in the text of the report.</p>
-<p>If you name your objects clearly, you often don’t need to add clarifying comments. For example, if I’d named the three objects above <code>total_pet_n</code>, <code>mean_score</code> and <code>sd_score</code>, I would omit the comments.</p>
-<p>It’s a bit of an art to comment your code well. The best way to develop this skill is to read a lot of other people’s code and have others review your code.</p>
+<p>It's usually good practice to start a code chunk with a comment that explains what you're doing there, especially if the code is not explained in the text of the report.</p>
+<p>If you name your objects clearly, you often don't need to add clarifying comments. For example, if I'd named the three objects above <code>total_pet_n</code>, <code>mean_score</code> and <code>sd_score</code>, I would omit the comments.</p>
+<p>It's a bit of an art to comment your code well. The best way to develop this skill is to read a lot of other people's code and have others review your code.</p>
 </div>
 <div id="tables" class="section level4" number="1.6.4.2">
 <h4><span class="header-section-number">1.6.4.2</span> Tables</h4>
-<p>Next, create a code chunk where you want to display a table of the descriptives (e.g., Participants section of the Methods). We’ll use tidyverse functions you will learn in the <a href="tidyr.html#tidyr">data wrangling lectures</a> to create summary statistics for each group.</p>
+<p>Next, create a code chunk where you want to display a table of the descriptives (e.g., Participants section of the Methods). We'll use tidyverse functions you will learn in the <a href="tidyr.html#tidyr">data wrangling lectures</a> to create summary statistics for each group.</p>
 <div class="sourceCode" id="cb53"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb53-1"><a href="repro.html#cb53-1" aria-hidden="true" tabindex="-1"></a>pets <span class="sc">%&gt;%</span></span>
 <span id="cb53-2"><a href="repro.html#cb53-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(pet) <span class="sc">%&gt;%</span></span>
 <span id="cb53-3"><a href="repro.html#cb53-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
@@ -852,7 +867,7 @@ Try changing the values from <code>false</code> to <code>true</code> to see what
 <span id="cb55-13"><a href="repro.html#cb55-13" aria-hidden="true" tabindex="-1"></a>             <span class="at">col.names =</span> newnames,</span>
 <span id="cb55-14"><a href="repro.html#cb55-14" aria-hidden="true" tabindex="-1"></a>             <span class="at">caption =</span> <span class="st">&quot;Summary statistics for the pets dataset.&quot;</span>)</span></code></pre></div>
 <table>
-<caption><span id="tab:unnamed-chunk-6">Table 1.1: </span>Summary statistics for the pets dataset.</caption>
+<caption><span id="tab:unnamed-chunk-5">Table 1.1: </span>Summary statistics for the pets dataset.</caption>
 <thead>
 <tr class="header">
 <th align="left">Pet Type</th>
@@ -888,7 +903,7 @@ Notice that the r chunk specifies the option <code>results='asis'</code>. This l
 </div>
 <div id="images" class="section level4" number="1.6.4.3">
 <h4><span class="header-section-number">1.6.4.3</span> Images</h4>
-<p>Next, create a code chunk where you want to display an image in your document. Let’s put it in the Results section. We’ll use some code that you’ll learn more about in the <a href="ggplot.html#ggplot">data visualisation lecture</a> to show violin-boxplots for the groups.</p>
+<p>Next, create a code chunk where you want to display an image in your document. Let's put it in the Results section. We'll use some code that you'll learn more about in the <a href="ggplot.html#ggplot">data visualisation lecture</a> to show violin-boxplots for the groups.</p>
 <p>Notice how the figure caption is formatted in the chunk options.</p>
 <pre><code>
 ```r
@@ -904,17 +919,17 @@ ggplot(pets, aes(pet, score, fill = country)) +
 ```
 
 &lt;div class=&quot;figure&quot; style=&quot;text-align: center&quot;&gt;
-&lt;img src=&quot;01-repro_files/figure-html/unnamed-chunk-7-1.png&quot; alt=&quot;Figure 1. Scores by pet type and country.&quot; width=&quot;100%&quot; /&gt;
-&lt;p class=&quot;caption&quot;&gt;(\#fig:unnamed-chunk-7)Figure 1. Scores by pet type and country.&lt;/p&gt;
+&lt;img src=&quot;01-repro_files/figure-html/unnamed-chunk-6-1.png&quot; alt=&quot;Figure 1. Scores by pet type and country.&quot; width=&quot;100%&quot; /&gt;
+&lt;p class=&quot;caption&quot;&gt;(\#fig:unnamed-chunk-6)Figure 1. Scores by pet type and country.&lt;/p&gt;
 &lt;/div&gt;</code></pre>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-8"></span>
-<img src="01-repro_files/figure-html/unnamed-chunk-8-1.png" alt="Figure 1. Scores by pet type and country." width="100%" />
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-7"></span>
+<img src="01-repro_files/figure-html/unnamed-chunk-7-1.png" alt="Figure 1. Scores by pet type and country." width="100%" />
 <p class="caption">
 Figure 1.2: Figure 1. Scores by pet type and country.
 </p>
 </div>
 <div class="info">
-<p>The last line changes the default text size and font, which can be useful for generating figures that meet a journal’s requirements.</p>
+<p>The last line changes the default text size and font, which can be useful for generating figures that meet a journal's requirements.</p>
 </div>
 <p>You can also include images that you did not create in R using the typical markdown syntax for images:</p>
 <pre><code>![All the Things by [Hyperbole and a Half](http://hyperboleandahalf.blogspot.com/)](images/memes/x-all-the-things.png)</code></pre>
@@ -925,7 +940,7 @@ Figure 1.2: Figure 1. Scores by pet type and country.
 </div>
 <div id="in-line-r" class="section level4" number="1.6.4.4">
 <h4><span class="header-section-number">1.6.4.4</span> In-line R</h4>
-<p>Now let’s analyse the pets data to see if cats are heavier than ferrets. First we’ll run the analysis code. Then we’ll save any numbers we might want to use in our manuscript to variables and round them appropriately. Finally, we’ll use <code>glue::glue()</code> to format a results string.</p>
+<p>Now let's analyse the pets data to see if cats are heavier than ferrets. First we'll run the analysis code. Then we'll save any numbers we might want to use in our manuscript to variables and round them appropriately. Finally, we'll use <code>glue::glue()</code> to format a results string.</p>
 <div class="sourceCode" id="cb58"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb58-1"><a href="repro.html#cb58-1" aria-hidden="true" tabindex="-1"></a><span class="co"># analysis</span></span>
 <span id="cb58-2"><a href="repro.html#cb58-2" aria-hidden="true" tabindex="-1"></a>cat_weight <span class="ot">&lt;-</span> <span class="fu">filter</span>(pets, pet <span class="sc">==</span> <span class="st">&quot;cat&quot;</span>) <span class="sc">%&gt;%</span> <span class="fu">pull</span>(weight)</span>
 <span id="cb58-3"><a href="repro.html#cb58-3" aria-hidden="true" tabindex="-1"></a>ferret_weight <span class="ot">&lt;-</span> <span class="fu">filter</span>(pets, pet <span class="sc">==</span> <span class="st">&quot;ferret&quot;</span>) <span class="sc">%&gt;%</span> <span class="fu">pull</span>(weight)</span>
@@ -952,7 +967,7 @@ Cats were significantly heavier than ferrets (t = 18.42, df = 180.4, p &lt; 0.00
 <p>There are several ways to do in-text citations and automatically generate a <a href="https://rmarkdown.rstudio.com/authoring_bibliographies_and_citations.html#bibliographies">bibliography</a> in RMarkdown.</p>
 <div id="create-a-bibtex-file-manually" class="section level4" number="1.6.5.1">
 <h4><span class="header-section-number">1.6.5.1</span> Create a BibTeX File Manually</h4>
-<p>You can just make a BibTeX file and add citations manually. Make a new Text File in RStudio called “bibliography.bib.”</p>
+<p>You can just make a BibTeX file and add citations manually. Make a new Text File in RStudio called "bibliography.bib".</p>
 <p>Next, add the line <code>bibliography: bibliography.bib</code> to your YAML header.</p>
 <p>You can add citations in the following format:</p>
 <pre><code>@article{shortname,
@@ -968,7 +983,7 @@ Cats were significantly heavier than ferrets (t = 18.42, df = 180.4, p &lt; 0.00
 </div>
 <div id="citing-r-packages" class="section level4" number="1.6.5.2">
 <h4><span class="header-section-number">1.6.5.2</span> Citing R packages</h4>
-<p>You can get the citation for an R package using the functions <code>citation()</code> and <code>toBibtex()</code>. You can paste the bibtex entry into your bibliography.bib file. Make sure to add a short name (e.g., “faux”) before the first comma to refer to the reference.</p>
+<p>You can get the citation for an R package using the functions <code>citation()</code> and <code>toBibtex()</code>. You can paste the bibtex entry into your bibliography.bib file. Make sure to add a short name (e.g., "faux") before the first comma to refer to the reference.</p>
 <div class="sourceCode" id="cb60"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb60-1"><a href="repro.html#cb60-1" aria-hidden="true" tabindex="-1"></a><span class="fu">citation</span>(<span class="at">package=</span><span class="st">&quot;faux&quot;</span>) <span class="sc">%&gt;%</span> <span class="fu">toBibtex</span>()</span></code></pre></div>
 <pre><code>## @Manual{,
 ##   title = {faux: Simulation for Factorial Designs},
@@ -984,7 +999,7 @@ Cats were significantly heavier than ferrets (t = 18.42, df = 180.4, p &lt; 0.00
 <h4><span class="header-section-number">1.6.5.3</span> Download Citation Info</h4>
 <p><a href="https://scholar.google.com/">Google Scholar</a> entries have a BibTeX citation option. This is usually the easiest way to get the relevant values, although you have to add the DOI yourself.</p>
 <p>Some journal websites also let you download citations in bibtex format.
-For example, go to the publisher’s page for <a href="https://journals.sagepub.com/doi/abs/10.1177/2515245918770963">Equivalence Testing for Psychological Research: A Tutorial</a>, click on the Cite button (in the sidebar or under the bottom Explore More menu), choose BibTeX format, and download the citation. You can open up the file in a text editor and copy the text. It should look like this:</p>
+For example, go to the publisher's page for <a href="https://journals.sagepub.com/doi/abs/10.1177/2515245918770963">Equivalence Testing for Psychological Research: A Tutorial</a>, click on the Cite button (in the sidebar or under the bottom Explore More menu), choose BibTeX format, and download the citation. You can open up the file in a text editor and copy the text. It should look like this:</p>
 <pre><code>@article{doi:10.1177/2515245918770963,
 author = {Daniël Lakens and Anne M. Scheel and Peder M. Isager},
 title ={Equivalence Testing for Psychological Research: A Tutorial},
@@ -1006,7 +1021,7 @@ eprint = {
 ,
     abstract = { Psychologists must be able to test both for the presence of an effect and for the absence of an effect. In addition to testing against zero, researchers can use the two one-sided tests (TOST) procedure to test for equivalence and reject the presence of a smallest effect size of interest (SESOI). The TOST procedure can be used to determine if an observed effect is surprisingly small, given that a true effect at least as extreme as the SESOI exists. We explain a range of approaches to determine the SESOI in psychological science and provide detailed examples of how equivalence tests should be performed and reported. Equivalence tests are an important extension of the statistical tools psychologists currently use and enable researchers to falsify predictions about the presence, and declare the absence, of meaningful effects. }
 }</code></pre>
-<p>Paste the reference into your bibliography.bib file. Change <code>doi:10.1177/2515245918770963</code> in the first line of the reference to a short string you will use to cite the reference in your manuscript. We’ll use <code>TOSTtutorial</code>.</p>
+<p>Paste the reference into your bibliography.bib file. Change <code>doi:10.1177/2515245918770963</code> in the first line of the reference to a short string you will use to cite the reference in your manuscript. We'll use <code>TOSTtutorial</code>.</p>
 </div>
 <div id="converting-from-reference-software" class="section level4" number="1.6.5.4">
 <h4><span class="header-section-number">1.6.5.4</span> Converting from reference software</h4>
@@ -1023,7 +1038,7 @@ eprint = {
 </div>
 <div id="citation-styles" class="section level4" number="1.6.5.6">
 <h4><span class="header-section-number">1.6.5.6</span> Citation Styles</h4>
-<p>You can search a <a href="https://www.zotero.org/styles">list of style files</a> for various journals and download a file that will format your bibliography for a specific journal’s style. You’ll need to add the line <code>csl: filename.csl</code> to your YAML header.</p>
+<p>You can search a <a href="https://www.zotero.org/styles">list of style files</a> for various journals and download a file that will format your bibliography for a specific journal's style. You'll need to add the line <code>csl: filename.csl</code> to your YAML header.</p>
 <p class="alert alert-info">
 Add some citations to your bibliography.bib file, reference them in your text, and render your manuscript to see the automatically generated reference section. Try a few different citation style files.
 </p>
@@ -1039,7 +1054,7 @@ Add some citations to your bibliography.bib file, reference them in your text, a
 <p><a href="https://codeocean.com/">Code Ocean</a> is a platform that lets you run your code in the cloud via a web browser.</p>
 </div>
 </div>
-<div id="glossary_repro" class="section level2" number="1.7">
+<div id="glossary-repro" class="section level2" number="1.7">
 <h2><span class="header-section-number">1.7</span> Glossary</h2>
 <table>
 <colgroup>
@@ -1096,14 +1111,14 @@ Add some citations to your bibliography.bib file, reference them in your text, a
 </tbody>
 </table>
 </div>
-<div id="exercises_repro" class="section level2" number="1.8">
+<div id="exercises-repro" class="section level2" number="1.8">
 <h2><span class="header-section-number">1.8</span> Exercises</h2>
-<p>Download the first set of <a href="exercises/01_intro_exercise.Rmd">exercises</a> and put it in the project directory you created earlier for today’s exercises. See the <a href="exercises/01_intro_answers.Rmd">answers</a> only after you’ve attempted all the questions.</p>
+<p>Download the first set of <a href="exercises/01_intro_exercise.Rmd">exercises</a> and put it in the project directory you created earlier for today's exercises. See the <a href="exercises/01_intro_answers.Rmd">answers</a> only after you've attempted all the questions.</p>
 <div class="sourceCode" id="cb65"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb65-1"><a href="repro.html#cb65-1" aria-hidden="true" tabindex="-1"></a><span class="co"># run this to access the exercise</span></span>
-<span id="cb65-2"><a href="repro.html#cb65-2" aria-hidden="true" tabindex="-1"></a>dataskills2<span class="sc">::</span><span class="fu">exercise</span>(<span class="dv">1</span>)</span>
+<span id="cb65-2"><a href="repro.html#cb65-2" aria-hidden="true" tabindex="-1"></a>reprores<span class="sc">::</span><span class="fu">exercise</span>(<span class="dv">1</span>)</span>
 <span id="cb65-3"><a href="repro.html#cb65-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb65-4"><a href="repro.html#cb65-4" aria-hidden="true" tabindex="-1"></a><span class="co"># run this to access the answers</span></span>
-<span id="cb65-5"><a href="repro.html#cb65-5" aria-hidden="true" tabindex="-1"></a>dataskills2<span class="sc">::</span><span class="fu">exercise</span>(<span class="dv">1</span>, <span class="at">answers =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
+<span id="cb65-5"><a href="repro.html#cb65-5" aria-hidden="true" tabindex="-1"></a>reprores<span class="sc">::</span><span class="fu">exercise</span>(<span class="dv">1</span>, <span class="at">answers =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
 </div>
 <div id="references" class="section level2" number="1.9">
 <h2><span class="header-section-number">1.9</span> References</h2>

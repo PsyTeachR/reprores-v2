@@ -616,8 +616,8 @@ Download the [exercises](exercises/06_joins_exercise.Rmd). See the [answers](exe
 
 ```r
 # run this to access the exercise
-dataskills::exercise(6)
+reprores::exercise(6)
 
 # run this to access the answers
-dataskills::exercise(6, answers = TRUE)
+reprores::exercise(6, answers = TRUE)
 ```

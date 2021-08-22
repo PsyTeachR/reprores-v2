@@ -1,9 +1,9 @@
-# Getting Started {#intro -}
+# **0** Getting Started {#intro -}
 
 <img src="images/memes/rstudio.png" class="meme right"
      alt="A line drawing of a person looking at a computer with a magnifying glass. The text reads 'I just installed RStudio. I'm a data scientist now.'">
 
-## Learning Objectives {#ilo_intro}
+## Learning Objectives {#ilo-intro}
 
 1. Understand the components of the [RStudio IDE](#rstudio_ide) [(video)](https://youtu.be/CbA6ZVlJE78){class="video"}
 2. Type commands into the [console](#console) [(video)](https://youtu.be/wbI4c_7y0kE){class="video"}
@@ -11,7 +11,7 @@
 4. Install a [package](#install-package) [(video)](https://youtu.be/u_pvHnqkVCE){class="video"}
 
 
-## Resources {#resources1}
+## Resources {#resources-intro}
 
 * [Chapter 1: Introduction](http://r4ds.had.co.nz/introduction.html) in *R for Data Science*
 * [RStudio IDE Cheatsheet](https://github.com/rstudio/cheatsheets/raw/master/rstudio-ide.pdf)
@@ -360,8 +360,8 @@ rnorm(10)
 ```
 
 ```
-##  [1]  0.80100472  1.72138602 -0.06230255  0.78734909 -0.38255588 -1.04842544
-##  [7] -1.08745441 -0.09468166  1.42215047 -1.22698951
+##  [1]  1.49830080 -1.36209966 -0.17384563 -0.83419296  1.36054802 -0.09128328
+##  [7] -0.27296619 -0.49936873 -1.83146159 -2.25720566
 ```
 
 If you want 10 numbers from a normal distribution with a mean of 100:
@@ -372,8 +372,8 @@ rnorm(10, 100)
 ```
 
 ```
-##  [1] 100.27047  99.54884  99.96586  99.17302 101.16089  99.17410  98.87992
-##  [8]  99.38246  99.27715  98.94538
+##  [1]  98.64383 100.73394 100.37340  98.90744  98.45328  99.35893 100.79393
+##  [8] 100.40347 101.05440 100.02182
 ```
 
 This would be an equivalent but less efficient way of calling the function:
@@ -384,8 +384,8 @@ rnorm(n = 10, mean = 100)
 ```
 
 ```
-##  [1] 100.61637  99.79791 100.10278  99.56175 100.88812 100.78459  99.48261
-##  [8] 100.94174  98.69481  99.18402
+##  [1] 100.55528  99.65206  99.35837 100.46533  99.81791  99.33897  98.18292
+##  [8]  97.83952 100.75731  99.78872
 ```
 
 We don't need to name the arguments because R will recognize that we intended to fill in the first and second arguments by their position in the function call. However, if we want to change the default for an argument coming later in the list, then we need to name it. For instance, if we wanted to keep the default `mean = 0` but change the standard deviation to 100, we would do it this way:
@@ -396,8 +396,8 @@ rnorm(10, sd = 100)
 ```
 
 ```
-##  [1] -121.013235  -44.936305    8.939298  -26.968683  -27.504666  -55.953213
-##  [7]   62.437379   83.049483 -169.584252  -16.899978
+##  [1]   90.50855   76.47828 -119.70787   97.72399   27.24926   49.70312
+##  [7]   69.09167   11.84667   54.81526   10.89362
 ```
 
 Some functions give a list of options after an argument; this means the default value is the first option. The usage entry for the `power.t.test()` function looks like this:
@@ -411,11 +411,13 @@ power.t.test(n = NULL, delta = NULL, sd = 1, sig.level = 0.05,
              strict = FALSE, tol = .Machine$double.eps^0.25)
 ```
 
-<div class="try">
+::: {.try data-latex=""}
+
 * What is the default value for `sd`? <select class='webex-solveme' data-answer='["1"]'> <option></option> <option>NULL</option> <option>1</option> <option>0.05</option> <option>two.sample</option></select>
 * What is the default value for `type`? <select class='webex-solveme' data-answer='["two.sample"]'> <option></option> <option>NULL</option> <option>two.sample</option> <option>one.sample</option> <option>paired</option></select>
 * Which is equivalent to `power.t.test(100, 0.5)`? <select class='webex-solveme' data-answer='["power.t.test(delta = 0.5, n = 100)"]'> <option></option> <option>power.t.test(100, 0.5, sig.level = 1, sd = 0.05)</option> <option>power.t.test()</option> <option>power.t.test(n = 100)</option> <option>power.t.test(delta = 0.5, n = 100)</option></select>
-</div>
+
+:::
 
 ### Getting help {#help}
 
@@ -433,10 +435,11 @@ help("rnorm", package="stats")
 
 When the package isn't loaded or you aren't sure what package the function is in, use the shortcut `??function_name`.
 
-<div class="try">
+::: {.try data-latex=""}
+
 * What is the first argument to the `mean` function? <select class='webex-solveme' data-answer='["x"]'> <option></option> <option>trim</option> <option>na.rm</option> <option>mean</option> <option>x</option></select>
 * What package is `read_excel` in? <select class='webex-solveme' data-answer='["readxl"]'> <option></option> <option>readr</option> <option>readxl</option> <option>base</option> <option>stats</option></select>
-</div>
+:::
 
 ## Add-on packages {#install-package}
 
@@ -507,14 +510,14 @@ Many R packages are not yet on <a class='glossary' target='_blank' title='The Co
 # install devtools if you get
 # Error in loadNamespace(name) : there is no package called ‘devtools’
 # install.packages("devtools")
-devtools::install_github("psyteachr/dataskills2")
+devtools::install_github("psyteachr/reprores-v2")
 ```
 
-After you install the dataskills2 package, load it using the `library()` function. You can then try out some of the functions below.
+After you install the reprores package, load it using the `library()` function. You can then try out some of the functions below.
 
 
 ```r
-library(dataskills2)
+library(reprores)
 
 # opens a local copy of this book in your web browser
 book()
@@ -528,10 +531,10 @@ exercise(1)
 
 
 ::: {.try data-latex=""}
-How many different ways can you find to discover what functions are available in the dataskills package?
+How many different ways can you find to discover what functions are available in the reprores package?
 :::
 
-Loading dataskills2 automatically loads the `psyteachr` package, which contains datasets that we will be using in future lessons. `getdata()` creates a directory called "data" with all of the class datasets.
+Reprores contains datasets that we will be using in future lessons. `getdata()` creates a directory called "data" with all of the class datasets.
 
 
 ```r
@@ -548,7 +551,7 @@ getdata("data")
 
 
 
-## Glossary  {#glossary1}
+## Glossary  {#glossaryintro}
 
 Each chapter ends with a glossary table defining the jargon introduced in this chapter. The links below take you to the [glossary book](https://psyteachr.github.io/glossary), which you can also download for offline use with `devtools::install_github("psyteachr/glossary")` and access the glossary offline with `glossary::book()`.
 

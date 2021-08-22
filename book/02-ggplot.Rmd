@@ -29,8 +29,11 @@
         + `geom_pointrange()`
     + [`geom_point()`](#geom_point)
     + [`geom_smooth()`](#geom_smooth)
-3. Set custom [labels](#custom-labels),  [colours](#custom-colours), and [themes](#themes) [(video)](https://youtu.be/6pHuCbOh86s){class="video"}
-4. [Combine plots](combo_plots) on the same plot, as facets, or as a grid using cowplot [(video)](https://youtu.be/AnqlfuU-VZk){class="video"}
+3. Set custom [size](#custom-size),
+              [labels](#custom-labels), 
+              [colours](#custom-colours), and
+              [themes](#themes) [(video)](https://youtu.be/6pHuCbOh86s){class="video"}
+4. [Combine plots](combo_plots) on the same plot, as facets, or as a grid using patchwork [(video)](https://youtu.be/AnqlfuU-VZk){class="video"}
 5. [Save plots](#ggsave) as an image file [(video)](https://youtu.be/f1Y53mjEli0){class="video"}
     
 ### Intermediate
@@ -70,11 +73,11 @@
 
 # libraries needed for these graphs
 library(tidyverse)
-library(dataskills)
+library(patchwork) 
+library(reprores)
 library(plotly)
-library(cowplot) 
-set.seed(30250) # makes sure random numbers are reproducible
 
+set.seed(30250) # makes sure random numbers are reproducible
 ```
 
 ## Common Variable Combinations {#vartypes}
@@ -86,9 +89,9 @@ Different types of visualisations are good for different types of variables.
 Load the `pets` dataset and explore it with `glimpse(pets)` or `View(pets)`. This is a simulated dataset with one random factor (`id`), two categorical factors (`pet`, `country`) and three continuous variables (`score`, `age`, `weight`). 
 
 ```{r pets}
-data("pets")
-# if you don't have the dataskills package, use:
-# pets <- read_csv("https://psyteachr.github.io/psyteachr/data/pets.csv", col_types = "cffiid")
+data("pets", package = "reprores")
+# if you don't have the reprores package, use:
+# pets <- read_csv("https://psyteachr.github.io/reprores/data/pets.csv", col_types = "cffiid")
 glimpse(pets)
 ```
 
@@ -147,8 +150,11 @@ mapping <- aes(x = pet,
                fill = country)
 ggplot(data = pets, mapping = mapping)
 ```
+::: {.info data-latex=""}
+People usually omit the argument names and just put the `aes()` function directly as the second argument to `ggplot`. They also usually omit `x` and `y` as argument names to `aes()` (but you have to name the other properties). 
+:::
 
-People usually omit the argument names and just put the `aes()` function directly as the second argument to `ggplot`. They also usually omit `x` and `y` as argument names to `aes()` (but you have to name the other properties). Next we can add "geoms", or plot styles. You literally add them with the `+` symbol. You can also add other plot attributes, such as labels, or change the theme and base font size.
+Next we can add "geoms", or plot styles. You literally add them with the `+` symbol. You can also add other plot attributes, such as labels, or change the theme and base font size.
 
 ```{r ggplot-geom, fig.cap="Violin plot with country represented by colour."}
 ggplot(pets, aes(pet, score, colour = country, fill = country)) +
@@ -195,9 +201,9 @@ ggplot(pets, aes(score, fill = pet)) +
 
 ```
 
-```{block, type="try"}
+::: {.try data-latex=""}
 Try changing the `alpha` argument to figure out what it does.
-```
+:::
 
 ### Frequency polygons {#geom_freqpoly}
 
@@ -210,9 +216,9 @@ ggplot(pets, aes(score, color = pet)) +
   
 ```
 
-``````{block, type="try"}
+::: {.try data-latex=""}
 Try changing the `binwidth` argument to 10 and 1. How do you figure out the right value?
-```
+:::
 
 ### Histogram {#geom_histogram}
 
@@ -225,9 +231,9 @@ ggplot(pets, aes(score)) +
   
 ```
 
-```{block, type="info"}
+::: {.info data-latex=""}
 Histograms in ggplot look pretty bad unless you set the `fill` and `color`.
-```
+:::
 
 If you show grouped histograms, you also probably want to change the default `position` argument.
 
@@ -239,9 +245,9 @@ ggplot(pets, aes(score, fill=pet)) +
   
 ```
 
-```{block, type="try"}
+::: {.try data-latex=""}
 Try changing the `position` argument to "identity", "fill", "dodge", or "stack".
-```
+:::
 
 ### Column plot {#geom_col}
 
@@ -257,9 +263,9 @@ ggplot(pets, aes(pet, score, fill=pet)) +
 
 ```
 
-```{block, type="try"}
+::: {.try data-latex=""}
 Try changing the values for `coord_cartesian`. What does this do?
-```
+:::
 
 ### Boxplot {#geom_boxplot}
 
@@ -284,9 +290,9 @@ ggplot(pets, aes(pet, score, fill=pet)) +
 
 ```
 
-```{block, type="try"}
+::: {.try data-latex=""}
 Try changing the `quantile` argument. Set it to a vector of the numbers 0.1 to 0.9 in steps of 0.1.
-```
+:::
 
 ### Vertical intervals {#vertical_intervals}
 
@@ -357,12 +363,11 @@ ggplot(pets, aes(age, score, color = pet)) +
   geom_smooth(formula = y ~ x, method="lm")
 ```
 
-```{block, type="try"}
+::: {.try data-latex=""}
 What are some other options for the `method` argument to `geom_smooth`? When might you want to use them?
-```
+:::
 
-<div class="info">
-
+::: {.info data-latex=""}
 You can plot functions other than the linear `y ~ x`. The code below creates a data table where `x` is 101 values between -10 and 10. and `y` is `x` squared plus `3*x` plus `1`. You'll probably recognise this from algebra as the quadratic equation. You can set the `formula` argument in `geom_smooth` to a quadratic formula (`y ~ x + I(x^2)`) to fit a quadratic function to the data.
 
 ```{r quadratic, fig.cap="Fitting quadratic functions"}
@@ -377,9 +382,44 @@ ggplot(quad, aes(x, y)) +
   geom_smooth(formula = y ~ x + I(x^2), 
               method="lm")
 ```
-</div>
+:::
 
 ## Customisation
+
+### Size and Position {#custom-size}
+
+You can change the size, aspect ratio and position of plots in an R Markdown document in the setup chunk.
+
+```{r knitr-setup-fig}
+knitr::opts_chunk$set(
+  fig.width  = 8, # figures default to 8 inches wide
+  fig.height = 5, # figures default to 5 inches tall
+  fig.path   = 'images/', # figures saved in images directory
+  out.width = "90%", # images take up 90% of page width
+  fig.align = 'center' # centre images
+)
+```
+
+You can change defaults for any single image using `r glossary("chunk")` options.
+
+```{r fig-chunk-example1, eval = FALSE, verbatim="r fig-pet1, fig.width=10, fig.height=3, out.width=\"100%\", fig.align=\"center\", fig.cap=\"10x3 inches at 100% width centre aligned.\""}
+ggplot(pets, aes(age, score, color = pet)) +
+  geom_smooth(formula = y~x, method = lm)
+```
+```{r fig-chunk-example1-out, fig.width=10, fig.height=3, out.width="100%", fig.align="center", fig.cap="10x3 inches at 100% width centre aligned.", echo = FALSE}
+ggplot(pets, aes(age, score, color = pet)) +
+  geom_smooth(formula = y~x, method = lm)
+```
+
+```{r fig-chunk-example2, eval = FALSE, verbatim="r fig-pet2, fig.width=5, fig.height=3, out.width=\"50%\", fig.align=\"left\", fig.cap=\"5x3 inches at 50% width aligned left.\""}
+ggplot(pets, aes(age, score, color = pet)) +
+  geom_smooth(formula = y~x, method = lm)
+```
+
+```{r fig-chunk-example2-out, fig.width=5, fig.height=3, out.width="50%", fig.align="left", echo = FALSE, fig.cap="5x3 inches at 50% width aligned left."}
+ggplot(pets, aes(age, score, color = pet)) +
+  geom_smooth(formula = y~x, method = lm)
+```
 
 ### Labels {#custom-labels}
 
@@ -425,7 +465,7 @@ ggplot(pets, aes(age, score, color = pet)) +
   theme_minimal(base_size = 18)
 ```
 
-It's more complicated, but you can fully customise your theme with `theme()`. You can save this to an object and add it to the end of all of your plots to make the style consistent. Alternatively, you can set the theme at the top of a script with `theme_set()` and this will apply to all subsequent ggplot plots.
+It's more complicated, but you can fully customise your theme with `theme()`. You can save this to an object and add it to the end of all of your plots to make the style consistent. Alternatively, you can set the theme at the top of a script with `theme_set()` and this will apply to all subsequent ggplot plots. 
 
 ```{r, include = FALSE}
 t <- theme_get() # record current theme
@@ -433,18 +473,19 @@ t <- theme_get() # record current theme
 
 
 ```{r custom-themes, fig.cap="Custom theme"}
-
-vampire_theme <- theme(
-  rect = element_rect(fill = "black"),
-  panel.background = element_rect(fill = "black"),
-  text = element_text(size = 20, colour = "white"),
-  axis.text = element_text(size = 16, colour = "grey70"),
-  line = element_line(colour = "white", size = 2),
-  panel.grid = element_blank(),
-  axis.line = element_line(colour = "white"),
-  axis.ticks = element_blank(),
-  legend.position = "top"
-)
+# always start with a base theme that is closest to your desired theme
+vampire_theme <- theme_dark() +
+  theme(
+    rect = element_rect(fill = "black"),
+    panel.background = element_rect(fill = "black"),
+    text = element_text(size = 20, colour = "white"),
+    axis.text = element_text(size = 16, colour = "grey70"),
+    line = element_line(colour = "white", size = 2),
+    panel.grid = element_blank(),
+    axis.line = element_line(colour = "white"),
+    axis.ticks = element_blank(),
+    legend.position = "top"
+  )
 
 theme_set(vampire_theme)
 
@@ -478,11 +519,11 @@ ggsave("demog_box_plot.jpg", plot = box, width = 5, height = 7)
 
 ```
 
-```{block, type="info"}
+::: {.info data-latex=""}
 The file type is set from the filename suffix, or by 
 specifying the argument `device`, which can take the following values: 
 "eps", "ps", "tex", "pdf", "jpeg", "tiff", "png", "bmp", "svg" or "wmf".
-```
+:::
 
 ## Combination Plots {#combo_plots}
 
@@ -499,13 +540,13 @@ ggplot(pets, aes(pet, score, fill = pet)) +
 
 ```
 
-```{block, type="info"}
+::: {.info data-latex=""}
 Set the `show.legend` argument to `FALSE` to hide the legend. We do this here because the x-axis already labels the pet types.
-```
+:::
 
 ### Violin-point-range plot
 
-You can use `stat_summary()` to superimpose a point-range plot showning the mean ± 1 SD. You'll learn how to write your own functions in the lesson on [Iteration and Functions](#func).
+You can use `stat_summary()` to superimpose a point-range plot showing the mean ± 1 SD. You'll learn how to write your own functions in the lesson on [Iteration and Functions](#func).
 
 ```{r stat-summary, fig.cap="Point-range plot using stat_summary()"}
 
@@ -553,11 +594,11 @@ ggplot(sample_n(pets, 50), aes(age, weight, colour = pet)) +
 
 ```
 
-### Grid of plots {#cowplot}
+### Grid of plots {#plot_grid}
 
-You can use the [ `cowplot`](https://cran.r-project.org/web/packages/cowplot/vignettes/introduction.html) package to easily make grids of different graphs. First, you have to assign each plot a name. Then you list all the plots as the first arguments of `plot_grid()` and provide a vector of labels.
+You can use the [`patchwork`](https://patchwork.data-imaginist.com/) package to easily make grids of different graphs. First, you have to assign each plot a name. 
 
-```{r grid, fig.cap="Grid of plots"}
+```{r}
 
 gg <- ggplot(pets, aes(pet, score, colour = pet))
 nolegend <- theme(legend.position = 0)
@@ -571,10 +612,34 @@ cp <- gg + stat_summary(fun = mean, geom = "col", fill = "white") + nolegend +
 dp <- ggplot(pets, aes(score, colour = pet)) + 
   geom_density() + nolegend +
   ggtitle("Density Plot")
-
-plot_grid(vp, bp, cp, dp, labels = LETTERS[1:4])
-
 ```
+
+Then you add all the plots together.
+
+```{r patchwork-add, fig.cap="Default grid of plots"}
+vp + bp + cp + dp
+```
+
+You can use `+`, `|`, `/`, and parentheses to customise your layout.
+
+```{r patchwork-layout, fig.cap="Custom plot layout."}
+(vp | bp | cp) / dp
+```
+
+You can alter the plot layout to control the number and widths of plots per row or column, and add annotation. 
+
+```{r patchwork-annotate, fig.cap = "Plot annotation."}
+vp + bp + cp + 
+  plot_layout(nrow = 1, width = c(1,2,1)) +
+  plot_annotation(title = "Pet Scores",
+                  subtitle = "Three plots visualising the same data",
+                  tag_levels = "a")
+```
+
+::: {.try data-latex=""}
+Check the help for `plot_layout()` and plot_annotation()` to see what else you can do with them.
+:::
+
 
 ## Overlapping Discrete Data {#overlap}
 
@@ -615,9 +680,9 @@ pets %>%
 ```
 
 
-```{block, type="info"}
+::: {.info data-latex=""}
 The [viridis package](https://cran.r-project.org/web/packages/viridis/vignettes/intro-to-viridis.html) changes the colour themes to be easier to read by people with colourblindness and to print better in greyscale. Viridis is built into `ggplot2` since v3.0.0. It uses `scale_colour_viridis_c()` and `scale_fill_viridis_c()` for continuous variables and `scale_colour_viridis_d()` and `scale_fill_viridis_d()` for discrete variables.
-```
+:::
 
 ## Overlapping Continuous Data
 
@@ -636,13 +701,16 @@ ggplot(pets, aes(age, score)) +
   geom_density2d()
 ```
 
-You can use `stat_density_2d(aes(fill = ..level..), geom = "polygon")` to create a heatmap-style density plot. 
+You can use `geom_density2d_filled()` to create a heatmap-style density plot.
 
 ```{r density2d-fill, fig.cap="Heatmap-density plot"}
 ggplot(pets, aes(age, score)) +
-  stat_density_2d(aes(fill = ..level..), geom = "polygon") +
-  scale_fill_viridis_c()
+  geom_density2d_filled(n = 5, h = 10)
 ```
+
+::: {.try data-latex=""}
+Try `geom_density2d_filled(n = 5, h = 10)` instead. Play with different values of `n` and `h` and try to guess what they do.
+:::
 
 
 ### 2D Histogram {#geom_bin2d}
@@ -697,23 +765,23 @@ ggplotly(demog_plot)
 
 ```
 
-```{block, type="info"}
+::: {.info data-latex=""}
 Hover over the data points above and click on the legend items.
-```
+:::
 
-## Glossary {#glossary3}
+## Glossary {#glossary-ggplot}
 
 `r glossary_table()`
 
 
-## Exercises {#exercises3}
+## Exercises {#exercises-ggplot}
 
-Download the [exercises](exercises/03_ggplot_exercise.Rmd). See the [plots](exercises/03_ggplot_answers.html) to see what your plots should look like (this doesn't contain the answer code). See the [answers](exercises/03_ggplot_answers.Rmd) only after you've attempted all the questions.
+Download the [exercises](exercises/02_ggplot_exercise.Rmd). See the [plots](exercises/02_ggplot_answers.html) to see what your plots should look like (this doesn't contain the answer code). See the [answers](exercises/02_ggplot_answers.Rmd) only after you've attempted all the questions.
 
 ```{r, eval = FALSE}
 # run this to access the exercise
-dataskills::exercise(3)
+reprores::exercise(2)
 
 # run this to access the answers
-dataskills::exercise(3, answers = TRUE)
+reprores::exercise(2, answers = TRUE)
 ```

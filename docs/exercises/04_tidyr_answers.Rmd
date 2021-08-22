@@ -1,7 +1,8 @@
 ---
-title: 'Formative Exercise 04: MSc Data Skills Course'
-author: "Psychology, University of Glasgow"
-output: html_document
+title: 'Formative Exercise 04: Tidy Data'
+output: 
+  html_document:
+    df_print: kable
 ---
 
 ```{r setup, include=FALSE}
@@ -9,10 +10,10 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE, message = FALSE, error = TRUE)
 library(tidyverse)
 
-# install the class package dataskills to access built-in data
-# devtools::install_github("psyteachr/msc-data-skills)
+# install the class package reprores to access built-in data
+# devtools::install_github("psyteachr/reprores-v2)
 # or download data from the website
-# https://psyteachr.github.io/msc-data-skills/data/data.zip
+# https://psyteachr.github.io/reprores/data/data.zip
 ```
 
 Edit the code chunks below and knit the document. You can pipe your objects to `glimpse()` or `print()` to display them.
@@ -48,18 +49,18 @@ The questions in this section all have errors. Fix the errors.
 
 ### Load data
 
-Load the dataset [dataskills::sensation_seeking](https://psyteachr.github.io/msc-data-skills/data/sensation_seeking.csv) as `ss`.
+Load the dataset [reprores::sensation_seeking](https://psyteachr.github.io/reprores/data/sensation_seeking.csv) as `ss`.
 
 ```{r data-error}
-ss <- read_csv(dataskills::sensation_seeking)
+ss <- read_csv(reprores::sensation_seeking)
 ```
 
 ```{r data}
-ss <- dataskills::sensation_seeking
+ss <- reprores::sensation_seeking
 
 ## alternatively
 
-ss <- read_csv("https://psyteachr.github.io/msc-data-skills/data/sensation_seeking.csv")
+ss <- read_csv("https://psyteachr.github.io/reprores/data/sensation_seeking.csv")
 ```
 
 
@@ -212,7 +213,7 @@ lager
 
 ## Pivot vs tidy verbs
 
-Load the dataset [dataskills::family_composition](https://psyteachr.github.io/msc-data-skills/data/family_composition.csv).
+Load the dataset [reprores::family_composition](https://psyteachr.github.io/reprores/data/family_composition.csv).
 
 The columns `oldbro` through `twinsis` give the number of siblings of that age and sex. Put this into long format and create separate columns for sibling age (`sibage` = old, young, twin) and sex (`sibsex` = bro, sis).
 
@@ -220,7 +221,7 @@ The columns `oldbro` through `twinsis` give the number of siblings of that age a
 
 ```{r family-pivot}
 
-family_pivot <- dataskills::family_composition %>%
+family_pivot <- reprores::family_composition %>%
   pivot_longer(cols = oldbro:twinsis,
                names_to = c("sibage", "sibsex"),
                names_sep = -3,
@@ -232,7 +233,7 @@ family_pivot <- dataskills::family_composition %>%
 ### Use tidy verbs
 
 ```{r family-tidy}
-family_tidy <- dataskills::family_composition %>%
+family_tidy <- reprores::family_composition %>%
   gather("sibtype", "n", oldbro:twinsis) %>%
   separate(sibtype, c("sibage", "sibsex"), sep = -3) %>%
   glimpse()
@@ -241,14 +242,14 @@ family_tidy <- dataskills::family_composition %>%
 
 ## Multiple steps
 
-Tidy the data from [dataskills::eye_descriptions](https://psyteachr.github.io/msc-data-skills/data/eye_descriptions.csv). This dataset contains descriptions of the eyes of 50 people by 220 raters (`user_id`). Some raters wrote more than one description per face (maximum 4), separated by commas, semicolons, or slashes. 
+Tidy the data from [reprores::eye_descriptions](https://psyteachr.github.io/reprores/data/eye_descriptions.csv). This dataset contains descriptions of the eyes of 50 people by 220 raters (`user_id`). Some raters wrote more than one description per face (maximum 4), separated by commas, semicolons, or slashes. 
 
 Create a dataset with separate columns for `face_id`, `description`, and description number (`desc_n`).
 
 Hint: to separate a string by tildes or commas, you would set the `sep` argument to `"(~|,)+"`.
 
 ```{r eyes}
-eyes <- dataskills::eye_descriptions %>%
+eyes <- reprores::eye_descriptions %>%
   gather("face_id", "description", t1:t50) %>%
   separate(description, c("d1", "d2", "d3", "d4"), sep = "(,|;|\\/)+", fill = "right") %>%
   gather("desc_n", "description", d1:d4) %>%

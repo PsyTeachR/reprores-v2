@@ -1,0 +1,217 @@
+---
+title: 'Formative Exercise 02: Data Visualisation'
+output: 
+  html_document:
+    df_print: kable
+---
+
+```{r setup, include=FALSE}
+# please do not alter this code chunk
+knitr::opts_chunk$set(echo = FALSE, 
+                      warning = FALSE,
+                      message = FALSE, 
+                      error = TRUE)
+library(tidyverse)
+library(patchwork)
+library(reprores)
+
+# install the class package reprores to access built-in data
+# devtools::install_github("psyteachr/reprores-v2)
+# or download data from the website
+# https://psyteachr.github.io/reprores/data/data.zip
+```
+
+
+Generate the plots below showing the distribution of dog weight by breed.
+
+```{r dogs}
+# do not edit this chunk
+# dog weights estimated from http://petobesityprevention.org/ideal-weight-ranges/
+
+set.seed(0) # makes sure random numbers are reproducible
+
+dogs <- tibble(
+  breed = rep(c("beagle", "boxer", "bulldog"), each = 100),
+  weight = c(
+    rnorm(100, 24, 6),
+    rnorm(100, 62.5, 12.5),
+    rnorm(100, 45, 5)
+  )
+)
+
+```
+
+
+## Violin Plot
+
+Make a violin plot with `breed` on the x-axis and `weight` on the y-axis. Make each breed white, 50% transparent, and outlined in a different colour, but omit the legend.
+
+```{r exercise-violin}
+dog_violin <- NULL
+
+dog_violin # prints the plot below
+```
+
+
+## Boxplot
+
+Make a boxplot with `breed` on the x-axis and `weight` on the y-axis. Make each breed white, 50% transparent, and outlined in a different colour, but omit the legend.
+
+```{r exercise-boxplot}
+dog_boxplot <- NULL
+
+dog_boxplot # prints the plot below
+```
+
+## Density plot
+
+Make a density plot with `weight` on the x-axis. Make each breed white, 50% transparent, and outlined in a different colour, but omit the legend.
+
+```{r exercise-density}
+dog_density <- NULL
+
+dog_density # prints the plot below
+```
+
+
+## Column Plot
+
+Use `stat_summary` to create a column plot with `breed` on the x-axis and `weight` on the y-axis and error bars showing 1 standard error. Make each breed white, 50% transparent, and outlined in a different colour, but have the error bars be black. Omit the legend.
+
+```{r exercise-column}
+dog_column <- NULL
+
+dog_column # prints the plot below
+```
+
+## Grid
+
+Create a grid of the violin plot, boxplot, and column plot above with all three plots on the same row. Make the figure 8 inches wide, 4 inches tall, and the image cover 100% of the width of the markdown output.
+
+```{r exercise-grid}
+# use patchwork and update the options for this chunk
+```
+
+## Changing defaults
+
+For the four plots above, change the axis labels so the x-axis reads "Breed of Dog" or "Weight of Dog" (depending on the plot type) and the y-axis reads "Weight of Dog", "Number of Dogs", or "Density of Dogs" (depending on the plot type).
+
+Change the default colours to "orange", "dodgerblue", and "hotpink".
+
+Add a title to each plot describing the plot type.
+
+Save each plot as a PNG file with the names "dog_violin.png", "dog_boxplot.png", "dog_density.png", and "dog_column.png" (the names are important so they show up in the code below).
+
+```{r exercise-save}
+# Hint: you can add changes to an existing plot, e.g.:
+# dog_density + xlim(0, 100)
+
+v <- NULL
+
+b <- NULL
+
+d <- NULL
+
+c <- NULL
+
+```
+
+
+```{r}
+# do not change; displays the images saved above
+knitr::include_graphics("dog_violin.png")
+knitr::include_graphics("dog_boxplot.png")
+knitr::include_graphics("dog_density.png")
+knitr::include_graphics("dog_column.png")
+```
+
+
+## Line plot
+
+Represent the relationships among disgust subscales from the dataset [reprores::disgust_scores](https://psyteachr.github.io/reprores/data/disgust_scores.csv).
+
+Graph the linear relationship between moral and pathogen disgust. Make sure the axes run from the minimum to maximum possible scores on both axes. Give the graph an appropriate title and axis labels.
+  
+```{r exercise-lineplot}
+disgust_lineplot <- NULL
+
+disgust_lineplot # prints the plot below
+```
+
+## 2D Density plot
+
+If you add `geom_point()` to the plot above, you'll see that there is too much data for this visualisation to make sense. Instead, create a 2d density plot of the relationship between moral and pathogen disgust for `disgust_scores`. 
+
+```{r exercise-density2d}
+disgust_density <- NULL
+
+disgust_density # prints the plot below
+```
+
+
+## Many correlated variables
+
+Create a heatmap of the relationships among all the questions in [reprores::disgust_cors](https://psyteachr.github.io/reprores/data/disgust_cors.csv). The correlations have already been calculated for you. 
+
+*Bonus*: Figure out how to rotate the text on the x-axis so it's readable.
+
+```{r exercise-heatmap}
+disgust_heatmap <- NULL
+
+disgust_heatmap # prints the plot below
+```
+
+
+
+## Facets
+
+Create a grid of plots for the [reprores::stroop](https://psyteachr.github.io/reprores/data/stroop.csv) dataset using faceting. 
+
+Plot `rt` for each combination of `word` and `ink` to make a 5x5 grid of density plots. Make each plot line the same colour as the ink. For bonus points, make the lines for plots where the ink colour matches the word colour thicker than the other lines.
+
+```{r facets}
+word_by_ink <- NULL
+
+word_by_ink # prints the plot below
+```
+
+
+
+## Advanced Grid
+
+Create a 3x3 grid of linear line plots from `disgust_scores` with columns representing the x-axis and rows representing the y-axis and assign it to `disgust_grid`. Put a density plot of each variable along the diagonal. Make sure the graphs have appropriate titles and axis labels and that the range of the axes are the same in all graphs.
+
+|              | moral   | sexual  | pathogen |
+|--------------|---------|---------|----------|
+| **moral**    | density | line    | line     | 
+| **sexual**   | line    | density | line     |
+| **pathogen** | line    | line    | density  |
+
+
+```{r exercise-cor-advanced}
+# Hint: set up your 9 separate plots first
+
+# regression line plots
+moral_sexual <- NULL
+
+moral_pathogen <- NULL
+
+pathogen_moral <- NULL
+
+pathogen_sexual <- NULL
+
+sexual_moral <- NULL
+
+sexual_pathogen <- NULL
+
+# density plots
+moral_moral <- NULL
+
+sexual_sexual <- NULL
+
+pathogen_pathogen <- NULL
+
+# add the plots together
+
+```
+

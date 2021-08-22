@@ -3,7 +3,7 @@
 <img src="images/memes/repro_reports.jpg" class="meme right"
      alt="Top left: young spongebob; top right: Using Base R for your analysis and copy pasting yur results into tables in Word; middle left: older angry spongebob in workout clothes; middle right: learning how to use dplyr visualize data with ggplot2 and report your analysis in rmarkdown documents; bottom left: muscular spongebob shirtless in a boxing ring; bottom right: wielding the entire might of the tidyverse (with 50 hex stickers)">
 
-## Learning Objectives {#ilo_repro}
+## Learning Objectives {#ilo-repro}
 
 ### Basic
 
@@ -21,7 +21,7 @@
 9. Format tables using `kableExtra`
 
 
-## Resources {#resources10}
+## Resources {#resources-repro}
 
 * [Chapter 27: R Markdown](http://r4ds.had.co.nz/r-markdown.html) in *R for Data Science*
 * [R Markdown Cheat Sheet](http://www.rstudio.com/wp-content/uploads/2016/03/rmarkdown-cheatsheet-2.0.pdf)
@@ -32,7 +32,7 @@
 * [Code Ocean](https://codeocean.com/) for Computational Reproducibility
 
 
-## Setup {#setup_repro}
+## Setup {#setup-repro}
 
 ```{r, message=FALSE}
 library(tidyverse)
@@ -122,9 +122,9 @@ knitr::include_graphics("images/01/reproducibleScript.png")
 
 If you open up a new R Markdown file from a template, you will see an example document with several code blocks in it. To create an HTML or PDF report from an R Markdown (Rmd) document, you compile it.  Compiling a document is called `r glossary("knit", "knitting")` in RStudio. There is a button that looks like a ball of yarn with needles through it that you click on to compile your file into a report. 
 
-```{block, type="try"}
+::: {.try data-latex=""}
 Create a new R Markdown file from the **`File > New File > R Markdown...`** menu. Change the title and author, then click the knit button to create an html file.
-```
+:::
 
 
 ### YAML Header
@@ -187,6 +187,10 @@ The code above sets the following options:
 * `warning    = FALSE` : do not show any function warnings
 * `message    = FALSE` : do not show any function messages
 * `cache      = FALSE` : run all the code to create all of the images and objects each time you knit (set to `TRUE` if you have time-consuming code)
+
+::: {.info data-latex=""}
+Find a list of the current chunk options by typing `str(knitr::opts_chunk$get())` in the console.
+:::
 
 You can also add the packages you need in this chunk using `library()`. Often when you are working on a script, you will realize that you need to load another add-on package. Don't bury the call to `library(package_I_need)` way down in the script. Put it in the top, so the user has an overview of what packages are needed.
 
@@ -458,20 +462,20 @@ Computational reproducibility refers to making all aspects of your analysis repr
 
 [Code Ocean](https://codeocean.com/) is a platform that lets you run your code in the cloud via a web browser. 
 
-## Glossary {#glossary_repro}
+## Glossary {#glossary-repro}
 
 `r glossary_table()`
 
-## Exercises {#exercises_repro}
+## Exercises {#exercises-repro}
 
 Download the first set of [exercises](exercises/01_intro_exercise.Rmd) and put it in the project directory you created earlier for today's exercises. See the [answers](exercises/01_intro_answers.Rmd) only after you've attempted all the questions.
 
 ```{r, eval = FALSE}
 # run this to access the exercise
-dataskills::exercise(1)
+reprores::exercise(1)
 
 # run this to access the answers
-dataskills::exercise(1, answers = TRUE)
+reprores::exercise(1, answers = TRUE)
 ```
 
 

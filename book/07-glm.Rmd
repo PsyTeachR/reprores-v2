@@ -27,7 +27,6 @@
 
 ## Resources {#resources9}
 
-* [Stub for this lesson](stubs/9_glm.Rmd)
 * [Jeff Miller and Patricia Haden, Statistical Analysis with the Linear Model (free online textbook)](http://www.otago.ac.nz/psychology/otago039309.pdf)
 * [lecture slides introducing the General Linear Model](slides/08_glm_slides.pdf)
 * [GLM shiny app](http://rstudio2.psy.gla.ac.uk/Dale/GLM)
@@ -76,11 +75,11 @@ A good way to learn about linear models is to `r glossary("simulation", "simulat
 
 We'll start with a very simple linear model that just has a single categorical factor with two levels. Let's say we're predicting reaction times for congruent and incongruent trials in a Stroop task for a single participant. Average reaction time (`mu`) is 800ms, and is 50ms faster for congruent than incongruent trials (`effect`). 
 
-<div class="warning">
+::: {.warning data-latex=""}
 A **factor** is a categorical variable that is used to divide subjects into groups, usually to draw some comparison. Factors are composed of different **levels**. Do not confuse factors with levels!
 
 In the example above, trial type is a `r mcq(c(answer = "factor", "level"))`, incongrunt is a `r mcq(c("factor", answer = "level"))`, and congruent is a `r mcq(c("factor", answer = "level"))`.
-</div>
+:::
 
 You need to represent `r glossary("categorical")` factors with numbers. The numbers, or `r glossary("coding scheme")` you choose will affect the numbers you get out of the analysis and how you need to interpret them. Here, we will `r glossary("effect code")` the trial types so that congruent trials are coded as +0.5, and incongruent trials are coded as -0.5.
 
@@ -111,9 +110,9 @@ dat <- data.frame(
   )
 ```
 
-```{block type="info"}
+::: {.info data-latex=""}
 The `!!!` (triple bang) in the code `recode(trial_type, !!!trial_types)` is a way to expand the vector `trial_types <- c("congruent" = 0.5, "incongruent" = -0.5)`. It's equivalent to `recode(trial_type, "congruent" = 0.5, "incongruent" = -0.5)`. This pattern avoids making mistakes with recoding because there is only one place where you set up the category to code mapping (in the `trial_types` vector).
-```
+:::
 
 Last but not least, always plot simulated data to make sure it looks like you expect.
 
@@ -135,9 +134,9 @@ summary(my_lm)
 
 Notice how the **estimate** for the `(Intercept)` is close to the value we set for `mu` and the estimate for `trial_type.e` is close to the value we set for `effect`.
 
-```{block, type="try"}
+::: {.try data-latex=""}
 Change the values of `mu` and `effect`, resimulate the data, and re-run the linear model. What happens to the estimates?
-```
+:::
 
 ### Residuals {#residuals}
 
@@ -164,9 +163,9 @@ ggplot(dat) +
   xlab("Simulated Error")
 ```
 
-```{block, type="try"}
+::: {.try data-latex=""}
 What happens to the residuals if you fit a model that ignores trial type (e.g., `lm(Y ~ 1, data = dat)`)?
-```
+:::
 
 ### Predict New Values {#predict}
 
@@ -189,10 +188,10 @@ predict(my_lm, newdata = tibble(trial_type.e = 0.5))
 ```
 
 
-```{block type="info"}
+::: {.info data-latex=""}
 If you look up this function using `?predict`, you will see that "The function invokes particular methods which depend on the class of the first argument."
 What this means is that `predict()` works differently depending on whether you're predicting from the output of `lm()` or other analysis functions. You can search for help on the lm version with `?predict.lm`.
-```
+:::
 
 
 
@@ -251,9 +250,9 @@ The t-test is just a special, limited example of a general linear model.
 t.test(RT ~ trial_type.e, data = dat, var.equal = TRUE)
 ```
 
-```{block, type="try"}
+::: {.try data-latex=""}
 What happens when you use other codings for trial type in the t-test above? Which coding maps onto the results of the t-test best?
-```
+:::
 
 ### ANOVA
 
@@ -407,23 +406,23 @@ aov(Y ~ grp, data = dat) %>% summary(intercept = TRUE)
 
 
 
-```{block, type="try"}
+::: {.try data-latex=""}
 Using the code above, write your own function that takes a table of data and returns the ANOVA results table like above.
-```
+:::
 
 
-## Glossary {#glossary9}
+## Glossary {#glossary-glm}
 
 `r glossary_table()`
 
-## Exercises {#exercises9}
+## Exercises {#exercises-glm}
 
-Download the [exercises](exercises/09_glm_exercise.Rmd). See the [answers](exercises/09_glm_answers.Rmd) only after you've attempted all the questions.
+Download the [exercises](exercises/07_glm_exercise.Rmd). See the [answers](exercises/07_glm_answers.Rmd) only after you've attempted all the questions.
 
 ```{r, eval = FALSE}
 # run this to access the exercise
-dataskills::exercise(9)
+reprores::exercise(7)
 
 # run this to access the answers
-dataskills::exercise(9, answers = TRUE)
+reprores::exercise(7, answers = TRUE)
 ```

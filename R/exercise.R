@@ -8,11 +8,14 @@
 #' @export
 #'
 exercise <- function(chapter, filename = NULL, answers = FALSE) {
-  tag <- c("intro", "data", "ggplot", "tidyr", "dplyr", "joins", "func", "sim", "glm")
-  fname <- sprintf("book/exercises/%02d_%s_%s.Rmd",
-                   chapter, tag[chapter],
-                   ifelse(answers, "answers", "exercise"))
-  f <- system.file(fname, package = "dataskills")
+  pattern <- sprintf("%s%s%s.*_%s\\.Rmd", 
+                     ifelse(is.numeric(chapter), "^0?", ".*"),
+                     chapter,
+                     ifelse(is.numeric(chapter), "_", ""),
+                     ifelse(answers, "answers", "exercise"))
+  dir <- system.file("book/exercises/", package = "reprores")
+  
+  f <- list.files(dir, pattern)
   
   if (f == "") stop("Exercise ", chapter, " doesn't exist")
   
