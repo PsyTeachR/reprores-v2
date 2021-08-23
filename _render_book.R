@@ -12,16 +12,14 @@ zip(zipfile, c(f.zip), flags = "-j")
 # render the book ----
 
 ## make PDF ----
-of <- bookdown::pdf_book()
 browseURL(
-  xfun::in_dir("book", bookdown::render_book("index.Rmd", of))
+  xfun::in_dir("book", bookdown::render_book("index.Rmd", "bookdown::pdf_book"))
 )
 file.remove("docs/reprores-v2.pdf")
 file.rename("docs/_main.pdf", "docs/reprores-v2.pdf")
 
 ## make EPUB ----
-of <- bookdown::epub_book()
-xfun::in_dir("book", bookdown::render_book("index.Rmd", of))
+xfun::in_dir("book", bookdown::render_book("index.Rmd", "bookdown::epub_book"))
 file.remove("docs/reprores-v2.epub")
 file.rename("docs/_main.epub", "docs/reprores-v2.epub")
 
@@ -32,7 +30,7 @@ system("/Applications/calibre.app/Contents/MacOS/ebook-convert ~/rproj/psyteachr
 ## make html ----
 of <- bookdown::gitbook(split_bib = FALSE)
 browseURL(
-  xfun::in_dir("book", bookdown::render_book("index.Rmd", of))
+  xfun::in_dir("book", bookdown::render_book("index.Rmd", "bookdown::gitbook"))
 )
 
 

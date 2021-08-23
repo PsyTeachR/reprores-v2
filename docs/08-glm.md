@@ -128,7 +128,7 @@ ggplot(dat, aes(trial_type, RT)) +
 ```
 
 <div class="figure" style="text-align: center">
-<img src="08-glm_files/figure-epub3/plot-sim-1.png" alt="Simulated Data" width="100%" />
+<img src="08-glm_files/figure-html/plot-sim-1.png" alt="Simulated Data" width="100%" />
 <p class="caption">(\#fig:plot-sim)Simulated Data</p>
 </div>
 
@@ -184,7 +184,7 @@ ggplot(dat) +
 ```
 
 <div class="figure" style="text-align: center">
-<img src="08-glm_files/figure-epub3/res-density-plot-1.png" alt="Model residuals should be approximately normally distributed for each group" width="100%" />
+<img src="08-glm_files/figure-html/res-density-plot-1.png" alt="Model residuals should be approximately normally distributed for each group" width="100%" />
 <p class="caption">(\#fig:res-density-plot)Model residuals should be approximately normally distributed for each group</p>
 </div>
 
@@ -201,7 +201,7 @@ ggplot(dat) +
 ```
 
 <div class="figure" style="text-align: center">
-<img src="08-glm_files/figure-epub3/res-err-plot-1.png" alt="Model residuals should be very similar to the simulated error" width="100%" />
+<img src="08-glm_files/figure-html/res-err-plot-1.png" alt="Model residuals should be very similar to the simulated error" width="100%" />
 <p class="caption">(\#fig:res-err-plot)Model residuals should be very similar to the simulated error</p>
 </div>
 
@@ -408,7 +408,7 @@ dat <- two_sample(5, -2, +2, 1, 1)
 You can calculate how each data point (`Y`) deviates from the overall sample mean ($\hat{\mu}$), which is represented by the horizontal grey line below and the deviations are the vertical grey lines. You can also calculate how different each point is from its group-specific mean ($\hat{A_i}$), which are represented by the horizontal coloured lines below and the deviations are the coloured vertical lines.
 
 <div class="figure" style="text-align: center">
-<img src="08-glm_files/figure-epub3/deviation-1.png" alt="Deviations of each data point (Y) from the overall and group means" width="100%" />
+<img src="08-glm_files/figure-html/deviation-1.png" alt="Deviations of each data point (Y) from the overall and group means" width="100%" />
 <p class="caption">(\#fig:deviation)Deviations of each data point (Y) from the overall and group means</p>
 </div>
 

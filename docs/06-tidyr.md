@@ -504,21 +504,22 @@ data <- rename(data_spread, A_mean = A, B_mean = B)
 data
 ```
 
-```
-## # A tibble: 10 x 3
-##       id  A_mean B_mean
-##    <int>   <dbl>  <dbl>
-##  1     1 -0.594   1.02 
-##  2     2  0.744   2.72 
-##  3     3  0.931   3.93 
-##  4     4  0.720   1.97 
-##  5     5 -0.0281  1.95 
-##  6     6 -0.0983  3.21 
-##  7     7  0.126   0.926
-##  8     8  1.45    2.38 
-##  9     9  0.298   1.66 
-## 10    10  0.559   2.10
-```
+<div class="kable-table">
+
+| id|     A_mean|    B_mean|
+|--:|----------:|---------:|
+|  1| -0.5938256| 1.0243046|
+|  2|  0.7440623| 2.7172046|
+|  3|  0.9309275| 3.9262358|
+|  4|  0.7197686| 1.9662632|
+|  5| -0.0280832| 1.9473456|
+|  6| -0.0982555| 3.2073687|
+|  7|  0.1256922| 0.9256321|
+|  8|  1.4526447| 2.3778116|
+|  9|  0.2976443| 1.6617481|
+| 10|  0.5589199| 2.1034679|
+
+</div>
 
 ::: {.warning data-latex=""}
 You *can* name each object `data` and keep replacing the old data object with the new one at each step. This will keep your environment clean, but I don't recommend it because it makes it too easy to accidentally run your code out of order when you are running line-by-line for development or debugging.
@@ -625,17 +626,18 @@ data("infmort")
 head(infmort)
 ```
 
-```
-## # A tibble: 6 x 3
-##   Country     Year `Infant mortality rate (probability of dying between birth a…
-##   <chr>      <dbl> <chr>                                                        
-## 1 Afghanist…  2015 66.3 [52.7-83.9]                                             
-## 2 Afghanist…  2014 68.1 [55.7-83.6]                                             
-## 3 Afghanist…  2013 69.9 [58.7-83.5]                                             
-## 4 Afghanist…  2012 71.7 [61.6-83.7]                                             
-## 5 Afghanist…  2011 73.4 [64.4-84.2]                                             
-## 6 Afghanist…  2010 75.1 [66.9-85.1]
-```
+<div class="kable-table">
+
+|Country     | Year|Infant mortality rate (probability of dying between birth and age 1 per 1000 live births) |
+|:-----------|----:|:-----------------------------------------------------------------------------------------|
+|Afghanistan | 2015|66.3 [52.7-83.9]                                                                          |
+|Afghanistan | 2014|68.1 [55.7-83.6]                                                                          |
+|Afghanistan | 2013|69.9 [58.7-83.5]                                                                          |
+|Afghanistan | 2012|71.7 [61.6-83.7]                                                                          |
+|Afghanistan | 2011|73.4 [64.4-84.2]                                                                          |
+|Afghanistan | 2010|75.1 [66.9-85.1]                                                                          |
+
+</div>
 
 
 
@@ -644,17 +646,18 @@ data("matmort")
 head(matmort)
 ```
 
-```
-## # A tibble: 6 x 4
-##   Country     `1990`               `2000`               `2015`           
-##   <chr>       <chr>                <chr>                <chr>            
-## 1 Afghanistan 1 340 [ 878 - 1 950] 1 100 [ 745 - 1 570] 396 [ 253 -  620]
-## 2 Albania     71 [ 58 -  88]       43 [ 33 -  56]       29 [ 16 -  46]   
-## 3 Algeria     216 [ 141 -  327]    170 [ 118 -  241]    140 [ 82 -  244] 
-## 4 Angola      1 160 [ 627 - 2 020] 924 [ 472 - 1 730]   477 [ 221 -  988]
-## 5 Argentina   72 [ 64 -  80]       60 [ 54 -  65]       52 [ 44 -  63]   
-## 6 Armenia     58 [ 51 -  65]       40 [ 35 -  46]       25 [ 21 -  31]
-```
+<div class="kable-table">
+
+|Country     |1990                 |2000                 |2015              |
+|:-----------|:--------------------|:--------------------|:-----------------|
+|Afghanistan |1 340 [ 878 - 1 950] |1 100 [ 745 - 1 570] |396 [ 253 -  620] |
+|Albania     |71 [ 58 -  88]       |43 [ 33 -  56]       |29 [ 16 -  46]    |
+|Algeria     |216 [ 141 -  327]    |170 [ 118 -  241]    |140 [ 82 -  244]  |
+|Angola      |1 160 [ 627 - 2 020] |924 [ 472 - 1 730]   |477 [ 221 -  988] |
+|Argentina   |72 [ 64 -  80]       |60 [ 54 -  65]       |52 [ 44 -  63]    |
+|Armenia     |58 [ 51 -  65]       |40 [ 35 -  46]       |25 [ 21 -  31]    |
+
+</div>
 
 
 

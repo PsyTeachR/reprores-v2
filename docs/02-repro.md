@@ -73,7 +73,7 @@ Your script should only reference files in three locations, using the appropriat
 
 | Where                    | Example |
 |--------------------------|---------|
-| on the web               | "https://psyteachr.github.io/psyteachr/data/disgust_scores.csv" |
+| on the web               | "https://psyteachr.github.io/reprores/data/disgust_scores.csv" |
 | in the working directory | "disgust_scores.csv"  |
 | in a subdirectory        | "data/disgust_scores.csv" |
 
@@ -236,7 +236,7 @@ First, create a code chunk in your document. This code loads some data from the 
 
 
 ```r
-pets <- read_csv("https://psyteachr.github.io/psyteachr/data/pets.csv")
+pets <- read_csv("https://psyteachr.github.io/reprores/data/pets.csv")
 ```
 
 ```
@@ -288,14 +288,15 @@ pets %>%
   )
 ```
 
-```
-## # A tibble: 3 x 4
-##   pet        n mean_weight mean_score
-##   <chr>  <int>       <dbl>      <dbl>
-## 1 cat      300        9.37       90.2
-## 2 dog      400       19.1       100. 
-## 3 ferret   100        4.78      112.
-```
+<div class="kable-table">
+
+|pet    |   n| mean_weight| mean_score|
+|:------|---:|-----------:|----------:|
+|cat    | 300|    9.371613|   90.23667|
+|dog    | 400|   19.067974|   99.98250|
+|ferret | 100|    4.781569|  111.78000|
+
+</div>
 
 The table above is OK, but it could be more reader-friendly by changing the column labels, rounding the means, and adding a caption. You can use `knitr::kable()` for this.
 
@@ -353,13 +354,13 @@ ggplot(pets, aes(pet, score, fill = country)) +
 ```
 
 <div class="figure" style="text-align: center">
-<img src="02-repro_files/figure-epub3/unnamed-chunk-6-1.png" alt="Figure 1. Scores by pet type and country." width="100%" />
+<img src="02-repro_files/figure-html/unnamed-chunk-6-1.png" alt="Figure 1. Scores by pet type and country." width="100%" />
 <p class="caption">(\#fig:unnamed-chunk-6)Figure 1. Scores by pet type and country.</p>
 </div>
 ````
 
 <div class="figure" style="text-align: center">
-<img src="02-repro_files/figure-epub3/unnamed-chunk-7-1.png" alt="Figure 1. Scores by pet type and country." width="100%" />
+<img src="02-repro_files/figure-html/unnamed-chunk-7-1.png" alt="Figure 1. Scores by pet type and country." width="100%" />
 <p class="caption">(\#fig:unnamed-chunk-7)Figure 1. Scores by pet type and country.</p>
 </div>
 

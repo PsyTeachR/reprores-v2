@@ -72,7 +72,7 @@ Your script should only reference files in three locations, using the appropriat
 
 | Where                    | Example |
 |--------------------------|---------|
-| on the web               | "https://psyteachr.github.io/psyteachr/data/disgust_scores.csv" |
+| on the web               | "https://psyteachr.github.io/reprores/data/disgust_scores.csv" |
 | in the working directory | "disgust_scores.csv"  |
 | in a subdirectory        | "data/disgust_scores.csv" |
 
@@ -223,7 +223,7 @@ You can include `r glossary("chunk", "code chunks")` that create and display ima
 First, create a code chunk in your document. This code loads some data from the web. 
 
 ```{r}
-pets <- read_csv("https://psyteachr.github.io/psyteachr/data/pets.csv")
+pets <- read_csv("https://psyteachr.github.io/reprores/data/pets.csv")
 ```
 
 #### Comments

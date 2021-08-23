@@ -28,9 +28,9 @@ Edit the code chunks below and knit the document. You can pipe your objects to `
 
 Load the following data from the reprores package (or access the linked CSV files online). Each participant is identified by a unique `user_id`.
 
-* [`disgust_scores`](https://psyteachr.github.io/psyteachr/data/disgust_scores.csv)
-* [`personality_scores`](https://psyteachr.github.io/psyteachr/data/personality_scores.csv)
-* [`users`](https://psyteachr.github.io/psyteachr/data/users.csv)
+* [`disgust_scores`](https://psyteachr.github.io/reprores/data/disgust_scores.csv)
+* [`personality_scores`](https://psyteachr.github.io/reprores/data/personality_scores.csv)
+* [`users`](https://psyteachr.github.io/reprores/data/users.csv)
 
 
 ```{r ex-1a}
@@ -106,7 +106,7 @@ study6 <- NULL
 
 ### Question 7
 
-Load new user data from [users2](https://psyteachr.github.io/psyteachr/data/users2.csv). Bind this table and the original `users` table into a single table called `users_all`.
+Load new user data from [users2](https://psyteachr.github.io/reprores/data/users2.csv). Bind this table and the original `users` table into a single table called `users_all`.
 
 ```{r ex-7}
 users_all <- NULL

@@ -242,7 +242,7 @@ div.csl-indent {
 </ul></li>
 <li class="chapter" data-level="3" data-path="ggplot.html"><a href="ggplot.html"><i class="fa fa-check"></i><b>3</b> Data Visualisation</a>
 <ul>
-<li class="chapter" data-level="3.1" data-path="ggplot.html"><a href="ggplot.html#ilo_ggplot"><i class="fa fa-check"></i><b>3.1</b> Learning Objectives</a>
+<li class="chapter" data-level="3.1" data-path="ggplot.html"><a href="ggplot.html#ilo-ggplot"><i class="fa fa-check"></i><b>3.1</b> Learning Objectives</a>
 <ul>
 <li class="chapter" data-level="3.1.1" data-path="ggplot.html"><a href="ggplot.html#basic-1"><i class="fa fa-check"></i><b>3.1.1</b> Basic</a></li>
 <li class="chapter" data-level="3.1.2" data-path="ggplot.html"><a href="ggplot.html#intermediate-1"><i class="fa fa-check"></i><b>3.1.2</b> Intermediate</a></li>
@@ -509,7 +509,7 @@ div.csl-indent {
 </ul></li>
 <li class="chapter" data-level="10" data-path="sim.html"><a href="sim.html"><i class="fa fa-check"></i><b>10</b> Probability &amp; Simulation</a>
 <ul>
-<li class="chapter" data-level="10.1" data-path="sim.html"><a href="sim.html#ilo8"><i class="fa fa-check"></i><b>10.1</b> Learning Objectives</a>
+<li class="chapter" data-level="10.1" data-path="sim.html"><a href="sim.html#ilo-sim"><i class="fa fa-check"></i><b>10.1</b> Learning Objectives</a>
 <ul>
 <li class="chapter" data-level="10.1.1" data-path="sim.html"><a href="sim.html#basic-6"><i class="fa fa-check"></i><b>10.1.1</b> Basic</a></li>
 <li class="chapter" data-level="10.1.2" data-path="sim.html"><a href="sim.html#intermediate-5"><i class="fa fa-check"></i><b>10.1.2</b> Intermediate</a></li>
@@ -600,7 +600,7 @@ div.csl-indent {
 <div id="repro" class="section level1" number="2">
 <h1><span class="header-section-number">Chapter 2</span> Reproducible Workflows</h1>
 <p><img src="images/memes/repro_reports.jpg" class="meme right"
-     alt="Top left: young spongebob; top right: Using Base R for your analysis and copy pasting yur results into tables in Word; middle left: older angry spongebob in workout clothes; middle right: learning how to use dplyr visualize data with ggplot2 and report your analysis in rmarkdown documents; bottom left: muscular spongebob shirtless in a boxing ring; bottom right: wielding the entire might of the tidyverse (with 50 hex stickers)"></p>
+     alt="Top left: young spongebob; top right: Using Base R for your analysis and copy pasting yur results into tables in Word; middle left: older angry spongebob in workout clothes; middle right: learning how to use dplyr visualize data with ggplot2 and report your analysis in rmarkdown documents; bottom left: muscular spongebob shirtless in a boxing ring; bottom right: wielding the entire might of the tidyverse (with 50 hex stickers)" /></p>
 <div id="ilo-repro" class="section level2" number="2.1">
 <h2><span class="header-section-number">2.1</span> Learning Objectives</h2>
 <div id="basic" class="section level3" number="2.1.1">
@@ -662,10 +662,6 @@ div.csl-indent {
 <p>Where should you put all of your files? When developing an analysis, you usually want to have all of your scripts and data files in one subtree of your computer's directory structure. Usually there is a single <a class='glossary' target='_blank' title='The filepath where R is currently reading and writing files.' href='https://psyteachr.github.io/glossary/w#working-directory'>working directory</a> where your data and scripts are stored.</p>
 <p>Your script should only reference files in three locations, using the appropriate format.</p>
 <table>
-<colgroup>
-<col width="74%" />
-<col width="25%" />
-</colgroup>
 <thead>
 <tr class="header">
 <th>Where</th>
@@ -675,7 +671,7 @@ div.csl-indent {
 <tbody>
 <tr class="odd">
 <td>on the web</td>
-<td>"<a href="https://psyteachr.github.io/psyteachr/data/disgust_scores.csv" class="uri">https://psyteachr.github.io/psyteachr/data/disgust_scores.csv</a>"</td>
+<td>"<a href="https://psyteachr.github.io/reprores/data/disgust_scores.csv" class="uri">https://psyteachr.github.io/reprores/data/disgust_scores.csv</a>"</td>
 </tr>
 <tr class="even">
 <td>in the working directory</td>
@@ -801,7 +797,7 @@ output:
 <h3><span class="header-section-number">2.6.4</span> Code Chunks</h3>
 <p>You can include <a class='glossary' target='_blank' title='A section of code in an R Markdown file' href='https://psyteachr.github.io/glossary/c#chunk'>code chunks</a> that create and display images, tables, or computations to include in your text. Let's start by loading some data.</p>
 <p>First, create a code chunk in your document. This code loads some data from the web.</p>
-<div class="sourceCode" id="cb51"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb51-1"><a href="repro.html#cb51-1" aria-hidden="true" tabindex="-1"></a>pets <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;https://psyteachr.github.io/psyteachr/data/pets.csv&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb51"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb51-1"><a href="repro.html#cb51-1" aria-hidden="true" tabindex="-1"></a>pets <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;https://psyteachr.github.io/reprores/data/pets.csv&quot;</span>)</span></code></pre></div>
 <pre><code>## 
 ## ── Column specification ────────────────────────────────────────────────────────
 ## cols(
