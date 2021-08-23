@@ -731,5 +731,6 @@ copied <- sapply(f, file.copy,
 
 ## make zip file ----
 f <- list.files(path = "data-raw", pattern = "[^zip]$", full.names = TRUE)
-utils::zip("inst/extdata/data.zip", f, flags = "-j")
+dir.create("docs/data", FALSE)
+utils::zip("docs/data/data.zip", f, flags = "-j")
 

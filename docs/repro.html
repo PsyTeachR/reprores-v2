@@ -10,16 +10,16 @@
 
   <meta property="og:title" content="Chapter 2 Reproducible Workflows | Data Skills for Reproducible Research" />
   <meta property="og:type" content="book" />
-  
-  
+  <meta property="og:url" content="https://psyteachr.github.io/reprores-v2" />
+  <meta property="og:image" content="https://psyteachr.github.io/reprores-v2/images/twitter_card.png" />
   <meta property="og:description" content="This book provides an overview of skills needed for reproducible research and open science using the statistical programming language R and tidyverse packages. It covers data visualisation, data tidying and wrangling, archiving, iteration and functions, probability and data simulations, general linear models, and reproducible workflows." />
-  
+  <meta name="github-repo" content="psyteachr/reprores-v2" />
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="Chapter 2 Reproducible Workflows | Data Skills for Reproducible Research" />
   
   <meta name="twitter:description" content="This book provides an overview of skills needed for reproducible research and open science using the statistical programming language R and tidyverse packages. It covers data visualisation, data tidying and wrangling, archiving, iteration and functions, probability and data simulations, general linear models, and reproducible workflows." />
-  
+  <meta name="twitter:image" content="https://psyteachr.github.io/reprores-v2/images/twitter_card.png" />
 
 
 
@@ -28,10 +28,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
-  
-  
+  <link rel="apple-touch-icon-precomposed" sizes="152x152" href="images/touch-icon.png" />
+  <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
 <link rel="prev" href="intro.html"/>
-<link rel="next" href="data.html"/>
+<link rel="next" href="ggplot.html"/>
 <script src="libs/header-attrs-2.9.4/header-attrs.js"></script>
 <script src="libs/jquery-3.5.1/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -59,14 +59,6 @@
 <script src="libs/crosstalk-1.1.1/js/crosstalk.min.js"></script>
 <link href="libs/plotly-htmlwidgets-css-1.57.1/plotly-htmlwidgets.css" rel="stylesheet" />
 <script src="libs/plotly-main-1.57.1/plotly-latest.min.js"></script>
-<meta property="og:title" content="Chapter 2 Reproducible Workflows | Data Skills for Reproducible Research">
-<meta property="og:description" content="This book provides an overview of skills needed for reproducible research and open science using the statistical programming language R and tidyverse packages. It covers data visualisation, data tidying and wrangling, archiving, iteration and functions, probability and data simulations, general linear models, and reproducible workflows.">
-<meta property="og:image" content="https://psyteachr.github.io/reprores-v2/images/twitter_card.png">
-<meta property="og:url" content="https://psyteachr.github.io/reprores-v2/">
-<meta property="twitter:card" content="summary_large_image">
-
-<link rel="shortcut icon" href="https://psyteachr.github.io/reprores-v2/images/logo.png">
-
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-6NP3MF25W3"></script>
 <script>
@@ -218,7 +210,7 @@ div.csl-indent {
 <li class="chapter" data-level="1.5.3" data-path="intro.html"><a href="intro.html#install-from-github"><i class="fa fa-check"></i><b>1.5.3</b> Install from GitHub</a></li>
 </ul></li>
 <li class="chapter" data-level="1.6" data-path="intro.html"><a href="intro.html#glossaryintro"><i class="fa fa-check"></i><b>1.6</b> Glossary</a></li>
-<li class="chapter" data-level="1.7" data-path="intro.html"><a href="intro.html#exercises-repro"><i class="fa fa-check"></i><b>1.7</b> Exercises</a></li>
+<li class="chapter" data-level="1.7" data-path="intro.html"><a href="intro.html#exercises-intro"><i class="fa fa-check"></i><b>1.7</b> Exercises</a></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="repro.html"><a href="repro.html"><i class="fa fa-check"></i><b>2</b> Reproducible Workflows</a>
 <ul>
@@ -245,93 +237,93 @@ div.csl-indent {
 <li class="chapter" data-level="2.6.7" data-path="repro.html"><a href="repro.html#computational-reproducibility"><i class="fa fa-check"></i><b>2.6.7</b> Computational Reproducibility</a></li>
 </ul></li>
 <li class="chapter" data-level="2.7" data-path="repro.html"><a href="repro.html#glossary-repro"><i class="fa fa-check"></i><b>2.7</b> Glossary</a></li>
-<li class="chapter" data-level="2.8" data-path="intro.html"><a href="intro.html#exercises-repro"><i class="fa fa-check"></i><b>2.8</b> Exercises</a></li>
+<li class="chapter" data-level="2.8" data-path="repro.html"><a href="repro.html#exercises-repro"><i class="fa fa-check"></i><b>2.8</b> Exercises</a></li>
 <li class="chapter" data-level="2.9" data-path="repro.html"><a href="repro.html#references"><i class="fa fa-check"></i><b>2.9</b> References</a></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="data.html"><a href="data.html"><i class="fa fa-check"></i><b>3</b> Working with Data</a>
+<li class="chapter" data-level="3" data-path="ggplot.html"><a href="ggplot.html"><i class="fa fa-check"></i><b>3</b> Data Visualisation</a>
 <ul>
-<li class="chapter" data-level="3.1" data-path="data.html"><a href="data.html#ilo2"><i class="fa fa-check"></i><b>3.1</b> Learning Objectives</a></li>
-<li class="chapter" data-level="3.2" data-path="data.html"><a href="data.html#resources2"><i class="fa fa-check"></i><b>3.2</b> Resources</a></li>
-<li class="chapter" data-level="3.3" data-path="data.html"><a href="data.html#setup2"><i class="fa fa-check"></i><b>3.3</b> Setup</a></li>
-<li class="chapter" data-level="3.4" data-path="data.html"><a href="data.html#data-tables"><i class="fa fa-check"></i><b>3.4</b> Data tables</a>
+<li class="chapter" data-level="3.1" data-path="ggplot.html"><a href="ggplot.html#ilo_ggplot"><i class="fa fa-check"></i><b>3.1</b> Learning Objectives</a>
 <ul>
-<li class="chapter" data-level="3.4.1" data-path="data.html"><a href="data.html#builtin"><i class="fa fa-check"></i><b>3.4.1</b> Built-in data</a></li>
-<li class="chapter" data-level="3.4.2" data-path="data.html"><a href="data.html#import_data"><i class="fa fa-check"></i><b>3.4.2</b> Importing data</a></li>
-<li class="chapter" data-level="3.4.3" data-path="data.html"><a href="data.html#creating-data"><i class="fa fa-check"></i><b>3.4.3</b> Creating data</a></li>
-<li class="chapter" data-level="3.4.4" data-path="data.html"><a href="data.html#writing-data"><i class="fa fa-check"></i><b>3.4.4</b> Writing Data</a></li>
+<li class="chapter" data-level="3.1.1" data-path="ggplot.html"><a href="ggplot.html#basic-1"><i class="fa fa-check"></i><b>3.1.1</b> Basic</a></li>
+<li class="chapter" data-level="3.1.2" data-path="ggplot.html"><a href="ggplot.html#intermediate-1"><i class="fa fa-check"></i><b>3.1.2</b> Intermediate</a></li>
 </ul></li>
-<li class="chapter" data-level="3.5" data-path="data.html"><a href="data.html#data_types"><i class="fa fa-check"></i><b>3.5</b> Basic data types</a>
+<li class="chapter" data-level="3.2" data-path="ggplot.html"><a href="ggplot.html#resources3"><i class="fa fa-check"></i><b>3.2</b> Resources</a></li>
+<li class="chapter" data-level="3.3" data-path="ggplot.html"><a href="ggplot.html#setup_ggplot"><i class="fa fa-check"></i><b>3.3</b> Setup</a></li>
+<li class="chapter" data-level="3.4" data-path="ggplot.html"><a href="ggplot.html#vartypes"><i class="fa fa-check"></i><b>3.4</b> Common Variable Combinations</a></li>
+<li class="chapter" data-level="3.5" data-path="ggplot.html"><a href="ggplot.html#basic-plots"><i class="fa fa-check"></i><b>3.5</b> Basic Plots</a></li>
+<li class="chapter" data-level="3.6" data-path="ggplot.html"><a href="ggplot.html#ggplots"><i class="fa fa-check"></i><b>3.6</b> GGplots</a></li>
+<li class="chapter" data-level="3.7" data-path="ggplot.html"><a href="ggplot.html#common-plot-types"><i class="fa fa-check"></i><b>3.7</b> Common Plot Types</a>
 <ul>
-<li class="chapter" data-level="3.5.1" data-path="data.html"><a href="data.html#numeric-data"><i class="fa fa-check"></i><b>3.5.1</b> Numeric data</a></li>
-<li class="chapter" data-level="3.5.2" data-path="data.html"><a href="data.html#character-data"><i class="fa fa-check"></i><b>3.5.2</b> Character data</a></li>
-<li class="chapter" data-level="3.5.3" data-path="data.html"><a href="data.html#logical-data"><i class="fa fa-check"></i><b>3.5.3</b> Logical Data</a></li>
+<li class="chapter" data-level="3.7.1" data-path="ggplot.html"><a href="ggplot.html#geom_bar"><i class="fa fa-check"></i><b>3.7.1</b> Bar plot</a></li>
+<li class="chapter" data-level="3.7.2" data-path="ggplot.html"><a href="ggplot.html#geom_density"><i class="fa fa-check"></i><b>3.7.2</b> Density plot</a></li>
+<li class="chapter" data-level="3.7.3" data-path="ggplot.html"><a href="ggplot.html#geom_freqpoly"><i class="fa fa-check"></i><b>3.7.3</b> Frequency polygons</a></li>
+<li class="chapter" data-level="3.7.4" data-path="ggplot.html"><a href="ggplot.html#geom_histogram"><i class="fa fa-check"></i><b>3.7.4</b> Histogram</a></li>
+<li class="chapter" data-level="3.7.5" data-path="ggplot.html"><a href="ggplot.html#geom_col"><i class="fa fa-check"></i><b>3.7.5</b> Column plot</a></li>
+<li class="chapter" data-level="3.7.6" data-path="ggplot.html"><a href="ggplot.html#geom_boxplot"><i class="fa fa-check"></i><b>3.7.6</b> Boxplot</a></li>
+<li class="chapter" data-level="3.7.7" data-path="ggplot.html"><a href="ggplot.html#geom_violin"><i class="fa fa-check"></i><b>3.7.7</b> Violin plot</a></li>
+<li class="chapter" data-level="3.7.8" data-path="ggplot.html"><a href="ggplot.html#vertical_intervals"><i class="fa fa-check"></i><b>3.7.8</b> Vertical intervals</a></li>
+<li class="chapter" data-level="3.7.9" data-path="ggplot.html"><a href="ggplot.html#geom_point"><i class="fa fa-check"></i><b>3.7.9</b> Scatter plot</a></li>
+<li class="chapter" data-level="3.7.10" data-path="ggplot.html"><a href="ggplot.html#geom_smooth"><i class="fa fa-check"></i><b>3.7.10</b> Line graph</a></li>
 </ul></li>
-<li class="chapter" data-level="3.6" data-path="data.html"><a href="data.html#containers"><i class="fa fa-check"></i><b>3.6</b> Basic container types</a>
+<li class="chapter" data-level="3.8" data-path="ggplot.html"><a href="ggplot.html#customisation"><i class="fa fa-check"></i><b>3.8</b> Customisation</a>
 <ul>
-<li class="chapter" data-level="3.6.1" data-path="data.html"><a href="data.html#vectors"><i class="fa fa-check"></i><b>3.6.1</b> Vectors</a></li>
-<li class="chapter" data-level="3.6.2" data-path="data.html"><a href="data.html#lists"><i class="fa fa-check"></i><b>3.6.2</b> Lists</a></li>
-<li class="chapter" data-level="3.6.3" data-path="repro.html"><a href="repro.html#tables"><i class="fa fa-check"></i><b>3.6.3</b> Tables</a></li>
+<li class="chapter" data-level="3.8.1" data-path="ggplot.html"><a href="ggplot.html#custom-size"><i class="fa fa-check"></i><b>3.8.1</b> Size and Position</a></li>
+<li class="chapter" data-level="3.8.2" data-path="ggplot.html"><a href="ggplot.html#custom-labels"><i class="fa fa-check"></i><b>3.8.2</b> Labels</a></li>
+<li class="chapter" data-level="3.8.3" data-path="ggplot.html"><a href="ggplot.html#custom-colours"><i class="fa fa-check"></i><b>3.8.3</b> Colours</a></li>
+<li class="chapter" data-level="3.8.4" data-path="ggplot.html"><a href="ggplot.html#themes"><i class="fa fa-check"></i><b>3.8.4</b> Themes</a></li>
+<li class="chapter" data-level="3.8.5" data-path="ggplot.html"><a href="ggplot.html#ggsave"><i class="fa fa-check"></i><b>3.8.5</b> Save as file</a></li>
 </ul></li>
-<li class="chapter" data-level="3.7" data-path="data.html"><a href="data.html#troubleshooting"><i class="fa fa-check"></i><b>3.7</b> Troubleshooting</a></li>
-<li class="chapter" data-level="3.8" data-path="data.html"><a href="data.html#glossary-data"><i class="fa fa-check"></i><b>3.8</b> Glossary</a></li>
-<li class="chapter" data-level="3.9" data-path="data.html"><a href="data.html#exercises-data"><i class="fa fa-check"></i><b>3.9</b> Exercises</a></li>
-</ul></li>
-<li class="chapter" data-level="4" data-path="ggplot.html"><a href="ggplot.html"><i class="fa fa-check"></i><b>4</b> Data Visualisation</a>
+<li class="chapter" data-level="3.9" data-path="ggplot.html"><a href="ggplot.html#combo_plots"><i class="fa fa-check"></i><b>3.9</b> Combination Plots</a>
 <ul>
-<li class="chapter" data-level="4.1" data-path="ggplot.html"><a href="ggplot.html#ilo_ggplot"><i class="fa fa-check"></i><b>4.1</b> Learning Objectives</a>
-<ul>
-<li class="chapter" data-level="4.1.1" data-path="ggplot.html"><a href="ggplot.html#basic-1"><i class="fa fa-check"></i><b>4.1.1</b> Basic</a></li>
-<li class="chapter" data-level="4.1.2" data-path="ggplot.html"><a href="ggplot.html#intermediate-1"><i class="fa fa-check"></i><b>4.1.2</b> Intermediate</a></li>
+<li class="chapter" data-level="3.9.1" data-path="ggplot.html"><a href="ggplot.html#violinbox-plot"><i class="fa fa-check"></i><b>3.9.1</b> Violinbox plot</a></li>
+<li class="chapter" data-level="3.9.2" data-path="ggplot.html"><a href="ggplot.html#violin-point-range-plot"><i class="fa fa-check"></i><b>3.9.2</b> Violin-point-range plot</a></li>
+<li class="chapter" data-level="3.9.3" data-path="ggplot.html"><a href="ggplot.html#violin-jitter-plot"><i class="fa fa-check"></i><b>3.9.3</b> Violin-jitter plot</a></li>
+<li class="chapter" data-level="3.9.4" data-path="ggplot.html"><a href="ggplot.html#scatter-line-graph"><i class="fa fa-check"></i><b>3.9.4</b> Scatter-line graph</a></li>
+<li class="chapter" data-level="3.9.5" data-path="ggplot.html"><a href="ggplot.html#plot_grid"><i class="fa fa-check"></i><b>3.9.5</b> Grid of plots</a></li>
 </ul></li>
-<li class="chapter" data-level="4.2" data-path="ggplot.html"><a href="ggplot.html#resources3"><i class="fa fa-check"></i><b>4.2</b> Resources</a></li>
-<li class="chapter" data-level="4.3" data-path="ggplot.html"><a href="ggplot.html#setup_ggplot"><i class="fa fa-check"></i><b>4.3</b> Setup</a></li>
-<li class="chapter" data-level="4.4" data-path="ggplot.html"><a href="ggplot.html#vartypes"><i class="fa fa-check"></i><b>4.4</b> Common Variable Combinations</a></li>
-<li class="chapter" data-level="4.5" data-path="ggplot.html"><a href="ggplot.html#basic-plots"><i class="fa fa-check"></i><b>4.5</b> Basic Plots</a></li>
-<li class="chapter" data-level="4.6" data-path="ggplot.html"><a href="ggplot.html#ggplots"><i class="fa fa-check"></i><b>4.6</b> GGplots</a></li>
-<li class="chapter" data-level="4.7" data-path="ggplot.html"><a href="ggplot.html#common-plot-types"><i class="fa fa-check"></i><b>4.7</b> Common Plot Types</a>
+<li class="chapter" data-level="3.10" data-path="ggplot.html"><a href="ggplot.html#overlap"><i class="fa fa-check"></i><b>3.10</b> Overlapping Discrete Data</a>
 <ul>
-<li class="chapter" data-level="4.7.1" data-path="ggplot.html"><a href="ggplot.html#geom_bar"><i class="fa fa-check"></i><b>4.7.1</b> Bar plot</a></li>
-<li class="chapter" data-level="4.7.2" data-path="ggplot.html"><a href="ggplot.html#geom_density"><i class="fa fa-check"></i><b>4.7.2</b> Density plot</a></li>
-<li class="chapter" data-level="4.7.3" data-path="ggplot.html"><a href="ggplot.html#geom_freqpoly"><i class="fa fa-check"></i><b>4.7.3</b> Frequency polygons</a></li>
-<li class="chapter" data-level="4.7.4" data-path="ggplot.html"><a href="ggplot.html#geom_histogram"><i class="fa fa-check"></i><b>4.7.4</b> Histogram</a></li>
-<li class="chapter" data-level="4.7.5" data-path="ggplot.html"><a href="ggplot.html#geom_col"><i class="fa fa-check"></i><b>4.7.5</b> Column plot</a></li>
-<li class="chapter" data-level="4.7.6" data-path="ggplot.html"><a href="ggplot.html#geom_boxplot"><i class="fa fa-check"></i><b>4.7.6</b> Boxplot</a></li>
-<li class="chapter" data-level="4.7.7" data-path="ggplot.html"><a href="ggplot.html#geom_violin"><i class="fa fa-check"></i><b>4.7.7</b> Violin plot</a></li>
-<li class="chapter" data-level="4.7.8" data-path="ggplot.html"><a href="ggplot.html#vertical_intervals"><i class="fa fa-check"></i><b>4.7.8</b> Vertical intervals</a></li>
-<li class="chapter" data-level="4.7.9" data-path="ggplot.html"><a href="ggplot.html#geom_point"><i class="fa fa-check"></i><b>4.7.9</b> Scatter plot</a></li>
-<li class="chapter" data-level="4.7.10" data-path="ggplot.html"><a href="ggplot.html#geom_smooth"><i class="fa fa-check"></i><b>4.7.10</b> Line graph</a></li>
+<li class="chapter" data-level="3.10.1" data-path="ggplot.html"><a href="ggplot.html#reducing-opacity"><i class="fa fa-check"></i><b>3.10.1</b> Reducing Opacity</a></li>
+<li class="chapter" data-level="3.10.2" data-path="ggplot.html"><a href="ggplot.html#geom_count"><i class="fa fa-check"></i><b>3.10.2</b> Proportional Dot Plots</a></li>
 </ul></li>
-<li class="chapter" data-level="4.8" data-path="ggplot.html"><a href="ggplot.html#customisation"><i class="fa fa-check"></i><b>4.8</b> Customisation</a>
+<li class="chapter" data-level="3.11" data-path="ggplot.html"><a href="ggplot.html#overlapping-continuous-data"><i class="fa fa-check"></i><b>3.11</b> Overlapping Continuous Data</a>
 <ul>
-<li class="chapter" data-level="4.8.1" data-path="ggplot.html"><a href="ggplot.html#custom-size"><i class="fa fa-check"></i><b>4.8.1</b> Size and Position</a></li>
-<li class="chapter" data-level="4.8.2" data-path="ggplot.html"><a href="ggplot.html#custom-labels"><i class="fa fa-check"></i><b>4.8.2</b> Labels</a></li>
-<li class="chapter" data-level="4.8.3" data-path="ggplot.html"><a href="ggplot.html#custom-colours"><i class="fa fa-check"></i><b>4.8.3</b> Colours</a></li>
-<li class="chapter" data-level="4.8.4" data-path="ggplot.html"><a href="ggplot.html#themes"><i class="fa fa-check"></i><b>4.8.4</b> Themes</a></li>
-<li class="chapter" data-level="4.8.5" data-path="ggplot.html"><a href="ggplot.html#ggsave"><i class="fa fa-check"></i><b>4.8.5</b> Save as file</a></li>
+<li class="chapter" data-level="3.11.1" data-path="ggplot.html"><a href="ggplot.html#geom_density2d"><i class="fa fa-check"></i><b>3.11.1</b> 2D Density Plot</a></li>
+<li class="chapter" data-level="3.11.2" data-path="ggplot.html"><a href="ggplot.html#geom_bin2d"><i class="fa fa-check"></i><b>3.11.2</b> 2D Histogram</a></li>
+<li class="chapter" data-level="3.11.3" data-path="ggplot.html"><a href="ggplot.html#geom_hex"><i class="fa fa-check"></i><b>3.11.3</b> Hexagonal Heatmap</a></li>
+<li class="chapter" data-level="3.11.4" data-path="ggplot.html"><a href="ggplot.html#geom_tile"><i class="fa fa-check"></i><b>3.11.4</b> Correlation Heatmap</a></li>
 </ul></li>
-<li class="chapter" data-level="4.9" data-path="ggplot.html"><a href="ggplot.html#combo_plots"><i class="fa fa-check"></i><b>4.9</b> Combination Plots</a>
+<li class="chapter" data-level="3.12" data-path="ggplot.html"><a href="ggplot.html#plotly"><i class="fa fa-check"></i><b>3.12</b> Interactive Plots</a></li>
+<li class="chapter" data-level="3.13" data-path="ggplot.html"><a href="ggplot.html#glossary-ggplot"><i class="fa fa-check"></i><b>3.13</b> Glossary</a></li>
+<li class="chapter" data-level="3.14" data-path="ggplot.html"><a href="ggplot.html#exercises-ggplot"><i class="fa fa-check"></i><b>3.14</b> Exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="data.html"><a href="data.html"><i class="fa fa-check"></i><b>4</b> Working with Data</a>
 <ul>
-<li class="chapter" data-level="4.9.1" data-path="ggplot.html"><a href="ggplot.html#violinbox-plot"><i class="fa fa-check"></i><b>4.9.1</b> Violinbox plot</a></li>
-<li class="chapter" data-level="4.9.2" data-path="ggplot.html"><a href="ggplot.html#violin-point-range-plot"><i class="fa fa-check"></i><b>4.9.2</b> Violin-point-range plot</a></li>
-<li class="chapter" data-level="4.9.3" data-path="ggplot.html"><a href="ggplot.html#violin-jitter-plot"><i class="fa fa-check"></i><b>4.9.3</b> Violin-jitter plot</a></li>
-<li class="chapter" data-level="4.9.4" data-path="ggplot.html"><a href="ggplot.html#scatter-line-graph"><i class="fa fa-check"></i><b>4.9.4</b> Scatter-line graph</a></li>
-<li class="chapter" data-level="4.9.5" data-path="ggplot.html"><a href="ggplot.html#plot_grid"><i class="fa fa-check"></i><b>4.9.5</b> Grid of plots</a></li>
-</ul></li>
-<li class="chapter" data-level="4.10" data-path="ggplot.html"><a href="ggplot.html#overlap"><i class="fa fa-check"></i><b>4.10</b> Overlapping Discrete Data</a>
+<li class="chapter" data-level="4.1" data-path="data.html"><a href="data.html#ilo2"><i class="fa fa-check"></i><b>4.1</b> Learning Objectives</a></li>
+<li class="chapter" data-level="4.2" data-path="data.html"><a href="data.html#resources2"><i class="fa fa-check"></i><b>4.2</b> Resources</a></li>
+<li class="chapter" data-level="4.3" data-path="data.html"><a href="data.html#setup2"><i class="fa fa-check"></i><b>4.3</b> Setup</a></li>
+<li class="chapter" data-level="4.4" data-path="data.html"><a href="data.html#data-tables"><i class="fa fa-check"></i><b>4.4</b> Data tables</a>
 <ul>
-<li class="chapter" data-level="4.10.1" data-path="ggplot.html"><a href="ggplot.html#reducing-opacity"><i class="fa fa-check"></i><b>4.10.1</b> Reducing Opacity</a></li>
-<li class="chapter" data-level="4.10.2" data-path="ggplot.html"><a href="ggplot.html#geom_count"><i class="fa fa-check"></i><b>4.10.2</b> Proportional Dot Plots</a></li>
+<li class="chapter" data-level="4.4.1" data-path="data.html"><a href="data.html#builtin"><i class="fa fa-check"></i><b>4.4.1</b> Built-in data</a></li>
+<li class="chapter" data-level="4.4.2" data-path="data.html"><a href="data.html#import_data"><i class="fa fa-check"></i><b>4.4.2</b> Importing data</a></li>
+<li class="chapter" data-level="4.4.3" data-path="data.html"><a href="data.html#creating-data"><i class="fa fa-check"></i><b>4.4.3</b> Creating data</a></li>
+<li class="chapter" data-level="4.4.4" data-path="data.html"><a href="data.html#writing-data"><i class="fa fa-check"></i><b>4.4.4</b> Writing Data</a></li>
 </ul></li>
-<li class="chapter" data-level="4.11" data-path="ggplot.html"><a href="ggplot.html#overlapping-continuous-data"><i class="fa fa-check"></i><b>4.11</b> Overlapping Continuous Data</a>
+<li class="chapter" data-level="4.5" data-path="data.html"><a href="data.html#data_types"><i class="fa fa-check"></i><b>4.5</b> Basic data types</a>
 <ul>
-<li class="chapter" data-level="4.11.1" data-path="ggplot.html"><a href="ggplot.html#geom_density2d"><i class="fa fa-check"></i><b>4.11.1</b> 2D Density Plot</a></li>
-<li class="chapter" data-level="4.11.2" data-path="ggplot.html"><a href="ggplot.html#geom_bin2d"><i class="fa fa-check"></i><b>4.11.2</b> 2D Histogram</a></li>
-<li class="chapter" data-level="4.11.3" data-path="ggplot.html"><a href="ggplot.html#geom_hex"><i class="fa fa-check"></i><b>4.11.3</b> Hexagonal Heatmap</a></li>
-<li class="chapter" data-level="4.11.4" data-path="ggplot.html"><a href="ggplot.html#geom_tile"><i class="fa fa-check"></i><b>4.11.4</b> Correlation Heatmap</a></li>
+<li class="chapter" data-level="4.5.1" data-path="data.html"><a href="data.html#numeric-data"><i class="fa fa-check"></i><b>4.5.1</b> Numeric data</a></li>
+<li class="chapter" data-level="4.5.2" data-path="data.html"><a href="data.html#character-data"><i class="fa fa-check"></i><b>4.5.2</b> Character data</a></li>
+<li class="chapter" data-level="4.5.3" data-path="data.html"><a href="data.html#logical-data"><i class="fa fa-check"></i><b>4.5.3</b> Logical Data</a></li>
 </ul></li>
-<li class="chapter" data-level="4.12" data-path="ggplot.html"><a href="ggplot.html#plotly"><i class="fa fa-check"></i><b>4.12</b> Interactive Plots</a></li>
-<li class="chapter" data-level="4.13" data-path="ggplot.html"><a href="ggplot.html#glossary-ggplot"><i class="fa fa-check"></i><b>4.13</b> Glossary</a></li>
-<li class="chapter" data-level="4.14" data-path="ggplot.html"><a href="ggplot.html#exercises-ggplot"><i class="fa fa-check"></i><b>4.14</b> Exercises</a></li>
+<li class="chapter" data-level="4.6" data-path="data.html"><a href="data.html#containers"><i class="fa fa-check"></i><b>4.6</b> Basic container types</a>
+<ul>
+<li class="chapter" data-level="4.6.1" data-path="data.html"><a href="data.html#vectors"><i class="fa fa-check"></i><b>4.6.1</b> Vectors</a></li>
+<li class="chapter" data-level="4.6.2" data-path="data.html"><a href="data.html#lists"><i class="fa fa-check"></i><b>4.6.2</b> Lists</a></li>
+<li class="chapter" data-level="4.6.3" data-path="data.html"><a href="data.html#tables-data"><i class="fa fa-check"></i><b>4.6.3</b> Tables</a></li>
+</ul></li>
+<li class="chapter" data-level="4.7" data-path="data.html"><a href="data.html#troubleshooting"><i class="fa fa-check"></i><b>4.7</b> Troubleshooting</a></li>
+<li class="chapter" data-level="4.8" data-path="data.html"><a href="data.html#glossary-data"><i class="fa fa-check"></i><b>4.8</b> Glossary</a></li>
+<li class="chapter" data-level="4.9" data-path="data.html"><a href="data.html#exercises-data"><i class="fa fa-check"></i><b>4.9</b> Exercises</a></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="joins.html"><a href="joins.html"><i class="fa fa-check"></i><b>5</b> Data Relations</a>
 <ul>
@@ -465,7 +457,7 @@ div.csl-indent {
 </ul></li>
 <li class="chapter" data-level="8.5" data-path="glm.html"><a href="glm.html#test-rels"><i class="fa fa-check"></i><b>8.5</b> Relationships among tests</a>
 <ul>
-<li class="chapter" data-level="8.5.1" data-path="glm.html"><a href="glm.html#t-test"><i class="fa fa-check"></i><b>8.5.1</b> T-test</a></li>
+<li class="chapter" data-level="8.5.1" data-path="glm.html"><a href="glm.html#t-test-t-test-glm"><i class="fa fa-check"></i><b>8.5.1</b> T-test {t-test-glm}</a></li>
 <li class="chapter" data-level="8.5.2" data-path="glm.html"><a href="glm.html#anova"><i class="fa fa-check"></i><b>8.5.2</b> ANOVA</a></li>
 </ul></li>
 <li class="chapter" data-level="8.6" data-path="glm.html"><a href="glm.html#understanding-anova"><i class="fa fa-check"></i><b>8.6</b> Understanding ANOVA</a>
@@ -549,7 +541,7 @@ div.csl-indent {
 <li class="chapter" data-level="10.7" data-path="sim.html"><a href="sim.html#tests"><i class="fa fa-check"></i><b>10.7</b> Tests</a>
 <ul>
 <li class="chapter" data-level="10.7.1" data-path="sim.html"><a href="sim.html#exact-binom"><i class="fa fa-check"></i><b>10.7.1</b> Exact binomial test</a></li>
-<li class="chapter" data-level="10.7.2" data-path="glm.html"><a href="glm.html#t-test"><i class="fa fa-check"></i><b>10.7.2</b> T-test</a></li>
+<li class="chapter" data-level="10.7.2" data-path="sim.html"><a href="sim.html#t-test"><i class="fa fa-check"></i><b>10.7.2</b> T-test</a></li>
 <li class="chapter" data-level="10.7.3" data-path="sim.html"><a href="sim.html#correlation"><i class="fa fa-check"></i><b>10.7.3</b> Correlation</a></li>
 </ul></li>
 <li class="chapter" data-level="10.8" data-path="sim.html"><a href="sim.html#example"><i class="fa fa-check"></i><b>10.8</b> Example</a>
@@ -748,9 +740,9 @@ output:
 ---</code></pre>
 <p>The <code>df_print: kable</code> option prints data frames using <code>knitr::kable</code>. You'll learn below how to further customise tables.</p>
 <p>The built-in themes are: "cerulean", "cosmo", "flatly", "journal", "lumen", "paper", "readable", "sandstone", "simplex", "spacelab", "united", and "yeti". You can <a href="http://www.datadreaming.org/post/r-markdown-theme-gallery/">view and download more themes</a>.</p>
-<p class="alert alert-info">
-Try changing the values from <code>false</code> to <code>true</code> to see what the options do.
-</p>
+<div class="info">
+<p>Try changing the values from <code>false</code> to <code>true</code> to see what the options do.</p>
+</div>
 </div>
 <div id="setup" class="section level3" number="2.6.2">
 <h3><span class="header-section-number">2.6.2</span> Setup</h3>
@@ -784,9 +776,7 @@ Try changing the values from <code>false</code> to <code>true</code> to see what
 <li><code>message    = FALSE</code> : do not show any function messages</li>
 <li><code>cache      = FALSE</code> : run all the code to create all of the images and objects each time you knit (set to <code>TRUE</code> if you have time-consuming code)</li>
 </ul>
-<div class="info">
 <p>Find a list of the current chunk options by typing <code>str(knitr::opts_chunk$get())</code> in the console.</p>
-</div>
 <p>You can also add the packages you need in this chunk using <code>library()</code>. Often when you are working on a script, you will realize that you need to load another add-on package. Don't bury the call to <code>library(package_I_need)</code> way down in the script. Put it in the top, so the user has an overview of what packages are needed.</p>
 <div class="try">
 <p>We'll be using function from the package <code>tidyverse</code>, so load that in your setup chunk.</p>
@@ -846,27 +836,53 @@ Try changing the values from <code>false</code> to <code>true</code> to see what
 <span id="cb54-5"><a href="repro.html#cb54-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">mean_weight =</span> <span class="fu">mean</span>(weight),</span>
 <span id="cb54-6"><a href="repro.html#cb54-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">mean_score =</span> <span class="fu">mean</span>(score)</span>
 <span id="cb54-7"><a href="repro.html#cb54-7" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div>
-<pre><code>## # A tibble: 3 x 4
-##   pet        n mean_weight mean_score
-##   &lt;chr&gt;  &lt;int&gt;       &lt;dbl&gt;      &lt;dbl&gt;
-## 1 cat      300        9.37       90.2
-## 2 dog      400       19.1       100. 
-## 3 ferret   100        4.78      112.</code></pre>
+<div class="kable-table">
+<table>
+<thead>
+<tr class="header">
+<th align="left">pet</th>
+<th align="right">n</th>
+<th align="right">mean_weight</th>
+<th align="right">mean_score</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">cat</td>
+<td align="right">300</td>
+<td align="right">9.371613</td>
+<td align="right">90.23667</td>
+</tr>
+<tr class="even">
+<td align="left">dog</td>
+<td align="right">400</td>
+<td align="right">19.067974</td>
+<td align="right">99.98250</td>
+</tr>
+<tr class="odd">
+<td align="left">ferret</td>
+<td align="right">100</td>
+<td align="right">4.781569</td>
+<td align="right">111.78000</td>
+</tr>
+</tbody>
+</table>
+</div>
 <p>The table above is OK, but it could be more reader-friendly by changing the column labels, rounding the means, and adding a caption. You can use <code>knitr::kable()</code> for this.</p>
-<div class="sourceCode" id="cb56"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb56-1"><a href="repro.html#cb56-1" aria-hidden="true" tabindex="-1"></a>summary_table <span class="ot">&lt;-</span>pets <span class="sc">%&gt;%</span></span>
-<span id="cb56-2"><a href="repro.html#cb56-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(pet) <span class="sc">%&gt;%</span></span>
-<span id="cb56-3"><a href="repro.html#cb56-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
-<span id="cb56-4"><a href="repro.html#cb56-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">n =</span> <span class="fu">n</span>(),</span>
-<span id="cb56-5"><a href="repro.html#cb56-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">mean_weight =</span> <span class="fu">mean</span>(weight),</span>
-<span id="cb56-6"><a href="repro.html#cb56-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">mean_score =</span> <span class="fu">mean</span>(score)</span>
-<span id="cb56-7"><a href="repro.html#cb56-7" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb56-8"><a href="repro.html#cb56-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb56-9"><a href="repro.html#cb56-9" aria-hidden="true" tabindex="-1"></a>newnames <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Pet Type&quot;</span>, <span class="st">&quot;N&quot;</span>, <span class="st">&quot;Mean Weight&quot;</span>, <span class="st">&quot;Mean Score&quot;</span>)</span>
-<span id="cb56-10"><a href="repro.html#cb56-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb56-11"><a href="repro.html#cb56-11" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(summary_table, </span>
-<span id="cb56-12"><a href="repro.html#cb56-12" aria-hidden="true" tabindex="-1"></a>             <span class="at">digits =</span> <span class="dv">2</span>, </span>
-<span id="cb56-13"><a href="repro.html#cb56-13" aria-hidden="true" tabindex="-1"></a>             <span class="at">col.names =</span> newnames,</span>
-<span id="cb56-14"><a href="repro.html#cb56-14" aria-hidden="true" tabindex="-1"></a>             <span class="at">caption =</span> <span class="st">&quot;Summary statistics for the pets dataset.&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb55"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb55-1"><a href="repro.html#cb55-1" aria-hidden="true" tabindex="-1"></a>summary_table <span class="ot">&lt;-</span>pets <span class="sc">%&gt;%</span></span>
+<span id="cb55-2"><a href="repro.html#cb55-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(pet) <span class="sc">%&gt;%</span></span>
+<span id="cb55-3"><a href="repro.html#cb55-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
+<span id="cb55-4"><a href="repro.html#cb55-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">n =</span> <span class="fu">n</span>(),</span>
+<span id="cb55-5"><a href="repro.html#cb55-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">mean_weight =</span> <span class="fu">mean</span>(weight),</span>
+<span id="cb55-6"><a href="repro.html#cb55-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">mean_score =</span> <span class="fu">mean</span>(score)</span>
+<span id="cb55-7"><a href="repro.html#cb55-7" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb55-8"><a href="repro.html#cb55-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb55-9"><a href="repro.html#cb55-9" aria-hidden="true" tabindex="-1"></a>newnames <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Pet Type&quot;</span>, <span class="st">&quot;N&quot;</span>, <span class="st">&quot;Mean Weight&quot;</span>, <span class="st">&quot;Mean Score&quot;</span>)</span>
+<span id="cb55-10"><a href="repro.html#cb55-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb55-11"><a href="repro.html#cb55-11" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(summary_table, </span>
+<span id="cb55-12"><a href="repro.html#cb55-12" aria-hidden="true" tabindex="-1"></a>             <span class="at">digits =</span> <span class="dv">2</span>, </span>
+<span id="cb55-13"><a href="repro.html#cb55-13" aria-hidden="true" tabindex="-1"></a>             <span class="at">col.names =</span> newnames,</span>
+<span id="cb55-14"><a href="repro.html#cb55-14" aria-hidden="true" tabindex="-1"></a>             <span class="at">caption =</span> <span class="st">&quot;Summary statistics for the pets dataset.&quot;</span>)</span></code></pre></div>
 <table>
 <caption><span id="tab:unnamed-chunk-5">Table 2.1: </span>Summary statistics for the pets dataset.</caption>
 <thead>
@@ -898,9 +914,9 @@ Try changing the values from <code>false</code> to <code>true</code> to see what
 </tr>
 </tbody>
 </table>
-<p class="alert alert-info">
-Notice that the r chunk specifies the option <code>results='asis'</code>. This lets you format the table using the <code>kable()</code> function from <code>knitr</code>. You can also use more specialised functions from <a href="https://crsh.github.io/papaja_man/reporting.html#tables">papaja</a> or <a href="https://haozhu233.github.io/kableExtra/awesome_table_in_html.html">kableExtra</a> to format your tables.
-</p>
+<div class="info">
+<p>Notice that the r chunk specifies the option <code>results='asis'</code>. This lets you format the table using the <code>kable()</code> function from <code>knitr</code>. You can also use more specialised functions from <a href="https://crsh.github.io/papaja_man/reporting.html#tables">papaja</a> or <a href="https://haozhu233.github.io/kableExtra/awesome_table_in_html.html">kableExtra</a> to format your tables.</p>
+</div>
 </div>
 <div id="images" class="section level4" number="2.6.4.3">
 <h4><span class="header-section-number">2.6.4.3</span> Images</h4>
@@ -942,21 +958,21 @@ Figure 2.2: Figure 1. Scores by pet type and country.
 <div id="in-line-r" class="section level4" number="2.6.4.4">
 <h4><span class="header-section-number">2.6.4.4</span> In-line R</h4>
 <p>Now let's analyse the pets data to see if cats are heavier than ferrets. First we'll run the analysis code. Then we'll save any numbers we might want to use in our manuscript to variables and round them appropriately. Finally, we'll use <code>glue::glue()</code> to format a results string.</p>
-<div class="sourceCode" id="cb59"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb59-1"><a href="repro.html#cb59-1" aria-hidden="true" tabindex="-1"></a><span class="co"># analysis</span></span>
-<span id="cb59-2"><a href="repro.html#cb59-2" aria-hidden="true" tabindex="-1"></a>cat_weight <span class="ot">&lt;-</span> <span class="fu">filter</span>(pets, pet <span class="sc">==</span> <span class="st">&quot;cat&quot;</span>) <span class="sc">%&gt;%</span> <span class="fu">pull</span>(weight)</span>
-<span id="cb59-3"><a href="repro.html#cb59-3" aria-hidden="true" tabindex="-1"></a>ferret_weight <span class="ot">&lt;-</span> <span class="fu">filter</span>(pets, pet <span class="sc">==</span> <span class="st">&quot;ferret&quot;</span>) <span class="sc">%&gt;%</span> <span class="fu">pull</span>(weight)</span>
-<span id="cb59-4"><a href="repro.html#cb59-4" aria-hidden="true" tabindex="-1"></a>weight_test <span class="ot">&lt;-</span> <span class="fu">t.test</span>(cat_weight, ferret_weight)</span>
-<span id="cb59-5"><a href="repro.html#cb59-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb59-6"><a href="repro.html#cb59-6" aria-hidden="true" tabindex="-1"></a><span class="co"># round individual values you want to report</span></span>
-<span id="cb59-7"><a href="repro.html#cb59-7" aria-hidden="true" tabindex="-1"></a>t <span class="ot">&lt;-</span> weight_test<span class="sc">$</span>statistic <span class="sc">%&gt;%</span> <span class="fu">round</span>(<span class="dv">2</span>)</span>
-<span id="cb59-8"><a href="repro.html#cb59-8" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> weight_test<span class="sc">$</span>parameter <span class="sc">%&gt;%</span> <span class="fu">round</span>(<span class="dv">1</span>)</span>
-<span id="cb59-9"><a href="repro.html#cb59-9" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> weight_test<span class="sc">$</span>p.value <span class="sc">%&gt;%</span> <span class="fu">round</span>(<span class="dv">3</span>)</span>
-<span id="cb59-10"><a href="repro.html#cb59-10" aria-hidden="true" tabindex="-1"></a><span class="co"># handle p-values &lt; .001</span></span>
-<span id="cb59-11"><a href="repro.html#cb59-11" aria-hidden="true" tabindex="-1"></a>p_symbol <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(p <span class="sc">&lt;</span> .<span class="dv">001</span>, <span class="st">&quot;&lt;&quot;</span>, <span class="st">&quot;=&quot;</span>)</span>
-<span id="cb59-12"><a href="repro.html#cb59-12" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (p <span class="sc">&lt;</span> .<span class="dv">001</span>) p <span class="ot">&lt;-</span> .<span class="dv">001</span></span>
-<span id="cb59-13"><a href="repro.html#cb59-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb59-14"><a href="repro.html#cb59-14" aria-hidden="true" tabindex="-1"></a><span class="co"># format the results string</span></span>
-<span id="cb59-15"><a href="repro.html#cb59-15" aria-hidden="true" tabindex="-1"></a>weight_result <span class="ot">&lt;-</span> glue<span class="sc">::</span><span class="fu">glue</span>(<span class="st">&quot;t = {t}, df = {df}, p {p_symbol} {p}&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb58"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb58-1"><a href="repro.html#cb58-1" aria-hidden="true" tabindex="-1"></a><span class="co"># analysis</span></span>
+<span id="cb58-2"><a href="repro.html#cb58-2" aria-hidden="true" tabindex="-1"></a>cat_weight <span class="ot">&lt;-</span> <span class="fu">filter</span>(pets, pet <span class="sc">==</span> <span class="st">&quot;cat&quot;</span>) <span class="sc">%&gt;%</span> <span class="fu">pull</span>(weight)</span>
+<span id="cb58-3"><a href="repro.html#cb58-3" aria-hidden="true" tabindex="-1"></a>ferret_weight <span class="ot">&lt;-</span> <span class="fu">filter</span>(pets, pet <span class="sc">==</span> <span class="st">&quot;ferret&quot;</span>) <span class="sc">%&gt;%</span> <span class="fu">pull</span>(weight)</span>
+<span id="cb58-4"><a href="repro.html#cb58-4" aria-hidden="true" tabindex="-1"></a>weight_test <span class="ot">&lt;-</span> <span class="fu">t.test</span>(cat_weight, ferret_weight)</span>
+<span id="cb58-5"><a href="repro.html#cb58-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb58-6"><a href="repro.html#cb58-6" aria-hidden="true" tabindex="-1"></a><span class="co"># round individual values you want to report</span></span>
+<span id="cb58-7"><a href="repro.html#cb58-7" aria-hidden="true" tabindex="-1"></a>t <span class="ot">&lt;-</span> weight_test<span class="sc">$</span>statistic <span class="sc">%&gt;%</span> <span class="fu">round</span>(<span class="dv">2</span>)</span>
+<span id="cb58-8"><a href="repro.html#cb58-8" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> weight_test<span class="sc">$</span>parameter <span class="sc">%&gt;%</span> <span class="fu">round</span>(<span class="dv">1</span>)</span>
+<span id="cb58-9"><a href="repro.html#cb58-9" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> weight_test<span class="sc">$</span>p.value <span class="sc">%&gt;%</span> <span class="fu">round</span>(<span class="dv">3</span>)</span>
+<span id="cb58-10"><a href="repro.html#cb58-10" aria-hidden="true" tabindex="-1"></a><span class="co"># handle p-values &lt; .001</span></span>
+<span id="cb58-11"><a href="repro.html#cb58-11" aria-hidden="true" tabindex="-1"></a>p_symbol <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(p <span class="sc">&lt;</span> .<span class="dv">001</span>, <span class="st">&quot;&lt;&quot;</span>, <span class="st">&quot;=&quot;</span>)</span>
+<span id="cb58-12"><a href="repro.html#cb58-12" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (p <span class="sc">&lt;</span> .<span class="dv">001</span>) p <span class="ot">&lt;-</span> .<span class="dv">001</span></span>
+<span id="cb58-13"><a href="repro.html#cb58-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb58-14"><a href="repro.html#cb58-14" aria-hidden="true" tabindex="-1"></a><span class="co"># format the results string</span></span>
+<span id="cb58-15"><a href="repro.html#cb58-15" aria-hidden="true" tabindex="-1"></a>weight_result <span class="ot">&lt;-</span> glue<span class="sc">::</span><span class="fu">glue</span>(<span class="st">&quot;t = {t}, df = {df}, p {p_symbol} {p}&quot;</span>)</span></code></pre></div>
 <p>You can insert the results into a paragraph with inline R code that looks like this:</p>
 <pre><code>Cats were significantly heavier than ferrets (&#96;r weight_result&#96;).</code></pre>
 <p><strong>Rendered text:</strong><br />
@@ -985,7 +1001,7 @@ Cats were significantly heavier than ferrets (t = 18.42, df = 180.4, p &lt; 0.00
 <div id="citing-r-packages" class="section level4" number="2.6.5.2">
 <h4><span class="header-section-number">2.6.5.2</span> Citing R packages</h4>
 <p>You can get the citation for an R package using the functions <code>citation()</code> and <code>toBibtex()</code>. You can paste the bibtex entry into your bibliography.bib file. Make sure to add a short name (e.g., "faux") before the first comma to refer to the reference.</p>
-<div class="sourceCode" id="cb61"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb61-1"><a href="repro.html#cb61-1" aria-hidden="true" tabindex="-1"></a><span class="fu">citation</span>(<span class="at">package=</span><span class="st">&quot;faux&quot;</span>) <span class="sc">%&gt;%</span> <span class="fu">toBibtex</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb60"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb60-1"><a href="repro.html#cb60-1" aria-hidden="true" tabindex="-1"></a><span class="fu">citation</span>(<span class="at">package=</span><span class="st">&quot;faux&quot;</span>) <span class="sc">%&gt;%</span> <span class="fu">toBibtex</span>()</span></code></pre></div>
 <pre><code>## @Manual{,
 ##   title = {faux: Simulation for Factorial Designs},
 ##   author = {Lisa DeBruine},
@@ -1040,9 +1056,9 @@ eprint = {
 <div id="citation-styles" class="section level4" number="2.6.5.6">
 <h4><span class="header-section-number">2.6.5.6</span> Citation Styles</h4>
 <p>You can search a <a href="https://www.zotero.org/styles">list of style files</a> for various journals and download a file that will format your bibliography for a specific journal's style. You'll need to add the line <code>csl: filename.csl</code> to your YAML header.</p>
-<p class="alert alert-info">
-Add some citations to your bibliography.bib file, reference them in your text, and render your manuscript to see the automatically generated reference section. Try a few different citation style files.
-</p>
+<div class="info">
+<p>Add some citations to your bibliography.bib file, reference them in your text, and render your manuscript to see the automatically generated reference section. Try a few different citation style files.</p>
+</div>
 </div>
 </div>
 <div id="output-formats" class="section level3" number="2.6.6">
@@ -1059,8 +1075,8 @@ Add some citations to your bibliography.bib file, reference them in your text, a
 <h2><span class="header-section-number">2.7</span> Glossary</h2>
 <table>
 <colgroup>
-<col width="43%" />
-<col width="56%" />
+<col width="42%" />
+<col width="57%" />
 </colgroup>
 <thead>
 <tr class="header">
@@ -1070,43 +1086,43 @@ Add some citations to your bibliography.bib file, reference them in your text, a
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><a class='glossary' target='_blank' href='https://psyteachr.github.io/glossary/a#absolute.path'>absolute path</a></td>
+<td align="left"><a href="https://psyteachr.github.io/glossary/a.html#absolute-path" class="glossary" target="_blank">absolute path</a></td>
 <td align="left">A file path that starts with / and is not appended to the working directory</td>
 </tr>
 <tr class="even">
-<td align="left"><a class='glossary' target='_blank' href='https://psyteachr.github.io/glossary/c#chunk'>chunk</a></td>
+<td align="left"><a href="https://psyteachr.github.io/glossary/c.html#chunk" class="glossary" target="_blank">chunk</a></td>
 <td align="left">A section of code in an R Markdown file</td>
 </tr>
 <tr class="odd">
-<td align="left"><a class='glossary' target='_blank' href='https://psyteachr.github.io/glossary/k#knit'>knit</a></td>
+<td align="left"><a href="https://psyteachr.github.io/glossary/k.html#knit" class="glossary" target="_blank">knit</a></td>
 <td align="left">To create an HTML, PDF, or Word document from an R Markdown (Rmd) document</td>
 </tr>
 <tr class="even">
-<td align="left"><a class='glossary' target='_blank' href='https://psyteachr.github.io/glossary/m#markdown'>markdown</a></td>
+<td align="left"><a href="https://psyteachr.github.io/glossary/m.html#markdown" class="glossary" target="_blank">markdown</a></td>
 <td align="left">A way to specify formatting, such as headers, paragraphs, lists, bolding, and links.</td>
 </tr>
 <tr class="odd">
-<td align="left"><a class='glossary' target='_blank' href='https://psyteachr.github.io/glossary/p#project'>project</a></td>
+<td align="left"><a href="https://psyteachr.github.io/glossary/p.html#project" class="glossary" target="_blank">project</a></td>
 <td align="left">A way to organise related files in RStudio</td>
 </tr>
 <tr class="even">
-<td align="left"><a class='glossary' target='_blank' href='https://psyteachr.github.io/glossary/r#r.markdown'>r markdown</a></td>
+<td align="left"><a href="https://psyteachr.github.io/glossary/r.html#r-markdown" class="glossary" target="_blank">r markdown</a></td>
 <td align="left">The R-specific version of markdown: a way to specify formatting, such as headers, paragraphs, lists, bolding, and links, as well as code blocks and inline code.</td>
 </tr>
 <tr class="odd">
-<td align="left"><a class='glossary' target='_blank' href='https://psyteachr.github.io/glossary/r#relative.path'>relative path</a></td>
+<td align="left"><a href="https://psyteachr.github.io/glossary/r.html#relative-path" class="glossary" target="_blank">relative path</a></td>
 <td align="left">The location of a file in relation to the working directory.</td>
 </tr>
 <tr class="even">
-<td align="left"><a class='glossary' target='_blank' href='https://psyteachr.github.io/glossary/r#reproducibility'>reproducibility</a></td>
+<td align="left"><a href="https://psyteachr.github.io/glossary/r.html#reproducibility" class="glossary" target="_blank">reproducibility</a></td>
 <td align="left">The extent to which the findings of a study can be repeated in some other context</td>
 </tr>
 <tr class="odd">
-<td align="left"><a class='glossary' target='_blank' href='https://psyteachr.github.io/glossary/w#working.directory'>working directory</a></td>
+<td align="left"><a href="https://psyteachr.github.io/glossary/w.html#working-directory" class="glossary" target="_blank">working directory</a></td>
 <td align="left">The filepath where R is currently reading and writing files.</td>
 </tr>
 <tr class="even">
-<td align="left"><a class='glossary' target='_blank' href='https://psyteachr.github.io/glossary/y#yaml'>yaml</a></td>
+<td align="left"><a href="https://psyteachr.github.io/glossary/y.html#yaml" class="glossary" target="_blank">yaml</a></td>
 <td align="left">A structured format for information</td>
 </tr>
 </tbody>
@@ -1256,7 +1272,7 @@ window.onload = function() {
         </div>
       </div>
 <a href="intro.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="data.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="ggplot.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -1289,8 +1305,8 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": null,
-"text": null
+"link": "https://github.com/psyteachr/reprores-v2/edit/main/book/02-repro.Rmd",
+"text": "Edit"
 },
 "history": {
 "link": null,
@@ -1300,7 +1316,7 @@ gitbook.start({
 "link": null,
 "text": null
 },
-"download": {},
+"download": [["reprores-v2.epub", "EPUB"], ["reprores-v2.mobi", "MOBI"]],
 "toc": {
 "collapse": "section",
 "scroll_highlight": true

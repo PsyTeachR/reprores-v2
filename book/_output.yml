@@ -1,6 +1,8 @@
-bookdown::gitbook: 
+bookdown::gitbook:
+  highlight: default
   default: true
   md_extensions: -smart
+  df_print: kable
   includes:
     in_header: include/header.html
     after_body: [include/footer.html, include/webex.js]
@@ -19,7 +21,10 @@ bookdown::gitbook:
             style="border-width:0" 
             src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><li>
         <li><a href="https://psyteachr.github.io/" target="blank">PsyTeachR</a></li>
-    download: []
+    download: 
+      - ["reprores-v2.epub", "EPUB"]
+      - ["reprores-v2.mobi", "MOBI"]
+    edit: "https://github.com/psyteachr/reprores-v2/edit/main/book/%s"
     fontsettings:
       theme: white
       family: sans
@@ -39,3 +44,9 @@ bookdown::pdf_book:
   latex_engine: xelatex
   citation_package: natbib
   keep_tex: yes
+bookdown::epub_book:
+  stylesheet: [include/epub.css]
+  cover_image: images/logo.png
+  toc: true
+  toc_depth: 2
+

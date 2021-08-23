@@ -1,7 +1,7 @@
 # Reproducible Workflows {#repro}
 
 <img src="images/memes/repro_reports.jpg" class="meme right"
-     alt="Top left: young spongebob; top right: Using Base R for your analysis and copy pasting yur results into tables in Word; middle left: older angry spongebob in workout clothes; middle right: learning how to use dplyr visualize data with ggplot2 and report your analysis in rmarkdown documents; bottom left: muscular spongebob shirtless in a boxing ring; bottom right: wielding the entire might of the tidyverse (with 50 hex stickers)">
+     alt="Top left: young spongebob; top right: Using Base R for your analysis and copy pasting yur results into tables in Word; middle left: older angry spongebob in workout clothes; middle right: learning how to use dplyr visualize data with ggplot2 and report your analysis in rmarkdown documents; bottom left: muscular spongebob shirtless in a boxing ring; bottom right: wielding the entire might of the tidyverse (with 50 hex stickers)" />
 
 ## Learning Objectives {#ilo-repro}
 
@@ -157,7 +157,9 @@ The `df_print: kable` option prints data frames using `knitr::kable`. You'll lea
 
 The built-in themes are: "cerulean", "cosmo", "flatly", "journal", "lumen", "paper", "readable", "sandstone", "simplex", "spacelab", "united", and "yeti". You can [view and download more themes](http://www.datadreaming.org/post/r-markdown-theme-gallery/).
 
-<p class="alert alert-info">Try changing the values from `false` to `true` to see what the options do.</p>
+::: {.info data-latex=""}
+Try changing the values from `false` to `true` to see what the options do.
+:::
 
 
 ### Setup
@@ -200,9 +202,9 @@ The code above sets the following options:
 * `message    = FALSE` : do not show any function messages
 * `cache      = FALSE` : run all the code to create all of the images and objects each time you knit (set to `TRUE` if you have time-consuming code)
 
-::: {.info data-latex=""}
+
 Find a list of the current chunk options by typing `str(knitr::opts_chunk$get())` in the console.
-:::
+
 
 You can also add the packages you need in this chunk using `library()`. Often when you are working on a script, you will realize that you need to load another add-on package. Don't bury the call to `library(package_I_need)` way down in the script. Put it in the top, so the user has an overview of what packages are needed.
 
@@ -326,7 +328,9 @@ Table: (\#tab:unnamed-chunk-5)Summary statistics for the pets dataset.
 |ferret   | 100|        4.78|     111.78|
 
 
-<p class="alert alert-info">Notice that the r chunk specifies the option `results='asis'`. This lets you format the table using the `kable()` function from `knitr`. You can also use more specialised functions from [papaja](https://crsh.github.io/papaja_man/reporting.html#tables) or [kableExtra](https://haozhu233.github.io/kableExtra/awesome_table_in_html.html) to format your tables.</p>
+::: {.info data-latex=""}
+Notice that the r chunk specifies the option `results='asis'`. This lets you format the table using the `kable()` function from `knitr`. You can also use more specialised functions from [papaja](https://crsh.github.io/papaja_man/reporting.html#tables) or [kableExtra](https://haozhu233.github.io/kableExtra/awesome_table_in_html.html) to format your tables.
+:::
 
 #### Images
 
@@ -349,13 +353,13 @@ ggplot(pets, aes(pet, score, fill = country)) +
 ```
 
 <div class="figure" style="text-align: center">
-<img src="02-repro_files/figure-html/unnamed-chunk-6-1.png" alt="Figure 1. Scores by pet type and country." width="100%" />
+<img src="02-repro_files/figure-epub3/unnamed-chunk-6-1.png" alt="Figure 1. Scores by pet type and country." width="100%" />
 <p class="caption">(\#fig:unnamed-chunk-6)Figure 1. Scores by pet type and country.</p>
 </div>
 ````
 
 <div class="figure" style="text-align: center">
-<img src="02-repro_files/figure-html/unnamed-chunk-7-1.png" alt="Figure 1. Scores by pet type and country." width="100%" />
+<img src="02-repro_files/figure-epub3/unnamed-chunk-7-1.png" alt="Figure 1. Scores by pet type and country." width="100%" />
 <p class="caption">(\#fig:unnamed-chunk-7)Figure 1. Scores by pet type and country.</p>
 </div>
 
@@ -510,7 +514,9 @@ Lakens, Scheel and Isengar [-@TOSTtutorial] wrote a tutorial explaining how to t
 
 You can search a [list of style files](https://www.zotero.org/styles) for various journals and download a file that will format your bibliography for a specific journal's style. You'll need to add the line `csl: filename.csl` to your YAML header. 
 
-<p class="alert alert-info">Add some citations to your bibliography.bib file, reference them in your text, and render your manuscript to see the automatically generated reference section. Try a few different citation style files.</p>
+::: {.info data-latex=""}
+Add some citations to your bibliography.bib file, reference them in your text, and render your manuscript to see the automatically generated reference section. Try a few different citation style files.
+:::
 
 
 ### Output Formats
@@ -527,18 +533,18 @@ Computational reproducibility refers to making all aspects of your analysis repr
 
 
 
-|term                                                                                                                      |definition                                                                                                                                                       |
-|:-------------------------------------------------------------------------------------------------------------------------|:----------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|<a class='glossary' target='_blank' href='https://psyteachr.github.io/glossary/a#absolute.path'>absolute path</a>         |A file path that starts with / and is not appended to the working directory                                                                                      |
-|<a class='glossary' target='_blank' href='https://psyteachr.github.io/glossary/c#chunk'>chunk</a>                         |A section of code in an R Markdown file                                                                                                                          |
-|<a class='glossary' target='_blank' href='https://psyteachr.github.io/glossary/k#knit'>knit</a>                           |To create an HTML, PDF, or Word document from an R Markdown (Rmd) document                                                                                       |
-|<a class='glossary' target='_blank' href='https://psyteachr.github.io/glossary/m#markdown'>markdown</a>                   |A way to specify formatting, such as headers, paragraphs, lists, bolding, and links.                                                                             |
-|<a class='glossary' target='_blank' href='https://psyteachr.github.io/glossary/p#project'>project</a>                     |A way to organise related files in RStudio                                                                                                                       |
-|<a class='glossary' target='_blank' href='https://psyteachr.github.io/glossary/r#r.markdown'>r markdown</a>               |The R-specific version of markdown: a way to specify formatting, such as headers, paragraphs, lists, bolding, and links, as well as code blocks and inline code. |
-|<a class='glossary' target='_blank' href='https://psyteachr.github.io/glossary/r#relative.path'>relative path</a>         |The location of a file in relation to the working directory.                                                                                                     |
-|<a class='glossary' target='_blank' href='https://psyteachr.github.io/glossary/r#reproducibility'>reproducibility</a>     |The extent to which the findings of a study can be repeated in some other context                                                                                |
-|<a class='glossary' target='_blank' href='https://psyteachr.github.io/glossary/w#working.directory'>working directory</a> |The filepath where R is currently reading and writing files.                                                                                                     |
-|<a class='glossary' target='_blank' href='https://psyteachr.github.io/glossary/y#yaml'>yaml</a>                           |A structured format for information                                                                                                                              |
+|term                                                                                                                 |definition                                                                                                                                                       |
+|:--------------------------------------------------------------------------------------------------------------------|:----------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|[absolute path](https://psyteachr.github.io/glossary/a.html#absolute-path){class="glossary" target="_blank"}         |A file path that starts with / and is not appended to the working directory                                                                                      |
+|[chunk](https://psyteachr.github.io/glossary/c.html#chunk){class="glossary" target="_blank"}                         |A section of code in an R Markdown file                                                                                                                          |
+|[knit](https://psyteachr.github.io/glossary/k.html#knit){class="glossary" target="_blank"}                           |To create an HTML, PDF, or Word document from an R Markdown (Rmd) document                                                                                       |
+|[markdown](https://psyteachr.github.io/glossary/m.html#markdown){class="glossary" target="_blank"}                   |A way to specify formatting, such as headers, paragraphs, lists, bolding, and links.                                                                             |
+|[project](https://psyteachr.github.io/glossary/p.html#project){class="glossary" target="_blank"}                     |A way to organise related files in RStudio                                                                                                                       |
+|[r markdown](https://psyteachr.github.io/glossary/r.html#r-markdown){class="glossary" target="_blank"}               |The R-specific version of markdown: a way to specify formatting, such as headers, paragraphs, lists, bolding, and links, as well as code blocks and inline code. |
+|[relative path](https://psyteachr.github.io/glossary/r.html#relative-path){class="glossary" target="_blank"}         |The location of a file in relation to the working directory.                                                                                                     |
+|[reproducibility](https://psyteachr.github.io/glossary/r.html#reproducibility){class="glossary" target="_blank"}     |The extent to which the findings of a study can be repeated in some other context                                                                                |
+|[working directory](https://psyteachr.github.io/glossary/w.html#working-directory){class="glossary" target="_blank"} |The filepath where R is currently reading and writing files.                                                                                                     |
+|[yaml](https://psyteachr.github.io/glossary/y.html#yaml){class="glossary" target="_blank"}                           |A structured format for information                                                                                                                              |
 
 
 

@@ -1,7 +1,7 @@
 # Tidy Data {#tidyr}
 
 <img src="images/memes/messy_data.jpg" class="meme right"
-     alt="A giant demon emerging from fire labelled 'messy data'; in front is a tiny human labelled 'R User'">
+     alt="A giant demon emerging from fire labelled 'messy data'; in front is a tiny human labelled 'R User'" />
 
 ## Learning Objectives {#ilo-tidyr}
 
@@ -464,7 +464,7 @@ personality_spread <- spread(
 
 ## Pipes {#pipes}
 
-<img src="images/04/pipe_sticker.png" style="width: 200px; float: right;">
+<img src="images/04/pipe_sticker.png" style="width: 200px; float: right;" />
 
 Pipes are a way to order your code in a more readable format. 
 
@@ -1005,16 +1005,16 @@ The responses in the `dv` column have multiple types (e.g., <a class='glossary' 
 
 
 
-|term                                                                                                          |definition                                                               |
-|:-------------------------------------------------------------------------------------------------------------|:------------------------------------------------------------------------|
-|<a class='glossary' target='_blank' href='https://psyteachr.github.io/glossary/c#character'>character</a>     |A data type representing strings of text.                                |
-|<a class='glossary' target='_blank' href='https://psyteachr.github.io/glossary/d#double'>double</a>           |A data type representing a real decimal number                           |
-|<a class='glossary' target='_blank' href='https://psyteachr.github.io/glossary/i#integer'>integer</a>         |A data type representing whole numbers.                                  |
-|<a class='glossary' target='_blank' href='https://psyteachr.github.io/glossary/l#long'>long</a>               |Data where each observation is on a separate row                         |
-|<a class='glossary' target='_blank' href='https://psyteachr.github.io/glossary/o#observation'>observation</a> |All of the data about a single trial or question.                        |
-|<a class='glossary' target='_blank' href='https://psyteachr.github.io/glossary/v#value'>value</a>             |A single number or piece of data.                                        |
-|<a class='glossary' target='_blank' href='https://psyteachr.github.io/glossary/v#variable'>variable</a>       |A word that identifies and stores the value of some data for later use.  |
-|<a class='glossary' target='_blank' href='https://psyteachr.github.io/glossary/w#wide'>wide</a>               |Data where all of the observations about one subject are in the same row |
+|term                                                                                                     |definition                                                               |
+|:--------------------------------------------------------------------------------------------------------|:------------------------------------------------------------------------|
+|[character](https://psyteachr.github.io/glossary/c.html#character){class="glossary" target="_blank"}     |A data type representing strings of text.                                |
+|[double](https://psyteachr.github.io/glossary/d.html#double){class="glossary" target="_blank"}           |A data type representing a real decimal number                           |
+|[integer](https://psyteachr.github.io/glossary/i.html#integer){class="glossary" target="_blank"}         |A data type representing whole numbers.                                  |
+|[long](https://psyteachr.github.io/glossary/l.html#long){class="glossary" target="_blank"}               |Data where each observation is on a separate row                         |
+|[observation](https://psyteachr.github.io/glossary/o.html#observation){class="glossary" target="_blank"} |All of the data about a single trial or question.                        |
+|[value](https://psyteachr.github.io/glossary/v.html#value){class="glossary" target="_blank"}             |A single number or piece of data.                                        |
+|[variable](https://psyteachr.github.io/glossary/v.html#variable){class="glossary" target="_blank"}       |A word that identifies and stores the value of some data for later use.  |
+|[wide](https://psyteachr.github.io/glossary/w.html#wide){class="glossary" target="_blank"}               |Data where all of the observations about one subject are in the same row |
 
 
 

@@ -10,16 +10,16 @@
 
   <meta property="og:title" content="Chapter 6 Tidy Data | Data Skills for Reproducible Research" />
   <meta property="og:type" content="book" />
-  
-  
+  <meta property="og:url" content="https://psyteachr.github.io/reprores-v2" />
+  <meta property="og:image" content="https://psyteachr.github.io/reprores-v2/images/twitter_card.png" />
   <meta property="og:description" content="This book provides an overview of skills needed for reproducible research and open science using the statistical programming language R and tidyverse packages. It covers data visualisation, data tidying and wrangling, archiving, iteration and functions, probability and data simulations, general linear models, and reproducible workflows." />
-  
+  <meta name="github-repo" content="psyteachr/reprores-v2" />
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="Chapter 6 Tidy Data | Data Skills for Reproducible Research" />
   
   <meta name="twitter:description" content="This book provides an overview of skills needed for reproducible research and open science using the statistical programming language R and tidyverse packages. It covers data visualisation, data tidying and wrangling, archiving, iteration and functions, probability and data simulations, general linear models, and reproducible workflows." />
-  
+  <meta name="twitter:image" content="https://psyteachr.github.io/reprores-v2/images/twitter_card.png" />
 
 
 
@@ -28,8 +28,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
-  
-  
+  <link rel="apple-touch-icon-precomposed" sizes="152x152" href="images/touch-icon.png" />
+  <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
 <link rel="prev" href="joins.html"/>
 <link rel="next" href="dplyr.html"/>
 <script src="libs/header-attrs-2.9.4/header-attrs.js"></script>
@@ -59,14 +59,6 @@
 <script src="libs/crosstalk-1.1.1/js/crosstalk.min.js"></script>
 <link href="libs/plotly-htmlwidgets-css-1.57.1/plotly-htmlwidgets.css" rel="stylesheet" />
 <script src="libs/plotly-main-1.57.1/plotly-latest.min.js"></script>
-<meta property="og:title" content="Chapter 6 Tidy Data | Data Skills for Reproducible Research">
-<meta property="og:description" content="This book provides an overview of skills needed for reproducible research and open science using the statistical programming language R and tidyverse packages. It covers data visualisation, data tidying and wrangling, archiving, iteration and functions, probability and data simulations, general linear models, and reproducible workflows.">
-<meta property="og:image" content="https://psyteachr.github.io/reprores-v2/images/twitter_card.png">
-<meta property="og:url" content="https://psyteachr.github.io/reprores-v2/">
-<meta property="twitter:card" content="summary_large_image">
-
-<link rel="shortcut icon" href="https://psyteachr.github.io/reprores-v2/images/logo.png">
-
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-6NP3MF25W3"></script>
 <script>
@@ -218,7 +210,7 @@ div.csl-indent {
 <li class="chapter" data-level="1.5.3" data-path="intro.html"><a href="intro.html#install-from-github"><i class="fa fa-check"></i><b>1.5.3</b> Install from GitHub</a></li>
 </ul></li>
 <li class="chapter" data-level="1.6" data-path="intro.html"><a href="intro.html#glossaryintro"><i class="fa fa-check"></i><b>1.6</b> Glossary</a></li>
-<li class="chapter" data-level="1.7" data-path="intro.html"><a href="intro.html#exercises-repro"><i class="fa fa-check"></i><b>1.7</b> Exercises</a></li>
+<li class="chapter" data-level="1.7" data-path="intro.html"><a href="intro.html#exercises-intro"><i class="fa fa-check"></i><b>1.7</b> Exercises</a></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="repro.html"><a href="repro.html"><i class="fa fa-check"></i><b>2</b> Reproducible Workflows</a>
 <ul>
@@ -245,93 +237,93 @@ div.csl-indent {
 <li class="chapter" data-level="2.6.7" data-path="repro.html"><a href="repro.html#computational-reproducibility"><i class="fa fa-check"></i><b>2.6.7</b> Computational Reproducibility</a></li>
 </ul></li>
 <li class="chapter" data-level="2.7" data-path="repro.html"><a href="repro.html#glossary-repro"><i class="fa fa-check"></i><b>2.7</b> Glossary</a></li>
-<li class="chapter" data-level="2.8" data-path="intro.html"><a href="intro.html#exercises-repro"><i class="fa fa-check"></i><b>2.8</b> Exercises</a></li>
+<li class="chapter" data-level="2.8" data-path="repro.html"><a href="repro.html#exercises-repro"><i class="fa fa-check"></i><b>2.8</b> Exercises</a></li>
 <li class="chapter" data-level="2.9" data-path="repro.html"><a href="repro.html#references"><i class="fa fa-check"></i><b>2.9</b> References</a></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="data.html"><a href="data.html"><i class="fa fa-check"></i><b>3</b> Working with Data</a>
+<li class="chapter" data-level="3" data-path="ggplot.html"><a href="ggplot.html"><i class="fa fa-check"></i><b>3</b> Data Visualisation</a>
 <ul>
-<li class="chapter" data-level="3.1" data-path="data.html"><a href="data.html#ilo2"><i class="fa fa-check"></i><b>3.1</b> Learning Objectives</a></li>
-<li class="chapter" data-level="3.2" data-path="data.html"><a href="data.html#resources2"><i class="fa fa-check"></i><b>3.2</b> Resources</a></li>
-<li class="chapter" data-level="3.3" data-path="data.html"><a href="data.html#setup2"><i class="fa fa-check"></i><b>3.3</b> Setup</a></li>
-<li class="chapter" data-level="3.4" data-path="data.html"><a href="data.html#data-tables"><i class="fa fa-check"></i><b>3.4</b> Data tables</a>
+<li class="chapter" data-level="3.1" data-path="ggplot.html"><a href="ggplot.html#ilo_ggplot"><i class="fa fa-check"></i><b>3.1</b> Learning Objectives</a>
 <ul>
-<li class="chapter" data-level="3.4.1" data-path="data.html"><a href="data.html#builtin"><i class="fa fa-check"></i><b>3.4.1</b> Built-in data</a></li>
-<li class="chapter" data-level="3.4.2" data-path="data.html"><a href="data.html#import_data"><i class="fa fa-check"></i><b>3.4.2</b> Importing data</a></li>
-<li class="chapter" data-level="3.4.3" data-path="data.html"><a href="data.html#creating-data"><i class="fa fa-check"></i><b>3.4.3</b> Creating data</a></li>
-<li class="chapter" data-level="3.4.4" data-path="data.html"><a href="data.html#writing-data"><i class="fa fa-check"></i><b>3.4.4</b> Writing Data</a></li>
+<li class="chapter" data-level="3.1.1" data-path="ggplot.html"><a href="ggplot.html#basic-1"><i class="fa fa-check"></i><b>3.1.1</b> Basic</a></li>
+<li class="chapter" data-level="3.1.2" data-path="ggplot.html"><a href="ggplot.html#intermediate-1"><i class="fa fa-check"></i><b>3.1.2</b> Intermediate</a></li>
 </ul></li>
-<li class="chapter" data-level="3.5" data-path="data.html"><a href="data.html#data_types"><i class="fa fa-check"></i><b>3.5</b> Basic data types</a>
+<li class="chapter" data-level="3.2" data-path="ggplot.html"><a href="ggplot.html#resources3"><i class="fa fa-check"></i><b>3.2</b> Resources</a></li>
+<li class="chapter" data-level="3.3" data-path="ggplot.html"><a href="ggplot.html#setup_ggplot"><i class="fa fa-check"></i><b>3.3</b> Setup</a></li>
+<li class="chapter" data-level="3.4" data-path="ggplot.html"><a href="ggplot.html#vartypes"><i class="fa fa-check"></i><b>3.4</b> Common Variable Combinations</a></li>
+<li class="chapter" data-level="3.5" data-path="ggplot.html"><a href="ggplot.html#basic-plots"><i class="fa fa-check"></i><b>3.5</b> Basic Plots</a></li>
+<li class="chapter" data-level="3.6" data-path="ggplot.html"><a href="ggplot.html#ggplots"><i class="fa fa-check"></i><b>3.6</b> GGplots</a></li>
+<li class="chapter" data-level="3.7" data-path="ggplot.html"><a href="ggplot.html#common-plot-types"><i class="fa fa-check"></i><b>3.7</b> Common Plot Types</a>
 <ul>
-<li class="chapter" data-level="3.5.1" data-path="data.html"><a href="data.html#numeric-data"><i class="fa fa-check"></i><b>3.5.1</b> Numeric data</a></li>
-<li class="chapter" data-level="3.5.2" data-path="data.html"><a href="data.html#character-data"><i class="fa fa-check"></i><b>3.5.2</b> Character data</a></li>
-<li class="chapter" data-level="3.5.3" data-path="data.html"><a href="data.html#logical-data"><i class="fa fa-check"></i><b>3.5.3</b> Logical Data</a></li>
+<li class="chapter" data-level="3.7.1" data-path="ggplot.html"><a href="ggplot.html#geom_bar"><i class="fa fa-check"></i><b>3.7.1</b> Bar plot</a></li>
+<li class="chapter" data-level="3.7.2" data-path="ggplot.html"><a href="ggplot.html#geom_density"><i class="fa fa-check"></i><b>3.7.2</b> Density plot</a></li>
+<li class="chapter" data-level="3.7.3" data-path="ggplot.html"><a href="ggplot.html#geom_freqpoly"><i class="fa fa-check"></i><b>3.7.3</b> Frequency polygons</a></li>
+<li class="chapter" data-level="3.7.4" data-path="ggplot.html"><a href="ggplot.html#geom_histogram"><i class="fa fa-check"></i><b>3.7.4</b> Histogram</a></li>
+<li class="chapter" data-level="3.7.5" data-path="ggplot.html"><a href="ggplot.html#geom_col"><i class="fa fa-check"></i><b>3.7.5</b> Column plot</a></li>
+<li class="chapter" data-level="3.7.6" data-path="ggplot.html"><a href="ggplot.html#geom_boxplot"><i class="fa fa-check"></i><b>3.7.6</b> Boxplot</a></li>
+<li class="chapter" data-level="3.7.7" data-path="ggplot.html"><a href="ggplot.html#geom_violin"><i class="fa fa-check"></i><b>3.7.7</b> Violin plot</a></li>
+<li class="chapter" data-level="3.7.8" data-path="ggplot.html"><a href="ggplot.html#vertical_intervals"><i class="fa fa-check"></i><b>3.7.8</b> Vertical intervals</a></li>
+<li class="chapter" data-level="3.7.9" data-path="ggplot.html"><a href="ggplot.html#geom_point"><i class="fa fa-check"></i><b>3.7.9</b> Scatter plot</a></li>
+<li class="chapter" data-level="3.7.10" data-path="ggplot.html"><a href="ggplot.html#geom_smooth"><i class="fa fa-check"></i><b>3.7.10</b> Line graph</a></li>
 </ul></li>
-<li class="chapter" data-level="3.6" data-path="data.html"><a href="data.html#containers"><i class="fa fa-check"></i><b>3.6</b> Basic container types</a>
+<li class="chapter" data-level="3.8" data-path="ggplot.html"><a href="ggplot.html#customisation"><i class="fa fa-check"></i><b>3.8</b> Customisation</a>
 <ul>
-<li class="chapter" data-level="3.6.1" data-path="data.html"><a href="data.html#vectors"><i class="fa fa-check"></i><b>3.6.1</b> Vectors</a></li>
-<li class="chapter" data-level="3.6.2" data-path="data.html"><a href="data.html#lists"><i class="fa fa-check"></i><b>3.6.2</b> Lists</a></li>
-<li class="chapter" data-level="3.6.3" data-path="repro.html"><a href="repro.html#tables"><i class="fa fa-check"></i><b>3.6.3</b> Tables</a></li>
+<li class="chapter" data-level="3.8.1" data-path="ggplot.html"><a href="ggplot.html#custom-size"><i class="fa fa-check"></i><b>3.8.1</b> Size and Position</a></li>
+<li class="chapter" data-level="3.8.2" data-path="ggplot.html"><a href="ggplot.html#custom-labels"><i class="fa fa-check"></i><b>3.8.2</b> Labels</a></li>
+<li class="chapter" data-level="3.8.3" data-path="ggplot.html"><a href="ggplot.html#custom-colours"><i class="fa fa-check"></i><b>3.8.3</b> Colours</a></li>
+<li class="chapter" data-level="3.8.4" data-path="ggplot.html"><a href="ggplot.html#themes"><i class="fa fa-check"></i><b>3.8.4</b> Themes</a></li>
+<li class="chapter" data-level="3.8.5" data-path="ggplot.html"><a href="ggplot.html#ggsave"><i class="fa fa-check"></i><b>3.8.5</b> Save as file</a></li>
 </ul></li>
-<li class="chapter" data-level="3.7" data-path="data.html"><a href="data.html#troubleshooting"><i class="fa fa-check"></i><b>3.7</b> Troubleshooting</a></li>
-<li class="chapter" data-level="3.8" data-path="data.html"><a href="data.html#glossary-data"><i class="fa fa-check"></i><b>3.8</b> Glossary</a></li>
-<li class="chapter" data-level="3.9" data-path="data.html"><a href="data.html#exercises-data"><i class="fa fa-check"></i><b>3.9</b> Exercises</a></li>
-</ul></li>
-<li class="chapter" data-level="4" data-path="ggplot.html"><a href="ggplot.html"><i class="fa fa-check"></i><b>4</b> Data Visualisation</a>
+<li class="chapter" data-level="3.9" data-path="ggplot.html"><a href="ggplot.html#combo_plots"><i class="fa fa-check"></i><b>3.9</b> Combination Plots</a>
 <ul>
-<li class="chapter" data-level="4.1" data-path="ggplot.html"><a href="ggplot.html#ilo_ggplot"><i class="fa fa-check"></i><b>4.1</b> Learning Objectives</a>
-<ul>
-<li class="chapter" data-level="4.1.1" data-path="ggplot.html"><a href="ggplot.html#basic-1"><i class="fa fa-check"></i><b>4.1.1</b> Basic</a></li>
-<li class="chapter" data-level="4.1.2" data-path="ggplot.html"><a href="ggplot.html#intermediate-1"><i class="fa fa-check"></i><b>4.1.2</b> Intermediate</a></li>
+<li class="chapter" data-level="3.9.1" data-path="ggplot.html"><a href="ggplot.html#violinbox-plot"><i class="fa fa-check"></i><b>3.9.1</b> Violinbox plot</a></li>
+<li class="chapter" data-level="3.9.2" data-path="ggplot.html"><a href="ggplot.html#violin-point-range-plot"><i class="fa fa-check"></i><b>3.9.2</b> Violin-point-range plot</a></li>
+<li class="chapter" data-level="3.9.3" data-path="ggplot.html"><a href="ggplot.html#violin-jitter-plot"><i class="fa fa-check"></i><b>3.9.3</b> Violin-jitter plot</a></li>
+<li class="chapter" data-level="3.9.4" data-path="ggplot.html"><a href="ggplot.html#scatter-line-graph"><i class="fa fa-check"></i><b>3.9.4</b> Scatter-line graph</a></li>
+<li class="chapter" data-level="3.9.5" data-path="ggplot.html"><a href="ggplot.html#plot_grid"><i class="fa fa-check"></i><b>3.9.5</b> Grid of plots</a></li>
 </ul></li>
-<li class="chapter" data-level="4.2" data-path="ggplot.html"><a href="ggplot.html#resources3"><i class="fa fa-check"></i><b>4.2</b> Resources</a></li>
-<li class="chapter" data-level="4.3" data-path="ggplot.html"><a href="ggplot.html#setup_ggplot"><i class="fa fa-check"></i><b>4.3</b> Setup</a></li>
-<li class="chapter" data-level="4.4" data-path="ggplot.html"><a href="ggplot.html#vartypes"><i class="fa fa-check"></i><b>4.4</b> Common Variable Combinations</a></li>
-<li class="chapter" data-level="4.5" data-path="ggplot.html"><a href="ggplot.html#basic-plots"><i class="fa fa-check"></i><b>4.5</b> Basic Plots</a></li>
-<li class="chapter" data-level="4.6" data-path="ggplot.html"><a href="ggplot.html#ggplots"><i class="fa fa-check"></i><b>4.6</b> GGplots</a></li>
-<li class="chapter" data-level="4.7" data-path="ggplot.html"><a href="ggplot.html#common-plot-types"><i class="fa fa-check"></i><b>4.7</b> Common Plot Types</a>
+<li class="chapter" data-level="3.10" data-path="ggplot.html"><a href="ggplot.html#overlap"><i class="fa fa-check"></i><b>3.10</b> Overlapping Discrete Data</a>
 <ul>
-<li class="chapter" data-level="4.7.1" data-path="ggplot.html"><a href="ggplot.html#geom_bar"><i class="fa fa-check"></i><b>4.7.1</b> Bar plot</a></li>
-<li class="chapter" data-level="4.7.2" data-path="ggplot.html"><a href="ggplot.html#geom_density"><i class="fa fa-check"></i><b>4.7.2</b> Density plot</a></li>
-<li class="chapter" data-level="4.7.3" data-path="ggplot.html"><a href="ggplot.html#geom_freqpoly"><i class="fa fa-check"></i><b>4.7.3</b> Frequency polygons</a></li>
-<li class="chapter" data-level="4.7.4" data-path="ggplot.html"><a href="ggplot.html#geom_histogram"><i class="fa fa-check"></i><b>4.7.4</b> Histogram</a></li>
-<li class="chapter" data-level="4.7.5" data-path="ggplot.html"><a href="ggplot.html#geom_col"><i class="fa fa-check"></i><b>4.7.5</b> Column plot</a></li>
-<li class="chapter" data-level="4.7.6" data-path="ggplot.html"><a href="ggplot.html#geom_boxplot"><i class="fa fa-check"></i><b>4.7.6</b> Boxplot</a></li>
-<li class="chapter" data-level="4.7.7" data-path="ggplot.html"><a href="ggplot.html#geom_violin"><i class="fa fa-check"></i><b>4.7.7</b> Violin plot</a></li>
-<li class="chapter" data-level="4.7.8" data-path="ggplot.html"><a href="ggplot.html#vertical_intervals"><i class="fa fa-check"></i><b>4.7.8</b> Vertical intervals</a></li>
-<li class="chapter" data-level="4.7.9" data-path="ggplot.html"><a href="ggplot.html#geom_point"><i class="fa fa-check"></i><b>4.7.9</b> Scatter plot</a></li>
-<li class="chapter" data-level="4.7.10" data-path="ggplot.html"><a href="ggplot.html#geom_smooth"><i class="fa fa-check"></i><b>4.7.10</b> Line graph</a></li>
+<li class="chapter" data-level="3.10.1" data-path="ggplot.html"><a href="ggplot.html#reducing-opacity"><i class="fa fa-check"></i><b>3.10.1</b> Reducing Opacity</a></li>
+<li class="chapter" data-level="3.10.2" data-path="ggplot.html"><a href="ggplot.html#geom_count"><i class="fa fa-check"></i><b>3.10.2</b> Proportional Dot Plots</a></li>
 </ul></li>
-<li class="chapter" data-level="4.8" data-path="ggplot.html"><a href="ggplot.html#customisation"><i class="fa fa-check"></i><b>4.8</b> Customisation</a>
+<li class="chapter" data-level="3.11" data-path="ggplot.html"><a href="ggplot.html#overlapping-continuous-data"><i class="fa fa-check"></i><b>3.11</b> Overlapping Continuous Data</a>
 <ul>
-<li class="chapter" data-level="4.8.1" data-path="ggplot.html"><a href="ggplot.html#custom-size"><i class="fa fa-check"></i><b>4.8.1</b> Size and Position</a></li>
-<li class="chapter" data-level="4.8.2" data-path="ggplot.html"><a href="ggplot.html#custom-labels"><i class="fa fa-check"></i><b>4.8.2</b> Labels</a></li>
-<li class="chapter" data-level="4.8.3" data-path="ggplot.html"><a href="ggplot.html#custom-colours"><i class="fa fa-check"></i><b>4.8.3</b> Colours</a></li>
-<li class="chapter" data-level="4.8.4" data-path="ggplot.html"><a href="ggplot.html#themes"><i class="fa fa-check"></i><b>4.8.4</b> Themes</a></li>
-<li class="chapter" data-level="4.8.5" data-path="ggplot.html"><a href="ggplot.html#ggsave"><i class="fa fa-check"></i><b>4.8.5</b> Save as file</a></li>
+<li class="chapter" data-level="3.11.1" data-path="ggplot.html"><a href="ggplot.html#geom_density2d"><i class="fa fa-check"></i><b>3.11.1</b> 2D Density Plot</a></li>
+<li class="chapter" data-level="3.11.2" data-path="ggplot.html"><a href="ggplot.html#geom_bin2d"><i class="fa fa-check"></i><b>3.11.2</b> 2D Histogram</a></li>
+<li class="chapter" data-level="3.11.3" data-path="ggplot.html"><a href="ggplot.html#geom_hex"><i class="fa fa-check"></i><b>3.11.3</b> Hexagonal Heatmap</a></li>
+<li class="chapter" data-level="3.11.4" data-path="ggplot.html"><a href="ggplot.html#geom_tile"><i class="fa fa-check"></i><b>3.11.4</b> Correlation Heatmap</a></li>
 </ul></li>
-<li class="chapter" data-level="4.9" data-path="ggplot.html"><a href="ggplot.html#combo_plots"><i class="fa fa-check"></i><b>4.9</b> Combination Plots</a>
+<li class="chapter" data-level="3.12" data-path="ggplot.html"><a href="ggplot.html#plotly"><i class="fa fa-check"></i><b>3.12</b> Interactive Plots</a></li>
+<li class="chapter" data-level="3.13" data-path="ggplot.html"><a href="ggplot.html#glossary-ggplot"><i class="fa fa-check"></i><b>3.13</b> Glossary</a></li>
+<li class="chapter" data-level="3.14" data-path="ggplot.html"><a href="ggplot.html#exercises-ggplot"><i class="fa fa-check"></i><b>3.14</b> Exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="data.html"><a href="data.html"><i class="fa fa-check"></i><b>4</b> Working with Data</a>
 <ul>
-<li class="chapter" data-level="4.9.1" data-path="ggplot.html"><a href="ggplot.html#violinbox-plot"><i class="fa fa-check"></i><b>4.9.1</b> Violinbox plot</a></li>
-<li class="chapter" data-level="4.9.2" data-path="ggplot.html"><a href="ggplot.html#violin-point-range-plot"><i class="fa fa-check"></i><b>4.9.2</b> Violin-point-range plot</a></li>
-<li class="chapter" data-level="4.9.3" data-path="ggplot.html"><a href="ggplot.html#violin-jitter-plot"><i class="fa fa-check"></i><b>4.9.3</b> Violin-jitter plot</a></li>
-<li class="chapter" data-level="4.9.4" data-path="ggplot.html"><a href="ggplot.html#scatter-line-graph"><i class="fa fa-check"></i><b>4.9.4</b> Scatter-line graph</a></li>
-<li class="chapter" data-level="4.9.5" data-path="ggplot.html"><a href="ggplot.html#plot_grid"><i class="fa fa-check"></i><b>4.9.5</b> Grid of plots</a></li>
-</ul></li>
-<li class="chapter" data-level="4.10" data-path="ggplot.html"><a href="ggplot.html#overlap"><i class="fa fa-check"></i><b>4.10</b> Overlapping Discrete Data</a>
+<li class="chapter" data-level="4.1" data-path="data.html"><a href="data.html#ilo2"><i class="fa fa-check"></i><b>4.1</b> Learning Objectives</a></li>
+<li class="chapter" data-level="4.2" data-path="data.html"><a href="data.html#resources2"><i class="fa fa-check"></i><b>4.2</b> Resources</a></li>
+<li class="chapter" data-level="4.3" data-path="data.html"><a href="data.html#setup2"><i class="fa fa-check"></i><b>4.3</b> Setup</a></li>
+<li class="chapter" data-level="4.4" data-path="data.html"><a href="data.html#data-tables"><i class="fa fa-check"></i><b>4.4</b> Data tables</a>
 <ul>
-<li class="chapter" data-level="4.10.1" data-path="ggplot.html"><a href="ggplot.html#reducing-opacity"><i class="fa fa-check"></i><b>4.10.1</b> Reducing Opacity</a></li>
-<li class="chapter" data-level="4.10.2" data-path="ggplot.html"><a href="ggplot.html#geom_count"><i class="fa fa-check"></i><b>4.10.2</b> Proportional Dot Plots</a></li>
+<li class="chapter" data-level="4.4.1" data-path="data.html"><a href="data.html#builtin"><i class="fa fa-check"></i><b>4.4.1</b> Built-in data</a></li>
+<li class="chapter" data-level="4.4.2" data-path="data.html"><a href="data.html#import_data"><i class="fa fa-check"></i><b>4.4.2</b> Importing data</a></li>
+<li class="chapter" data-level="4.4.3" data-path="data.html"><a href="data.html#creating-data"><i class="fa fa-check"></i><b>4.4.3</b> Creating data</a></li>
+<li class="chapter" data-level="4.4.4" data-path="data.html"><a href="data.html#writing-data"><i class="fa fa-check"></i><b>4.4.4</b> Writing Data</a></li>
 </ul></li>
-<li class="chapter" data-level="4.11" data-path="ggplot.html"><a href="ggplot.html#overlapping-continuous-data"><i class="fa fa-check"></i><b>4.11</b> Overlapping Continuous Data</a>
+<li class="chapter" data-level="4.5" data-path="data.html"><a href="data.html#data_types"><i class="fa fa-check"></i><b>4.5</b> Basic data types</a>
 <ul>
-<li class="chapter" data-level="4.11.1" data-path="ggplot.html"><a href="ggplot.html#geom_density2d"><i class="fa fa-check"></i><b>4.11.1</b> 2D Density Plot</a></li>
-<li class="chapter" data-level="4.11.2" data-path="ggplot.html"><a href="ggplot.html#geom_bin2d"><i class="fa fa-check"></i><b>4.11.2</b> 2D Histogram</a></li>
-<li class="chapter" data-level="4.11.3" data-path="ggplot.html"><a href="ggplot.html#geom_hex"><i class="fa fa-check"></i><b>4.11.3</b> Hexagonal Heatmap</a></li>
-<li class="chapter" data-level="4.11.4" data-path="ggplot.html"><a href="ggplot.html#geom_tile"><i class="fa fa-check"></i><b>4.11.4</b> Correlation Heatmap</a></li>
+<li class="chapter" data-level="4.5.1" data-path="data.html"><a href="data.html#numeric-data"><i class="fa fa-check"></i><b>4.5.1</b> Numeric data</a></li>
+<li class="chapter" data-level="4.5.2" data-path="data.html"><a href="data.html#character-data"><i class="fa fa-check"></i><b>4.5.2</b> Character data</a></li>
+<li class="chapter" data-level="4.5.3" data-path="data.html"><a href="data.html#logical-data"><i class="fa fa-check"></i><b>4.5.3</b> Logical Data</a></li>
 </ul></li>
-<li class="chapter" data-level="4.12" data-path="ggplot.html"><a href="ggplot.html#plotly"><i class="fa fa-check"></i><b>4.12</b> Interactive Plots</a></li>
-<li class="chapter" data-level="4.13" data-path="ggplot.html"><a href="ggplot.html#glossary-ggplot"><i class="fa fa-check"></i><b>4.13</b> Glossary</a></li>
-<li class="chapter" data-level="4.14" data-path="ggplot.html"><a href="ggplot.html#exercises-ggplot"><i class="fa fa-check"></i><b>4.14</b> Exercises</a></li>
+<li class="chapter" data-level="4.6" data-path="data.html"><a href="data.html#containers"><i class="fa fa-check"></i><b>4.6</b> Basic container types</a>
+<ul>
+<li class="chapter" data-level="4.6.1" data-path="data.html"><a href="data.html#vectors"><i class="fa fa-check"></i><b>4.6.1</b> Vectors</a></li>
+<li class="chapter" data-level="4.6.2" data-path="data.html"><a href="data.html#lists"><i class="fa fa-check"></i><b>4.6.2</b> Lists</a></li>
+<li class="chapter" data-level="4.6.3" data-path="data.html"><a href="data.html#tables-data"><i class="fa fa-check"></i><b>4.6.3</b> Tables</a></li>
+</ul></li>
+<li class="chapter" data-level="4.7" data-path="data.html"><a href="data.html#troubleshooting"><i class="fa fa-check"></i><b>4.7</b> Troubleshooting</a></li>
+<li class="chapter" data-level="4.8" data-path="data.html"><a href="data.html#glossary-data"><i class="fa fa-check"></i><b>4.8</b> Glossary</a></li>
+<li class="chapter" data-level="4.9" data-path="data.html"><a href="data.html#exercises-data"><i class="fa fa-check"></i><b>4.9</b> Exercises</a></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="joins.html"><a href="joins.html"><i class="fa fa-check"></i><b>5</b> Data Relations</a>
 <ul>
@@ -465,7 +457,7 @@ div.csl-indent {
 </ul></li>
 <li class="chapter" data-level="8.5" data-path="glm.html"><a href="glm.html#test-rels"><i class="fa fa-check"></i><b>8.5</b> Relationships among tests</a>
 <ul>
-<li class="chapter" data-level="8.5.1" data-path="glm.html"><a href="glm.html#t-test"><i class="fa fa-check"></i><b>8.5.1</b> T-test</a></li>
+<li class="chapter" data-level="8.5.1" data-path="glm.html"><a href="glm.html#t-test-t-test-glm"><i class="fa fa-check"></i><b>8.5.1</b> T-test {t-test-glm}</a></li>
 <li class="chapter" data-level="8.5.2" data-path="glm.html"><a href="glm.html#anova"><i class="fa fa-check"></i><b>8.5.2</b> ANOVA</a></li>
 </ul></li>
 <li class="chapter" data-level="8.6" data-path="glm.html"><a href="glm.html#understanding-anova"><i class="fa fa-check"></i><b>8.6</b> Understanding ANOVA</a>
@@ -549,7 +541,7 @@ div.csl-indent {
 <li class="chapter" data-level="10.7" data-path="sim.html"><a href="sim.html#tests"><i class="fa fa-check"></i><b>10.7</b> Tests</a>
 <ul>
 <li class="chapter" data-level="10.7.1" data-path="sim.html"><a href="sim.html#exact-binom"><i class="fa fa-check"></i><b>10.7.1</b> Exact binomial test</a></li>
-<li class="chapter" data-level="10.7.2" data-path="glm.html"><a href="glm.html#t-test"><i class="fa fa-check"></i><b>10.7.2</b> T-test</a></li>
+<li class="chapter" data-level="10.7.2" data-path="sim.html"><a href="sim.html#t-test"><i class="fa fa-check"></i><b>10.7.2</b> T-test</a></li>
 <li class="chapter" data-level="10.7.3" data-path="sim.html"><a href="sim.html#correlation"><i class="fa fa-check"></i><b>10.7.3</b> Correlation</a></li>
 </ul></li>
 <li class="chapter" data-level="10.8" data-path="sim.html"><a href="sim.html#example"><i class="fa fa-check"></i><b>10.8</b> Example</a>
@@ -648,11 +640,11 @@ div.csl-indent {
 </div>
 <div id="setup-tidyr" class="section level2" number="6.3">
 <h2><span class="header-section-number">6.3</span> Setup</h2>
-<div class="sourceCode" id="cb247"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb247-1"><a href="tidyr.html#cb247-1" aria-hidden="true" tabindex="-1"></a><span class="co"># libraries needed</span></span>
-<span id="cb247-2"><a href="tidyr.html#cb247-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb247-3"><a href="tidyr.html#cb247-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(reprores)</span>
-<span id="cb247-4"><a href="tidyr.html#cb247-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb247-5"><a href="tidyr.html#cb247-5" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">8675309</span>) <span class="co"># makes sure random numbers are reproducible</span></span></code></pre></div>
+<div class="sourceCode" id="cb225"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb225-1"><a href="tidyr.html#cb225-1" aria-hidden="true" tabindex="-1"></a><span class="co"># libraries needed</span></span>
+<span id="cb225-2"><a href="tidyr.html#cb225-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb225-3"><a href="tidyr.html#cb225-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(reprores)</span>
+<span id="cb225-4"><a href="tidyr.html#cb225-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb225-5"><a href="tidyr.html#cb225-5" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">8675309</span>) <span class="co"># makes sure random numbers are reproducible</span></span></code></pre></div>
 </div>
 <div id="tidy-data" class="section level2" number="6.4">
 <h2><span class="header-section-number">6.4</span> Tidy Data</h2>
@@ -1024,7 +1016,7 @@ Answer
 <div id="load-data" class="section level3" number="6.5.1">
 <h3><span class="header-section-number">6.5.1</span> Load Data</h3>
 <p>We will used the dataset <code>personality</code> from the reprores package (or download the data from <a href="./data/personality.csv">personality.csv</a>). These data are from a 5-factor (personality) personality questionnaire. Each question is labelled with the domain (Op = openness, Co = conscientiousness, Ex = extroversion, Ag = agreeableness, and Ne = neuroticism) and the question number.</p>
-<div class="sourceCode" id="cb248"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb248-1"><a href="tidyr.html#cb248-1" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(<span class="st">&quot;personality&quot;</span>, <span class="at">package =</span> <span class="st">&quot;reprores&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb226"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb226-1"><a href="tidyr.html#cb226-1" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(<span class="st">&quot;personality&quot;</span>, <span class="at">package =</span> <span class="st">&quot;reprores&quot;</span>)</span></code></pre></div>
 <table style="width:100%;">
 <colgroup>
 <col width="4%" />
@@ -1401,14 +1393,14 @@ Answer
 <li><code>names_sep</code> is an optional argument if you have more than one value for <code>names_to</code>. It specifies the characters or position to split the values of the <code>cols</code> headers.</li>
 <li><code>values_to</code> is what you want to call the values in the columns <code>...</code>; they're "score" in this example.</li>
 </ul>
-<div class="sourceCode" id="cb249"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb249-1"><a href="tidyr.html#cb249-1" aria-hidden="true" tabindex="-1"></a>personality_long <span class="ot">&lt;-</span> <span class="fu">pivot_longer</span>(</span>
-<span id="cb249-2"><a href="tidyr.html#cb249-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">data =</span> personality, </span>
-<span id="cb249-3"><a href="tidyr.html#cb249-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">cols =</span> Op1<span class="sc">:</span>Ex9,                    <span class="co"># columns to make long </span></span>
-<span id="cb249-4"><a href="tidyr.html#cb249-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">names_to =</span> <span class="fu">c</span>(<span class="st">&quot;domain&quot;</span>, <span class="st">&quot;qnumber&quot;</span>), <span class="co"># new column names for headers</span></span>
-<span id="cb249-5"><a href="tidyr.html#cb249-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">names_sep =</span> <span class="dv">2</span>,                     <span class="co"># how to split the headers</span></span>
-<span id="cb249-6"><a href="tidyr.html#cb249-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">values_to =</span> <span class="st">&quot;score&quot;</span>                <span class="co"># new column name for values</span></span>
-<span id="cb249-7"><a href="tidyr.html#cb249-7" aria-hidden="true" tabindex="-1"></a>) <span class="sc">%&gt;%</span></span>
-<span id="cb249-8"><a href="tidyr.html#cb249-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">glimpse</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb227"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb227-1"><a href="tidyr.html#cb227-1" aria-hidden="true" tabindex="-1"></a>personality_long <span class="ot">&lt;-</span> <span class="fu">pivot_longer</span>(</span>
+<span id="cb227-2"><a href="tidyr.html#cb227-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">data =</span> personality, </span>
+<span id="cb227-3"><a href="tidyr.html#cb227-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">cols =</span> Op1<span class="sc">:</span>Ex9,                    <span class="co"># columns to make long </span></span>
+<span id="cb227-4"><a href="tidyr.html#cb227-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">names_to =</span> <span class="fu">c</span>(<span class="st">&quot;domain&quot;</span>, <span class="st">&quot;qnumber&quot;</span>), <span class="co"># new column names for headers</span></span>
+<span id="cb227-5"><a href="tidyr.html#cb227-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">names_sep =</span> <span class="dv">2</span>,                     <span class="co"># how to split the headers</span></span>
+<span id="cb227-6"><a href="tidyr.html#cb227-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">values_to =</span> <span class="st">&quot;score&quot;</span>                <span class="co"># new column name for values</span></span>
+<span id="cb227-7"><a href="tidyr.html#cb227-7" aria-hidden="true" tabindex="-1"></a>) <span class="sc">%&gt;%</span></span>
+<span id="cb227-8"><a href="tidyr.html#cb227-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">glimpse</span>()</span></code></pre></div>
 <pre><code>## Rows: 615,000
 ## Columns: 5
 ## $ user_id &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,…
@@ -1462,13 +1454,13 @@ Answer
 <li><code>values_from</code> is the column that contains the values for the new columns.</li>
 <li><code>names_sep</code> is the character string used to join names if <code>names_from</code> is more than one column.</li>
 </ul>
-<div class="sourceCode" id="cb251"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb251-1"><a href="tidyr.html#cb251-1" aria-hidden="true" tabindex="-1"></a>personality_wide <span class="ot">&lt;-</span> <span class="fu">pivot_wider</span>(</span>
-<span id="cb251-2"><a href="tidyr.html#cb251-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">data =</span> personality_long,</span>
-<span id="cb251-3"><a href="tidyr.html#cb251-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">names_from =</span> <span class="fu">c</span>(domain, qnumber),</span>
-<span id="cb251-4"><a href="tidyr.html#cb251-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">values_from =</span> score,</span>
-<span id="cb251-5"><a href="tidyr.html#cb251-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">names_sep =</span> <span class="st">&quot;&quot;</span></span>
-<span id="cb251-6"><a href="tidyr.html#cb251-6" aria-hidden="true" tabindex="-1"></a>) <span class="sc">%&gt;%</span></span>
-<span id="cb251-7"><a href="tidyr.html#cb251-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">glimpse</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb229"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb229-1"><a href="tidyr.html#cb229-1" aria-hidden="true" tabindex="-1"></a>personality_wide <span class="ot">&lt;-</span> <span class="fu">pivot_wider</span>(</span>
+<span id="cb229-2"><a href="tidyr.html#cb229-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">data =</span> personality_long,</span>
+<span id="cb229-3"><a href="tidyr.html#cb229-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">names_from =</span> <span class="fu">c</span>(domain, qnumber),</span>
+<span id="cb229-4"><a href="tidyr.html#cb229-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">values_from =</span> score,</span>
+<span id="cb229-5"><a href="tidyr.html#cb229-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">names_sep =</span> <span class="st">&quot;&quot;</span></span>
+<span id="cb229-6"><a href="tidyr.html#cb229-6" aria-hidden="true" tabindex="-1"></a>) <span class="sc">%&gt;%</span></span>
+<span id="cb229-7"><a href="tidyr.html#cb229-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">glimpse</span>()</span></code></pre></div>
 <pre><code>## Rows: 15,000
 ## Columns: 43
 ## $ user_id &lt;dbl&gt; 0, 1, 2, 5, 8, 108, 233, 298, 426, 436, 685, 807, 871, 881, 94…
@@ -1528,13 +1520,13 @@ Answer
 <li><code>...</code> refers to the columns you want to gather. It is like <code>cols</code> in <code>pivot_longer()</code>.</li>
 </ul>
 <p>The <code>gather()</code> function converts <code>personality</code> from a wide data table to long format, with a row for each user/question observation. The resulting data table should have the columns: <code>user_id</code>, <code>date</code>, <code>question</code>, and <code>score</code>.</p>
-<div class="sourceCode" id="cb253"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb253-1"><a href="tidyr.html#cb253-1" aria-hidden="true" tabindex="-1"></a>personality_gathered <span class="ot">&lt;-</span> <span class="fu">gather</span>(</span>
-<span id="cb253-2"><a href="tidyr.html#cb253-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">data =</span> personality, </span>
-<span id="cb253-3"><a href="tidyr.html#cb253-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">key =</span> <span class="st">&quot;question&quot;</span>, <span class="co"># new column name for gathered headers</span></span>
-<span id="cb253-4"><a href="tidyr.html#cb253-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">value =</span> <span class="st">&quot;score&quot;</span>,  <span class="co"># new column name for gathered values</span></span>
-<span id="cb253-5"><a href="tidyr.html#cb253-5" aria-hidden="true" tabindex="-1"></a>  Op1<span class="sc">:</span>Ex9           <span class="co"># columns to gather</span></span>
-<span id="cb253-6"><a href="tidyr.html#cb253-6" aria-hidden="true" tabindex="-1"></a>) <span class="sc">%&gt;%</span></span>
-<span id="cb253-7"><a href="tidyr.html#cb253-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">glimpse</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb231"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb231-1"><a href="tidyr.html#cb231-1" aria-hidden="true" tabindex="-1"></a>personality_gathered <span class="ot">&lt;-</span> <span class="fu">gather</span>(</span>
+<span id="cb231-2"><a href="tidyr.html#cb231-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">data =</span> personality, </span>
+<span id="cb231-3"><a href="tidyr.html#cb231-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">key =</span> <span class="st">&quot;question&quot;</span>, <span class="co"># new column name for gathered headers</span></span>
+<span id="cb231-4"><a href="tidyr.html#cb231-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">value =</span> <span class="st">&quot;score&quot;</span>,  <span class="co"># new column name for gathered values</span></span>
+<span id="cb231-5"><a href="tidyr.html#cb231-5" aria-hidden="true" tabindex="-1"></a>  Op1<span class="sc">:</span>Ex9           <span class="co"># columns to gather</span></span>
+<span id="cb231-6"><a href="tidyr.html#cb231-6" aria-hidden="true" tabindex="-1"></a>) <span class="sc">%&gt;%</span></span>
+<span id="cb231-7"><a href="tidyr.html#cb231-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">glimpse</span>()</span></code></pre></div>
 <pre><code>## Rows: 615,000
 ## Columns: 4
 ## $ user_id  &lt;dbl&gt; 0, 1, 2, 5, 8, 108, 233, 298, 426, 436, 685, 807, 871, 881, 9…
@@ -1551,13 +1543,13 @@ Answer
 </ul>
 <p>Split the <code>question</code> column into two columns: <code>domain</code> and <code>qnumber</code>.</p>
 <p>There is no character to split on, here, but you can separate a column after a specific number of characters by setting <code>sep</code> to an integer. For example, to split "abcde" after the third character, use <code>sep = 3</code>, which results in <code>c("abc", "de")</code>. You can also use negative number to split before the <em>n</em>th character from the right. For example, to split a column that has words of various lengths and 2-digit suffixes (like "lisa03"", "amanda38"), you can use <code>sep = -2</code>.</p>
-<div class="sourceCode" id="cb255"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb255-1"><a href="tidyr.html#cb255-1" aria-hidden="true" tabindex="-1"></a>personality_sep <span class="ot">&lt;-</span> <span class="fu">separate</span>(</span>
-<span id="cb255-2"><a href="tidyr.html#cb255-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">data =</span> personality_gathered, </span>
-<span id="cb255-3"><a href="tidyr.html#cb255-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">col =</span> question,                <span class="co"># column to separate</span></span>
-<span id="cb255-4"><a href="tidyr.html#cb255-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">into =</span> <span class="fu">c</span>(<span class="st">&quot;domain&quot;</span>, <span class="st">&quot;qnumber&quot;</span>), <span class="co"># new column names</span></span>
-<span id="cb255-5"><a href="tidyr.html#cb255-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">sep =</span> <span class="dv">2</span>                        <span class="co"># where to separate</span></span>
-<span id="cb255-6"><a href="tidyr.html#cb255-6" aria-hidden="true" tabindex="-1"></a>) <span class="sc">%&gt;%</span></span>
-<span id="cb255-7"><a href="tidyr.html#cb255-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">glimpse</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb233"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb233-1"><a href="tidyr.html#cb233-1" aria-hidden="true" tabindex="-1"></a>personality_sep <span class="ot">&lt;-</span> <span class="fu">separate</span>(</span>
+<span id="cb233-2"><a href="tidyr.html#cb233-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">data =</span> personality_gathered, </span>
+<span id="cb233-3"><a href="tidyr.html#cb233-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">col =</span> question,                <span class="co"># column to separate</span></span>
+<span id="cb233-4"><a href="tidyr.html#cb233-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">into =</span> <span class="fu">c</span>(<span class="st">&quot;domain&quot;</span>, <span class="st">&quot;qnumber&quot;</span>), <span class="co"># new column names</span></span>
+<span id="cb233-5"><a href="tidyr.html#cb233-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">sep =</span> <span class="dv">2</span>                        <span class="co"># where to separate</span></span>
+<span id="cb233-6"><a href="tidyr.html#cb233-6" aria-hidden="true" tabindex="-1"></a>) <span class="sc">%&gt;%</span></span>
+<span id="cb233-7"><a href="tidyr.html#cb233-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">glimpse</span>()</span></code></pre></div>
 <pre><code>## Rows: 615,000
 ## Columns: 5
 ## $ user_id &lt;dbl&gt; 0, 1, 2, 5, 8, 108, 233, 298, 426, 436, 685, 807, 871, 881, 94…
@@ -1577,13 +1569,13 @@ Answer
 <li><code>sep</code> is the character(s) that will separate your united columns</li>
 </ul>
 <p>Put the domain and qnumber columns back together into a new column named <code>domain_n</code>. Make it in a format like "Op_Q1".</p>
-<div class="sourceCode" id="cb257"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb257-1"><a href="tidyr.html#cb257-1" aria-hidden="true" tabindex="-1"></a>personality_unite <span class="ot">&lt;-</span> <span class="fu">unite</span>(</span>
-<span id="cb257-2"><a href="tidyr.html#cb257-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">data =</span> personality_sep, </span>
-<span id="cb257-3"><a href="tidyr.html#cb257-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">col =</span> <span class="st">&quot;domain_n&quot;</span>, <span class="co"># new column name</span></span>
-<span id="cb257-4"><a href="tidyr.html#cb257-4" aria-hidden="true" tabindex="-1"></a>  domain, qnumber,  <span class="co"># columns to unite</span></span>
-<span id="cb257-5"><a href="tidyr.html#cb257-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">sep =</span> <span class="st">&quot;_Q&quot;</span>        <span class="co"># separation characters</span></span>
-<span id="cb257-6"><a href="tidyr.html#cb257-6" aria-hidden="true" tabindex="-1"></a>) <span class="sc">%&gt;%</span></span>
-<span id="cb257-7"><a href="tidyr.html#cb257-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">glimpse</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb235"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb235-1"><a href="tidyr.html#cb235-1" aria-hidden="true" tabindex="-1"></a>personality_unite <span class="ot">&lt;-</span> <span class="fu">unite</span>(</span>
+<span id="cb235-2"><a href="tidyr.html#cb235-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">data =</span> personality_sep, </span>
+<span id="cb235-3"><a href="tidyr.html#cb235-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">col =</span> <span class="st">&quot;domain_n&quot;</span>, <span class="co"># new column name</span></span>
+<span id="cb235-4"><a href="tidyr.html#cb235-4" aria-hidden="true" tabindex="-1"></a>  domain, qnumber,  <span class="co"># columns to unite</span></span>
+<span id="cb235-5"><a href="tidyr.html#cb235-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">sep =</span> <span class="st">&quot;_Q&quot;</span>        <span class="co"># separation characters</span></span>
+<span id="cb235-6"><a href="tidyr.html#cb235-6" aria-hidden="true" tabindex="-1"></a>) <span class="sc">%&gt;%</span></span>
+<span id="cb235-7"><a href="tidyr.html#cb235-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">glimpse</span>()</span></code></pre></div>
 <pre><code>## Rows: 615,000
 ## Columns: 4
 ## $ user_id  &lt;dbl&gt; 0, 1, 2, 5, 8, 108, 233, 298, 426, 436, 685, 807, 871, 881, 9…
@@ -1598,12 +1590,12 @@ Answer
 <li><code>key</code> is the column that contains your new column headers. It is like <code>names_from</code> in <code>pivot_wider()</code>, but can only take one value (multiple values need to be merged first using <code>unite()</code>).</li>
 <li><code>value</code> is the column that contains the values in the new spread columns. It is like <code>values_from</code> in <code>pivot_wider()</code>.</li>
 </ul>
-<div class="sourceCode" id="cb259"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb259-1"><a href="tidyr.html#cb259-1" aria-hidden="true" tabindex="-1"></a>personality_spread <span class="ot">&lt;-</span> <span class="fu">spread</span>(</span>
-<span id="cb259-2"><a href="tidyr.html#cb259-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">data =</span> personality_unite,</span>
-<span id="cb259-3"><a href="tidyr.html#cb259-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">key =</span> domain_n, <span class="co"># column that contains new headers</span></span>
-<span id="cb259-4"><a href="tidyr.html#cb259-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">value =</span> score   <span class="co"># column that contains new values</span></span>
-<span id="cb259-5"><a href="tidyr.html#cb259-5" aria-hidden="true" tabindex="-1"></a>) <span class="sc">%&gt;%</span></span>
-<span id="cb259-6"><a href="tidyr.html#cb259-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">glimpse</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb237"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb237-1"><a href="tidyr.html#cb237-1" aria-hidden="true" tabindex="-1"></a>personality_spread <span class="ot">&lt;-</span> <span class="fu">spread</span>(</span>
+<span id="cb237-2"><a href="tidyr.html#cb237-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">data =</span> personality_unite,</span>
+<span id="cb237-3"><a href="tidyr.html#cb237-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">key =</span> domain_n, <span class="co"># column that contains new headers</span></span>
+<span id="cb237-4"><a href="tidyr.html#cb237-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">value =</span> score   <span class="co"># column that contains new values</span></span>
+<span id="cb237-5"><a href="tidyr.html#cb237-5" aria-hidden="true" tabindex="-1"></a>) <span class="sc">%&gt;%</span></span>
+<span id="cb237-6"><a href="tidyr.html#cb237-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">glimpse</span>()</span></code></pre></div>
 <pre><code>## Rows: 15,000
 ## Columns: 43
 ## $ user_id &lt;dbl&gt; 0, 1, 2, 5, 8, 108, 233, 298, 426, 436, 685, 807, 871, 881, 94…
@@ -1657,87 +1649,137 @@ Answer
 <p>Pipes are a way to order your code in a more readable format.</p>
 <p>Let's say you have a small data table with 10 participant IDs, two columns with variable type A, and 2 columns with variable type B. You want to calculate the mean of the A variables and the mean of the B variables and return a table with 10 rows (1 for each participant) and 3 columns (<code>id</code>, <code>A_mean</code> and <code>B_mean</code>).</p>
 <p>One way you could do this is by creating a new object at every step and using that object in the next step. This is pretty clear, but you've created 6 unnecessary data objects in your environment. This can get confusing in very long scripts.</p>
-<div class="sourceCode" id="cb261"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb261-1"><a href="tidyr.html#cb261-1" aria-hidden="true" tabindex="-1"></a><span class="co"># make a data table with 10 subjects</span></span>
-<span id="cb261-2"><a href="tidyr.html#cb261-2" aria-hidden="true" tabindex="-1"></a>data_original <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
-<span id="cb261-3"><a href="tidyr.html#cb261-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">id =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>,</span>
-<span id="cb261-4"><a href="tidyr.html#cb261-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">A1 =</span> <span class="fu">rnorm</span>(<span class="dv">10</span>, <span class="dv">0</span>),</span>
-<span id="cb261-5"><a href="tidyr.html#cb261-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">A2 =</span> <span class="fu">rnorm</span>(<span class="dv">10</span>, <span class="dv">1</span>),</span>
-<span id="cb261-6"><a href="tidyr.html#cb261-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">B1 =</span> <span class="fu">rnorm</span>(<span class="dv">10</span>, <span class="dv">2</span>),</span>
-<span id="cb261-7"><a href="tidyr.html#cb261-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">B2 =</span> <span class="fu">rnorm</span>(<span class="dv">10</span>, <span class="dv">3</span>)</span>
-<span id="cb261-8"><a href="tidyr.html#cb261-8" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb261-9"><a href="tidyr.html#cb261-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb261-10"><a href="tidyr.html#cb261-10" aria-hidden="true" tabindex="-1"></a><span class="co"># gather columns A1 to B2 into &quot;variable&quot; and &quot;value&quot; columns</span></span>
-<span id="cb261-11"><a href="tidyr.html#cb261-11" aria-hidden="true" tabindex="-1"></a>data_gathered <span class="ot">&lt;-</span> <span class="fu">gather</span>(data_original, variable, value, A1<span class="sc">:</span>B2)</span>
-<span id="cb261-12"><a href="tidyr.html#cb261-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb261-13"><a href="tidyr.html#cb261-13" aria-hidden="true" tabindex="-1"></a><span class="co"># separate the variable column at the _ into &quot;var&quot; and &quot;var_n&quot; columns</span></span>
-<span id="cb261-14"><a href="tidyr.html#cb261-14" aria-hidden="true" tabindex="-1"></a>data_separated <span class="ot">&lt;-</span> <span class="fu">separate</span>(data_gathered, variable, <span class="fu">c</span>(<span class="st">&quot;var&quot;</span>, <span class="st">&quot;var_n&quot;</span>), <span class="at">sep =</span> <span class="dv">1</span>)</span>
-<span id="cb261-15"><a href="tidyr.html#cb261-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb261-16"><a href="tidyr.html#cb261-16" aria-hidden="true" tabindex="-1"></a><span class="co"># group the data by id and var</span></span>
-<span id="cb261-17"><a href="tidyr.html#cb261-17" aria-hidden="true" tabindex="-1"></a>data_grouped <span class="ot">&lt;-</span> <span class="fu">group_by</span>(data_separated, id, var)</span>
-<span id="cb261-18"><a href="tidyr.html#cb261-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb261-19"><a href="tidyr.html#cb261-19" aria-hidden="true" tabindex="-1"></a><span class="co"># calculate the mean value for each id/var </span></span>
-<span id="cb261-20"><a href="tidyr.html#cb261-20" aria-hidden="true" tabindex="-1"></a>data_summarised <span class="ot">&lt;-</span> <span class="fu">summarise</span>(data_grouped, <span class="at">mean =</span> <span class="fu">mean</span>(value), <span class="at">.groups =</span> <span class="st">&quot;drop&quot;</span>)</span>
-<span id="cb261-21"><a href="tidyr.html#cb261-21" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb261-22"><a href="tidyr.html#cb261-22" aria-hidden="true" tabindex="-1"></a><span class="co"># spread the mean column into A and B columns</span></span>
-<span id="cb261-23"><a href="tidyr.html#cb261-23" aria-hidden="true" tabindex="-1"></a>data_spread <span class="ot">&lt;-</span> <span class="fu">spread</span>(data_summarised, var, mean)</span>
-<span id="cb261-24"><a href="tidyr.html#cb261-24" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb261-25"><a href="tidyr.html#cb261-25" aria-hidden="true" tabindex="-1"></a><span class="co"># rename A and B to A_mean and B_mean</span></span>
-<span id="cb261-26"><a href="tidyr.html#cb261-26" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">rename</span>(data_spread, <span class="at">A_mean =</span> A, <span class="at">B_mean =</span> B)</span>
-<span id="cb261-27"><a href="tidyr.html#cb261-27" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb261-28"><a href="tidyr.html#cb261-28" aria-hidden="true" tabindex="-1"></a>data</span></code></pre></div>
-<pre><code>## # A tibble: 10 x 3
-##       id  A_mean B_mean
-##    &lt;int&gt;   &lt;dbl&gt;  &lt;dbl&gt;
-##  1     1 -0.594   1.02 
-##  2     2  0.744   2.72 
-##  3     3  0.931   3.93 
-##  4     4  0.720   1.97 
-##  5     5 -0.0281  1.95 
-##  6     6 -0.0983  3.21 
-##  7     7  0.126   0.926
-##  8     8  1.45    2.38 
-##  9     9  0.298   1.66 
-## 10    10  0.559   2.10</code></pre>
+<div class="sourceCode" id="cb239"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb239-1"><a href="tidyr.html#cb239-1" aria-hidden="true" tabindex="-1"></a><span class="co"># make a data table with 10 subjects</span></span>
+<span id="cb239-2"><a href="tidyr.html#cb239-2" aria-hidden="true" tabindex="-1"></a>data_original <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb239-3"><a href="tidyr.html#cb239-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">id =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>,</span>
+<span id="cb239-4"><a href="tidyr.html#cb239-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">A1 =</span> <span class="fu">rnorm</span>(<span class="dv">10</span>, <span class="dv">0</span>),</span>
+<span id="cb239-5"><a href="tidyr.html#cb239-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">A2 =</span> <span class="fu">rnorm</span>(<span class="dv">10</span>, <span class="dv">1</span>),</span>
+<span id="cb239-6"><a href="tidyr.html#cb239-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">B1 =</span> <span class="fu">rnorm</span>(<span class="dv">10</span>, <span class="dv">2</span>),</span>
+<span id="cb239-7"><a href="tidyr.html#cb239-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">B2 =</span> <span class="fu">rnorm</span>(<span class="dv">10</span>, <span class="dv">3</span>)</span>
+<span id="cb239-8"><a href="tidyr.html#cb239-8" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb239-9"><a href="tidyr.html#cb239-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb239-10"><a href="tidyr.html#cb239-10" aria-hidden="true" tabindex="-1"></a><span class="co"># gather columns A1 to B2 into &quot;variable&quot; and &quot;value&quot; columns</span></span>
+<span id="cb239-11"><a href="tidyr.html#cb239-11" aria-hidden="true" tabindex="-1"></a>data_gathered <span class="ot">&lt;-</span> <span class="fu">gather</span>(data_original, variable, value, A1<span class="sc">:</span>B2)</span>
+<span id="cb239-12"><a href="tidyr.html#cb239-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb239-13"><a href="tidyr.html#cb239-13" aria-hidden="true" tabindex="-1"></a><span class="co"># separate the variable column at the _ into &quot;var&quot; and &quot;var_n&quot; columns</span></span>
+<span id="cb239-14"><a href="tidyr.html#cb239-14" aria-hidden="true" tabindex="-1"></a>data_separated <span class="ot">&lt;-</span> <span class="fu">separate</span>(data_gathered, variable, <span class="fu">c</span>(<span class="st">&quot;var&quot;</span>, <span class="st">&quot;var_n&quot;</span>), <span class="at">sep =</span> <span class="dv">1</span>)</span>
+<span id="cb239-15"><a href="tidyr.html#cb239-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb239-16"><a href="tidyr.html#cb239-16" aria-hidden="true" tabindex="-1"></a><span class="co"># group the data by id and var</span></span>
+<span id="cb239-17"><a href="tidyr.html#cb239-17" aria-hidden="true" tabindex="-1"></a>data_grouped <span class="ot">&lt;-</span> <span class="fu">group_by</span>(data_separated, id, var)</span>
+<span id="cb239-18"><a href="tidyr.html#cb239-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb239-19"><a href="tidyr.html#cb239-19" aria-hidden="true" tabindex="-1"></a><span class="co"># calculate the mean value for each id/var </span></span>
+<span id="cb239-20"><a href="tidyr.html#cb239-20" aria-hidden="true" tabindex="-1"></a>data_summarised <span class="ot">&lt;-</span> <span class="fu">summarise</span>(data_grouped, <span class="at">mean =</span> <span class="fu">mean</span>(value), <span class="at">.groups =</span> <span class="st">&quot;drop&quot;</span>)</span>
+<span id="cb239-21"><a href="tidyr.html#cb239-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb239-22"><a href="tidyr.html#cb239-22" aria-hidden="true" tabindex="-1"></a><span class="co"># spread the mean column into A and B columns</span></span>
+<span id="cb239-23"><a href="tidyr.html#cb239-23" aria-hidden="true" tabindex="-1"></a>data_spread <span class="ot">&lt;-</span> <span class="fu">spread</span>(data_summarised, var, mean)</span>
+<span id="cb239-24"><a href="tidyr.html#cb239-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb239-25"><a href="tidyr.html#cb239-25" aria-hidden="true" tabindex="-1"></a><span class="co"># rename A and B to A_mean and B_mean</span></span>
+<span id="cb239-26"><a href="tidyr.html#cb239-26" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">rename</span>(data_spread, <span class="at">A_mean =</span> A, <span class="at">B_mean =</span> B)</span>
+<span id="cb239-27"><a href="tidyr.html#cb239-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb239-28"><a href="tidyr.html#cb239-28" aria-hidden="true" tabindex="-1"></a>data</span></code></pre></div>
+<div class="kable-table">
+<table>
+<thead>
+<tr class="header">
+<th align="right">id</th>
+<th align="right">A_mean</th>
+<th align="right">B_mean</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">1</td>
+<td align="right">-0.5938256</td>
+<td align="right">1.0243046</td>
+</tr>
+<tr class="even">
+<td align="right">2</td>
+<td align="right">0.7440623</td>
+<td align="right">2.7172046</td>
+</tr>
+<tr class="odd">
+<td align="right">3</td>
+<td align="right">0.9309275</td>
+<td align="right">3.9262358</td>
+</tr>
+<tr class="even">
+<td align="right">4</td>
+<td align="right">0.7197686</td>
+<td align="right">1.9662632</td>
+</tr>
+<tr class="odd">
+<td align="right">5</td>
+<td align="right">-0.0280832</td>
+<td align="right">1.9473456</td>
+</tr>
+<tr class="even">
+<td align="right">6</td>
+<td align="right">-0.0982555</td>
+<td align="right">3.2073687</td>
+</tr>
+<tr class="odd">
+<td align="right">7</td>
+<td align="right">0.1256922</td>
+<td align="right">0.9256321</td>
+</tr>
+<tr class="even">
+<td align="right">8</td>
+<td align="right">1.4526447</td>
+<td align="right">2.3778116</td>
+</tr>
+<tr class="odd">
+<td align="right">9</td>
+<td align="right">0.2976443</td>
+<td align="right">1.6617481</td>
+</tr>
+<tr class="even">
+<td align="right">10</td>
+<td align="right">0.5589199</td>
+<td align="right">2.1034679</td>
+</tr>
+</tbody>
+</table>
+</div>
 <div class="warning">
 <p>You <em>can</em> name each object <code>data</code> and keep replacing the old data object with the new one at each step. This will keep your environment clean, but I don't recommend it because it makes it too easy to accidentally run your code out of order when you are running line-by-line for development or debugging.</p>
 </div>
 <p>One way to avoid extra objects is to nest your functions, literally replacing each data object with the code that generated it in the previous step. This can be fine for very short chains.</p>
-<div class="sourceCode" id="cb263"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb263-1"><a href="tidyr.html#cb263-1" aria-hidden="true" tabindex="-1"></a>mean_petal_width <span class="ot">&lt;-</span> <span class="fu">round</span>(<span class="fu">mean</span>(iris<span class="sc">$</span>Petal.Width), <span class="dv">2</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb240"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb240-1"><a href="tidyr.html#cb240-1" aria-hidden="true" tabindex="-1"></a>mean_petal_width <span class="ot">&lt;-</span> <span class="fu">round</span>(<span class="fu">mean</span>(iris<span class="sc">$</span>Petal.Width), <span class="dv">2</span>)</span></code></pre></div>
 <p>But it gets extremely confusing for long chains:</p>
-<div class="sourceCode" id="cb264"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb264-1"><a href="tidyr.html#cb264-1" aria-hidden="true" tabindex="-1"></a><span class="co"># do not ever do this!!</span></span>
-<span id="cb264-2"><a href="tidyr.html#cb264-2" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">rename</span>(</span>
-<span id="cb264-3"><a href="tidyr.html#cb264-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">spread</span>(</span>
-<span id="cb264-4"><a href="tidyr.html#cb264-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">summarise</span>(</span>
-<span id="cb264-5"><a href="tidyr.html#cb264-5" aria-hidden="true" tabindex="-1"></a>      <span class="fu">group_by</span>(</span>
-<span id="cb264-6"><a href="tidyr.html#cb264-6" aria-hidden="true" tabindex="-1"></a>        <span class="fu">separate</span>(</span>
-<span id="cb264-7"><a href="tidyr.html#cb264-7" aria-hidden="true" tabindex="-1"></a>          <span class="fu">gather</span>(</span>
-<span id="cb264-8"><a href="tidyr.html#cb264-8" aria-hidden="true" tabindex="-1"></a>            <span class="fu">tibble</span>(</span>
-<span id="cb264-9"><a href="tidyr.html#cb264-9" aria-hidden="true" tabindex="-1"></a>              <span class="at">id =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>,</span>
-<span id="cb264-10"><a href="tidyr.html#cb264-10" aria-hidden="true" tabindex="-1"></a>              <span class="at">A1 =</span> <span class="fu">rnorm</span>(<span class="dv">10</span>, <span class="dv">0</span>),</span>
-<span id="cb264-11"><a href="tidyr.html#cb264-11" aria-hidden="true" tabindex="-1"></a>              <span class="at">A2 =</span> <span class="fu">rnorm</span>(<span class="dv">10</span>, <span class="dv">1</span>),</span>
-<span id="cb264-12"><a href="tidyr.html#cb264-12" aria-hidden="true" tabindex="-1"></a>              <span class="at">B1 =</span> <span class="fu">rnorm</span>(<span class="dv">10</span>, <span class="dv">2</span>),</span>
-<span id="cb264-13"><a href="tidyr.html#cb264-13" aria-hidden="true" tabindex="-1"></a>              <span class="at">B2 =</span> <span class="fu">rnorm</span>(<span class="dv">10</span>,<span class="dv">3</span>)), </span>
-<span id="cb264-14"><a href="tidyr.html#cb264-14" aria-hidden="true" tabindex="-1"></a>            variable, value, A1<span class="sc">:</span>B2), </span>
-<span id="cb264-15"><a href="tidyr.html#cb264-15" aria-hidden="true" tabindex="-1"></a>          variable, <span class="fu">c</span>(<span class="st">&quot;var&quot;</span>, <span class="st">&quot;var_n&quot;</span>), <span class="at">sep =</span> <span class="dv">1</span>), </span>
-<span id="cb264-16"><a href="tidyr.html#cb264-16" aria-hidden="true" tabindex="-1"></a>        id, var), </span>
-<span id="cb264-17"><a href="tidyr.html#cb264-17" aria-hidden="true" tabindex="-1"></a>      <span class="at">mean =</span> <span class="fu">mean</span>(value), <span class="at">.groups =</span> <span class="st">&quot;drop&quot;</span>), </span>
-<span id="cb264-18"><a href="tidyr.html#cb264-18" aria-hidden="true" tabindex="-1"></a>    var, mean), </span>
-<span id="cb264-19"><a href="tidyr.html#cb264-19" aria-hidden="true" tabindex="-1"></a>  <span class="at">A_mean =</span> A, <span class="at">B_mean =</span> B)</span></code></pre></div>
+<div class="sourceCode" id="cb241"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb241-1"><a href="tidyr.html#cb241-1" aria-hidden="true" tabindex="-1"></a><span class="co"># do not ever do this!!</span></span>
+<span id="cb241-2"><a href="tidyr.html#cb241-2" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">rename</span>(</span>
+<span id="cb241-3"><a href="tidyr.html#cb241-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">spread</span>(</span>
+<span id="cb241-4"><a href="tidyr.html#cb241-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">summarise</span>(</span>
+<span id="cb241-5"><a href="tidyr.html#cb241-5" aria-hidden="true" tabindex="-1"></a>      <span class="fu">group_by</span>(</span>
+<span id="cb241-6"><a href="tidyr.html#cb241-6" aria-hidden="true" tabindex="-1"></a>        <span class="fu">separate</span>(</span>
+<span id="cb241-7"><a href="tidyr.html#cb241-7" aria-hidden="true" tabindex="-1"></a>          <span class="fu">gather</span>(</span>
+<span id="cb241-8"><a href="tidyr.html#cb241-8" aria-hidden="true" tabindex="-1"></a>            <span class="fu">tibble</span>(</span>
+<span id="cb241-9"><a href="tidyr.html#cb241-9" aria-hidden="true" tabindex="-1"></a>              <span class="at">id =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>,</span>
+<span id="cb241-10"><a href="tidyr.html#cb241-10" aria-hidden="true" tabindex="-1"></a>              <span class="at">A1 =</span> <span class="fu">rnorm</span>(<span class="dv">10</span>, <span class="dv">0</span>),</span>
+<span id="cb241-11"><a href="tidyr.html#cb241-11" aria-hidden="true" tabindex="-1"></a>              <span class="at">A2 =</span> <span class="fu">rnorm</span>(<span class="dv">10</span>, <span class="dv">1</span>),</span>
+<span id="cb241-12"><a href="tidyr.html#cb241-12" aria-hidden="true" tabindex="-1"></a>              <span class="at">B1 =</span> <span class="fu">rnorm</span>(<span class="dv">10</span>, <span class="dv">2</span>),</span>
+<span id="cb241-13"><a href="tidyr.html#cb241-13" aria-hidden="true" tabindex="-1"></a>              <span class="at">B2 =</span> <span class="fu">rnorm</span>(<span class="dv">10</span>,<span class="dv">3</span>)), </span>
+<span id="cb241-14"><a href="tidyr.html#cb241-14" aria-hidden="true" tabindex="-1"></a>            variable, value, A1<span class="sc">:</span>B2), </span>
+<span id="cb241-15"><a href="tidyr.html#cb241-15" aria-hidden="true" tabindex="-1"></a>          variable, <span class="fu">c</span>(<span class="st">&quot;var&quot;</span>, <span class="st">&quot;var_n&quot;</span>), <span class="at">sep =</span> <span class="dv">1</span>), </span>
+<span id="cb241-16"><a href="tidyr.html#cb241-16" aria-hidden="true" tabindex="-1"></a>        id, var), </span>
+<span id="cb241-17"><a href="tidyr.html#cb241-17" aria-hidden="true" tabindex="-1"></a>      <span class="at">mean =</span> <span class="fu">mean</span>(value), <span class="at">.groups =</span> <span class="st">&quot;drop&quot;</span>), </span>
+<span id="cb241-18"><a href="tidyr.html#cb241-18" aria-hidden="true" tabindex="-1"></a>    var, mean), </span>
+<span id="cb241-19"><a href="tidyr.html#cb241-19" aria-hidden="true" tabindex="-1"></a>  <span class="at">A_mean =</span> A, <span class="at">B_mean =</span> B)</span></code></pre></div>
 <p>The pipe lets you "pipe" the result of each function into the next function, allowing you to put your code in a logical order without creating too many extra objects.</p>
-<div class="sourceCode" id="cb265"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb265-1"><a href="tidyr.html#cb265-1" aria-hidden="true" tabindex="-1"></a><span class="co"># calculate mean of A and B variables for each participant</span></span>
-<span id="cb265-2"><a href="tidyr.html#cb265-2" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
-<span id="cb265-3"><a href="tidyr.html#cb265-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">id =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>,</span>
-<span id="cb265-4"><a href="tidyr.html#cb265-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">A1 =</span> <span class="fu">rnorm</span>(<span class="dv">10</span>, <span class="dv">0</span>),</span>
-<span id="cb265-5"><a href="tidyr.html#cb265-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">A2 =</span> <span class="fu">rnorm</span>(<span class="dv">10</span>, <span class="dv">1</span>),</span>
-<span id="cb265-6"><a href="tidyr.html#cb265-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">B1 =</span> <span class="fu">rnorm</span>(<span class="dv">10</span>, <span class="dv">2</span>),</span>
-<span id="cb265-7"><a href="tidyr.html#cb265-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">B2 =</span> <span class="fu">rnorm</span>(<span class="dv">10</span>,<span class="dv">3</span>)</span>
-<span id="cb265-8"><a href="tidyr.html#cb265-8" aria-hidden="true" tabindex="-1"></a>) <span class="sc">%&gt;%</span></span>
-<span id="cb265-9"><a href="tidyr.html#cb265-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gather</span>(variable, value, A1<span class="sc">:</span>B2) <span class="sc">%&gt;%</span></span>
-<span id="cb265-10"><a href="tidyr.html#cb265-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">separate</span>(variable, <span class="fu">c</span>(<span class="st">&quot;var&quot;</span>, <span class="st">&quot;var_n&quot;</span>), <span class="at">sep=</span><span class="dv">1</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb265-11"><a href="tidyr.html#cb265-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(id, var) <span class="sc">%&gt;%</span></span>
-<span id="cb265-12"><a href="tidyr.html#cb265-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">mean =</span> <span class="fu">mean</span>(value), <span class="at">.groups =</span> <span class="st">&quot;drop&quot;</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb265-13"><a href="tidyr.html#cb265-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">spread</span>(var, mean) <span class="sc">%&gt;%</span></span>
-<span id="cb265-14"><a href="tidyr.html#cb265-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename</span>(<span class="at">A_mean =</span> A, <span class="at">B_mean =</span> B)</span></code></pre></div>
+<div class="sourceCode" id="cb242"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb242-1"><a href="tidyr.html#cb242-1" aria-hidden="true" tabindex="-1"></a><span class="co"># calculate mean of A and B variables for each participant</span></span>
+<span id="cb242-2"><a href="tidyr.html#cb242-2" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb242-3"><a href="tidyr.html#cb242-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">id =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>,</span>
+<span id="cb242-4"><a href="tidyr.html#cb242-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">A1 =</span> <span class="fu">rnorm</span>(<span class="dv">10</span>, <span class="dv">0</span>),</span>
+<span id="cb242-5"><a href="tidyr.html#cb242-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">A2 =</span> <span class="fu">rnorm</span>(<span class="dv">10</span>, <span class="dv">1</span>),</span>
+<span id="cb242-6"><a href="tidyr.html#cb242-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">B1 =</span> <span class="fu">rnorm</span>(<span class="dv">10</span>, <span class="dv">2</span>),</span>
+<span id="cb242-7"><a href="tidyr.html#cb242-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">B2 =</span> <span class="fu">rnorm</span>(<span class="dv">10</span>,<span class="dv">3</span>)</span>
+<span id="cb242-8"><a href="tidyr.html#cb242-8" aria-hidden="true" tabindex="-1"></a>) <span class="sc">%&gt;%</span></span>
+<span id="cb242-9"><a href="tidyr.html#cb242-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gather</span>(variable, value, A1<span class="sc">:</span>B2) <span class="sc">%&gt;%</span></span>
+<span id="cb242-10"><a href="tidyr.html#cb242-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">separate</span>(variable, <span class="fu">c</span>(<span class="st">&quot;var&quot;</span>, <span class="st">&quot;var_n&quot;</span>), <span class="at">sep=</span><span class="dv">1</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb242-11"><a href="tidyr.html#cb242-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(id, var) <span class="sc">%&gt;%</span></span>
+<span id="cb242-12"><a href="tidyr.html#cb242-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">mean =</span> <span class="fu">mean</span>(value), <span class="at">.groups =</span> <span class="st">&quot;drop&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb242-13"><a href="tidyr.html#cb242-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">spread</span>(var, mean) <span class="sc">%&gt;%</span></span>
+<span id="cb242-14"><a href="tidyr.html#cb242-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename</span>(<span class="at">A_mean =</span> A, <span class="at">B_mean =</span> B)</span></code></pre></div>
 <p>You can read this code from top to bottom as follows:</p>
 <ol style="list-style-type: decimal">
 <li>Make a tibble called <code>data</code> with
@@ -1760,11 +1802,11 @@ Answer
 <p>You can debug a pipe by highlighting from the beginning to just before the pipe you want to stop at. Try this by highlighting from <code>data &lt;-</code> to the end of the <code>separate</code> function and typing cmd-return. What does <code>data</code> look like now?</p>
 </div>
 <p>Chain all the steps above using pipes.</p>
-<div class="sourceCode" id="cb266"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb266-1"><a href="tidyr.html#cb266-1" aria-hidden="true" tabindex="-1"></a>personality_reshaped <span class="ot">&lt;-</span> personality <span class="sc">%&gt;%</span></span>
-<span id="cb266-2"><a href="tidyr.html#cb266-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gather</span>(<span class="st">&quot;question&quot;</span>, <span class="st">&quot;score&quot;</span>, Op1<span class="sc">:</span>Ex9) <span class="sc">%&gt;%</span></span>
-<span id="cb266-3"><a href="tidyr.html#cb266-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">separate</span>(question, <span class="fu">c</span>(<span class="st">&quot;domain&quot;</span>, <span class="st">&quot;qnumber&quot;</span>), <span class="at">sep =</span> <span class="dv">2</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb266-4"><a href="tidyr.html#cb266-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">unite</span>(<span class="st">&quot;domain_n&quot;</span>, domain, qnumber, <span class="at">sep =</span> <span class="st">&quot;_Q&quot;</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb266-5"><a href="tidyr.html#cb266-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">spread</span>(domain_n, score)</span></code></pre></div>
+<div class="sourceCode" id="cb243"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb243-1"><a href="tidyr.html#cb243-1" aria-hidden="true" tabindex="-1"></a>personality_reshaped <span class="ot">&lt;-</span> personality <span class="sc">%&gt;%</span></span>
+<span id="cb243-2"><a href="tidyr.html#cb243-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gather</span>(<span class="st">&quot;question&quot;</span>, <span class="st">&quot;score&quot;</span>, Op1<span class="sc">:</span>Ex9) <span class="sc">%&gt;%</span></span>
+<span id="cb243-3"><a href="tidyr.html#cb243-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">separate</span>(question, <span class="fu">c</span>(<span class="st">&quot;domain&quot;</span>, <span class="st">&quot;qnumber&quot;</span>), <span class="at">sep =</span> <span class="dv">2</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb243-4"><a href="tidyr.html#cb243-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">unite</span>(<span class="st">&quot;domain_n&quot;</span>, domain, qnumber, <span class="at">sep =</span> <span class="st">&quot;_Q&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb243-5"><a href="tidyr.html#cb243-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">spread</span>(domain_n, score)</span></code></pre></div>
 </div>
 <div id="more-complex-example" class="section level2" number="6.8">
 <h2><span class="header-section-number">6.8</span> More Complex Example</h2>
@@ -1776,38 +1818,118 @@ Answer
 </li>
 <li><a href="https://psyteachr.github.io/reprores/data/matmort.xls">maternal mortality</a></li>
 </ul>
-<div class="sourceCode" id="cb267"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb267-1"><a href="tidyr.html#cb267-1" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(<span class="st">&quot;infmort&quot;</span>)</span>
-<span id="cb267-2"><a href="tidyr.html#cb267-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(infmort)</span></code></pre></div>
-<pre><code>## # A tibble: 6 x 3
-##   Country     Year `Infant mortality rate (probability of dying between birth a…
-##   &lt;chr&gt;      &lt;dbl&gt; &lt;chr&gt;                                                        
-## 1 Afghanist…  2015 66.3 [52.7-83.9]                                             
-## 2 Afghanist…  2014 68.1 [55.7-83.6]                                             
-## 3 Afghanist…  2013 69.9 [58.7-83.5]                                             
-## 4 Afghanist…  2012 71.7 [61.6-83.7]                                             
-## 5 Afghanist…  2011 73.4 [64.4-84.2]                                             
-## 6 Afghanist…  2010 75.1 [66.9-85.1]</code></pre>
-<div class="sourceCode" id="cb269"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb269-1"><a href="tidyr.html#cb269-1" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(<span class="st">&quot;matmort&quot;</span>)</span>
-<span id="cb269-2"><a href="tidyr.html#cb269-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(matmort)</span></code></pre></div>
-<pre><code>## # A tibble: 6 x 4
-##   Country     `1990`               `2000`               `2015`           
-##   &lt;chr&gt;       &lt;chr&gt;                &lt;chr&gt;                &lt;chr&gt;            
-## 1 Afghanistan 1 340 [ 878 - 1 950] 1 100 [ 745 - 1 570] 396 [ 253 -  620]
-## 2 Albania     71 [ 58 -  88]       43 [ 33 -  56]       29 [ 16 -  46]   
-## 3 Algeria     216 [ 141 -  327]    170 [ 118 -  241]    140 [ 82 -  244] 
-## 4 Angola      1 160 [ 627 - 2 020] 924 [ 472 - 1 730]   477 [ 221 -  988]
-## 5 Argentina   72 [ 64 -  80]       60 [ 54 -  65]       52 [ 44 -  63]   
-## 6 Armenia     58 [ 51 -  65]       40 [ 35 -  46]       25 [ 21 -  31]</code></pre>
+<div class="sourceCode" id="cb244"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb244-1"><a href="tidyr.html#cb244-1" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(<span class="st">&quot;infmort&quot;</span>)</span>
+<span id="cb244-2"><a href="tidyr.html#cb244-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(infmort)</span></code></pre></div>
+<div class="kable-table">
+<table>
+<colgroup>
+<col width="11%" />
+<col width="4%" />
+<col width="84%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">Country</th>
+<th align="right">Year</th>
+<th align="left">Infant mortality rate (probability of dying between birth and age 1 per 1000 live births)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Afghanistan</td>
+<td align="right">2015</td>
+<td align="left">66.3 [52.7-83.9]</td>
+</tr>
+<tr class="even">
+<td align="left">Afghanistan</td>
+<td align="right">2014</td>
+<td align="left">68.1 [55.7-83.6]</td>
+</tr>
+<tr class="odd">
+<td align="left">Afghanistan</td>
+<td align="right">2013</td>
+<td align="left">69.9 [58.7-83.5]</td>
+</tr>
+<tr class="even">
+<td align="left">Afghanistan</td>
+<td align="right">2012</td>
+<td align="left">71.7 [61.6-83.7]</td>
+</tr>
+<tr class="odd">
+<td align="left">Afghanistan</td>
+<td align="right">2011</td>
+<td align="left">73.4 [64.4-84.2]</td>
+</tr>
+<tr class="even">
+<td align="left">Afghanistan</td>
+<td align="right">2010</td>
+<td align="left">75.1 [66.9-85.1]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sourceCode" id="cb245"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb245-1"><a href="tidyr.html#cb245-1" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(<span class="st">&quot;matmort&quot;</span>)</span>
+<span id="cb245-2"><a href="tidyr.html#cb245-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(matmort)</span></code></pre></div>
+<div class="kable-table">
+<table>
+<thead>
+<tr class="header">
+<th align="left">Country</th>
+<th align="left">1990</th>
+<th align="left">2000</th>
+<th align="left">2015</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Afghanistan</td>
+<td align="left">1 340 [ 878 - 1 950]</td>
+<td align="left">1 100 [ 745 - 1 570]</td>
+<td align="left">396 [ 253 - 620]</td>
+</tr>
+<tr class="even">
+<td align="left">Albania</td>
+<td align="left">71 [ 58 - 88]</td>
+<td align="left">43 [ 33 - 56]</td>
+<td align="left">29 [ 16 - 46]</td>
+</tr>
+<tr class="odd">
+<td align="left">Algeria</td>
+<td align="left">216 [ 141 - 327]</td>
+<td align="left">170 [ 118 - 241]</td>
+<td align="left">140 [ 82 - 244]</td>
+</tr>
+<tr class="even">
+<td align="left">Angola</td>
+<td align="left">1 160 [ 627 - 2 020]</td>
+<td align="left">924 [ 472 - 1 730]</td>
+<td align="left">477 [ 221 - 988]</td>
+</tr>
+<tr class="odd">
+<td align="left">Argentina</td>
+<td align="left">72 [ 64 - 80]</td>
+<td align="left">60 [ 54 - 65]</td>
+<td align="left">52 [ 44 - 63]</td>
+</tr>
+<tr class="even">
+<td align="left">Armenia</td>
+<td align="left">58 [ 51 - 65]</td>
+<td align="left">40 [ 35 - 46]</td>
+<td align="left">25 [ 21 - 31]</td>
+</tr>
+</tbody>
+</table>
+</div>
 </div>
 <div id="wide-to-long" class="section level3" number="6.8.2">
 <h3><span class="header-section-number">6.8.2</span> Wide to Long</h3>
 <p><code>matmort</code> is in wide format, with a separate column for each year. Change it to long format, with a row for each Country/Year observation.</p>
 <p>This example is complicated because the column names to gather <em>are</em> numbers. If the column names are non-standard (e.g., have spaces, start with numbers, or have special characters), you can enclose them in backticks (`) like the example below.</p>
-<div class="sourceCode" id="cb271"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb271-1"><a href="tidyr.html#cb271-1" aria-hidden="true" tabindex="-1"></a>matmort_long <span class="ot">&lt;-</span> matmort <span class="sc">%&gt;%</span></span>
-<span id="cb271-2"><a href="tidyr.html#cb271-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="st">`</span><span class="at">1990</span><span class="st">`</span><span class="sc">:</span><span class="st">`</span><span class="at">2015</span><span class="st">`</span>,</span>
-<span id="cb271-3"><a href="tidyr.html#cb271-3" aria-hidden="true" tabindex="-1"></a>               <span class="at">names_to =</span> <span class="st">&quot;Year&quot;</span>,</span>
-<span id="cb271-4"><a href="tidyr.html#cb271-4" aria-hidden="true" tabindex="-1"></a>               <span class="at">values_to =</span> <span class="st">&quot;stats&quot;</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb271-5"><a href="tidyr.html#cb271-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">glimpse</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb246"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb246-1"><a href="tidyr.html#cb246-1" aria-hidden="true" tabindex="-1"></a>matmort_long <span class="ot">&lt;-</span> matmort <span class="sc">%&gt;%</span></span>
+<span id="cb246-2"><a href="tidyr.html#cb246-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="st">`</span><span class="at">1990</span><span class="st">`</span><span class="sc">:</span><span class="st">`</span><span class="at">2015</span><span class="st">`</span>,</span>
+<span id="cb246-3"><a href="tidyr.html#cb246-3" aria-hidden="true" tabindex="-1"></a>               <span class="at">names_to =</span> <span class="st">&quot;Year&quot;</span>,</span>
+<span id="cb246-4"><a href="tidyr.html#cb246-4" aria-hidden="true" tabindex="-1"></a>               <span class="at">values_to =</span> <span class="st">&quot;stats&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb246-5"><a href="tidyr.html#cb246-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">glimpse</span>()</span></code></pre></div>
 <pre><code>## Rows: 543
 ## Columns: 3
 ## $ Country &lt;chr&gt; &quot;Afghanistan&quot;, &quot;Afghanistan&quot;, &quot;Afghanistan&quot;, &quot;Albania&quot;, &quot;Alban…
@@ -1817,9 +1939,9 @@ Answer
 <p>You can put <code>matmort</code> at the first argument to <code>pivot_longer()</code>; you don't have to pipe it in. But when I'm working on data processing I often find myself needing to insert or rearrange steps and I constantly introduce errors by forgetting to take the first argument out of a pipe chain, so now I start with the original data table and pipe from there.</p>
 </div>
 <p>Alternatively, you can use the <code>gather()</code> function.</p>
-<div class="sourceCode" id="cb273"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb273-1"><a href="tidyr.html#cb273-1" aria-hidden="true" tabindex="-1"></a>matmort_long <span class="ot">&lt;-</span> matmort <span class="sc">%&gt;%</span></span>
-<span id="cb273-2"><a href="tidyr.html#cb273-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gather</span>(<span class="st">&quot;Year&quot;</span>, <span class="st">&quot;stats&quot;</span>, <span class="st">`</span><span class="at">1990</span><span class="st">`</span><span class="sc">:</span><span class="st">`</span><span class="at">2015</span><span class="st">`</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb273-3"><a href="tidyr.html#cb273-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">glimpse</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb248"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb248-1"><a href="tidyr.html#cb248-1" aria-hidden="true" tabindex="-1"></a>matmort_long <span class="ot">&lt;-</span> matmort <span class="sc">%&gt;%</span></span>
+<span id="cb248-2"><a href="tidyr.html#cb248-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gather</span>(<span class="st">&quot;Year&quot;</span>, <span class="st">&quot;stats&quot;</span>, <span class="st">`</span><span class="at">1990</span><span class="st">`</span><span class="sc">:</span><span class="st">`</span><span class="at">2015</span><span class="st">`</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb248-3"><a href="tidyr.html#cb248-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">glimpse</span>()</span></code></pre></div>
 <pre><code>## Rows: 543
 ## Columns: 3
 ## $ Country &lt;chr&gt; &quot;Afghanistan&quot;, &quot;Albania&quot;, &quot;Algeria&quot;, &quot;Angola&quot;, &quot;Argentina&quot;, &quot;A…
@@ -1830,10 +1952,10 @@ Answer
 <h3><span class="header-section-number">6.8.3</span> One Piece of Data per Column</h3>
 <p>The data in the <code>stats</code> column is in an unusual format with some sort of confidence interval in brackets and lots of extra spaces. We don't need any of the spaces, so first we'll remove them with <code>mutate()</code>, which we'll learn more about in the next lesson.</p>
 <p>The <code>separate</code> function will separate your data on anything that is not a number or letter, so try it first without specifying the <code>sep</code> argument. The <code>into</code> argument is a list of the new column names.</p>
-<div class="sourceCode" id="cb275"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb275-1"><a href="tidyr.html#cb275-1" aria-hidden="true" tabindex="-1"></a>matmort_split <span class="ot">&lt;-</span> matmort_long <span class="sc">%&gt;%</span></span>
-<span id="cb275-2"><a href="tidyr.html#cb275-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">stats =</span> <span class="fu">gsub</span>(<span class="st">&quot; &quot;</span>, <span class="st">&quot;&quot;</span>, stats)) <span class="sc">%&gt;%</span></span>
-<span id="cb275-3"><a href="tidyr.html#cb275-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">separate</span>(stats, <span class="fu">c</span>(<span class="st">&quot;rate&quot;</span>, <span class="st">&quot;ci_low&quot;</span>, <span class="st">&quot;ci_hi&quot;</span>)) <span class="sc">%&gt;%</span></span>
-<span id="cb275-4"><a href="tidyr.html#cb275-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">glimpse</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb250"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb250-1"><a href="tidyr.html#cb250-1" aria-hidden="true" tabindex="-1"></a>matmort_split <span class="ot">&lt;-</span> matmort_long <span class="sc">%&gt;%</span></span>
+<span id="cb250-2"><a href="tidyr.html#cb250-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">stats =</span> <span class="fu">gsub</span>(<span class="st">&quot; &quot;</span>, <span class="st">&quot;&quot;</span>, stats)) <span class="sc">%&gt;%</span></span>
+<span id="cb250-3"><a href="tidyr.html#cb250-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">separate</span>(stats, <span class="fu">c</span>(<span class="st">&quot;rate&quot;</span>, <span class="st">&quot;ci_low&quot;</span>, <span class="st">&quot;ci_hi&quot;</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb250-4"><a href="tidyr.html#cb250-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">glimpse</span>()</span></code></pre></div>
 <pre><code>## Warning: Expected 3 pieces. Additional pieces discarded in 543 rows [1, 2, 3, 4,
 ## 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, ...].</code></pre>
 <pre><code>## Rows: 543
@@ -1854,10 +1976,10 @@ flexible way to do search and replace. The example above replaces all occurances
 <p>The previous example should have given you an error warning about
 "Additional pieces discarded in 543 rows". This is because <code>separate</code> splits the column at the brackets and dashes, so the text <code>100[90-110]</code> would split into four values <code>c("100", "90", "110", "")</code>, but we only specified 3 new columns. The fourth value is always empty (just the part after the last bracket), so we are happy to drop it, but <code>separate</code> generates a warning so you don't do that accidentally. You can turn off the warning by adding the <code>extra</code> argument and setting it to "drop". Look at the help for <code>??tidyr::separate</code> to see what the other options do.</p>
 </div>
-<div class="sourceCode" id="cb278"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb278-1"><a href="tidyr.html#cb278-1" aria-hidden="true" tabindex="-1"></a>matmort_split <span class="ot">&lt;-</span> matmort_long <span class="sc">%&gt;%</span></span>
-<span id="cb278-2"><a href="tidyr.html#cb278-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">stats =</span> <span class="fu">gsub</span>(<span class="st">&quot; &quot;</span>, <span class="st">&quot;&quot;</span>, stats)) <span class="sc">%&gt;%</span></span>
-<span id="cb278-3"><a href="tidyr.html#cb278-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">separate</span>(stats, <span class="fu">c</span>(<span class="st">&quot;rate&quot;</span>, <span class="st">&quot;ci_low&quot;</span>, <span class="st">&quot;ci_hi&quot;</span>), <span class="at">extra =</span> <span class="st">&quot;drop&quot;</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb278-4"><a href="tidyr.html#cb278-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">glimpse</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb253"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb253-1"><a href="tidyr.html#cb253-1" aria-hidden="true" tabindex="-1"></a>matmort_split <span class="ot">&lt;-</span> matmort_long <span class="sc">%&gt;%</span></span>
+<span id="cb253-2"><a href="tidyr.html#cb253-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">stats =</span> <span class="fu">gsub</span>(<span class="st">&quot; &quot;</span>, <span class="st">&quot;&quot;</span>, stats)) <span class="sc">%&gt;%</span></span>
+<span id="cb253-3"><a href="tidyr.html#cb253-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">separate</span>(stats, <span class="fu">c</span>(<span class="st">&quot;rate&quot;</span>, <span class="st">&quot;ci_low&quot;</span>, <span class="st">&quot;ci_hi&quot;</span>), <span class="at">extra =</span> <span class="st">&quot;drop&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb253-4"><a href="tidyr.html#cb253-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">glimpse</span>()</span></code></pre></div>
 <pre><code>## Rows: 543
 ## Columns: 5
 ## $ Country &lt;chr&gt; &quot;Afghanistan&quot;, &quot;Albania&quot;, &quot;Algeria&quot;, &quot;Angola&quot;, &quot;Argentina&quot;, &quot;A…
@@ -1869,9 +1991,9 @@ flexible way to do search and replace. The example above replaces all occurances
 <div id="sep" class="section level4" number="6.8.3.2">
 <h4><span class="header-section-number">6.8.3.2</span> Set delimiters with <code>sep</code></h4>
 <p>Now do the same with <code>infmort</code>. It's already in long format, so you don't need to use <code>gather</code>, but the third column has a ridiculously long name, so we can just refer to it by its column number (3).</p>
-<div class="sourceCode" id="cb280"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb280-1"><a href="tidyr.html#cb280-1" aria-hidden="true" tabindex="-1"></a>infmort_split <span class="ot">&lt;-</span> infmort <span class="sc">%&gt;%</span></span>
-<span id="cb280-2"><a href="tidyr.html#cb280-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">separate</span>(<span class="dv">3</span>, <span class="fu">c</span>(<span class="st">&quot;rate&quot;</span>, <span class="st">&quot;ci_low&quot;</span>, <span class="st">&quot;ci_hi&quot;</span>), <span class="at">extra =</span> <span class="st">&quot;drop&quot;</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb280-3"><a href="tidyr.html#cb280-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">glimpse</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb255"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb255-1"><a href="tidyr.html#cb255-1" aria-hidden="true" tabindex="-1"></a>infmort_split <span class="ot">&lt;-</span> infmort <span class="sc">%&gt;%</span></span>
+<span id="cb255-2"><a href="tidyr.html#cb255-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">separate</span>(<span class="dv">3</span>, <span class="fu">c</span>(<span class="st">&quot;rate&quot;</span>, <span class="st">&quot;ci_low&quot;</span>, <span class="st">&quot;ci_hi&quot;</span>), <span class="at">extra =</span> <span class="st">&quot;drop&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb255-3"><a href="tidyr.html#cb255-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">glimpse</span>()</span></code></pre></div>
 <pre><code>## Rows: 5,044
 ## Columns: 5
 ## $ Country &lt;chr&gt; &quot;Afghanistan&quot;, &quot;Afghanistan&quot;, &quot;Afghanistan&quot;, &quot;Afghanistan&quot;, &quot;A…
@@ -1887,14 +2009,14 @@ flexible way to do search and replace. The example above replaces all occurances
 <p>You can use <a href="https://stat.ethz.ch/R-manual/R-devel/library/base/html/regex.html">regular expressions</a>
 to separate complex columns. Here, we want to separate on dashes and brackets. You can separate on a list of delimiters by putting them in parentheses, separated by "|". It's a little more complicated because brackets have a special meaning in regex, so you need to "escape" the left one with two backslashes "\\".</p>
 </div>
-<div class="sourceCode" id="cb282"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb282-1"><a href="tidyr.html#cb282-1" aria-hidden="true" tabindex="-1"></a>infmort_split <span class="ot">&lt;-</span> infmort <span class="sc">%&gt;%</span></span>
-<span id="cb282-2"><a href="tidyr.html#cb282-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">separate</span>(</span>
-<span id="cb282-3"><a href="tidyr.html#cb282-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">col =</span> <span class="dv">3</span>, </span>
-<span id="cb282-4"><a href="tidyr.html#cb282-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">into =</span> <span class="fu">c</span>(<span class="st">&quot;rate&quot;</span>, <span class="st">&quot;ci_low&quot;</span>, <span class="st">&quot;ci_hi&quot;</span>), </span>
-<span id="cb282-5"><a href="tidyr.html#cb282-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">extra =</span> <span class="st">&quot;drop&quot;</span>, </span>
-<span id="cb282-6"><a href="tidyr.html#cb282-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">sep =</span> <span class="st">&quot;(</span><span class="sc">\\</span><span class="st">[|-|])&quot;</span></span>
-<span id="cb282-7"><a href="tidyr.html#cb282-7" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
-<span id="cb282-8"><a href="tidyr.html#cb282-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">glimpse</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb257"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb257-1"><a href="tidyr.html#cb257-1" aria-hidden="true" tabindex="-1"></a>infmort_split <span class="ot">&lt;-</span> infmort <span class="sc">%&gt;%</span></span>
+<span id="cb257-2"><a href="tidyr.html#cb257-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">separate</span>(</span>
+<span id="cb257-3"><a href="tidyr.html#cb257-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">col =</span> <span class="dv">3</span>, </span>
+<span id="cb257-4"><a href="tidyr.html#cb257-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">into =</span> <span class="fu">c</span>(<span class="st">&quot;rate&quot;</span>, <span class="st">&quot;ci_low&quot;</span>, <span class="st">&quot;ci_hi&quot;</span>), </span>
+<span id="cb257-5"><a href="tidyr.html#cb257-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">extra =</span> <span class="st">&quot;drop&quot;</span>, </span>
+<span id="cb257-6"><a href="tidyr.html#cb257-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">sep =</span> <span class="st">&quot;(</span><span class="sc">\\</span><span class="st">[|-|])&quot;</span></span>
+<span id="cb257-7"><a href="tidyr.html#cb257-7" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb257-8"><a href="tidyr.html#cb257-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">glimpse</span>()</span></code></pre></div>
 <pre><code>## Rows: 5,044
 ## Columns: 5
 ## $ Country &lt;chr&gt; &quot;Afghanistan&quot;, &quot;Afghanistan&quot;, &quot;Afghanistan&quot;, &quot;Afghanistan&quot;, &quot;A…
@@ -1906,13 +2028,13 @@ to separate complex columns. Here, we want to separate on dashes and brackets. Y
 <div id="convert" class="section level4" number="6.8.3.3">
 <h4><span class="header-section-number">6.8.3.3</span> Fix data types with <code>convert</code></h4>
 <p>That's better. Notice the <em><chr></em> next to <code>Year</code>, <code>rate</code>, <code>ci_low</code> and <code>ci_hi</code>. That means these columns hold characters (like words), not numbers or integers. This can cause problems when you try to do thigs like average the numbers (you can't average words), so we can fix it by adding the argument <code>convert</code> and setting it to <code>TRUE</code>.</p>
-<div class="sourceCode" id="cb284"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb284-1"><a href="tidyr.html#cb284-1" aria-hidden="true" tabindex="-1"></a>infmort_split <span class="ot">&lt;-</span> infmort <span class="sc">%&gt;%</span></span>
-<span id="cb284-2"><a href="tidyr.html#cb284-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">separate</span>(<span class="at">col =</span> <span class="dv">3</span>, </span>
-<span id="cb284-3"><a href="tidyr.html#cb284-3" aria-hidden="true" tabindex="-1"></a>           <span class="at">into =</span> <span class="fu">c</span>(<span class="st">&quot;rate&quot;</span>, <span class="st">&quot;ci_low&quot;</span>, <span class="st">&quot;ci_hi&quot;</span>), </span>
-<span id="cb284-4"><a href="tidyr.html#cb284-4" aria-hidden="true" tabindex="-1"></a>           <span class="at">extra =</span> <span class="st">&quot;drop&quot;</span>, </span>
-<span id="cb284-5"><a href="tidyr.html#cb284-5" aria-hidden="true" tabindex="-1"></a>           <span class="at">sep =</span> <span class="st">&quot;(</span><span class="sc">\\</span><span class="st">[|-|])&quot;</span>, </span>
-<span id="cb284-6"><a href="tidyr.html#cb284-6" aria-hidden="true" tabindex="-1"></a>           <span class="at">convert =</span> <span class="cn">TRUE</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb284-7"><a href="tidyr.html#cb284-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">glimpse</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb259"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb259-1"><a href="tidyr.html#cb259-1" aria-hidden="true" tabindex="-1"></a>infmort_split <span class="ot">&lt;-</span> infmort <span class="sc">%&gt;%</span></span>
+<span id="cb259-2"><a href="tidyr.html#cb259-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">separate</span>(<span class="at">col =</span> <span class="dv">3</span>, </span>
+<span id="cb259-3"><a href="tidyr.html#cb259-3" aria-hidden="true" tabindex="-1"></a>           <span class="at">into =</span> <span class="fu">c</span>(<span class="st">&quot;rate&quot;</span>, <span class="st">&quot;ci_low&quot;</span>, <span class="st">&quot;ci_hi&quot;</span>), </span>
+<span id="cb259-4"><a href="tidyr.html#cb259-4" aria-hidden="true" tabindex="-1"></a>           <span class="at">extra =</span> <span class="st">&quot;drop&quot;</span>, </span>
+<span id="cb259-5"><a href="tidyr.html#cb259-5" aria-hidden="true" tabindex="-1"></a>           <span class="at">sep =</span> <span class="st">&quot;(</span><span class="sc">\\</span><span class="st">[|-|])&quot;</span>, </span>
+<span id="cb259-6"><a href="tidyr.html#cb259-6" aria-hidden="true" tabindex="-1"></a>           <span class="at">convert =</span> <span class="cn">TRUE</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb259-7"><a href="tidyr.html#cb259-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">glimpse</span>()</span></code></pre></div>
 <pre><code>## Rows: 5,044
 ## Columns: 5
 ## $ Country &lt;chr&gt; &quot;Afghanistan&quot;, &quot;Afghanistan&quot;, &quot;Afghanistan&quot;, &quot;Afghanistan&quot;, &quot;A…
@@ -1921,13 +2043,13 @@ to separate complex columns. Here, we want to separate on dashes and brackets. Y
 ## $ ci_low  &lt;dbl&gt; 52.7, 55.7, 58.7, 61.6, 64.4, 66.9, 69.0, 71.2, 73.4, 75.5, 77…
 ## $ ci_hi   &lt;dbl&gt; 83.9, 83.6, 83.5, 83.7, 84.2, 85.1, 86.1, 87.3, 88.9, 90.7, 92…</code></pre>
 <p>Do the same for <code>matmort</code>.</p>
-<div class="sourceCode" id="cb286"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb286-1"><a href="tidyr.html#cb286-1" aria-hidden="true" tabindex="-1"></a>matmort_split <span class="ot">&lt;-</span> matmort_long <span class="sc">%&gt;%</span></span>
-<span id="cb286-2"><a href="tidyr.html#cb286-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">stats =</span> <span class="fu">gsub</span>(<span class="st">&quot; &quot;</span>, <span class="st">&quot;&quot;</span>, stats)) <span class="sc">%&gt;%</span></span>
-<span id="cb286-3"><a href="tidyr.html#cb286-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">separate</span>(<span class="at">col =</span> stats, </span>
-<span id="cb286-4"><a href="tidyr.html#cb286-4" aria-hidden="true" tabindex="-1"></a>           <span class="at">into =</span> <span class="fu">c</span>(<span class="st">&quot;rate&quot;</span>, <span class="st">&quot;ci_low&quot;</span>, <span class="st">&quot;ci_hi&quot;</span>), </span>
-<span id="cb286-5"><a href="tidyr.html#cb286-5" aria-hidden="true" tabindex="-1"></a>           <span class="at">extra =</span> <span class="st">&quot;drop&quot;</span>, </span>
-<span id="cb286-6"><a href="tidyr.html#cb286-6" aria-hidden="true" tabindex="-1"></a>           <span class="at">convert =</span> <span class="cn">TRUE</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb286-7"><a href="tidyr.html#cb286-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">glimpse</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb261"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb261-1"><a href="tidyr.html#cb261-1" aria-hidden="true" tabindex="-1"></a>matmort_split <span class="ot">&lt;-</span> matmort_long <span class="sc">%&gt;%</span></span>
+<span id="cb261-2"><a href="tidyr.html#cb261-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">stats =</span> <span class="fu">gsub</span>(<span class="st">&quot; &quot;</span>, <span class="st">&quot;&quot;</span>, stats)) <span class="sc">%&gt;%</span></span>
+<span id="cb261-3"><a href="tidyr.html#cb261-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">separate</span>(<span class="at">col =</span> stats, </span>
+<span id="cb261-4"><a href="tidyr.html#cb261-4" aria-hidden="true" tabindex="-1"></a>           <span class="at">into =</span> <span class="fu">c</span>(<span class="st">&quot;rate&quot;</span>, <span class="st">&quot;ci_low&quot;</span>, <span class="st">&quot;ci_hi&quot;</span>), </span>
+<span id="cb261-5"><a href="tidyr.html#cb261-5" aria-hidden="true" tabindex="-1"></a>           <span class="at">extra =</span> <span class="st">&quot;drop&quot;</span>, </span>
+<span id="cb261-6"><a href="tidyr.html#cb261-6" aria-hidden="true" tabindex="-1"></a>           <span class="at">convert =</span> <span class="cn">TRUE</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb261-7"><a href="tidyr.html#cb261-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">glimpse</span>()</span></code></pre></div>
 <pre><code>## Rows: 543
 ## Columns: 5
 ## $ Country &lt;chr&gt; &quot;Afghanistan&quot;, &quot;Albania&quot;, &quot;Algeria&quot;, &quot;Angola&quot;, &quot;Argentina&quot;, &quot;A…
@@ -1940,16 +2062,16 @@ to separate complex columns. Here, we want to separate on dashes and brackets. Y
 <div id="all-in-one-step" class="section level3" number="6.8.4">
 <h3><span class="header-section-number">6.8.4</span> All in one step</h3>
 <p>We can chain all the steps for <code>matmort</code> above together, since we don't need those intermediate data tables.</p>
-<div class="sourceCode" id="cb288"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb288-1"><a href="tidyr.html#cb288-1" aria-hidden="true" tabindex="-1"></a>matmort2 <span class="ot">&lt;-</span> matmort <span class="sc">%&gt;%</span></span>
-<span id="cb288-2"><a href="tidyr.html#cb288-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gather</span>(<span class="st">&quot;Year&quot;</span>, <span class="st">&quot;stats&quot;</span>, <span class="st">`</span><span class="at">1990</span><span class="st">`</span><span class="sc">:</span><span class="st">`</span><span class="at">2015</span><span class="st">`</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb288-3"><a href="tidyr.html#cb288-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">stats =</span> <span class="fu">gsub</span>(<span class="st">&quot; &quot;</span>, <span class="st">&quot;&quot;</span>, stats)) <span class="sc">%&gt;%</span></span>
-<span id="cb288-4"><a href="tidyr.html#cb288-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">separate</span>(</span>
-<span id="cb288-5"><a href="tidyr.html#cb288-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">col =</span> stats, </span>
-<span id="cb288-6"><a href="tidyr.html#cb288-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">into =</span> <span class="fu">c</span>(<span class="st">&quot;rate&quot;</span>, <span class="st">&quot;ci_low&quot;</span>, <span class="st">&quot;ci_hi&quot;</span>), </span>
-<span id="cb288-7"><a href="tidyr.html#cb288-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">extra =</span> <span class="st">&quot;drop&quot;</span>, </span>
-<span id="cb288-8"><a href="tidyr.html#cb288-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">convert =</span> <span class="cn">TRUE</span></span>
-<span id="cb288-9"><a href="tidyr.html#cb288-9" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
-<span id="cb288-10"><a href="tidyr.html#cb288-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">glimpse</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb263"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb263-1"><a href="tidyr.html#cb263-1" aria-hidden="true" tabindex="-1"></a>matmort2 <span class="ot">&lt;-</span> matmort <span class="sc">%&gt;%</span></span>
+<span id="cb263-2"><a href="tidyr.html#cb263-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gather</span>(<span class="st">&quot;Year&quot;</span>, <span class="st">&quot;stats&quot;</span>, <span class="st">`</span><span class="at">1990</span><span class="st">`</span><span class="sc">:</span><span class="st">`</span><span class="at">2015</span><span class="st">`</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb263-3"><a href="tidyr.html#cb263-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">stats =</span> <span class="fu">gsub</span>(<span class="st">&quot; &quot;</span>, <span class="st">&quot;&quot;</span>, stats)) <span class="sc">%&gt;%</span></span>
+<span id="cb263-4"><a href="tidyr.html#cb263-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">separate</span>(</span>
+<span id="cb263-5"><a href="tidyr.html#cb263-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">col =</span> stats, </span>
+<span id="cb263-6"><a href="tidyr.html#cb263-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">into =</span> <span class="fu">c</span>(<span class="st">&quot;rate&quot;</span>, <span class="st">&quot;ci_low&quot;</span>, <span class="st">&quot;ci_hi&quot;</span>), </span>
+<span id="cb263-7"><a href="tidyr.html#cb263-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">extra =</span> <span class="st">&quot;drop&quot;</span>, </span>
+<span id="cb263-8"><a href="tidyr.html#cb263-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">convert =</span> <span class="cn">TRUE</span></span>
+<span id="cb263-9"><a href="tidyr.html#cb263-9" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb263-10"><a href="tidyr.html#cb263-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">glimpse</span>()</span></code></pre></div>
 <pre><code>## Rows: 543
 ## Columns: 5
 ## $ Country &lt;chr&gt; &quot;Afghanistan&quot;, &quot;Albania&quot;, &quot;Algeria&quot;, &quot;Angola&quot;, &quot;Argentina&quot;, &quot;A…
@@ -1961,9 +2083,9 @@ to separate complex columns. Here, we want to separate on dashes and brackets. Y
 <div id="columns-by-year" class="section level3" number="6.8.5">
 <h3><span class="header-section-number">6.8.5</span> Columns by Year</h3>
 <p>Spread out the maternal mortality rate by year.</p>
-<div class="sourceCode" id="cb290"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb290-1"><a href="tidyr.html#cb290-1" aria-hidden="true" tabindex="-1"></a>matmort_wide <span class="ot">&lt;-</span> matmort2 <span class="sc">%&gt;%</span></span>
-<span id="cb290-2"><a href="tidyr.html#cb290-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">spread</span>(<span class="at">key =</span> Year, <span class="at">value =</span> rate) <span class="sc">%&gt;%</span></span>
-<span id="cb290-3"><a href="tidyr.html#cb290-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb265"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb265-1"><a href="tidyr.html#cb265-1" aria-hidden="true" tabindex="-1"></a>matmort_wide <span class="ot">&lt;-</span> matmort2 <span class="sc">%&gt;%</span></span>
+<span id="cb265-2"><a href="tidyr.html#cb265-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">spread</span>(<span class="at">key =</span> Year, <span class="at">value =</span> rate) <span class="sc">%&gt;%</span></span>
+<span id="cb265-3"><a href="tidyr.html#cb265-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>()</span></code></pre></div>
 <pre><code>## # A tibble: 542 x 6
 ##    Country     ci_low ci_hi `1990` `2000` `2015`
 ##    &lt;chr&gt;        &lt;int&gt; &lt;int&gt;  &lt;int&gt;  &lt;int&gt;  &lt;int&gt;
@@ -1982,13 +2104,13 @@ to separate complex columns. Here, we want to separate on dashes and brackets. Y
 <p>Nope, that didn't work at all, but it's a really common mistake when spreading data. This is because <code>spread</code> matches on all the remaining columns, so Afghanistan with <code>ci_low</code> of 253 is treated as a different observation than Afghanistan with <code>ci_low</code> of 745.</p>
 </div>
 <p>This is where <code>pivot_wider()</code> can be very useful. You can set <code>values_from</code> to multiple column names and their names will be added to the <code>names_from</code> values.</p>
-<div class="sourceCode" id="cb292"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb292-1"><a href="tidyr.html#cb292-1" aria-hidden="true" tabindex="-1"></a>matmort_wide <span class="ot">&lt;-</span> matmort2 <span class="sc">%&gt;%</span></span>
-<span id="cb292-2"><a href="tidyr.html#cb292-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_wider</span>(</span>
-<span id="cb292-3"><a href="tidyr.html#cb292-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">names_from =</span> Year,</span>
-<span id="cb292-4"><a href="tidyr.html#cb292-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">values_from =</span> <span class="fu">c</span>(rate, ci_low, ci_hi)</span>
-<span id="cb292-5"><a href="tidyr.html#cb292-5" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb292-6"><a href="tidyr.html#cb292-6" aria-hidden="true" tabindex="-1"></a>              </span>
-<span id="cb292-7"><a href="tidyr.html#cb292-7" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(matmort_wide)</span></code></pre></div>
+<div class="sourceCode" id="cb267"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb267-1"><a href="tidyr.html#cb267-1" aria-hidden="true" tabindex="-1"></a>matmort_wide <span class="ot">&lt;-</span> matmort2 <span class="sc">%&gt;%</span></span>
+<span id="cb267-2"><a href="tidyr.html#cb267-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_wider</span>(</span>
+<span id="cb267-3"><a href="tidyr.html#cb267-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">names_from =</span> Year,</span>
+<span id="cb267-4"><a href="tidyr.html#cb267-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">values_from =</span> <span class="fu">c</span>(rate, ci_low, ci_hi)</span>
+<span id="cb267-5"><a href="tidyr.html#cb267-5" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb267-6"><a href="tidyr.html#cb267-6" aria-hidden="true" tabindex="-1"></a>              </span>
+<span id="cb267-7"><a href="tidyr.html#cb267-7" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(matmort_wide)</span></code></pre></div>
 <pre><code>## Rows: 181
 ## Columns: 10
 ## $ Country     &lt;chr&gt; &quot;Afghanistan&quot;, &quot;Albania&quot;, &quot;Algeria&quot;, &quot;Angola&quot;, &quot;Argentina&quot;…
@@ -2024,12 +2146,12 @@ to separate complex columns. Here, we want to separate on dashes and brackets. Y
 <li>time: What time is it? (time)</li>
 </ul>
 <p>To get the dataset into wide format, where each question is in a separate column, use the following code:</p>
-<div class="sourceCode" id="cb294"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb294-1"><a href="tidyr.html#cb294-1" aria-hidden="true" tabindex="-1"></a>q <span class="ot">&lt;-</span> experimentum_quests <span class="sc">%&gt;%</span></span>
-<span id="cb294-2"><a href="tidyr.html#cb294-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_wider</span>(<span class="at">id_cols =</span> session_id<span class="sc">:</span>user_age,</span>
-<span id="cb294-3"><a href="tidyr.html#cb294-3" aria-hidden="true" tabindex="-1"></a>              <span class="at">names_from =</span> q_name,</span>
-<span id="cb294-4"><a href="tidyr.html#cb294-4" aria-hidden="true" tabindex="-1"></a>              <span class="at">values_from =</span> dv) <span class="sc">%&gt;%</span></span>
-<span id="cb294-5"><a href="tidyr.html#cb294-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">type.convert</span>(<span class="at">as.is =</span> <span class="cn">TRUE</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb294-6"><a href="tidyr.html#cb294-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb269"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb269-1"><a href="tidyr.html#cb269-1" aria-hidden="true" tabindex="-1"></a>q <span class="ot">&lt;-</span> experimentum_quests <span class="sc">%&gt;%</span></span>
+<span id="cb269-2"><a href="tidyr.html#cb269-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_wider</span>(<span class="at">id_cols =</span> session_id<span class="sc">:</span>user_age,</span>
+<span id="cb269-3"><a href="tidyr.html#cb269-3" aria-hidden="true" tabindex="-1"></a>              <span class="at">names_from =</span> q_name,</span>
+<span id="cb269-4"><a href="tidyr.html#cb269-4" aria-hidden="true" tabindex="-1"></a>              <span class="at">values_from =</span> dv) <span class="sc">%&gt;%</span></span>
+<span id="cb269-5"><a href="tidyr.html#cb269-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">type.convert</span>(<span class="at">as.is =</span> <span class="cn">TRUE</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb269-6"><a href="tidyr.html#cb269-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>()</span></code></pre></div>
 <pre><code>## # A tibble: 24 x 15
 ##    session_id project_id quest_id user_id user_sex user_status user_age current
 ##         &lt;int&gt;      &lt;int&gt;    &lt;int&gt;   &lt;int&gt; &lt;chr&gt;    &lt;chr&gt;          &lt;dbl&gt;   &lt;int&gt;
@@ -2054,8 +2176,8 @@ to separate complex columns. Here, we want to separate on dashes and brackets. Y
 <h2><span class="header-section-number">6.9</span> Glossary</h2>
 <table>
 <colgroup>
-<col width="60%" />
-<col width="39%" />
+<col width="58%" />
+<col width="41%" />
 </colgroup>
 <thead>
 <tr class="header">
@@ -2065,35 +2187,35 @@ to separate complex columns. Here, we want to separate on dashes and brackets. Y
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><a class='glossary' target='_blank' href='https://psyteachr.github.io/glossary/c#character'>character</a></td>
+<td align="left"><a href="https://psyteachr.github.io/glossary/c.html#character" class="glossary" target="_blank">character</a></td>
 <td align="left">A data type representing strings of text.</td>
 </tr>
 <tr class="even">
-<td align="left"><a class='glossary' target='_blank' href='https://psyteachr.github.io/glossary/d#double'>double</a></td>
+<td align="left"><a href="https://psyteachr.github.io/glossary/d.html#double" class="glossary" target="_blank">double</a></td>
 <td align="left">A data type representing a real decimal number</td>
 </tr>
 <tr class="odd">
-<td align="left"><a class='glossary' target='_blank' href='https://psyteachr.github.io/glossary/i#integer'>integer</a></td>
+<td align="left"><a href="https://psyteachr.github.io/glossary/i.html#integer" class="glossary" target="_blank">integer</a></td>
 <td align="left">A data type representing whole numbers.</td>
 </tr>
 <tr class="even">
-<td align="left"><a class='glossary' target='_blank' href='https://psyteachr.github.io/glossary/l#long'>long</a></td>
+<td align="left"><a href="https://psyteachr.github.io/glossary/l.html#long" class="glossary" target="_blank">long</a></td>
 <td align="left">Data where each observation is on a separate row</td>
 </tr>
 <tr class="odd">
-<td align="left"><a class='glossary' target='_blank' href='https://psyteachr.github.io/glossary/o#observation'>observation</a></td>
+<td align="left"><a href="https://psyteachr.github.io/glossary/o.html#observation" class="glossary" target="_blank">observation</a></td>
 <td align="left">All of the data about a single trial or question.</td>
 </tr>
 <tr class="even">
-<td align="left"><a class='glossary' target='_blank' href='https://psyteachr.github.io/glossary/v#value'>value</a></td>
+<td align="left"><a href="https://psyteachr.github.io/glossary/v.html#value" class="glossary" target="_blank">value</a></td>
 <td align="left">A single number or piece of data.</td>
 </tr>
 <tr class="odd">
-<td align="left"><a class='glossary' target='_blank' href='https://psyteachr.github.io/glossary/v#variable'>variable</a></td>
+<td align="left"><a href="https://psyteachr.github.io/glossary/v.html#variable" class="glossary" target="_blank">variable</a></td>
 <td align="left">A word that identifies and stores the value of some data for later use.</td>
 </tr>
 <tr class="even">
-<td align="left"><a class='glossary' target='_blank' href='https://psyteachr.github.io/glossary/w#wide'>wide</a></td>
+<td align="left"><a href="https://psyteachr.github.io/glossary/w.html#wide" class="glossary" target="_blank">wide</a></td>
 <td align="left">Data where all of the observations about one subject are in the same row</td>
 </tr>
 </tbody>
@@ -2102,11 +2224,11 @@ to separate complex columns. Here, we want to separate on dashes and brackets. Y
 <div id="exercises-tidyr" class="section level2" number="6.10">
 <h2><span class="header-section-number">6.10</span> Exercises</h2>
 <p>Download the <a href="exercises/06_tidyr_exercise.Rmd">exercises</a>. See the <a href="exercises/06_tidyr_answers.Rmd">answers</a> only after you've attempted all the questions.</p>
-<div class="sourceCode" id="cb296"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb296-1"><a href="tidyr.html#cb296-1" aria-hidden="true" tabindex="-1"></a><span class="co"># run this to access the exercise</span></span>
-<span id="cb296-2"><a href="tidyr.html#cb296-2" aria-hidden="true" tabindex="-1"></a>reprores<span class="sc">::</span><span class="fu">exercise</span>(<span class="dv">6</span>)</span>
-<span id="cb296-3"><a href="tidyr.html#cb296-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb296-4"><a href="tidyr.html#cb296-4" aria-hidden="true" tabindex="-1"></a><span class="co"># run this to access the answers</span></span>
-<span id="cb296-5"><a href="tidyr.html#cb296-5" aria-hidden="true" tabindex="-1"></a>reprores<span class="sc">::</span><span class="fu">exercise</span>(<span class="dv">6</span>, <span class="at">answers =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb271"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb271-1"><a href="tidyr.html#cb271-1" aria-hidden="true" tabindex="-1"></a><span class="co"># run this to access the exercise</span></span>
+<span id="cb271-2"><a href="tidyr.html#cb271-2" aria-hidden="true" tabindex="-1"></a>reprores<span class="sc">::</span><span class="fu">exercise</span>(<span class="dv">6</span>)</span>
+<span id="cb271-3"><a href="tidyr.html#cb271-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb271-4"><a href="tidyr.html#cb271-4" aria-hidden="true" tabindex="-1"></a><span class="co"># run this to access the answers</span></span>
+<span id="cb271-5"><a href="tidyr.html#cb271-5" aria-hidden="true" tabindex="-1"></a>reprores<span class="sc">::</span><span class="fu">exercise</span>(<span class="dv">6</span>, <span class="at">answers =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
 
 </div>
 </div>
@@ -2254,8 +2376,8 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": null,
-"text": null
+"link": "https://github.com/psyteachr/reprores-v2/edit/main/book/06-tidyr.Rmd",
+"text": "Edit"
 },
 "history": {
 "link": null,
@@ -2265,7 +2387,7 @@ gitbook.start({
 "link": null,
 "text": null
 },
-"download": {},
+"download": [["reprores-v2.epub", "EPUB"], ["reprores-v2.mobi", "MOBI"]],
 "toc": {
 "collapse": "section",
 "scroll_highlight": true

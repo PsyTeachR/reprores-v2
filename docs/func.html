@@ -10,16 +10,16 @@
 
   <meta property="og:title" content="Chapter 9 Iteration &amp; Functions | Data Skills for Reproducible Research" />
   <meta property="og:type" content="book" />
-  
-  
+  <meta property="og:url" content="https://psyteachr.github.io/reprores-v2" />
+  <meta property="og:image" content="https://psyteachr.github.io/reprores-v2/images/twitter_card.png" />
   <meta property="og:description" content="This book provides an overview of skills needed for reproducible research and open science using the statistical programming language R and tidyverse packages. It covers data visualisation, data tidying and wrangling, archiving, iteration and functions, probability and data simulations, general linear models, and reproducible workflows." />
-  
+  <meta name="github-repo" content="psyteachr/reprores-v2" />
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="Chapter 9 Iteration &amp; Functions | Data Skills for Reproducible Research" />
   
   <meta name="twitter:description" content="This book provides an overview of skills needed for reproducible research and open science using the statistical programming language R and tidyverse packages. It covers data visualisation, data tidying and wrangling, archiving, iteration and functions, probability and data simulations, general linear models, and reproducible workflows." />
-  
+  <meta name="twitter:image" content="https://psyteachr.github.io/reprores-v2/images/twitter_card.png" />
 
 
 
@@ -28,8 +28,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
-  
-  
+  <link rel="apple-touch-icon-precomposed" sizes="152x152" href="images/touch-icon.png" />
+  <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
 <link rel="prev" href="glm.html"/>
 <link rel="next" href="sim.html"/>
 <script src="libs/header-attrs-2.9.4/header-attrs.js"></script>
@@ -59,14 +59,6 @@
 <script src="libs/crosstalk-1.1.1/js/crosstalk.min.js"></script>
 <link href="libs/plotly-htmlwidgets-css-1.57.1/plotly-htmlwidgets.css" rel="stylesheet" />
 <script src="libs/plotly-main-1.57.1/plotly-latest.min.js"></script>
-<meta property="og:title" content="Chapter 9 Iteration &amp; Functions | Data Skills for Reproducible Research">
-<meta property="og:description" content="This book provides an overview of skills needed for reproducible research and open science using the statistical programming language R and tidyverse packages. It covers data visualisation, data tidying and wrangling, archiving, iteration and functions, probability and data simulations, general linear models, and reproducible workflows.">
-<meta property="og:image" content="https://psyteachr.github.io/reprores-v2/images/twitter_card.png">
-<meta property="og:url" content="https://psyteachr.github.io/reprores-v2/">
-<meta property="twitter:card" content="summary_large_image">
-
-<link rel="shortcut icon" href="https://psyteachr.github.io/reprores-v2/images/logo.png">
-
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-6NP3MF25W3"></script>
 <script>
@@ -218,7 +210,7 @@ div.csl-indent {
 <li class="chapter" data-level="1.5.3" data-path="intro.html"><a href="intro.html#install-from-github"><i class="fa fa-check"></i><b>1.5.3</b> Install from GitHub</a></li>
 </ul></li>
 <li class="chapter" data-level="1.6" data-path="intro.html"><a href="intro.html#glossaryintro"><i class="fa fa-check"></i><b>1.6</b> Glossary</a></li>
-<li class="chapter" data-level="1.7" data-path="intro.html"><a href="intro.html#exercises-repro"><i class="fa fa-check"></i><b>1.7</b> Exercises</a></li>
+<li class="chapter" data-level="1.7" data-path="intro.html"><a href="intro.html#exercises-intro"><i class="fa fa-check"></i><b>1.7</b> Exercises</a></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="repro.html"><a href="repro.html"><i class="fa fa-check"></i><b>2</b> Reproducible Workflows</a>
 <ul>
@@ -245,93 +237,93 @@ div.csl-indent {
 <li class="chapter" data-level="2.6.7" data-path="repro.html"><a href="repro.html#computational-reproducibility"><i class="fa fa-check"></i><b>2.6.7</b> Computational Reproducibility</a></li>
 </ul></li>
 <li class="chapter" data-level="2.7" data-path="repro.html"><a href="repro.html#glossary-repro"><i class="fa fa-check"></i><b>2.7</b> Glossary</a></li>
-<li class="chapter" data-level="2.8" data-path="intro.html"><a href="intro.html#exercises-repro"><i class="fa fa-check"></i><b>2.8</b> Exercises</a></li>
+<li class="chapter" data-level="2.8" data-path="repro.html"><a href="repro.html#exercises-repro"><i class="fa fa-check"></i><b>2.8</b> Exercises</a></li>
 <li class="chapter" data-level="2.9" data-path="repro.html"><a href="repro.html#references"><i class="fa fa-check"></i><b>2.9</b> References</a></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="data.html"><a href="data.html"><i class="fa fa-check"></i><b>3</b> Working with Data</a>
+<li class="chapter" data-level="3" data-path="ggplot.html"><a href="ggplot.html"><i class="fa fa-check"></i><b>3</b> Data Visualisation</a>
 <ul>
-<li class="chapter" data-level="3.1" data-path="data.html"><a href="data.html#ilo2"><i class="fa fa-check"></i><b>3.1</b> Learning Objectives</a></li>
-<li class="chapter" data-level="3.2" data-path="data.html"><a href="data.html#resources2"><i class="fa fa-check"></i><b>3.2</b> Resources</a></li>
-<li class="chapter" data-level="3.3" data-path="data.html"><a href="data.html#setup2"><i class="fa fa-check"></i><b>3.3</b> Setup</a></li>
-<li class="chapter" data-level="3.4" data-path="data.html"><a href="data.html#data-tables"><i class="fa fa-check"></i><b>3.4</b> Data tables</a>
+<li class="chapter" data-level="3.1" data-path="ggplot.html"><a href="ggplot.html#ilo_ggplot"><i class="fa fa-check"></i><b>3.1</b> Learning Objectives</a>
 <ul>
-<li class="chapter" data-level="3.4.1" data-path="data.html"><a href="data.html#builtin"><i class="fa fa-check"></i><b>3.4.1</b> Built-in data</a></li>
-<li class="chapter" data-level="3.4.2" data-path="data.html"><a href="data.html#import_data"><i class="fa fa-check"></i><b>3.4.2</b> Importing data</a></li>
-<li class="chapter" data-level="3.4.3" data-path="data.html"><a href="data.html#creating-data"><i class="fa fa-check"></i><b>3.4.3</b> Creating data</a></li>
-<li class="chapter" data-level="3.4.4" data-path="data.html"><a href="data.html#writing-data"><i class="fa fa-check"></i><b>3.4.4</b> Writing Data</a></li>
+<li class="chapter" data-level="3.1.1" data-path="ggplot.html"><a href="ggplot.html#basic-1"><i class="fa fa-check"></i><b>3.1.1</b> Basic</a></li>
+<li class="chapter" data-level="3.1.2" data-path="ggplot.html"><a href="ggplot.html#intermediate-1"><i class="fa fa-check"></i><b>3.1.2</b> Intermediate</a></li>
 </ul></li>
-<li class="chapter" data-level="3.5" data-path="data.html"><a href="data.html#data_types"><i class="fa fa-check"></i><b>3.5</b> Basic data types</a>
+<li class="chapter" data-level="3.2" data-path="ggplot.html"><a href="ggplot.html#resources3"><i class="fa fa-check"></i><b>3.2</b> Resources</a></li>
+<li class="chapter" data-level="3.3" data-path="ggplot.html"><a href="ggplot.html#setup_ggplot"><i class="fa fa-check"></i><b>3.3</b> Setup</a></li>
+<li class="chapter" data-level="3.4" data-path="ggplot.html"><a href="ggplot.html#vartypes"><i class="fa fa-check"></i><b>3.4</b> Common Variable Combinations</a></li>
+<li class="chapter" data-level="3.5" data-path="ggplot.html"><a href="ggplot.html#basic-plots"><i class="fa fa-check"></i><b>3.5</b> Basic Plots</a></li>
+<li class="chapter" data-level="3.6" data-path="ggplot.html"><a href="ggplot.html#ggplots"><i class="fa fa-check"></i><b>3.6</b> GGplots</a></li>
+<li class="chapter" data-level="3.7" data-path="ggplot.html"><a href="ggplot.html#common-plot-types"><i class="fa fa-check"></i><b>3.7</b> Common Plot Types</a>
 <ul>
-<li class="chapter" data-level="3.5.1" data-path="data.html"><a href="data.html#numeric-data"><i class="fa fa-check"></i><b>3.5.1</b> Numeric data</a></li>
-<li class="chapter" data-level="3.5.2" data-path="data.html"><a href="data.html#character-data"><i class="fa fa-check"></i><b>3.5.2</b> Character data</a></li>
-<li class="chapter" data-level="3.5.3" data-path="data.html"><a href="data.html#logical-data"><i class="fa fa-check"></i><b>3.5.3</b> Logical Data</a></li>
+<li class="chapter" data-level="3.7.1" data-path="ggplot.html"><a href="ggplot.html#geom_bar"><i class="fa fa-check"></i><b>3.7.1</b> Bar plot</a></li>
+<li class="chapter" data-level="3.7.2" data-path="ggplot.html"><a href="ggplot.html#geom_density"><i class="fa fa-check"></i><b>3.7.2</b> Density plot</a></li>
+<li class="chapter" data-level="3.7.3" data-path="ggplot.html"><a href="ggplot.html#geom_freqpoly"><i class="fa fa-check"></i><b>3.7.3</b> Frequency polygons</a></li>
+<li class="chapter" data-level="3.7.4" data-path="ggplot.html"><a href="ggplot.html#geom_histogram"><i class="fa fa-check"></i><b>3.7.4</b> Histogram</a></li>
+<li class="chapter" data-level="3.7.5" data-path="ggplot.html"><a href="ggplot.html#geom_col"><i class="fa fa-check"></i><b>3.7.5</b> Column plot</a></li>
+<li class="chapter" data-level="3.7.6" data-path="ggplot.html"><a href="ggplot.html#geom_boxplot"><i class="fa fa-check"></i><b>3.7.6</b> Boxplot</a></li>
+<li class="chapter" data-level="3.7.7" data-path="ggplot.html"><a href="ggplot.html#geom_violin"><i class="fa fa-check"></i><b>3.7.7</b> Violin plot</a></li>
+<li class="chapter" data-level="3.7.8" data-path="ggplot.html"><a href="ggplot.html#vertical_intervals"><i class="fa fa-check"></i><b>3.7.8</b> Vertical intervals</a></li>
+<li class="chapter" data-level="3.7.9" data-path="ggplot.html"><a href="ggplot.html#geom_point"><i class="fa fa-check"></i><b>3.7.9</b> Scatter plot</a></li>
+<li class="chapter" data-level="3.7.10" data-path="ggplot.html"><a href="ggplot.html#geom_smooth"><i class="fa fa-check"></i><b>3.7.10</b> Line graph</a></li>
 </ul></li>
-<li class="chapter" data-level="3.6" data-path="data.html"><a href="data.html#containers"><i class="fa fa-check"></i><b>3.6</b> Basic container types</a>
+<li class="chapter" data-level="3.8" data-path="ggplot.html"><a href="ggplot.html#customisation"><i class="fa fa-check"></i><b>3.8</b> Customisation</a>
 <ul>
-<li class="chapter" data-level="3.6.1" data-path="data.html"><a href="data.html#vectors"><i class="fa fa-check"></i><b>3.6.1</b> Vectors</a></li>
-<li class="chapter" data-level="3.6.2" data-path="data.html"><a href="data.html#lists"><i class="fa fa-check"></i><b>3.6.2</b> Lists</a></li>
-<li class="chapter" data-level="3.6.3" data-path="repro.html"><a href="repro.html#tables"><i class="fa fa-check"></i><b>3.6.3</b> Tables</a></li>
+<li class="chapter" data-level="3.8.1" data-path="ggplot.html"><a href="ggplot.html#custom-size"><i class="fa fa-check"></i><b>3.8.1</b> Size and Position</a></li>
+<li class="chapter" data-level="3.8.2" data-path="ggplot.html"><a href="ggplot.html#custom-labels"><i class="fa fa-check"></i><b>3.8.2</b> Labels</a></li>
+<li class="chapter" data-level="3.8.3" data-path="ggplot.html"><a href="ggplot.html#custom-colours"><i class="fa fa-check"></i><b>3.8.3</b> Colours</a></li>
+<li class="chapter" data-level="3.8.4" data-path="ggplot.html"><a href="ggplot.html#themes"><i class="fa fa-check"></i><b>3.8.4</b> Themes</a></li>
+<li class="chapter" data-level="3.8.5" data-path="ggplot.html"><a href="ggplot.html#ggsave"><i class="fa fa-check"></i><b>3.8.5</b> Save as file</a></li>
 </ul></li>
-<li class="chapter" data-level="3.7" data-path="data.html"><a href="data.html#troubleshooting"><i class="fa fa-check"></i><b>3.7</b> Troubleshooting</a></li>
-<li class="chapter" data-level="3.8" data-path="data.html"><a href="data.html#glossary-data"><i class="fa fa-check"></i><b>3.8</b> Glossary</a></li>
-<li class="chapter" data-level="3.9" data-path="data.html"><a href="data.html#exercises-data"><i class="fa fa-check"></i><b>3.9</b> Exercises</a></li>
-</ul></li>
-<li class="chapter" data-level="4" data-path="ggplot.html"><a href="ggplot.html"><i class="fa fa-check"></i><b>4</b> Data Visualisation</a>
+<li class="chapter" data-level="3.9" data-path="ggplot.html"><a href="ggplot.html#combo_plots"><i class="fa fa-check"></i><b>3.9</b> Combination Plots</a>
 <ul>
-<li class="chapter" data-level="4.1" data-path="ggplot.html"><a href="ggplot.html#ilo_ggplot"><i class="fa fa-check"></i><b>4.1</b> Learning Objectives</a>
-<ul>
-<li class="chapter" data-level="4.1.1" data-path="ggplot.html"><a href="ggplot.html#basic-1"><i class="fa fa-check"></i><b>4.1.1</b> Basic</a></li>
-<li class="chapter" data-level="4.1.2" data-path="ggplot.html"><a href="ggplot.html#intermediate-1"><i class="fa fa-check"></i><b>4.1.2</b> Intermediate</a></li>
+<li class="chapter" data-level="3.9.1" data-path="ggplot.html"><a href="ggplot.html#violinbox-plot"><i class="fa fa-check"></i><b>3.9.1</b> Violinbox plot</a></li>
+<li class="chapter" data-level="3.9.2" data-path="ggplot.html"><a href="ggplot.html#violin-point-range-plot"><i class="fa fa-check"></i><b>3.9.2</b> Violin-point-range plot</a></li>
+<li class="chapter" data-level="3.9.3" data-path="ggplot.html"><a href="ggplot.html#violin-jitter-plot"><i class="fa fa-check"></i><b>3.9.3</b> Violin-jitter plot</a></li>
+<li class="chapter" data-level="3.9.4" data-path="ggplot.html"><a href="ggplot.html#scatter-line-graph"><i class="fa fa-check"></i><b>3.9.4</b> Scatter-line graph</a></li>
+<li class="chapter" data-level="3.9.5" data-path="ggplot.html"><a href="ggplot.html#plot_grid"><i class="fa fa-check"></i><b>3.9.5</b> Grid of plots</a></li>
 </ul></li>
-<li class="chapter" data-level="4.2" data-path="ggplot.html"><a href="ggplot.html#resources3"><i class="fa fa-check"></i><b>4.2</b> Resources</a></li>
-<li class="chapter" data-level="4.3" data-path="ggplot.html"><a href="ggplot.html#setup_ggplot"><i class="fa fa-check"></i><b>4.3</b> Setup</a></li>
-<li class="chapter" data-level="4.4" data-path="ggplot.html"><a href="ggplot.html#vartypes"><i class="fa fa-check"></i><b>4.4</b> Common Variable Combinations</a></li>
-<li class="chapter" data-level="4.5" data-path="ggplot.html"><a href="ggplot.html#basic-plots"><i class="fa fa-check"></i><b>4.5</b> Basic Plots</a></li>
-<li class="chapter" data-level="4.6" data-path="ggplot.html"><a href="ggplot.html#ggplots"><i class="fa fa-check"></i><b>4.6</b> GGplots</a></li>
-<li class="chapter" data-level="4.7" data-path="ggplot.html"><a href="ggplot.html#common-plot-types"><i class="fa fa-check"></i><b>4.7</b> Common Plot Types</a>
+<li class="chapter" data-level="3.10" data-path="ggplot.html"><a href="ggplot.html#overlap"><i class="fa fa-check"></i><b>3.10</b> Overlapping Discrete Data</a>
 <ul>
-<li class="chapter" data-level="4.7.1" data-path="ggplot.html"><a href="ggplot.html#geom_bar"><i class="fa fa-check"></i><b>4.7.1</b> Bar plot</a></li>
-<li class="chapter" data-level="4.7.2" data-path="ggplot.html"><a href="ggplot.html#geom_density"><i class="fa fa-check"></i><b>4.7.2</b> Density plot</a></li>
-<li class="chapter" data-level="4.7.3" data-path="ggplot.html"><a href="ggplot.html#geom_freqpoly"><i class="fa fa-check"></i><b>4.7.3</b> Frequency polygons</a></li>
-<li class="chapter" data-level="4.7.4" data-path="ggplot.html"><a href="ggplot.html#geom_histogram"><i class="fa fa-check"></i><b>4.7.4</b> Histogram</a></li>
-<li class="chapter" data-level="4.7.5" data-path="ggplot.html"><a href="ggplot.html#geom_col"><i class="fa fa-check"></i><b>4.7.5</b> Column plot</a></li>
-<li class="chapter" data-level="4.7.6" data-path="ggplot.html"><a href="ggplot.html#geom_boxplot"><i class="fa fa-check"></i><b>4.7.6</b> Boxplot</a></li>
-<li class="chapter" data-level="4.7.7" data-path="ggplot.html"><a href="ggplot.html#geom_violin"><i class="fa fa-check"></i><b>4.7.7</b> Violin plot</a></li>
-<li class="chapter" data-level="4.7.8" data-path="ggplot.html"><a href="ggplot.html#vertical_intervals"><i class="fa fa-check"></i><b>4.7.8</b> Vertical intervals</a></li>
-<li class="chapter" data-level="4.7.9" data-path="ggplot.html"><a href="ggplot.html#geom_point"><i class="fa fa-check"></i><b>4.7.9</b> Scatter plot</a></li>
-<li class="chapter" data-level="4.7.10" data-path="ggplot.html"><a href="ggplot.html#geom_smooth"><i class="fa fa-check"></i><b>4.7.10</b> Line graph</a></li>
+<li class="chapter" data-level="3.10.1" data-path="ggplot.html"><a href="ggplot.html#reducing-opacity"><i class="fa fa-check"></i><b>3.10.1</b> Reducing Opacity</a></li>
+<li class="chapter" data-level="3.10.2" data-path="ggplot.html"><a href="ggplot.html#geom_count"><i class="fa fa-check"></i><b>3.10.2</b> Proportional Dot Plots</a></li>
 </ul></li>
-<li class="chapter" data-level="4.8" data-path="ggplot.html"><a href="ggplot.html#customisation"><i class="fa fa-check"></i><b>4.8</b> Customisation</a>
+<li class="chapter" data-level="3.11" data-path="ggplot.html"><a href="ggplot.html#overlapping-continuous-data"><i class="fa fa-check"></i><b>3.11</b> Overlapping Continuous Data</a>
 <ul>
-<li class="chapter" data-level="4.8.1" data-path="ggplot.html"><a href="ggplot.html#custom-size"><i class="fa fa-check"></i><b>4.8.1</b> Size and Position</a></li>
-<li class="chapter" data-level="4.8.2" data-path="ggplot.html"><a href="ggplot.html#custom-labels"><i class="fa fa-check"></i><b>4.8.2</b> Labels</a></li>
-<li class="chapter" data-level="4.8.3" data-path="ggplot.html"><a href="ggplot.html#custom-colours"><i class="fa fa-check"></i><b>4.8.3</b> Colours</a></li>
-<li class="chapter" data-level="4.8.4" data-path="ggplot.html"><a href="ggplot.html#themes"><i class="fa fa-check"></i><b>4.8.4</b> Themes</a></li>
-<li class="chapter" data-level="4.8.5" data-path="ggplot.html"><a href="ggplot.html#ggsave"><i class="fa fa-check"></i><b>4.8.5</b> Save as file</a></li>
+<li class="chapter" data-level="3.11.1" data-path="ggplot.html"><a href="ggplot.html#geom_density2d"><i class="fa fa-check"></i><b>3.11.1</b> 2D Density Plot</a></li>
+<li class="chapter" data-level="3.11.2" data-path="ggplot.html"><a href="ggplot.html#geom_bin2d"><i class="fa fa-check"></i><b>3.11.2</b> 2D Histogram</a></li>
+<li class="chapter" data-level="3.11.3" data-path="ggplot.html"><a href="ggplot.html#geom_hex"><i class="fa fa-check"></i><b>3.11.3</b> Hexagonal Heatmap</a></li>
+<li class="chapter" data-level="3.11.4" data-path="ggplot.html"><a href="ggplot.html#geom_tile"><i class="fa fa-check"></i><b>3.11.4</b> Correlation Heatmap</a></li>
 </ul></li>
-<li class="chapter" data-level="4.9" data-path="ggplot.html"><a href="ggplot.html#combo_plots"><i class="fa fa-check"></i><b>4.9</b> Combination Plots</a>
+<li class="chapter" data-level="3.12" data-path="ggplot.html"><a href="ggplot.html#plotly"><i class="fa fa-check"></i><b>3.12</b> Interactive Plots</a></li>
+<li class="chapter" data-level="3.13" data-path="ggplot.html"><a href="ggplot.html#glossary-ggplot"><i class="fa fa-check"></i><b>3.13</b> Glossary</a></li>
+<li class="chapter" data-level="3.14" data-path="ggplot.html"><a href="ggplot.html#exercises-ggplot"><i class="fa fa-check"></i><b>3.14</b> Exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="data.html"><a href="data.html"><i class="fa fa-check"></i><b>4</b> Working with Data</a>
 <ul>
-<li class="chapter" data-level="4.9.1" data-path="ggplot.html"><a href="ggplot.html#violinbox-plot"><i class="fa fa-check"></i><b>4.9.1</b> Violinbox plot</a></li>
-<li class="chapter" data-level="4.9.2" data-path="ggplot.html"><a href="ggplot.html#violin-point-range-plot"><i class="fa fa-check"></i><b>4.9.2</b> Violin-point-range plot</a></li>
-<li class="chapter" data-level="4.9.3" data-path="ggplot.html"><a href="ggplot.html#violin-jitter-plot"><i class="fa fa-check"></i><b>4.9.3</b> Violin-jitter plot</a></li>
-<li class="chapter" data-level="4.9.4" data-path="ggplot.html"><a href="ggplot.html#scatter-line-graph"><i class="fa fa-check"></i><b>4.9.4</b> Scatter-line graph</a></li>
-<li class="chapter" data-level="4.9.5" data-path="ggplot.html"><a href="ggplot.html#plot_grid"><i class="fa fa-check"></i><b>4.9.5</b> Grid of plots</a></li>
-</ul></li>
-<li class="chapter" data-level="4.10" data-path="ggplot.html"><a href="ggplot.html#overlap"><i class="fa fa-check"></i><b>4.10</b> Overlapping Discrete Data</a>
+<li class="chapter" data-level="4.1" data-path="data.html"><a href="data.html#ilo2"><i class="fa fa-check"></i><b>4.1</b> Learning Objectives</a></li>
+<li class="chapter" data-level="4.2" data-path="data.html"><a href="data.html#resources2"><i class="fa fa-check"></i><b>4.2</b> Resources</a></li>
+<li class="chapter" data-level="4.3" data-path="data.html"><a href="data.html#setup2"><i class="fa fa-check"></i><b>4.3</b> Setup</a></li>
+<li class="chapter" data-level="4.4" data-path="data.html"><a href="data.html#data-tables"><i class="fa fa-check"></i><b>4.4</b> Data tables</a>
 <ul>
-<li class="chapter" data-level="4.10.1" data-path="ggplot.html"><a href="ggplot.html#reducing-opacity"><i class="fa fa-check"></i><b>4.10.1</b> Reducing Opacity</a></li>
-<li class="chapter" data-level="4.10.2" data-path="ggplot.html"><a href="ggplot.html#geom_count"><i class="fa fa-check"></i><b>4.10.2</b> Proportional Dot Plots</a></li>
+<li class="chapter" data-level="4.4.1" data-path="data.html"><a href="data.html#builtin"><i class="fa fa-check"></i><b>4.4.1</b> Built-in data</a></li>
+<li class="chapter" data-level="4.4.2" data-path="data.html"><a href="data.html#import_data"><i class="fa fa-check"></i><b>4.4.2</b> Importing data</a></li>
+<li class="chapter" data-level="4.4.3" data-path="data.html"><a href="data.html#creating-data"><i class="fa fa-check"></i><b>4.4.3</b> Creating data</a></li>
+<li class="chapter" data-level="4.4.4" data-path="data.html"><a href="data.html#writing-data"><i class="fa fa-check"></i><b>4.4.4</b> Writing Data</a></li>
 </ul></li>
-<li class="chapter" data-level="4.11" data-path="ggplot.html"><a href="ggplot.html#overlapping-continuous-data"><i class="fa fa-check"></i><b>4.11</b> Overlapping Continuous Data</a>
+<li class="chapter" data-level="4.5" data-path="data.html"><a href="data.html#data_types"><i class="fa fa-check"></i><b>4.5</b> Basic data types</a>
 <ul>
-<li class="chapter" data-level="4.11.1" data-path="ggplot.html"><a href="ggplot.html#geom_density2d"><i class="fa fa-check"></i><b>4.11.1</b> 2D Density Plot</a></li>
-<li class="chapter" data-level="4.11.2" data-path="ggplot.html"><a href="ggplot.html#geom_bin2d"><i class="fa fa-check"></i><b>4.11.2</b> 2D Histogram</a></li>
-<li class="chapter" data-level="4.11.3" data-path="ggplot.html"><a href="ggplot.html#geom_hex"><i class="fa fa-check"></i><b>4.11.3</b> Hexagonal Heatmap</a></li>
-<li class="chapter" data-level="4.11.4" data-path="ggplot.html"><a href="ggplot.html#geom_tile"><i class="fa fa-check"></i><b>4.11.4</b> Correlation Heatmap</a></li>
+<li class="chapter" data-level="4.5.1" data-path="data.html"><a href="data.html#numeric-data"><i class="fa fa-check"></i><b>4.5.1</b> Numeric data</a></li>
+<li class="chapter" data-level="4.5.2" data-path="data.html"><a href="data.html#character-data"><i class="fa fa-check"></i><b>4.5.2</b> Character data</a></li>
+<li class="chapter" data-level="4.5.3" data-path="data.html"><a href="data.html#logical-data"><i class="fa fa-check"></i><b>4.5.3</b> Logical Data</a></li>
 </ul></li>
-<li class="chapter" data-level="4.12" data-path="ggplot.html"><a href="ggplot.html#plotly"><i class="fa fa-check"></i><b>4.12</b> Interactive Plots</a></li>
-<li class="chapter" data-level="4.13" data-path="ggplot.html"><a href="ggplot.html#glossary-ggplot"><i class="fa fa-check"></i><b>4.13</b> Glossary</a></li>
-<li class="chapter" data-level="4.14" data-path="ggplot.html"><a href="ggplot.html#exercises-ggplot"><i class="fa fa-check"></i><b>4.14</b> Exercises</a></li>
+<li class="chapter" data-level="4.6" data-path="data.html"><a href="data.html#containers"><i class="fa fa-check"></i><b>4.6</b> Basic container types</a>
+<ul>
+<li class="chapter" data-level="4.6.1" data-path="data.html"><a href="data.html#vectors"><i class="fa fa-check"></i><b>4.6.1</b> Vectors</a></li>
+<li class="chapter" data-level="4.6.2" data-path="data.html"><a href="data.html#lists"><i class="fa fa-check"></i><b>4.6.2</b> Lists</a></li>
+<li class="chapter" data-level="4.6.3" data-path="data.html"><a href="data.html#tables-data"><i class="fa fa-check"></i><b>4.6.3</b> Tables</a></li>
+</ul></li>
+<li class="chapter" data-level="4.7" data-path="data.html"><a href="data.html#troubleshooting"><i class="fa fa-check"></i><b>4.7</b> Troubleshooting</a></li>
+<li class="chapter" data-level="4.8" data-path="data.html"><a href="data.html#glossary-data"><i class="fa fa-check"></i><b>4.8</b> Glossary</a></li>
+<li class="chapter" data-level="4.9" data-path="data.html"><a href="data.html#exercises-data"><i class="fa fa-check"></i><b>4.9</b> Exercises</a></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="joins.html"><a href="joins.html"><i class="fa fa-check"></i><b>5</b> Data Relations</a>
 <ul>
@@ -465,7 +457,7 @@ div.csl-indent {
 </ul></li>
 <li class="chapter" data-level="8.5" data-path="glm.html"><a href="glm.html#test-rels"><i class="fa fa-check"></i><b>8.5</b> Relationships among tests</a>
 <ul>
-<li class="chapter" data-level="8.5.1" data-path="glm.html"><a href="glm.html#t-test"><i class="fa fa-check"></i><b>8.5.1</b> T-test</a></li>
+<li class="chapter" data-level="8.5.1" data-path="glm.html"><a href="glm.html#t-test-t-test-glm"><i class="fa fa-check"></i><b>8.5.1</b> T-test {t-test-glm}</a></li>
 <li class="chapter" data-level="8.5.2" data-path="glm.html"><a href="glm.html#anova"><i class="fa fa-check"></i><b>8.5.2</b> ANOVA</a></li>
 </ul></li>
 <li class="chapter" data-level="8.6" data-path="glm.html"><a href="glm.html#understanding-anova"><i class="fa fa-check"></i><b>8.6</b> Understanding ANOVA</a>
@@ -549,7 +541,7 @@ div.csl-indent {
 <li class="chapter" data-level="10.7" data-path="sim.html"><a href="sim.html#tests"><i class="fa fa-check"></i><b>10.7</b> Tests</a>
 <ul>
 <li class="chapter" data-level="10.7.1" data-path="sim.html"><a href="sim.html#exact-binom"><i class="fa fa-check"></i><b>10.7.1</b> Exact binomial test</a></li>
-<li class="chapter" data-level="10.7.2" data-path="glm.html"><a href="glm.html#t-test"><i class="fa fa-check"></i><b>10.7.2</b> T-test</a></li>
+<li class="chapter" data-level="10.7.2" data-path="sim.html"><a href="sim.html#t-test"><i class="fa fa-check"></i><b>10.7.2</b> T-test</a></li>
 <li class="chapter" data-level="10.7.3" data-path="sim.html"><a href="sim.html#correlation"><i class="fa fa-check"></i><b>10.7.3</b> Correlation</a></li>
 </ul></li>
 <li class="chapter" data-level="10.8" data-path="sim.html"><a href="sim.html#example"><i class="fa fa-check"></i><b>10.8</b> Example</a>
@@ -651,11 +643,11 @@ div.csl-indent {
 </div>
 <div id="setup7" class="section level2" number="9.3">
 <h2><span class="header-section-number">9.3</span> Setup</h2>
-<div class="sourceCode" id="cb387"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb387-1"><a href="func.html#cb387-1" aria-hidden="true" tabindex="-1"></a><span class="co"># libraries needed for these examples</span></span>
-<span id="cb387-2"><a href="func.html#cb387-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)  <span class="do">## contains purrr, tidyr, dplyr</span></span>
-<span id="cb387-3"><a href="func.html#cb387-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(broom) <span class="do">## converts test output to tidy tables</span></span>
-<span id="cb387-4"><a href="func.html#cb387-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb387-5"><a href="func.html#cb387-5" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">8675309</span>) <span class="co"># makes sure random numbers are reproducible</span></span></code></pre></div>
+<div class="sourceCode" id="cb357"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb357-1"><a href="func.html#cb357-1" aria-hidden="true" tabindex="-1"></a><span class="co"># libraries needed for these examples</span></span>
+<span id="cb357-2"><a href="func.html#cb357-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)  <span class="do">## contains purrr, tidyr, dplyr</span></span>
+<span id="cb357-3"><a href="func.html#cb357-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(broom) <span class="do">## converts test output to tidy tables</span></span>
+<span id="cb357-4"><a href="func.html#cb357-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb357-5"><a href="func.html#cb357-5" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">8675309</span>) <span class="co"># makes sure random numbers are reproducible</span></span></code></pre></div>
 </div>
 <div id="iteration-functions" class="section level2" number="9.4">
 <h2><span class="header-section-number">9.4</span> Iteration functions</h2>
@@ -664,35 +656,35 @@ div.csl-indent {
 <h3><span class="header-section-number">9.4.1</span> rep()</h3>
 <p>The function <code>rep()</code> lets you repeat the first argument a number of times.</p>
 <p>Use <code>rep()</code> to create a vector of alternating <code>"A"</code> and <code>"B"</code> values of length 24.</p>
-<div class="sourceCode" id="cb388"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb388-1"><a href="func.html#cb388-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">&quot;A&quot;</span>, <span class="st">&quot;B&quot;</span>), <span class="dv">12</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb358"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb358-1"><a href="func.html#cb358-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">&quot;A&quot;</span>, <span class="st">&quot;B&quot;</span>), <span class="dv">12</span>)</span></code></pre></div>
 <pre><code>##  [1] &quot;A&quot; &quot;B&quot; &quot;A&quot; &quot;B&quot; &quot;A&quot; &quot;B&quot; &quot;A&quot; &quot;B&quot; &quot;A&quot; &quot;B&quot; &quot;A&quot; &quot;B&quot; &quot;A&quot; &quot;B&quot; &quot;A&quot; &quot;B&quot; &quot;A&quot; &quot;B&quot; &quot;A&quot;
 ## [20] &quot;B&quot; &quot;A&quot; &quot;B&quot; &quot;A&quot; &quot;B&quot;</code></pre>
 <p>If you don't specify what the second argument is, it defaults to <code>times</code>, repeating the vector in the first argument that many times. Make the same vector as above, setting the second argument explicitly.</p>
-<div class="sourceCode" id="cb390"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb390-1"><a href="func.html#cb390-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">&quot;A&quot;</span>, <span class="st">&quot;B&quot;</span>), <span class="at">times =</span> <span class="dv">12</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb360"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb360-1"><a href="func.html#cb360-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">&quot;A&quot;</span>, <span class="st">&quot;B&quot;</span>), <span class="at">times =</span> <span class="dv">12</span>)</span></code></pre></div>
 <pre><code>##  [1] &quot;A&quot; &quot;B&quot; &quot;A&quot; &quot;B&quot; &quot;A&quot; &quot;B&quot; &quot;A&quot; &quot;B&quot; &quot;A&quot; &quot;B&quot; &quot;A&quot; &quot;B&quot; &quot;A&quot; &quot;B&quot; &quot;A&quot; &quot;B&quot; &quot;A&quot; &quot;B&quot; &quot;A&quot;
 ## [20] &quot;B&quot; &quot;A&quot; &quot;B&quot; &quot;A&quot; &quot;B&quot;</code></pre>
 <p>If the second argument is a vector that is the same length as the first argument, each element in the first vector is repeated than many times. Use <code>rep()</code> to create a vector of 11 <code>"A"</code> values followed by 3 <code>"B"</code> values.</p>
-<div class="sourceCode" id="cb392"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb392-1"><a href="func.html#cb392-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">&quot;A&quot;</span>, <span class="st">&quot;B&quot;</span>), <span class="fu">c</span>(<span class="dv">11</span>, <span class="dv">3</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb362"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb362-1"><a href="func.html#cb362-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">&quot;A&quot;</span>, <span class="st">&quot;B&quot;</span>), <span class="fu">c</span>(<span class="dv">11</span>, <span class="dv">3</span>))</span></code></pre></div>
 <pre><code>##  [1] &quot;A&quot; &quot;A&quot; &quot;A&quot; &quot;A&quot; &quot;A&quot; &quot;A&quot; &quot;A&quot; &quot;A&quot; &quot;A&quot; &quot;A&quot; &quot;A&quot; &quot;B&quot; &quot;B&quot; &quot;B&quot;</code></pre>
 <p>You can repeat each element of the vector a sepcified number of times using the <code>each</code> argument, Use <code>rep()</code> to create a vector of 12 <code>"A"</code> values followed by 12 <code>"B"</code> values.</p>
-<div class="sourceCode" id="cb394"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb394-1"><a href="func.html#cb394-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">&quot;A&quot;</span>, <span class="st">&quot;B&quot;</span>), <span class="at">each =</span> <span class="dv">12</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb364"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb364-1"><a href="func.html#cb364-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">&quot;A&quot;</span>, <span class="st">&quot;B&quot;</span>), <span class="at">each =</span> <span class="dv">12</span>)</span></code></pre></div>
 <pre><code>##  [1] &quot;A&quot; &quot;A&quot; &quot;A&quot; &quot;A&quot; &quot;A&quot; &quot;A&quot; &quot;A&quot; &quot;A&quot; &quot;A&quot; &quot;A&quot; &quot;A&quot; &quot;A&quot; &quot;B&quot; &quot;B&quot; &quot;B&quot; &quot;B&quot; &quot;B&quot; &quot;B&quot; &quot;B&quot;
 ## [20] &quot;B&quot; &quot;B&quot; &quot;B&quot; &quot;B&quot; &quot;B&quot;</code></pre>
 <p>What do you think will happen if you set both <code>times</code> to 3 and <code>each</code> to 2?</p>
-<div class="sourceCode" id="cb396"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb396-1"><a href="func.html#cb396-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">&quot;A&quot;</span>, <span class="st">&quot;B&quot;</span>), <span class="at">times =</span> <span class="dv">3</span>, <span class="at">each =</span> <span class="dv">2</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb366"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb366-1"><a href="func.html#cb366-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">&quot;A&quot;</span>, <span class="st">&quot;B&quot;</span>), <span class="at">times =</span> <span class="dv">3</span>, <span class="at">each =</span> <span class="dv">2</span>)</span></code></pre></div>
 <pre><code>##  [1] &quot;A&quot; &quot;A&quot; &quot;B&quot; &quot;B&quot; &quot;A&quot; &quot;A&quot; &quot;B&quot; &quot;B&quot; &quot;A&quot; &quot;A&quot; &quot;B&quot; &quot;B&quot;</code></pre>
 </div>
 <div id="seq" class="section level3" number="9.4.2">
 <h3><span class="header-section-number">9.4.2</span> seq()</h3>
 <p>The function <code>seq()</code> is useful for generating a sequence of numbers with some pattern.</p>
 <p>Use <code>seq()</code> to create a vector of the integers 0 to 10.</p>
-<div class="sourceCode" id="cb398"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb398-1"><a href="func.html#cb398-1" aria-hidden="true" tabindex="-1"></a><span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">10</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb368"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb368-1"><a href="func.html#cb368-1" aria-hidden="true" tabindex="-1"></a><span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">10</span>)</span></code></pre></div>
 <pre><code>##  [1]  0  1  2  3  4  5  6  7  8  9 10</code></pre>
 <p>You can set the <code>by</code> argument to count by numbers other than 1 (the default). Use <code>seq()</code> to create a vector of the numbers 0 to 100 by 10s.</p>
-<div class="sourceCode" id="cb400"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb400-1"><a href="func.html#cb400-1" aria-hidden="true" tabindex="-1"></a><span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">100</span>, <span class="at">by =</span> <span class="dv">10</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb370"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb370-1"><a href="func.html#cb370-1" aria-hidden="true" tabindex="-1"></a><span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">100</span>, <span class="at">by =</span> <span class="dv">10</span>)</span></code></pre></div>
 <pre><code>##  [1]   0  10  20  30  40  50  60  70  80  90 100</code></pre>
 <p>The argument <code>length.out</code> is useful if you know how many steps you want to divide something into. Use <code>seq()</code> to create a vector that starts with 0, ends with 100, and has 12 equally spaced steps (hint: how many numbers would be in a vector with 2 <em>steps</em>?).</p>
-<div class="sourceCode" id="cb402"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb402-1"><a href="func.html#cb402-1" aria-hidden="true" tabindex="-1"></a><span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">100</span>, <span class="at">length.out =</span> <span class="dv">13</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb372"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb372-1"><a href="func.html#cb372-1" aria-hidden="true" tabindex="-1"></a><span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">100</span>, <span class="at">length.out =</span> <span class="dv">13</span>)</span></code></pre></div>
 <pre><code>##  [1]   0.000000   8.333333  16.666667  25.000000  33.333333  41.666667
 ##  [7]  50.000000  58.333333  66.666667  75.000000  83.333333  91.666667
 ## [13] 100.000000</code></pre>
@@ -701,7 +693,7 @@ div.csl-indent {
 <h3><span class="header-section-number">9.4.3</span> replicate()</h3>
 <p>You can use the <code>replicate()</code> function to run a function <code>n</code> times.</p>
 <p>For example, you can get 3 sets of 5 numbers from a random normal distribution by setting <code>n</code> to <code>3</code> and <code>expr</code> to <code>rnorm(5)</code>.</p>
-<div class="sourceCode" id="cb404"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb404-1"><a href="func.html#cb404-1" aria-hidden="true" tabindex="-1"></a><span class="fu">replicate</span>(<span class="at">n =</span> <span class="dv">3</span>, <span class="at">expr =</span> <span class="fu">rnorm</span>(<span class="dv">5</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb374"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb374-1"><a href="func.html#cb374-1" aria-hidden="true" tabindex="-1"></a><span class="fu">replicate</span>(<span class="at">n =</span> <span class="dv">3</span>, <span class="at">expr =</span> <span class="fu">rnorm</span>(<span class="dv">5</span>))</span></code></pre></div>
 <pre><code>##            [,1]       [,2]       [,3]
 ## [1,] -0.9965824 0.98721974 -1.5495524
 ## [2,]  0.7218241 0.02745393  1.0226378
@@ -709,7 +701,7 @@ div.csl-indent {
 ## [4,]  2.0293916 0.57206650 -0.6599640
 ## [5,]  1.0654161 0.90367770 -0.9945890</code></pre>
 <p>By default, <code>replicate()</code> simplifies your result into a <a class='glossary' target='_blank' title='A container data type consisting of numbers arranged into a fixed number of rows and columns' href='https://psyteachr.github.io/glossary/m#matrix'>matrix</a> that is easy to convert into a table if your function returns vectors that are the same length. If you'd rather have a list of vectors, set <code>simplify = FALSE</code>.</p>
-<div class="sourceCode" id="cb406"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb406-1"><a href="func.html#cb406-1" aria-hidden="true" tabindex="-1"></a><span class="fu">replicate</span>(<span class="at">n =</span> <span class="dv">3</span>, <span class="at">expr =</span> <span class="fu">rnorm</span>(<span class="dv">5</span>), <span class="at">simplify =</span> <span class="cn">FALSE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb376"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb376-1"><a href="func.html#cb376-1" aria-hidden="true" tabindex="-1"></a><span class="fu">replicate</span>(<span class="at">n =</span> <span class="dv">3</span>, <span class="at">expr =</span> <span class="fu">rnorm</span>(<span class="dv">5</span>), <span class="at">simplify =</span> <span class="cn">FALSE</span>)</span></code></pre></div>
 <pre><code>## [[1]]
 ## [1]  1.9724587 -0.4418016 -0.9006372 -0.1505882 -0.8278942
 ## 
@@ -723,29 +715,47 @@ div.csl-indent {
 <h3><span class="header-section-number">9.4.4</span> map() and apply() functions</h3>
 <p><code>purrr::map()</code> and <code>lapply()</code> return a list of the same length as a vector or list, each element of which is the result of applying a function to the corresponding element. They function much the same, but purrr functions have some optimisations for working with the tidyverse. We'll be working mostly with purrr functions in this course, but apply functions are very common in code that you might see in examples on the web.</p>
 <p>Imagine you want to calculate the power for a two-sample t-test with a mean difference of 0.2 and SD of 1, for all the sample sizes 100 to 1000 (by 100s). You could run the <code>power.t.test()</code> function 20 times and extract the values for "power" from the resulting list and put it in a table.</p>
-<div class="sourceCode" id="cb408"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb408-1"><a href="func.html#cb408-1" aria-hidden="true" tabindex="-1"></a>p100 <span class="ot">&lt;-</span> <span class="fu">power.t.test</span>(<span class="at">n =</span> <span class="dv">100</span>, <span class="at">delta =</span> <span class="fl">0.2</span>, <span class="at">sd =</span> <span class="dv">1</span>, <span class="at">type=</span><span class="st">&quot;two.sample&quot;</span>)</span>
-<span id="cb408-2"><a href="func.html#cb408-2" aria-hidden="true" tabindex="-1"></a><span class="co"># 18 more lines</span></span>
-<span id="cb408-3"><a href="func.html#cb408-3" aria-hidden="true" tabindex="-1"></a>p1000 <span class="ot">&lt;-</span> <span class="fu">power.t.test</span>(<span class="at">n =</span> <span class="dv">500</span>, <span class="at">delta =</span> <span class="fl">0.2</span>, <span class="at">sd =</span> <span class="dv">1</span>, <span class="at">type=</span><span class="st">&quot;two.sample&quot;</span>)</span>
-<span id="cb408-4"><a href="func.html#cb408-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb408-5"><a href="func.html#cb408-5" aria-hidden="true" tabindex="-1"></a><span class="fu">tibble</span>(</span>
-<span id="cb408-6"><a href="func.html#cb408-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">n =</span> <span class="fu">c</span>(<span class="dv">100</span>, <span class="st">&quot;...&quot;</span>, <span class="dv">1000</span>),</span>
-<span id="cb408-7"><a href="func.html#cb408-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">power =</span> <span class="fu">c</span>(p100<span class="sc">$</span>power, <span class="st">&quot;...&quot;</span>, p1000<span class="sc">$</span>power)</span>
-<span id="cb408-8"><a href="func.html#cb408-8" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div>
-<pre><code>## # A tibble: 3 x 2
-##   n     power            
-##   &lt;chr&gt; &lt;chr&gt;            
-## 1 100   0.290266404572217
-## 2 ...   ...              
-## 3 1000  0.884788352886661</code></pre>
+<div class="sourceCode" id="cb378"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb378-1"><a href="func.html#cb378-1" aria-hidden="true" tabindex="-1"></a>p100 <span class="ot">&lt;-</span> <span class="fu">power.t.test</span>(<span class="at">n =</span> <span class="dv">100</span>, <span class="at">delta =</span> <span class="fl">0.2</span>, <span class="at">sd =</span> <span class="dv">1</span>, <span class="at">type=</span><span class="st">&quot;two.sample&quot;</span>)</span>
+<span id="cb378-2"><a href="func.html#cb378-2" aria-hidden="true" tabindex="-1"></a><span class="co"># 18 more lines</span></span>
+<span id="cb378-3"><a href="func.html#cb378-3" aria-hidden="true" tabindex="-1"></a>p1000 <span class="ot">&lt;-</span> <span class="fu">power.t.test</span>(<span class="at">n =</span> <span class="dv">500</span>, <span class="at">delta =</span> <span class="fl">0.2</span>, <span class="at">sd =</span> <span class="dv">1</span>, <span class="at">type=</span><span class="st">&quot;two.sample&quot;</span>)</span>
+<span id="cb378-4"><a href="func.html#cb378-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb378-5"><a href="func.html#cb378-5" aria-hidden="true" tabindex="-1"></a><span class="fu">tibble</span>(</span>
+<span id="cb378-6"><a href="func.html#cb378-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">n =</span> <span class="fu">c</span>(<span class="dv">100</span>, <span class="st">&quot;...&quot;</span>, <span class="dv">1000</span>),</span>
+<span id="cb378-7"><a href="func.html#cb378-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">power =</span> <span class="fu">c</span>(p100<span class="sc">$</span>power, <span class="st">&quot;...&quot;</span>, p1000<span class="sc">$</span>power)</span>
+<span id="cb378-8"><a href="func.html#cb378-8" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div>
+<div class="kable-table">
+<table>
+<thead>
+<tr class="header">
+<th align="left">n</th>
+<th align="left">power</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">100</td>
+<td align="left">0.290266404572217</td>
+</tr>
+<tr class="even">
+<td align="left">...</td>
+<td align="left">...</td>
+</tr>
+<tr class="odd">
+<td align="left">1000</td>
+<td align="left">0.884788352886661</td>
+</tr>
+</tbody>
+</table>
+</div>
 <p>However, the <code>apply()</code> and <code>map()</code> functions allow you to perform a function on each item in a vector or list. First make an object <code>n</code> that is the vector of the sample sizes you want to test, then use <code>lapply()</code> or <code>map()</code> to run the function <code>power.t.test()</code> on each item. You can set other arguments to <code>power.t.test()</code> after the function argument.</p>
-<div class="sourceCode" id="cb410"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb410-1"><a href="func.html#cb410-1" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">100</span>, <span class="dv">1000</span>, <span class="dv">100</span>)</span>
-<span id="cb410-2"><a href="func.html#cb410-2" aria-hidden="true" tabindex="-1"></a>pcalc <span class="ot">&lt;-</span> <span class="fu">lapply</span>(n, power.t.test, </span>
-<span id="cb410-3"><a href="func.html#cb410-3" aria-hidden="true" tabindex="-1"></a>                <span class="at">delta =</span> <span class="fl">0.2</span>, <span class="at">sd =</span> <span class="dv">1</span>, <span class="at">type=</span><span class="st">&quot;two.sample&quot;</span>)</span>
-<span id="cb410-4"><a href="func.html#cb410-4" aria-hidden="true" tabindex="-1"></a><span class="co"># or</span></span>
-<span id="cb410-5"><a href="func.html#cb410-5" aria-hidden="true" tabindex="-1"></a>pcalc <span class="ot">&lt;-</span> purrr<span class="sc">::</span><span class="fu">map</span>(n, power.t.test, </span>
-<span id="cb410-6"><a href="func.html#cb410-6" aria-hidden="true" tabindex="-1"></a>                <span class="at">delta =</span> <span class="fl">0.2</span>, <span class="at">sd =</span> <span class="dv">1</span>, <span class="at">type=</span><span class="st">&quot;two.sample&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb379"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb379-1"><a href="func.html#cb379-1" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">100</span>, <span class="dv">1000</span>, <span class="dv">100</span>)</span>
+<span id="cb379-2"><a href="func.html#cb379-2" aria-hidden="true" tabindex="-1"></a>pcalc <span class="ot">&lt;-</span> <span class="fu">lapply</span>(n, power.t.test, </span>
+<span id="cb379-3"><a href="func.html#cb379-3" aria-hidden="true" tabindex="-1"></a>                <span class="at">delta =</span> <span class="fl">0.2</span>, <span class="at">sd =</span> <span class="dv">1</span>, <span class="at">type=</span><span class="st">&quot;two.sample&quot;</span>)</span>
+<span id="cb379-4"><a href="func.html#cb379-4" aria-hidden="true" tabindex="-1"></a><span class="co"># or</span></span>
+<span id="cb379-5"><a href="func.html#cb379-5" aria-hidden="true" tabindex="-1"></a>pcalc <span class="ot">&lt;-</span> purrr<span class="sc">::</span><span class="fu">map</span>(n, power.t.test, </span>
+<span id="cb379-6"><a href="func.html#cb379-6" aria-hidden="true" tabindex="-1"></a>                <span class="at">delta =</span> <span class="fl">0.2</span>, <span class="at">sd =</span> <span class="dv">1</span>, <span class="at">type=</span><span class="st">&quot;two.sample&quot;</span>)</span></code></pre></div>
 <p>These functions return a list where each item is the result of <code>power.t.test()</code>, which returns a list of results that includes the named item "power". This is a special list that has a summary format if you just print it directly:</p>
-<div class="sourceCode" id="cb411"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb411-1"><a href="func.html#cb411-1" aria-hidden="true" tabindex="-1"></a>pcalc[[<span class="dv">1</span>]]</span></code></pre></div>
+<div class="sourceCode" id="cb380"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb380-1"><a href="func.html#cb380-1" aria-hidden="true" tabindex="-1"></a>pcalc[[<span class="dv">1</span>]]</span></code></pre></div>
 <pre><code>## 
 ##      Two-sample t test power calculation 
 ## 
@@ -758,7 +768,7 @@ div.csl-indent {
 ## 
 ## NOTE: n is number in *each* group</code></pre>
 <p>But you can see the individual items using the <code>str()</code> function.</p>
-<div class="sourceCode" id="cb413"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb413-1"><a href="func.html#cb413-1" aria-hidden="true" tabindex="-1"></a>pcalc[[<span class="dv">1</span>]] <span class="sc">%&gt;%</span> <span class="fu">str</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb382"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb382-1"><a href="func.html#cb382-1" aria-hidden="true" tabindex="-1"></a>pcalc[[<span class="dv">1</span>]] <span class="sc">%&gt;%</span> <span class="fu">str</span>()</span></code></pre></div>
 <pre><code>## List of 8
 ##  $ n          : num 100
 ##  $ delta      : num 0.2
@@ -771,22 +781,22 @@ div.csl-indent {
 ##  - attr(*, &quot;class&quot;)= chr &quot;power.htest&quot;</code></pre>
 <p><code>sapply()</code> is a version of <code>lapply()</code> that returns a vector or array instead of a list, where appropriate. The corresponding purrr functions are <code>map_dbl()</code>, <code>map_chr()</code>, <code>map_int()</code> and <code>map_lgl()</code>, which return vectors with the corresponding <a class='glossary' target='_blank' title='The kind of data represented by an object.' href='https://psyteachr.github.io/glossary/d#data-type'>data type</a>.</p>
 <p>You can extract a value from a list with the function <code>[[</code>. You usually see this written as <code>pcalc[[1]]</code>, but if you put it inside backticks, you can use it in apply and map functions.</p>
-<div class="sourceCode" id="cb415"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb415-1"><a href="func.html#cb415-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sapply</span>(pcalc, <span class="st">`</span><span class="at">[[</span><span class="st">`</span>, <span class="st">&quot;power&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb384"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb384-1"><a href="func.html#cb384-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sapply</span>(pcalc, <span class="st">`</span><span class="at">[[</span><span class="st">`</span>, <span class="st">&quot;power&quot;</span>)</span></code></pre></div>
 <pre><code>##  [1] 0.2902664 0.5140434 0.6863712 0.8064964 0.8847884 0.9333687 0.9623901
 ##  [8] 0.9792066 0.9887083 0.9939638</code></pre>
 <p>We use <code>map_dbl()</code> here because the value for "power" is a <a class='glossary' target='_blank' title='A data type representing a real decimal number' href='https://psyteachr.github.io/glossary/d#double'>double</a>.</p>
-<div class="sourceCode" id="cb417"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb417-1"><a href="func.html#cb417-1" aria-hidden="true" tabindex="-1"></a>purrr<span class="sc">::</span><span class="fu">map_dbl</span>(pcalc, <span class="st">`</span><span class="at">[[</span><span class="st">`</span>, <span class="st">&quot;power&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb386"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb386-1"><a href="func.html#cb386-1" aria-hidden="true" tabindex="-1"></a>purrr<span class="sc">::</span><span class="fu">map_dbl</span>(pcalc, <span class="st">`</span><span class="at">[[</span><span class="st">`</span>, <span class="st">&quot;power&quot;</span>)</span></code></pre></div>
 <pre><code>##  [1] 0.2902664 0.5140434 0.6863712 0.8064964 0.8847884 0.9333687 0.9623901
 ##  [8] 0.9792066 0.9887083 0.9939638</code></pre>
 <p>We can use the <code>map()</code> functions inside a <code>mutate()</code> function to run the <code>power.t.test()</code> function on the value of <code>n</code> from each row of a table, then extract the value for "power", and delete the column with the power calculations.</p>
-<div class="sourceCode" id="cb419"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb419-1"><a href="func.html#cb419-1" aria-hidden="true" tabindex="-1"></a>mypower <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
-<span id="cb419-2"><a href="func.html#cb419-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">n =</span> <span class="fu">seq</span>(<span class="dv">100</span>, <span class="dv">1000</span>, <span class="dv">100</span>)) <span class="sc">%&gt;%</span></span>
-<span id="cb419-3"><a href="func.html#cb419-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">pcalc =</span> purrr<span class="sc">::</span><span class="fu">map</span>(n, power.t.test, </span>
-<span id="cb419-4"><a href="func.html#cb419-4" aria-hidden="true" tabindex="-1"></a>                            <span class="at">delta =</span> <span class="fl">0.2</span>, </span>
-<span id="cb419-5"><a href="func.html#cb419-5" aria-hidden="true" tabindex="-1"></a>                            <span class="at">sd =</span> <span class="dv">1</span>, </span>
-<span id="cb419-6"><a href="func.html#cb419-6" aria-hidden="true" tabindex="-1"></a>                            <span class="at">type=</span><span class="st">&quot;two.sample&quot;</span>),</span>
-<span id="cb419-7"><a href="func.html#cb419-7" aria-hidden="true" tabindex="-1"></a>         <span class="at">power =</span> purrr<span class="sc">::</span><span class="fu">map_dbl</span>(pcalc, <span class="st">`</span><span class="at">[[</span><span class="st">`</span>, <span class="st">&quot;power&quot;</span>)) <span class="sc">%&gt;%</span></span>
-<span id="cb419-8"><a href="func.html#cb419-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="sc">-</span>pcalc)</span></code></pre></div>
+<div class="sourceCode" id="cb388"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb388-1"><a href="func.html#cb388-1" aria-hidden="true" tabindex="-1"></a>mypower <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb388-2"><a href="func.html#cb388-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">n =</span> <span class="fu">seq</span>(<span class="dv">100</span>, <span class="dv">1000</span>, <span class="dv">100</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb388-3"><a href="func.html#cb388-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">pcalc =</span> purrr<span class="sc">::</span><span class="fu">map</span>(n, power.t.test, </span>
+<span id="cb388-4"><a href="func.html#cb388-4" aria-hidden="true" tabindex="-1"></a>                            <span class="at">delta =</span> <span class="fl">0.2</span>, </span>
+<span id="cb388-5"><a href="func.html#cb388-5" aria-hidden="true" tabindex="-1"></a>                            <span class="at">sd =</span> <span class="dv">1</span>, </span>
+<span id="cb388-6"><a href="func.html#cb388-6" aria-hidden="true" tabindex="-1"></a>                            <span class="at">type=</span><span class="st">&quot;two.sample&quot;</span>),</span>
+<span id="cb388-7"><a href="func.html#cb388-7" aria-hidden="true" tabindex="-1"></a>         <span class="at">power =</span> purrr<span class="sc">::</span><span class="fu">map_dbl</span>(pcalc, <span class="st">`</span><span class="at">[[</span><span class="st">`</span>, <span class="st">&quot;power&quot;</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb388-8"><a href="func.html#cb388-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="sc">-</span>pcalc)</span></code></pre></div>
 <div class="figure" style="text-align: center"><span id="fig:purrr-plot"></span>
 <img src="09-func_files/figure-html/purrr-plot-1.png" alt="Power for a two-sample t-test with d = 0.2" width="100%" />
 <p class="caption">
@@ -801,70 +811,70 @@ Figure 9.1: Power for a two-sample t-test with d = 0.2
 <div id="structure-function" class="section level3" number="9.5.1">
 <h3><span class="header-section-number">9.5.1</span> Structuring a function</h3>
 <p>The general structure of a function is as follows:</p>
-<div class="sourceCode" id="cb420"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb420-1"><a href="func.html#cb420-1" aria-hidden="true" tabindex="-1"></a>function_name <span class="ot">&lt;-</span> <span class="cf">function</span>(my_args) {</span>
-<span id="cb420-2"><a href="func.html#cb420-2" aria-hidden="true" tabindex="-1"></a>  <span class="co"># process the arguments</span></span>
-<span id="cb420-3"><a href="func.html#cb420-3" aria-hidden="true" tabindex="-1"></a>  <span class="co"># return some value</span></span>
-<span id="cb420-4"><a href="func.html#cb420-4" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb389"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb389-1"><a href="func.html#cb389-1" aria-hidden="true" tabindex="-1"></a>function_name <span class="ot">&lt;-</span> <span class="cf">function</span>(my_args) {</span>
+<span id="cb389-2"><a href="func.html#cb389-2" aria-hidden="true" tabindex="-1"></a>  <span class="co"># process the arguments</span></span>
+<span id="cb389-3"><a href="func.html#cb389-3" aria-hidden="true" tabindex="-1"></a>  <span class="co"># return some value</span></span>
+<span id="cb389-4"><a href="func.html#cb389-4" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 <p>Here is a very simple function. Can you guess what it does?</p>
-<div class="sourceCode" id="cb421"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb421-1"><a href="func.html#cb421-1" aria-hidden="true" tabindex="-1"></a>add1 <span class="ot">&lt;-</span> <span class="cf">function</span>(my_number) {</span>
-<span id="cb421-2"><a href="func.html#cb421-2" aria-hidden="true" tabindex="-1"></a>  my_number <span class="sc">+</span> <span class="dv">1</span></span>
-<span id="cb421-3"><a href="func.html#cb421-3" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb421-4"><a href="func.html#cb421-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb421-5"><a href="func.html#cb421-5" aria-hidden="true" tabindex="-1"></a><span class="fu">add1</span>(<span class="dv">10</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb390"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb390-1"><a href="func.html#cb390-1" aria-hidden="true" tabindex="-1"></a>add1 <span class="ot">&lt;-</span> <span class="cf">function</span>(my_number) {</span>
+<span id="cb390-2"><a href="func.html#cb390-2" aria-hidden="true" tabindex="-1"></a>  my_number <span class="sc">+</span> <span class="dv">1</span></span>
+<span id="cb390-3"><a href="func.html#cb390-3" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb390-4"><a href="func.html#cb390-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb390-5"><a href="func.html#cb390-5" aria-hidden="true" tabindex="-1"></a><span class="fu">add1</span>(<span class="dv">10</span>)</span></code></pre></div>
 <pre><code>## [1] 11</code></pre>
 <p>Let's make a function that reports p-values in APA format (with "p = [rounded value]" when p &gt;= .001 and "p &lt; .001" when p &lt; .001).</p>
 <p>First, we have to name the function. You can name it anything, but try not to duplicate existing functions or you will overwrite them. For example, if you call your function <code>rep</code>, then you will need to use <code>base::rep()</code> to access the normal <code>rep</code> function. Let's call our p-value function <code>report_p</code> and set up the framework of the function.</p>
-<div class="sourceCode" id="cb423"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb423-1"><a href="func.html#cb423-1" aria-hidden="true" tabindex="-1"></a>report_p <span class="ot">&lt;-</span> <span class="cf">function</span>() {</span>
-<span id="cb423-2"><a href="func.html#cb423-2" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb392"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb392-1"><a href="func.html#cb392-1" aria-hidden="true" tabindex="-1"></a>report_p <span class="ot">&lt;-</span> <span class="cf">function</span>() {</span>
+<span id="cb392-2"><a href="func.html#cb392-2" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 </div>
 <div id="arguments" class="section level3" number="9.5.2">
 <h3><span class="header-section-number">9.5.2</span> Arguments</h3>
 <p>We need to add one <a class='glossary' target='_blank' title='A variable that provides input to a function.' href='https://psyteachr.github.io/glossary/a#argument'>argument</a>, the p-value you want to report. The names you choose for the arguments are private to that argument, so it is not a problem if they conflict with other variables in your script. You put the arguments in the parentheses of <code>function()</code> in the order you want them to default (just like the built-in functions you've used before).</p>
-<div class="sourceCode" id="cb424"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb424-1"><a href="func.html#cb424-1" aria-hidden="true" tabindex="-1"></a>report_p <span class="ot">&lt;-</span> <span class="cf">function</span>(p) {</span>
-<span id="cb424-2"><a href="func.html#cb424-2" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb393"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb393-1"><a href="func.html#cb393-1" aria-hidden="true" tabindex="-1"></a>report_p <span class="ot">&lt;-</span> <span class="cf">function</span>(p) {</span>
+<span id="cb393-2"><a href="func.html#cb393-2" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 </div>
 <div id="defaults" class="section level3" number="9.5.3">
 <h3><span class="header-section-number">9.5.3</span> Argument defaults</h3>
 <p>You can add a default value to any argument. If that argument is skipped, then the function uses the default argument. It probably doesn't make sense to run this function without specifying the p-value, but we can add a second argument called <code>digits</code> that defaults to 3, so we can round p-values to any number of digits.</p>
-<div class="sourceCode" id="cb425"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb425-1"><a href="func.html#cb425-1" aria-hidden="true" tabindex="-1"></a>report_p <span class="ot">&lt;-</span> <span class="cf">function</span>(p, <span class="at">digits =</span> <span class="dv">3</span>) {</span>
-<span id="cb425-2"><a href="func.html#cb425-2" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb394"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb394-1"><a href="func.html#cb394-1" aria-hidden="true" tabindex="-1"></a>report_p <span class="ot">&lt;-</span> <span class="cf">function</span>(p, <span class="at">digits =</span> <span class="dv">3</span>) {</span>
+<span id="cb394-2"><a href="func.html#cb394-2" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 <p>Now we need to write some code inside the function to process the input arguments and turn them into a <strong>return</strong>ed output. Put the output as the last item in function.</p>
-<div class="sourceCode" id="cb426"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb426-1"><a href="func.html#cb426-1" aria-hidden="true" tabindex="-1"></a>report_p <span class="ot">&lt;-</span> <span class="cf">function</span>(p, <span class="at">digits =</span> <span class="dv">3</span>) {</span>
-<span id="cb426-2"><a href="func.html#cb426-2" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (p <span class="sc">&lt;</span> .<span class="dv">001</span>) {</span>
-<span id="cb426-3"><a href="func.html#cb426-3" aria-hidden="true" tabindex="-1"></a>    reported <span class="ot">=</span> <span class="st">&quot;p &lt; .001&quot;</span></span>
-<span id="cb426-4"><a href="func.html#cb426-4" aria-hidden="true" tabindex="-1"></a>  } <span class="cf">else</span> {</span>
-<span id="cb426-5"><a href="func.html#cb426-5" aria-hidden="true" tabindex="-1"></a>    roundp <span class="ot">&lt;-</span> <span class="fu">round</span>(p, digits)</span>
-<span id="cb426-6"><a href="func.html#cb426-6" aria-hidden="true" tabindex="-1"></a>    reported <span class="ot">=</span> <span class="fu">paste</span>(<span class="st">&quot;p =&quot;</span>, roundp)</span>
-<span id="cb426-7"><a href="func.html#cb426-7" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb426-8"><a href="func.html#cb426-8" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb426-9"><a href="func.html#cb426-9" aria-hidden="true" tabindex="-1"></a>  reported</span>
-<span id="cb426-10"><a href="func.html#cb426-10" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb395"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb395-1"><a href="func.html#cb395-1" aria-hidden="true" tabindex="-1"></a>report_p <span class="ot">&lt;-</span> <span class="cf">function</span>(p, <span class="at">digits =</span> <span class="dv">3</span>) {</span>
+<span id="cb395-2"><a href="func.html#cb395-2" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (p <span class="sc">&lt;</span> .<span class="dv">001</span>) {</span>
+<span id="cb395-3"><a href="func.html#cb395-3" aria-hidden="true" tabindex="-1"></a>    reported <span class="ot">=</span> <span class="st">&quot;p &lt; .001&quot;</span></span>
+<span id="cb395-4"><a href="func.html#cb395-4" aria-hidden="true" tabindex="-1"></a>  } <span class="cf">else</span> {</span>
+<span id="cb395-5"><a href="func.html#cb395-5" aria-hidden="true" tabindex="-1"></a>    roundp <span class="ot">&lt;-</span> <span class="fu">round</span>(p, digits)</span>
+<span id="cb395-6"><a href="func.html#cb395-6" aria-hidden="true" tabindex="-1"></a>    reported <span class="ot">=</span> <span class="fu">paste</span>(<span class="st">&quot;p =&quot;</span>, roundp)</span>
+<span id="cb395-7"><a href="func.html#cb395-7" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb395-8"><a href="func.html#cb395-8" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb395-9"><a href="func.html#cb395-9" aria-hidden="true" tabindex="-1"></a>  reported</span>
+<span id="cb395-10"><a href="func.html#cb395-10" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 <p>You might also see the returned output inside of the <code>return()</code> function. This does the same thing.</p>
-<div class="sourceCode" id="cb427"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb427-1"><a href="func.html#cb427-1" aria-hidden="true" tabindex="-1"></a>report_p <span class="ot">&lt;-</span> <span class="cf">function</span>(p, <span class="at">digits =</span> <span class="dv">3</span>) {</span>
-<span id="cb427-2"><a href="func.html#cb427-2" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (p <span class="sc">&lt;</span> .<span class="dv">001</span>) {</span>
-<span id="cb427-3"><a href="func.html#cb427-3" aria-hidden="true" tabindex="-1"></a>    reported <span class="ot">=</span> <span class="st">&quot;p &lt; .001&quot;</span></span>
-<span id="cb427-4"><a href="func.html#cb427-4" aria-hidden="true" tabindex="-1"></a>  } <span class="cf">else</span> {</span>
-<span id="cb427-5"><a href="func.html#cb427-5" aria-hidden="true" tabindex="-1"></a>    roundp <span class="ot">&lt;-</span> <span class="fu">round</span>(p, digits)</span>
-<span id="cb427-6"><a href="func.html#cb427-6" aria-hidden="true" tabindex="-1"></a>    reported <span class="ot">=</span> <span class="fu">paste</span>(<span class="st">&quot;p =&quot;</span>, roundp)</span>
-<span id="cb427-7"><a href="func.html#cb427-7" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb427-8"><a href="func.html#cb427-8" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb427-9"><a href="func.html#cb427-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(reported)</span>
-<span id="cb427-10"><a href="func.html#cb427-10" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb396"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb396-1"><a href="func.html#cb396-1" aria-hidden="true" tabindex="-1"></a>report_p <span class="ot">&lt;-</span> <span class="cf">function</span>(p, <span class="at">digits =</span> <span class="dv">3</span>) {</span>
+<span id="cb396-2"><a href="func.html#cb396-2" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (p <span class="sc">&lt;</span> .<span class="dv">001</span>) {</span>
+<span id="cb396-3"><a href="func.html#cb396-3" aria-hidden="true" tabindex="-1"></a>    reported <span class="ot">=</span> <span class="st">&quot;p &lt; .001&quot;</span></span>
+<span id="cb396-4"><a href="func.html#cb396-4" aria-hidden="true" tabindex="-1"></a>  } <span class="cf">else</span> {</span>
+<span id="cb396-5"><a href="func.html#cb396-5" aria-hidden="true" tabindex="-1"></a>    roundp <span class="ot">&lt;-</span> <span class="fu">round</span>(p, digits)</span>
+<span id="cb396-6"><a href="func.html#cb396-6" aria-hidden="true" tabindex="-1"></a>    reported <span class="ot">=</span> <span class="fu">paste</span>(<span class="st">&quot;p =&quot;</span>, roundp)</span>
+<span id="cb396-7"><a href="func.html#cb396-7" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb396-8"><a href="func.html#cb396-8" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb396-9"><a href="func.html#cb396-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(reported)</span>
+<span id="cb396-10"><a href="func.html#cb396-10" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 <p>When you run the code defining your function, it doesn't output anything, but makes a new object in the Environment tab under <strong><code>Functions</code></strong>. Now you can run the function.</p>
-<div class="sourceCode" id="cb428"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb428-1"><a href="func.html#cb428-1" aria-hidden="true" tabindex="-1"></a><span class="fu">report_p</span>(<span class="fl">0.04869</span>)</span>
-<span id="cb428-2"><a href="func.html#cb428-2" aria-hidden="true" tabindex="-1"></a><span class="fu">report_p</span>(<span class="fl">0.0000023</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb397"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb397-1"><a href="func.html#cb397-1" aria-hidden="true" tabindex="-1"></a><span class="fu">report_p</span>(<span class="fl">0.04869</span>)</span>
+<span id="cb397-2"><a href="func.html#cb397-2" aria-hidden="true" tabindex="-1"></a><span class="fu">report_p</span>(<span class="fl">0.0000023</span>)</span></code></pre></div>
 <pre><code>## [1] &quot;p = 0.049&quot;
 ## [1] &quot;p &lt; .001&quot;</code></pre>
 </div>
 <div id="scope" class="section level3" number="9.5.4">
 <h3><span class="header-section-number">9.5.4</span> Scope</h3>
 <p>What happens in a function stays in a function. You can change the value of a variable passed to a function, but that won't change the value of the variable outside of the function, even if that variable has the same name as the one in the function.</p>
-<div class="sourceCode" id="cb430"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb430-1"><a href="func.html#cb430-1" aria-hidden="true" tabindex="-1"></a>reported <span class="ot">&lt;-</span> <span class="st">&quot;not changed&quot;</span></span>
-<span id="cb430-2"><a href="func.html#cb430-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb430-3"><a href="func.html#cb430-3" aria-hidden="true" tabindex="-1"></a><span class="co"># inside this function, reported == &quot;p = 0.002&quot;</span></span>
-<span id="cb430-4"><a href="func.html#cb430-4" aria-hidden="true" tabindex="-1"></a><span class="fu">report_p</span>(<span class="fl">0.0023</span>) </span>
-<span id="cb430-5"><a href="func.html#cb430-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb430-6"><a href="func.html#cb430-6" aria-hidden="true" tabindex="-1"></a>reported <span class="co"># still &quot;not changed&quot;</span></span></code></pre></div>
+<div class="sourceCode" id="cb399"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb399-1"><a href="func.html#cb399-1" aria-hidden="true" tabindex="-1"></a>reported <span class="ot">&lt;-</span> <span class="st">&quot;not changed&quot;</span></span>
+<span id="cb399-2"><a href="func.html#cb399-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb399-3"><a href="func.html#cb399-3" aria-hidden="true" tabindex="-1"></a><span class="co"># inside this function, reported == &quot;p = 0.002&quot;</span></span>
+<span id="cb399-4"><a href="func.html#cb399-4" aria-hidden="true" tabindex="-1"></a><span class="fu">report_p</span>(<span class="fl">0.0023</span>) </span>
+<span id="cb399-5"><a href="func.html#cb399-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb399-6"><a href="func.html#cb399-6" aria-hidden="true" tabindex="-1"></a>reported <span class="co"># still &quot;not changed&quot;</span></span></code></pre></div>
 <pre><code>## [1] &quot;p = 0.002&quot;
 ## [1] &quot;not changed&quot;</code></pre>
 </div>
@@ -876,27 +886,27 @@ What happens when you omit the argument for <code>p</code>? Or if you set <code>
 </div>
 <p>You might want to add a more specific warning and stop running the function code if someone enters a value that isn't a number. You can do this with the <code>stop()</code> function.</p>
 <p>If someone enters a number that isn't possible for a p-value (0-1), you might want to warn them that this is probably not what they intended, but still continue with the function. You can do this with <code>warning()</code>.</p>
-<div class="sourceCode" id="cb432"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb432-1"><a href="func.html#cb432-1" aria-hidden="true" tabindex="-1"></a>report_p <span class="ot">&lt;-</span> <span class="cf">function</span>(p, <span class="at">digits =</span> <span class="dv">3</span>) {</span>
-<span id="cb432-2"><a href="func.html#cb432-2" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (<span class="sc">!</span><span class="fu">is.numeric</span>(p)) <span class="fu">stop</span>(<span class="st">&quot;p must be a number&quot;</span>)</span>
-<span id="cb432-3"><a href="func.html#cb432-3" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (p <span class="sc">&lt;=</span> <span class="dv">0</span>) <span class="fu">warning</span>(<span class="st">&quot;p-values are normally greater than 0&quot;</span>)</span>
-<span id="cb432-4"><a href="func.html#cb432-4" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (p <span class="sc">&gt;=</span> <span class="dv">1</span>) <span class="fu">warning</span>(<span class="st">&quot;p-values are normally less than 1&quot;</span>)</span>
-<span id="cb432-5"><a href="func.html#cb432-5" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb432-6"><a href="func.html#cb432-6" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (p <span class="sc">&lt;</span> .<span class="dv">001</span>) {</span>
-<span id="cb432-7"><a href="func.html#cb432-7" aria-hidden="true" tabindex="-1"></a>    reported <span class="ot">=</span> <span class="st">&quot;p &lt; .001&quot;</span></span>
-<span id="cb432-8"><a href="func.html#cb432-8" aria-hidden="true" tabindex="-1"></a>  } <span class="cf">else</span> {</span>
-<span id="cb432-9"><a href="func.html#cb432-9" aria-hidden="true" tabindex="-1"></a>    roundp <span class="ot">&lt;-</span> <span class="fu">round</span>(p, digits)</span>
-<span id="cb432-10"><a href="func.html#cb432-10" aria-hidden="true" tabindex="-1"></a>    reported <span class="ot">=</span> <span class="fu">paste</span>(<span class="st">&quot;p =&quot;</span>, roundp)</span>
-<span id="cb432-11"><a href="func.html#cb432-11" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb432-12"><a href="func.html#cb432-12" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb432-13"><a href="func.html#cb432-13" aria-hidden="true" tabindex="-1"></a>  reported</span>
-<span id="cb432-14"><a href="func.html#cb432-14" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
-<div class="sourceCode" id="cb433"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb433-1"><a href="func.html#cb433-1" aria-hidden="true" tabindex="-1"></a><span class="fu">report_p</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb401"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb401-1"><a href="func.html#cb401-1" aria-hidden="true" tabindex="-1"></a>report_p <span class="ot">&lt;-</span> <span class="cf">function</span>(p, <span class="at">digits =</span> <span class="dv">3</span>) {</span>
+<span id="cb401-2"><a href="func.html#cb401-2" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (<span class="sc">!</span><span class="fu">is.numeric</span>(p)) <span class="fu">stop</span>(<span class="st">&quot;p must be a number&quot;</span>)</span>
+<span id="cb401-3"><a href="func.html#cb401-3" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (p <span class="sc">&lt;=</span> <span class="dv">0</span>) <span class="fu">warning</span>(<span class="st">&quot;p-values are normally greater than 0&quot;</span>)</span>
+<span id="cb401-4"><a href="func.html#cb401-4" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (p <span class="sc">&gt;=</span> <span class="dv">1</span>) <span class="fu">warning</span>(<span class="st">&quot;p-values are normally less than 1&quot;</span>)</span>
+<span id="cb401-5"><a href="func.html#cb401-5" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb401-6"><a href="func.html#cb401-6" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (p <span class="sc">&lt;</span> .<span class="dv">001</span>) {</span>
+<span id="cb401-7"><a href="func.html#cb401-7" aria-hidden="true" tabindex="-1"></a>    reported <span class="ot">=</span> <span class="st">&quot;p &lt; .001&quot;</span></span>
+<span id="cb401-8"><a href="func.html#cb401-8" aria-hidden="true" tabindex="-1"></a>  } <span class="cf">else</span> {</span>
+<span id="cb401-9"><a href="func.html#cb401-9" aria-hidden="true" tabindex="-1"></a>    roundp <span class="ot">&lt;-</span> <span class="fu">round</span>(p, digits)</span>
+<span id="cb401-10"><a href="func.html#cb401-10" aria-hidden="true" tabindex="-1"></a>    reported <span class="ot">=</span> <span class="fu">paste</span>(<span class="st">&quot;p =&quot;</span>, roundp)</span>
+<span id="cb401-11"><a href="func.html#cb401-11" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb401-12"><a href="func.html#cb401-12" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb401-13"><a href="func.html#cb401-13" aria-hidden="true" tabindex="-1"></a>  reported</span>
+<span id="cb401-14"><a href="func.html#cb401-14" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb402"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb402-1"><a href="func.html#cb402-1" aria-hidden="true" tabindex="-1"></a><span class="fu">report_p</span>()</span></code></pre></div>
 <pre><code>## Error in report_p(): argument &quot;p&quot; is missing, with no default</code></pre>
-<div class="sourceCode" id="cb435"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb435-1"><a href="func.html#cb435-1" aria-hidden="true" tabindex="-1"></a><span class="fu">report_p</span>(<span class="st">&quot;a&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb404"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb404-1"><a href="func.html#cb404-1" aria-hidden="true" tabindex="-1"></a><span class="fu">report_p</span>(<span class="st">&quot;a&quot;</span>)</span></code></pre></div>
 <pre><code>## Error in report_p(&quot;a&quot;): p must be a number</code></pre>
-<div class="sourceCode" id="cb437"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb437-1"><a href="func.html#cb437-1" aria-hidden="true" tabindex="-1"></a><span class="fu">report_p</span>(<span class="sc">-</span><span class="dv">2</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb406"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb406-1"><a href="func.html#cb406-1" aria-hidden="true" tabindex="-1"></a><span class="fu">report_p</span>(<span class="sc">-</span><span class="dv">2</span>)</span></code></pre></div>
 <pre><code>## Warning in report_p(-2): p-values are normally greater than 0</code></pre>
-<div class="sourceCode" id="cb439"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb439-1"><a href="func.html#cb439-1" aria-hidden="true" tabindex="-1"></a><span class="fu">report_p</span>(<span class="dv">2</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb408"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb408-1"><a href="func.html#cb408-1" aria-hidden="true" tabindex="-1"></a><span class="fu">report_p</span>(<span class="dv">2</span>)</span></code></pre></div>
 <pre><code>## Warning in report_p(2): p-values are normally less than 1</code></pre>
 <pre><code>## [1] &quot;p &lt; .001&quot;
 ## [1] &quot;p = 2&quot;</code></pre>
@@ -908,21 +918,21 @@ What happens when you omit the argument for <code>p</code>? Or if you set <code>
 <div id="rnorm" class="section level3" number="9.6.1">
 <h3><span class="header-section-number">9.6.1</span> rnorm()</h3>
 <p>Create a vector of 20 random numbers drawn from a normal distribution with a mean of 5 and standard deviation of 1 using the <code>rnorm()</code> function and store them in the variable <code>A</code>.</p>
-<div class="sourceCode" id="cb442"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb442-1"><a href="func.html#cb442-1" aria-hidden="true" tabindex="-1"></a>A <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">20</span>, <span class="at">mean =</span> <span class="dv">5</span>, <span class="at">sd =</span> <span class="dv">1</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb411"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb411-1"><a href="func.html#cb411-1" aria-hidden="true" tabindex="-1"></a>A <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">20</span>, <span class="at">mean =</span> <span class="dv">5</span>, <span class="at">sd =</span> <span class="dv">1</span>)</span></code></pre></div>
 </div>
 <div id="tibbletibble" class="section level3" number="9.6.2">
 <h3><span class="header-section-number">9.6.2</span> tibble::tibble()</h3>
 <p>A <code>tibble</code> is a type of table or <code>data.frame</code>. The function <code>tibble::tibble()</code> creates a tibble with a column for each argument. Each argument takes the form <code>column_name = data_vector</code>.</p>
 <p>Create a table called <code>dat</code> including two vectors: <code>A</code> that is a vector of 20 random normally distributed numbers with a mean of 5 and SD of 1, and <code>B</code> that is a vector of 20 random normally distributed numbers with a mean of 5.5 and SD of 1.</p>
-<div class="sourceCode" id="cb443"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb443-1"><a href="func.html#cb443-1" aria-hidden="true" tabindex="-1"></a>dat <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
-<span id="cb443-2"><a href="func.html#cb443-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">A =</span> <span class="fu">rnorm</span>(<span class="dv">20</span>, <span class="dv">5</span>, <span class="dv">1</span>),</span>
-<span id="cb443-3"><a href="func.html#cb443-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">B =</span> <span class="fu">rnorm</span>(<span class="dv">20</span>, <span class="fl">5.5</span>, <span class="dv">1</span>)</span>
-<span id="cb443-4"><a href="func.html#cb443-4" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div>
+<div class="sourceCode" id="cb412"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb412-1"><a href="func.html#cb412-1" aria-hidden="true" tabindex="-1"></a>dat <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb412-2"><a href="func.html#cb412-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">A =</span> <span class="fu">rnorm</span>(<span class="dv">20</span>, <span class="dv">5</span>, <span class="dv">1</span>),</span>
+<span id="cb412-3"><a href="func.html#cb412-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">B =</span> <span class="fu">rnorm</span>(<span class="dv">20</span>, <span class="fl">5.5</span>, <span class="dv">1</span>)</span>
+<span id="cb412-4"><a href="func.html#cb412-4" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div>
 </div>
 <div id="t.test" class="section level3" number="9.6.3">
 <h3><span class="header-section-number">9.6.3</span> t.test()</h3>
 <p>You can run a Welch two-sample t-test by including the two samples you made as the first two arguments to the function <code>t.test</code>. You can reference one column of a table by its names using the format <code>table_name$column_name</code></p>
-<div class="sourceCode" id="cb444"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb444-1"><a href="func.html#cb444-1" aria-hidden="true" tabindex="-1"></a><span class="fu">t.test</span>(dat<span class="sc">$</span>A, dat<span class="sc">$</span>B)</span></code></pre></div>
+<div class="sourceCode" id="cb413"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb413-1"><a href="func.html#cb413-1" aria-hidden="true" tabindex="-1"></a><span class="fu">t.test</span>(dat<span class="sc">$</span>A, dat<span class="sc">$</span>B)</span></code></pre></div>
 <pre><code>## 
 ##  Welch Two Sample t-test
 ## 
@@ -935,9 +945,9 @@ What happens when you omit the argument for <code>p</code>? Or if you set <code>
 ## mean of x mean of y 
 ##  4.886096  5.466453</code></pre>
 <p>You can also convert the table to long format using the <code>gather</code> function and specify the t-test using the format <code>dv_column~grouping_column</code>.</p>
-<div class="sourceCode" id="cb446"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb446-1"><a href="func.html#cb446-1" aria-hidden="true" tabindex="-1"></a>longdat <span class="ot">&lt;-</span> <span class="fu">gather</span>(dat, group, score, A<span class="sc">:</span>B)</span>
-<span id="cb446-2"><a href="func.html#cb446-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb446-3"><a href="func.html#cb446-3" aria-hidden="true" tabindex="-1"></a><span class="fu">t.test</span>(score<span class="sc">~</span>group, <span class="at">data =</span> longdat) </span></code></pre></div>
+<div class="sourceCode" id="cb415"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb415-1"><a href="func.html#cb415-1" aria-hidden="true" tabindex="-1"></a>longdat <span class="ot">&lt;-</span> <span class="fu">gather</span>(dat, group, score, A<span class="sc">:</span>B)</span>
+<span id="cb415-2"><a href="func.html#cb415-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb415-3"><a href="func.html#cb415-3" aria-hidden="true" tabindex="-1"></a><span class="fu">t.test</span>(score<span class="sc">~</span>group, <span class="at">data =</span> longdat) </span></code></pre></div>
 <pre><code>## 
 ##  Welch Two Sample t-test
 ## 
@@ -953,62 +963,101 @@ What happens when you omit the argument for <code>p</code>? Or if you set <code>
 <div id="broomtidy" class="section level3" number="9.6.4">
 <h3><span class="header-section-number">9.6.4</span> broom::tidy()</h3>
 <p>You can use the function <code>broom::tidy()</code> to extract the data from a statistical test in a table format. The example below pipes everything together.</p>
-<div class="sourceCode" id="cb448"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb448-1"><a href="func.html#cb448-1" aria-hidden="true" tabindex="-1"></a><span class="fu">tibble</span>(</span>
-<span id="cb448-2"><a href="func.html#cb448-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">A =</span> <span class="fu">rnorm</span>(<span class="dv">20</span>, <span class="dv">5</span>, <span class="dv">1</span>),</span>
-<span id="cb448-3"><a href="func.html#cb448-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">B =</span> <span class="fu">rnorm</span>(<span class="dv">20</span>, <span class="fl">5.5</span>, <span class="dv">1</span>)</span>
-<span id="cb448-4"><a href="func.html#cb448-4" aria-hidden="true" tabindex="-1"></a>) <span class="sc">%&gt;%</span></span>
-<span id="cb448-5"><a href="func.html#cb448-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gather</span>(group, score, A<span class="sc">:</span>B) <span class="sc">%&gt;%</span></span>
-<span id="cb448-6"><a href="func.html#cb448-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">t.test</span>(score<span class="sc">~</span>group, <span class="at">data =</span> .) <span class="sc">%&gt;%</span></span>
-<span id="cb448-7"><a href="func.html#cb448-7" aria-hidden="true" tabindex="-1"></a>  broom<span class="sc">::</span><span class="fu">tidy</span>()</span></code></pre></div>
-<pre><code>## # A tibble: 1 x 10
-##   estimate estimate1 estimate2 statistic p.value parameter conf.low conf.high
-##      &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;   &lt;dbl&gt;     &lt;dbl&gt;    &lt;dbl&gt;     &lt;dbl&gt;
-## 1   -0.642      5.04      5.69     -2.31  0.0265      37.3    -1.21   -0.0792
-## # … with 2 more variables: method &lt;chr&gt;, alternative &lt;chr&gt;</code></pre>
+<div class="sourceCode" id="cb417"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb417-1"><a href="func.html#cb417-1" aria-hidden="true" tabindex="-1"></a><span class="fu">tibble</span>(</span>
+<span id="cb417-2"><a href="func.html#cb417-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">A =</span> <span class="fu">rnorm</span>(<span class="dv">20</span>, <span class="dv">5</span>, <span class="dv">1</span>),</span>
+<span id="cb417-3"><a href="func.html#cb417-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">B =</span> <span class="fu">rnorm</span>(<span class="dv">20</span>, <span class="fl">5.5</span>, <span class="dv">1</span>)</span>
+<span id="cb417-4"><a href="func.html#cb417-4" aria-hidden="true" tabindex="-1"></a>) <span class="sc">%&gt;%</span></span>
+<span id="cb417-5"><a href="func.html#cb417-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gather</span>(group, score, A<span class="sc">:</span>B) <span class="sc">%&gt;%</span></span>
+<span id="cb417-6"><a href="func.html#cb417-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">t.test</span>(score<span class="sc">~</span>group, <span class="at">data =</span> .) <span class="sc">%&gt;%</span></span>
+<span id="cb417-7"><a href="func.html#cb417-7" aria-hidden="true" tabindex="-1"></a>  broom<span class="sc">::</span><span class="fu">tidy</span>()</span></code></pre></div>
+<div class="kable-table">
+<table>
+<colgroup>
+<col width="9%" />
+<col width="8%" />
+<col width="8%" />
+<col width="8%" />
+<col width="8%" />
+<col width="8%" />
+<col width="8%" />
+<col width="9%" />
+<col width="20%" />
+<col width="10%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="right">estimate</th>
+<th align="right">estimate1</th>
+<th align="right">estimate2</th>
+<th align="right">statistic</th>
+<th align="right">p.value</th>
+<th align="right">parameter</th>
+<th align="right">conf.low</th>
+<th align="right">conf.high</th>
+<th align="left">method</th>
+<th align="left">alternative</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">-0.6422108</td>
+<td align="right">5.044009</td>
+<td align="right">5.68622</td>
+<td align="right">-2.310591</td>
+<td align="right">0.0264905</td>
+<td align="right">37.27083</td>
+<td align="right">-1.205237</td>
+<td align="right">-0.0791844</td>
+<td align="left">Welch Two Sample t-test</td>
+<td align="left">two.sided</td>
+</tr>
+</tbody>
+</table>
+</div>
 <div class="info">
 <p>In the pipeline above, <code>t.test(score~group, data = .)</code> uses the <code>.</code> notation to change the location of the piped-in data table from it's default position as the first argument to a different position.</p>
 </div>
 <p>Finally, we can extract a single value from this results table using <code>pull()</code>.</p>
-<div class="sourceCode" id="cb450"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb450-1"><a href="func.html#cb450-1" aria-hidden="true" tabindex="-1"></a><span class="fu">tibble</span>(</span>
-<span id="cb450-2"><a href="func.html#cb450-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">A =</span> <span class="fu">rnorm</span>(<span class="dv">20</span>, <span class="dv">5</span>, <span class="dv">1</span>),</span>
-<span id="cb450-3"><a href="func.html#cb450-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">B =</span> <span class="fu">rnorm</span>(<span class="dv">20</span>, <span class="fl">5.5</span>, <span class="dv">1</span>)</span>
-<span id="cb450-4"><a href="func.html#cb450-4" aria-hidden="true" tabindex="-1"></a>) <span class="sc">%&gt;%</span></span>
-<span id="cb450-5"><a href="func.html#cb450-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gather</span>(group, score, A<span class="sc">:</span>B) <span class="sc">%&gt;%</span></span>
-<span id="cb450-6"><a href="func.html#cb450-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">t.test</span>(score<span class="sc">~</span>group, <span class="at">data =</span> .) <span class="sc">%&gt;%</span></span>
-<span id="cb450-7"><a href="func.html#cb450-7" aria-hidden="true" tabindex="-1"></a>  broom<span class="sc">::</span><span class="fu">tidy</span>() <span class="sc">%&gt;%</span></span>
-<span id="cb450-8"><a href="func.html#cb450-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pull</span>(p.value)</span></code></pre></div>
+<div class="sourceCode" id="cb418"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb418-1"><a href="func.html#cb418-1" aria-hidden="true" tabindex="-1"></a><span class="fu">tibble</span>(</span>
+<span id="cb418-2"><a href="func.html#cb418-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">A =</span> <span class="fu">rnorm</span>(<span class="dv">20</span>, <span class="dv">5</span>, <span class="dv">1</span>),</span>
+<span id="cb418-3"><a href="func.html#cb418-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">B =</span> <span class="fu">rnorm</span>(<span class="dv">20</span>, <span class="fl">5.5</span>, <span class="dv">1</span>)</span>
+<span id="cb418-4"><a href="func.html#cb418-4" aria-hidden="true" tabindex="-1"></a>) <span class="sc">%&gt;%</span></span>
+<span id="cb418-5"><a href="func.html#cb418-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gather</span>(group, score, A<span class="sc">:</span>B) <span class="sc">%&gt;%</span></span>
+<span id="cb418-6"><a href="func.html#cb418-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">t.test</span>(score<span class="sc">~</span>group, <span class="at">data =</span> .) <span class="sc">%&gt;%</span></span>
+<span id="cb418-7"><a href="func.html#cb418-7" aria-hidden="true" tabindex="-1"></a>  broom<span class="sc">::</span><span class="fu">tidy</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb418-8"><a href="func.html#cb418-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pull</span>(p.value)</span></code></pre></div>
 <pre><code>## [1] 0.7075268</code></pre>
 </div>
 <div id="custom-function-t_sim" class="section level3" number="9.6.5">
 <h3><span class="header-section-number">9.6.5</span> Custom function: t_sim()</h3>
 <p>First, name your function <code>t_sim</code> and wrap the code above in a function with no arguments.</p>
-<div class="sourceCode" id="cb452"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb452-1"><a href="func.html#cb452-1" aria-hidden="true" tabindex="-1"></a>t_sim <span class="ot">&lt;-</span> <span class="cf">function</span>() {</span>
-<span id="cb452-2"><a href="func.html#cb452-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tibble</span>(</span>
-<span id="cb452-3"><a href="func.html#cb452-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">A =</span> <span class="fu">rnorm</span>(<span class="dv">20</span>, <span class="dv">5</span>, <span class="dv">1</span>),</span>
-<span id="cb452-4"><a href="func.html#cb452-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">B =</span> <span class="fu">rnorm</span>(<span class="dv">20</span>, <span class="fl">5.5</span>, <span class="dv">1</span>)</span>
-<span id="cb452-5"><a href="func.html#cb452-5" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
-<span id="cb452-6"><a href="func.html#cb452-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">gather</span>(group, score, A<span class="sc">:</span>B) <span class="sc">%&gt;%</span></span>
-<span id="cb452-7"><a href="func.html#cb452-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">t.test</span>(score<span class="sc">~</span>group, <span class="at">data =</span> .) <span class="sc">%&gt;%</span></span>
-<span id="cb452-8"><a href="func.html#cb452-8" aria-hidden="true" tabindex="-1"></a>    broom<span class="sc">::</span><span class="fu">tidy</span>() <span class="sc">%&gt;%</span></span>
-<span id="cb452-9"><a href="func.html#cb452-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">pull</span>(p.value) </span>
-<span id="cb452-10"><a href="func.html#cb452-10" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb420"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb420-1"><a href="func.html#cb420-1" aria-hidden="true" tabindex="-1"></a>t_sim <span class="ot">&lt;-</span> <span class="cf">function</span>() {</span>
+<span id="cb420-2"><a href="func.html#cb420-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tibble</span>(</span>
+<span id="cb420-3"><a href="func.html#cb420-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">A =</span> <span class="fu">rnorm</span>(<span class="dv">20</span>, <span class="dv">5</span>, <span class="dv">1</span>),</span>
+<span id="cb420-4"><a href="func.html#cb420-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">B =</span> <span class="fu">rnorm</span>(<span class="dv">20</span>, <span class="fl">5.5</span>, <span class="dv">1</span>)</span>
+<span id="cb420-5"><a href="func.html#cb420-5" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb420-6"><a href="func.html#cb420-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">gather</span>(group, score, A<span class="sc">:</span>B) <span class="sc">%&gt;%</span></span>
+<span id="cb420-7"><a href="func.html#cb420-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">t.test</span>(score<span class="sc">~</span>group, <span class="at">data =</span> .) <span class="sc">%&gt;%</span></span>
+<span id="cb420-8"><a href="func.html#cb420-8" aria-hidden="true" tabindex="-1"></a>    broom<span class="sc">::</span><span class="fu">tidy</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb420-9"><a href="func.html#cb420-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">pull</span>(p.value) </span>
+<span id="cb420-10"><a href="func.html#cb420-10" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 <p>Run it a few times to see what happens.</p>
-<div class="sourceCode" id="cb453"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb453-1"><a href="func.html#cb453-1" aria-hidden="true" tabindex="-1"></a><span class="fu">t_sim</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb421"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb421-1"><a href="func.html#cb421-1" aria-hidden="true" tabindex="-1"></a><span class="fu">t_sim</span>()</span></code></pre></div>
 <pre><code>## [1] 0.00997552</code></pre>
 </div>
 <div id="iterate-t_sim" class="section level3" number="9.6.6">
 <h3><span class="header-section-number">9.6.6</span> Iterate t_sim()</h3>
 <p>Let's run the <code>t_sim</code> function 1000 times, assign the resulting p-values to a vector called <code>reps</code>, and check what proportion of p-values are lower than alpha (e.g., .05). This number is the power for this analysis.</p>
-<div class="sourceCode" id="cb455"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb455-1"><a href="func.html#cb455-1" aria-hidden="true" tabindex="-1"></a>reps <span class="ot">&lt;-</span> <span class="fu">replicate</span>(<span class="dv">1000</span>, <span class="fu">t_sim</span>())</span>
-<span id="cb455-2"><a href="func.html#cb455-2" aria-hidden="true" tabindex="-1"></a>alpha <span class="ot">&lt;-</span> .<span class="dv">05</span></span>
-<span id="cb455-3"><a href="func.html#cb455-3" aria-hidden="true" tabindex="-1"></a>power <span class="ot">&lt;-</span> <span class="fu">mean</span>(reps <span class="sc">&lt;</span> alpha)</span>
-<span id="cb455-4"><a href="func.html#cb455-4" aria-hidden="true" tabindex="-1"></a>power</span></code></pre></div>
+<div class="sourceCode" id="cb423"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb423-1"><a href="func.html#cb423-1" aria-hidden="true" tabindex="-1"></a>reps <span class="ot">&lt;-</span> <span class="fu">replicate</span>(<span class="dv">1000</span>, <span class="fu">t_sim</span>())</span>
+<span id="cb423-2"><a href="func.html#cb423-2" aria-hidden="true" tabindex="-1"></a>alpha <span class="ot">&lt;-</span> .<span class="dv">05</span></span>
+<span id="cb423-3"><a href="func.html#cb423-3" aria-hidden="true" tabindex="-1"></a>power <span class="ot">&lt;-</span> <span class="fu">mean</span>(reps <span class="sc">&lt;</span> alpha)</span>
+<span id="cb423-4"><a href="func.html#cb423-4" aria-hidden="true" tabindex="-1"></a>power</span></code></pre></div>
 <pre><code>## [1] 0.328</code></pre>
 </div>
 <div id="seed" class="section level3" number="9.6.7">
 <h3><span class="header-section-number">9.6.7</span> Set seed</h3>
 <p>You can use the <code>set.seed</code> function before you run a function that uses random numbers to make sure that you get the same random data back each time. You can use any integer you like as the seed.</p>
-<div class="sourceCode" id="cb457"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb457-1"><a href="func.html#cb457-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">90201</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb425"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb425-1"><a href="func.html#cb425-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">90201</span>)</span></code></pre></div>
 <div class="warning">
 <p>Make sure you don't ever use <code>set.seed()</code> <strong>inside</strong> of a simulation function, or you will just simulate the exact same data over and over again.</p>
 </div>
@@ -1022,28 +1071,28 @@ Figure 9.2: @KellyBodwin
 <div id="add-arguments" class="section level3" number="9.6.8">
 <h3><span class="header-section-number">9.6.8</span> Add arguments</h3>
 <p>You can just edit your function each time you want to cacluate power for a different sample n, but it is more efficent to build this into your fuction as an arguments. Redefine <code>t_sim</code>, setting arguments for the mean and SD of group A, the mean and SD of group B, and the number of subjects per group. Give them all default values.</p>
-<div class="sourceCode" id="cb458"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb458-1"><a href="func.html#cb458-1" aria-hidden="true" tabindex="-1"></a>t_sim <span class="ot">&lt;-</span> <span class="cf">function</span>(<span class="at">n =</span> <span class="dv">10</span>, <span class="at">m1=</span><span class="dv">0</span>, <span class="at">sd1=</span><span class="dv">1</span>, <span class="at">m2=</span><span class="dv">0</span>, <span class="at">sd2=</span><span class="dv">1</span>) {</span>
-<span id="cb458-2"><a href="func.html#cb458-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tibble</span>(</span>
-<span id="cb458-3"><a href="func.html#cb458-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">A =</span> <span class="fu">rnorm</span>(n, m1, sd1),</span>
-<span id="cb458-4"><a href="func.html#cb458-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">B =</span> <span class="fu">rnorm</span>(n, m2, sd2)</span>
-<span id="cb458-5"><a href="func.html#cb458-5" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
-<span id="cb458-6"><a href="func.html#cb458-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">gather</span>(group, score, A<span class="sc">:</span>B) <span class="sc">%&gt;%</span></span>
-<span id="cb458-7"><a href="func.html#cb458-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">t.test</span>(score<span class="sc">~</span>group, <span class="at">data =</span> .) <span class="sc">%&gt;%</span></span>
-<span id="cb458-8"><a href="func.html#cb458-8" aria-hidden="true" tabindex="-1"></a>    broom<span class="sc">::</span><span class="fu">tidy</span>() <span class="sc">%&gt;%</span></span>
-<span id="cb458-9"><a href="func.html#cb458-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">pull</span>(p.value) </span>
-<span id="cb458-10"><a href="func.html#cb458-10" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb426"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb426-1"><a href="func.html#cb426-1" aria-hidden="true" tabindex="-1"></a>t_sim <span class="ot">&lt;-</span> <span class="cf">function</span>(<span class="at">n =</span> <span class="dv">10</span>, <span class="at">m1=</span><span class="dv">0</span>, <span class="at">sd1=</span><span class="dv">1</span>, <span class="at">m2=</span><span class="dv">0</span>, <span class="at">sd2=</span><span class="dv">1</span>) {</span>
+<span id="cb426-2"><a href="func.html#cb426-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tibble</span>(</span>
+<span id="cb426-3"><a href="func.html#cb426-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">A =</span> <span class="fu">rnorm</span>(n, m1, sd1),</span>
+<span id="cb426-4"><a href="func.html#cb426-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">B =</span> <span class="fu">rnorm</span>(n, m2, sd2)</span>
+<span id="cb426-5"><a href="func.html#cb426-5" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb426-6"><a href="func.html#cb426-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">gather</span>(group, score, A<span class="sc">:</span>B) <span class="sc">%&gt;%</span></span>
+<span id="cb426-7"><a href="func.html#cb426-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">t.test</span>(score<span class="sc">~</span>group, <span class="at">data =</span> .) <span class="sc">%&gt;%</span></span>
+<span id="cb426-8"><a href="func.html#cb426-8" aria-hidden="true" tabindex="-1"></a>    broom<span class="sc">::</span><span class="fu">tidy</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb426-9"><a href="func.html#cb426-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">pull</span>(p.value) </span>
+<span id="cb426-10"><a href="func.html#cb426-10" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 <p>Test your function with some different values to see if the results make sense.</p>
-<div class="sourceCode" id="cb459"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb459-1"><a href="func.html#cb459-1" aria-hidden="true" tabindex="-1"></a><span class="fu">t_sim</span>(<span class="dv">100</span>)</span>
-<span id="cb459-2"><a href="func.html#cb459-2" aria-hidden="true" tabindex="-1"></a><span class="fu">t_sim</span>(<span class="dv">100</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="fl">0.5</span>, <span class="dv">1</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb427"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb427-1"><a href="func.html#cb427-1" aria-hidden="true" tabindex="-1"></a><span class="fu">t_sim</span>(<span class="dv">100</span>)</span>
+<span id="cb427-2"><a href="func.html#cb427-2" aria-hidden="true" tabindex="-1"></a><span class="fu">t_sim</span>(<span class="dv">100</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="fl">0.5</span>, <span class="dv">1</span>)</span></code></pre></div>
 <pre><code>## [1] 0.5065619
 ## [1] 0.001844064</code></pre>
 <p>Use <code>replicate</code> to calculate power for 100 subjects/group with an effect size of 0.2 (e.g., A: m = 0, SD = 1; B: m = 0.2, SD = 1). Use 1000 replications.</p>
-<div class="sourceCode" id="cb461"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb461-1"><a href="func.html#cb461-1" aria-hidden="true" tabindex="-1"></a>reps <span class="ot">&lt;-</span> <span class="fu">replicate</span>(<span class="dv">1000</span>, <span class="fu">t_sim</span>(<span class="dv">100</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="fl">0.2</span>, <span class="dv">1</span>))</span>
-<span id="cb461-2"><a href="func.html#cb461-2" aria-hidden="true" tabindex="-1"></a>power <span class="ot">&lt;-</span> <span class="fu">mean</span>(reps <span class="sc">&lt;</span> .<span class="dv">05</span>)</span>
-<span id="cb461-3"><a href="func.html#cb461-3" aria-hidden="true" tabindex="-1"></a>power</span></code></pre></div>
+<div class="sourceCode" id="cb429"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb429-1"><a href="func.html#cb429-1" aria-hidden="true" tabindex="-1"></a>reps <span class="ot">&lt;-</span> <span class="fu">replicate</span>(<span class="dv">1000</span>, <span class="fu">t_sim</span>(<span class="dv">100</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="fl">0.2</span>, <span class="dv">1</span>))</span>
+<span id="cb429-2"><a href="func.html#cb429-2" aria-hidden="true" tabindex="-1"></a>power <span class="ot">&lt;-</span> <span class="fu">mean</span>(reps <span class="sc">&lt;</span> .<span class="dv">05</span>)</span>
+<span id="cb429-3"><a href="func.html#cb429-3" aria-hidden="true" tabindex="-1"></a>power</span></code></pre></div>
 <pre><code>## [1] 0.268</code></pre>
 <p>Compare this to power calculated from the <code>power.t.test</code> function.</p>
-<div class="sourceCode" id="cb463"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb463-1"><a href="func.html#cb463-1" aria-hidden="true" tabindex="-1"></a><span class="fu">power.t.test</span>(<span class="at">n =</span> <span class="dv">100</span>, <span class="at">delta =</span> <span class="fl">0.2</span>, <span class="at">sd =</span> <span class="dv">1</span>, <span class="at">type=</span><span class="st">&quot;two.sample&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb431"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb431-1"><a href="func.html#cb431-1" aria-hidden="true" tabindex="-1"></a><span class="fu">power.t.test</span>(<span class="at">n =</span> <span class="dv">100</span>, <span class="at">delta =</span> <span class="fl">0.2</span>, <span class="at">sd =</span> <span class="dv">1</span>, <span class="at">type=</span><span class="st">&quot;two.sample&quot;</span>)</span></code></pre></div>
 <pre><code>## 
 ##      Two-sample t test power calculation 
 ## 
@@ -1067,8 +1116,8 @@ Figure 9.2: @KellyBodwin
 <h2><span class="header-section-number">9.7</span> Glossary</h2>
 <table>
 <colgroup>
-<col width="53%" />
-<col width="46%" />
+<col width="52%" />
+<col width="47%" />
 </colgroup>
 <thead>
 <tr class="header">
@@ -1078,27 +1127,27 @@ Figure 9.2: @KellyBodwin
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><a class='glossary' target='_blank' href='https://psyteachr.github.io/glossary/a#argument'>argument</a></td>
+<td align="left"><a href="https://psyteachr.github.io/glossary/a.html#argument" class="glossary" target="_blank">argument</a></td>
 <td align="left">A variable that provides input to a function.</td>
 </tr>
 <tr class="even">
-<td align="left"><a class='glossary' target='_blank' href='https://psyteachr.github.io/glossary/d#data.type'>data type</a></td>
+<td align="left"><a href="https://psyteachr.github.io/glossary/d.html#data-type" class="glossary" target="_blank">data type</a></td>
 <td align="left">The kind of data represented by an object.</td>
 </tr>
 <tr class="odd">
-<td align="left"><a class='glossary' target='_blank' href='https://psyteachr.github.io/glossary/d#double'>double</a></td>
+<td align="left"><a href="https://psyteachr.github.io/glossary/d.html#double" class="glossary" target="_blank">double</a></td>
 <td align="left">A data type representing a real decimal number</td>
 </tr>
 <tr class="even">
-<td align="left"><a class='glossary' target='_blank' href='https://psyteachr.github.io/glossary/f#function.'>function </a></td>
+<td align="left"><a href="https://psyteachr.github.io/glossary/f.html#function" class="glossary" target="_blank">function</a></td>
 <td align="left">A named section of code that can be reused.</td>
 </tr>
 <tr class="odd">
-<td align="left"><a class='glossary' target='_blank' href='https://psyteachr.github.io/glossary/i#iteration'>iteration</a></td>
+<td align="left"><a href="https://psyteachr.github.io/glossary/i.html#iteration" class="glossary" target="_blank">iteration</a></td>
 <td align="left">Repeating a process or function</td>
 </tr>
 <tr class="even">
-<td align="left"><a class='glossary' target='_blank' href='https://psyteachr.github.io/glossary/m#matrix'>matrix</a></td>
+<td align="left"><a href="https://psyteachr.github.io/glossary/m.html#matrix" class="glossary" target="_blank">matrix</a></td>
 <td align="left">A container data type consisting of numbers arranged into a fixed number of rows and columns</td>
 </tr>
 </tbody>
@@ -1107,11 +1156,11 @@ Figure 9.2: @KellyBodwin
 <div id="exercises-func" class="section level2" number="9.8">
 <h2><span class="header-section-number">9.8</span> Exercises</h2>
 <p>Download the <a href="exercises/09_func_exercise.Rmd">exercises</a>. See the <a href="exercises/09_func_answers.Rmd">answers</a> only after you've attempted all the questions.</p>
-<div class="sourceCode" id="cb465"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb465-1"><a href="func.html#cb465-1" aria-hidden="true" tabindex="-1"></a><span class="co"># run this to access the exercise</span></span>
-<span id="cb465-2"><a href="func.html#cb465-2" aria-hidden="true" tabindex="-1"></a>reprores<span class="sc">::</span><span class="fu">exercise</span>(<span class="dv">9</span>)</span>
-<span id="cb465-3"><a href="func.html#cb465-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb465-4"><a href="func.html#cb465-4" aria-hidden="true" tabindex="-1"></a><span class="co"># run this to access the answers</span></span>
-<span id="cb465-5"><a href="func.html#cb465-5" aria-hidden="true" tabindex="-1"></a>reprores<span class="sc">::</span><span class="fu">exercise</span>(<span class="dv">9</span>, <span class="at">answers =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb433"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb433-1"><a href="func.html#cb433-1" aria-hidden="true" tabindex="-1"></a><span class="co"># run this to access the exercise</span></span>
+<span id="cb433-2"><a href="func.html#cb433-2" aria-hidden="true" tabindex="-1"></a>reprores<span class="sc">::</span><span class="fu">exercise</span>(<span class="dv">9</span>)</span>
+<span id="cb433-3"><a href="func.html#cb433-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb433-4"><a href="func.html#cb433-4" aria-hidden="true" tabindex="-1"></a><span class="co"># run this to access the answers</span></span>
+<span id="cb433-5"><a href="func.html#cb433-5" aria-hidden="true" tabindex="-1"></a>reprores<span class="sc">::</span><span class="fu">exercise</span>(<span class="dv">9</span>, <span class="at">answers =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
 
 </div>
 </div>
@@ -1259,8 +1308,8 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": null,
-"text": null
+"link": "https://github.com/psyteachr/reprores-v2/edit/main/book/09-func.Rmd",
+"text": "Edit"
 },
 "history": {
 "link": null,
@@ -1270,7 +1319,7 @@ gitbook.start({
 "link": null,
 "text": null
 },
-"download": {},
+"download": [["reprores-v2.epub", "EPUB"], ["reprores-v2.mobi", "MOBI"]],
 "toc": {
 "collapse": "section",
 "scroll_highlight": true

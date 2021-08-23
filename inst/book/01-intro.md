@@ -1,7 +1,7 @@
 # Getting Started {#intro}
 
 <img src="images/memes/rstudio.png" class="meme right"
-     alt="A line drawing of a person looking at a computer with a magnifying glass. The text reads 'I just installed RStudio. I'm a data scientist now.'">
+     alt="A line drawing of a person looking at a computer with a magnifying glass. The text reads 'I just installed RStudio. I'm a data scientist now.'" />
 
 ## Learning Objectives {#ilo-intro}
 
@@ -23,7 +23,7 @@
 
 ## What is R?
 
-<img src="images/01/new_R_logo.png"  class="left meme">
+<img src="images/01/new_R_logo.png"  class="left meme" />
 
 R is a programming environment for data processing and statistical analysis. We use R in Psychology at the University of Glasgow to promote <a class='glossary' target='_blank' title='Research that documents all of the steps between raw data and results in a way that can be verified.' href='https://psyteachr.github.io/glossary/r#reproducible-research'>reproducible research</a>. This refers to being able to document and reproduce all of the steps between raw data and results. R allows you to write <a class='glossary' target='_blank' title='A plain-text file that contains commands in a coding language, such as R.' href='https://psyteachr.github.io/glossary/s#script'>scripts</a> that combine data files, clean data, and run analyses. There are many other ways to do this, including writing SPSS syntax files, but we find R to be a useful tool that is free, open source, and commonly used by research psychologists.
 
@@ -46,7 +46,7 @@ You can close R and never open it again. We'll be working entirely in RStudio in
 ::: {.warning data-latex=""}
 ALWAYS REMEMBER: Launch R though the RStudio IDE
 
-Launch <img src="images/01/rstudio_icon.png" style="height: 2em; vertical-align: middle;" alt="RStudio.app"> (RStudio.app), not <img src="images/01/new_R_logo.png" style="height: 2em; vertical-align: middle;" alt="R.app"> (R.app).
+Launch <img src="images/01/rstudio_icon.png" style="height: 2em; vertical-align: middle;" alt="RStudio.app" /> (RStudio.app), not <img src="images/01/new_R_logo.png" style="height: 2em; vertical-align: middle;" alt="R.app" /> (R.app).
 :::
 
 ### RStudio {#rstudio_ide}
@@ -60,21 +60,16 @@ Launch <img src="images/01/rstudio_icon.png" style="height: 2em; vertical-align:
 
 RStudio is arranged with four window <a class='glossary' target='_blank' title='RStudio is arranged with four window “panes.”' href='https://psyteachr.github.io/glossary/p#panes'>panes</a>. By default, the upper left pane is the **source pane**, where you view and edit source code from files. The bottom left pane is usually the **console pane**, where you can type in commands and view output messages. The right panes have several different tabs that show you information about your code. You can change the location of panes and what tabs are shown under **`Preferences > Pane Layout`**.
 
-<video width="640" height="480" controls>
-  <source src="http://www.psy.gla.ac.uk/~lisad/r_movies/panes.mov" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
-
 ### Configure RStudio
 
 In this class, you will be learning how to do <a class='glossary' target='_blank' title='Research that documents all of the steps between raw data and results in a way that can be verified.' href='https://psyteachr.github.io/glossary/r#reproducible-research'>reproducible research</a>.  This involves writing scripts that completely and transparently perform some analysis from start to finish in a way that yields the same result for different people using the same software on different computers. Transparency is a key value of science, as embodied in the "trust but verify" motto. 
 
 <img src="images/memes/forgetting.jpg"  class="right meme"
-     alt="Fry from Futurama squinting; top text: Not sure if I have a bad memory; bottom text: Or a bad memory">
+     alt="Fry from Futurama squinting; top text: Not sure if I have a bad memory; bottom text: Or a bad memory" />
 
 When you do things reproducibly, others can understand and check your work. This benefits science, but there is a selfish reason, too: the most important person who will benefit from a reproducible script is your future self. When you return to an analysis after two weeks of vacation, you will thank your earlier self for doing things in a transparent, reproducible way, as you can easily pick up right where you left off.
 
-There are two tweaks that you should do to your RStudio installation to maximize reproducibility. Go to **`Global Options...`** under the **`Tools`** menu (&#8984;,), and uncheck the box that says **`Restore .RData into workspace at startup`**.  If you keep things around in your workspace, things will get messy, and unexpected things will happen. You should always start with a clear workspace. This also means that you never want to save your workspace when you exit, so set this to **`Never`**. The only thing you want to save are your scripts.
+There are two tweaks that you should do to your RStudio installation to maximize reproducibility. Go to **`Global Options...`** under the **`Tools`** menu (Cmd-,), and uncheck the box that says **`Restore .RData into workspace at startup`**.  If you keep things around in your workspace, things will get messy, and unexpected things will happen. You should always start with a clear workspace. This also means that you never want to save your workspace when you exit, so set this to **`Never`**. The only thing you want to save are your scripts.
 
 <div class="figure" style="text-align: center">
 <img src="images/01/repro.png" alt="Alter these settings for increased reproducibility." width="66%" />
@@ -92,12 +87,12 @@ Your settings should have:
 
 ### Console commands {#console}
 
-We are first going to learn about how to interact with the <a class='glossary' target='_blank' title='The pane in RStudio where you can type in commands and view output messages.' href='https://psyteachr.github.io/glossary/c#console'>console</a>. In general, you will be developing R <a class='glossary' target='_blank' title='NA' href='https://psyteachr.github.io/glossary/s#scripts'>script</a> or <a class='glossary' target='_blank' title='The R-specific version of markdown: a way to specify formatting, such as headers, paragraphs, lists, bolding, and links, as well as code blocks and inline code.' href='https://psyteachr.github.io/glossary/r#r-markdown'>R Markdown</a> files, rather than working directly in the console window. However, you can consider the console a kind of "sandbox" where you can try out lines of code and adapt them until you get them to do what you want. Then you can copy them back into the script editor.
+We are first going to learn about how to interact with the <a class='glossary' target='_blank' title='The pane in RStudio where you can type in commands and view output messages.' href='https://psyteachr.github.io/glossary/c#console'>console</a>. In general, you will be developing R <a class='glossary' target='_blank' title='A plain-text file that contains commands in a coding language, such as R.' href='https://psyteachr.github.io/glossary/s#script'>scripts</a> or <a class='glossary' target='_blank' title='The R-specific version of markdown: a way to specify formatting, such as headers, paragraphs, lists, bolding, and links, as well as code blocks and inline code.' href='https://psyteachr.github.io/glossary/r#r-markdown'>R Markdown</a> files, rather than working directly in the console window. However, you can consider the console a kind of "sandbox" where you can try out lines of code and adapt them until you get them to do what you want. Then you can copy them back into the script editor.
 
 Mostly, however, you will be typing into the script editor window (either into an R script or an R Markdown file) and then sending the commands to the console by placing the cursor on the line and holding down the Ctrl key while you press Enter. The Ctrl+Enter key sequence sends the command in the script to the console.
 
 <img src="images/memes/typos.jpg" class="right meme"
-     alt="Morpehus from The Matrix; top text: What if I told you; bottom text: Typos are accidents nd accidents happon">
+     alt="Morpehus from The Matrix; top text: What if I told you; bottom text: Typos are accidents nd accidents happon" />
 
 One simple way to learn about the R console is to use it as a calculator. Enter the lines of code below and see if your results match. Be prepared to make lots of typos (at first).
 
@@ -360,8 +355,8 @@ rnorm(10)
 ```
 
 ```
-##  [1]  2.4076913  1.3272517 -0.3876617 -1.3410461 -1.1951760  1.3876084
-##  [7]  1.6894598  0.3704068 -1.7140371  1.0545365
+##  [1] -0.79923261  0.04907874 -1.29206044 -0.78352065  2.56510304 -1.46676488
+##  [7]  0.71359108  0.50131337 -0.60967909  0.70624114
 ```
 
 If you want 10 numbers from a normal distribution with a mean of 100:
@@ -372,8 +367,8 @@ rnorm(10, 100)
 ```
 
 ```
-##  [1] 100.47565  99.08394  98.50020 100.83531 101.31873 101.15085 100.91584
-##  [8]  99.57368 100.18539  99.10574
+##  [1] 100.31914  98.15491 101.22131  98.80529 100.46312  99.62505 100.20953
+##  [8]  99.13386 100.24011 100.18003
 ```
 
 This would be an equivalent but less efficient way of calling the function:
@@ -384,8 +379,8 @@ rnorm(n = 10, mean = 100)
 ```
 
 ```
-##  [1] 101.51660 101.99830 101.64939  99.38478  99.98530  99.80466  99.13878
-##  [8]  99.73354  99.65203  99.93523
+##  [1]  99.72048 101.12346 101.76888  99.95945  99.55127 100.51407 100.93353
+##  [8] 100.57589  99.12096 100.54539
 ```
 
 We don't need to name the arguments because R will recognize that we intended to fill in the first and second arguments by their position in the function call. However, if we want to change the default for an argument coming later in the list, then we need to name it. For instance, if we wanted to keep the default `mean = 0` but change the standard deviation to 100, we would do it this way:
@@ -396,8 +391,8 @@ rnorm(10, sd = 100)
 ```
 
 ```
-##  [1]  169.533043  -55.162772  -49.988674   61.995572   94.320132 -126.560911
-##  [7]    8.745943 -113.457945   30.430911  126.116811
+##  [1]   56.96628 -115.58520  -51.16338  -45.99687 -157.56699  -54.57864
+##  [7]  -16.85472   35.11830  137.43480   72.09692
 ```
 
 Some functions give a list of options after an argument; this means the default value is the first option. The usage entry for the `power.t.test()` function looks like this:
@@ -453,7 +448,7 @@ There is an important distinction between **installing** a package and **loading
 
 ### Installing a package 
 
-<img src="images/memes/pokemon.gif" class="meme right">
+<img src="images/memes/pokemon.gif" class="meme right" />
 
 This is done using `install.packages()`. This is like installing an app on your phone: you only have to do it once and the app will remain installed until you remove it. For instance, if you want to use PokemonGo on your phone, you install it once from the App Store or Play Store, and you don't have to re-install it each time you want to use it. Once you launch the app, it will run in the background until you close it or restart your phone. Likewise, when you install a package, the package will be available (but not *loaded*) every time you open up R.
 
@@ -557,34 +552,33 @@ Each chapter ends with a glossary table defining the jargon introduced in this c
 
 
 
-|term                                                                                                                              |definition                                                                                                                                                                 |
-|:---------------------------------------------------------------------------------------------------------------------------------|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|<a class='glossary' target='_blank' href='https://psyteachr.github.io/glossary/a#argument'>argument</a>                           |A variable that provides input to a function.                                                                                                                              |
-|<a class='glossary' target='_blank' href='https://psyteachr.github.io/glossary/a#assignment.operator'>assignment operator</a>     |The symbol <-, which functions like = and assigns the value on the right to the object on the left                                                                         |
-|<a class='glossary' target='_blank' href='https://psyteachr.github.io/glossary/b#base.r'>base r</a>                               |The set of R functions that come with a basic installation of R, before you add external packages                                                                          |
-|<a class='glossary' target='_blank' href='https://psyteachr.github.io/glossary/c#console'>console</a>                             |The pane in RStudio where you can type in commands and view output messages.                                                                                               |
-|<a class='glossary' target='_blank' href='https://psyteachr.github.io/glossary/c#cran'>cran</a>                                   |The Comprehensive R Archive Network: a network of ftp and web servers around the world that store identical, up-to-date, versions of code and documentation for R.         |
-|<a class='glossary' target='_blank' href='https://psyteachr.github.io/glossary/e#escape'>escape</a>                               |Include special characters like " inside of a string by prefacing them with a backslash.                                                                                   |
-|<a class='glossary' target='_blank' href='https://psyteachr.github.io/glossary/f#function.'>function </a>                         |A named section of code that can be reused.                                                                                                                                |
-|<a class='glossary' target='_blank' href='https://psyteachr.github.io/glossary/g#global.environment'>global environment</a>       |The interactive workspace where your script runs                                                                                                                           |
-|<a class='glossary' target='_blank' href='https://psyteachr.github.io/glossary/i#ide'>ide</a>                                     |Integrated Development Environment: a program that serves as a text editor, file manager, and provides functions to help you read and write code. RStudio is an IDE for R. |
-|<a class='glossary' target='_blank' href='https://psyteachr.github.io/glossary/n#normal.distribution'>normal distribution</a>     |A symmetric distribution of data where values near the centre are most probable.                                                                                           |
-|<a class='glossary' target='_blank' href='https://psyteachr.github.io/glossary/o#object'>object</a>                               |A word that identifies and stores the value of some data for later use.                                                                                                    |
-|<a class='glossary' target='_blank' href='https://psyteachr.github.io/glossary/p#package'>package</a>                             |A group of R functions.                                                                                                                                                    |
-|<a class='glossary' target='_blank' href='https://psyteachr.github.io/glossary/p#panes'>panes</a>                                 |RStudio is arranged with four window “panes.”                                                                                                                              |
-|<a class='glossary' target='_blank' href='https://psyteachr.github.io/glossary/r#r.markdown'>r markdown</a>                       |The R-specific version of markdown: a way to specify formatting, such as headers, paragraphs, lists, bolding, and links, as well as code blocks and inline code.           |
-|<a class='glossary' target='_blank' href='https://psyteachr.github.io/glossary/r#reproducible.research'>reproducible research</a> |Research that documents all of the steps between raw data and results in a way that can be verified.                                                                       |
-|<a class='glossary' target='_blank' href='https://psyteachr.github.io/glossary/s#script'>script</a>                               |A plain-text file that contains commands in a coding language, such as R.                                                                                                  |
-|<a class='glossary' target='_blank' href='https://psyteachr.github.io/glossary/s#scripts'>scripts</a>                             |NA                                                                                                                                                                         |
-|<a class='glossary' target='_blank' href='https://psyteachr.github.io/glossary/s#standard.deviation'>standard deviation</a>       |A descriptive statistic that measures how spread out data are relative to the mean.                                                                                        |
-|<a class='glossary' target='_blank' href='https://psyteachr.github.io/glossary/s#string'>string</a>                               |A piece of text inside of quotes.                                                                                                                                          |
-|<a class='glossary' target='_blank' href='https://psyteachr.github.io/glossary/v#variable'>variable</a>                           |A word that identifies and stores the value of some data for later use.                                                                                                    |
-|<a class='glossary' target='_blank' href='https://psyteachr.github.io/glossary/v#vector'>vector</a>                               |A type of data structure that is basically a list of things like T/F values, numbers, or strings.                                                                          |
-|<a class='glossary' target='_blank' href='https://psyteachr.github.io/glossary/w#whitespace'>whitespace</a>                       |Spaces, tabs and line breaks                                                                                                                                               |
+|term                                                                                                                         |definition                                                                                                                                                                 |
+|:----------------------------------------------------------------------------------------------------------------------------|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|[argument](https://psyteachr.github.io/glossary/a.html#argument){class="glossary" target="_blank"}                           |A variable that provides input to a function.                                                                                                                              |
+|[assignment operator](https://psyteachr.github.io/glossary/a.html#assignment-operator){class="glossary" target="_blank"}     |The symbol <-, which functions like = and assigns the value on the right to the object on the left                                                                         |
+|[base r](https://psyteachr.github.io/glossary/b.html#base-r){class="glossary" target="_blank"}                               |The set of R functions that come with a basic installation of R, before you add external packages                                                                          |
+|[console](https://psyteachr.github.io/glossary/c.html#console){class="glossary" target="_blank"}                             |The pane in RStudio where you can type in commands and view output messages.                                                                                               |
+|[cran](https://psyteachr.github.io/glossary/c.html#cran){class="glossary" target="_blank"}                                   |The Comprehensive R Archive Network: a network of ftp and web servers around the world that store identical, up-to-date, versions of code and documentation for R.         |
+|[escape](https://psyteachr.github.io/glossary/e.html#escape){class="glossary" target="_blank"}                               |Include special characters like " inside of a string by prefacing them with a backslash.                                                                                   |
+|[function](https://psyteachr.github.io/glossary/f.html#function){class="glossary" target="_blank"}                           |A named section of code that can be reused.                                                                                                                                |
+|[global environment](https://psyteachr.github.io/glossary/g.html#global-environment){class="glossary" target="_blank"}       |The interactive workspace where your script runs                                                                                                                           |
+|[ide](https://psyteachr.github.io/glossary/i.html#ide){class="glossary" target="_blank"}                                     |Integrated Development Environment: a program that serves as a text editor, file manager, and provides functions to help you read and write code. RStudio is an IDE for R. |
+|[normal distribution](https://psyteachr.github.io/glossary/n.html#normal-distribution){class="glossary" target="_blank"}     |A symmetric distribution of data where values near the centre are most probable.                                                                                           |
+|[object](https://psyteachr.github.io/glossary/o.html#object){class="glossary" target="_blank"}                               |A word that identifies and stores the value of some data for later use.                                                                                                    |
+|[package](https://psyteachr.github.io/glossary/p.html#package){class="glossary" target="_blank"}                             |A group of R functions.                                                                                                                                                    |
+|[panes](https://psyteachr.github.io/glossary/p.html#panes){class="glossary" target="_blank"}                                 |RStudio is arranged with four window “panes.”                                                                                                                              |
+|[r markdown](https://psyteachr.github.io/glossary/r.html#r-markdown){class="glossary" target="_blank"}                       |The R-specific version of markdown: a way to specify formatting, such as headers, paragraphs, lists, bolding, and links, as well as code blocks and inline code.           |
+|[reproducible research](https://psyteachr.github.io/glossary/r.html#reproducible-research){class="glossary" target="_blank"} |Research that documents all of the steps between raw data and results in a way that can be verified.                                                                       |
+|[script](https://psyteachr.github.io/glossary/s.html#script){class="glossary" target="_blank"}                               |A plain-text file that contains commands in a coding language, such as R.                                                                                                  |
+|[standard deviation](https://psyteachr.github.io/glossary/s.html#standard-deviation){class="glossary" target="_blank"}       |A descriptive statistic that measures how spread out data are relative to the mean.                                                                                        |
+|[string](https://psyteachr.github.io/glossary/s.html#string){class="glossary" target="_blank"}                               |A piece of text inside of quotes.                                                                                                                                          |
+|[variable](https://psyteachr.github.io/glossary/v.html#variable){class="glossary" target="_blank"}                           |A word that identifies and stores the value of some data for later use.                                                                                                    |
+|[vector](https://psyteachr.github.io/glossary/v.html#vector){class="glossary" target="_blank"}                               |A type of data structure that is basically a list of things like T/F values, numbers, or strings.                                                                          |
+|[whitespace](https://psyteachr.github.io/glossary/w.html#whitespace){class="glossary" target="_blank"}                       |Spaces, tabs and line breaks                                                                                                                                               |
 
 
 
-## Exercises {#exercises-repro}
+## Exercises {#exercises-intro}
 
 Download the first set of [exercises](exercises/01_intro_exercise.Rmd). See the [answers](exercises/01_intro_answers.Rmd) only after you've attempted all the questions.
 

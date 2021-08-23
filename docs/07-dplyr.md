@@ -1,7 +1,7 @@
 # Data Wrangling {#dplyr}
 
 <img src="images/memes/real_world_data.jpg" class="meme right" 
-     alt="A cute golden retriever labelled 'iris & mtcars' and a scary werewolf labelled 'Real world data'">
+     alt="A cute golden retriever labelled 'iris & mtcars' and a scary werewolf labelled 'Real world data'" />
 
 ## Learning Objectives {#ilo-dplyr}
 
@@ -934,9 +934,9 @@ Table: (\#tab:unnamed-chunk-4)All rows from `cumulative`
 
 
 
-|term                                                                                                                |definition                                                                |
-|:-------------------------------------------------------------------------------------------------------------------|:-------------------------------------------------------------------------|
-|<a class='glossary' target='_blank' href='https://psyteachr.github.io/glossary/d#data.wrangling'>data wrangling</a> |The process of preparing data for visualisation and statistical analysis. |
+|term                                                                                                           |definition                                                                |
+|:--------------------------------------------------------------------------------------------------------------|:-------------------------------------------------------------------------|
+|[data wrangling](https://psyteachr.github.io/glossary/d.html#data-wrangling){class="glossary" target="_blank"} |The process of preparing data for visualisation and statistical analysis. |
 
 
 

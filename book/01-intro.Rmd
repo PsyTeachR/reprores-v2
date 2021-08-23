@@ -1,7 +1,7 @@
 # Getting Started {#intro}
 
 <img src="images/memes/rstudio.png" class="meme right"
-     alt="A line drawing of a person looking at a computer with a magnifying glass. The text reads 'I just installed RStudio. I'm a data scientist now.'">
+     alt="A line drawing of a person looking at a computer with a magnifying glass. The text reads 'I just installed RStudio. I'm a data scientist now.'" />
 
 ## Learning Objectives {#ilo-intro}
 
@@ -23,7 +23,7 @@
 
 ## What is R?
 
-<img src="images/01/new_R_logo.png"  class="left meme">
+<img src="images/01/new_R_logo.png"  class="left meme" />
 
 R is a programming environment for data processing and statistical analysis. We use R in Psychology at the University of Glasgow to promote `r glossary("reproducible research")`. This refers to being able to document and reproduce all of the steps between raw data and results. R allows you to write `r glossary("script", "scripts")` that combine data files, clean data, and run analyses. There are many other ways to do this, including writing SPSS syntax files, but we find R to be a useful tool that is free, open source, and commonly used by research psychologists.
 
@@ -45,7 +45,7 @@ You can close R and never open it again. We'll be working entirely in RStudio in
 ::: {.warning data-latex=""}
 ALWAYS REMEMBER: Launch R though the RStudio IDE
 
-Launch <img src="images/01/rstudio_icon.png" style="height: 2em; vertical-align: middle;" alt="RStudio.app"> (RStudio.app), not <img src="images/01/new_R_logo.png" style="height: 2em; vertical-align: middle;" alt="R.app"> (R.app).
+Launch <img src="images/01/rstudio_icon.png" style="height: 2em; vertical-align: middle;" alt="RStudio.app" /> (RStudio.app), not <img src="images/01/new_R_logo.png" style="height: 2em; vertical-align: middle;" alt="R.app" /> (R.app).
 :::
 
 ### RStudio {#rstudio_ide}
@@ -58,21 +58,16 @@ knitr::include_graphics("images/01/rstudio.png")
 
 RStudio is arranged with four window `r glossary("panes")`. By default, the upper left pane is the **source pane**, where you view and edit source code from files. The bottom left pane is usually the **console pane**, where you can type in commands and view output messages. The right panes have several different tabs that show you information about your code. You can change the location of panes and what tabs are shown under **`Preferences > Pane Layout`**.
 
-<video width="640" height="480" controls>
-  <source src="http://www.psy.gla.ac.uk/~lisad/r_movies/panes.mov" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
-
 ### Configure RStudio
 
 In this class, you will be learning how to do `r glossary("reproducible research")`.  This involves writing scripts that completely and transparently perform some analysis from start to finish in a way that yields the same result for different people using the same software on different computers. Transparency is a key value of science, as embodied in the "trust but verify" motto. 
 
 <img src="images/memes/forgetting.jpg"  class="right meme"
-     alt="Fry from Futurama squinting; top text: Not sure if I have a bad memory; bottom text: Or a bad memory">
+     alt="Fry from Futurama squinting; top text: Not sure if I have a bad memory; bottom text: Or a bad memory" />
 
 When you do things reproducibly, others can understand and check your work. This benefits science, but there is a selfish reason, too: the most important person who will benefit from a reproducible script is your future self. When you return to an analysis after two weeks of vacation, you will thank your earlier self for doing things in a transparent, reproducible way, as you can easily pick up right where you left off.
 
-There are two tweaks that you should do to your RStudio installation to maximize reproducibility. Go to **`Global Options...`** under the **`Tools`** menu (&#8984;,), and uncheck the box that says **`Restore .RData into workspace at startup`**.  If you keep things around in your workspace, things will get messy, and unexpected things will happen. You should always start with a clear workspace. This also means that you never want to save your workspace when you exit, so set this to **`Never`**. The only thing you want to save are your scripts.
+There are two tweaks that you should do to your RStudio installation to maximize reproducibility. Go to **`Global Options...`** under the **`Tools`** menu (Cmd-,), and uncheck the box that says **`Restore .RData into workspace at startup`**.  If you keep things around in your workspace, things will get messy, and unexpected things will happen. You should always start with a clear workspace. This also means that you never want to save your workspace when you exit, so set this to **`Never`**. The only thing you want to save are your scripts.
 
 ```{r img-repro, echo=FALSE, out.width='66%', fig.cap="Alter these settings for increased reproducibility."}
 knitr::include_graphics("images/01/repro.png")
@@ -89,12 +84,12 @@ Your settings should have:
 
 ### Console commands {#console}
 
-We are first going to learn about how to interact with the `r glossary("console")`. In general, you will be developing R `r glossary("scripts", "script")` or `r glossary("R Markdown")` files, rather than working directly in the console window. However, you can consider the console a kind of "sandbox" where you can try out lines of code and adapt them until you get them to do what you want. Then you can copy them back into the script editor.
+We are first going to learn about how to interact with the `r glossary("console")`. In general, you will be developing R `r glossary("script", "scripts")` or `r glossary("R Markdown")` files, rather than working directly in the console window. However, you can consider the console a kind of "sandbox" where you can try out lines of code and adapt them until you get them to do what you want. Then you can copy them back into the script editor.
 
 Mostly, however, you will be typing into the script editor window (either into an R script or an R Markdown file) and then sending the commands to the console by placing the cursor on the line and holding down the Ctrl key while you press Enter. The Ctrl+Enter key sequence sends the command in the script to the console.
 
 <img src="images/memes/typos.jpg" class="right meme"
-     alt="Morpehus from The Matrix; top text: What if I told you; bottom text: Typos are accidents nd accidents happon">
+     alt="Morpehus from The Matrix; top text: What if I told you; bottom text: Typos are accidents nd accidents happon" />
 
 One simple way to learn about the R console is to use it as a calculator. Enter the lines of code below and see if your results match. Be prepared to make lots of typos (at first).
 
@@ -357,7 +352,7 @@ There is an important distinction between **installing** a package and **loading
 
 ### Installing a package 
 
-<img src="images/memes/pokemon.gif" class="meme right">
+<img src="images/memes/pokemon.gif" class="meme right" />
 
 This is done using `install.packages()`. This is like installing an app on your phone: you only have to do it once and the app will remain installed until you remove it. For instance, if you want to use PokemonGo on your phone, you install it once from the App Store or Play Store, and you don't have to re-install it each time you want to use it. Once you launch the app, it will run in the background until you close it or restart your phone. Likewise, when you install a package, the package will be available (but not *loaded*) every time you open up R.
 
@@ -454,7 +449,7 @@ Each chapter ends with a glossary table defining the jargon introduced in this c
 
 `r glossary_table()`
 
-## Exercises {#exercises-repro}
+## Exercises {#exercises-intro}
 
 Download the first set of [exercises](exercises/01_intro_exercise.Rmd). See the [answers](exercises/01_intro_answers.Rmd) only after you've attempted all the questions.
 

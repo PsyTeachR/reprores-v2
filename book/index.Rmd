@@ -5,19 +5,27 @@ site: bookdown::bookdown_site
 documentclass: book
 bibliography: [book.bib]
 biblio-style: apalike
+classoption: oneside
+geometry: margin=1in
 link-citations: yes
 description: "This book provides an overview of skills needed for reproducible research and open science using the statistical programming language R and tidyverse packages. It covers data visualisation, data tidying and wrangling, archiving, iteration and functions, probability and data simulations, general linear models, and reproducible workflows."
+url: "https://psyteachr.github.io/reprores-v2"
+github-repo: "psyteachr/reprores-v2"
+cover-image: "images/twitter_card.png"
+apple-touch-icon: "images/touch-icon.png"
+apple-touch-icon-size: 152
+favicon: "images/favicon.ico"
 ---
 
 # Overview {-}
 
 <img src="images/logo.png" style="width: 200px; float: right;"
-     alt="Hex sticker, blue, text: DATA SKILLS">
+     alt="Hex sticker, blue, text: Repro Res" />
 
 This book provides an overview of skills needed for reproducible research and open science using the statistical programming language R and tidyverse packages. It covers data visualisation, data tidying and wrangling, archiving, iteration and functions, probability and data simulations, general linear models, and reproducible workflows.
 
 <img src="images/memes/changing-stuff.jpg" class="right meme"
-     alt="Fake O'Reilly-style book cover, line drawing of a kitten; title: Changing Stuff and Seeing What Happens; top text: How to actually learn any new programming concept"/>
+     alt="Fake O'Reilly-style book cover, line drawing of a kitten; title: Changing Stuff and Seeing What Happens; top text: How to actually learn any new programming concept" />
 
 
 ## Course Resources {-}

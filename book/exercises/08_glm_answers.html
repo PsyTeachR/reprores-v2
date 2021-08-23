@@ -212,12 +212,12 @@ pre code {
   # adding the row names makes the output of predict easier to read
   row.names = c(&quot;min&quot;, &quot;mean&quot;, &quot;max&quot;)
 )</code></pre>
-<pre><code>## Warning in min(personality_scores$Ex, na.rm = TRUE): no non-missing arguments to
-## min; returning Inf</code></pre>
+<pre><code>## Warning in min(personality_scores$Ex, na.rm = TRUE): no non-missing arguments
+## to min; returning Inf</code></pre>
 <pre><code>## Warning in mean.default(personality_scores$Ex, na.rm = TRUE): argument is not
 ## numeric or logical: returning NA</code></pre>
-<pre><code>## Warning in max(personality_scores$Ex, na.rm = TRUE): no non-missing arguments to
-## max; returning -Inf</code></pre>
+<pre><code>## Warning in max(personality_scores$Ex, na.rm = TRUE): no non-missing arguments
+## to max; returning -Inf</code></pre>
 <pre class="r"><code>personality_pred &lt;- predict(personality_mod, newdata = scores)</code></pre>
 <pre><code>## Error in predict(personality_mod, newdata = scores): object &#39;personality_mod&#39; not found</code></pre>
 <pre class="r"><code>personality_pred # print the predicted values</code></pre>

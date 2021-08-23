@@ -2,11 +2,11 @@
 
 
 <img src="images/memes/glm_meme.png" class="meme right"
-     alt="Top panel: Fred from Scooby Doo, about to unmask a bound villain, with the text 't-test, ANOVA, Correlation, Regression, etc.'; Bottom panel: Villain unmasked, with the text: 'The general linear model'; credit: Stuart Ritchie">
+     alt="Top panel: Fred from Scooby Doo, about to unmask a bound villain, with the text 't-test, ANOVA, Correlation, Regression, etc.'; Bottom panel: Villain unmasked, with the text: 'The general linear model'; credit: Stuart Ritchie" />
 
 <!--
 <img src="images/memes/linear_regression.jpg" class="meme right"
-     alt="Woody and Buzz from Toy Story. Top text: Linear Regression; Bottom text: Linear regression everywhere">
+     alt="Woody and Buzz from Toy Story. Top text: Linear Regression; Bottom text: Linear regression everywhere" />
      -->
 
 ## Learning Objectives {#ilo9}
@@ -62,7 +62,7 @@ There are some mathematical conventions that you need to learn to understand the
 | Interactions     | $AB, AC, BC, ABC, \ldots$     |
 | Random Error     | $S(Group)$                    |
 
-<img src="images/memes/confused-math-lady.png" class="meme right">
+<img src="images/memes/confused-math-lady.png" class="meme right" />
 
 The linear equation predicts the dependent variable ($Y$) as the sum of the grand average value of $Y$ ($\mu$, also called the intercept), the main effects of all the predictor variables ($A+B+C+ \ldots$), the interactions among all the predictor variables ($AB, AC, BC, ABC, \ldots$), and some random error ($S(Group)$). The equation for a model with two predictor variables ($A$ and $B$) and their interaction ($AB$) is written like this:
 
@@ -128,7 +128,7 @@ ggplot(dat, aes(trial_type, RT)) +
 ```
 
 <div class="figure" style="text-align: center">
-<img src="08-glm_files/figure-html/plot-sim-1.png" alt="Simulated Data" width="100%" />
+<img src="08-glm_files/figure-epub3/plot-sim-1.png" alt="Simulated Data" width="100%" />
 <p class="caption">(\#fig:plot-sim)Simulated Data</p>
 </div>
 
@@ -184,7 +184,7 @@ ggplot(dat) +
 ```
 
 <div class="figure" style="text-align: center">
-<img src="08-glm_files/figure-html/res-density-plot-1.png" alt="Model residuals should be approximately normally distributed for each group" width="100%" />
+<img src="08-glm_files/figure-epub3/res-density-plot-1.png" alt="Model residuals should be approximately normally distributed for each group" width="100%" />
 <p class="caption">(\#fig:res-density-plot)Model residuals should be approximately normally distributed for each group</p>
 </div>
 
@@ -201,7 +201,7 @@ ggplot(dat) +
 ```
 
 <div class="figure" style="text-align: center">
-<img src="08-glm_files/figure-html/res-err-plot-1.png" alt="Model residuals should be very similar to the simulated error" width="100%" />
+<img src="08-glm_files/figure-epub3/res-err-plot-1.png" alt="Model residuals should be very similar to the simulated error" width="100%" />
 <p class="caption">(\#fig:res-err-plot)Model residuals should be very similar to the simulated error</p>
 </div>
 
@@ -315,7 +315,7 @@ lm(RT ~ trial_type.tr, data = dat)$coefficients
 
 ## Relationships among tests {#test-rels}
 
-### T-test
+### T-test {t-test-glm}
 
 The t-test is just a special, limited example of a general linear model.
 
@@ -408,7 +408,7 @@ dat <- two_sample(5, -2, +2, 1, 1)
 You can calculate how each data point (`Y`) deviates from the overall sample mean ($\hat{\mu}$), which is represented by the horizontal grey line below and the deviations are the vertical grey lines. You can also calculate how different each point is from its group-specific mean ($\hat{A_i}$), which are represented by the horizontal coloured lines below and the deviations are the coloured vertical lines.
 
 <div class="figure" style="text-align: center">
-<img src="08-glm_files/figure-html/deviation-1.png" alt="Deviations of each data point (Y) from the overall and group means" width="100%" />
+<img src="08-glm_files/figure-epub3/deviation-1.png" alt="Deviations of each data point (Y) from the overall and group means" width="100%" />
 <p class="caption">(\#fig:deviation)Deviations of each data point (Y) from the overall and group means</p>
 </div>
 
@@ -561,20 +561,20 @@ Using the code above, write your own function that takes a table of data and ret
 
 
 
-|term                                                                                                                            |definition                                                                                                                    |
-|:-------------------------------------------------------------------------------------------------------------------------------|:-----------------------------------------------------------------------------------------------------------------------------|
-|<a class='glossary' target='_blank' href='https://psyteachr.github.io/glossary/c#categorical'>categorical</a>                   |Data that can only take certain values, such as types of pet.                                                                 |
-|<a class='glossary' target='_blank' href='https://psyteachr.github.io/glossary/c#coding.scheme'>coding scheme</a>               |How to represent categorical variables with numbers for use in models                                                         |
-|<a class='glossary' target='_blank' href='https://psyteachr.github.io/glossary/c#continuous'>continuous</a>                     |Data that can take on any values between other existing values.                                                               |
-|<a class='glossary' target='_blank' href='https://psyteachr.github.io/glossary/d#dependent.variable'>dependent variable</a>     |The target variable that is being analyzed, whose value is assumed to depend on other variables.                              |
-|<a class='glossary' target='_blank' href='https://psyteachr.github.io/glossary/e#effect.code'>effect code</a>                   |A coding scheme for categorical variables that contrasts each group mean with the mean of all the group means.                |
-|<a class='glossary' target='_blank' href='https://psyteachr.github.io/glossary/e#error.term'>error term</a>                     |The term in a model that represents the difference between the actual and predicted values                                    |
-|<a class='glossary' target='_blank' href='https://psyteachr.github.io/glossary/g#general.linear.model'>general linear model</a> |A mathematical model comparing how one or more independent variables affect a continuous dependent variable                   |
-|<a class='glossary' target='_blank' href='https://psyteachr.github.io/glossary/i#independent.variable'>independent variable</a> |A variable whose value is assumed to influence the value of a dependent variable.                                             |
-|<a class='glossary' target='_blank' href='https://psyteachr.github.io/glossary/n#normal.distribution'>normal distribution</a>   |A symmetric distribution of data where values near the centre are most probable.                                              |
-|<a class='glossary' target='_blank' href='https://psyteachr.github.io/glossary/r#residual.error'>residual error</a>             |That part of an observation that cannot be captured by the statistical model, and thus is assumed to reflect unknown factors. |
-|<a class='glossary' target='_blank' href='https://psyteachr.github.io/glossary/s#simulation'>simulation</a>                     |Generating data from summary parameters                                                                                       |
-|<a class='glossary' target='_blank' href='https://psyteachr.github.io/glossary/s#standard.deviation'>standard deviation</a>     |A descriptive statistic that measures how spread out data are relative to the mean.                                           |
+|term                                                                                                                       |definition                                                                                                                    |
+|:--------------------------------------------------------------------------------------------------------------------------|:-----------------------------------------------------------------------------------------------------------------------------|
+|[categorical](https://psyteachr.github.io/glossary/c.html#categorical){class="glossary" target="_blank"}                   |Data that can only take certain values, such as types of pet.                                                                 |
+|[coding scheme](https://psyteachr.github.io/glossary/c.html#coding-scheme){class="glossary" target="_blank"}               |How to represent categorical variables with numbers for use in models                                                         |
+|[continuous](https://psyteachr.github.io/glossary/c.html#continuous){class="glossary" target="_blank"}                     |Data that can take on any values between other existing values.                                                               |
+|[dependent variable](https://psyteachr.github.io/glossary/d.html#dependent-variable){class="glossary" target="_blank"}     |The target variable that is being analyzed, whose value is assumed to depend on other variables.                              |
+|[effect code](https://psyteachr.github.io/glossary/e.html#effect-code){class="glossary" target="_blank"}                   |A coding scheme for categorical variables that contrasts each group mean with the mean of all the group means.                |
+|[error term](https://psyteachr.github.io/glossary/e.html#error-term){class="glossary" target="_blank"}                     |The term in a model that represents the difference between the actual and predicted values                                    |
+|[general linear model](https://psyteachr.github.io/glossary/g.html#general-linear-model){class="glossary" target="_blank"} |A mathematical model comparing how one or more independent variables affect a continuous dependent variable                   |
+|[independent variable](https://psyteachr.github.io/glossary/i.html#independent-variable){class="glossary" target="_blank"} |A variable whose value is assumed to influence the value of a dependent variable.                                             |
+|[normal distribution](https://psyteachr.github.io/glossary/n.html#normal-distribution){class="glossary" target="_blank"}   |A symmetric distribution of data where values near the centre are most probable.                                              |
+|[residual error](https://psyteachr.github.io/glossary/r.html#residual-error){class="glossary" target="_blank"}             |That part of an observation that cannot be captured by the statistical model, and thus is assumed to reflect unknown factors. |
+|[simulation](https://psyteachr.github.io/glossary/s.html#simulation){class="glossary" target="_blank"}                     |Generating data from summary parameters                                                                                       |
+|[standard deviation](https://psyteachr.github.io/glossary/s.html#standard-deviation){class="glossary" target="_blank"}     |A descriptive statistic that measures how spread out data are relative to the mean.                                           |
 
 
 

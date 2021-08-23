@@ -1,7 +1,7 @@
 # Data Relations {#joins}
 
 <img src="images/memes/joins.png" class="meme right"
-     alt="3-panel meme. 1: dog looks at a baby in a chair, text reads 'An SQL query goes into a bar, walks up to two tables and asks...'; 2: baby looks at dog, text reads 'Can I join you?'; 3: dog and baby look at camera, no text">
+     alt="3-panel meme. 1: dog looks at a baby in a chair, text reads 'An SQL query goes into a bar, walks up to two tables and asks...'; 2: baby looks at dog, text reads 'Can I join you?'; 3: dog and baby look at camera, no text" />
 
 ## Learning Objectives {#ilo-joins}
 
@@ -599,13 +599,13 @@ base::setdiff(subject, new_subjects)
 
 
 
-|term                                                                                                                  |definition                                                                                                                                              |
-|:---------------------------------------------------------------------------------------------------------------------|:-------------------------------------------------------------------------------------------------------------------------------------------------------|
-|<a class='glossary' target='_blank' href='https://psyteachr.github.io/glossary/b#base.r'>base r</a>                   |The set of R functions that come with a basic installation of R, before you add external packages                                                       |
-|<a class='glossary' target='_blank' href='https://psyteachr.github.io/glossary/b#binding.joins'>binding joins</a>     |Joins that bind one table to another by adding their rows or columns together.                                                                          |
-|<a class='glossary' target='_blank' href='https://psyteachr.github.io/glossary/f#filtering.joins'>filtering joins</a> |Joins that act like the dplyr::filter() function in that they remove rows from the data in one table based on the values in another table.              |
-|<a class='glossary' target='_blank' href='https://psyteachr.github.io/glossary/m#mutating.joins'>mutating joins</a>   |Joins that act like the dplyr::mutate() function in that they add new columns to one table based on values in another table.                            |
-|<a class='glossary' target='_blank' href='https://psyteachr.github.io/glossary/s#set.operations'>set operations</a>   |Functions that compare two tables and return rows that match (intersect), are in either table (union), or are in one table but not the other (setdiff). |
+|term                                                                                                             |definition                                                                                                                                              |
+|:----------------------------------------------------------------------------------------------------------------|:-------------------------------------------------------------------------------------------------------------------------------------------------------|
+|[base r](https://psyteachr.github.io/glossary/b.html#base-r){class="glossary" target="_blank"}                   |The set of R functions that come with a basic installation of R, before you add external packages                                                       |
+|[binding joins](https://psyteachr.github.io/glossary/b.html#binding-joins){class="glossary" target="_blank"}     |Joins that bind one table to another by adding their rows or columns together.                                                                          |
+|[filtering joins](https://psyteachr.github.io/glossary/f.html#filtering-joins){class="glossary" target="_blank"} |Joins that act like the dplyr::filter() function in that they remove rows from the data in one table based on the values in another table.              |
+|[mutating joins](https://psyteachr.github.io/glossary/m.html#mutating-joins){class="glossary" target="_blank"}   |Joins that act like the dplyr::mutate() function in that they add new columns to one table based on values in another table.                            |
+|[set operations](https://psyteachr.github.io/glossary/s.html#set-operations){class="glossary" target="_blank"}   |Functions that compare two tables and return rows that match (intersect), are in either table (union), or are in one table but not the other (setdiff). |
 
 
 

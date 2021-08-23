@@ -1,7 +1,7 @@
 # Iteration & Functions {#func}
 
 <img src="images/memes/functions.jpg" class="meme right"
-     alt="History channel aliens conspiracy guy. Top text: I've got function inside functions...; Bottom text: ... inside functions.">
+     alt="History channel aliens conspiracy guy. Top text: I've got function inside functions...; Bottom text: ... inside functions." />
 
 ## Learning Objectives {#ilo7}
 
@@ -22,7 +22,7 @@ You will learn about functions and iteration by using simulation to calculate a 
 ### Advanced
 
 <img src="images/memes/purrr.gif" class="meme right"
-     alt="Jacobim Mugatu (Will Ferrell) and Katinka Ingabogovinanana (Mila Jojovich) from Zoolander, sitting in a theatre with a small dog; bottom text: purrr::map so hot right now">
+     alt="Jacobim Mugatu (Will Ferrell) and Katinka Ingabogovinanana (Mila Jojovich) from Zoolander, sitting in a theatre with a small dog; bottom text: purrr::map so hot right now" />
 
 The topics below are not (yet) covered in these materials, but they are directions for independent learning.
 
@@ -317,7 +317,7 @@ mypower <- tibble(
 
 
 <div class="figure" style="text-align: center">
-<img src="09-func_files/figure-html/purrr-plot-1.png" alt="Power for a two-sample t-test with d = 0.2" width="100%" />
+<img src="09-func_files/figure-epub3/purrr-plot-1.png" alt="Power for a two-sample t-test with d = 0.2" width="100%" />
 <p class="caption">(\#fig:purrr-plot)Power for a two-sample t-test with d = 0.2</p>
 </div>
 
@@ -772,14 +772,14 @@ Calculate power via simulation and `power.t.test` for the following tests:
 
 
 
-|term                                                                                                      |definition                                                                                   |
-|:---------------------------------------------------------------------------------------------------------|:--------------------------------------------------------------------------------------------|
-|<a class='glossary' target='_blank' href='https://psyteachr.github.io/glossary/a#argument'>argument</a>   |A variable that provides input to a function.                                                |
-|<a class='glossary' target='_blank' href='https://psyteachr.github.io/glossary/d#data.type'>data type</a> |The kind of data represented by an object.                                                   |
-|<a class='glossary' target='_blank' href='https://psyteachr.github.io/glossary/d#double'>double</a>       |A data type representing a real decimal number                                               |
-|<a class='glossary' target='_blank' href='https://psyteachr.github.io/glossary/f#function.'>function </a> |A named section of code that can be reused.                                                  |
-|<a class='glossary' target='_blank' href='https://psyteachr.github.io/glossary/i#iteration'>iteration</a> |Repeating a process or function                                                              |
-|<a class='glossary' target='_blank' href='https://psyteachr.github.io/glossary/m#matrix'>matrix</a>       |A container data type consisting of numbers arranged into a fixed number of rows and columns |
+|term                                                                                                 |definition                                                                                   |
+|:----------------------------------------------------------------------------------------------------|:--------------------------------------------------------------------------------------------|
+|[argument](https://psyteachr.github.io/glossary/a.html#argument){class="glossary" target="_blank"}   |A variable that provides input to a function.                                                |
+|[data type](https://psyteachr.github.io/glossary/d.html#data-type){class="glossary" target="_blank"} |The kind of data represented by an object.                                                   |
+|[double](https://psyteachr.github.io/glossary/d.html#double){class="glossary" target="_blank"}       |A data type representing a real decimal number                                               |
+|[function](https://psyteachr.github.io/glossary/f.html#function){class="glossary" target="_blank"}   |A named section of code that can be reused.                                                  |
+|[iteration](https://psyteachr.github.io/glossary/i.html#iteration){class="glossary" target="_blank"} |Repeating a process or function                                                              |
+|[matrix](https://psyteachr.github.io/glossary/m.html#matrix){class="glossary" target="_blank"}       |A container data type consisting of numbers arranged into a fixed number of rows and columns |
 
 
 
