@@ -14,8 +14,8 @@ description: |
 url: "https://psyteachr.github.io/reprores-v2"
 github-repo: "psyteachr/reprores-v2"
 cover-image: "images/logos/logos.png"
-apple-touch-icon: "images/logos/touch-icon.png"
-apple-touch-icon-size: 152
+apple-touch-icon: "images/logos/apple-touch-icon.png"
+apple-touch-icon-size: 180
 favicon: "images/logos/favicon.ico"
 ---
 
