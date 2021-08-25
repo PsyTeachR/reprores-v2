@@ -387,23 +387,23 @@ He turned to me as if to say, \"Hurry boy, it's waiting there for you\"
 <p>If you want 10 random numbers from a normal distribution with mean of 0 and standard deviation, you can just use the defaults.</p>
 <div class="sourceCode" id="cb28"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span><span class="fl">10</span><span class="op">)</span></code></pre></div>
-<pre><code>##  [1] -1.56187581 -0.05366568 -0.42840181  0.12251154 -0.69768468 -1.75046652
-##  [7] -0.33195512 -0.49993344  0.98457650 -0.22352870</code></pre>
+<pre><code>##  [1]  1.1105853 -0.5461483 -0.7669323 -1.1512916  1.1129190  0.1476838
+##  [7]  0.7253085  0.1571518 -1.1026573  0.5174352</code></pre>
 <p>If you want 10 numbers from a normal distribution with a mean of 100:</p>
 <div class="sourceCode" id="cb30"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span><span class="fl">10</span>, <span class="fl">100</span><span class="op">)</span></code></pre></div>
-<pre><code>##  [1] 101.54846  99.95624 100.48448 100.83332  99.02609 101.60689  99.37389
-##  [8]  97.53072 100.57278  99.36425</code></pre>
+<pre><code>##  [1]  99.94997 100.93326 101.60351  98.75985 100.10601 101.02585  98.97277
+##  [8]  98.19387  98.73396  99.85427</code></pre>
 <p>This would be an equivalent but less efficient way of calling the function:</p>
 <div class="sourceCode" id="cb32"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span>n <span class="op">=</span> <span class="fl">10</span>, mean <span class="op">=</span> <span class="fl">100</span><span class="op">)</span></code></pre></div>
-<pre><code>##  [1] 100.42667 100.42873  98.73086  98.29915  99.37308 100.79337  99.66267
-##  [8]  99.47345 100.11023 100.43430</code></pre>
+<pre><code>##  [1]  99.98911 100.86249 101.38420  97.95455  99.34883  99.83196  99.32835
+##  [8] 100.50277  98.47662  99.73740</code></pre>
 <p>We don't need to name the arguments because R will recognize that we intended to fill in the first and second arguments by their position in the function call. However, if we want to change the default for an argument coming later in the list, then we need to name it. For instance, if we wanted to keep the default <code>mean = 0</code> but change the standard deviation to 100, we would do it this way:</p>
 <div class="sourceCode" id="cb34"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span><span class="fl">10</span>, sd <span class="op">=</span> <span class="fl">100</span><span class="op">)</span></code></pre></div>
-<pre><code>##  [1] 125.876424  59.354870 185.959884 -10.228639 151.560777  34.698290
-##  [7]   9.801728 -69.106684 169.572575  12.340668</code></pre>
+<pre><code>##  [1]   19.25799  -97.97855   56.74377   13.98058  191.57799  -56.02954
+##  [7]   78.10909  111.67311   16.46722 -392.42907</code></pre>
 <p>Some functions give a list of options after an argument; this means the default value is the first option. The usage entry for the <code><a href="https://rdrr.io/r/stats/power.t.test.html">power.t.test()</a></code> function looks like this:</p>
 <div class="sourceCode" id="cb36"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/stats/power.t.test.html">power.t.test</a></span><span class="op">(</span>n <span class="op">=</span> <span class="cn">NULL</span>, delta <span class="op">=</span> <span class="cn">NULL</span>, sd <span class="op">=</span> <span class="fl">1</span>, sig.level <span class="op">=</span> <span class="fl">0.05</span>,
@@ -780,7 +780,7 @@ $( document ).ready(function() {
   var license = ' <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/" target="blank"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png"></a>';
 
   $("footer div.row div:eq(1) p").html(
-    psyteachr . license . cite . video
+    psyteachr + license + cite + video
   );
 });
 </script><div class="chapter-nav">

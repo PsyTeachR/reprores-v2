@@ -25,9 +25,6 @@ favicon: "images/logos/favicon.ico"
 
 This book provides an overview of skills needed for reproducible research and open science using the statistical programming language R and tidyverse packages. It covers data visualisation, data tidying and wrangling, archiving, iteration and functions, probability and data simulations, general linear models, and reproducible workflows.
 
-<div class="right meme"><img src="images/memes/changing-stuff.jpg" 
-     alt="Fake O'Reilly-style book cover, line drawing of a kitten; title: Changing Stuff and Seeing What Happens; top text: How to actually learn any new programming concept" /></a></div>
-
 The book is also available in [ePub](reprores-v2.epub) and [Kindle](reprores-v2.mobi) formats.
 
 ## Course Resources {-}
@@ -45,6 +42,9 @@ The book is also available in [ePub](reprores-v2.epub) and [Kindle](reprores-v2.
 
 * [glossary](https://psyteachr.github.io/glossary){target="_blank"}
     Coding and statistics both have a lot of specialist terms. Throughout this book, jargon will be linked to the glossary.
+    
+<div class="right meme"><img src="images/memes/changing-stuff.jpg" 
+     alt="Fake O'Reilly-style book cover, line drawing of a kitten; title: Changing Stuff and Seeing What Happens; top text: How to actually learn any new programming concept" /></a></div>
 
 ## I found a bug! {-}
 
