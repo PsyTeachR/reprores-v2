@@ -13,9 +13,9 @@ description: |
     This book provides an overview of skills needed for reproducible research and open science using the statistical programming language R and tidyverse packages. It covers data visualisation, data tidying and wrangling, archiving, iteration and functions, probability and data simulations, general linear models, and reproducible workflows.
 url: "https://psyteachr.github.io/reprores-v2"
 github-repo: "psyteachr/reprores-v2"
-cover-image: "images/logos/logos.png"
-apple-touch-icon: "images/logos/touch-icon.png"
-apple-touch-icon-size: 152
+cover-image: "images/logos/logo.png"
+apple-touch-icon: "images/logos/apple-touch-icon.png"
+apple-touch-icon-size: 180
 favicon: "images/logos/favicon.ico"
 ---
 
