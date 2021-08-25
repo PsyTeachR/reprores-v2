@@ -1,7 +1,7 @@
 # Iteration & Functions {#func}
 
-<img src="images/memes/functions.jpg" class="meme right"
-     alt="History channel aliens conspiracy guy. Top text: I've got function inside functions...; Bottom text: ... inside functions." />
+<div class="right meme"><img src="images/memes/functions.jpg" 
+     alt="History channel aliens conspiracy guy. Top text: I've got function inside functions...; Bottom text: ... inside functions." /></div>
 
 ## Learning Objectives {#ilo7}
 
@@ -21,8 +21,8 @@ You will learn about functions and iteration by using simulation to calculate a 
 
 ### Advanced
 
-<img src="images/memes/purrr.gif" class="meme right"
-     alt="Jacobim Mugatu (Will Ferrell) and Katinka Ingabogovinanana (Mila Jojovich) from Zoolander, sitting in a theatre with a small dog; bottom text: purrr::map so hot right now" />
+<div class="right meme"><img src="images/memes/purrr.gif"
+     alt="Jacobim Mugatu (Will Ferrell) and Katinka Ingabogovinanana (Mila Jojovich) from Zoolander, sitting in a theatre with a small dog; bottom text: purrr::map so hot right now" /></div>
 
 The topics below are not (yet) covered in these materials, but they are directions for independent learning.
 

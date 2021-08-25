@@ -1,7 +1,7 @@
 # Getting Started {#intro}
 
-<img src="images/memes/rstudio.png" class="meme right"
-     alt="A line drawing of a person looking at a computer with a magnifying glass. The text reads 'I just installed RStudio. I'm a data scientist now.'" />
+<div class="meme right"><img src="images/memes/rstudio.png" 
+     alt="A line drawing of a person looking at a computer with a magnifying glass. The text reads 'I just installed RStudio. I'm a data scientist now.'" /></div>
 
 ## Learning Objectives {#ilo-intro}
 
@@ -23,7 +23,7 @@
 
 ## What is R?
 
-<img src="images/01/new_R_logo.png"  class="left meme" />
+<div class="meme left"><img src="images/01/new_R_logo.png" /></div>
 
 R is a programming environment for data processing and statistical analysis. We use R in Psychology at the University of Glasgow to promote `r glossary("reproducible research")`. This refers to being able to document and reproduce all of the steps between raw data and results. R allows you to write `r glossary("script", "scripts")` that combine data files, clean data, and run analyses. There are many other ways to do this, including writing SPSS syntax files, but we find R to be a useful tool that is free, open source, and commonly used by research psychologists.
 
@@ -62,8 +62,8 @@ RStudio is arranged with four window `r glossary("panes")`. By default, the uppe
 
 In this class, you will be learning how to do `r glossary("reproducible research")`.  This involves writing scripts that completely and transparently perform some analysis from start to finish in a way that yields the same result for different people using the same software on different computers. Transparency is a key value of science, as embodied in the "trust but verify" motto. 
 
-<img src="images/memes/forgetting.jpg"  class="right meme"
-     alt="Fry from Futurama squinting; top text: Not sure if I have a bad memory; bottom text: Or a bad memory" />
+<div class="meme right"><img src="images/memes/forgetting.jpg" 
+     alt="Fry from Futurama squinting; top text: Not sure if I have a bad memory; bottom text: Or a bad memory" /></div>
 
 When you do things reproducibly, others can understand and check your work. This benefits science, but there is a selfish reason, too: the most important person who will benefit from a reproducible script is your future self. When you return to an analysis after two weeks of vacation, you will thank your earlier self for doing things in a transparent, reproducible way, as you can easily pick up right where you left off.
 
@@ -88,8 +88,8 @@ We are first going to learn about how to interact with the `r glossary("console"
 
 Mostly, however, you will be typing into the script editor window (either into an R script or an R Markdown file) and then sending the commands to the console by placing the cursor on the line and holding down the Ctrl key while you press Enter. The Ctrl+Enter key sequence sends the command in the script to the console.
 
-<img src="images/memes/typos.jpg" class="right meme"
-     alt="Morpehus from The Matrix; top text: What if I told you; bottom text: Typos are accidents nd accidents happon" />
+<div class="meme right"><img src="images/memes/typos.jpg"
+     alt="Morpehus from The Matrix; top text: What if I told you; bottom text: Typos are accidents nd accidents happon" /></div>
 
 One simple way to learn about the R console is to use it as a calculator. Enter the lines of code below and see if your results match. Be prepared to make lots of typos (at first).
 
@@ -352,7 +352,7 @@ There is an important distinction between **installing** a package and **loading
 
 ### Installing a package 
 
-<img src="images/memes/pokemon.gif" class="meme right" />
+<div class="meme right"><img src="images/memes/pokemon.gif" /></div>
 
 This is done using `install.packages()`. This is like installing an app on your phone: you only have to do it once and the app will remain installed until you remove it. For instance, if you want to use PokemonGo on your phone, you install it once from the App Store or Play Store, and you don't have to re-install it each time you want to use it. Once you launch the app, it will run in the background until you close it or restart your phone. Likewise, when you install a package, the package will be available (but not *loaded*) every time you open up R.
 

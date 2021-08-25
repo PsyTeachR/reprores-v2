@@ -4,9 +4,9 @@ library(shinydashboard)
 library(ggplot2)
 library(dplyr)
 
-source("R/split_violin.R")
-source("R/data_funcs.R")
-source("R/plot_funcs.R")
+source("scripts/split_violin.R")
+source("scripts/data_funcs.R")
+source("scripts/plot_funcs.R")
 
 # ui ----
 ui <- dashboardPage(

@@ -1,7 +1,7 @@
 # Working with Data {#data}
 
-<img src="images/memes/read_csv.png" class="meme right"
-     alt = "Top left: Pooh Bear in a red shirt looking sad; Top right: read.csv() in outline font; Bottom left: Pooh Bear in a tuxedo looking smug; Bottom right: read_csv() in handwritten font" />
+<div class="right meme"><img src="images/memes/read_csv.png"
+     alt = "Top left: Pooh Bear in a red shirt looking sad; Top right: read.csv() in outline font; Bottom left: Pooh Bear in a tuxedo looking smug; Bottom right: read_csv() in handwritten font" /></div>
 
 ## Learning Objectives {#ilo2}
 

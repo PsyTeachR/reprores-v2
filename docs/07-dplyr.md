@@ -1,7 +1,7 @@
 # Data Wrangling {#dplyr}
 
-<img src="images/memes/real_world_data.jpg" class="meme right" 
-     alt="A cute golden retriever labelled 'iris & mtcars' and a scary werewolf labelled 'Real world data'" />
+<div class="right meme"><img src="images/memes/real_world_data.jpg"
+     alt="A cute golden retriever labelled 'iris & mtcars' and a scary werewolf labelled 'Real world data'" /></div>
 
 ## Learning Objectives {#ilo-dplyr}
 

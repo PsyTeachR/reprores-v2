@@ -1,12 +1,12 @@
 # Introduction to GLM {#glm}
 
 
-<img src="images/memes/glm_meme.png" class="meme right"
-     alt="Top panel: Fred from Scooby Doo, about to unmask a bound villain, with the text 't-test, ANOVA, Correlation, Regression, etc.'; Bottom panel: Villain unmasked, with the text: 'The general linear model'; credit: Stuart Ritchie" />
+<div class="right meme"><img src="images/memes/glm_meme.png"
+     alt="Top panel: Fred from Scooby Doo, about to unmask a bound villain, with the text 't-test, ANOVA, Correlation, Regression, etc.'; Bottom panel: Villain unmasked, with the text: 'The general linear model'; credit: Stuart Ritchie" /></div>
 
 <!--
-<img src="images/memes/linear_regression.jpg" class="meme right"
-     alt="Woody and Buzz from Toy Story. Top text: Linear Regression; Bottom text: Linear regression everywhere" />
+<div class="right meme"><img src="images/memes/linear_regression.jpg"
+     alt="Woody and Buzz from Toy Story. Top text: Linear Regression; Bottom text: Linear regression everywhere" /></div>
      -->
 
 ## Learning Objectives {#ilo9}
@@ -61,7 +61,8 @@ There are some mathematical conventions that you need to learn to understand the
 | Interactions     | $AB, AC, BC, ABC, \ldots$     |
 | Random Error     | $S(Group)$                    |
 
-<img src="images/memes/confused-math-lady.png" class="meme right" />
+<div class="right meme"><img src="images/memes/confused-math-lady.png" 
+    alt="Confused math lady meme" /></div>
 
 The linear equation predicts the dependent variable ($Y$) as the sum of the grand average value of $Y$ ($\mu$, also called the intercept), the main effects of all the predictor variables ($A+B+C+ \ldots$), the interactions among all the predictor variables ($AB, AC, BC, ABC, \ldots$), and some random error ($S(Group)$). The equation for a model with two predictor variables ($A$ and $B$) and their interaction ($AB$) is written like this:
 

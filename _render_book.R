@@ -28,13 +28,12 @@ file.remove("docs/reprores-v2.mobi")
 system("/Applications/calibre.app/Contents/MacOS/ebook-convert ~/rproj/psyteachr/reprores-v2/docs/reprores-v2.epub ~/rproj/psyteachr/reprores-v2/docs/reprores-v2.mobi")
 
 ## make html ----
-of <- bookdown::gitbook(split_bib = FALSE)
 browseURL(
-  xfun::in_dir("book", bookdown::render_book("index.Rmd", "bookdown::gitbook"))
+  xfun::in_dir("book", bookdown::render_book("index.Rmd", "bookdown::bs4_book"))
 )
 
 
-#browseURL(xfun::in_dir("book", bookdown::preview_chapter("00-intro.Rmd")))
+#browseURL(xfun::in_dir("book", bookdown::preview_chapter("01-intro.Rmd", output = "bookdown::bs4_book")))
 
 # copies dir
 R.utils::copyDirectory(

@@ -1,7 +1,7 @@
 # Tidy Data {#tidyr}
 
-<img src="images/memes/messy_data.jpg" class="meme right"
-     alt="A giant demon emerging from fire labelled 'messy data'; in front is a tiny human labelled 'R User'" />
+<div class="right meme"><img src="images/memes/messy_data.jpg" 
+     alt="A giant demon emerging from fire labelled 'messy data'; in front is a tiny human labelled 'R User'" /></div>
 
 ## Learning Objectives {#ilo-tidyr}
 
@@ -464,7 +464,7 @@ personality_spread <- spread(
 
 ## Pipes {#pipes}
 
-<img src="images/04/pipe_sticker.png" style="width: 200px; float: right;" />
+<div class="small_right"><img src="images/04/pipe_sticker.png" alt="Pipe hex sticker" /></div>
 
 Pipes are a way to order your code in a more readable format. 
 

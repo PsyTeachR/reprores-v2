@@ -1,37 +1,39 @@
 --- 
 title: Data Skills for Reproducible Research
+subtitle: v2
 date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
 documentclass: book
-bibliography: [book.bib]
+bibliography: [book.bib, packages.bib]
 biblio-style: apalike
 classoption: oneside
 geometry: margin=1in
 link-citations: yes
-description: "This book provides an overview of skills needed for reproducible research and open science using the statistical programming language R and tidyverse packages. It covers data visualisation, data tidying and wrangling, archiving, iteration and functions, probability and data simulations, general linear models, and reproducible workflows."
+description: |
+    This book provides an overview of skills needed for reproducible research and open science using the statistical programming language R and tidyverse packages. It covers data visualisation, data tidying and wrangling, archiving, iteration and functions, probability and data simulations, general linear models, and reproducible workflows.
 url: "https://psyteachr.github.io/reprores-v2"
 github-repo: "psyteachr/reprores-v2"
-cover-image: "images/twitter_card.png"
-apple-touch-icon: "images/touch-icon.png"
+cover-image: "images/logos/twitter_card.png"
+apple-touch-icon: "images/logos/touch-icon.png"
 apple-touch-icon-size: 152
-favicon: "images/favicon.ico"
+favicon: "images/logos/favicon.ico"
 ---
 
 # Overview {-}
 
-<img src="images/logo.png" style="width: 200px; float: right;"
-     alt="Hex sticker, blue, text: Repro Res" />
+<div class="small_right"><img src="images/logo.png" alt="Hex sticker, blue, text: Repro Res" /></div>
 
 This book provides an overview of skills needed for reproducible research and open science using the statistical programming language R and tidyverse packages. It covers data visualisation, data tidying and wrangling, archiving, iteration and functions, probability and data simulations, general linear models, and reproducible workflows.
 
-<img src="images/memes/changing-stuff.jpg" class="right meme"
-     alt="Fake O'Reilly-style book cover, line drawing of a kitten; title: Changing Stuff and Seeing What Happens; top text: How to actually learn any new programming concept" />
+<div class="right meme"><img src="images/memes/changing-stuff.jpg" 
+     alt="Fake O'Reilly-style book cover, line drawing of a kitten; title: Changing Stuff and Seeing What Happens; top text: How to actually learn any new programming concept" /></a></div>
 
+The book is also available in [ePub](reprores-v2.epub) and [Kindle](reprores-v2.mobi) formats.
 
 ## Course Resources {-}
 
 * [Data Skills Videos](https://www.youtube.com/playlist?list=PLA2iRWVwbpTIweEBHD2dOKjZHK1atRmXt){target="_blank"}
-    Each chapter has several short video lectures for the main learning outcomes at the playlist . The videos are captioned and watching with the captioning on is a useful way to learn the jargon of computational reproducibility. If you cannot access YouTube, the videos are available on the course Teams and Moodle sites or by request from the instructor.
+    Each chapter has several short video lectures for the main learning outcomes. The videos are captioned and watching with the captioning on is a useful way to learn the jargon of computational reproducibility. If you cannot access YouTube, the videos are available by request. **The book chapters have changed order in version 2, so the playlist is not yet in the same order as the book, but each chapter links to the relevant playlist videos.**
 
 * [reprores](https://github.com/psyteachr/reprores-v2){target="_blank"}
     This is a custom R package for this course. You can install it with the code below. It will download all of the packages that are used in the book, along with an offline copy of this book, the shiny apps used in the book, and the exercises.

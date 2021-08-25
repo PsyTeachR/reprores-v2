@@ -1,7 +1,7 @@
 # Probability & Simulation {#sim}
 
-<img src="images/memes/sim.jpg" class="meme right"
-     alt="Morpheus from The Matrix. Top text: What if I told you; Bottom text: Ur in a simulation, inside a simulation, inside another simulation, inside a taco, inside a taco cat, inside a Taco Bell, inside an Arby's. Inside another simulation" />
+<div class="right meme"><img src="images/memes/sim.jpg"
+     alt="Morpheus from The Matrix. Top text: What if I told you; Bottom text: Ur in a simulation, inside a simulation, inside another simulation, inside a taco, inside a taco cat, inside a Taco Bell, inside an Arby's. Inside another simulation" /></div>
 
 ## Learning Objectives {#ilo-sim}
 
@@ -385,7 +385,8 @@ Let's review some important statistical terms before we review tests of distribu
 
 The `r glossary("effect")` is some measure of your data. This will depend on the type of data you have and the type of statistical test you are using. For example, if you flipped a coin 100 times and it landed heads 66 times, the effect would be 66/100. You can then use the exact binomial test to compare this effect to the `r glossary("null effect")` you would expect from a fair coin (50/100) or to any other effect you choose. The `r glossary("effect size")` refers to the difference between the effect in your data and the null effect (usually a chance value).
 
-<img src="images/memes/p-value.jpg" class="meme right" />
+<div class="right meme"><img src="images/memes/p-value.jpg"
+  alt="Top text: Don't know what a p-value is, Bottom text: at this point I'm too afraid to ask"/></div>
 
 ### P-value {#p-value}
 

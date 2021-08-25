@@ -1,7 +1,7 @@
 # Data Relations {#joins}
 
-<img src="images/memes/joins.png" class="meme right"
-     alt="3-panel meme. 1: dog looks at a baby in a chair, text reads 'An SQL query goes into a bar, walks up to two tables and asks...'; 2: baby looks at dog, text reads 'Can I join you?'; 3: dog and baby look at camera, no text" />
+<div class="right meme"><img src="images/memes/joins.png"
+     alt="3-panel meme. 1: dog looks at a baby in a chair, text reads 'An SQL query goes into a bar, walks up to two tables and asks...'; 2: baby looks at dog, text reads 'Can I join you?'; 3: dog and baby look at camera, no text" /></div>
 
 ## Learning Objectives {#ilo-joins}
 

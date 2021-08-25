@@ -1,7 +1,7 @@
 # Getting Started {#intro}
 
-<img src="images/memes/rstudio.png" class="meme right"
-     alt="A line drawing of a person looking at a computer with a magnifying glass. The text reads 'I just installed RStudio. I'm a data scientist now.'" />
+<div class="meme right"><img src="images/memes/rstudio.png" 
+     alt="A line drawing of a person looking at a computer with a magnifying glass. The text reads 'I just installed RStudio. I'm a data scientist now.'" /></div>
 
 ## Learning Objectives {#ilo-intro}
 
@@ -23,7 +23,7 @@
 
 ## What is R?
 
-<img src="images/01/new_R_logo.png"  class="left meme" />
+<div class="meme left"><img src="images/01/new_R_logo.png" /></div>
 
 R is a programming environment for data processing and statistical analysis. We use R in Psychology at the University of Glasgow to promote <a class='glossary' target='_blank' title='Research that documents all of the steps between raw data and results in a way that can be verified.' href='https://psyteachr.github.io/glossary/r#reproducible-research'>reproducible research</a>. This refers to being able to document and reproduce all of the steps between raw data and results. R allows you to write <a class='glossary' target='_blank' title='A plain-text file that contains commands in a coding language, such as R.' href='https://psyteachr.github.io/glossary/s#script'>scripts</a> that combine data files, clean data, and run analyses. There are many other ways to do this, including writing SPSS syntax files, but we find R to be a useful tool that is free, open source, and commonly used by research psychologists.
 
@@ -64,8 +64,8 @@ RStudio is arranged with four window <a class='glossary' target='_blank' title='
 
 In this class, you will be learning how to do <a class='glossary' target='_blank' title='Research that documents all of the steps between raw data and results in a way that can be verified.' href='https://psyteachr.github.io/glossary/r#reproducible-research'>reproducible research</a>.  This involves writing scripts that completely and transparently perform some analysis from start to finish in a way that yields the same result for different people using the same software on different computers. Transparency is a key value of science, as embodied in the "trust but verify" motto. 
 
-<img src="images/memes/forgetting.jpg"  class="right meme"
-     alt="Fry from Futurama squinting; top text: Not sure if I have a bad memory; bottom text: Or a bad memory" />
+<div class="meme right"><img src="images/memes/forgetting.jpg" 
+     alt="Fry from Futurama squinting; top text: Not sure if I have a bad memory; bottom text: Or a bad memory" /></div>
 
 When you do things reproducibly, others can understand and check your work. This benefits science, but there is a selfish reason, too: the most important person who will benefit from a reproducible script is your future self. When you return to an analysis after two weeks of vacation, you will thank your earlier self for doing things in a transparent, reproducible way, as you can easily pick up right where you left off.
 
@@ -91,8 +91,8 @@ We are first going to learn about how to interact with the <a class='glossary' t
 
 Mostly, however, you will be typing into the script editor window (either into an R script or an R Markdown file) and then sending the commands to the console by placing the cursor on the line and holding down the Ctrl key while you press Enter. The Ctrl+Enter key sequence sends the command in the script to the console.
 
-<img src="images/memes/typos.jpg" class="right meme"
-     alt="Morpehus from The Matrix; top text: What if I told you; bottom text: Typos are accidents nd accidents happon" />
+<div class="meme right"><img src="images/memes/typos.jpg"
+     alt="Morpehus from The Matrix; top text: What if I told you; bottom text: Typos are accidents nd accidents happon" /></div>
 
 One simple way to learn about the R console is to use it as a calculator. Enter the lines of code below and see if your results match. Be prepared to make lots of typos (at first).
 
@@ -355,8 +355,8 @@ rnorm(10)
 ```
 
 ```
-##  [1]  0.9453820 -0.8120701  0.1882680 -2.1568683 -0.5643374 -0.4731586
-##  [7] -1.5349024  0.8484785 -2.5776470 -0.4465285
+##  [1] -1.56187581 -0.05366568 -0.42840181  0.12251154 -0.69768468 -1.75046652
+##  [7] -0.33195512 -0.49993344  0.98457650 -0.22352870
 ```
 
 If you want 10 numbers from a normal distribution with a mean of 100:
@@ -367,8 +367,8 @@ rnorm(10, 100)
 ```
 
 ```
-##  [1] 100.48297  99.02319 100.43214 100.79881  99.41757  99.85845 101.35192
-##  [8]  98.67200 100.18863 100.69719
+##  [1] 101.54846  99.95624 100.48448 100.83332  99.02609 101.60689  99.37389
+##  [8]  97.53072 100.57278  99.36425
 ```
 
 This would be an equivalent but less efficient way of calling the function:
@@ -379,8 +379,8 @@ rnorm(n = 10, mean = 100)
 ```
 
 ```
-##  [1] 101.21174  98.12495  99.82029  98.94915  99.95038  99.49423 100.41073
-##  [8] 100.80133 103.16811 101.35052
+##  [1] 100.42667 100.42873  98.73086  98.29915  99.37308 100.79337  99.66267
+##  [8]  99.47345 100.11023 100.43430
 ```
 
 We don't need to name the arguments because R will recognize that we intended to fill in the first and second arguments by their position in the function call. However, if we want to change the default for an argument coming later in the list, then we need to name it. For instance, if we wanted to keep the default `mean = 0` but change the standard deviation to 100, we would do it this way:
@@ -391,8 +391,8 @@ rnorm(10, sd = 100)
 ```
 
 ```
-##  [1]  162.27047  -93.45325   64.40479  220.04454  102.96973   37.81068
-##  [7]  -38.87600   13.11415  132.93693 -157.26186
+##  [1] 125.876424  59.354870 185.959884 -10.228639 151.560777  34.698290
+##  [7]   9.801728 -69.106684 169.572575  12.340668
 ```
 
 Some functions give a list of options after an argument; this means the default value is the first option. The usage entry for the `power.t.test()` function looks like this:
@@ -448,7 +448,7 @@ There is an important distinction between **installing** a package and **loading
 
 ### Installing a package 
 
-<img src="images/memes/pokemon.gif" class="meme right" />
+<div class="meme right"><img src="images/memes/pokemon.gif" /></div>
 
 This is done using `install.packages()`. This is like installing an app on your phone: you only have to do it once and the app will remain installed until you remove it. For instance, if you want to use PokemonGo on your phone, you install it once from the App Store or Play Store, and you don't have to re-install it each time you want to use it. Once you launch the app, it will run in the background until you close it or restart your phone. Likewise, when you install a package, the package will be available (but not *loaded*) every time you open up R.
 
