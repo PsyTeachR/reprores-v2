@@ -1,7 +1,7 @@
 --- 
 title: Data Skills for Reproducible Research
 subtitle: v2
-date: "2021-08-25"
+date: "2021-08-27"
 site: bookdown::bookdown_site
 documentclass: book
 bibliography: [book.bib, packages.bib]

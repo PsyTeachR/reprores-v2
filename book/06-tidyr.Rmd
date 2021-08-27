@@ -298,7 +298,7 @@ personality_spread <- spread(
 
 ## Pipes {#pipes}
 
-<div class="small_right"><img src="images/04/pipe_sticker.png" alt="Pipe hex sticker" /></div>
+<div class="small_right"><img src="images/tidyr/pipe_sticker.png" alt="Pipe hex sticker" /></div>
 
 Pipes are a way to order your code in a more readable format. 
 

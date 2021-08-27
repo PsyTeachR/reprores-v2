@@ -33,7 +33,7 @@ browseURL(
 )
 
 
-#browseURL(xfun::in_dir("book", bookdown::preview_chapter("01-intro.Rmd", output = "bookdown::bs4_book")))
+browseURL(xfun::in_dir("book", bookdown::preview_chapter("02-repro.Rmd", output = "bookdown::bs4_book")))
 
 # copies dir
 R.utils::copyDirectory(

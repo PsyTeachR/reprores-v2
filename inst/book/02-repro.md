@@ -28,8 +28,9 @@
 * [R Markdown reference Guide](https://www.rstudio.com/wp-content/uploads/2015/03/rmarkdown-reference.pdf)
 * [R Markdown Tutorial](https://rmarkdown.rstudio.com/lesson-1.html)
 * [R Markdown: The Definitive Guide](https://bookdown.org/yihui/rmarkdown/) by Yihui Xie, J. J. Allaire, & Garrett Grolemund
+* [Project Structure](https://slides.djnavarro.net/project-structure/) by Danielle Navarro
+* [How to name files](https://speakerdeck.com/jennybc/how-to-name-files) by Jenny Bryan
 * [Papaja](https://crsh.github.io/papaja_man/) Reproducible APA Manuscripts
-* [Code Ocean](https://codeocean.com/) for Computational Reproducibility
 
 
 ## Setup {#setup-repro}
@@ -38,8 +39,6 @@
 ```r
 library(tidyverse)
 library(knitr)
-library(broom)
-set.seed(8675309)
 ```
 
 ## Why learn reproducible reports?
@@ -59,7 +58,7 @@ First, we need to get orgainsed.
 <a class='glossary' target='_blank' title='A way to organise related files in RStudio' href='https://psyteachr.github.io/glossary/p#project'>Projects</a> in RStudio are a way to group all of the files you need for one project. Most projects include scripts, data files, and output files like the PDF version of the script or images.
 
 ::: {.try data-latex=""}
-Make a new directory where you will keep all of your materials for this class. If you're using a lab computer, make sure you make this directory in your network drive so you can access it from other computers. 
+Make a new <a class='glossary' target='_blank' title='A collection or “folder” of files on a computer.' href='https://psyteachr.github.io/glossary/d#directory'>directory</a> where you will keep all of your materials for this class. If you're using a lab computer, make sure you make this directory in your network drive so you can access it from other computers. 
 
 Choose **`New Project...`** under the **`File`** menu to create a new project called `01-repro` in this directory.
 :::
@@ -111,6 +110,39 @@ dat <- read_csv("C:/Carla's_files/thesis22/my_thesis/new_analysis/data/questionn
 Also note the convention of using forward slashes, unlike the Windows-specific convention of using backward slashes. This is to make references to files platform independent.
 :::
 
+### Naming Things
+
+There are two perfect guides to naming files: Jenny Bryan's [How to name files](https://speakerdeck.com/jennybc/how-to-name-files){target="_blank"} and Danielle Navarro's [Project Structure](https://slides.djnavarro.net/project-structure/){target="_blank"} (which also has a YouTube video). I really recommend you check those out, but I'll list the most important principles here:
+
+* file and directory names should only contain letters, numbers, dashes, and underscores, with a full stop (`.`) between the file name and <a class='glossary' target='_blank' title='The end part of a file name that tells you what type of file it is (e.g., .R or .Rmd).' href='https://psyteachr.github.io/glossary/e#extension'>extension</a> (that means no spaces!)
+* be consistent with capitalisation (I prefer to never use it to make it easy to remember)
+* use underscores (`_`) to separate parts of the file name, and dashes (`-`) to separate words in a section
+* name files with a pattern that alphabetises in a sensible order and makes it easy for you to find the file you're looking for
+* prefix a filename with an underscore to move it to the top of the list, or prefix all files with numbers to control their order
+
+For example, these file names are a mess:
+
+* `analysis.R`
+* `analysis final.R`
+* `Data (Expmnt) 11-15.xls`
+* `Experiment Data Nov 12.xls`
+* `final analysis2.R`
+* `project notes.txt`
+* `Subject Data November 15.xls`
+
+Here is one way to structure them so that similar files have the same structure and it's easy for a human to scan the list or to use code to find relevant files. See if you can figure out what the last one should be.
+
+* `_project-notes.txt`
+* `analysis_v1.R`
+* `analysis_v2.R`
+* `analysis_v3.R`
+* `data_experiment_2021-11-12.xls`
+* `data_experiment_2021-11-15.xls`
+* <select class='webex-solveme' data-answer='["data_subjects_2021-11-15.xls"]'> <option></option> <option>subject-data_2021-11-15.xls</option> <option>data-subjects-2021_11_15.xls</option> <option>data_subjects_2021-11-15.xls</option> <option>data_2021-11-15_subjects.xls</option></select>
+
+::: {.try data-latex=""}
+Think of other ways to name the files above. Look at the project directory for your last study and see what you can improve.
+:::
 
 
 ## R Markdown
@@ -120,8 +152,8 @@ In this lesson, we will learn to make an R Markdown document with a table of con
 We will use <a class='glossary' target='_blank' title='The R-specific version of markdown: a way to specify formatting, such as headers, paragraphs, lists, bolding, and links, as well as code blocks and inline code.' href='https://psyteachr.github.io/glossary/r#r-markdown'>R Markdown</a> to create reproducible reports, which enables mixing of text and code. A reproducible script will contain sections of code in code blocks. A code block starts and ends with backtick symbols in a row, with some information about the code between curly brackets, such as `{r chunk-name, echo=FALSE}` (this runs the code, but does not show the text of the code block in the compiled document). The text outside of code blocks is written in <a class='glossary' target='_blank' title='A way to specify formatting, such as headers, paragraphs, lists, bolding, and links.' href='https://psyteachr.github.io/glossary/m#markdown'>markdown</a>, which is a way to specify formatting, such as headers, paragraphs, lists, bolding, and links.
 
 <div class="figure" style="text-align: center">
-<img src="images/01/reproducibleScript.png" alt="A reproducible script." width="100%" />
-<p class="caption">(\#fig:img-reproducibleScript)A reproducible script.</p>
+<img src="images/repro/reproducible_script.png" alt="A reproducible script." width="100%" />
+<p class="caption">(\#fig:img-reproducible-script)A reproducible script.</p>
 </div>
 
 If you open up a new R Markdown file from a template, you will see an example document with several code blocks in it. To create an HTML or PDF report from an R Markdown (Rmd) document, you compile it.  Compiling a document is called <a class='glossary' target='_blank' title='To create an HTML, PDF, or Word document from an R Markdown (Rmd) document' href='https://psyteachr.github.io/glossary/k#knit'>knitting</a> in RStudio. There is a button that looks like a ball of yarn with needles through it that you click on to compile your file into a report. 
@@ -142,7 +174,9 @@ author: "Me"
 output:
   html_document:
     df_print: kable
-    theme: spacelab
+    theme: 
+      version: 4
+      theme: yeti
     highlight: tango
     toc: true
     toc_float:
@@ -153,13 +187,20 @@ output:
 ---
 ```
 
-The `df_print: kable` option prints data frames using `knitr::kable`. You'll learn below how to further customise tables.
-
-The built-in themes are: "cerulean", "cosmo", "flatly", "journal", "lumen", "paper", "readable", "sandstone", "simplex", "spacelab", "united", and "yeti". You can [view and download more themes](http://www.datadreaming.org/post/r-markdown-theme-gallery/).
-
 ::: {.info data-latex=""}
 Try changing the values from `false` to `true` to see what the options do.
 :::
+
+The `df_print: kable` option prints data frames using `knitr::kable`. You'll learn below how to further customise tables.
+
+The built-in themes are: default, cerulean, cosmo,darkly, flatly, journal, lumen, paper, readable, sandstone, simplex, spacelab, united, and yeti. You can [view and download more themes](https://bootswatch.com/4/).
+
+<div class="figure" style="text-align: center">
+<img src="images/repro/bootswatch.png" alt="Light themes in versions 3 and 4." width="100%" />
+<p class="caption">(\#fig:img-bootswatch)Light themes in versions 3 and 4.</p>
+</div>
+
+
 
 
 ### Setup
@@ -524,11 +565,6 @@ Add some citations to your bibliography.bib file, reference them in your text, a
 
 You can knit your file to PDF or Word if you have the right packages installed on your computer. You can also create presentations, dashboards, websites, and even books with R markdown. In fact, the book you are reading right now was created using R markdown. See [RStudio Formats](https://rmarkdown.rstudio.com/formats.html) for a list of all the output types.
 
-### Computational Reproducibility
-
-Computational reproducibility refers to making all aspects of your analysis reproducible, including specifics of the software you used to run the code you wrote. R packages get updated periodically and some of these updates may break your code. Using a computational reproducibility platform guards against this by always running your code in the same environment.
-
-[Code Ocean](https://codeocean.com/) is a platform that lets you run your code in the cloud via a web browser. 
 
 ## Glossary {#glossary-repro}
 
@@ -538,6 +574,8 @@ Computational reproducibility refers to making all aspects of your analysis repr
 |:--------------------------------------------------------------------------------------------------------------------|:----------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |[absolute path](https://psyteachr.github.io/glossary/a.html#absolute-path){class="glossary" target="_blank"}         |A file path that starts with / and is not appended to the working directory                                                                                      |
 |[chunk](https://psyteachr.github.io/glossary/c.html#chunk){class="glossary" target="_blank"}                         |A section of code in an R Markdown file                                                                                                                          |
+|[directory](https://psyteachr.github.io/glossary/d.html#directory){class="glossary" target="_blank"}                 |A collection or “folder” of files on a computer.                                                                                                                 |
+|[extension](https://psyteachr.github.io/glossary/e.html#extension){class="glossary" target="_blank"}                 |The end part of a file name that tells you what type of file it is (e.g., .R or .Rmd).                                                                           |
 |[knit](https://psyteachr.github.io/glossary/k.html#knit){class="glossary" target="_blank"}                           |To create an HTML, PDF, or Word document from an R Markdown (Rmd) document                                                                                       |
 |[markdown](https://psyteachr.github.io/glossary/m.html#markdown){class="glossary" target="_blank"}                   |A way to specify formatting, such as headers, paragraphs, lists, bolding, and links.                                                                             |
 |[project](https://psyteachr.github.io/glossary/p.html#project){class="glossary" target="_blank"}                     |A way to organise related files in RStudio                                                                                                                       |

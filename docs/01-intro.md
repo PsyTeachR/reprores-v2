@@ -23,7 +23,7 @@
 
 ## What is R?
 
-<div class="meme left"><img src="images/01/new_R_logo.png" /></div>
+<div class="meme left"><img src="images/intro/new_R_logo.png" /></div>
 
 R is a programming environment for data processing and statistical analysis. We use R in Psychology at the University of Glasgow to promote <a class='glossary' target='_blank' title='Research that documents all of the steps between raw data and results in a way that can be verified.' href='https://psyteachr.github.io/glossary/r#reproducible-research'>reproducible research</a>. This refers to being able to document and reproduce all of the steps between raw data and results. R allows you to write <a class='glossary' target='_blank' title='A plain-text file that contains commands in a coding language, such as R.' href='https://psyteachr.github.io/glossary/s#script'>scripts</a> that combine data files, clean data, and run analyses. There are many other ways to do this, including writing SPSS syntax files, but we find R to be a useful tool that is free, open source, and commonly used by research psychologists.
 
@@ -37,7 +37,7 @@ See Appendix \@ref(installingr) for more information on on how to install R and 
 If you open up the application called R, you will see an "R Console" window that looks something like this.
 
 <div class="figure" style="text-align: center">
-<img src="images/01/r_console.png" alt="The R Console window." width="100%" />
+<img src="images/intro/r_console.png" alt="The R Console window." width="100%" />
 <p class="caption">(\#fig:img-repl)The R Console window.</p>
 </div>
 
@@ -46,7 +46,7 @@ You can close R and never open it again. We'll be working entirely in RStudio in
 ::: {.warning data-latex=""}
 ALWAYS REMEMBER: Launch R though the RStudio IDE
 
-Launch <img src="images/01/rstudio_icon.png" style="height: 2em; vertical-align: middle;" alt="RStudio.app" /> (RStudio.app), not <img src="images/01/new_R_logo.png" style="height: 2em; vertical-align: middle;" alt="R.app" /> (R.app).
+Launch <img src="images/intro/rstudio_icon.png" style="height: 2em; vertical-align: middle;" alt="RStudio.app" /> (RStudio.app), not <img src="images/intro/new_R_logo.png" style="height: 2em; vertical-align: middle;" alt="R.app" /> (R.app).
 :::
 
 ### RStudio {#rstudio_ide}
@@ -54,7 +54,7 @@ Launch <img src="images/01/rstudio_icon.png" style="height: 2em; vertical-align:
 [RStudio](http://www.rstudio.com) is an Integrated Development Environment (<a class='glossary' target='_blank' title='Integrated Development Environment: a program that serves as a text editor, file manager, and provides functions to help you read and write code. RStudio is an IDE for R.' href='https://psyteachr.github.io/glossary/i#ide'>IDE</a>). This is a program that serves as a text editor, file manager, and provides many functions to help you read and write R code.
 
 <div class="figure" style="text-align: center">
-<img src="images/01/rstudio.png" alt="The RStudio IDE" width="100%" />
+<img src="images/intro/rstudio.png" alt="The RStudio IDE" width="100%" />
 <p class="caption">(\#fig:img-rstudio)The RStudio IDE</p>
 </div>
 
@@ -72,7 +72,7 @@ When you do things reproducibly, others can understand and check your work. This
 There are two tweaks that you should do to your RStudio installation to maximize reproducibility. Go to **`Global Options...`** under the **`Tools`** menu (Cmd-,), and uncheck the box that says **`Restore .RData into workspace at startup`**.  If you keep things around in your workspace, things will get messy, and unexpected things will happen. You should always start with a clear workspace. This also means that you never want to save your workspace when you exit, so set this to **`Never`**. The only thing you want to save are your scripts.
 
 <div class="figure" style="text-align: center">
-<img src="images/01/repro.png" alt="Alter these settings for increased reproducibility." width="66%" />
+<img src="images/intro/repro.png" alt="Alter these settings for increased reproducibility." width="66%" />
 <p class="caption">(\#fig:img-repro)Alter these settings for increased reproducibility.</p>
 </div>
 
@@ -355,8 +355,8 @@ rnorm(10)
 ```
 
 ```
-##  [1]  1.2843838  0.3456714  0.6732751 -0.8052917 -0.5182123 -0.8880574
-##  [7] -1.5171941 -0.6860419  1.2531995 -2.1740257
+##  [1] -3.5447669  1.1357518 -1.1057860 -2.4429511 -0.3052200  0.8488620
+##  [7]  0.9477199  0.6710367 -0.4615472  0.4266210
 ```
 
 If you want 10 numbers from a normal distribution with a mean of 100:
@@ -367,8 +367,8 @@ rnorm(10, 100)
 ```
 
 ```
-##  [1]  99.61745  99.39807 101.28141 101.06910  99.58655  99.09637 101.17295
-##  [8] 100.46076 100.85542 100.50339
+##  [1] 100.91716  99.35912  99.36258  99.22807  99.90279  99.98233  99.34755
+##  [8]  98.75008 101.21816 100.40093
 ```
 
 This would be an equivalent but less efficient way of calling the function:
@@ -379,8 +379,8 @@ rnorm(n = 10, mean = 100)
 ```
 
 ```
-##  [1] 100.32292  98.86473  98.97696  98.73797 100.18978 100.52863  99.58802
-##  [8]  99.79907 100.27348 101.47653
+##  [1]  99.63447  98.73527  99.15436 100.32211  99.80223 100.25060 102.28370
+##  [8]  99.46293 100.82537 100.18078
 ```
 
 We don't need to name the arguments because R will recognize that we intended to fill in the first and second arguments by their position in the function call. However, if we want to change the default for an argument coming later in the list, then we need to name it. For instance, if we wanted to keep the default `mean = 0` but change the standard deviation to 100, we would do it this way:
@@ -391,8 +391,8 @@ rnorm(10, sd = 100)
 ```
 
 ```
-##  [1]   -0.8309882   28.4584541  -45.5088663  -15.6032550   72.9122774
-##  [6]  -32.4185458    9.4101509 -127.6113285   96.5583127 -162.7653157
+##  [1]   64.07544  151.85504 -114.68156  119.62569  -30.35079   94.24400
+##  [7]  152.54159   57.51315  -96.45704 -137.99587
 ```
 
 Some functions give a list of options after an argument; this means the default value is the first option. The usage entry for the `power.t.test()` function looks like this:
@@ -496,7 +496,7 @@ ggExtra::runExample()
 Many R packages are not yet on <a class='glossary' target='_blank' title='The Comprehensive R Archive Network: a network of ftp and web servers around the world that store identical, up-to-date, versions of code and documentation for R.' href='https://psyteachr.github.io/glossary/c#cran'>CRAN</a> because they are still in development. Increasingly, datasets and code for papers are available as packages you can download from github. You'll need to install the devtools package to be able to install packages from github. Check if you have a package installed by trying to load it (e.g., if you don't have devtools installed, `library("devtools")` will display an error message) or by searching for it in the packages tab in the lower right pane. All listed packages are installed; all checked packages are currently loaded.
 
 <div class="figure" style="text-align: center">
-<img src="images/01/packages.png" alt="Check installed and loaded packages in the packages tab in the lower right pane." width="100%" />
+<img src="images/intro/packages.png" alt="Check installed and loaded packages in the packages tab in the lower right pane." width="100%" />
 <p class="caption">(\#fig:img-packages)Check installed and loaded packages in the packages tab in the lower right pane.</p>
 </div>
 
