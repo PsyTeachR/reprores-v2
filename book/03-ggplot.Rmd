@@ -74,8 +74,9 @@
 # libraries needed for these graphs
 library(tidyverse)
 library(patchwork) 
-library(reprores)
 library(plotly)
+library(ggwordcloud)
+library(reprores)
 
 set.seed(30250) # makes sure random numbers are reproducible
 ```
@@ -429,24 +430,46 @@ You can set custom titles and axis labels in a few different ways.
 
 ggplot(pets, aes(age, score, color = pet)) +
   geom_smooth(formula = y ~ x, method="lm") +
-  labs(title = "Pet score with Age",
+  labs(title = "Pet Score with Age",
        x = "Age (in Years)",
-       y = "score Score",
+       y = "Pet Score",
        color = "Pet Type")
 ```
 
 ```{r line-labels2, fig.cap="Set custom labels with individual functions"}
 ggplot(pets, aes(age, score, color = pet)) +
   geom_smooth(formula = y ~ x, method="lm") +
-  ggtitle("Pet score with Age") +
+  ggtitle("Pet Score with Age") +
   xlab("Age (in Years)") +
-  ylab("score Score") +
-  scale_color_discrete(name = "Pet Type")
+  ylab("Pet Score")
 ```
+
+The functions `r hl(`labs())`, `r hl(`xlab())`, and `r hl(`ylab())` are convenient when you just want to change a label name, but the `scale_{aesthetic}_{type}` functions are worth learning because they let you customise many things about any aesthetic property (e.g., `x`, `y`, `colour`, `fill`, `shape`, `linetype`), as long as you choose the correct type (usually `continuous` or `discrete`, but there are also special scale functions for other dta types like dates).
+
+```{r line-labels3, fig.cap="Set custom labels with scale functions"}
+ggplot(pets, aes(age, score, color = pet)) +
+  geom_smooth(formula = y ~ x, method="lm") +
+  ggtitle("Pet Score with Age") +
+  scale_x_continuous(name = "Age (in Years)", 
+                     breaks = 0:16,
+                     minor_breaks = NULL, 
+                     trans = "reverse",
+                     position = "top") +
+  scale_y_continuous(name = "Pet Score", 
+                     n.breaks = 16, 
+                     limits = c(0, 150)) +
+  scale_color_discrete(name = "Pet Type", 
+                       labels = c("Dogs", "Cats", "Ferrets"), 
+                       type = c("purple", "green", "orange"))
+```
+
+::: {.try data-latex=""}
+Use the help on the scale functions above to learn about the possible arguments. See what happens when you change the arguments above.
+:::
 
 ### Colours {#custom-colours}
 
-You can set custom values for colour and fill using functions like `scale_colour_manual()` and `scale_fill_manual()`. The [Colours chapter in Cookbook for R](http://www.cookbook-r.com/Graphs/Colors_(ggplot2)/) has many more ways to customise colour.
+You can set custom values for colour and fill using the `scale_{aesthetic}_{type}` functions like `scale_colour_manual()` or `scale_fill_manual()`. 
 
 ```{r line-labels, fig.cap="Set custom colour"}
 ggplot(pets, aes(pet, score, colour = pet, fill = pet)) +
@@ -454,6 +477,8 @@ ggplot(pets, aes(pet, score, colour = pet, fill = pet)) +
   scale_color_manual(values = c("darkgreen", "dodgerblue", "orange")) +
   scale_fill_manual(values = c("#CCFFCC", "#BBDDFF", "#FFCC66"))
 ```
+
+The [Colours chapter in Cookbook for R](http://www.cookbook-r.com/Graphs/Colors_(ggplot2)/) has many more ways to customise colour.
 
 ### Themes {#themes}
 
@@ -750,6 +775,28 @@ ggplot(heatmap, aes(V1, V2, fill=r)) +
   geom_tile() +
   scale_fill_viridis_c()
 ```
+
+## Word Clouds
+
+You can visualise qualitative data using the package `r pkg("ggwordcloud")`. In the example below, we'll use a dataset from `r pkg("ggwordcloud")` called `thankyou_words_small` that lists the words for "thank you" in 34 languages, plus the number of native speakers and total speakers. We're going to plot the names of the languages, sized by the number of speakers.
+
+```{r}
+# load the data
+data("thankyou_words_small", package = "ggwordcloud")
+
+# create the ggwordclouds
+ggplot(thankyou_words_small, 
+                   aes(label = name, 
+                       color = name, 
+                       size = speakers)) +
+  ggwordcloud::geom_text_wordcloud() +
+  scale_size_area(max_size = 12) +
+  theme_minimal()
+```
+
+::: {.try data-latex=""}
+Look at the [ggwordcloud vignette](https://cran.r-project.org/web/packages/ggwordcloud/vignettes/ggwordcloud.html){target="_blank"} and see what elese you can do with the plot above. Try changing the colour scheme or the maximum word size. What happens if you use the `thankyou_words` dataset with 147 words?
+:::
 
 ## Interactive Plots {#plotly}
 

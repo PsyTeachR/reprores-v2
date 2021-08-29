@@ -46,7 +46,9 @@ Imports:
     patchwork,
     rio,
     rstudioapi,
-    glue
+    glue,
+    tidytext,
+    ggwordcloud
 Suggests: 
     rmarkdown,
     zip,
