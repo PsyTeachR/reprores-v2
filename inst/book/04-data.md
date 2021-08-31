@@ -958,16 +958,3 @@ tidiest
 |[vectorized](https://psyteachr.github.io/glossary/v.html#vectorized){class="glossary" target="_blank"}                 |An operator or function that acts on each element in a vector                                                              |
 
 
-
-## Exercises {#exercises-data}
-
-Download the [exercises](exercises/04_data_exercise.Rmd). See the [answers](exercises/04_data_answers.Rmd) only after you've attempted all the questions.
-
-
-```r
-# run this to access the exercise
-reprores::exercise(4)
-
-# run this to access the answers
-reprores::exercise(4, answers = TRUE)
-```

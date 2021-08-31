@@ -5,7 +5,7 @@
 
 ## Learning Objectives {#ilo-tidyr}
 
-### Basic
+### Basic {-}
 
 1. Understand the concept of [tidy data](#tidy-data) [(video)](https://youtu.be/EsSN4OdsNpc){class="video"}
 2. Be able to convert between long and wide formats using pivot functions [(video)](https://youtu.be/4dvLmjhwN8I){class="video"}
@@ -18,7 +18,7 @@
     + [`unite()`](#unite)
 4. Be able to chain functions using [pipes](#pipes) [(video)](https://youtu.be/itfrlLaN4SE){class="video"}
 
-### Advanced
+### Intermediate {-}
 
 5. Be able to use [regular expressions](#regex) to separate complex columns
 
@@ -1020,17 +1020,3 @@ The responses in the `dv` column have multiple types (e.g., <a class='glossary' 
 |[wide](https://psyteachr.github.io/glossary/w.html#wide){class="glossary" target="_blank"}               |Data where all of the observations about one subject are in the same row |
 
 
-
-
-## Exercises {#exercises-tidyr}
-
-Download the [exercises](exercises/06_tidyr_exercise.Rmd). See the [answers](exercises/06_tidyr_answers.Rmd) only after you've attempted all the questions.
-
-
-```r
-# run this to access the exercise
-reprores::exercise(6)
-
-# run this to access the answers
-reprores::exercise(6, answers = TRUE)
-```

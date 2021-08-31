@@ -9,7 +9,15 @@ You can download a [zip file of the datasets](data/data.zip) or access them from
 * [Parental Attachment (Mothers)](data/EMBU_mother.csv) Items starting with r, p and e are for the rejection (r), overprotection (p), and emotional warmth (e) subscales.
 * [Empathizing Quotient](data/eq_data.csv) Reverse coded (Q#R) questions coded and strongly disagree = 2, slightly disagree = 1, else = 0. The other questions are coded as strongly agree = 2, slightly agree = 1, else = 0.
 * [Experimentum Project Experiment](data/experimentum_exps.csv) Data from a demo experiment on Experimentum <https://debruine.github.io/experimentum/>. Subjects are shown pairs of upright and inverted Mooney faces and asked to click on the upright face.
-* [Experimentum Project Questionnaires](data/experimentum_quests.csv) Data from a demo questionnaire on Experimentum <https://debruine.github.io/experimentum/>. Subjects are asked questions about dogs to test the different questionnaire response types.  Questions   * current: 	Do you own a dog? (yes/no)   * past: Have you ever owned a dog? (yes/no)   * name: What is the best name for a dog? (free short text)   * good: How good are dogs? (1=pretty good:7=very good)   * country: What country do borzois come from?   * good_borzoi: How good are borzois? (0=pretty good:100=very good)   * text: Write some text about dogs. (free long text)   * time: What time is it? (time)
+* [Experimentum Project Questionnaires](data/experimentum_quests.csv) Data from a demo questionnaire on Experimentum <https://debruine.github.io/experimentum/>. Subjects are asked questions about dogs to test the different questionnaire response types.  Questions
+   * current: 	Do you own a dog? (yes/no)
+   * past: Have you ever owned a dog? (yes/no)
+   * name: What is the best name for a dog? (free short text)
+   * good: How good are dogs? (1=pretty good:7=very good)
+   * country: What country do borzois come from?
+   * good_borzoi: How good are borzois? (0=pretty good:100=very good)
+   * text: Write some text about dogs. (free long text)
+   * time: What time is it? (time)
 * [Descriptions of Eyes](data/eye_descriptions.csv) Participant's written descriptions of the eyes of 50 people
 * [Family Composition](data/family_composition.csv) Responses to a brief questionnaire about family composition.
 * [Infant Mortality](data/infmort.csv) Infant mortality by country and year from the World Health Organisation.
@@ -23,8 +31,8 @@ You can download a [zip file of the datasets](data/data.zip) or access them from
 * [Sensation Seeking Scale](data/sensation_seeking.csv) Zuckerman M. (1984). Sensation seeking: a comparative approach to a human trait. Behavioral and Brain Sciences. 7: 413-471.
 * [Small Factorial Design: 2w*2b](data/smalldata.csv) Small simulated dataset (n = 5) with one within-subject factor (time) having 2 levels (pre and post) and one beteen-subject factor (group) having two levels (control and experimental). The dataset is in wide format and created with faux.
 * [Systemizing Quotient](data/sq_data.csv) Reverse coded (Q#R) questions coded as strongly disagree = 2, slightly disagree = 1, else = 0. The other questions are coded as strongly agree = 2, slightly agree = 1, else = 0.
-c("* [Stroop Task](data/stroop.csv) 50 simulated subject in a stroop task viewing all combinations of word and ink colours blue, purple, green, red, and brown, 5 times each. Subjects respond with the ink colour. Subjects who do not respond in time have NA for response and rt.", "* [Stroop Task](data/stroop.xlsx) 50 simulated subject in a stroop task viewing all combinations of word and ink colours blue, purple, green, red, and brown, 5 times each. Subjects respond with the ink colour. Subjects who do not respond in time have NA for response and rt."
-)
+* [Stroop Task](data/stroop.csv) 50 simulated subject in a stroop task viewing all combinations of word and ink colours blue, purple, green, red, and brown, 5 times each. Subjects respond with the ink colour. Subjects who do not respond in time have NA for response and rt.
+* [Stroop Task](data/stroop.xlsx) 50 simulated subject in a stroop task viewing all combinations of word and ink colours blue, purple, green, red, and brown, 5 times each. Subjects respond with the ink colour. Subjects who do not respond in time have NA for response and rt.
 * [User Demographics](data/users.csv) A dataset with unique participant ID, sex and birth year. To be used in conjunction with data from [disgust], [disgust_scores], [personality], [personality_scores], and [users2].
 * [User Demographics 2](data/users2.csv) A dataset with unique participant ID, birth year, and sex. To be used in conjunction with data from [disgust], [disgust_scores], [personality], [personality_scores], and [users].
 

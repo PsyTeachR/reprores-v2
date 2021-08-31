@@ -5,16 +5,16 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <title>Chapter 6 Tidy Data | Data Skills for Reproducible Research</title>
-<meta name="description" content="6.1 Learning Objectives  6.1.1 Basic Understand the concept of tidy data (video) Be able to convert between long and wide formats using pivot functions (video) pivot_longer() pivot_wider() Be able...">
+<meta name="description" content="6.1 Learning Objectives  Basic Understand the concept of tidy data (video) Be able to convert between long and wide formats using pivot functions (video) pivot_longer() pivot_wider() Be able to...">
 <meta name="generator" content="bookdown 0.23 with bs4_book()">
 <meta property="og:title" content="Chapter 6 Tidy Data | Data Skills for Reproducible Research">
 <meta property="og:type" content="book">
 <meta property="og:url" content="https://psyteachr.github.io/reprores-v2/tidyr.html">
 <meta property="og:image" content="https://psyteachr.github.io/reprores-v2/images/logos/logo.png">
-<meta property="og:description" content="6.1 Learning Objectives  6.1.1 Basic Understand the concept of tidy data (video) Be able to convert between long and wide formats using pivot functions (video) pivot_longer() pivot_wider() Be able...">
+<meta property="og:description" content="6.1 Learning Objectives  Basic Understand the concept of tidy data (video) Be able to convert between long and wide formats using pivot functions (video) pivot_longer() pivot_wider() Be able to...">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Chapter 6 Tidy Data | Data Skills for Reproducible Research">
-<meta name="twitter:description" content="6.1 Learning Objectives  6.1.1 Basic Understand the concept of tidy data (video) Be able to convert between long and wide formats using pivot functions (video) pivot_longer() pivot_wider() Be able...">
+<meta name="twitter:description" content="6.1 Learning Objectives  Basic Understand the concept of tidy data (video) Be able to convert between long and wide formats using pivot functions (video) pivot_longer() pivot_wider() Be able to...">
 <meta name="twitter:image" content="https://psyteachr.github.io/reprores-v2/images/logos/logo.png">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/header-attrs-2.9.4/header-attrs.js"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
@@ -66,10 +66,11 @@
 <li><a class="" href="acknowledgements.html">Acknowledgements</a></li>
 <li class="book-part">Appendices</li>
 <li><a class="" href="installingr.html"><span class="header-section-number">A</span> Installing R</a></li>
-<li><a class="" href="symbols.html"><span class="header-section-number">B</span> Symbols</a></li>
-<li><a class="" href="exercise-answers.html"><span class="header-section-number">C</span> Exercise Answers</a></li>
+<li><a class="" href="conventions.html"><span class="header-section-number">B</span> Conventions</a></li>
+<li><a class="" href="symbols.html"><span class="header-section-number">C</span> Symbols</a></li>
 <li><a class="" href="datasets.html"><span class="header-section-number">D</span> Datasets</a></li>
-<li><a class="" href="bookrefs.html"><span class="header-section-number">E</span> References</a></li>
+<li><a class="" href="exercise-answers.html"><span class="header-section-number">E</span> Exercise Answers</a></li>
+<li><a class="" href="bookrefs.html"><span class="header-section-number">F</span> References</a></li>
 </ul>
 
         <div class="book-extra">
@@ -88,9 +89,8 @@
 <h2>
 <span class="header-section-number">6.1</span> Learning Objectives<a class="anchor" aria-label="anchor" href="#ilo-tidyr"><i class="fas fa-link"></i></a>
 </h2>
-<div id="basic-2" class="section level3" number="6.1.1">
-<h3>
-<span class="header-section-number">6.1.1</span> Basic<a class="anchor" aria-label="anchor" href="#basic-2"><i class="fas fa-link"></i></a>
+<div id="basic-2" class="section level3 unnumbered">
+<h3>Basic<a class="anchor" aria-label="anchor" href="#basic-2"><i class="fas fa-link"></i></a>
 </h3>
 <ol style="list-style-type: decimal">
 <li>Understand the concept of <a href="tidyr.html#tidy-data">tidy data</a> <a href="https://youtu.be/EsSN4OdsNpc" class="video">(video)</a>
@@ -113,9 +113,8 @@
 </li>
 </ol>
 </div>
-<div id="advanced" class="section level3" number="6.1.2">
-<h3>
-<span class="header-section-number">6.1.2</span> Advanced<a class="anchor" aria-label="anchor" href="#advanced"><i class="fas fa-link"></i></a>
+<div id="intermediate-2" class="section level3 unnumbered">
+<h3>Intermediate<a class="anchor" aria-label="anchor" href="#intermediate-2"><i class="fas fa-link"></i></a>
 </h3>
 <ol start="5" style="list-style-type: decimal">
 <li>Be able to use <a href="tidyr.html#regex">regular expressions</a> to separate complex columns</li>
@@ -141,7 +140,7 @@
 <h2>
 <span class="header-section-number">6.3</span> Setup<a class="anchor" aria-label="anchor" href="#setup-tidyr"><i class="fas fa-link"></i></a>
 </h2>
-<div class="sourceCode" id="cb225"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb223"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># libraries needed</span>
 <span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span>
 <span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/psyteachr/reprores-v2">reprores</a></span><span class="op">)</span>
@@ -520,7 +519,7 @@ Answer
 <span class="header-section-number">6.5.1</span> Load Data<a class="anchor" aria-label="anchor" href="#load-data"><i class="fas fa-link"></i></a>
 </h3>
 <p>We will used the dataset <code>personality</code> from the reprores package (or download the data from <a href="./data/personality.csv">personality.csv</a>). These data are from a 5-factor (personality) personality questionnaire. Each question is labelled with the domain (Op = openness, Co = conscientiousness, Ex = extroversion, Ag = agreeableness, and Ne = neuroticism) and the question number.</p>
-<div class="sourceCode" id="cb226"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb224"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/data.html">data</a></span><span class="op">(</span><span class="st">"personality"</span>, package <span class="op">=</span> <span class="st">"reprores"</span><span class="op">)</span></code></pre></div>
 <div class="inline-table"><table style="width:100%;" class="table table-sm">
 <colgroup>
@@ -902,7 +901,7 @@ Answer
 <li>
 <code>values_to</code> is what you want to call the values in the columns <code>...</code>; they're "score" in this example.</li>
 </ul>
-<div class="sourceCode" id="cb227"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb225"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">personality_long</span> <span class="op">&lt;-</span> <span class="fu">pivot_longer</span><span class="op">(</span>
   data <span class="op">=</span> <span class="va">personality</span>, 
   cols <span class="op">=</span> <span class="va">Op1</span><span class="op">:</span><span class="va">Ex9</span>,                    <span class="co"># columns to make long </span>
@@ -986,7 +985,7 @@ Answer
 <li>
 <code>names_sep</code> is the character string used to join names if <code>names_from</code> is more than one column.</li>
 </ul>
-<div class="sourceCode" id="cb229"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb227"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">personality_wide</span> <span class="op">&lt;-</span> <span class="fu">pivot_wider</span><span class="op">(</span>
   data <span class="op">=</span> <span class="va">personality_long</span>,
   names_from <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="va">domain</span>, <span class="va">qnumber</span><span class="op">)</span>,
@@ -1060,7 +1059,7 @@ Answer
 <code>...</code> refers to the columns you want to gather. It is like <code>cols</code> in <code>pivot_longer()</code>.</li>
 </ul>
 <p>The <code>gather()</code> function converts <code>personality</code> from a wide data table to long format, with a row for each user/question observation. The resulting data table should have the columns: <code>user_id</code>, <code>date</code>, <code>question</code>, and <code>score</code>.</p>
-<div class="sourceCode" id="cb231"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb229"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">personality_gathered</span> <span class="op">&lt;-</span> <span class="fu">gather</span><span class="op">(</span>
   data <span class="op">=</span> <span class="va">personality</span>, 
   key <span class="op">=</span> <span class="st">"question"</span>, <span class="co"># new column name for gathered headers</span>
@@ -1089,7 +1088,7 @@ Answer
 </ul>
 <p>Split the <code>question</code> column into two columns: <code>domain</code> and <code>qnumber</code>.</p>
 <p>There is no character to split on, here, but you can separate a column after a specific number of characters by setting <code>sep</code> to an integer. For example, to split "abcde" after the third character, use <code>sep = 3</code>, which results in <code><a href="https://rdrr.io/r/base/c.html">c("abc", "de")</a></code>. You can also use negative number to split before the <em>n</em>th character from the right. For example, to split a column that has words of various lengths and 2-digit suffixes (like "lisa03"", "amanda38"), you can use <code>sep = -2</code>.</p>
-<div class="sourceCode" id="cb233"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb231"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">personality_sep</span> <span class="op">&lt;-</span> <span class="fu">separate</span><span class="op">(</span>
   data <span class="op">=</span> <span class="va">personality_gathered</span>, 
   col <span class="op">=</span> <span class="va">question</span>,                <span class="co"># column to separate</span>
@@ -1121,7 +1120,7 @@ Answer
 <code>sep</code> is the character(s) that will separate your united columns</li>
 </ul>
 <p>Put the domain and qnumber columns back together into a new column named <code>domain_n</code>. Make it in a format like "Op_Q1".</p>
-<div class="sourceCode" id="cb235"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb233"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">personality_unite</span> <span class="op">&lt;-</span> <span class="fu">unite</span><span class="op">(</span>
   data <span class="op">=</span> <span class="va">personality_sep</span>, 
   col <span class="op">=</span> <span class="st">"domain_n"</span>, <span class="co"># new column name</span>
@@ -1147,7 +1146,7 @@ Answer
 <li>
 <code>value</code> is the column that contains the values in the new spread columns. It is like <code>values_from</code> in <code>pivot_wider()</code>.</li>
 </ul>
-<div class="sourceCode" id="cb237"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb235"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">personality_spread</span> <span class="op">&lt;-</span> <span class="fu">spread</span><span class="op">(</span>
   data <span class="op">=</span> <span class="va">personality_unite</span>,
   key <span class="op">=</span> <span class="va">domain_n</span>, <span class="co"># column that contains new headers</span>
@@ -1211,7 +1210,7 @@ Answer
 <p>Pipes are a way to order your code in a more readable format.</p>
 <p>Let's say you have a small data table with 10 participant IDs, two columns with variable type A, and 2 columns with variable type B. You want to calculate the mean of the A variables and the mean of the B variables and return a table with 10 rows (1 for each participant) and 3 columns (<code>id</code>, <code>A_mean</code> and <code>B_mean</code>).</p>
 <p>One way you could do this is by creating a new object at every step and using that object in the next step. This is pretty clear, but you've created 6 unnecessary data objects in your environment. This can get confusing in very long scripts.</p>
-<div class="sourceCode" id="cb239"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb237"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># make a data table with 10 subjects</span>
 <span class="va">data_original</span> <span class="op">&lt;-</span> <span class="fu">tibble</span><span class="op">(</span>
   id <span class="op">=</span> <span class="fl">1</span><span class="op">:</span><span class="fl">10</span>,
@@ -1305,10 +1304,10 @@ Answer
 <p>You <em>can</em> name each object <code>data</code> and keep replacing the old data object with the new one at each step. This will keep your environment clean, but I don't recommend it because it makes it too easy to accidentally run your code out of order when you are running line-by-line for development or debugging.</p>
 </div>
 <p>One way to avoid extra objects is to nest your functions, literally replacing each data object with the code that generated it in the previous step. This can be fine for very short chains.</p>
-<div class="sourceCode" id="cb240"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb238"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">mean_petal_width</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/Round.html">round</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">iris</span><span class="op">$</span><span class="va">Petal.Width</span><span class="op">)</span>, <span class="fl">2</span><span class="op">)</span></code></pre></div>
 <p>But it gets extremely confusing for long chains:</p>
-<div class="sourceCode" id="cb241"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb239"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># do not ever do this!!</span>
 <span class="va">data</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/rename.html">rename</a></span><span class="op">(</span>
   <span class="fu">spread</span><span class="op">(</span>
@@ -1329,7 +1328,7 @@ Answer
     <span class="va">var</span>, <span class="va">mean</span><span class="op">)</span>, 
   A_mean <span class="op">=</span> <span class="va">A</span>, B_mean <span class="op">=</span> <span class="va">B</span><span class="op">)</span></code></pre></div>
 <p>The pipe lets you "pipe" the result of each function into the next function, allowing you to put your code in a logical order without creating too many extra objects.</p>
-<div class="sourceCode" id="cb242"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb240"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># calculate mean of A and B variables for each participant</span>
 <span class="va">data</span> <span class="op">&lt;-</span> <span class="fu">tibble</span><span class="op">(</span>
   id <span class="op">=</span> <span class="fl">1</span><span class="op">:</span><span class="fl">10</span>,
@@ -1367,7 +1366,7 @@ Answer
 <p>You can debug a pipe by highlighting from the beginning to just before the pipe you want to stop at. Try this by highlighting from <code>data &lt;-</code> to the end of the <code>separate</code> function and typing cmd-return. What does <code>data</code> look like now?</p>
 </div>
 <p>Chain all the steps above using pipes.</p>
-<div class="sourceCode" id="cb243"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb241"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">personality_reshaped</span> <span class="op">&lt;-</span> <span class="va">personality</span> <span class="op">%&gt;%</span>
   <span class="fu">gather</span><span class="op">(</span><span class="st">"question"</span>, <span class="st">"score"</span>, <span class="va">Op1</span><span class="op">:</span><span class="va">Ex9</span><span class="op">)</span> <span class="op">%&gt;%</span>
   <span class="fu">separate</span><span class="op">(</span><span class="va">question</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"domain"</span>, <span class="st">"qnumber"</span><span class="op">)</span>, sep <span class="op">=</span> <span class="fl">2</span><span class="op">)</span> <span class="op">%&gt;%</span>
@@ -1389,7 +1388,7 @@ Answer
 </li>
 <li><a href="https://psyteachr.github.io/reprores/data/matmort.xls">maternal mortality</a></li>
 </ul>
-<div class="sourceCode" id="cb244"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb242"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/data.html">data</a></span><span class="op">(</span><span class="st">"infmort"</span><span class="op">)</span>
 <span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">infmort</span><span class="op">)</span></code></pre></div>
 <div class="kable-table">
@@ -1438,7 +1437,7 @@ Answer
 </tbody>
 </table></div>
 </div>
-<div class="sourceCode" id="cb245"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb243"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/data.html">data</a></span><span class="op">(</span><span class="st">"matmort"</span><span class="op">)</span>
 <span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">matmort</span><span class="op">)</span></code></pre></div>
 <div class="kable-table">
@@ -1496,7 +1495,7 @@ Answer
 </h3>
 <p><code>matmort</code> is in wide format, with a separate column for each year. Change it to long format, with a row for each Country/Year observation.</p>
 <p>This example is complicated because the column names to gather <em>are</em> numbers. If the column names are non-standard (e.g., have spaces, start with numbers, or have special characters), you can enclose them in backticks (`) like the example below.</p>
-<div class="sourceCode" id="cb246"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb244"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">matmort_long</span> <span class="op">&lt;-</span> <span class="va">matmort</span> <span class="op">%&gt;%</span>
   <span class="fu">pivot_longer</span><span class="op">(</span>cols <span class="op">=</span> <span class="va">`1990`</span><span class="op">:</span><span class="va">`2015`</span>,
                names_to <span class="op">=</span> <span class="st">"Year"</span>,
@@ -1511,7 +1510,7 @@ Answer
 <p>You can put <code>matmort</code> at the first argument to <code>pivot_longer()</code>; you don't have to pipe it in. But when I'm working on data processing I often find myself needing to insert or rearrange steps and I constantly introduce errors by forgetting to take the first argument out of a pipe chain, so now I start with the original data table and pipe from there.</p>
 </div>
 <p>Alternatively, you can use the <code>gather()</code> function.</p>
-<div class="sourceCode" id="cb248"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb246"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">matmort_long</span> <span class="op">&lt;-</span> <span class="va">matmort</span> <span class="op">%&gt;%</span>
   <span class="fu">gather</span><span class="op">(</span><span class="st">"Year"</span>, <span class="st">"stats"</span>, <span class="va">`1990`</span><span class="op">:</span><span class="va">`2015`</span><span class="op">)</span> <span class="op">%&gt;%</span>
   <span class="fu">glimpse</span><span class="op">(</span><span class="op">)</span></code></pre></div>
@@ -1527,7 +1526,7 @@ Answer
 </h3>
 <p>The data in the <code>stats</code> column is in an unusual format with some sort of confidence interval in brackets and lots of extra spaces. We don't need any of the spaces, so first we'll remove them with <code><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate()</a></code>, which we'll learn more about in the next lesson.</p>
 <p>The <code>separate</code> function will separate your data on anything that is not a number or letter, so try it first without specifying the <code>sep</code> argument. The <code>into</code> argument is a list of the new column names.</p>
-<div class="sourceCode" id="cb250"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb248"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">matmort_split</span> <span class="op">&lt;-</span> <span class="va">matmort_long</span> <span class="op">%&gt;%</span>
   <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>stats <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/grep.html">gsub</a></span><span class="op">(</span><span class="st">" "</span>, <span class="st">""</span>, <span class="va">stats</span><span class="op">)</span><span class="op">)</span> <span class="op">%&gt;%</span>
   <span class="fu">separate</span><span class="op">(</span><span class="va">stats</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"rate"</span>, <span class="st">"ci_low"</span>, <span class="st">"ci_hi"</span><span class="op">)</span><span class="op">)</span> <span class="op">%&gt;%</span>
@@ -1554,7 +1553,7 @@ flexible way to do search and replace. The example above replaces all occurances
 <p>The previous example should have given you an error warning about
 "Additional pieces discarded in 543 rows". This is because <code>separate</code> splits the column at the brackets and dashes, so the text <code>100[90-110]</code> would split into four values <code><a href="https://rdrr.io/r/base/c.html">c("100", "90", "110", "")</a></code>, but we only specified 3 new columns. The fourth value is always empty (just the part after the last bracket), so we are happy to drop it, but <code>separate</code> generates a warning so you don't do that accidentally. You can turn off the warning by adding the <code>extra</code> argument and setting it to "drop". Look at the help for <code>??tidyr::separate</code> to see what the other options do.</p>
 </div>
-<div class="sourceCode" id="cb253"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb251"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">matmort_split</span> <span class="op">&lt;-</span> <span class="va">matmort_long</span> <span class="op">%&gt;%</span>
   <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>stats <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/grep.html">gsub</a></span><span class="op">(</span><span class="st">" "</span>, <span class="st">""</span>, <span class="va">stats</span><span class="op">)</span><span class="op">)</span> <span class="op">%&gt;%</span>
   <span class="fu">separate</span><span class="op">(</span><span class="va">stats</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"rate"</span>, <span class="st">"ci_low"</span>, <span class="st">"ci_hi"</span><span class="op">)</span>, extra <span class="op">=</span> <span class="st">"drop"</span><span class="op">)</span> <span class="op">%&gt;%</span>
@@ -1572,7 +1571,7 @@ flexible way to do search and replace. The example above replaces all occurances
 <span class="header-section-number">6.8.3.2</span> Set delimiters with <code>sep</code><a class="anchor" aria-label="anchor" href="#sep"><i class="fas fa-link"></i></a>
 </h4>
 <p>Now do the same with <code>infmort</code>. It's already in long format, so you don't need to use <code>gather</code>, but the third column has a ridiculously long name, so we can just refer to it by its column number (3).</p>
-<div class="sourceCode" id="cb255"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb253"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">infmort_split</span> <span class="op">&lt;-</span> <span class="va">infmort</span> <span class="op">%&gt;%</span>
   <span class="fu">separate</span><span class="op">(</span><span class="fl">3</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"rate"</span>, <span class="st">"ci_low"</span>, <span class="st">"ci_hi"</span><span class="op">)</span>, extra <span class="op">=</span> <span class="st">"drop"</span><span class="op">)</span> <span class="op">%&gt;%</span>
   <span class="fu">glimpse</span><span class="op">(</span><span class="op">)</span></code></pre></div>
@@ -1591,7 +1590,7 @@ flexible way to do search and replace. The example above replaces all occurances
 <p>You can use <a href="https://stat.ethz.ch/R-manual/R-devel/library/base/html/regex.html">regular expressions</a>
 to separate complex columns. Here, we want to separate on dashes and brackets. You can separate on a list of delimiters by putting them in parentheses, separated by "|". It's a little more complicated because brackets have a special meaning in regex, so you need to "escape" the left one with two backslashes "\\".</p>
 </div>
-<div class="sourceCode" id="cb257"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb255"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">infmort_split</span> <span class="op">&lt;-</span> <span class="va">infmort</span> <span class="op">%&gt;%</span>
   <span class="fu">separate</span><span class="op">(</span>
     col <span class="op">=</span> <span class="fl">3</span>, 
@@ -1613,7 +1612,7 @@ to separate complex columns. Here, we want to separate on dashes and brackets. Y
 <span class="header-section-number">6.8.3.3</span> Fix data types with <code>convert</code><a class="anchor" aria-label="anchor" href="#convert"><i class="fas fa-link"></i></a>
 </h4>
 <p>That's better. Notice the <em><chr></chr></em> next to <code>Year</code>, <code>rate</code>, <code>ci_low</code> and <code>ci_hi</code>. That means these columns hold characters (like words), not numbers or integers. This can cause problems when you try to do thigs like average the numbers (you can't average words), so we can fix it by adding the argument <code>convert</code> and setting it to <code>TRUE</code>.</p>
-<div class="sourceCode" id="cb259"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb257"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">infmort_split</span> <span class="op">&lt;-</span> <span class="va">infmort</span> <span class="op">%&gt;%</span>
   <span class="fu">separate</span><span class="op">(</span>col <span class="op">=</span> <span class="fl">3</span>, 
            into <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"rate"</span>, <span class="st">"ci_low"</span>, <span class="st">"ci_hi"</span><span class="op">)</span>, 
@@ -1629,7 +1628,7 @@ to separate complex columns. Here, we want to separate on dashes and brackets. Y
 ## $ ci_low  &lt;dbl&gt; 52.7, 55.7, 58.7, 61.6, 64.4, 66.9, 69.0, 71.2, 73.4, 75.5, 77…
 ## $ ci_hi   &lt;dbl&gt; 83.9, 83.6, 83.5, 83.7, 84.2, 85.1, 86.1, 87.3, 88.9, 90.7, 92…</code></pre>
 <p>Do the same for <code>matmort</code>.</p>
-<div class="sourceCode" id="cb261"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb259"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">matmort_split</span> <span class="op">&lt;-</span> <span class="va">matmort_long</span> <span class="op">%&gt;%</span>
   <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>stats <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/grep.html">gsub</a></span><span class="op">(</span><span class="st">" "</span>, <span class="st">""</span>, <span class="va">stats</span><span class="op">)</span><span class="op">)</span> <span class="op">%&gt;%</span>
   <span class="fu">separate</span><span class="op">(</span>col <span class="op">=</span> <span class="va">stats</span>, 
@@ -1651,7 +1650,7 @@ to separate complex columns. Here, we want to separate on dashes and brackets. Y
 <span class="header-section-number">6.8.4</span> All in one step<a class="anchor" aria-label="anchor" href="#all-in-one-step"><i class="fas fa-link"></i></a>
 </h3>
 <p>We can chain all the steps for <code>matmort</code> above together, since we don't need those intermediate data tables.</p>
-<div class="sourceCode" id="cb263"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb261"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">matmort2</span> <span class="op">&lt;-</span> <span class="va">matmort</span> <span class="op">%&gt;%</span>
   <span class="fu">gather</span><span class="op">(</span><span class="st">"Year"</span>, <span class="st">"stats"</span>, <span class="va">`1990`</span><span class="op">:</span><span class="va">`2015`</span><span class="op">)</span> <span class="op">%&gt;%</span>
   <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>stats <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/grep.html">gsub</a></span><span class="op">(</span><span class="st">" "</span>, <span class="st">""</span>, <span class="va">stats</span><span class="op">)</span><span class="op">)</span> <span class="op">%&gt;%</span>
@@ -1675,7 +1674,7 @@ to separate complex columns. Here, we want to separate on dashes and brackets. Y
 <span class="header-section-number">6.8.5</span> Columns by Year<a class="anchor" aria-label="anchor" href="#columns-by-year"><i class="fas fa-link"></i></a>
 </h3>
 <p>Spread out the maternal mortality rate by year.</p>
-<div class="sourceCode" id="cb265"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb263"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">matmort_wide</span> <span class="op">&lt;-</span> <span class="va">matmort2</span> <span class="op">%&gt;%</span>
   <span class="fu">spread</span><span class="op">(</span>key <span class="op">=</span> <span class="va">Year</span>, value <span class="op">=</span> <span class="va">rate</span><span class="op">)</span> <span class="op">%&gt;%</span>
   <span class="fu"><a href="https://rdrr.io/r/base/print.html">print</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
@@ -1697,7 +1696,7 @@ to separate complex columns. Here, we want to separate on dashes and brackets. Y
 <p>Nope, that didn't work at all, but it's a really common mistake when spreading data. This is because <code>spread</code> matches on all the remaining columns, so Afghanistan with <code>ci_low</code> of 253 is treated as a different observation than Afghanistan with <code>ci_low</code> of 745.</p>
 </div>
 <p>This is where <code>pivot_wider()</code> can be very useful. You can set <code>values_from</code> to multiple column names and their names will be added to the <code>names_from</code> values.</p>
-<div class="sourceCode" id="cb267"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb265"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">matmort_wide</span> <span class="op">&lt;-</span> <span class="va">matmort2</span> <span class="op">%&gt;%</span>
   <span class="fu">pivot_wider</span><span class="op">(</span>
     names_from <span class="op">=</span> <span class="va">Year</span>,
@@ -1742,7 +1741,7 @@ to separate complex columns. Here, we want to separate on dashes and brackets. Y
 <li>time: What time is it? (time)</li>
 </ul>
 <p>To get the dataset into wide format, where each question is in a separate column, use the following code:</p>
-<div class="sourceCode" id="cb269"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb267"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">q</span> <span class="op">&lt;-</span> <span class="va">experimentum_quests</span> <span class="op">%&gt;%</span>
   <span class="fu">pivot_wider</span><span class="op">(</span>id_cols <span class="op">=</span> <span class="va">session_id</span><span class="op">:</span><span class="va">user_age</span>,
               names_from <span class="op">=</span> <span class="va">q_name</span>,
@@ -1817,19 +1816,6 @@ to separate complex columns. Here, we want to separate on dashes and brackets. Y
 </tr>
 </tbody>
 </table></div>
-</div>
-<div id="exercises-tidyr" class="section level2" number="6.10">
-<h2>
-<span class="header-section-number">6.10</span> Exercises<a class="anchor" aria-label="anchor" href="#exercises-tidyr"><i class="fas fa-link"></i></a>
-</h2>
-<p>Download the <a href="exercises/06_tidyr_exercise.Rmd">exercises</a>. See the <a href="exercises/06_tidyr_answers.Rmd">answers</a> only after you've attempted all the questions.</p>
-<div class="sourceCode" id="cb271"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="co"># run this to access the exercise</span>
-<span class="fu">reprores</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/reprores/man/exercise.html">exercise</a></span><span class="op">(</span><span class="fl">6</span><span class="op">)</span>
-
-<span class="co"># run this to access the answers</span>
-<span class="fu">reprores</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/reprores/man/exercise.html">exercise</a></span><span class="op">(</span><span class="fl">6</span>, answers <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></code></pre></div>
-
 </div>
 </div>
 <div class="psyteachr_footer">
@@ -1960,8 +1946,8 @@ $( document ).ready(function() {
 <li><a class="nav-link" href="#tidyr"><span class="header-section-number">6</span> Tidy Data</a></li>
 <li>
 <a class="nav-link" href="#ilo-tidyr"><span class="header-section-number">6.1</span> Learning Objectives</a><ul class="nav navbar-nav">
-<li><a class="nav-link" href="#basic-2"><span class="header-section-number">6.1.1</span> Basic</a></li>
-<li><a class="nav-link" href="#advanced"><span class="header-section-number">6.1.2</span> Advanced</a></li>
+<li><a class="nav-link" href="#basic-2">Basic</a></li>
+<li><a class="nav-link" href="#intermediate-2">Intermediate</a></li>
 </ul>
 </li>
 <li><a class="nav-link" href="#resources-tidyr"><span class="header-section-number">6.2</span> Resources</a></li>
@@ -1999,7 +1985,6 @@ $( document ).ready(function() {
 </ul>
 </li>
 <li><a class="nav-link" href="#glossary-tidyr"><span class="header-section-number">6.9</span> Glossary</a></li>
-<li><a class="nav-link" href="#exercises-tidyr"><span class="header-section-number">6.10</span> Exercises</a></li>
 </ul>
 
       <div class="book-extra">
@@ -2017,7 +2002,7 @@ $( document ).ready(function() {
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Data Skills for Reproducible Research</strong>: v2" was written by . It was last built on 2021-08-27.</p>
+    <p>"<strong>Data Skills for Reproducible Research</strong>: v2" was written by . It was last built on 2021-08-31.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

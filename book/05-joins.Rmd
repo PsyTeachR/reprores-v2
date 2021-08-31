@@ -312,15 +312,3 @@ base::setdiff(subject, new_subjects)
 ## Glossary {#glossary-joins}
 
 `r glossary_table()`
-
-## Exercises {#exercises-joins}
-
-Download the [exercises](exercises/05_joins_exercise.Rmd). See the [answers](exercises/05_joins_answers.Rmd) only after you've attempted all the questions.
-
-```{r, eval = FALSE}
-# run this to access the exercise
-reprores::exercise(5)
-
-# run this to access the answers
-reprores::exercise(5, answers = TRUE)
-```

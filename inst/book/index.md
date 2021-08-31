@@ -1,7 +1,7 @@
 --- 
 title: Data Skills for Reproducible Research
 subtitle: v2
-date: "2021-08-27"
+date: "2021-08-31"
 site: bookdown::bookdown_site
 documentclass: book
 bibliography: [book.bib, packages.bib]
@@ -53,6 +53,7 @@ This book is a work in progress, so you might find errors. Please help me fix th
 ## Other Resources {-}
 
 - [RStudio Cheat Sheets](https://www.rstudio.com/resources/cheatsheets/) 
+- [Improving Pedagogy through Registered Reports](https://psyarxiv.com/q34k8)
 - [Learning Statistics with R](https://learningstatisticswithr-bookdown.netlify.com) by Navarro
 - [R for Data Science](http://r4ds.had.co.nz) by Grolemund and Wickham
 - [Improving your statistical inferences](https://www.coursera.org/learn/statistical-inferences/) on Coursera

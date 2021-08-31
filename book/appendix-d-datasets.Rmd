@@ -14,10 +14,11 @@ listitems <- lapply(f, function(x) {
     url <- d[idx]
     nm <- gsub("^#' ", "", txt[2])
     desc <- gsub("^#' ", "", txt[4])
+    desc <- gsub("   * ", "\n   ", desc)
     sprintf("* [%s](%s) %s",
             nm, url, desc)
 })
 
-cat(paste(listitems, collapse = "\n"))
+cat(paste(unlist(listitems), collapse = "\n"))
 ```
 

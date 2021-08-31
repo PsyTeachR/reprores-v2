@@ -204,9 +204,9 @@ After all the code above is run:
 
 ### The environment
 
-Anytime you assign something to a new object, R creates a new entry in the `r glossary("global environment")`. Objects in the global environment exist until you end your session; then they disappear forever (unless you save them).
+Any time you assign something to a new object, R creates a new entry in the `r glossary("global environment")`. Objects in the global environment exist until you end your session; then they disappear forever (unless you save them).
 
-Look at the **Environment** tab in the upper right pane. It lists all of the objects you have created. Click the broom icon to clear all of the objects and start fresh. You can also use the following functions in the console to view all objects, remove one object, or remove all objects.
+Look at the **`Environment`** tab in the upper right pane. It lists all of the objects you have created. Click the broom icon to clear all of the objects and start fresh. You can also use the following functions in the console to view all objects, remove one object, or remove all objects.
 
 ```{r global-environment, eval = FALSE}
 ls()            # print the objects in the global environment
@@ -301,7 +301,7 @@ We don't need to name the arguments because R will recognize that we intended to
 rnorm(10, sd = 100)
 ```
 
-Some functions give a list of options after an argument; this means the default value is the first option. The usage entry for the `power.t.test()` function looks like this:
+Some functions give a list of options after an argument; this means the default value is the first option. The usage entry for the `r hl(power.t.test())` function looks like this:
 
 ```{r, eval = FALSE}
 power.t.test(n = NULL, delta = NULL, sd = 1, sig.level = 0.05,
@@ -315,7 +315,7 @@ power.t.test(n = NULL, delta = NULL, sd = 1, sig.level = 0.05,
 
 * What is the default value for `sd`? `r mcq(c("NULL", answer = 1, 0.05, "two.sample"))`
 * What is the default value for `type`? `r mcq(c("NULL", answer = "two.sample", "one.sample", "paired"))`
-* Which is equivalent to `power.t.test(100, 0.5)`? `r mcq(c("power.t.test(100, 0.5, sig.level = 1, sd = 0.05)", "power.t.test()", "power.t.test(n = 100)", answer="power.t.test(delta = 0.5, n = 100)"))`
+* Which is equivalent to `r hl(power.t.test(100, 0.5))`? `r mcq(c("power.t.test(100, 0.5, sig.level = 1, sd = 0.05)", "power.t.test()", "power.t.test(n = 100)", answer="power.t.test(delta = 0.5, n = 100)"))`
 
 :::
 
@@ -354,25 +354,25 @@ There is an important distinction between **installing** a package and **loading
 
 <div class="meme right"><img src="images/memes/pokemon.gif" /></div>
 
-This is done using `install.packages()`. This is like installing an app on your phone: you only have to do it once and the app will remain installed until you remove it. For instance, if you want to use PokemonGo on your phone, you install it once from the App Store or Play Store, and you don't have to re-install it each time you want to use it. Once you launch the app, it will run in the background until you close it or restart your phone. Likewise, when you install a package, the package will be available (but not *loaded*) every time you open up R.
+This is done using `r hl(install.packages())`. This is like installing an app on your phone: you only have to do it once and the app will remain installed until you remove it. For instance, if you want to use PokemonGo on your phone, you install it once from the App Store or Play Store, and you don't have to re-install it each time you want to use it. Once you launch the app, it will run in the background until you close it or restart your phone. Likewise, when you install a package, the package will be available (but not *loaded*) every time you open up R.
 
 ::: {.warning data-latex=""}
 You may only be able to permanently install packages if you are using R on your own system; you may not be able to do this on public workstations if you lack the appropriate privileges.
 :::
 
-Install the `ggExtra` package on your system. This package lets you create plots with marginal histograms.
+Install the `r pkg("ggExtra")` package on your system. This package lets you create plots with marginal histograms.
 
 ```{r install-pckg, eval = FALSE}
 install.packages("ggExtra")
 ```
 
-If you don't already have packages like ggplot2 and shiny installed, it will also install these **dependencies** for you. If you don't get an error message at the end, the installation was successful. 
+If you don't already have packages like `r pkg("ggplot2")` and `r pkg("shiny")` installed, it will also install these **dependencies** for you. If you don't get an error message at the end, the installation was successful. 
 
 ### Loading a package
 
-This is done using `library(packagename)`. This is like **launching** an app on your phone: the functionality is only there where the app is launched and remains there until you close the app or restart. Likewise, when you run `library(packagename)` within a session, the functionality of the package referred to by `packagename` will be made available for your R session. The next time you start R, you will need to run the `library()` function again if you want to access its functionality.
+This is done using `r hl(library(packagename))`. This is like **launching** an app on your phone: the functionality is only there where the app is launched and remains there until you close the app or restart. Likewise, when you run `r hl(library(packagename))` within a session, the functionality of the package referred to by `packagename` will be made available for your R session. The next time you start R, you will need to run the `r hl(library())` function again if you want to access its functionality.
 
-You can load the functions in `ggExtra` for your current R session as follows:
+You can load the functions in `r pkg("ggExtra")` for your current R session as follows:
 
 ```{r library-pckg}
 library(ggExtra)
@@ -381,10 +381,10 @@ library(ggExtra)
 You might get some red text when you load a package, this is normal. It is usually warning you that this package has functions that have the same name as other packages you've already loaded.
 
 ::: {.info data-latex=""}
-You can use the convention `package::function()` to indicate in which add-on package a function resides. For instance, if you see `readr::read_csv()`, that refers to the function `read_csv()` in the `readr` add-on package.
+You can use the convention `package::function()` to indicate in which add-on package a function resides. For instance, if you see `r hl(readr::read_csv())`, that refers to the function `r hl(read_csv())` in the `r pkg("readr")` add-on package.
 :::
 
-Now you can run the function `ggExtra::runExample()`, which runs an interactive example of marginal plots using shiny.
+Now you can run the function `r hl(ggExtra::runExample())`, which runs an interactive example of marginal plots using shiny.
 
 ```{r ggExtra-demo, eval = FALSE}
 ggExtra::runExample()
@@ -394,7 +394,7 @@ ggExtra::runExample()
 
 ### Install from GitHub
 
-Many R packages are not yet on `r glossary("CRAN")` because they are still in development. Increasingly, datasets and code for papers are available as packages you can download from github. You'll need to install the devtools package to be able to install packages from github. Check if you have a package installed by trying to load it (e.g., if you don't have devtools installed, `library("devtools")` will display an error message) or by searching for it in the packages tab in the lower right pane. All listed packages are installed; all checked packages are currently loaded.
+Many R packages are not yet on `r glossary("CRAN")` because they are still in development. Increasingly, datasets and code for papers are available as packages you can download from github. You'll need to install the devtools package to be able to install packages from github. Check if you have a package installed by trying to load it (e.g., if you don't have devtools installed, `r hl(library(devtools))` will display an error message) or by searching for it in the packages tab in the lower right pane. All listed packages are installed; all checked packages are currently loaded.
 
 ```{r img-packages, echo=FALSE, out.width='100%', fig.cap="Check installed and loaded packages in the packages tab in the lower right pane."}
 knitr::include_graphics("images/intro/packages.png")
@@ -407,7 +407,7 @@ knitr::include_graphics("images/intro/packages.png")
 devtools::install_github("psyteachr/reprores-v2")
 ```
 
-After you install the reprores package, load it using the `library()` function. You can then try out some of the functions below.
+After you install the reprores package, load it using the `r hl(library())` function. You can then try out some of the functions below.
 
 ```{r reprores, eval = FALSE}
 library(reprores)
@@ -424,10 +424,10 @@ exercise(1)
 
 
 ::: {.try data-latex=""}
-How many different ways can you find to discover what functions are available in the reprores package?
+How many different ways can you find to discover what functions are available in the `r pkg("reprores")` package?
 :::
 
-Reprores contains datasets that we will be using in future lessons. `getdata()` creates a directory called "data" with all of the class datasets.
+`r pkg("reprores")` contains datasets that we will be using in future lessons. `r hl(getdata())` creates a directory called `r path("data")` with all of the class datasets.
 
 ```{r, eval = FALSE}
 # loads the disgust dataset
@@ -445,18 +445,6 @@ getdata("data")
 
 ## Glossary  {#glossaryintro}
 
-Each chapter ends with a glossary table defining the jargon introduced in this chapter. The links below take you to the [glossary book](https://psyteachr.github.io/glossary), which you can also download for offline use with `devtools::install_github("psyteachr/glossary")` and access the glossary offline with `glossary::book()`.
+Each chapter ends with a glossary table defining the jargon introduced in this chapter. The links below take you to the [glossary book](https://psyteachr.github.io/glossary), which you can also download for offline use with `r hl(devtools::install_github("psyteachr/glossary"))` and access the glossary offline with `r hl(glossary::book())`.
 
 `r glossary_table()`
-
-## Exercises {#exercises-intro}
-
-Download the first set of [exercises](exercises/01_intro_exercise.Rmd). See the [answers](exercises/01_intro_answers.Rmd) only after you've attempted all the questions.
-
-```{r, eval = FALSE}
-# run this to access the exercise
-reprores::exercise(1)
-
-# run this to access the answers
-reprores::exercise(1, answers = TRUE)
-```

@@ -5,7 +5,7 @@
 
 ## Learning Objectives {#ilo-dplyr}
 
-### Basic
+### Basic {-}
 
 1. Be able to use the 6 main dplyr one-table verbs: [(video)](https://youtu.be/l12tNKClTR0){class="video"}
     + [`select()`](#select)
@@ -22,7 +22,7 @@
     + [`slice()`](#slice)
     + [`pull()`](#pull)
 
-### Intermediate
+### Intermediate {-}
 
 4. Fine control of [`select()` operations](#select_helpers) [(video)](https://youtu.be/R1bi1QwF9t0){class="video"}
 5. Use [window functions](#window) [(video)](https://youtu.be/uo4b0W9mqPc){class="video"}
@@ -939,15 +939,3 @@ Table: (\#tab:unnamed-chunk-4)All rows from `cumulative`
 
 
 
-## Exercises {#exercises-dplyr}
-
-Download the [exercises](exercises/07_dplyr_exercise.Rmd). See the [answers](exercises/07_dplyr_answers.Rmd) only after you've attempted all the questions.
-
-
-```r
-# run this to access the exercise
-reprores::exercise(7)
-
-# run this to access the answers
-reprores::exercise(7, answers = TRUE)
-```

@@ -252,9 +252,9 @@ After all the code above is run:
 
 ### The environment
 
-Anytime you assign something to a new object, R creates a new entry in the <a class='glossary' target='_blank' title='The interactive workspace where your script runs' href='https://psyteachr.github.io/glossary/g#global-environment'>global environment</a>. Objects in the global environment exist until you end your session; then they disappear forever (unless you save them).
+Any time you assign something to a new object, R creates a new entry in the <a class='glossary' target='_blank' title='The interactive workspace where your script runs' href='https://psyteachr.github.io/glossary/g#global-environment'>global environment</a>. Objects in the global environment exist until you end your session; then they disappear forever (unless you save them).
 
-Look at the **Environment** tab in the upper right pane. It lists all of the objects you have created. Click the broom icon to clear all of the objects and start fresh. You can also use the following functions in the console to view all objects, remove one object, or remove all objects.
+Look at the **`Environment`** tab in the upper right pane. It lists all of the objects you have created. Click the broom icon to clear all of the objects and start fresh. You can also use the following functions in the console to view all objects, remove one object, or remove all objects.
 
 
 ```r
@@ -355,8 +355,8 @@ rnorm(10)
 ```
 
 ```
-##  [1] -3.5447669  1.1357518 -1.1057860 -2.4429511 -0.3052200  0.8488620
-##  [7]  0.9477199  0.6710367 -0.4615472  0.4266210
+##  [1] -0.40353000 -0.49332048  0.50114749 -0.88632269 -0.94767406 -0.52130305
+##  [7] -0.63068844  0.94168582 -0.04627649  0.05358175
 ```
 
 If you want 10 numbers from a normal distribution with a mean of 100:
@@ -367,8 +367,8 @@ rnorm(10, 100)
 ```
 
 ```
-##  [1] 100.91716  99.35912  99.36258  99.22807  99.90279  99.98233  99.34755
-##  [8]  98.75008 101.21816 100.40093
+##  [1]  99.13123 100.15071 101.62584  99.94270  99.06869  99.20652 100.79920
+##  [8] 100.73805  99.74814  98.93820
 ```
 
 This would be an equivalent but less efficient way of calling the function:
@@ -379,8 +379,8 @@ rnorm(n = 10, mean = 100)
 ```
 
 ```
-##  [1]  99.63447  98.73527  99.15436 100.32211  99.80223 100.25060 102.28370
-##  [8]  99.46293 100.82537 100.18078
+##  [1]  98.38545 100.34920 101.82694 100.50222  99.22786  99.40100  99.38299
+##  [8] 100.42471  99.50980 101.37130
 ```
 
 We don't need to name the arguments because R will recognize that we intended to fill in the first and second arguments by their position in the function call. However, if we want to change the default for an argument coming later in the list, then we need to name it. For instance, if we wanted to keep the default `mean = 0` but change the standard deviation to 100, we would do it this way:
@@ -391,11 +391,11 @@ rnorm(10, sd = 100)
 ```
 
 ```
-##  [1]   64.07544  151.85504 -114.68156  119.62569  -30.35079   94.24400
-##  [7]  152.54159   57.51315  -96.45704 -137.99587
+##  [1]  -34.91586  198.12027  116.37352  127.79739  -46.09847  -73.20299
+##  [7]  -88.41558 -111.65645  -58.42029  -95.70162
 ```
 
-Some functions give a list of options after an argument; this means the default value is the first option. The usage entry for the `power.t.test()` function looks like this:
+Some functions give a list of options after an argument; this means the default value is the first option. The usage entry for the <code><span class='fu'><a href='https://rdrr.io/r/stats/power.t.test.html'>power.t.test</a></span><span class='op'>(</span><span class='op'>)</span></code> function looks like this:
 
 
 ```r
@@ -410,7 +410,7 @@ power.t.test(n = NULL, delta = NULL, sd = 1, sig.level = 0.05,
 
 * What is the default value for `sd`? <select class='webex-solveme' data-answer='["1"]'> <option></option> <option>NULL</option> <option>1</option> <option>0.05</option> <option>two.sample</option></select>
 * What is the default value for `type`? <select class='webex-solveme' data-answer='["two.sample"]'> <option></option> <option>NULL</option> <option>two.sample</option> <option>one.sample</option> <option>paired</option></select>
-* Which is equivalent to `power.t.test(100, 0.5)`? <select class='webex-solveme' data-answer='["power.t.test(delta = 0.5, n = 100)"]'> <option></option> <option>power.t.test(100, 0.5, sig.level = 1, sd = 0.05)</option> <option>power.t.test()</option> <option>power.t.test(n = 100)</option> <option>power.t.test(delta = 0.5, n = 100)</option></select>
+* Which is equivalent to <code><span class='fu'><a href='https://rdrr.io/r/stats/power.t.test.html'>power.t.test</a></span><span class='op'>(</span><span class='fl'>100</span>, <span class='fl'>0.5</span><span class='op'>)</span></code>? <select class='webex-solveme' data-answer='["power.t.test(delta = 0.5, n = 100)"]'> <option></option> <option>power.t.test(100, 0.5, sig.level = 1, sd = 0.05)</option> <option>power.t.test()</option> <option>power.t.test(n = 100)</option> <option>power.t.test(delta = 0.5, n = 100)</option></select>
 
 :::
 
@@ -450,26 +450,26 @@ There is an important distinction between **installing** a package and **loading
 
 <div class="meme right"><img src="images/memes/pokemon.gif" /></div>
 
-This is done using `install.packages()`. This is like installing an app on your phone: you only have to do it once and the app will remain installed until you remove it. For instance, if you want to use PokemonGo on your phone, you install it once from the App Store or Play Store, and you don't have to re-install it each time you want to use it. Once you launch the app, it will run in the background until you close it or restart your phone. Likewise, when you install a package, the package will be available (but not *loaded*) every time you open up R.
+This is done using <code><span class='fu'><a href='https://rdrr.io/r/utils/install.packages.html'>install.packages</a></span><span class='op'>(</span><span class='op'>)</span></code>. This is like installing an app on your phone: you only have to do it once and the app will remain installed until you remove it. For instance, if you want to use PokemonGo on your phone, you install it once from the App Store or Play Store, and you don't have to re-install it each time you want to use it. Once you launch the app, it will run in the background until you close it or restart your phone. Likewise, when you install a package, the package will be available (but not *loaded*) every time you open up R.
 
 ::: {.warning data-latex=""}
 You may only be able to permanently install packages if you are using R on your own system; you may not be able to do this on public workstations if you lack the appropriate privileges.
 :::
 
-Install the `ggExtra` package on your system. This package lets you create plots with marginal histograms.
+Install the <code class='package'>ggExtra</code> package on your system. This package lets you create plots with marginal histograms.
 
 
 ```r
 install.packages("ggExtra")
 ```
 
-If you don't already have packages like ggplot2 and shiny installed, it will also install these **dependencies** for you. If you don't get an error message at the end, the installation was successful. 
+If you don't already have packages like <code class='package'>ggplot2</code> and <code class='package'>shiny</code> installed, it will also install these **dependencies** for you. If you don't get an error message at the end, the installation was successful. 
 
 ### Loading a package
 
-This is done using `library(packagename)`. This is like **launching** an app on your phone: the functionality is only there where the app is launched and remains there until you close the app or restart. Likewise, when you run `library(packagename)` within a session, the functionality of the package referred to by `packagename` will be made available for your R session. The next time you start R, you will need to run the `library()` function again if you want to access its functionality.
+This is done using <code><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'>packagename</span><span class='op'>)</span></code>. This is like **launching** an app on your phone: the functionality is only there where the app is launched and remains there until you close the app or restart. Likewise, when you run <code><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'>packagename</span><span class='op'>)</span></code> within a session, the functionality of the package referred to by `packagename` will be made available for your R session. The next time you start R, you will need to run the <code><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='op'>)</span></code> function again if you want to access its functionality.
 
-You can load the functions in `ggExtra` for your current R session as follows:
+You can load the functions in <code class='package'>ggExtra</code> for your current R session as follows:
 
 
 ```r
@@ -479,10 +479,10 @@ library(ggExtra)
 You might get some red text when you load a package, this is normal. It is usually warning you that this package has functions that have the same name as other packages you've already loaded.
 
 ::: {.info data-latex=""}
-You can use the convention `package::function()` to indicate in which add-on package a function resides. For instance, if you see `readr::read_csv()`, that refers to the function `read_csv()` in the `readr` add-on package.
+You can use the convention `package::function()` to indicate in which add-on package a function resides. For instance, if you see <code><span class='fu'>readr</span><span class='fu'>::</span><span class='fu'><a href='https://readr.tidyverse.org/reference/read_delim.html'>read_csv</a></span><span class='op'>(</span><span class='op'>)</span></code>, that refers to the function <code><span class='fu'>read_csv</span><span class='op'>(</span><span class='op'>)</span></code> in the <code class='package'>readr</code> add-on package.
 :::
 
-Now you can run the function `ggExtra::runExample()`, which runs an interactive example of marginal plots using shiny.
+Now you can run the function <code><span class='fu'>ggExtra</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/ggExtra/man/runExample.html'>runExample</a></span><span class='op'>(</span><span class='op'>)</span></code>, which runs an interactive example of marginal plots using shiny.
 
 
 ```r
@@ -493,7 +493,7 @@ ggExtra::runExample()
 
 ### Install from GitHub
 
-Many R packages are not yet on <a class='glossary' target='_blank' title='The Comprehensive R Archive Network: a network of ftp and web servers around the world that store identical, up-to-date, versions of code and documentation for R.' href='https://psyteachr.github.io/glossary/c#cran'>CRAN</a> because they are still in development. Increasingly, datasets and code for papers are available as packages you can download from github. You'll need to install the devtools package to be able to install packages from github. Check if you have a package installed by trying to load it (e.g., if you don't have devtools installed, `library("devtools")` will display an error message) or by searching for it in the packages tab in the lower right pane. All listed packages are installed; all checked packages are currently loaded.
+Many R packages are not yet on <a class='glossary' target='_blank' title='The Comprehensive R Archive Network: a network of ftp and web servers around the world that store identical, up-to-date, versions of code and documentation for R.' href='https://psyteachr.github.io/glossary/c#cran'>CRAN</a> because they are still in development. Increasingly, datasets and code for papers are available as packages you can download from github. You'll need to install the devtools package to be able to install packages from github. Check if you have a package installed by trying to load it (e.g., if you don't have devtools installed, <code><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://devtools.r-lib.org/'>devtools</a></span><span class='op'>)</span></code> will display an error message) or by searching for it in the packages tab in the lower right pane. All listed packages are installed; all checked packages are currently loaded.
 
 <div class="figure" style="text-align: center">
 <img src="images/intro/packages.png" alt="Check installed and loaded packages in the packages tab in the lower right pane." width="100%" />
@@ -508,7 +508,7 @@ Many R packages are not yet on <a class='glossary' target='_blank' title='The Co
 devtools::install_github("psyteachr/reprores-v2")
 ```
 
-After you install the reprores package, load it using the `library()` function. You can then try out some of the functions below.
+After you install the reprores package, load it using the <code><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='op'>)</span></code> function. You can then try out some of the functions below.
 
 
 ```r
@@ -526,10 +526,10 @@ exercise(1)
 
 
 ::: {.try data-latex=""}
-How many different ways can you find to discover what functions are available in the reprores package?
+How many different ways can you find to discover what functions are available in the <code class='package'>reprores</code> package?
 :::
 
-Reprores contains datasets that we will be using in future lessons. `getdata()` creates a directory called "data" with all of the class datasets.
+<code class='package'>reprores</code> contains datasets that we will be using in future lessons. <code><span class='fu'>getdata</span><span class='op'>(</span><span class='op'>)</span></code> creates a directory called <code class='path'>data</code> with all of the class datasets.
 
 
 ```r
@@ -548,7 +548,7 @@ getdata("data")
 
 ## Glossary  {#glossaryintro}
 
-Each chapter ends with a glossary table defining the jargon introduced in this chapter. The links below take you to the [glossary book](https://psyteachr.github.io/glossary), which you can also download for offline use with `devtools::install_github("psyteachr/glossary")` and access the glossary offline with `glossary::book()`.
+Each chapter ends with a glossary table defining the jargon introduced in this chapter. The links below take you to the [glossary book](https://psyteachr.github.io/glossary), which you can also download for offline use with <code><span class='fu'>devtools</span><span class='fu'>::</span><span class='fu'><a href='https://devtools.r-lib.org//reference/remote-reexports.html'>install_github</a></span><span class='op'>(</span><span class='st'>"psyteachr/glossary"</span><span class='op'>)</span></code> and access the glossary offline with <code><span class='fu'>glossary</span><span class='fu'>::</span><span class='fu'>book</span><span class='op'>(</span><span class='op'>)</span></code>.
 
 
 
@@ -577,16 +577,3 @@ Each chapter ends with a glossary table defining the jargon introduced in this c
 |[whitespace](https://psyteachr.github.io/glossary/w.html#whitespace){class="glossary" target="_blank"}                       |Spaces, tabs and line breaks                                                                                                                                               |
 
 
-
-## Exercises {#exercises-intro}
-
-Download the first set of [exercises](exercises/01_intro_exercise.Rmd). See the [answers](exercises/01_intro_answers.Rmd) only after you've attempted all the questions.
-
-
-```r
-# run this to access the exercise
-reprores::exercise(1)
-
-# run this to access the answers
-reprores::exercise(1, answers = TRUE)
-```

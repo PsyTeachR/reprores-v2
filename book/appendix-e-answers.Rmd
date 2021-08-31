@@ -1,0 +1,40 @@
+# Exercise Answers {#exercise-answers}
+
+You can access exercises and answers for all of the chapters through the `r pkg("reprores")` package.
+
+```{r, eval = FALSE}
+# run this to access the exercise
+reprores::exercise(1)
+
+# run this to access the answers
+reprores::exercise(1, answers = TRUE)
+```
+
+Alternatively, download all [exercises and data files](exercises/exercises.zip) below as a ZIP archive. The answers are not included in the zip file.
+
+```{r, echo = FALSE, results = "asis"}
+exercises <- data.frame(
+  n = 1:10,
+  exercise = list.files("exercises", "\\d.*_exercise.Rmd", full.names = TRUE),
+  answer = list.files("exercises", "\\d.*_answers.Rmd", full.names = TRUE),
+  exercise_html = list.files("exercises", "\\d.*_exercise.html", full.names = TRUE),
+  answer_html = list.files("exercises", "\\d.*_answers.html", full.names = TRUE),
+  desc = c("Intro to R, functions, R markdown",
+           "Create an R Markdown project",
+           "Data visualisation",
+           "Data",
+           "Data relations",
+           "Tidy Data",
+           "Data wrangling",
+           "GLM",
+           "Functions and iteration",
+           "Simulation")
+) %>%
+  mutate(entry = glue::glue("* Chapter {n}: {desc}\n    * Exercise: [Rmd]({exercise})|[html]({exercise_html}); Answers: [Rmd]({answer})|[html]({answer_html})"))
+
+
+paste(exercises$entry, collapse = "\n") %>% cat()
+```
+
+
+

@@ -1,5 +1,5 @@
 # knit all exercise and answer Rmd files
-input <- list.files("book/exercises", "*.Rmd", full.names = TRUE)
+input <- list.files("book/exercises", "02_.*\\.Rmd", full.names = TRUE)
 purrr::map(input, rmarkdown::render, quiet = TRUE)
 
 # zip exercises files

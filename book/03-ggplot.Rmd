@@ -5,7 +5,7 @@
 
 ## Learning Objectives {#ilo-ggplot}
 
-### Basic
+### Basic {-}
 
 1. Understand what types of graphs are best for [different types of data](#vartypes) [(video)](https://youtu.be/tOFQFPRgZ3M){class="video"}
     + 1 discrete
@@ -36,7 +36,7 @@
 4. [Combine plots](combo_plots) on the same plot, as facets, or as a grid using patchwork [(video)](https://youtu.be/AnqlfuU-VZk){class="video"}
 5. [Save plots](#ggsave) as an image file [(video)](https://youtu.be/f1Y53mjEli0){class="video"}
     
-### Intermediate
+### Intermediate {-}
 
 6. Add lines to graphs
 7. Deal with [overlapping data](#overlap)
@@ -444,7 +444,7 @@ ggplot(pets, aes(age, score, color = pet)) +
   ylab("Pet Score")
 ```
 
-The functions `r hl(`labs())`, `r hl(`xlab())`, and `r hl(`ylab())` are convenient when you just want to change a label name, but the `scale_{aesthetic}_{type}` functions are worth learning because they let you customise many things about any aesthetic property (e.g., `x`, `y`, `colour`, `fill`, `shape`, `linetype`), as long as you choose the correct type (usually `continuous` or `discrete`, but there are also special scale functions for other dta types like dates).
+The functions `r hl(labs())`, `r hl(xlab())`, and `r hl(ylab())` are convenient when you just want to change a label name, but the `scale_{aesthetic}_{type}` functions are worth learning because they let you customise many things about any aesthetic property (e.g., `x`, `y`, `colour`, `fill`, `shape`, `linetype`), as long as you choose the correct type (usually `continuous` or `discrete`, but there are also special scale functions for other data types like dates).
 
 ```{r line-labels3, fig.cap="Set custom labels with scale functions"}
 ggplot(pets, aes(age, score, color = pet)) +
@@ -820,15 +820,3 @@ Hover over the data points above and click on the legend items.
 
 `r glossary_table()`
 
-
-## Exercises {#exercises-ggplot}
-
-Download the [exercises](exercises/03_ggplot_exercise.Rmd). See the [plots](exercises/03_ggplot_answers.html) to see what your plots should look like (this doesn't contain the answer code). See the [answers](exercises/03_ggplot_answers.Rmd) only after you've attempted all the questions.
-
-```{r, eval = FALSE}
-# run this to access the exercise
-reprores::exercise(3)
-
-# run this to access the answers
-reprores::exercise(3, answers = TRUE)
-```

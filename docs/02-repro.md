@@ -5,7 +5,7 @@
 
 ## Learning Objectives {#ilo-repro}
 
-### Basic
+### Basic {-}
 
 1. Organise a [project](#projects) [(video)](https://youtu.be/y-KiPueC9xw ){class="video"}
 2. Create and compile an [Rmarkdown document](#rmarkdown) [(video)](https://youtu.be/EqJiAlJAl8Y ){class="video"}
@@ -15,7 +15,7 @@
 6. Report the output of an analysis using inline R
 7. Add a bibliography and in-line citations
 
-### Intermediate
+### Intermediate {-}
 
 8. Output doc and PDF formats
 9. Format tables using `kableExtra`
@@ -31,6 +31,7 @@
 * [Project Structure](https://slides.djnavarro.net/project-structure/) by Danielle Navarro
 * [How to name files](https://speakerdeck.com/jennybc/how-to-name-files) by Jenny Bryan
 * [Papaja](https://crsh.github.io/papaja_man/) Reproducible APA Manuscripts
+* [The Turing Way](https://the-turing-way.netlify.app/)
 
 
 ## Setup {#setup-repro}
@@ -60,7 +61,7 @@ First, we need to get orgainsed.
 ::: {.try data-latex=""}
 Make a new <a class='glossary' target='_blank' title='A collection or “folder” of files on a computer.' href='https://psyteachr.github.io/glossary/d#directory'>directory</a> where you will keep all of your materials for this class. If you're using a lab computer, make sure you make this directory in your network drive so you can access it from other computers. 
 
-Choose **`New Project...`** under the **`File`** menu to create a new project called `01-repro` in this directory.
+Choose **`New Project...`** under the **`File`** menu to create a new project called <code class='path'>01-repro</code> in this directory.
 :::
 
 
@@ -84,15 +85,15 @@ If you are working with an R Markdown file, it will automatically use the same d
 
 If you are working with R scripts, store your main script file in the top-level directory and manually set your working directory to that location. You will have to reset the working directory each time you open RStudio, unless you create a <a class='glossary' target='_blank' title='A way to organise related files in RStudio' href='https://psyteachr.github.io/glossary/p#project'>project</a> and access the script from the project. 
 
-For instance, if you are on a Windows machine your data and scripts are in the directory `C:\Carla's_files\thesis2\my_thesis\new_analysis`, you will set your working directory in one of two ways: (1) by going to the `Session` pull down menu in RStudio and choosing `Set Working Directory`, or (2) by typing `setwd("C:\Carla's_files\thesis2\my_thesis\new_analysis")` in the console window.
+For instance, if you are on a Windows machine your data and scripts are in the directory <code class='path'>C:\Carla's_files\thesis2\my_thesis\new_analysis</code>, you will set your working directory in one of two ways: (1) by going to the **`Session`** pull down menu in RStudio and choosing **`Set Working Directory`**, or (2) by typing <code><span class='fu'><a href='https://rdrr.io/r/base/getwd.html'>setwd</a></span><span class='op'>(</span><span class='st'>"C:/Carla's_files/thesis2/my_thesis/new_analysis"</span><span class='op'>)</span></code> in the console window.
 
 ::: {.warning data-latex=""}
-It's tempting to make your life simple by putting the `setwd()` command in your script. Don't do this! Others will not have the same directory tree as you (and when your laptop dies and you get a new one, neither will you).
+It's tempting to make your life simple by putting the <code><span class='fu'><a href='https://rdrr.io/r/base/getwd.html'>setwd</a></span><span class='op'>(</span><span class='op'>)</span></code> command in your script. Don't do this! Others will not have the same directory tree as you (and when your laptop dies and you get a new one, neither will you).
 
-When manually setting the working directory, always do so by using the **`Session > Set Working Directory`** pull-down option or by typing `setwd()` in the console.
+When manually setting the working directory, always do so by using the **`Session > Set Working Directory`** pull-down option or by typing <code><span class='fu'><a href='https://rdrr.io/r/base/getwd.html'>setwd</a></span><span class='op'>(</span><span class='op'>)</span></code> in the console.
 :::
 
-If your script needs a file in a subdirectory of `new_analysis`, say, `data/questionnaire.csv`, load it in using a <a class='glossary' target='_blank' title='The location of a file in relation to the working directory.' href='https://psyteachr.github.io/glossary/r#relative-path'>relative path</a> so that it is accessible if you move the folder `new_analysis` to another location or computer:
+If your script needs a file in a subdirectory of <code class='path'>new_analysis</code>, say, <code class='path'>data/questionnaire.csv</code>, load it in using a <a class='glossary' target='_blank' title='The location of a file in relation to the working directory.' href='https://psyteachr.github.io/glossary/r#relative-path'>relative path</a> so that it is accessible if you move the folder <code class='path'>new_analysis</code> to another location or computer:
 
 
 ```r
@@ -122,22 +123,22 @@ There are two perfect guides to naming files: Jenny Bryan's [How to name files](
 
 For example, these file names are a mess:
 
-* `analysis.R`
-* `analysis final.R`
-* `Data (Expmnt) 11-15.xls`
-* `Experiment Data Nov 12.xls`
-* `final analysis2.R`
-* `project notes.txt`
-* `Subject Data November 15.xls`
+* <code class='path'>analysis.R</code>
+* <code class='path'>analysis final.R</code>
+* <code class='path'>Data (Expmnt) 11-15.xls</code>
+* <code class='path'>Experiment Data Nov 12.xls</code>
+* <code class='path'>final analysis2.R</code>
+* <code class='path'>project notes.txt</code>
+* <code class='path'>Subject Data November 15.xls</code>
 
 Here is one way to structure them so that similar files have the same structure and it's easy for a human to scan the list or to use code to find relevant files. See if you can figure out what the last one should be.
 
-* `_project-notes.txt`
-* `analysis_v1.R`
-* `analysis_v2.R`
-* `analysis_v3.R`
-* `data_experiment_2021-11-12.xls`
-* `data_experiment_2021-11-15.xls`
+* <code class='path'>_project-notes.txt</code>
+* <code class='path'>analysis_v1.R</code>
+* <code class='path'>analysis_v2.R</code>
+* <code class='path'>analysis_v3.R</code>
+* <code class='path'>data_experiment_2021-11-12.xls</code>
+* <code class='path'>data_experiment_2021-11-15.xls</code>
 * <select class='webex-solveme' data-answer='["data_subjects_2021-11-15.xls"]'> <option></option> <option>subject-data_2021-11-15.xls</option> <option>data-subjects-2021_11_15.xls</option> <option>data_subjects_2021-11-15.xls</option> <option>data_2021-11-15_subjects.xls</option></select>
 
 ::: {.try data-latex=""}
@@ -149,7 +150,7 @@ Think of other ways to name the files above. Look at the project directory for y
 
 In this lesson, we will learn to make an R Markdown document with a table of contents, appropriate headers, code chunks, tables, images, inline R, and a bibliography. 
 
-We will use <a class='glossary' target='_blank' title='The R-specific version of markdown: a way to specify formatting, such as headers, paragraphs, lists, bolding, and links, as well as code blocks and inline code.' href='https://psyteachr.github.io/glossary/r#r-markdown'>R Markdown</a> to create reproducible reports, which enables mixing of text and code. A reproducible script will contain sections of code in code blocks. A code block starts and ends with backtick symbols in a row, with some information about the code between curly brackets, such as `{r chunk-name, echo=FALSE}` (this runs the code, but does not show the text of the code block in the compiled document). The text outside of code blocks is written in <a class='glossary' target='_blank' title='A way to specify formatting, such as headers, paragraphs, lists, bolding, and links.' href='https://psyteachr.github.io/glossary/m#markdown'>markdown</a>, which is a way to specify formatting, such as headers, paragraphs, lists, bolding, and links.
+We will use <a class='glossary' target='_blank' title='The R-specific version of markdown: a way to specify formatting, such as headers, paragraphs, lists, bolding, and links, as well as code blocks and inline code.' href='https://psyteachr.github.io/glossary/r#r-markdown'>R Markdown</a> to create reproducible reports, which enables mixing of text and code. A reproducible script will contain sections of code in code blocks. A code block starts and ends with three backtick symbols in a row, with some information about the code between curly brackets, such as `{r chunk-name, echo=FALSE}` (this runs the code, but does not show the text of the code block in the compiled document). The text outside of code blocks is written in <a class='glossary' target='_blank' title='A way to specify formatting, such as headers, paragraphs, lists, bolding, and links.' href='https://psyteachr.github.io/glossary/m#markdown'>markdown</a>, which is a way to specify formatting, such as headers, paragraphs, lists, bolding, and links.
 
 <div class="figure" style="text-align: center">
 <img src="images/repro/reproducible_script.png" alt="A reproducible script." width="100%" />
@@ -176,7 +177,7 @@ output:
     df_print: kable
     theme: 
       version: 4
-      theme: yeti
+      bootswatch: yeti
     highlight: tango
     toc: true
     toc_float:
@@ -193,7 +194,7 @@ Try changing the values from `false` to `true` to see what the options do.
 
 The `df_print: kable` option prints data frames using `knitr::kable`. You'll learn below how to further customise tables.
 
-The built-in themes are: default, cerulean, cosmo,darkly, flatly, journal, lumen, paper, readable, sandstone, simplex, spacelab, united, and yeti. You can [view and download more themes](https://bootswatch.com/4/).
+The built-in bootswatch themes are: default, cerulean, cosmo, darkly, flatly, journal, lumen, paper, readable, sandstone, simplex, spacelab, united, and yeti. You can [view and download more themes](https://bootswatch.com/4/).
 
 <div class="figure" style="text-align: center">
 <img src="images/repro/bootswatch.png" alt="Light themes in versions 3 and 4." width="100%" />
@@ -207,17 +208,17 @@ The built-in themes are: default, cerulean, cosmo,darkly, flatly, journal, lumen
 
 When you create a new R Markdown file in RStudio, a setup chunk is automatically created.
 
-<div class='verbatim'><code>&#96;&#96;&#96;{r setup, include=FALSE}</code>
+<div class='verbatim'><pre class='sourceCode r'><code class='sourceCode R'>&#96;&#96;&#96;{r setup, include=FALSE}</code></pre>
 
 ```r
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-<code>&#96;&#96;&#96;</code></div>
+<pre class='sourceCode r'><code class='sourceCode R'>&#96;&#96;&#96;</code></pre></div>
 
 You can set more default options for code chunks here. See the [knitr options documentation](https://yihui.name/knitr/options/){target="_blank"} for explanations of the possible options.
 
-<div class='verbatim'><code>&#96;&#96;&#96;{r setup, include=FALSE}</code>
+<div class='verbatim'><pre class='sourceCode r'><code class='sourceCode R'>&#96;&#96;&#96;{r setup, include=FALSE}</code></pre>
 
 ```r
 knitr::opts_chunk$set(
@@ -231,7 +232,7 @@ knitr::opts_chunk$set(
 )
 ```
 
-<code>&#96;&#96;&#96;</code></div>
+<pre class='sourceCode r'><code class='sourceCode R'>&#96;&#96;&#96;</code></pre></div>
 
 The code above sets the following options:
 
@@ -244,13 +245,13 @@ The code above sets the following options:
 * `cache      = FALSE` : run all the code to create all of the images and objects each time you knit (set to `TRUE` if you have time-consuming code)
 
 
-Find a list of the current chunk options by typing `str(knitr::opts_chunk$get())` in the console.
+Find a list of the current chunk options by typing <code><span class='fu'><a href='https://rdrr.io/r/utils/str.html'>str</a></span><span class='op'>(</span><span class='fu'>knitr</span><span class='fu'>::</span><span class='va'><a href='https://rdrr.io/pkg/knitr/man/opts_chunk.html'>opts_chunk</a></span><span class='op'>$</span><span class='fu'>get</span><span class='op'>(</span><span class='op'>)</span><span class='op'>)</span></code> in the console.
 
 
-You can also add the packages you need in this chunk using `library()`. Often when you are working on a script, you will realize that you need to load another add-on package. Don't bury the call to `library(package_I_need)` way down in the script. Put it in the top, so the user has an overview of what packages are needed.
+You can also add the packages you need in this chunk using <code><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='op'>)</span></code>. Often when you are working on a script, you will realize that you need to load another add-on package. Don't bury the call to <code><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'>package_I_need</span><span class='op'>)</span></code> way down in the script. Put it in the top, so the user has an overview of what packages are needed.
 
 ::: {.try data-latex=""}
-We'll be using function from the package `tidyverse`, so load that in your setup chunk.
+We'll be using function from the package <code class='package'>tidyverse</code>, so load that in your setup chunk.
 :::
 
 ### Structure {#structure}
@@ -339,7 +340,7 @@ pets %>%
 
 </div>
 
-The table above is OK, but it could be more reader-friendly by changing the column labels, rounding the means, and adding a caption. You can use `knitr::kable()` for this.
+The table above is OK, but it could be more reader-friendly by changing the column labels, rounding the means, and adding a caption. You can use <code><span class='fu'>knitr</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/knitr/man/kable.html'>kable</a></span><span class='op'>(</span><span class='op'>)</span></code> for this.
 
 
 ```r
@@ -409,17 +410,19 @@ ggplot(pets, aes(pet, score, fill = country)) +
 The last line changes the default text size and font, which can be useful for generating figures that meet a journal's requirements.
 :::
 
+
+
 You can also include images that you did not create in R using the typical markdown syntax for images: 
 
 ```
-![All the Things by [Hyperbole and a Half](http://hyperboleandahalf.blogspot.com/)](images/memes/x-all-the-things.png)
+![All the Things by [Hyperbole and a Half](http://hyperboleandahalf.blogspot.com/)](images/memes/x-all-the-things.png){style="width: 50%"}
 ```
 
-![All the Things by [Hyperbole and a Half](http://hyperboleandahalf.blogspot.com/)](images/memes/x-all-the-things.png)
+![All the Things by [Hyperbole and a Half](http://hyperboleandahalf.blogspot.com/)](images/memes/x-all-the-things.png){style="width: 50%"}
 
 #### In-line R
 
-Now let's analyse the pets data to see if cats are heavier than ferrets. First we'll run the analysis code. Then we'll save any numbers we might want to use in our manuscript to variables and round them appropriately. Finally, we'll use `glue::glue()` to format a results string.
+Now let's analyse the pets data to see if cats are heavier than ferrets. First we'll run the analysis code. Then we'll save any numbers we might want to use in our manuscript to variables and round them appropriately. Finally, we'll use <code><span class='fu'>glue</span><span class='fu'>::</span><span class='fu'><a href='https://glue.tidyverse.org/reference/glue.html'>glue</a></span><span class='op'>(</span><span class='op'>)</span></code> to format a results string.
 
 
 ```r
@@ -451,12 +454,15 @@ Cats were significantly heavier than ferrets (t = 18.42, df = 180.4, p < 0.001).
 
 ### Bibliography
 
-There are several ways to do in-text citations and automatically generate a [bibliography](https://rmarkdown.rstudio.com/authoring_bibliographies_and_citations.html#bibliographies) in RMarkdown.
+There are several ways to do in-text citations and automatically generate a [bibliography](https://rmarkdown.rstudio.com/authoring_bibliographies_and_citations.html#bibliographies) in R Markdown. Markdown files need a BibTex file that contains the references you need to cite. You specify the name of this file in the YAML header, like `bibliography: filename.bib` and reference citations in text using an at symbol and a shortname, like `[@tidyverse]`.
 
+#### Converting from reference software
+
+Most reference software like EndNote, Zotero or Mendeley have exporting options that can export to BibTeX format. You just need to check the shortnames in the resulting file.
 
 #### Create a BibTeX File Manually
 
-You can just make a BibTeX file and add citations manually. Make a new Text File in RStudio called "bibliography.bib".
+You can make a BibTeX file and add citations manually. Make a new Text File in RStudio called "bibliography.bib".
 
 Next, add the line `bibliography: bibliography.bib` to your YAML header.
 
@@ -491,7 +497,7 @@ citation(package="faux") %>% toBibtex()
 ##   doi = {10.5281/zenodo.2669586},
 ##   publisher = {Zenodo},
 ##   year = {2021},
-##   note = {R package version 1.0.0.9004},
+##   note = {R package version 1.0.0},
 ##   url = {https://debruine.github.io/faux/},
 ## }
 ```
@@ -501,8 +507,7 @@ citation(package="faux") %>% toBibtex()
 
 [Google Scholar](https://scholar.google.com/) entries have a BibTeX citation option. This is usually the easiest way to get the relevant values, although you have to add the DOI yourself. 
 
-Some journal websites also let you download citations in bibtex format.
- For example, go to the publisher's page for [Equivalence Testing for Psychological Research: A Tutorial](https://journals.sagepub.com/doi/abs/10.1177/2515245918770963), click on the Cite button (in the sidebar or under the bottom Explore More menu), choose BibTeX format, and download the citation. You can open up the file in a text editor and copy the text. It should look like this:
+Some journal websites also let you download citations in bibtex format. For example, go to the publisher's page for [Equivalence Testing for Psychological Research: A Tutorial](https://journals.sagepub.com/doi/abs/10.1177/2515245918770963){target="_blank"}, click on the Cite button (in the sidebar or under the bottom Explore More menu), choose BibTeX format, and download the citation. You can open up the file in a text editor and copy the text. It should look like this:
 
 ```
 @article{doi:10.1177/2515245918770963,
@@ -528,11 +533,8 @@ eprint = {
 }
 ```
 
-Paste the reference into your bibliography.bib file. Change `doi:10.1177/2515245918770963` in the first line of the reference to a short string you will use to cite the reference in your manuscript. We'll use `TOSTtutorial`.
+Paste the reference into your bibliography.bib file. Change `doi:10.1177/2515245918770963` in the first line of the reference to a shortname you will use to cite the reference in your manuscript. We'll use `TOSTtutorial`.
 
-#### Converting from reference software
-
-Most reference software like EndNote, Zotero or Mendeley have exporting options that can export to BibTeX format. You just need to check the shortnames in the resulting file.
 
 #### In-text citations
 
@@ -554,7 +556,7 @@ Lakens, Scheel and Isengar [-@TOSTtutorial] wrote a tutorial explaining how to t
 
 #### Citation Styles
 
-You can search a [list of style files](https://www.zotero.org/styles) for various journals and download a file that will format your bibliography for a specific journal's style. You'll need to add the line `csl: filename.csl` to your YAML header. 
+You can search a [list of style files](https://www.zotero.org/styles){target="_blank"} for various journals and download a file that will format your bibliography for a specific journal's style. You'll need to add the line `csl: filename.csl` to your YAML header. 
 
 ::: {.info data-latex=""}
 Add some citations to your bibliography.bib file, reference them in your text, and render your manuscript to see the automatically generated reference section. Try a few different citation style files.
@@ -563,7 +565,7 @@ Add some citations to your bibliography.bib file, reference them in your text, a
 
 ### Output Formats
 
-You can knit your file to PDF or Word if you have the right packages installed on your computer. You can also create presentations, dashboards, websites, and even books with R markdown. In fact, the book you are reading right now was created using R markdown. See [RStudio Formats](https://rmarkdown.rstudio.com/formats.html) for a list of all the output types.
+You can knit your file to PDF or Word if you have the right packages installed on your computer. You can also create presentations, dashboards, websites, and even books with R markdown. In fact, the book you are reading right now was created using R markdown. See [RStudio Formats](https://rmarkdown.rstudio.com/formats.html){target="_blank"} for a list of all the output types.
 
 
 ## Glossary {#glossary-repro}
@@ -587,18 +589,3 @@ You can knit your file to PDF or Word if you have the right packages installed o
 
 
 
-## Exercises {#exercises-repro}
-
-Create a new project called "website".
-
-In the "website" project, create a new Rmarkdown document called "index.Rmd". Do the following in this document:
-
-* Edit the YAML header to output tables using kable and to use a custom theme.
-* Write a short paragraph describing your research interests. 
-* Include a bullet-point list of links to websites that are useful for your research. 
-* Add an image of anything relevant.
-* Include a code chunk at the end that displays a small table of fortunes from the fortunes package. 
-* Knit this document to html.
-
-
-## References

@@ -1,0 +1,45 @@
+---
+title: 'Exercise 02: Reproducible Workflows'
+output: 
+  html_document:
+    df_print: kable
+    theme:
+      version: 4
+      bootswatch: darkly
+---
+
+```{r setup, include=FALSE}
+library(fortunes)
+```
+
+
+My empirical research focuses on kinship and how social perception of morphology affects social behaviour. Specifically, I am interested in how humans use facial resemblance to tell who their kin are and how people respond to cues of kinship in different circumstances. I am also interested in the behavioural immune system and how pathogens influence mating and social behaviours. 
+
+![](https://psa.psy.gla.ac.uk/images/logos/psa.png){style="float: right; width: 25%"}
+
+My meta-science interests include teaching computational skills for reproducible research, large-scale collaboration, and developing web-based resources for increasing reproducibility in data collection and stimulus generation.
+
+
+* [Psychological Science Accelerator](https://psysciacc.org/)
+* [Face Research Lab](http://facelab.org)
+* [My Blog](https://debruine.github.io/)
+
+
+## Educational History
+
+```{r, echo = FALSE}
+tibble::tribble(
+  ~Years, ~Degree, ~Subject, ~Institution,
+  "2000–2004", "PhD", "Psychology", "McMaster University, Canada",
+  "1998–2000", "MSc", "Biology", "University of Michigan, USA",
+  "1998–2000", "Grad Cert", "Women's Studies", "University of Michigan, USA",
+  "1994–1998", "BSc","Bio-Psychology & Anthro-Zoology", "University of Michigan, USA"
+)
+```
+
+
+
+
+```{r, echo = FALSE}
+fortune()
+```

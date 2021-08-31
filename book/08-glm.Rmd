@@ -11,7 +11,7 @@
 
 ## Learning Objectives {#ilo9}
 
-### Basic
+### Basic {-}
 
 1. Define the [components](#glm-components) of the GLM
 2. [Simulate data](#sim-glm) using GLM equations [(video)](https://youtu.be/JQ90LnVCbKc){class="video"}
@@ -20,7 +20,7 @@
 5. [Predict new values](#predict) using the model [(video)](https://youtu.be/0o4LEbVVWfM){class="video"}
 6. Explain the differences among [coding schemes](#coding-schemes) [(video)](https://youtu.be/SqL28AbLj3g){class="video"}
 
-### Intermediate
+### Intermediate {-}
 
 7. Demonstrate the [relationships](#test-rels) among two-sample t-test, one-way ANOVA, and linear regression
 8. Given data and a GLM, [generate a decomposition matrix](#decomp) and calculate sums of squares, mean squares, and F ratios for a one-way ANOVA
@@ -416,14 +416,3 @@ Using the code above, write your own function that takes a table of data and ret
 
 `r glossary_table()`
 
-## Exercises {#exercises-glm}
-
-Download the [exercises](exercises/08_glm_exercise.Rmd). See the [answers](exercises/08_glm_answers.Rmd) only after you've attempted all the questions.
-
-```{r, eval = FALSE}
-# run this to access the exercise
-reprores::exercise(8)
-
-# run this to access the answers
-reprores::exercise(8, answers = TRUE)
-```

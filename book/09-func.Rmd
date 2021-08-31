@@ -7,19 +7,19 @@
 
 You will learn about functions and iteration by using simulation to calculate a power analysis for an independent samples t-test.
 
-### Basic
+### Basic {-}
 
 1. Work with basic [iteration functions](#iteration-functions) `rep`, `seq`, `replicate` [(video)](https://youtu.be/X3zFA71JzgE){class="video"}
 2. Use [`map()` and `apply()` functions](#map-apply) [(video)](https://youtu.be/HcZxQZwJ8T4){class="video"}
 3. Write your own [custom functions](#custom-functions) with `function()` [(video)](https://youtu.be/Qqjva0xgYC4){class="video"}
 4. Set [default values](#defaults) for the arguments in your functions
 
-### Intermediate
+### Intermediate {-}
 
 5. Understand [scope](#scope)
 6. Use [error handling and warnings](#warnings-errors) in a function
 
-### Advanced
+### Advanced {-}
 
 <div class="right meme"><img src="images/memes/purrr.gif"
      alt="Jacobim Mugatu (Will Ferrell) and Katinka Ingabogovinanana (Mila Jojovich) from Zoolander, sitting in a theatre with a small dog; bottom text: purrr::map so hot right now" /></div>
@@ -516,15 +516,3 @@ Calculate power via simulation and `power.t.test` for the following tests:
 ## Glossary {#glossary-func}
 
 `r glossary_table()`
-
-## Exercises {#exercises-func}
-
-Download the [exercises](exercises/09_func_exercise.Rmd). See the [answers](exercises/09_func_answers.Rmd) only after you've attempted all the questions.
-
-```{r, eval = FALSE}
-# run this to access the exercise
-reprores::exercise(9)
-
-# run this to access the answers
-reprores::exercise(9, answers = TRUE)
-```

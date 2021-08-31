@@ -625,16 +625,3 @@ base::setdiff(subject, new_subjects)
 |[set operations](https://psyteachr.github.io/glossary/s.html#set-operations){class="glossary" target="_blank"}   |Functions that compare two tables and return rows that match (intersect), are in either table (union), or are in one table but not the other (setdiff). |
 
 
-
-## Exercises {#exercises-joins}
-
-Download the [exercises](exercises/05_joins_exercise.Rmd). See the [answers](exercises/05_joins_answers.Rmd) only after you've attempted all the questions.
-
-
-```r
-# run this to access the exercise
-reprores::exercise(5)
-
-# run this to access the answers
-reprores::exercise(5, answers = TRUE)
-```

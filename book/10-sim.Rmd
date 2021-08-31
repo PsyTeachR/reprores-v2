@@ -5,7 +5,7 @@
 
 ## Learning Objectives {#ilo-sim}
 
-### Basic
+### Basic {-}
 
 1. Generate and plot data randomly sampled from common distributions [(video)](https://youtu.be/iuecrT3q1kg){class="video"}
     + [uniform](#uniform)
@@ -27,9 +27,10 @@
     + [correlation](#correlation) (pearson, kendall and spearman)
 4. [Calculate power](#calc-power-binom) using iteration and a sampling function
 
-### Intermediate
+### Intermediate {-}
 
-6. Calculate the minimum sample size for a specific power level and design
+5. Calculate the minimum sample size for a specific power level and design
+6. Calculate power over a range of study parameters
 
 
 ## Resources {#resources8}
@@ -853,15 +854,3 @@ ggplot(power_table, aes(n, power)) +
 ## Glossary {#glossary-sim}
 
 `r glossary_table()`
-
-## Exercises {#exercises-sim}
-
-Download the [exercises](exercises/10_sim_exercise.Rmd). See the [answers](exercises/10_sim_answers.Rmd) only after you've attempted all the questions.
-
-```{r, eval = FALSE}
-# run this to access the exercise
-reprores::exercise(10)
-
-# run this to access the answers
-reprores::exercise(10, answers = TRUE)
-```

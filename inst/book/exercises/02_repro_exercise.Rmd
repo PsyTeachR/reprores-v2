@@ -1,0 +1,26 @@
+---
+title: 'Exercise 02: Reproducible Workflows'
+output: 
+  html_document:
+    df_print: kable
+---
+
+```{r setup, include=FALSE}
+# please do not alter this code chunk
+knitr::opts_chunk$set(echo = TRUE,
+                      message = FALSE, 
+                      error = TRUE)
+```
+
+Create a new project called "website".
+
+In the "website" project, create a new Rmarkdown document called "index.Rmd". Do the following in this document:
+
+* Edit the YAML header to output tables using kable and to use a custom theme.
+* Write a short paragraph describing your research interests. 
+* Include a bullet-point list of links to websites that are useful for your research. 
+* Include a section with the level-2 header "Educational History" with a table of your educational history (e.g., with columns for years, degree, and institution). Hint: look at the help for ``tibble::tribble()` to set up a table in a code chunk.
+* Add an image of anything relevant.
+* Include a code chunk that displays a fortune from the fortunes package. 
+
+* Knit this document to html.
