@@ -80,6 +80,7 @@ hl <- function(code) {
   txt <- rlang::enexpr(code) %>% rlang::as_label()
 
   downlit::highlight(txt, classes = downlit::classes_pandoc()) %>%
+    gsub("a href", "a target='_blank' href", .) %>%
     paste0("<code>", . , "</code>")
 }
 
@@ -87,6 +88,10 @@ path <- function(txt) {
   sprintf("<code class='path'>%s</code>", txt)
 }
 
-pkg <- function(txt) {
-  sprintf("<code class='package'>%s</code>", txt)
+pkg <- function(txt, url = NULL) {
+  if (is.null(url)) {
+    sprintf("<code class='package'>%s</code>", txt)
+  } else {
+    sprintf("<code class='package'><a href='%s' target='_blank'>%s</a></code>", url, txt)
+  }
 }

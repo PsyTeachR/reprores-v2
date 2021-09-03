@@ -21,11 +21,6 @@
     + [`union()`](#union)
     + [`setdiff()`](#setdiff)
 
-## Resources {#resources6}
-
-* [Chapter 13: Relational Data](http://r4ds.had.co.nz/relational-data.html) in *R for Data Science*
-* [Cheatsheet for dplyr join functions](http://stat545.com/bit001_dplyr-cheatsheet.html)
-* [Lecture slides on dplyr two-table verbs](slides/05_joins_slides.pdf)
 
 ## Setup {#setup-joins}
 
@@ -312,3 +307,9 @@ base::setdiff(subject, new_subjects)
 ## Glossary {#glossary-joins}
 
 `r glossary_table()`
+
+## Further Resources {#resources-joins}
+
+* [Chapter 13: Relational Data](http://r4ds.had.co.nz/relational-data.html) in *R for Data Science*
+* [Cheatsheet for dplyr join functions](http://stat545.com/bit001_dplyr-cheatsheet.html)
+* [Lecture slides on dplyr two-table verbs](slides/05_joins_slides.pdf)

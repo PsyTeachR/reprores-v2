@@ -27,11 +27,7 @@
 4. Fine control of [`select()` operations](#select_helpers) [(video)](https://youtu.be/R1bi1QwF9t0){class="video"}
 5. Use [window functions](#window) [(video)](https://youtu.be/uo4b0W9mqPc){class="video"}
 
-## Resources {#resources5}
 
-* [Chapter 5: Data Transformation](http://r4ds.had.co.nz/transform.html) in *R for Data Science*
-* [Data transformation cheat sheet](https://github.com/rstudio/cheatsheets/raw/master/data-transformation.pdf)
-* [Chapter 16: Date and times](http://r4ds.had.co.nz/dates-and-times.html) in *R for Data Science*
 
 ## Setup {#setup-dplyr}
 
@@ -580,3 +576,8 @@ cumulative <- tibble(
 
 `r glossary_table()`
 
+## Further Resources {#resources-dplyr}
+
+* [Chapter 5: Data Transformation](http://r4ds.had.co.nz/transform.html) in *R for Data Science*
+* [Data transformation cheat sheet](https://github.com/rstudio/cheatsheets/raw/master/data-transformation.pdf)
+* [Chapter 16: Date and times](http://r4ds.had.co.nz/dates-and-times.html) in *R for Data Science*

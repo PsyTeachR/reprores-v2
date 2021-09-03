@@ -11,16 +11,6 @@
 4. Install a [package](#install-package) [(video)](https://youtu.be/u_pvHnqkVCE){class="video"}
 
 
-## Resources {#resources-intro}
-
-* [Chapter 1: Introduction](http://r4ds.had.co.nz/introduction.html) in *R for Data Science*
-* [RStudio IDE Cheatsheet](https://github.com/rstudio/cheatsheets/raw/master/rstudio-ide.pdf)
-* [Introduction to R Markdown](https://rmarkdown.rstudio.com/lesson-1.html)
-* [R Markdown Cheatsheet](https://github.com/rstudio/cheatsheets/raw/master/rmarkdown-2.0.pdf)
-* [R Markdown Reference](https://www.rstudio.com/wp-content/uploads/2015/03/rmarkdown-reference.pdf)
-* [RStudio Cloud](https://rstudio.cloud/){target="_blank"}
-
-
 ## What is R?
 
 <div class="meme left"><img src="images/intro/new_R_logo.png" /></div>
@@ -448,3 +438,12 @@ getdata("data")
 Each chapter ends with a glossary table defining the jargon introduced in this chapter. The links below take you to the [glossary book](https://psyteachr.github.io/glossary), which you can also download for offline use with `r hl(devtools::install_github("psyteachr/glossary"))` and access the glossary offline with `r hl(glossary::book())`.
 
 `r glossary_table()`
+
+## Further Resources {#resources-intro}
+
+* [Chapter 1: Introduction](http://r4ds.had.co.nz/introduction.html) in *R for Data Science*
+* [RStudio IDE Cheatsheet](https://github.com/rstudio/cheatsheets/raw/master/rstudio-ide.pdf)
+* [Introduction to R Markdown](https://rmarkdown.rstudio.com/lesson-1.html)
+* [R Markdown Cheatsheet](https://github.com/rstudio/cheatsheets/raw/master/rmarkdown-2.0.pdf)
+* [R Markdown Reference](https://www.rstudio.com/wp-content/uploads/2015/03/rmarkdown-reference.pdf)
+* [RStudio Cloud](https://rstudio.cloud/){target="_blank"}

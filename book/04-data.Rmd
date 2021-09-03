@@ -3,7 +3,7 @@
 <div class="right meme"><img src="images/memes/read_csv.png"
      alt = "Top left: Pooh Bear in a red shirt looking sad; Top right: read.csv() in outline font; Bottom left: Pooh Bear in a tuxedo looking smug; Bottom right: read_csv() in handwritten font" /></div>
 
-## Learning Objectives {#ilo2}
+## Learning Objectives {#ilo-data}
 
 1. Load [built-in datasets](#builtin) [(video)](https://youtu.be/Z5fK5VGmzlY){class="video"}
 2. [Import data](#import_data) from CSV and Excel files [(video)](https://youtu.be/a7Ra-hnB8l8){class="video"}
@@ -15,12 +15,7 @@
 
 
 
-## Resources {#resources2}
-
-* [Chapter 11: Data Import](http://r4ds.had.co.nz/data-import.html) in *R for Data Science*
-* [RStudio Data Import Cheatsheet](https://github.com/rstudio/cheatsheets/raw/master/data-import.pdf)
-
-## Setup {#setup2}
+## Setup {#setup-data}
 
 ```{r, results = 'hide', warning = FALSE, message = FALSE}
 # libraries needed for these examples
@@ -596,3 +591,8 @@ tidiest
 ## Glossary {#glossary-data}
 
 `r glossary_table()`
+
+## Further Resources {#resources-data}
+
+* [Chapter 11: Data Import](http://r4ds.had.co.nz/data-import.html) in *R for Data Science*
+* [RStudio Data Import Cheatsheet](https://github.com/rstudio/cheatsheets/raw/master/data-import.pdf)
