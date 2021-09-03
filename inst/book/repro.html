@@ -118,7 +118,7 @@
 <h2>
 <span class="header-section-number">2.2</span> Setup<a class="anchor" aria-label="anchor" href="#setup-repro"><i class="fas fa-link"></i></a>
 </h2>
-<div class="sourceCode" id="cb44"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb45"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span>
 <span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://yihui.org/knitr/">knitr</a></span><span class="op">)</span></code></pre></div>
 </div>
@@ -178,10 +178,10 @@
 <p>When manually setting the working directory, always do so by using the <strong><code>Session &gt; Set Working Directory</code></strong> pull-down option or by typing <code><span class="fu"><a href="https://rdrr.io/r/base/getwd.html">setwd</a></span><span class="op">(</span><span class="op">)</span></code> in the console.</p>
 </div>
 <p>If your script needs a file in a subdirectory of <code class="path">new_analysis</code>, say, <code class="path">data/questionnaire.csv</code>, load it in using a <a class="glossary" target="_blank" title="The location of a file in relation to the working directory." href="https://psyteachr.github.io/glossary/r#relative-path">relative path</a> so that it is accessible if you move the folder <code class="path">new_analysis</code> to another location or computer:</p>
-<div class="sourceCode" id="cb45"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb46"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">dat</span> <span class="op">&lt;-</span> <span class="fu">read_csv</span><span class="op">(</span><span class="st">"data/questionnaire.csv"</span><span class="op">)</span>  <span class="co"># correct</span></code></pre></div>
 <p>Do not load it in using an <a class="glossary" target="_blank" title="A file path that starts with / and is not appended to the working directory" href="https://psyteachr.github.io/glossary/a#absolute-path">absolute path</a>:</p>
-<div class="sourceCode" id="cb46"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb47"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">dat</span> <span class="op">&lt;-</span> <span class="fu">read_csv</span><span class="op">(</span><span class="st">"C:/Carla's_files/thesis22/my_thesis/new_analysis/data/questionnaire.csv"</span><span class="op">)</span>   <span class="co"># wrong</span></code></pre></div>
 <div class="info">
 <p>Also note the convention of using forward slashes, unlike the Windows-specific convention of using backward slashes. This is to make references to files platform independent.</p>
@@ -285,14 +285,14 @@ Figure 2.2: Light themes in versions 3 and 4.
 <p>When you create a new R Markdown file in RStudio, a setup chunk is automatically created.</p>
 <div class="verbatim">
 <pre class="sourceCode r"><code class="sourceCode R">```{r setup, include=FALSE}</code></pre>
-<div class="sourceCode" id="cb48"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb49"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu">knitr</span><span class="fu">::</span><span class="va"><a href="https://rdrr.io/pkg/knitr/man/opts_chunk.html">opts_chunk</a></span><span class="op">$</span><span class="fu">set</span><span class="op">(</span>echo <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></code></pre></div>
 <pre class="sourceCode r"><code class="sourceCode R">```</code></pre>
 </div>
 <p>You can set more default options for code chunks here. See the <a href="https://yihui.name/knitr/options/" target="_blank">knitr options documentation</a> for explanations of the possible options.</p>
 <div class="verbatim">
 <pre class="sourceCode r"><code class="sourceCode R">```{r setup, include=FALSE}</code></pre>
-<div class="sourceCode" id="cb49"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb50"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu">knitr</span><span class="fu">::</span><span class="va"><a href="https://rdrr.io/pkg/knitr/man/opts_chunk.html">opts_chunk</a></span><span class="op">$</span><span class="fu">set</span><span class="op">(</span>
   fig.width  <span class="op">=</span> <span class="fl">8</span>, 
   fig.height <span class="op">=</span> <span class="fl">5</span>, 
@@ -350,7 +350,7 @@ Figure 2.2: Light themes in versions 3 and 4.
 </h3>
 <p>You can include <a class="glossary" target="_blank" title="A section of code in an R Markdown file" href="https://psyteachr.github.io/glossary/c#chunk">code chunks</a> that create and display images, tables, or computations to include in your text. Let's start by loading some data.</p>
 <p>First, create a code chunk in your document. This code loads some data from the web.</p>
-<div class="sourceCode" id="cb50"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb51"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">pets</span> <span class="op">&lt;-</span> <span class="fu">read_csv</span><span class="op">(</span><span class="st">"https://psyteachr.github.io/reprores/data/pets.csv"</span><span class="op">)</span></code></pre></div>
 <pre><code>## 
 ## ── Column specification ────────────────────────────────────────────────────────
@@ -367,7 +367,7 @@ Figure 2.2: Light themes in versions 3 and 4.
 <span class="header-section-number">2.5.4.1</span> Comments<a class="anchor" aria-label="anchor" href="#comments"><i class="fas fa-link"></i></a>
 </h4>
 <p>You can add comments inside R chunks with the hash symbol (<code>#</code>). The R interpreter will ignore characters from the hash to the end of the line.</p>
-<div class="sourceCode" id="cb52"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb53"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># simulating new data</span>
 
 <span class="va">n</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/nrow.html">nrow</a></span><span class="op">(</span><span class="va">pets</span><span class="op">)</span> <span class="co"># the total number of pet</span>
@@ -384,10 +384,10 @@ Figure 2.2: Light themes in versions 3 and 4.
 <span class="header-section-number">2.5.4.2</span> Tables<a class="anchor" aria-label="anchor" href="#tables"><i class="fas fa-link"></i></a>
 </h4>
 <p>Next, create a code chunk where you want to display a table of the descriptives (e.g., Participants section of the Methods). We'll use tidyverse functions you will learn in the <a href="tidyr.html#tidyr">data wrangling lectures</a> to create summary statistics for each group.</p>
-<div class="sourceCode" id="cb53"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb54"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">pets</span> <span class="op">%&gt;%</span>
-  <span class="fu">group_by</span><span class="op">(</span><span class="va">pet</span><span class="op">)</span> <span class="op">%&gt;%</span>
-  <span class="fu">summarise</span><span class="op">(</span>
+  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span><span class="op">(</span><span class="va">pet</span><span class="op">)</span> <span class="op">%&gt;%</span>
+  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/summarise.html">summarise</a></span><span class="op">(</span>
     n <span class="op">=</span> <span class="fu">n</span><span class="op">(</span><span class="op">)</span>,
     mean_weight <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">weight</span><span class="op">)</span>,
     mean_score <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">score</span><span class="op">)</span>
@@ -423,10 +423,10 @@ Figure 2.2: Light themes in versions 3 and 4.
 </table></div>
 </div>
 <p>The table above is OK, but it could be more reader-friendly by changing the column labels, rounding the means, and adding a caption. You can use <code><span class="fu">knitr</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/knitr/man/kable.html">kable</a></span><span class="op">(</span><span class="op">)</span></code> for this.</p>
-<div class="sourceCode" id="cb54"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb55"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">summary_table</span> <span class="op">&lt;-</span><span class="va">pets</span> <span class="op">%&gt;%</span>
-  <span class="fu">group_by</span><span class="op">(</span><span class="va">pet</span><span class="op">)</span> <span class="op">%&gt;%</span>
-  <span class="fu">summarise</span><span class="op">(</span>
+  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span><span class="op">(</span><span class="va">pet</span><span class="op">)</span> <span class="op">%&gt;%</span>
+  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/summarise.html">summarise</a></span><span class="op">(</span>
     n <span class="op">=</span> <span class="fu">n</span><span class="op">(</span><span class="op">)</span>,
     mean_weight <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">weight</span><span class="op">)</span>,
     mean_score <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">score</span><span class="op">)</span>
@@ -515,10 +515,10 @@ Figure 2.3: Figure 1. Scores by pet type and country.
 <span class="header-section-number">2.5.4.4</span> In-line R<a class="anchor" aria-label="anchor" href="#in-line-r"><i class="fas fa-link"></i></a>
 </h4>
 <p>Now let's analyse the pets data to see if cats are heavier than ferrets. First we'll run the analysis code. Then we'll save any numbers we might want to use in our manuscript to variables and round them appropriately. Finally, we'll use <code><span class="fu">glue</span><span class="fu">::</span><span class="fu"><a href="https://glue.tidyverse.org/reference/glue.html">glue</a></span><span class="op">(</span><span class="op">)</span></code> to format a results string.</p>
-<div class="sourceCode" id="cb57"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb58"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># analysis</span>
-<span class="va">cat_weight</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/filter.html">filter</a></span><span class="op">(</span><span class="va">pets</span>, <span class="va">pet</span> <span class="op">==</span> <span class="st">"cat"</span><span class="op">)</span> <span class="op">%&gt;%</span> <span class="fu">pull</span><span class="op">(</span><span class="va">weight</span><span class="op">)</span>
-<span class="va">ferret_weight</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/filter.html">filter</a></span><span class="op">(</span><span class="va">pets</span>, <span class="va">pet</span> <span class="op">==</span> <span class="st">"ferret"</span><span class="op">)</span> <span class="op">%&gt;%</span> <span class="fu">pull</span><span class="op">(</span><span class="va">weight</span><span class="op">)</span>
+<span class="va">cat_weight</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">pets</span>, <span class="va">pet</span> <span class="op">==</span> <span class="st">"cat"</span><span class="op">)</span> <span class="op">%&gt;%</span> <span class="fu">pull</span><span class="op">(</span><span class="va">weight</span><span class="op">)</span>
+<span class="va">ferret_weight</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">pets</span>, <span class="va">pet</span> <span class="op">==</span> <span class="st">"ferret"</span><span class="op">)</span> <span class="op">%&gt;%</span> <span class="fu">pull</span><span class="op">(</span><span class="va">weight</span><span class="op">)</span>
 <span class="va">weight_test</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/t.test.html">t.test</a></span><span class="op">(</span><span class="va">cat_weight</span>, <span class="va">ferret_weight</span><span class="op">)</span>
 
 <span class="co"># round individual values you want to report</span>
@@ -571,7 +571,7 @@ Cats were significantly heavier than ferrets (t = 18.42, df = 180.4, p &lt; 0.00
 <span class="header-section-number">2.5.5.3</span> Citing R packages<a class="anchor" aria-label="anchor" href="#citing-r-packages"><i class="fas fa-link"></i></a>
 </h4>
 <p>You can get the citation for an R package using the functions <code><a href="https://rdrr.io/r/utils/citation.html">citation()</a></code> and <code><a href="https://rdrr.io/r/utils/toLatex.html">toBibtex()</a></code>. You can paste the bibtex entry into your bibliography.bib file. Make sure to add a short name (e.g., "faux") before the first comma to refer to the reference.</p>
-<div class="sourceCode" id="cb59"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb60"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/citation.html">citation</a></span><span class="op">(</span>package<span class="op">=</span><span class="st">"faux"</span><span class="op">)</span> <span class="op">%&gt;%</span> <span class="fu"><a href="https://rdrr.io/r/utils/toLatex.html">toBibtex</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
 <pre><code>## @Manual{,
 ##   title = {faux: Simulation for Factorial Designs},
@@ -797,7 +797,31 @@ solveme_func = function(e) {
   update_total_correct();
 }
 
+/* function for checking radiogroups answers */
+radiogroups_func = function(e) {
+  console.log(this.id);
+  var checked_button = document.querySelector('input[name=' + this.id + ']:checked');
+  var cl = checked_button.parentElement.classList;
+  var labels = checked_button.parentElement.parentElement.children;
+  
+  /* get rid of styles */
+  for (i = 0; i < labels.length; i++) {
+    labels[i].classList.remove("webex-incorrect");
+    labels[i].classList.remove("webex-correct");
+  }
+  
+  /* add style */
+  if (checked_button.value == "answer") {
+    cl.add("webex-correct");
+  } else {
+    cl.add("webex-incorrect");
+  }
+  
+  update_total_correct();
+}
+
 window.onload = function() {
+  console.log("onload");
   /* set up solution buttons */
   var buttons = document.getElementsByTagName("button");
 
@@ -832,6 +856,12 @@ window.onload = function() {
     /* attach checking function */
     solveme[i].onkeyup = solveme_func;
     solveme[i].onchange = solveme_func;
+  }
+  
+  /* set up radiogroups */
+  var radiogroups = document.getElementsByClassName("webex-radiogroup");
+  for (var i = 0; i < radiogroups.length; i++) {
+    radiogroups[i].onchange = radiogroups_func;
   }
 
   update_total_correct();

@@ -303,9 +303,26 @@ power.t.test(n = NULL, delta = NULL, sd = 1, sig.level = 0.05,
 
 ::: {.try data-latex=""}
 
-* What is the default value for `sd`? `r mcq(c("NULL", answer = 1, 0.05, "two.sample"))`
-* What is the default value for `type`? `r mcq(c("NULL", answer = "two.sample", "one.sample", "paired"))`
-* Which is equivalent to `r hl(power.t.test(100, 0.5))`? `r mcq(c("power.t.test(100, 0.5, sig.level = 1, sd = 0.05)", "power.t.test()", "power.t.test(n = 100)", answer="power.t.test(delta = 0.5, n = 100)"))`
+```{r, echo= FALSE}
+default_sd <- c("NULL", 
+                answer = 1, 
+                0.05, 
+                "two.sample") %>% sample()
+
+default_type <- c("NULL", 
+                  answer = "two.sample", 
+                  "one.sample", "paired") %>% sample()
+
+equiv <- c("power.t.test(100, 0.5, sig.level = 1, sd = 0.05)",
+           "power.t.test()", "power.t.test(n = 100)",
+           answer="power.t.test(delta = 0.5, n = 100)") %>%
+    sample()
+```
+
+* What is the default value for `sd`? `r mcq(default_sd)`
+* What is the default value for `type`? `r mcq(default_type)`
+* Which is equivalent to `r hl(power.t.test(100, 0.5))`? `r longmcq(equiv)`
+
 
 :::
 
@@ -336,7 +353,7 @@ One of the great things about R is that it is **user extensible**: anyone can cr
 
 Add-on packages are not distributed with base R, but have to be downloaded and installed from an archive, in the same way that you would, for instance, download and install a fitness app on your smartphone.
 
-The main repository where packages reside is called CRAN, the Comprehensive R Archive Network. A package has to pass strict tests devised by the R core team to be allowed to be part of the CRAN archive. You can install from the CRAN archive through R using the `install.packages()` function.
+The main repository where packages reside is called CRAN, the Comprehensive R Archive Network. A package has to pass strict tests devised by the R core team to be allowed to be part of the CRAN archive. You can install from the CRAN archive through R using the `r hl(install.packages())` function.
 
 There is an important distinction between **installing** a package and **loading** a package.
 
@@ -397,7 +414,7 @@ knitr::include_graphics("images/intro/packages.png")
 devtools::install_github("psyteachr/reprores-v2")
 ```
 
-After you install the reprores package, load it using the `r hl(library())` function. You can then try out some of the functions below.
+After you install the `r pkg("reprores")` package, load it using the `r hl(library())` function. You can then try out some of the functions below.
 
 ```{r reprores, eval = FALSE}
 library(reprores)
@@ -435,7 +452,16 @@ getdata("data")
 
 ## Glossary  {#glossaryintro}
 
-Each chapter ends with a glossary table defining the jargon introduced in this chapter. The links below take you to the [glossary book](https://psyteachr.github.io/glossary), which you can also download for offline use with `r hl(devtools::install_github("psyteachr/glossary"))` and access the glossary offline with `r hl(glossary::book())`.
+Each chapter ends with a glossary table defining the jargon introduced in this chapter. The links below take you to the [glossary book](https://psyteachr.github.io/glossary), which you can also download for offline use.
+
+```{r, eval = FALSE}
+# install the glossary package (only once)
+devtools::install_github("psyteachr/glossary")
+
+# open the glossary offline 
+glossary::book()
+```
+
 
 `r glossary_table()`
 

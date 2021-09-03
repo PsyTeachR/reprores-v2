@@ -131,7 +131,7 @@
 <h2>
 <span class="header-section-number">7.2</span> Setup<a class="anchor" aria-label="anchor" href="#setup-dplyr"><i class="fas fa-link"></i></a>
 </h2>
-<div class="sourceCode" id="cb269"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb270"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># libraries needed for these examples</span>
 <span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span>
 <span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://lubridate.tidyverse.org">lubridate</a></span><span class="op">)</span>
@@ -142,7 +142,7 @@
 <span class="header-section-number">7.2.1</span> The <code>disgust</code> dataset<a class="anchor" aria-label="anchor" href="#data-disgust"><i class="fas fa-link"></i></a>
 </h3>
 <p>These examples will use data from <code><a href="https://rdrr.io/pkg/reprores/man/disgust.html">reprores::disgust</a></code>, which contains data from the <a href="http://digitalrepository.unm.edu/cgi/viewcontent.cgi?article=1139&amp;context=psy_etds">Three Domain Disgust Scale</a>. Each participant is identified by a unique <code>user_id</code> and each questionnaire completion has a unique <code>id</code>. Look at the Help for this dataset to see the individual questions.</p>
-<div class="sourceCode" id="cb270"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb271"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/data.html">data</a></span><span class="op">(</span><span class="st">"disgust"</span>, package <span class="op">=</span> <span class="st">"reprores"</span><span class="op">)</span>
 
 <span class="co">#disgust &lt;- read_csv("https://psyteachr.github.io/reprores/data/disgust.csv")</span></code></pre></div>
@@ -159,19 +159,19 @@
 </h3>
 <p>Select columns by name or number.</p>
 <p>You can select each column individually, separated by commas (e.g., <code>col1, col2</code>). You can also select all columns between two columns by separating them with a colon (e.g., <code>start_col:end_col</code>).</p>
-<div class="sourceCode" id="cb271"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb272"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">moral</span> <span class="op">&lt;-</span> <span class="va">disgust</span> <span class="op">%&gt;%</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="va">user_id</span>, <span class="va">moral1</span><span class="op">:</span><span class="va">moral7</span><span class="op">)</span>
 <span class="fu"><a href="https://rdrr.io/r/base/names.html">names</a></span><span class="op">(</span><span class="va">moral</span><span class="op">)</span></code></pre></div>
 <pre><code>## [1] "user_id" "moral1"  "moral2"  "moral3"  "moral4"  "moral5"  "moral6" 
 ## [8] "moral7"</code></pre>
 <p>You can select columns by number, which is useful when the column names are long or complicated.</p>
-<div class="sourceCode" id="cb273"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb274"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">sexual</span> <span class="op">&lt;-</span> <span class="va">disgust</span> <span class="op">%&gt;%</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="fl">2</span>, <span class="fl">11</span><span class="op">:</span><span class="fl">17</span><span class="op">)</span>
 <span class="fu"><a href="https://rdrr.io/r/base/names.html">names</a></span><span class="op">(</span><span class="va">sexual</span><span class="op">)</span></code></pre></div>
 <pre><code>## [1] "user_id" "sexual1" "sexual2" "sexual3" "sexual4" "sexual5" "sexual6"
 ## [8] "sexual7"</code></pre>
 <p>You can use a minus symbol to unselect columns, leaving all of the other columns. If you want to exclude a span of columns, put parentheses around the span first (e.g., <code>-(moral1:moral7)</code>, not <code>-moral1:moral7</code>).</p>
-<div class="sourceCode" id="cb275"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb276"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">pathogen</span> <span class="op">&lt;-</span> <span class="va">disgust</span> <span class="op">%&gt;%</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="op">-</span><span class="va">id</span>, <span class="op">-</span><span class="va">date</span>, <span class="op">-</span><span class="op">(</span><span class="va">moral1</span><span class="op">:</span><span class="va">sexual7</span><span class="op">)</span><span class="op">)</span>
 <span class="fu"><a href="https://rdrr.io/r/base/names.html">names</a></span><span class="op">(</span><span class="va">pathogen</span><span class="op">)</span></code></pre></div>
 <pre><code>## [1] "user_id"   "pathogen1" "pathogen2" "pathogen3" "pathogen4" "pathogen5"
@@ -186,7 +186,7 @@
 <span class="header-section-number">7.3.1.1.1</span> <code>starts_with()</code><a class="anchor" aria-label="anchor" href="#starts_with"><i class="fas fa-link"></i></a>
 </h5>
 <p>Select columns that start with a character string.</p>
-<div class="sourceCode" id="cb277"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb278"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">u</span> <span class="op">&lt;-</span> <span class="va">disgust</span> <span class="op">%&gt;%</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="fu">starts_with</span><span class="op">(</span><span class="st">"u"</span><span class="op">)</span><span class="op">)</span>
 <span class="fu"><a href="https://rdrr.io/r/base/names.html">names</a></span><span class="op">(</span><span class="va">u</span><span class="op">)</span></code></pre></div>
 <pre><code>## [1] "user_id"</code></pre>
@@ -196,7 +196,7 @@
 <span class="header-section-number">7.3.1.1.2</span> <code>ends_with()</code><a class="anchor" aria-label="anchor" href="#ends_with"><i class="fas fa-link"></i></a>
 </h5>
 <p>Select columns that end with a character string.</p>
-<div class="sourceCode" id="cb279"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb280"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">firstq</span> <span class="op">&lt;-</span> <span class="va">disgust</span> <span class="op">%&gt;%</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="fu">ends_with</span><span class="op">(</span><span class="st">"1"</span><span class="op">)</span><span class="op">)</span>
 <span class="fu"><a href="https://rdrr.io/r/base/names.html">names</a></span><span class="op">(</span><span class="va">firstq</span><span class="op">)</span></code></pre></div>
 <pre><code>## [1] "moral1"    "sexual1"   "pathogen1"</code></pre>
@@ -206,7 +206,7 @@
 <span class="header-section-number">7.3.1.1.3</span> <code>contains()</code><a class="anchor" aria-label="anchor" href="#contains"><i class="fas fa-link"></i></a>
 </h5>
 <p>Select columns that contain a character string.</p>
-<div class="sourceCode" id="cb281"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb282"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">pathogen</span> <span class="op">&lt;-</span> <span class="va">disgust</span> <span class="op">%&gt;%</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="fu">contains</span><span class="op">(</span><span class="st">"pathogen"</span><span class="op">)</span><span class="op">)</span>
 <span class="fu"><a href="https://rdrr.io/r/base/names.html">names</a></span><span class="op">(</span><span class="va">pathogen</span><span class="op">)</span></code></pre></div>
 <pre><code>## [1] "pathogen1" "pathogen2" "pathogen3" "pathogen4" "pathogen5" "pathogen6"
@@ -217,7 +217,7 @@
 <span class="header-section-number">7.3.1.1.4</span> <code>num_range()</code><a class="anchor" aria-label="anchor" href="#num_range"><i class="fas fa-link"></i></a>
 </h5>
 <p>Select columns with a name that matches the pattern <code>prefix</code>.</p>
-<div class="sourceCode" id="cb283"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb284"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">moral2_4</span> <span class="op">&lt;-</span> <span class="va">disgust</span> <span class="op">%&gt;%</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="fu">num_range</span><span class="op">(</span><span class="st">"moral"</span>, <span class="fl">2</span><span class="op">:</span><span class="fl">4</span><span class="op">)</span><span class="op">)</span>
 <span class="fu"><a href="https://rdrr.io/r/base/names.html">names</a></span><span class="op">(</span><span class="va">moral2_4</span><span class="op">)</span></code></pre></div>
 <pre><code>## [1] "moral2" "moral3" "moral4"</code></pre>
@@ -234,7 +234,7 @@ zeros. For example, <code>num_range('var_', 8:10, width=2)</code> selects column
 </h3>
 <p>Select rows by matching column criteria.</p>
 <p>Select all rows where the user_id is 1 (that's Lisa).</p>
-<div class="sourceCode" id="cb285"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb286"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">disgust</span> <span class="op">%&gt;%</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">user_id</span> <span class="op">==</span> <span class="fl">1</span><span class="op">)</span></code></pre></div>
 <div class="kable-table">
 <div class="inline-table"><table style="width:100%;" class="table table-sm">
@@ -322,7 +322,7 @@ zeros. For example, <code>num_range('var_', 8:10, width=2)</code> selects column
 <p>Remember to use <code><a href="https://rdrr.io/r/base/Comparison.html">==</a></code> and not <code><a href="https://rdrr.io/r/base/assignOps.html">=</a></code> to check if two things are equivalent. A single <code><a href="https://rdrr.io/r/base/assignOps.html">=</a></code> assigns the righthand value to the lefthand variable and (usually) evaluates to <code>TRUE</code>.</p>
 </div>
 <p>You can select on multiple criteria by separating them with commas.</p>
-<div class="sourceCode" id="cb286"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb287"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">amoral</span> <span class="op">&lt;-</span> <span class="va">disgust</span> <span class="op">%&gt;%</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span>
   <span class="va">moral1</span> <span class="op">==</span> <span class="fl">0</span>, 
   <span class="va">moral2</span> <span class="op">==</span> <span class="fl">0</span>,
@@ -333,7 +333,7 @@ zeros. For example, <code>num_range('var_', 8:10, width=2)</code> selects column
   <span class="va">moral7</span> <span class="op">==</span> <span class="fl">0</span>
 <span class="op">)</span></code></pre></div>
 <p>You can use the symbols <code><a href="https://rdrr.io/r/base/Logic.html">&amp;</a></code>, <code><a href="https://rdrr.io/r/base/Logic.html">|</a></code>, and <code><a href="https://rdrr.io/r/base/Logic.html">!</a></code> to mean "and", "or", and "not". You can also use other operators to make equations.</p>
-<div class="sourceCode" id="cb287"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb288"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># everyone who chose either 0 or 7 for question moral1</span>
 <span class="va">moral_extremes</span> <span class="op">&lt;-</span> <span class="va">disgust</span> <span class="op">%&gt;%</span> 
   <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">moral1</span> <span class="op">==</span> <span class="fl">0</span> <span class="op">|</span> <span class="va">moral1</span> <span class="op">==</span> <span class="fl">7</span><span class="op">)</span>
@@ -357,7 +357,7 @@ zeros. For example, <code>num_range('var_', 8:10, width=2)</code> selects column
 <span class="header-section-number">7.3.2.1</span> Match operator (%in%)<a class="anchor" aria-label="anchor" href="#match-operator"><i class="fas fa-link"></i></a>
 </h4>
 <p>Sometimes you need to exclude some participant IDs for reasons that can't be described in code. The match operator (<code><a href="https://rdrr.io/r/base/match.html">%in%</a></code>) is useful here for testing if a column value is in a list. Surround the equation with parentheses and put <code><a href="https://rdrr.io/r/base/Logic.html">!</a></code> in front to test that a value is not in the list.</p>
-<div class="sourceCode" id="cb288"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb289"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">no_researchers</span> <span class="op">&lt;-</span> <span class="va">disgust</span> <span class="op">%&gt;%</span>
   <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="op">!</span><span class="op">(</span><span class="va">user_id</span> <span class="op">%in%</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1</span>,<span class="fl">2</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></code></pre></div>
 </div>
@@ -366,7 +366,7 @@ zeros. For example, <code>num_range('var_', 8:10, width=2)</code> selects column
 <span class="header-section-number">7.3.2.2</span> Dates<a class="anchor" aria-label="anchor" href="#dates"><i class="fas fa-link"></i></a>
 </h4>
 <p>You can use the <code>lubridate</code> package to work with dates. For example, you can use the <code><a href="http://lubridate.tidyverse.org/reference/year.html">year()</a></code> function to return just the year from the <code>date</code> column and then select only data collected in 2010.</p>
-<div class="sourceCode" id="cb289"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb290"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">disgust2010</span> <span class="op">&lt;-</span> <span class="va">disgust</span> <span class="op">%&gt;%</span>
   <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="fu"><a href="http://lubridate.tidyverse.org/reference/year.html">year</a></span><span class="op">(</span><span class="va">date</span><span class="op">)</span> <span class="op">==</span> <span class="fl">2010</span><span class="op">)</span></code></pre></div>
 <div class="inline-table"><table style="width:100%;" class="table table-sm">
@@ -585,7 +585,7 @@ zeros. For example, <code>num_range('var_', 8:10, width=2)</code> selects column
 </tbody>
 </table></div>
 <p>Or select data from at least 5 years ago. You can use the <code>range</code> function to check the minimum and maximum dates in the resulting dataset.</p>
-<div class="sourceCode" id="cb290"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb291"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">disgust_5ago</span> <span class="op">&lt;-</span> <span class="va">disgust</span> <span class="op">%&gt;%</span>
   <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">date</span> <span class="op">&lt;</span> <span class="fu"><a href="http://lubridate.tidyverse.org/reference/now.html">today</a></span><span class="op">(</span><span class="op">)</span> <span class="op">-</span> <span class="fu"><a href="http://lubridate.tidyverse.org/reference/duration.html">dyears</a></span><span class="op">(</span><span class="fl">5</span><span class="op">)</span><span class="op">)</span>
 
@@ -598,7 +598,7 @@ zeros. For example, <code>num_range('var_', 8:10, width=2)</code> selects column
 <span class="header-section-number">7.3.3</span> arrange()<a class="anchor" aria-label="anchor" href="#arrange"><i class="fas fa-link"></i></a>
 </h3>
 <p>Sort your dataset using <code><a href="https://dplyr.tidyverse.org/reference/arrange.html">arrange()</a></code>. You will find yourself needing to sort data in R much less than you do in Excel, since you don't need to have rows next to each other in order to, for example, calculate group means. But <code><a href="https://dplyr.tidyverse.org/reference/arrange.html">arrange()</a></code> can be useful when preparing data from display in tables.</p>
-<div class="sourceCode" id="cb292"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb293"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">disgust_order</span> <span class="op">&lt;-</span> <span class="va">disgust</span> <span class="op">%&gt;%</span>
   <span class="fu"><a href="https://dplyr.tidyverse.org/reference/arrange.html">arrange</a></span><span class="op">(</span><span class="va">date</span>, <span class="va">moral1</span><span class="op">)</span></code></pre></div>
 <div class="inline-table"><table style="width:100%;" class="table table-sm">
@@ -817,7 +817,7 @@ zeros. For example, <code>num_range('var_', 8:10, width=2)</code> selects column
 </tbody>
 </table></div>
 <p>Reverse the order using <code>desc()</code></p>
-<div class="sourceCode" id="cb293"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb294"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">disgust_order_desc</span> <span class="op">&lt;-</span> <span class="va">disgust</span> <span class="op">%&gt;%</span>
   <span class="fu"><a href="https://dplyr.tidyverse.org/reference/arrange.html">arrange</a></span><span class="op">(</span><span class="fu">desc</span><span class="op">(</span><span class="va">date</span><span class="op">)</span><span class="op">)</span></code></pre></div>
 <div class="inline-table"><table style="width:100%;" class="table table-sm">
@@ -1042,7 +1042,7 @@ zeros. For example, <code>num_range('var_', 8:10, width=2)</code> selects column
 </h3>
 <p>Add new columns. This is one of the most useful functions in the tidyverse.</p>
 <p>Refer to other columns by their names (unquoted). You can add more than one column in the same mutate function, just separate the columns with a comma. Once you make a new column, you can use it in further column definitions e.g., <code>total</code> below).</p>
-<div class="sourceCode" id="cb294"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb295"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">disgust_total</span> <span class="op">&lt;-</span> <span class="va">disgust</span> <span class="op">%&gt;%</span>
   <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>
     pathogen <span class="op">=</span> <span class="va">pathogen1</span> <span class="op">+</span> <span class="va">pathogen2</span> <span class="op">+</span> <span class="va">pathogen3</span> <span class="op">+</span> <span class="va">pathogen4</span> <span class="op">+</span> <span class="va">pathogen5</span> <span class="op">+</span> <span class="va">pathogen6</span> <span class="op">+</span> <span class="va">pathogen7</span>,
@@ -1307,7 +1307,7 @@ zeros. For example, <code>num_range('var_', 8:10, width=2)</code> selects column
 <span class="header-section-number">7.3.5</span> summarise()<a class="anchor" aria-label="anchor" href="#summarise"><i class="fas fa-link"></i></a>
 </h3>
 <p>Create summary statistics for the dataset. Check the <a href="https://www.rstudio.org/links/data_wrangling_cheat_sheet">Data Wrangling Cheat Sheet</a> or the <a href="https://github.com/rstudio/cheatsheets/raw/master/source/pdfs/data-transformation-cheatsheet.pdf">Data Transformation Cheat Sheet</a> for various summary functions. Some common ones are: <code><a href="https://rdrr.io/r/base/mean.html">mean()</a></code>, <code><a href="https://rdrr.io/r/stats/sd.html">sd()</a></code>, <code>n()</code>, <code><a href="https://rdrr.io/r/base/sum.html">sum()</a></code>, and <code><a href="https://rdrr.io/r/stats/quantile.html">quantile()</a></code>.</p>
-<div class="sourceCode" id="cb295"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb296"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">disgust_summary</span><span class="op">&lt;-</span> <span class="va">disgust_total</span> <span class="op">%&gt;%</span>
   <span class="fu"><a href="https://dplyr.tidyverse.org/reference/summarise.html">summarise</a></span><span class="op">(</span>
     n <span class="op">=</span> <span class="fu">n</span><span class="op">(</span><span class="op">)</span>,
@@ -1352,7 +1352,7 @@ zeros. For example, <code>num_range('var_', 8:10, width=2)</code> selects column
 <p>Create subsets of the data. You can use this to create summaries,
 like the mean value for all of your experimental groups.</p>
 <p>Here, we'll use <code>mutate</code> to create a new column called <code>year</code>, group by <code>year</code>, and calculate the average scores.</p>
-<div class="sourceCode" id="cb296"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb297"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">disgust_groups</span> <span class="op">&lt;-</span> <span class="va">disgust_total</span> <span class="op">%&gt;%</span>
   <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>year <span class="op">=</span> <span class="fu"><a href="http://lubridate.tidyverse.org/reference/year.html">year</a></span><span class="op">(</span><span class="va">date</span><span class="op">)</span><span class="op">)</span> <span class="op">%&gt;%</span>
   <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span><span class="op">(</span><span class="va">year</span><span class="op">)</span> <span class="op">%&gt;%</span>
@@ -1464,7 +1464,7 @@ like the mean value for all of your experimental groups.</p>
 <p>Older versions of dplyr didn't do this, so older code will generate this warning if you run it with newer version of dplyr. Older code might <code><a href="https://dplyr.tidyverse.org/reference/group_by.html">ungroup()</a></code> after <code><a href="https://dplyr.tidyverse.org/reference/summarise.html">summarise()</a></code> to indicate that groupings should be dropped. The default behaviour is usually correct, so you don't need to worry, but it's best to explicitly set <code>.groups</code> in a <code><a href="https://dplyr.tidyverse.org/reference/summarise.html">summarise()</a></code> function after <code><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by()</a></code> if you want to "keep" or "drop" the groupings.</p>
 </div>
 <p>You can use <code>filter</code> after <code>group_by</code>. The following example returns the lowest total score from each year (i.e., the row where the <code><a href="https://rdrr.io/r/base/rank.html">rank()</a></code> of the value in the column <code>total</code> is equivalent to <code>1</code>).</p>
-<div class="sourceCode" id="cb297"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb298"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">disgust_lowest</span> <span class="op">&lt;-</span> <span class="va">disgust_total</span> <span class="op">%&gt;%</span>
   <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>year <span class="op">=</span> <span class="fu"><a href="http://lubridate.tidyverse.org/reference/year.html">year</a></span><span class="op">(</span><span class="va">date</span><span class="op">)</span><span class="op">)</span> <span class="op">%&gt;%</span>
   <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="va">user_id</span>, <span class="va">year</span>, <span class="va">total</span><span class="op">)</span> <span class="op">%&gt;%</span>
@@ -1519,7 +1519,7 @@ like the mean value for all of your experimental groups.</p>
 </tbody>
 </table></div>
 <p>You can also use <code>mutate</code> after <code>group_by</code>. The following example calculates subject-mean-centered scores by grouping the scores by <code>user_id</code> and then subtracting the group-specific mean from each score. <span class="text-warning">Note the use of <code>gather</code> to tidy the data into a long format first.</span></p>
-<div class="sourceCode" id="cb298"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb299"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">disgust_smc</span> <span class="op">&lt;-</span> <span class="va">disgust</span> <span class="op">%&gt;%</span>
   <span class="fu">gather</span><span class="op">(</span><span class="st">"question"</span>, <span class="st">"score"</span>, <span class="va">moral1</span><span class="op">:</span><span class="va">pathogen7</span><span class="op">)</span> <span class="op">%&gt;%</span>
   <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span><span class="op">(</span><span class="va">user_id</span><span class="op">)</span> <span class="op">%&gt;%</span>
@@ -1598,7 +1598,7 @@ like the mean value for all of your experimental groups.</p>
 </h3>
 <p>A lot of what we did above would be easier if the data were tidy, so let's do that first. Then we can use <code>group_by</code> to calculate the domain scores.</p>
 <p>After that, we can spread out the 3 domains, calculate the total score, remove any rows with a missing (<code>NA</code>) total, and calculate mean values by year.</p>
-<div class="sourceCode" id="cb299"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb300"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">disgust_tidy</span> <span class="op">&lt;-</span> <span class="fu">reprores</span><span class="fu">::</span><span class="va"><a href="https://rdrr.io/pkg/reprores/man/disgust.html">disgust</a></span> <span class="op">%&gt;%</span>
   <span class="fu">gather</span><span class="op">(</span><span class="st">"question"</span>, <span class="st">"score"</span>, <span class="va">moral1</span><span class="op">:</span><span class="va">pathogen7</span><span class="op">)</span> <span class="op">%&gt;%</span>
   <span class="fu">separate</span><span class="op">(</span><span class="va">question</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"domain"</span>,<span class="st">"q_num"</span><span class="op">)</span>, sep <span class="op">=</span> <span class="op">-</span><span class="fl">1</span><span class="op">)</span> <span class="op">%&gt;%</span>
@@ -1660,7 +1660,7 @@ like the mean value for all of your experimental groups.</p>
 </tr>
 </tbody>
 </table></div>
-<div class="sourceCode" id="cb300"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb301"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">disgust_scored</span> <span class="op">&lt;-</span> <span class="va">disgust_tidy</span> <span class="op">%&gt;%</span>
   <span class="fu">spread</span><span class="op">(</span><span class="va">domain</span>, <span class="va">score</span><span class="op">)</span> <span class="op">%&gt;%</span>
   <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>
@@ -1746,7 +1746,7 @@ like the mean value for all of your experimental groups.</p>
 </tr>
 </tbody>
 </table></div>
-<div class="sourceCode" id="cb301"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb302"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">disgust_summarised</span> <span class="op">&lt;-</span> <span class="va">disgust_scored</span> <span class="op">%&gt;%</span>
   <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span><span class="op">(</span><span class="va">year</span><span class="op">)</span> <span class="op">%&gt;%</span>
   <span class="fu"><a href="https://dplyr.tidyverse.org/reference/summarise.html">summarise</a></span><span class="op">(</span>
@@ -1876,7 +1876,7 @@ like the mean value for all of your experimental groups.</p>
 <span class="header-section-number">7.4.1</span> rename()<a class="anchor" aria-label="anchor" href="#rename"><i class="fas fa-link"></i></a>
 </h3>
 <p>You can rename columns with <code><a href="https://dplyr.tidyverse.org/reference/rename.html">rename()</a></code>. Set the argument name to the new name, and the value to the old name. You need to put a name in quotes or backticks if it doesn't follow the rules for a good variable name (contains only letter, numbers, underscores, and full stops; and doesn't start with a number).</p>
-<div class="sourceCode" id="cb302"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb303"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">sw</span> <span class="op">&lt;-</span> <span class="va">starwars</span> <span class="op">%&gt;%</span>
   <span class="fu"><a href="https://dplyr.tidyverse.org/reference/rename.html">rename</a></span><span class="op">(</span>Name <span class="op">=</span> <span class="va">name</span>,
          Height <span class="op">=</span> <span class="va">height</span>,
@@ -1899,7 +1899,7 @@ like the mean value for all of your experimental groups.</p>
 <span class="header-section-number">7.4.2</span> distinct()<a class="anchor" aria-label="anchor" href="#distinct"><i class="fas fa-link"></i></a>
 </h3>
 <p>Get rid of exactly duplicate rows with <code><a href="https://dplyr.tidyverse.org/reference/distinct.html">distinct()</a></code>. This can be helpful if, for example, you are merging data from multiple computers and some of the data got copied from one computer to another, creating duplicate rows.</p>
-<div class="sourceCode" id="cb304"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb305"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># create a data table with duplicated values</span>
 <span class="va">dupes</span> <span class="op">&lt;-</span> <span class="fu">tibble</span><span class="op">(</span>
   id <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span> <span class="fl">1</span>,   <span class="fl">2</span>,   <span class="fl">1</span>,   <span class="fl">2</span>,   <span class="fl">1</span>,   <span class="fl">2</span><span class="op">)</span>,
@@ -1939,7 +1939,7 @@ like the mean value for all of your experimental groups.</p>
 <span class="header-section-number">7.4.3</span> count()<a class="anchor" aria-label="anchor" href="#count"><i class="fas fa-link"></i></a>
 </h3>
 <p>The function <code>count()</code> is a quick shortcut for the common combination of <code><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by()</a></code> and <code><a href="https://dplyr.tidyverse.org/reference/summarise.html">summarise()</a></code> used to count the number of rows per group.</p>
-<div class="sourceCode" id="cb305"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb306"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">starwars</span> <span class="op">%&gt;%</span>
   <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span><span class="op">(</span><span class="va">sex</span><span class="op">)</span> <span class="op">%&gt;%</span>
   <span class="fu"><a href="https://dplyr.tidyverse.org/reference/summarise.html">summarise</a></span><span class="op">(</span>n <span class="op">=</span> <span class="fu">n</span><span class="op">(</span><span class="op">)</span>, .groups <span class="op">=</span> <span class="st">"drop"</span><span class="op">)</span></code></pre></div>
@@ -1973,7 +1973,7 @@ like the mean value for all of your experimental groups.</p>
 </tbody>
 </table></div>
 </div>
-<div class="sourceCode" id="cb306"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb307"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu">count</span><span class="op">(</span><span class="va">starwars</span>, <span class="va">sex</span><span class="op">)</span></code></pre></div>
 <div class="kable-table">
 <div class="inline-table"><table class="table table-sm">
@@ -2010,7 +2010,7 @@ like the mean value for all of your experimental groups.</p>
 <h3>
 <span class="header-section-number">7.4.4</span> slice()<a class="anchor" aria-label="anchor" href="#slice"><i class="fas fa-link"></i></a>
 </h3>
-<div class="sourceCode" id="cb307"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb308"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://dplyr.tidyverse.org/reference/slice.html">slice</a></span><span class="op">(</span><span class="va">starwars</span>, <span class="fl">1</span><span class="op">:</span><span class="fl">3</span>, <span class="fl">10</span><span class="op">)</span></code></pre></div>
 <div class="kable-table">
 <div class="inline-table"><table class="table table-sm">
@@ -2119,7 +2119,7 @@ like the mean value for all of your experimental groups.</p>
 <h3>
 <span class="header-section-number">7.4.5</span> pull()<a class="anchor" aria-label="anchor" href="#pull"><i class="fas fa-link"></i></a>
 </h3>
-<div class="sourceCode" id="cb308"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb309"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">starwars</span> <span class="op">%&gt;%</span>
   <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">species</span> <span class="op">==</span> <span class="st">"Droid"</span><span class="op">)</span> <span class="op">%&gt;%</span>
   <span class="fu">pull</span><span class="op">(</span><span class="va">name</span><span class="op">)</span></code></pre></div>
@@ -2136,7 +2136,7 @@ like the mean value for all of your experimental groups.</p>
 <h3>
 <span class="header-section-number">7.5.1</span> Ranking functions<a class="anchor" aria-label="anchor" href="#ranking-functions"><i class="fas fa-link"></i></a>
 </h3>
-<div class="sourceCode" id="cb310"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb311"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">grades</span> <span class="op">&lt;-</span> <span class="fu">tibble</span><span class="op">(</span>
   id <span class="op">=</span> <span class="fl">1</span><span class="op">:</span><span class="fl">5</span>,
   <span class="st">"Data Skills"</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">16</span>, <span class="fl">17</span>, <span class="fl">17</span>, <span class="fl">19</span>, <span class="fl">20</span><span class="op">)</span>, 
@@ -2290,7 +2290,7 @@ like the mean value for all of your experimental groups.</p>
 </ul>
 </div>
 <p>You can use window functions to group your data into quantiles.</p>
-<div class="sourceCode" id="cb311"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb312"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">sw_mass</span> <span class="op">&lt;-</span> <span class="va">starwars</span> <span class="op">%&gt;%</span>
   <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span><span class="op">(</span>tertile <span class="op">=</span> <span class="fu">ntile</span><span class="op">(</span><span class="va">mass</span>, <span class="fl">3</span><span class="op">)</span><span class="op">)</span> <span class="op">%&gt;%</span>
   <span class="fu"><a href="https://dplyr.tidyverse.org/reference/summarise.html">summarise</a></span><span class="op">(</span>min <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/Extremes.html">min</a></span><span class="op">(</span><span class="va">mass</span><span class="op">)</span>,
@@ -2343,7 +2343,7 @@ like the mean value for all of your experimental groups.</p>
 <span class="header-section-number">7.5.2</span> Offset functions<a class="anchor" aria-label="anchor" href="#offset-functions"><i class="fas fa-link"></i></a>
 </h3>
 <p>The function <code><a href="https://rdrr.io/r/stats/lag.html">lag()</a></code> gives a previous row's value. It defaults to 1 row back, but you can change that with the <code>n</code> argument. The function <code>lead()</code> gives values ahead of the current row.</p>
-<div class="sourceCode" id="cb312"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb313"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">lag_lead</span> <span class="op">&lt;-</span> <span class="fu">tibble</span><span class="op">(</span>x <span class="op">=</span> <span class="fl">1</span><span class="op">:</span><span class="fl">6</span><span class="op">)</span> <span class="op">%&gt;%</span>
   <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>lag <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/lag.html">lag</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span>,
          lag2 <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/lag.html">lag</a></span><span class="op">(</span><span class="va">x</span>, n <span class="op">=</span> <span class="fl">2</span><span class="op">)</span>,
@@ -2398,7 +2398,7 @@ like the mean value for all of your experimental groups.</p>
 </tbody>
 </table></div>
 <p>You can use offset functions to calculate change between trials or where a value changes. Use the <code>order_by</code> argument to specify the order of the rows. Alternatively, you can use <code><a href="https://dplyr.tidyverse.org/reference/arrange.html">arrange()</a></code> before the offset functions.</p>
-<div class="sourceCode" id="cb313"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb314"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">trials</span> <span class="op">&lt;-</span> <span class="fu">tibble</span><span class="op">(</span>
   trial <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/sample.html">sample</a></span><span class="op">(</span><span class="fl">1</span><span class="op">:</span><span class="fl">10</span>, <span class="fl">10</span><span class="op">)</span>,
   cond <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/sample.html">sample</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"exp"</span>, <span class="st">"ctrl"</span><span class="op">)</span>, <span class="fl">10</span>, <span class="cn">T</span><span class="op">)</span>,
@@ -2508,7 +2508,7 @@ like the mean value for all of your experimental groups.</p>
 <span class="header-section-number">7.5.3</span> Cumulative aggregates<a class="anchor" aria-label="anchor" href="#cumulative-aggregates"><i class="fas fa-link"></i></a>
 </h3>
 <p><code><a href="https://rdrr.io/r/base/cumsum.html">cumsum()</a></code>, <code><a href="https://rdrr.io/r/base/cumsum.html">cummin()</a></code>, and <code><a href="https://rdrr.io/r/base/cumsum.html">cummax()</a></code> are base R functions for calculating cumulative means, minimums, and maximums. The dplyr package introduces <code>cumany()</code> and <code>cumall()</code>, which return <code>TRUE</code> if any or all of the previous values meet their criteria.</p>
-<div class="sourceCode" id="cb314"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb315"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">cumulative</span> <span class="op">&lt;-</span> <span class="fu">tibble</span><span class="op">(</span>
   time <span class="op">=</span> <span class="fl">1</span><span class="op">:</span><span class="fl">10</span>,
   obs <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">2</span>, <span class="fl">2</span>, <span class="fl">1</span>, <span class="fl">2</span>, <span class="fl">4</span>, <span class="fl">3</span>, <span class="fl">1</span>, <span class="fl">0</span>, <span class="fl">3</span>, <span class="fl">5</span><span class="op">)</span>
@@ -2738,7 +2738,31 @@ solveme_func = function(e) {
   update_total_correct();
 }
 
+/* function for checking radiogroups answers */
+radiogroups_func = function(e) {
+  console.log(this.id);
+  var checked_button = document.querySelector('input[name=' + this.id + ']:checked');
+  var cl = checked_button.parentElement.classList;
+  var labels = checked_button.parentElement.parentElement.children;
+  
+  /* get rid of styles */
+  for (i = 0; i < labels.length; i++) {
+    labels[i].classList.remove("webex-incorrect");
+    labels[i].classList.remove("webex-correct");
+  }
+  
+  /* add style */
+  if (checked_button.value == "answer") {
+    cl.add("webex-correct");
+  } else {
+    cl.add("webex-incorrect");
+  }
+  
+  update_total_correct();
+}
+
 window.onload = function() {
+  console.log("onload");
   /* set up solution buttons */
   var buttons = document.getElementsByTagName("button");
 
@@ -2773,6 +2797,12 @@ window.onload = function() {
     /* attach checking function */
     solveme[i].onkeyup = solveme_func;
     solveme[i].onchange = solveme_func;
+  }
+  
+  /* set up radiogroups */
+  var radiogroups = document.getElementsByClassName("webex-radiogroup");
+  for (var i = 0; i < radiogroups.length; i++) {
+    radiogroups[i].onchange = radiogroups_func;
   }
 
   update_total_correct();

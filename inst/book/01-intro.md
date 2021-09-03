@@ -345,8 +345,8 @@ rnorm(10)
 ```
 
 ```
-##  [1] -1.45694005  0.20384501 -2.51934172 -1.05468710  0.42875052  0.28622032
-##  [7] -0.06619035 -1.20758942  1.12491365 -0.50810229
+##  [1]  0.08571673  0.57505843 -1.21671268  1.37196949  0.39024474  0.77958767
+##  [7]  1.83148585 -0.23283766  0.97848527 -0.79488399
 ```
 
 If you want 10 numbers from a normal distribution with a mean of 100:
@@ -357,8 +357,8 @@ rnorm(10, 100)
 ```
 
 ```
-##  [1]  99.10040  99.66980  98.98062  99.48532  99.80667 100.80502 100.89591
-##  [8]  99.98705  99.96796 100.36471
+##  [1]  99.66847  98.98484 101.43916  99.49610  99.84190 100.45355  99.89289
+##  [8]  99.38652 100.61345 101.25859
 ```
 
 This would be an equivalent but less efficient way of calling the function:
@@ -369,8 +369,8 @@ rnorm(n = 10, mean = 100)
 ```
 
 ```
-##  [1] 102.16564  99.57360  99.37224 100.37644 100.81443 100.98251  98.39118
-##  [8]  99.52117 101.48476 100.46152
+##  [1] 100.01439  99.57700 101.05737  99.65466 100.32962  99.52804  98.43124
+##  [8] 100.33794 100.89923  97.81565
 ```
 
 We don't need to name the arguments because R will recognize that we intended to fill in the first and second arguments by their position in the function call. However, if we want to change the default for an argument coming later in the list, then we need to name it. For instance, if we wanted to keep the default `mean = 0` but change the standard deviation to 100, we would do it this way:
@@ -381,8 +381,8 @@ rnorm(10, sd = 100)
 ```
 
 ```
-##  [1]   59.180686   77.768352   78.385481    2.556126   40.019833 -128.027475
-##  [7]   55.940884   88.927582  115.261588   94.136932
+##  [1]  -61.06934   75.94744 -100.44128 -115.44736  -86.16600 -135.88264
+##  [7]  -25.64329  -55.62088  -95.12204   43.69802
 ```
 
 Some functions give a list of options after an argument; this means the default value is the first option. The usage entry for the <code><span class='fu'><a href='https://rdrr.io/r/stats/power.t.test.html'>power.t.test</a></span><span class='op'>(</span><span class='op'>)</span></code> function looks like this:
@@ -398,9 +398,13 @@ power.t.test(n = NULL, delta = NULL, sd = 1, sig.level = 0.05,
 
 ::: {.try data-latex=""}
 
-* What is the default value for `sd`? <select class='webex-solveme' data-answer='["1"]'> <option></option> <option>NULL</option> <option>1</option> <option>0.05</option> <option>two.sample</option></select>
-* What is the default value for `type`? <select class='webex-solveme' data-answer='["two.sample"]'> <option></option> <option>NULL</option> <option>two.sample</option> <option>one.sample</option> <option>paired</option></select>
-* Which is equivalent to <code><span class='fu'><a href='https://rdrr.io/r/stats/power.t.test.html'>power.t.test</a></span><span class='op'>(</span><span class='fl'>100</span>, <span class='fl'>0.5</span><span class='op'>)</span></code>? <select class='webex-solveme' data-answer='["power.t.test(delta = 0.5, n = 100)"]'> <option></option> <option>power.t.test(100, 0.5, sig.level = 1, sd = 0.05)</option> <option>power.t.test()</option> <option>power.t.test(n = 100)</option> <option>power.t.test(delta = 0.5, n = 100)</option></select>
+
+
+* What is the default value for `sd`? <select class='webex-solveme' data-answer='["1"]'> <option></option> <option>two.sample</option> <option>1</option> <option>NULL</option> <option>0.05</option></select>
+* What is the default value for `type`? <select class='webex-solveme' data-answer='["two.sample"]'> <option></option> <option>NULL</option> <option>paired</option> <option>one.sample</option> <option>two.sample</option></select>
+* Which is equivalent to <code><span class='fu'><a href='https://rdrr.io/r/stats/power.t.test.html'>power.t.test</a></span><span class='op'>(</span><span class='fl'>100</span>, <span class='fl'>0.5</span><span class='op'>)</span></code>? <div class='webex-radiogroup' id='radio_BAAOLAKGGD'><label><input type="radio" autocomplete="off" name="radio_BAAOLAKGGD" value=""></input> <span>power.t.test(100, 0.5, sig.level = 1, sd = 0.05)</span></label><label><input type="radio" autocomplete="off" name="radio_BAAOLAKGGD" value="answer"></input> <span>power.t.test(delta = 0.5, n = 100)</span></label><label><input type="radio" autocomplete="off" name="radio_BAAOLAKGGD" value=""></input> <span>power.t.test()</span></label><label><input type="radio" autocomplete="off" name="radio_BAAOLAKGGD" value=""></input> <span>power.t.test(n = 100)</span></label></div>
+
+
 
 :::
 
@@ -432,7 +436,7 @@ One of the great things about R is that it is **user extensible**: anyone can cr
 
 Add-on packages are not distributed with base R, but have to be downloaded and installed from an archive, in the same way that you would, for instance, download and install a fitness app on your smartphone.
 
-The main repository where packages reside is called CRAN, the Comprehensive R Archive Network. A package has to pass strict tests devised by the R core team to be allowed to be part of the CRAN archive. You can install from the CRAN archive through R using the `install.packages()` function.
+The main repository where packages reside is called CRAN, the Comprehensive R Archive Network. A package has to pass strict tests devised by the R core team to be allowed to be part of the CRAN archive. You can install from the CRAN archive through R using the <code><span class='fu'><a href='https://rdrr.io/r/utils/install.packages.html'>install.packages</a></span><span class='op'>(</span><span class='op'>)</span></code> function.
 
 There is an important distinction between **installing** a package and **loading** a package.
 
@@ -498,7 +502,7 @@ Many R packages are not yet on <a class='glossary' target='_blank' title='The Co
 devtools::install_github("psyteachr/reprores-v2")
 ```
 
-After you install the reprores package, load it using the <code><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='op'>)</span></code> function. You can then try out some of the functions below.
+After you install the <code class='package'>reprores</code> package, load it using the <code><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='op'>)</span></code> function. You can then try out some of the functions below.
 
 
 ```r
@@ -538,7 +542,17 @@ getdata("data")
 
 ## Glossary  {#glossaryintro}
 
-Each chapter ends with a glossary table defining the jargon introduced in this chapter. The links below take you to the [glossary book](https://psyteachr.github.io/glossary), which you can also download for offline use with <code><span class='fu'>devtools</span><span class='fu'>::</span><span class='fu'><a href='https://devtools.r-lib.org//reference/remote-reexports.html'>install_github</a></span><span class='op'>(</span><span class='st'>"psyteachr/glossary"</span><span class='op'>)</span></code> and access the glossary offline with <code><span class='fu'>glossary</span><span class='fu'>::</span><span class='fu'>book</span><span class='op'>(</span><span class='op'>)</span></code>.
+Each chapter ends with a glossary table defining the jargon introduced in this chapter. The links below take you to the [glossary book](https://psyteachr.github.io/glossary), which you can also download for offline use.
+
+
+```r
+# install the glossary package (only once)
+devtools::install_github("psyteachr/glossary")
+
+# open the glossary offline 
+glossary::book()
+```
+
 
 
 

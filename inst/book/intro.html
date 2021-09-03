@@ -373,23 +373,23 @@ He turned to me as if to say, \"Hurry boy, it's waiting there for you\"
 <p>If you want 10 random numbers from a normal distribution with mean of 0 and standard deviation, you can just use the defaults.</p>
 <div class="sourceCode" id="cb28"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span><span class="fl">10</span><span class="op">)</span></code></pre></div>
-<pre><code>##  [1] -1.45694005  0.20384501 -2.51934172 -1.05468710  0.42875052  0.28622032
-##  [7] -0.06619035 -1.20758942  1.12491365 -0.50810229</code></pre>
+<pre><code>##  [1]  0.08571673  0.57505843 -1.21671268  1.37196949  0.39024474  0.77958767
+##  [7]  1.83148585 -0.23283766  0.97848527 -0.79488399</code></pre>
 <p>If you want 10 numbers from a normal distribution with a mean of 100:</p>
 <div class="sourceCode" id="cb30"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span><span class="fl">10</span>, <span class="fl">100</span><span class="op">)</span></code></pre></div>
-<pre><code>##  [1]  99.10040  99.66980  98.98062  99.48532  99.80667 100.80502 100.89591
-##  [8]  99.98705  99.96796 100.36471</code></pre>
+<pre><code>##  [1]  99.66847  98.98484 101.43916  99.49610  99.84190 100.45355  99.89289
+##  [8]  99.38652 100.61345 101.25859</code></pre>
 <p>This would be an equivalent but less efficient way of calling the function:</p>
 <div class="sourceCode" id="cb32"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span>n <span class="op">=</span> <span class="fl">10</span>, mean <span class="op">=</span> <span class="fl">100</span><span class="op">)</span></code></pre></div>
-<pre><code>##  [1] 102.16564  99.57360  99.37224 100.37644 100.81443 100.98251  98.39118
-##  [8]  99.52117 101.48476 100.46152</code></pre>
+<pre><code>##  [1] 100.01439  99.57700 101.05737  99.65466 100.32962  99.52804  98.43124
+##  [8] 100.33794 100.89923  97.81565</code></pre>
 <p>We don't need to name the arguments because R will recognize that we intended to fill in the first and second arguments by their position in the function call. However, if we want to change the default for an argument coming later in the list, then we need to name it. For instance, if we wanted to keep the default <code>mean = 0</code> but change the standard deviation to 100, we would do it this way:</p>
 <div class="sourceCode" id="cb34"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span><span class="fl">10</span>, sd <span class="op">=</span> <span class="fl">100</span><span class="op">)</span></code></pre></div>
-<pre><code>##  [1]   59.180686   77.768352   78.385481    2.556126   40.019833 -128.027475
-##  [7]   55.940884   88.927582  115.261588   94.136932</code></pre>
+<pre><code>##  [1]  -61.06934   75.94744 -100.44128 -115.44736  -86.16600 -135.88264
+##  [7]  -25.64329  -55.62088  -95.12204   43.69802</code></pre>
 <p>Some functions give a list of options after an argument; this means the default value is the first option. The usage entry for the <code><span class="fu"><a href="https://rdrr.io/r/stats/power.t.test.html">power.t.test</a></span><span class="op">(</span><span class="op">)</span></code> function looks like this:</p>
 <div class="sourceCode" id="cb36"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/stats/power.t.test.html">power.t.test</a></span><span class="op">(</span>n <span class="op">=</span> <span class="cn">NULL</span>, delta <span class="op">=</span> <span class="cn">NULL</span>, sd <span class="op">=</span> <span class="fl">1</span>, sig.level <span class="op">=</span> <span class="fl">0.05</span>,
@@ -400,22 +400,21 @@ He turned to me as if to say, \"Hurry boy, it's waiting there for you\"
 <div class="try">
 <ul>
 <li>What is the default value for <code>sd</code>? <select class="webex-solveme" data-answer='["1"]'><option></option>
-<option>NULL</option>
+<option>two.sample</option>
 <option>1</option>
-<option>0.05</option>
-<option>two.sample</option></select>
+<option>NULL</option>
+<option>0.05</option></select>
 </li>
 <li>What is the default value for <code>type</code>? <select class="webex-solveme" data-answer='["two.sample"]'><option></option>
 <option>NULL</option>
-<option>two.sample</option>
+<option>paired</option>
 <option>one.sample</option>
-<option>paired</option></select>
+<option>two.sample</option></select>
 </li>
-<li>Which is equivalent to <code><span class="fu"><a href="https://rdrr.io/r/stats/power.t.test.html">power.t.test</a></span><span class="op">(</span><span class="fl">100</span>, <span class="fl">0.5</span><span class="op">)</span></code>? <select class="webex-solveme" data-answer='["power.t.test(delta = 0.5, n = 100)"]'><option></option>
-<option>power.t.test(100, 0.5, sig.level = 1, sd = 0.05)</option>
-<option>power.t.test()</option>
-<option>power.t.test(n = 100)</option>
-<option>power.t.test(delta = 0.5, n = 100)</option></select>
+<li>Which is equivalent to <code><span class="fu"><a href="https://rdrr.io/r/stats/power.t.test.html">power.t.test</a></span><span class="op">(</span><span class="fl">100</span>, <span class="fl">0.5</span><span class="op">)</span></code>?
+<div id="radio_BAAOLAKGGD" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_BAAOLAKGGD" value=""><span>power.t.test(100, 0.5, sig.level = 1, sd = 0.05)</span></label><label><input type="radio" autocomplete="off" name="radio_BAAOLAKGGD" value="answer"><span>power.t.test(delta = 0.5, n = 100)</span></label><label><input type="radio" autocomplete="off" name="radio_BAAOLAKGGD" value=""><span>power.t.test()</span></label><label><input type="radio" autocomplete="off" name="radio_BAAOLAKGGD" value=""><span>power.t.test(n = 100)</span></label>
+</div>
 </li>
 </ul>
 </div>
@@ -456,7 +455,7 @@ He turned to me as if to say, \"Hurry boy, it's waiting there for you\"
 </h2>
 <p>One of the great things about R is that it is <strong>user extensible</strong>: anyone can create a new add-on software package that extends its functionality. There are currently thousands of add-on packages that R users have created to solve many different kinds of problems, or just simply to have fun. There are packages for data visualisation, machine learning, neuroimaging, eyetracking, web scraping, and playing games such as Sudoku.</p>
 <p>Add-on packages are not distributed with base R, but have to be downloaded and installed from an archive, in the same way that you would, for instance, download and install a fitness app on your smartphone.</p>
-<p>The main repository where packages reside is called CRAN, the Comprehensive R Archive Network. A package has to pass strict tests devised by the R core team to be allowed to be part of the CRAN archive. You can install from the CRAN archive through R using the <code><a href="https://rdrr.io/r/utils/install.packages.html">install.packages()</a></code> function.</p>
+<p>The main repository where packages reside is called CRAN, the Comprehensive R Archive Network. A package has to pass strict tests devised by the R core team to be allowed to be part of the CRAN archive. You can install from the CRAN archive through R using the <code><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span><span class="op">(</span><span class="op">)</span></code> function.</p>
 <p>There is an important distinction between <strong>installing</strong> a package and <strong>loading</strong> a package.</p>
 <div id="installing-a-package" class="section level3" number="1.4.1">
 <h3>
@@ -506,7 +505,7 @@ Figure 1.4: Check installed and loaded packages in the packages tab in the lower
 <span class="co"># Error in loadNamespace(name) : there is no package called ‘devtools’</span>
 <span class="co"># install.packages("devtools")</span>
 <span class="fu">devtools</span><span class="fu">::</span><span class="fu"><a href="https://devtools.r-lib.org//reference/remote-reexports.html">install_github</a></span><span class="op">(</span><span class="st">"psyteachr/reprores-v2"</span><span class="op">)</span></code></pre></div>
-<p>After you install the reprores package, load it using the <code><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="op">)</span></code> function. You can then try out some of the functions below.</p>
+<p>After you install the <code class="package">reprores</code> package, load it using the <code><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="op">)</span></code> function. You can then try out some of the functions below.</p>
 <div class="sourceCode" id="cb42"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/psyteachr/reprores-v2">reprores</a></span><span class="op">)</span>
 
@@ -537,7 +536,13 @@ Figure 1.4: Check installed and loaded packages in the packages tab in the lower
 <h2>
 <span class="header-section-number">1.5</span> Glossary<a class="anchor" aria-label="anchor" href="#glossaryintro"><i class="fas fa-link"></i></a>
 </h2>
-<p>Each chapter ends with a glossary table defining the jargon introduced in this chapter. The links below take you to the <a href="https://psyteachr.github.io/glossary">glossary book</a>, which you can also download for offline use with <code><span class="fu">devtools</span><span class="fu">::</span><span class="fu"><a href="https://devtools.r-lib.org//reference/remote-reexports.html">install_github</a></span><span class="op">(</span><span class="st">"psyteachr/glossary"</span><span class="op">)</span></code> and access the glossary offline with <code><span class="fu">glossary</span><span class="fu">::</span><span class="fu">book</span><span class="op">(</span><span class="op">)</span></code>.</p>
+<p>Each chapter ends with a glossary table defining the jargon introduced in this chapter. The links below take you to the <a href="https://psyteachr.github.io/glossary">glossary book</a>, which you can also download for offline use.</p>
+<div class="sourceCode" id="cb44"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co"># install the glossary package (only once)</span>
+<span class="fu">devtools</span><span class="fu">::</span><span class="fu"><a href="https://devtools.r-lib.org//reference/remote-reexports.html">install_github</a></span><span class="op">(</span><span class="st">"psyteachr/glossary"</span><span class="op">)</span>
+
+<span class="co"># open the glossary offline </span>
+<span class="fu">glossary</span><span class="fu">::</span><span class="fu">book</span><span class="op">(</span><span class="op">)</span></code></pre></div>
 <div class="inline-table"><table class="table table-sm">
 <colgroup>
 <col width="42%">
@@ -720,7 +725,31 @@ solveme_func = function(e) {
   update_total_correct();
 }
 
+/* function for checking radiogroups answers */
+radiogroups_func = function(e) {
+  console.log(this.id);
+  var checked_button = document.querySelector('input[name=' + this.id + ']:checked');
+  var cl = checked_button.parentElement.classList;
+  var labels = checked_button.parentElement.parentElement.children;
+  
+  /* get rid of styles */
+  for (i = 0; i < labels.length; i++) {
+    labels[i].classList.remove("webex-incorrect");
+    labels[i].classList.remove("webex-correct");
+  }
+  
+  /* add style */
+  if (checked_button.value == "answer") {
+    cl.add("webex-correct");
+  } else {
+    cl.add("webex-incorrect");
+  }
+  
+  update_total_correct();
+}
+
 window.onload = function() {
+  console.log("onload");
   /* set up solution buttons */
   var buttons = document.getElementsByTagName("button");
 
@@ -755,6 +784,12 @@ window.onload = function() {
     /* attach checking function */
     solveme[i].onkeyup = solveme_func;
     solveme[i].onchange = solveme_func;
+  }
+  
+  /* set up radiogroups */
+  var radiogroups = document.getElementsByClassName("webex-radiogroup");
+  for (var i = 0; i < radiogroups.length; i++) {
+    radiogroups[i].onchange = radiogroups_func;
   }
 
   update_total_correct();
