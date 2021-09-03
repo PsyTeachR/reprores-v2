@@ -119,30 +119,18 @@
 </li>
 </ol>
 </div>
-<div id="resources6" class="section level2" number="5.2">
+<div id="setup-joins" class="section level2" number="5.2">
 <h2>
-<span class="header-section-number">5.2</span> Resources<a class="anchor" aria-label="anchor" href="#resources6"><i class="fas fa-link"></i></a>
-</h2>
-<ul>
-<li>
-<a href="http://r4ds.had.co.nz/relational-data.html">Chapter 13: Relational Data</a> in <em>R for Data Science</em>
-</li>
-<li><a href="http://stat545.com/bit001_dplyr-cheatsheet.html">Cheatsheet for dplyr join functions</a></li>
-<li><a href="slides/05_joins_slides.pdf">Lecture slides on dplyr two-table verbs</a></li>
-</ul>
-</div>
-<div id="setup-joins" class="section level2" number="5.3">
-<h2>
-<span class="header-section-number">5.3</span> Setup<a class="anchor" aria-label="anchor" href="#setup-joins"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.2</span> Setup<a class="anchor" aria-label="anchor" href="#setup-joins"><i class="fas fa-link"></i></a>
 </h2>
 <div class="sourceCode" id="cb199"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># libraries needed</span>
 <span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span>
 <span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/psyteachr/reprores-v2">reprores</a></span><span class="op">)</span></code></pre></div>
 </div>
-<div id="data-1" class="section level2" number="5.4">
+<div id="data-1" class="section level2" number="5.3">
 <h2>
-<span class="header-section-number">5.4</span> Data<a class="anchor" aria-label="anchor" href="#data-1"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.3</span> Data<a class="anchor" aria-label="anchor" href="#data-1"><i class="fas fa-link"></i></a>
 </h2>
 <p>First, we'll create two small data tables.</p>
 <p><code>subject</code> has id, gender and age for subjects 1-5. Age and gender are missing for subject 3.</p>
@@ -237,9 +225,9 @@
 </tbody>
 </table></div>
 </div>
-<div id="mutating-joins" class="section level2" number="5.5">
+<div id="mutating-joins" class="section level2" number="5.4">
 <h2>
-<span class="header-section-number">5.5</span> Mutating Joins<a class="anchor" aria-label="anchor" href="#mutating-joins"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.4</span> Mutating Joins<a class="anchor" aria-label="anchor" href="#mutating-joins"><i class="fas fa-link"></i></a>
 </h2>
 <p><a class="glossary" target="_blank" title="Joins that act like the dplyr::mutate() function in that they add new columns to one table based on values in another table." href="https://psyteachr.github.io/glossary/m#mutating-joins">Mutating joins</a> act like the <code><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate()</a></code> function in that they add new columns to one table based on values in another table.</p>
 <p>All the mutating joins have this basic syntax:</p>
@@ -257,9 +245,9 @@
 <div class="info">
 <p>You can leave out the <code>by</code> argument if you're matching on all of the columns with the same name, but it's good practice to always specify it so your code is robust to changes in the loaded data.</p>
 </div>
-<div id="left_join" class="section level3" number="5.5.1">
+<div id="left_join" class="section level3" number="5.4.1">
 <h3>
-<span class="header-section-number">5.5.1</span> left_join()<a class="anchor" aria-label="anchor" href="#left_join"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.4.1</span> left_join()<a class="anchor" aria-label="anchor" href="#left_join"><i class="fas fa-link"></i></a>
 </h3>
 <div class="join">
 <div class="figure" style="text-align: center">
@@ -404,9 +392,9 @@ Figure 5.2: Left Join (reversed)
 </table></div>
 </div>
 </div>
-<div id="right_join" class="section level3" number="5.5.2">
+<div id="right_join" class="section level3" number="5.4.2">
 <h3>
-<span class="header-section-number">5.5.2</span> right_join()<a class="anchor" aria-label="anchor" href="#right_join"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.4.2</span> right_join()<a class="anchor" aria-label="anchor" href="#right_join"><i class="fas fa-link"></i></a>
 </h3>
 <div class="join">
 <div class="figure" style="text-align: center">
@@ -489,9 +477,9 @@ Figure 5.3: Right Join
 <p>This table has the same information as <code>left_join(exp, subject, by = "id")</code>, but the columns are in a different order (left table, then right table).</p>
 </div>
 </div>
-<div id="inner_join" class="section level3" number="5.5.3">
+<div id="inner_join" class="section level3" number="5.4.3">
 <h3>
-<span class="header-section-number">5.5.3</span> inner_join()<a class="anchor" aria-label="anchor" href="#inner_join"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.4.3</span> inner_join()<a class="anchor" aria-label="anchor" href="#inner_join"><i class="fas fa-link"></i></a>
 </h3>
 <div class="join">
 <div class="figure" style="text-align: center">
@@ -553,9 +541,9 @@ Figure 5.4: Inner Join
 </table></div>
 </div>
 </div>
-<div id="full_join" class="section level3" number="5.5.4">
+<div id="full_join" class="section level3" number="5.4.4">
 <h3>
-<span class="header-section-number">5.5.4</span> full_join()<a class="anchor" aria-label="anchor" href="#full_join"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.4.4</span> full_join()<a class="anchor" aria-label="anchor" href="#full_join"><i class="fas fa-link"></i></a>
 </h3>
 <div class="join">
 <div class="figure" style="text-align: center">
@@ -642,14 +630,14 @@ Figure 5.5: Full Join
 </div>
 </div>
 </div>
-<div id="filtering-joins" class="section level2" number="5.6">
+<div id="filtering-joins" class="section level2" number="5.5">
 <h2>
-<span class="header-section-number">5.6</span> Filtering Joins<a class="anchor" aria-label="anchor" href="#filtering-joins"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.5</span> Filtering Joins<a class="anchor" aria-label="anchor" href="#filtering-joins"><i class="fas fa-link"></i></a>
 </h2>
 <p><a class="glossary" target="_blank" title="Joins that act like the dplyr::filter() function in that they remove rows from the data in one table based on the values in another table." href="https://psyteachr.github.io/glossary/f#filtering-joins">Filtering joins</a> act like the <code><a href="https://dplyr.tidyverse.org/reference/filter.html">filter()</a></code> function in that they remove rows from the data in one table based on the values in another table. The result of a filtering join will only contain rows from the left table and have the same number or fewer rows than the left table.</p>
-<div id="semi_join" class="section level3" number="5.6.1">
+<div id="semi_join" class="section level3" number="5.5.1">
 <h3>
-<span class="header-section-number">5.6.1</span> semi_join()<a class="anchor" aria-label="anchor" href="#semi_join"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.5.1</span> semi_join()<a class="anchor" aria-label="anchor" href="#semi_join"><i class="fas fa-link"></i></a>
 </h3>
 <div class="join">
 <div class="figure" style="text-align: center">
@@ -742,9 +730,9 @@ Figure 5.7: Semi Join (Reversed)
 </table></div>
 </div>
 </div>
-<div id="anti_join" class="section level3" number="5.6.2">
+<div id="anti_join" class="section level3" number="5.5.2">
 <h3>
-<span class="header-section-number">5.6.2</span> anti_join()<a class="anchor" aria-label="anchor" href="#anti_join"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.5.2</span> anti_join()<a class="anchor" aria-label="anchor" href="#anti_join"><i class="fas fa-link"></i></a>
 </h3>
 <div class="join">
 <div class="figure" style="text-align: center">
@@ -806,14 +794,14 @@ Figure 5.9: Anti Join (Reversed)
 </div>
 </div>
 </div>
-<div id="binding-joins" class="section level2" number="5.7">
+<div id="binding-joins" class="section level2" number="5.6">
 <h2>
-<span class="header-section-number">5.7</span> Binding Joins<a class="anchor" aria-label="anchor" href="#binding-joins"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.6</span> Binding Joins<a class="anchor" aria-label="anchor" href="#binding-joins"><i class="fas fa-link"></i></a>
 </h2>
 <p><a class="glossary" target="_blank" title="Joins that bind one table to another by adding their rows or columns together." href="https://psyteachr.github.io/glossary/b#binding-joins">Binding joins</a> bind one table to another by adding their rows or columns together.</p>
-<div id="bind_rows" class="section level3" number="5.7.1">
+<div id="bind_rows" class="section level3" number="5.6.1">
 <h3>
-<span class="header-section-number">5.7.1</span> bind_rows()<a class="anchor" aria-label="anchor" href="#bind_rows"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.6.1</span> bind_rows()<a class="anchor" aria-label="anchor" href="#bind_rows"><i class="fas fa-link"></i></a>
 </h3>
 <p>You can combine the rows of two tables with <code>bind_rows</code>.</p>
 <p>Here we'll add subject data for subjects 6-9 and bind that to the original subject table.</p>
@@ -882,7 +870,7 @@ Figure 5.9: Anti Join (Reversed)
 </table></div>
 </div>
 <p>The columns just have to have the same names, they don't have to be in the same order. Any columns that differ between the two tables will just have <code>NA</code> values for entries from the other table.</p>
-<p>If a row is duplicated between the two tables (like id 5 below), the row will also be duplicated in the resulting table. If your tables have the exact same columns, you can use <code><a href="https://generics.r-lib.org/reference/setops.html">union()</a></code> (see below) to avoid duplicates.</p>
+<p>If a row is duplicated between the two tables (like id 5 below), the row will also be duplicated in the resulting table. If your tables have the exact same columns, you can use <code><a href="https://rdrr.io/r/base/sets.html">union()</a></code> (see below) to avoid duplicates.</p>
 <div class="sourceCode" id="cb212"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">new_subjects</span> <span class="op">&lt;-</span> <span class="fu">tibble</span><span class="op">(</span>
   id <span class="op">=</span> <span class="fl">5</span><span class="op">:</span><span class="fl">9</span>,
@@ -965,9 +953,9 @@ Figure 5.9: Anti Join (Reversed)
 </table></div>
 </div>
 </div>
-<div id="bind_cols" class="section level3" number="5.7.2">
+<div id="bind_cols" class="section level3" number="5.6.2">
 <h3>
-<span class="header-section-number">5.7.2</span> bind_cols()<a class="anchor" aria-label="anchor" href="#bind_cols"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.6.2</span> bind_cols()<a class="anchor" aria-label="anchor" href="#bind_cols"><i class="fas fa-link"></i></a>
 </h3>
 <p>You can merge two tables with the same number of rows using <code>bind_cols</code>. This is only useful if the two tables have their rows in the exact same order. The only advantage over a left join is when the tables don't have any IDs to join by and you have to rely solely on their order.</p>
 <div class="sourceCode" id="cb213"><pre class="downlit sourceCode r">
@@ -1020,16 +1008,16 @@ Figure 5.9: Anti Join (Reversed)
 </div>
 </div>
 </div>
-<div id="set-operations" class="section level2" number="5.8">
+<div id="set-operations" class="section level2" number="5.7">
 <h2>
-<span class="header-section-number">5.8</span> Set Operations<a class="anchor" aria-label="anchor" href="#set-operations"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.7</span> Set Operations<a class="anchor" aria-label="anchor" href="#set-operations"><i class="fas fa-link"></i></a>
 </h2>
 <p><a class="glossary" target="_blank" title="Functions that compare two tables and return rows that match (intersect), are in either table (union), or are in one table but not the other (setdiff)." href="https://psyteachr.github.io/glossary/s#set-operations">Set operations</a> compare two tables and return rows that match (intersect), are in either table (union), or are in one table but not the other (setdiff).</p>
-<div id="intersect" class="section level3" number="5.8.1">
+<div id="intersect" class="section level3" number="5.7.1">
 <h3>
-<span class="header-section-number">5.8.1</span> intersect()<a class="anchor" aria-label="anchor" href="#intersect"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.7.1</span> intersect()<a class="anchor" aria-label="anchor" href="#intersect"><i class="fas fa-link"></i></a>
 </h3>
-<p><code><a href="https://generics.r-lib.org/reference/setops.html">intersect()</a></code> returns all rows in two tables that match exactly. The columns don't have to be in the same order.</p>
+<p><code><a href="https://rdrr.io/r/base/sets.html">intersect()</a></code> returns all rows in two tables that match exactly. The columns don't have to be in the same order.</p>
 <div class="sourceCode" id="cb214"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">new_subjects</span> <span class="op">&lt;-</span> <span class="fu">tibble</span><span class="op">(</span>
   id <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/seq.html">seq</a></span><span class="op">(</span><span class="fl">4</span>, <span class="fl">9</span><span class="op">)</span>,
@@ -1037,7 +1025,7 @@ Figure 5.9: Anti Join (Reversed)
   gender <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"f"</span>, <span class="st">"f"</span>, <span class="st">"m"</span>, <span class="st">"m"</span>, <span class="st">"f"</span>, <span class="st">"f"</span><span class="op">)</span>
 <span class="op">)</span>
 
-<span class="fu"><a href="https://generics.r-lib.org/reference/setops.html">intersect</a></span><span class="op">(</span><span class="va">subject</span>, <span class="va">new_subjects</span><span class="op">)</span></code></pre></div>
+<span class="fu"><a href="https://rdrr.io/r/base/sets.html">intersect</a></span><span class="op">(</span><span class="va">subject</span>, <span class="va">new_subjects</span><span class="op">)</span></code></pre></div>
 <div class="kable-table">
 <div class="inline-table"><table class="table table-sm">
 <thead><tr class="header">
@@ -1053,7 +1041,7 @@ Figure 5.9: Anti Join (Reversed)
 </table></div>
 </div>
 <div class="warning">
-<p>If you've forgotten to load dplyr or the tidyverse, <a class="glossary" target="_blank" title="The set of R functions that come with a basic installation of R, before you add external packages" href="https://psyteachr.github.io/glossary/b#base-r">base R</a> also has an <code><a href="https://generics.r-lib.org/reference/setops.html">intersect()</a></code> function. The error message can be confusing and looks something like this:</p>
+<p>If you've forgotten to load dplyr or the tidyverse, <a class="glossary" target="_blank" title="The set of R functions that come with a basic installation of R, before you add external packages" href="https://psyteachr.github.io/glossary/b#base-r">base R</a> also has an <code><a href="https://rdrr.io/r/base/sets.html">intersect()</a></code> function. The error message can be confusing and looks something like this:</p>
 <div class="sourceCode" id="cb215"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu">base</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/r/base/sets.html">intersect</a></span><span class="op">(</span><span class="va">subject</span>, <span class="va">new_subjects</span><span class="op">)</span></code></pre></div>
 <pre><code>## Error: Must subset rows with a valid subscript vector.
@@ -1061,13 +1049,13 @@ Figure 5.9: Anti Join (Reversed)
 ## x Input has size 6 but subscript `!duplicated(x, fromLast = fromLast, ...)` has size 0.</code></pre>
 </div>
 </div>
-<div id="union" class="section level3" number="5.8.2">
+<div id="union" class="section level3" number="5.7.2">
 <h3>
-<span class="header-section-number">5.8.2</span> union()<a class="anchor" aria-label="anchor" href="#union"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.7.2</span> union()<a class="anchor" aria-label="anchor" href="#union"><i class="fas fa-link"></i></a>
 </h3>
-<p><code><a href="https://generics.r-lib.org/reference/setops.html">union()</a></code> returns all the rows from both tables, removing duplicate rows.</p>
+<p><code><a href="https://rdrr.io/r/base/sets.html">union()</a></code> returns all the rows from both tables, removing duplicate rows.</p>
 <div class="sourceCode" id="cb217"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="https://generics.r-lib.org/reference/setops.html">union</a></span><span class="op">(</span><span class="va">subject</span>, <span class="va">new_subjects</span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/sets.html">union</a></span><span class="op">(</span><span class="va">subject</span>, <span class="va">new_subjects</span><span class="op">)</span></code></pre></div>
 <div class="kable-table">
 <div class="inline-table"><table class="table table-sm">
 <thead><tr class="header">
@@ -1130,7 +1118,7 @@ Figure 5.9: Anti Join (Reversed)
 </table></div>
 </div>
 <div class="warning">
-<p>If you've forgotten to load dplyr or the tidyverse, <a class="glossary" target="_blank" title="The set of R functions that come with a basic installation of R, before you add external packages" href="https://psyteachr.github.io/glossary/b#base-r">base R</a> also has a <code><a href="https://generics.r-lib.org/reference/setops.html">union()</a></code> function. You usually won't get an error message, but the output won't be what you expect.</p>
+<p>If you've forgotten to load dplyr or the tidyverse, <a class="glossary" target="_blank" title="The set of R functions that come with a basic installation of R, before you add external packages" href="https://psyteachr.github.io/glossary/b#base-r">base R</a> also has a <code><a href="https://rdrr.io/r/base/sets.html">union()</a></code> function. You usually won't get an error message, but the output won't be what you expect.</p>
 <div class="sourceCode" id="cb218"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu">base</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/r/base/sets.html">union</a></span><span class="op">(</span><span class="va">subject</span>, <span class="va">new_subjects</span><span class="op">)</span></code></pre></div>
 <pre><code>## [[1]]
@@ -1152,13 +1140,13 @@ Figure 5.9: Anti Join (Reversed)
 ## [1] "f" "f" "m" "m" "f" "f"</code></pre>
 </div>
 </div>
-<div id="setdiff" class="section level3" number="5.8.3">
+<div id="setdiff" class="section level3" number="5.7.3">
 <h3>
-<span class="header-section-number">5.8.3</span> setdiff()<a class="anchor" aria-label="anchor" href="#setdiff"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.7.3</span> setdiff()<a class="anchor" aria-label="anchor" href="#setdiff"><i class="fas fa-link"></i></a>
 </h3>
 <p><code>setdiff</code> returns rows that are in the first table, but not in the second table.</p>
 <div class="sourceCode" id="cb220"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="https://generics.r-lib.org/reference/setops.html">setdiff</a></span><span class="op">(</span><span class="va">subject</span>, <span class="va">new_subjects</span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/sets.html">setdiff</a></span><span class="op">(</span><span class="va">subject</span>, <span class="va">new_subjects</span><span class="op">)</span></code></pre></div>
 <div class="kable-table">
 <div class="inline-table"><table class="table table-sm">
 <thead><tr class="header">
@@ -1192,7 +1180,7 @@ Figure 5.9: Anti Join (Reversed)
 </div>
 <p>Order matters for <code>setdiff</code>.</p>
 <div class="sourceCode" id="cb221"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="https://generics.r-lib.org/reference/setops.html">setdiff</a></span><span class="op">(</span><span class="va">new_subjects</span>, <span class="va">subject</span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/sets.html">setdiff</a></span><span class="op">(</span><span class="va">new_subjects</span>, <span class="va">subject</span><span class="op">)</span></code></pre></div>
 <div class="kable-table">
 <div class="inline-table"><table class="table table-sm">
 <thead><tr class="header">
@@ -1230,7 +1218,7 @@ Figure 5.9: Anti Join (Reversed)
 </table></div>
 </div>
 <div class="warning">
-<p>If you've forgotten to load dplyr or the tidyverse, <a class="glossary" target="_blank" title="The set of R functions that come with a basic installation of R, before you add external packages" href="https://psyteachr.github.io/glossary/b#base-r">base R</a> also has a <code><a href="https://generics.r-lib.org/reference/setops.html">setdiff()</a></code> function. You usually won't get an error message, but the output might not be what you expect because the base R <code><a href="https://generics.r-lib.org/reference/setops.html">setdiff()</a></code> expects columns to be in the same order, so id 5 here registers as different between the two tables.</p>
+<p>If you've forgotten to load dplyr or the tidyverse, <a class="glossary" target="_blank" title="The set of R functions that come with a basic installation of R, before you add external packages" href="https://psyteachr.github.io/glossary/b#base-r">base R</a> also has a <code><a href="https://rdrr.io/r/base/sets.html">setdiff()</a></code> function. You usually won't get an error message, but the output might not be what you expect because the base R <code><a href="https://rdrr.io/r/base/sets.html">setdiff()</a></code> expects columns to be in the same order, so id 5 here registers as different between the two tables.</p>
 <div class="sourceCode" id="cb222"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu">base</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/r/base/sets.html">setdiff</a></span><span class="op">(</span><span class="va">subject</span>, <span class="va">new_subjects</span><span class="op">)</span></code></pre></div>
 <div class="kable-table">
@@ -1272,9 +1260,9 @@ Figure 5.9: Anti Join (Reversed)
 </div>
 </div>
 </div>
-<div id="glossary-joins" class="section level2" number="5.9">
+<div id="glossary-joins" class="section level2" number="5.8">
 <h2>
-<span class="header-section-number">5.9</span> Glossary<a class="anchor" aria-label="anchor" href="#glossary-joins"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.8</span> Glossary<a class="anchor" aria-label="anchor" href="#glossary-joins"><i class="fas fa-link"></i></a>
 </h2>
 <div class="inline-table"><table class="table table-sm">
 <colgroup>
@@ -1308,6 +1296,18 @@ Figure 5.9: Anti Join (Reversed)
 </tr>
 </tbody>
 </table></div>
+</div>
+<div id="resources-joins" class="section level2" number="5.9">
+<h2>
+<span class="header-section-number">5.9</span> Further Resources<a class="anchor" aria-label="anchor" href="#resources-joins"><i class="fas fa-link"></i></a>
+</h2>
+<ul>
+<li>
+<a href="http://r4ds.had.co.nz/relational-data.html">Chapter 13: Relational Data</a> in <em>R for Data Science</em>
+</li>
+<li><a href="http://stat545.com/bit001_dplyr-cheatsheet.html">Cheatsheet for dplyr join functions</a></li>
+<li><a href="slides/05_joins_slides.pdf">Lecture slides on dplyr two-table verbs</a></li>
+</ul>
 </div>
 </div>
 <div class="psyteachr_footer">
@@ -1437,37 +1437,37 @@ $( document ).ready(function() {
       <ul class="nav navbar-nav">
 <li><a class="nav-link" href="#joins"><span class="header-section-number">5</span> Data Relations</a></li>
 <li><a class="nav-link" href="#ilo-joins"><span class="header-section-number">5.1</span> Learning Objectives</a></li>
-<li><a class="nav-link" href="#resources6"><span class="header-section-number">5.2</span> Resources</a></li>
-<li><a class="nav-link" href="#setup-joins"><span class="header-section-number">5.3</span> Setup</a></li>
-<li><a class="nav-link" href="#data-1"><span class="header-section-number">5.4</span> Data</a></li>
+<li><a class="nav-link" href="#setup-joins"><span class="header-section-number">5.2</span> Setup</a></li>
+<li><a class="nav-link" href="#data-1"><span class="header-section-number">5.3</span> Data</a></li>
 <li>
-<a class="nav-link" href="#mutating-joins"><span class="header-section-number">5.5</span> Mutating Joins</a><ul class="nav navbar-nav">
-<li><a class="nav-link" href="#left_join"><span class="header-section-number">5.5.1</span> left_join()</a></li>
-<li><a class="nav-link" href="#right_join"><span class="header-section-number">5.5.2</span> right_join()</a></li>
-<li><a class="nav-link" href="#inner_join"><span class="header-section-number">5.5.3</span> inner_join()</a></li>
-<li><a class="nav-link" href="#full_join"><span class="header-section-number">5.5.4</span> full_join()</a></li>
+<a class="nav-link" href="#mutating-joins"><span class="header-section-number">5.4</span> Mutating Joins</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#left_join"><span class="header-section-number">5.4.1</span> left_join()</a></li>
+<li><a class="nav-link" href="#right_join"><span class="header-section-number">5.4.2</span> right_join()</a></li>
+<li><a class="nav-link" href="#inner_join"><span class="header-section-number">5.4.3</span> inner_join()</a></li>
+<li><a class="nav-link" href="#full_join"><span class="header-section-number">5.4.4</span> full_join()</a></li>
 </ul>
 </li>
 <li>
-<a class="nav-link" href="#filtering-joins"><span class="header-section-number">5.6</span> Filtering Joins</a><ul class="nav navbar-nav">
-<li><a class="nav-link" href="#semi_join"><span class="header-section-number">5.6.1</span> semi_join()</a></li>
-<li><a class="nav-link" href="#anti_join"><span class="header-section-number">5.6.2</span> anti_join()</a></li>
+<a class="nav-link" href="#filtering-joins"><span class="header-section-number">5.5</span> Filtering Joins</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#semi_join"><span class="header-section-number">5.5.1</span> semi_join()</a></li>
+<li><a class="nav-link" href="#anti_join"><span class="header-section-number">5.5.2</span> anti_join()</a></li>
 </ul>
 </li>
 <li>
-<a class="nav-link" href="#binding-joins"><span class="header-section-number">5.7</span> Binding Joins</a><ul class="nav navbar-nav">
-<li><a class="nav-link" href="#bind_rows"><span class="header-section-number">5.7.1</span> bind_rows()</a></li>
-<li><a class="nav-link" href="#bind_cols"><span class="header-section-number">5.7.2</span> bind_cols()</a></li>
+<a class="nav-link" href="#binding-joins"><span class="header-section-number">5.6</span> Binding Joins</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#bind_rows"><span class="header-section-number">5.6.1</span> bind_rows()</a></li>
+<li><a class="nav-link" href="#bind_cols"><span class="header-section-number">5.6.2</span> bind_cols()</a></li>
 </ul>
 </li>
 <li>
-<a class="nav-link" href="#set-operations"><span class="header-section-number">5.8</span> Set Operations</a><ul class="nav navbar-nav">
-<li><a class="nav-link" href="#intersect"><span class="header-section-number">5.8.1</span> intersect()</a></li>
-<li><a class="nav-link" href="#union"><span class="header-section-number">5.8.2</span> union()</a></li>
-<li><a class="nav-link" href="#setdiff"><span class="header-section-number">5.8.3</span> setdiff()</a></li>
+<a class="nav-link" href="#set-operations"><span class="header-section-number">5.7</span> Set Operations</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#intersect"><span class="header-section-number">5.7.1</span> intersect()</a></li>
+<li><a class="nav-link" href="#union"><span class="header-section-number">5.7.2</span> union()</a></li>
+<li><a class="nav-link" href="#setdiff"><span class="header-section-number">5.7.3</span> setdiff()</a></li>
 </ul>
 </li>
-<li><a class="nav-link" href="#glossary-joins"><span class="header-section-number">5.9</span> Glossary</a></li>
+<li><a class="nav-link" href="#glossary-joins"><span class="header-section-number">5.8</span> Glossary</a></li>
+<li><a class="nav-link" href="#resources-joins"><span class="header-section-number">5.9</span> Further Resources</a></li>
 </ul>
 
       <div class="book-extra">
@@ -1485,7 +1485,7 @@ $( document ).ready(function() {
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Data Skills for Reproducible Research</strong>: v2" was written by . It was last built on 2021-08-31.</p>
+    <p>"<strong>Data Skills for Reproducible Research</strong>: v2" was written by . It was last built on 2021-09-03.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

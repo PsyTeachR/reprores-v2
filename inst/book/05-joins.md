@@ -21,11 +21,6 @@
     + [`union()`](#union)
     + [`setdiff()`](#setdiff)
 
-## Resources {#resources6}
-
-* [Chapter 13: Relational Data](http://r4ds.had.co.nz/relational-data.html) in *R for Data Science*
-* [Cheatsheet for dplyr join functions](http://stat545.com/bit001_dplyr-cheatsheet.html)
-* [Lecture slides on dplyr two-table verbs](slides/05_joins_slides.pdf)
 
 ## Setup {#setup-joins}
 
@@ -625,3 +620,9 @@ base::setdiff(subject, new_subjects)
 |[set operations](https://psyteachr.github.io/glossary/s.html#set-operations){class="glossary" target="_blank"}   |Functions that compare two tables and return rows that match (intersect), are in either table (union), or are in one table but not the other (setdiff). |
 
 
+
+## Further Resources {#resources-joins}
+
+* [Chapter 13: Relational Data](http://r4ds.had.co.nz/relational-data.html) in *R for Data Science*
+* [Cheatsheet for dplyr join functions](http://stat545.com/bit001_dplyr-cheatsheet.html)
+* [Lecture slides on dplyr two-table verbs](slides/05_joins_slides.pdf)

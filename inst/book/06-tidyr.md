@@ -23,14 +23,6 @@
 5. Be able to use [regular expressions](#regex) to separate complex columns
 
 
-## Resources {#resources-tidyr}
-
-* [Tidy Data](http://vita.had.co.nz/papers/tidy-data.html)
-* [Chapter 12: Tidy Data](http://r4ds.had.co.nz/tidy-data.html) in *R for Data Science*
-* [Chapter 18: Pipes](http://r4ds.had.co.nz/pipes.html) in *R for Data Science*
-* [Data wrangling cheat sheet](https://www.rstudio.com/wp-content/uploads/2015/02/data-wrangling-cheatsheet.pdf)
-
-
 ## Setup {#setup-tidyr}
 
 
@@ -1020,3 +1012,10 @@ The responses in the `dv` column have multiple types (e.g., <a class='glossary' 
 |[wide](https://psyteachr.github.io/glossary/w.html#wide){class="glossary" target="_blank"}               |Data where all of the observations about one subject are in the same row |
 
 
+
+## Further Resources {#resources-tidyr}
+
+* [Tidy Data](http://vita.had.co.nz/papers/tidy-data.html)
+* [Chapter 12: Tidy Data](http://r4ds.had.co.nz/tidy-data.html) in *R for Data Science*
+* [Chapter 18: Pipes](http://r4ds.had.co.nz/pipes.html) in *R for Data Science*
+* [Data wrangling cheat sheet](https://www.rstudio.com/wp-content/uploads/2015/02/data-wrangling-cheatsheet.pdf)

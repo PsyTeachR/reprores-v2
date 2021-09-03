@@ -9,7 +9,7 @@
      alt="Woody and Buzz from Toy Story. Top text: Linear Regression; Bottom text: Linear regression everywhere" /></div>
      -->
 
-## Learning Objectives {#ilo9}
+## Learning Objectives {#ilo-glm}
 
 ### Basic {-}
 
@@ -25,14 +25,9 @@
 7. Demonstrate the [relationships](#test-rels) among two-sample t-test, one-way ANOVA, and linear regression
 8. Given data and a GLM, [generate a decomposition matrix](#decomp) and calculate sums of squares, mean squares, and F ratios for a one-way ANOVA
 
-## Resources {#resources9}
 
-* [Jeff Miller and Patricia Haden, Statistical Analysis with the Linear Model (free online textbook)](http://www.otago.ac.nz/psychology/otago039309.pdf)
-* [lecture slides introducing the General Linear Model](slides/08_glm_slides.pdf)
-* [GLM shiny app](http://rstudio2.psy.gla.ac.uk/Dale/GLM)
-* [F distribution](http://rstudio2.psy.gla.ac.uk/Dale/fdist)
 
-## Setup {#setup9}
+## Setup {#setup-glm}
 
 
 ```r
@@ -579,3 +574,9 @@ Using the code above, write your own function that takes a table of data and ret
 
 
 
+## Further Resources {#resources-glm}
+
+* [Jeff Miller and Patricia Haden, Statistical Analysis with the Linear Model (free online textbook)](http://www.otago.ac.nz/psychology/otago039309.pdf)
+* [lecture slides introducing the General Linear Model](slides/08_glm_slides.pdf)
+* [GLM shiny app](http://rstudio2.psy.gla.ac.uk/Dale/GLM)
+* [F distribution](http://rstudio2.psy.gla.ac.uk/Dale/fdist)

@@ -85,9 +85,9 @@
 <div class="right meme">
 <img src="images/memes/read_csv.png" alt="Top left: Pooh Bear in a red shirt looking sad; Top right: read.csv() in outline font; Bottom left: Pooh Bear in a tuxedo looking smug; Bottom right: read_csv() in handwritten font">
 </div>
-<div id="ilo2" class="section level2" number="4.1">
+<div id="ilo-data" class="section level2" number="4.1">
 <h2>
-<span class="header-section-number">4.1</span> Learning Objectives<a class="anchor" aria-label="anchor" href="#ilo2"><i class="fas fa-link"></i></a>
+<span class="header-section-number">4.1</span> Learning Objectives<a class="anchor" aria-label="anchor" href="#ilo-data"><i class="fas fa-link"></i></a>
 </h2>
 <ol style="list-style-type: decimal">
 <li>Load <a href="data.html#builtin">built-in datasets</a> <a href="https://youtu.be/Z5fK5VGmzlY" class="video">(video)</a>
@@ -107,33 +107,22 @@
 </li>
 </ol>
 </div>
-<div id="resources2" class="section level2" number="4.2">
+<div id="setup-data" class="section level2" number="4.2">
 <h2>
-<span class="header-section-number">4.2</span> Resources<a class="anchor" aria-label="anchor" href="#resources2"><i class="fas fa-link"></i></a>
-</h2>
-<ul>
-<li>
-<a href="http://r4ds.had.co.nz/data-import.html">Chapter 11: Data Import</a> in <em>R for Data Science</em>
-</li>
-<li><a href="https://github.com/rstudio/cheatsheets/raw/master/data-import.pdf">RStudio Data Import Cheatsheet</a></li>
-</ul>
-</div>
-<div id="setup2" class="section level2" number="4.3">
-<h2>
-<span class="header-section-number">4.3</span> Setup<a class="anchor" aria-label="anchor" href="#setup2"><i class="fas fa-link"></i></a>
+<span class="header-section-number">4.2</span> Setup<a class="anchor" aria-label="anchor" href="#setup-data"><i class="fas fa-link"></i></a>
 </h2>
 <div class="sourceCode" id="cb122"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># libraries needed for these examples</span>
 <span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span>
 <span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/psyteachr/reprores-v2">reprores</a></span><span class="op">)</span></code></pre></div>
 </div>
-<div id="data-tables" class="section level2" number="4.4">
+<div id="data-tables" class="section level2" number="4.3">
 <h2>
-<span class="header-section-number">4.4</span> Data tables<a class="anchor" aria-label="anchor" href="#data-tables"><i class="fas fa-link"></i></a>
+<span class="header-section-number">4.3</span> Data tables<a class="anchor" aria-label="anchor" href="#data-tables"><i class="fas fa-link"></i></a>
 </h2>
-<div id="builtin" class="section level3" number="4.4.1">
+<div id="builtin" class="section level3" number="4.3.1">
 <h3>
-<span class="header-section-number">4.4.1</span> Built-in data<a class="anchor" aria-label="anchor" href="#builtin"><i class="fas fa-link"></i></a>
+<span class="header-section-number">4.3.1</span> Built-in data<a class="anchor" aria-label="anchor" href="#builtin"><i class="fas fa-link"></i></a>
 </h3>
 <p>R comes with built-in datasets. Some packages, like tidyr and reprores, also contain data. The <code><a href="https://rdrr.io/r/utils/data.html">data()</a></code> function lists the datasets available in a package.</p>
 <div class="sourceCode" id="cb123"><pre class="downlit sourceCode r">
@@ -323,9 +312,9 @@ Now you can click on <code>smalldata</code> in the environment pane to open it u
 <span class="va">post_mean</span> <span class="op">-</span> <span class="va">pre_mean</span></code></pre></div>
 <pre><code>## [1] 5.223055</code></pre>
 </div>
-<div id="import_data" class="section level3" number="4.4.2">
+<div id="import_data" class="section level3" number="4.3.2">
 <h3>
-<span class="header-section-number">4.4.2</span> Importing data<a class="anchor" aria-label="anchor" href="#import_data"><i class="fas fa-link"></i></a>
+<span class="header-section-number">4.3.2</span> Importing data<a class="anchor" aria-label="anchor" href="#import_data"><i class="fas fa-link"></i></a>
 </h3>
 <p>Built-in data are nice for examples, but you're probably more interested in your own data. There are many different types of files that you might work with when doing data analysis. These different file types are usually distinguished by the three letter <a class="glossary" target="_blank" title="The end part of a file name that tells you what type of file it is (e.g., .R or .Rmd)." href="https://psyteachr.github.io/glossary/e#extension">extension</a> following a period at the end of the file name. Here are some examples of different types of files and the functions you would use to read them in or write them out.</p>
 <div class="inline-table"><table class="table table-sm">
@@ -400,9 +389,9 @@ S05,5.428571429,4.4,2.444444444,4.714285714,1.625
 <p>Once loaded, you can view your data using the data viewer. In the upper right hand window of RStudio, under the Environment tab, you will see the object <code>csv_data</code> listed.</p>
 <p>If you click on the View icon, it will bring up a table view of the data you loaded in the top left pane of RStudio. This allows you to check that the data have been loaded in properly. You can close the tab when you're done looking at it, it won't remove the object.</p>
 </div>
-<div id="creating-data" class="section level3" number="4.4.3">
+<div id="creating-data" class="section level3" number="4.3.3">
 <h3>
-<span class="header-section-number">4.4.3</span> Creating data<a class="anchor" aria-label="anchor" href="#creating-data"><i class="fas fa-link"></i></a>
+<span class="header-section-number">4.3.3</span> Creating data<a class="anchor" aria-label="anchor" href="#creating-data"><i class="fas fa-link"></i></a>
 </h3>
 <p>If we are creating a data table from scratch, we can use the <code><a href="https://tibble.tidyverse.org/reference/tibble.html">tibble::tibble()</a></code> function, and type the data right in. The <code>tibble</code> package is part of the <a class="glossary" target="_blank" title="A set of R packages that help you create and work with tidy data" href="https://psyteachr.github.io/glossary/t#tidyverse">tidyverse</a> package that we loaded at the start of this chapter.</p>
 <p>Let's create a small table with the names of three Avatar characters and their bending type. The <code>tibble()</code> function takes arguments with the names that you want your columns to have. The values are vectors that list the column values in order.</p>
@@ -443,9 +432,9 @@ S05,5.428571429,4.4,2.444444444,4.714285714,1.625
 </table></div>
 </div>
 </div>
-<div id="writing-data" class="section level3" number="4.4.4">
+<div id="writing-data" class="section level3" number="4.3.4">
 <h3>
-<span class="header-section-number">4.4.4</span> Writing Data<a class="anchor" aria-label="anchor" href="#writing-data"><i class="fas fa-link"></i></a>
+<span class="header-section-number">4.3.4</span> Writing Data<a class="anchor" aria-label="anchor" href="#writing-data"><i class="fas fa-link"></i></a>
 </h3>
 <p>If you have data that you want to save to a CSV file, use <code><a href="https://readr.tidyverse.org/reference/write_delim.html">readr::write_csv()</a></code>, as follows.</p>
 <div class="sourceCode" id="cb139"><pre class="downlit sourceCode r">
@@ -462,14 +451,14 @@ S05,5.428571429,4.4,2.444444444,4.714285714,1.625
 <p>We'll be working with <a class="glossary" target="_blank" title="Data in a rectangular table format, where each row has an entry for each column." href="https://psyteachr.github.io/glossary/t#tabular-data">tabular data</a> a lot in this class, but tabular data is made up of <a class="glossary" target="_blank" title="A type of data structure that is basically a list of things like T/F values, numbers, or strings." href="https://psyteachr.github.io/glossary/v#vector">vectors</a>, which group together data with the same basic <a class="glossary" target="_blank" title="The kind of data represented by an object." href="https://psyteachr.github.io/glossary/d#data-type">data type</a>. The following sections explain some of this terminology to help you understand the functions we'll be learning to process and analyse data.</p>
 </div>
 </div>
-<div id="data_types" class="section level2" number="4.5">
+<div id="data_types" class="section level2" number="4.4">
 <h2>
-<span class="header-section-number">4.5</span> Basic data types<a class="anchor" aria-label="anchor" href="#data_types"><i class="fas fa-link"></i></a>
+<span class="header-section-number">4.4</span> Basic data types<a class="anchor" aria-label="anchor" href="#data_types"><i class="fas fa-link"></i></a>
 </h2>
 <p>Data can be numbers, words, true/false values or combinations of these. In order to understand some later concepts, it's useful to have a basic understanding of <a class="glossary" target="_blank" title="The kind of data represented by an object." href="https://psyteachr.github.io/glossary/d#data-type">data types</a> in R: <a class="glossary" target="_blank" title="A data type representing a real decimal number or integer." href="https://psyteachr.github.io/glossary/n#numeric">numeric</a>, <a class="glossary" target="_blank" title="A data type representing strings of text." href="https://psyteachr.github.io/glossary/c#character">character</a>, and <a class="glossary" target="_blank" title="A data type representing TRUE or FALSE values." href="https://psyteachr.github.io/glossary/l#logical">logical</a> There is also a specific data type called a <a class="glossary" target="_blank" title="A data type where a specific set of values are stored with labels; An explanatory variable manipulated by the experimenter" href="https://psyteachr.github.io/glossary/f#factor">factor</a>, which will probably give you a headache sooner or later, but we can ignore it for now.</p>
-<div id="numeric-data" class="section level3" number="4.5.1">
+<div id="numeric-data" class="section level3" number="4.4.1">
 <h3>
-<span class="header-section-number">4.5.1</span> Numeric data<a class="anchor" aria-label="anchor" href="#numeric-data"><i class="fas fa-link"></i></a>
+<span class="header-section-number">4.4.1</span> Numeric data<a class="anchor" aria-label="anchor" href="#numeric-data"><i class="fas fa-link"></i></a>
 </h3>
 <p>All of the real numbers are <a class="glossary" target="_blank" title="A data type representing a real decimal number or integer." href="https://psyteachr.github.io/glossary/n#numeric">numeric</a> data types (imaginary numbers are "complex"). There are two types of numeric data, <a class="glossary" target="_blank" title="A data type representing whole numbers." href="https://psyteachr.github.io/glossary/i#integer">integer</a> and <a class="glossary" target="_blank" title="A data type representing a real decimal number" href="https://psyteachr.github.io/glossary/d#double">double</a>. Integers are the whole numbers, like -1, 0 and 1. Doubles are numbers that can have fractional amounts. If you just type a plain number such as <code>10</code>, it is stored as a double, even if it doesn't have a decimal point. If you want it to be an exact integer, use the <code>L</code> suffix (10L).</p>
 <p>If you ever want to know the data type of something, use the <code>typeof</code> function.</p>
@@ -491,9 +480,9 @@ S05,5.428571429,4.4,2.444444444,4.714285714,1.625
 ## [1] TRUE
 ## [1] FALSE</code></pre>
 </div>
-<div id="character-data" class="section level3" number="4.5.2">
+<div id="character-data" class="section level3" number="4.4.2">
 <h3>
-<span class="header-section-number">4.5.2</span> Character data<a class="anchor" aria-label="anchor" href="#character-data"><i class="fas fa-link"></i></a>
+<span class="header-section-number">4.4.2</span> Character data<a class="anchor" aria-label="anchor" href="#character-data"><i class="fas fa-link"></i></a>
 </h3>
 <p><a class="glossary" target="_blank" title="A data type representing strings of text." href="https://psyteachr.github.io/glossary/c#character">Character</a> strings are any text between quotation marks.</p>
 <div class="sourceCode" id="cb144"><pre class="downlit sourceCode r">
@@ -507,9 +496,9 @@ S05,5.428571429,4.4,2.444444444,4.714285714,1.625
 <span class="fu"><a href="https://rdrr.io/r/base/cat.html">cat</a></span><span class="op">(</span><span class="va">my_string</span><span class="op">)</span> <span class="co"># cat() prints the arguments</span></code></pre></div>
 <pre><code>## The instructor said, "R is cool," and the class agreed.</code></pre>
 </div>
-<div id="logical-data" class="section level3" number="4.5.3">
+<div id="logical-data" class="section level3" number="4.4.3">
 <h3>
-<span class="header-section-number">4.5.3</span> Logical Data<a class="anchor" aria-label="anchor" href="#logical-data"><i class="fas fa-link"></i></a>
+<span class="header-section-number">4.4.3</span> Logical Data<a class="anchor" aria-label="anchor" href="#logical-data"><i class="fas fa-link"></i></a>
 </h3>
 <p><a class="glossary" target="_blank" title="A data type representing TRUE or FALSE values." href="https://psyteachr.github.io/glossary/l#logical">Logical</a> data (also sometimes called "boolean" values) is one of two values: true or false. In R, we always write them in uppercase: <code>TRUE</code> and <code>FALSE</code>.</p>
 <div class="sourceCode" id="cb148"><pre class="downlit sourceCode r">
@@ -611,14 +600,14 @@ S05,5.428571429,4.4,2.444444444,4.714285714,1.625
 </div>
 </div>
 </div>
-<div id="containers" class="section level2" number="4.6">
+<div id="containers" class="section level2" number="4.5">
 <h2>
-<span class="header-section-number">4.6</span> Basic container types<a class="anchor" aria-label="anchor" href="#containers"><i class="fas fa-link"></i></a>
+<span class="header-section-number">4.5</span> Basic container types<a class="anchor" aria-label="anchor" href="#containers"><i class="fas fa-link"></i></a>
 </h2>
 <p>Individual data values can be grouped together into containers. The main types of containers we'll work with are vectors, lists, and data tables.</p>
-<div id="vectors" class="section level3" number="4.6.1">
+<div id="vectors" class="section level3" number="4.5.1">
 <h3>
-<span class="header-section-number">4.6.1</span> Vectors<a class="anchor" aria-label="anchor" href="#vectors"><i class="fas fa-link"></i></a>
+<span class="header-section-number">4.5.1</span> Vectors<a class="anchor" aria-label="anchor" href="#vectors"><i class="fas fa-link"></i></a>
 </h3>
 <p>A <a class="glossary" target="_blank" title="A type of data structure that is basically a list of things like T/F values, numbers, or strings." href="https://psyteachr.github.io/glossary/v#vector">vector</a> in R is like a vector in mathematics: a set of ordered elements. All of the elements in a vector must be of the same <strong>data type</strong> (numeric, character, logical). You can create a vector by enclosing the elements in the function <code><a href="https://rdrr.io/r/base/c.html">c()</a></code>.</p>
 <div class="sourceCode" id="cb152"><pre class="downlit sourceCode r">
@@ -637,9 +626,9 @@ S05,5.428571429,4.4,2.444444444,4.714285714,1.625
 <div class="warning">
 <p>You can't mix data types in a vector; all elements of the vector must be the same data type. If you mix them, R will "coerce" them so that they are all the same. If you mix doubles and integers, the integers will be changed to doubles. If you mix characters and numeric types, the numbers will be coerced to characters, so <code>10</code> would turn into "10".</p>
 </div>
-<div id="selecting-values-from-a-vector" class="section level4" number="4.6.1.1">
+<div id="selecting-values-from-a-vector" class="section level4" number="4.5.1.1">
 <h4>
-<span class="header-section-number">4.6.1.1</span> Selecting values from a vector<a class="anchor" aria-label="anchor" href="#selecting-values-from-a-vector"><i class="fas fa-link"></i></a>
+<span class="header-section-number">4.5.1.1</span> Selecting values from a vector<a class="anchor" aria-label="anchor" href="#selecting-values-from-a-vector"><i class="fas fa-link"></i></a>
 </h4>
 <p>If we wanted to pick specific values out of a vector by position, we can use square brackets (an <a class="glossary" target="_blank" title="A symbol used to get values from a container object, such as [, [[, or $" href="https://psyteachr.github.io/glossary/e#extract-operator">extract operator</a>, or <code>[]</code>) after the vector.</p>
 <div class="sourceCode" id="cb155"><pre class="downlit sourceCode r">
@@ -677,9 +666,9 @@ S05,5.428571429,4.4,2.444444444,4.714285714,1.625
 <pre><code>## [1] 26
 ##  [1] "A" "C" "E" "G" "I" "K" "M" "O" "Q" "S" "U" "W" "Y"</code></pre>
 </div>
-<div id="rep_seq" class="section level4" number="4.6.1.2">
+<div id="rep_seq" class="section level4" number="4.5.1.2">
 <h4>
-<span class="header-section-number">4.6.1.2</span> Repeating Sequences<a class="anchor" aria-label="anchor" href="#rep_seq"><i class="fas fa-link"></i></a>
+<span class="header-section-number">4.5.1.2</span> Repeating Sequences<a class="anchor" aria-label="anchor" href="#rep_seq"><i class="fas fa-link"></i></a>
 </h4>
 <p>Here are some useful tricks to save typing when creating vectors.</p>
 <p>In the command <code>x:y</code> the <code><a href="https://rdrr.io/r/base/Colon.html">:</a></code> operator would give you the sequence of number starting at <code>x</code>, and going to <code>y</code> in increments of 1.</p>
@@ -716,9 +705,9 @@ S05,5.428571429,4.4,2.444444444,4.714285714,1.625
 <span class="va">subject_ids</span><span class="op">[</span><span class="va">yynn</span><span class="op">]</span></code></pre></div>
 <pre><code>##  [1]  1  2  5  6  9 10 13 14 17 18 21 22 25 26 29 30 33 34 37 38</code></pre>
 </div>
-<div id="vectorized_ops" class="section level4" number="4.6.1.3">
+<div id="vectorized_ops" class="section level4" number="4.5.1.3">
 <h4>
-<span class="header-section-number">4.6.1.3</span> Vectorized Operations<a class="anchor" aria-label="anchor" href="#vectorized_ops"><i class="fas fa-link"></i></a>
+<span class="header-section-number">4.5.1.3</span> Vectorized Operations<a class="anchor" aria-label="anchor" href="#vectorized_ops"><i class="fas fa-link"></i></a>
 </h4>
 <p>R performs calculations on vectors in a special way. Let's look at an example using <span class="math inline">\(z\)</span>-scores. A <span class="math inline">\(z\)</span>-score is a <a class="glossary" target="_blank" title="A score minus the mean" href="https://psyteachr.github.io/glossary/d#deviation-score">deviation score</a>(a score minus a mean) divided by a standard deviation. Let's say we have a set of four IQ scores.</p>
 <div class="sourceCode" id="cb174"><pre class="downlit sourceCode r">
@@ -739,9 +728,9 @@ S05,5.428571429,4.4,2.444444444,4.714285714,1.625
 <p>You can see that it computed all four <span class="math inline">\(z\)</span>-scores with a single line of code. In later chapters, we'll use vectorised operations to process our data, such as reverse-scoring some questionnaire items.</p>
 </div>
 </div>
-<div id="lists" class="section level3" number="4.6.2">
+<div id="lists" class="section level3" number="4.5.2">
 <h3>
-<span class="header-section-number">4.6.2</span> Lists<a class="anchor" aria-label="anchor" href="#lists"><i class="fas fa-link"></i></a>
+<span class="header-section-number">4.5.2</span> Lists<a class="anchor" aria-label="anchor" href="#lists"><i class="fas fa-link"></i></a>
 </h3>
 <p>Recall that vectors can contain data of only one type. What if you want to store a collection of data of different data types? For that purpose you would use a <a class="glossary" target="_blank" title="A container data type that allows items with different data types to be grouped together." href="https://psyteachr.github.io/glossary/l#list">list</a>. Define a list using the <code><a href="https://rdrr.io/r/base/list.html">list()</a></code> function.</p>
 <div class="sourceCode" id="cb179"><pre class="downlit sourceCode r">
@@ -772,16 +761,16 @@ S05,5.428571429,4.4,2.444444444,4.714285714,1.625
 <span class="va">dollar</span>   <span class="op">&lt;-</span> <span class="va">data_types</span><span class="op">$</span><span class="va">double</span></code></pre></div>
 </div>
 </div>
-<div id="tables-data" class="section level3" number="4.6.3">
+<div id="tables-data" class="section level3" number="4.5.3">
 <h3>
-<span class="header-section-number">4.6.3</span> Tables<a class="anchor" aria-label="anchor" href="#tables-data"><i class="fas fa-link"></i></a>
+<span class="header-section-number">4.5.3</span> Tables<a class="anchor" aria-label="anchor" href="#tables-data"><i class="fas fa-link"></i></a>
 </h3>
 <p>The built-in, imported, and created data above are <a class="glossary" target="_blank" title="Data in a rectangular table format, where each row has an entry for each column." href="https://psyteachr.github.io/glossary/t#tabular-data">tabular data</a>, data arranged in the form of a table.</p>
 <p>Tabular data structures allow for a collection of data of different types (characters, integers, logical, etc.) but subject to the constraint that each "column" of the table (element of the list) must have the same number of elements. The base R version of a table is called a <code>data.frame</code>, while the 'tidyverse' version is called a <code>tibble</code>. Tibbles are far easier to work with, so we'll be using those. To learn more about differences between these two data structures, see <code>vignette("tibble")</code>.</p>
 <p>Tabular data becomes especially important for when we talk about <a class="glossary" target="_blank" title="A format for data that maps the meaning onto the structure." href="https://psyteachr.github.io/glossary/t#tidy-data">tidy data</a> in <a href="tidyr.html#tidyr">chapter 4</a>, which consists of a set of simple principles for structuring data.</p>
-<div id="creating-a-table" class="section level4" number="4.6.3.1">
+<div id="creating-a-table" class="section level4" number="4.5.3.1">
 <h4>
-<span class="header-section-number">4.6.3.1</span> Creating a table<a class="anchor" aria-label="anchor" href="#creating-a-table"><i class="fas fa-link"></i></a>
+<span class="header-section-number">4.5.3.1</span> Creating a table<a class="anchor" aria-label="anchor" href="#creating-a-table"><i class="fas fa-link"></i></a>
 </h4>
 <p>We learned how to create a table by importing a Excel or CSV file, and creating a table from scratch using the <code>tibble()</code> function. You can also use the <code><a href="https://tibble.tidyverse.org/reference/tribble.html">tibble::tribble()</a></code> function to create a table by row, rather than by column. You start by listing the column names, each preceded by a tilde (<code><a href="https://rdrr.io/r/base/tilde.html">~</a></code>), then you list the values for each column, row by row, separated by commas (don't forget a comma at the end of each row). This method can be easier for some data, but doesn't let you use shortcuts, like setting all of the values in a column to the same value or a <a href="data.html#rep_seq">repeating sequence</a>.</p>
 <div class="sourceCode" id="cb184"><pre class="downlit sourceCode r">
@@ -801,9 +790,9 @@ S05,5.428571429,4.4,2.444444444,4.714285714,1.625
   <span class="st">"Azula"</span>,  <span class="st">"fire"</span>,        <span class="cn">FALSE</span>
 <span class="op">)</span></code></pre></div>
 </div>
-<div id="table-info" class="section level4" number="4.6.3.2">
+<div id="table-info" class="section level4" number="4.5.3.2">
 <h4>
-<span class="header-section-number">4.6.3.2</span> Table info<a class="anchor" aria-label="anchor" href="#table-info"><i class="fas fa-link"></i></a>
+<span class="header-section-number">4.5.3.2</span> Table info<a class="anchor" aria-label="anchor" href="#table-info"><i class="fas fa-link"></i></a>
 </h4>
 <p>We can get information about the table using the functions <code><a href="https://rdrr.io/r/base/nrow.html">ncol()</a></code> (number of columns), <code><a href="https://rdrr.io/r/base/nrow.html">nrow()</a></code> (number of rows), <code><a href="https://rdrr.io/r/base/dim.html">dim()</a></code> (the number of rows and number of columns), and <code><a href="https://rdrr.io/r/base/name.html">name()</a></code> (the column names).</p>
 <div class="sourceCode" id="cb185"><pre class="downlit sourceCode r">
@@ -816,9 +805,9 @@ S05,5.428571429,4.4,2.444444444,4.714285714,1.625
 ## [1] 3 3
 ## [1] "name"     "bends"    "friendly"</code></pre>
 </div>
-<div id="row-col-access" class="section level4" number="4.6.3.3">
+<div id="row-col-access" class="section level4" number="4.5.3.3">
 <h4>
-<span class="header-section-number">4.6.3.3</span> Accessing rows and columns<a class="anchor" aria-label="anchor" href="#row-col-access"><i class="fas fa-link"></i></a>
+<span class="header-section-number">4.5.3.3</span> Accessing rows and columns<a class="anchor" aria-label="anchor" href="#row-col-access"><i class="fas fa-link"></i></a>
 </h4>
 <p>There are various ways of accessing specific columns or rows from a table. The ones below are from <a class="glossary" target="_blank" title="The set of R functions that come with a basic installation of R, before you add external packages" href="https://psyteachr.github.io/glossary/b#base-r">base R</a> and are useful to know about, but you'll be learning easier (and more readable) ways in the <a href="tidyr.html#tidyr">tidyr</a> and <a href="dplyr.html#dplyr">dplyr</a> lessons. Examples of these base R accessing functions are provided here for reference, since you might see them in other people's scripts.</p>
 <div class="sourceCode" id="cb187"><pre class="downlit sourceCode r">
@@ -830,9 +819,9 @@ S05,5.428571429,4.4,2.444444444,4.714285714,1.625
 </div>
 </div>
 </div>
-<div id="troubleshooting" class="section level2" number="4.7">
+<div id="troubleshooting" class="section level2" number="4.6">
 <h2>
-<span class="header-section-number">4.7</span> Troubleshooting<a class="anchor" aria-label="anchor" href="#troubleshooting"><i class="fas fa-link"></i></a>
+<span class="header-section-number">4.6</span> Troubleshooting<a class="anchor" aria-label="anchor" href="#troubleshooting"><i class="fas fa-link"></i></a>
 </h2>
 <p>What if you import some data and it guesses the wrong column type? The most common reason is that a numeric column has some non-numbers in it somewhere. Maybe someone wrote a note in an otherwise numeric column. Columns have to be all one data type, so if there are any characters, the whole column is converted to character strings, and numbers like <code>1.2</code> get represented as "1.2", which will cause very weird errors like <code>"100" &lt; "9" == TRUE</code>. You can catch this by looking at the output from <code>read_csv()</code> or using <code>glimpse()</code> to check your data.</p>
 <p>The data directory you created with <code><a href="https://rdrr.io/pkg/reprores/man/getdata.html">reprores::getdata()</a></code> contains a file called "mess.csv". Let's try loading this dataset.</p>
@@ -1456,9 +1445,9 @@ junk,4,2.03,d,T,4 - 5,2020-01-4</code></pre>
 </table></div>
 </div>
 </div>
-<div id="glossary-data" class="section level2" number="4.8">
+<div id="glossary-data" class="section level2" number="4.7">
 <h2>
-<span class="header-section-number">4.8</span> Glossary<a class="anchor" aria-label="anchor" href="#glossary-data"><i class="fas fa-link"></i></a>
+<span class="header-section-number">4.7</span> Glossary<a class="anchor" aria-label="anchor" href="#glossary-data"><i class="fas fa-link"></i></a>
 </h2>
 <div class="inline-table"><table class="table table-sm">
 <colgroup>
@@ -1556,6 +1545,17 @@ junk,4,2.03,d,T,4 - 5,2020-01-4</code></pre>
 </tr>
 </tbody>
 </table></div>
+</div>
+<div id="resources-data" class="section level2" number="4.8">
+<h2>
+<span class="header-section-number">4.8</span> Further Resources<a class="anchor" aria-label="anchor" href="#resources-data"><i class="fas fa-link"></i></a>
+</h2>
+<ul>
+<li>
+<a href="http://r4ds.had.co.nz/data-import.html">Chapter 11: Data Import</a> in <em>R for Data Science</em>
+</li>
+<li><a href="https://github.com/rstudio/cheatsheets/raw/master/data-import.pdf">RStudio Data Import Cheatsheet</a></li>
+</ul>
 </div>
 </div>
 <div class="psyteachr_footer">
@@ -1684,33 +1684,33 @@ $( document ).ready(function() {
     <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
       <ul class="nav navbar-nav">
 <li><a class="nav-link" href="#data"><span class="header-section-number">4</span> Working with Data</a></li>
-<li><a class="nav-link" href="#ilo2"><span class="header-section-number">4.1</span> Learning Objectives</a></li>
-<li><a class="nav-link" href="#resources2"><span class="header-section-number">4.2</span> Resources</a></li>
-<li><a class="nav-link" href="#setup2"><span class="header-section-number">4.3</span> Setup</a></li>
+<li><a class="nav-link" href="#ilo-data"><span class="header-section-number">4.1</span> Learning Objectives</a></li>
+<li><a class="nav-link" href="#setup-data"><span class="header-section-number">4.2</span> Setup</a></li>
 <li>
-<a class="nav-link" href="#data-tables"><span class="header-section-number">4.4</span> Data tables</a><ul class="nav navbar-nav">
-<li><a class="nav-link" href="#builtin"><span class="header-section-number">4.4.1</span> Built-in data</a></li>
-<li><a class="nav-link" href="#import_data"><span class="header-section-number">4.4.2</span> Importing data</a></li>
-<li><a class="nav-link" href="#creating-data"><span class="header-section-number">4.4.3</span> Creating data</a></li>
-<li><a class="nav-link" href="#writing-data"><span class="header-section-number">4.4.4</span> Writing Data</a></li>
+<a class="nav-link" href="#data-tables"><span class="header-section-number">4.3</span> Data tables</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#builtin"><span class="header-section-number">4.3.1</span> Built-in data</a></li>
+<li><a class="nav-link" href="#import_data"><span class="header-section-number">4.3.2</span> Importing data</a></li>
+<li><a class="nav-link" href="#creating-data"><span class="header-section-number">4.3.3</span> Creating data</a></li>
+<li><a class="nav-link" href="#writing-data"><span class="header-section-number">4.3.4</span> Writing Data</a></li>
 </ul>
 </li>
 <li>
-<a class="nav-link" href="#data_types"><span class="header-section-number">4.5</span> Basic data types</a><ul class="nav navbar-nav">
-<li><a class="nav-link" href="#numeric-data"><span class="header-section-number">4.5.1</span> Numeric data</a></li>
-<li><a class="nav-link" href="#character-data"><span class="header-section-number">4.5.2</span> Character data</a></li>
-<li><a class="nav-link" href="#logical-data"><span class="header-section-number">4.5.3</span> Logical Data</a></li>
+<a class="nav-link" href="#data_types"><span class="header-section-number">4.4</span> Basic data types</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#numeric-data"><span class="header-section-number">4.4.1</span> Numeric data</a></li>
+<li><a class="nav-link" href="#character-data"><span class="header-section-number">4.4.2</span> Character data</a></li>
+<li><a class="nav-link" href="#logical-data"><span class="header-section-number">4.4.3</span> Logical Data</a></li>
 </ul>
 </li>
 <li>
-<a class="nav-link" href="#containers"><span class="header-section-number">4.6</span> Basic container types</a><ul class="nav navbar-nav">
-<li><a class="nav-link" href="#vectors"><span class="header-section-number">4.6.1</span> Vectors</a></li>
-<li><a class="nav-link" href="#lists"><span class="header-section-number">4.6.2</span> Lists</a></li>
-<li><a class="nav-link" href="#tables-data"><span class="header-section-number">4.6.3</span> Tables</a></li>
+<a class="nav-link" href="#containers"><span class="header-section-number">4.5</span> Basic container types</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#vectors"><span class="header-section-number">4.5.1</span> Vectors</a></li>
+<li><a class="nav-link" href="#lists"><span class="header-section-number">4.5.2</span> Lists</a></li>
+<li><a class="nav-link" href="#tables-data"><span class="header-section-number">4.5.3</span> Tables</a></li>
 </ul>
 </li>
-<li><a class="nav-link" href="#troubleshooting"><span class="header-section-number">4.7</span> Troubleshooting</a></li>
-<li><a class="nav-link" href="#glossary-data"><span class="header-section-number">4.8</span> Glossary</a></li>
+<li><a class="nav-link" href="#troubleshooting"><span class="header-section-number">4.6</span> Troubleshooting</a></li>
+<li><a class="nav-link" href="#glossary-data"><span class="header-section-number">4.7</span> Glossary</a></li>
+<li><a class="nav-link" href="#resources-data"><span class="header-section-number">4.8</span> Further Resources</a></li>
 </ul>
 
       <div class="book-extra">
@@ -1728,7 +1728,7 @@ $( document ).ready(function() {
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Data Skills for Reproducible Research</strong>: v2" was written by . It was last built on 2021-08-31.</p>
+    <p>"<strong>Data Skills for Reproducible Research</strong>: v2" was written by . It was last built on 2021-09-03.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

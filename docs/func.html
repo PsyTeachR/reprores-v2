@@ -85,9 +85,9 @@
 <div class="right meme">
 <img src="images/memes/functions.jpg" alt="History channel aliens conspiracy guy. Top text: I've got function inside functions...; Bottom text: ... inside functions.">
 </div>
-<div id="ilo7" class="section level2" number="9.1">
+<div id="ilo-func" class="section level2" number="9.1">
 <h2>
-<span class="header-section-number">9.1</span> Learning Objectives<a class="anchor" aria-label="anchor" href="#ilo7"><i class="fas fa-link"></i></a>
+<span class="header-section-number">9.1</span> Learning Objectives<a class="anchor" aria-label="anchor" href="#ilo-func"><i class="fas fa-link"></i></a>
 </h2>
 <p>You will learn about functions and iteration by using simulation to calculate a power analysis for an independent samples t-test.</p>
 <div id="basic-5" class="section level3 unnumbered">
@@ -129,22 +129,12 @@
 <li>Capture and deal with errors using 'adverb' functions <code><a href="https://purrr.tidyverse.org/reference/safely.html">purrr::safely()</a></code> and <code><a href="https://purrr.tidyverse.org/reference/safely.html">purrr::possibly()</a></code>
 </li>
 </ol>
-</div>
-</div>
-<div id="resources7" class="section level2" number="9.2">
-<h2>
-<span class="header-section-number">9.2</span> Resources<a class="anchor" aria-label="anchor" href="#resources7"><i class="fas fa-link"></i></a>
-</h2>
-<ul>
-<li>Chapters 19 and 21 of <a href="http://r4ds.had.co.nz">R for Data Science</a>
-</li>
-<li><a href="https://github.com/rstudio/cheatsheets/raw/master/purrr.pdf">RStudio Apply Functions Cheatsheet</a></li>
-</ul>
 <p>In the next two lectures, we are going to learn more about <a class="glossary" target="_blank" title="Repeating a process or function" href="https://psyteachr.github.io/glossary/i#iteration">iteration</a> (doing the same commands over and over) and custom <a class="glossary" target="_blank" title="A named section of code that can be reused." href="https://psyteachr.github.io/glossary/f#function">functions</a> through a data simulation exercise, which will also lead us into more traditional statistical topics.</p>
 </div>
-<div id="setup7" class="section level2" number="9.3">
+</div>
+<div id="setup-func" class="section level2" number="9.2">
 <h2>
-<span class="header-section-number">9.3</span> Setup<a class="anchor" aria-label="anchor" href="#setup7"><i class="fas fa-link"></i></a>
+<span class="header-section-number">9.2</span> Setup<a class="anchor" aria-label="anchor" href="#setup-func"><i class="fas fa-link"></i></a>
 </h2>
 <div class="sourceCode" id="cb352"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># libraries needed for these examples</span>
@@ -153,14 +143,14 @@
 
 <span class="fu"><a href="https://rdrr.io/r/base/Random.html">set.seed</a></span><span class="op">(</span><span class="fl">8675309</span><span class="op">)</span> <span class="co"># makes sure random numbers are reproducible</span></code></pre></div>
 </div>
-<div id="iteration-functions" class="section level2" number="9.4">
+<div id="iteration-functions" class="section level2" number="9.3">
 <h2>
-<span class="header-section-number">9.4</span> Iteration functions<a class="anchor" aria-label="anchor" href="#iteration-functions"><i class="fas fa-link"></i></a>
+<span class="header-section-number">9.3</span> Iteration functions<a class="anchor" aria-label="anchor" href="#iteration-functions"><i class="fas fa-link"></i></a>
 </h2>
 <p>We first learned about the two basic iteration functions, <code><a href="https://rdrr.io/r/base/rep.html">rep()</a></code> and <code><a href="https://rdrr.io/r/base/seq.html">seq()</a></code> in the <a href="data.html#rep_seq">Working with Data</a> chapter.</p>
-<div id="rep" class="section level3" number="9.4.1">
+<div id="rep" class="section level3" number="9.3.1">
 <h3>
-<span class="header-section-number">9.4.1</span> rep()<a class="anchor" aria-label="anchor" href="#rep"><i class="fas fa-link"></i></a>
+<span class="header-section-number">9.3.1</span> rep()<a class="anchor" aria-label="anchor" href="#rep"><i class="fas fa-link"></i></a>
 </h3>
 <p>The function <code><a href="https://rdrr.io/r/base/rep.html">rep()</a></code> lets you repeat the first argument a number of times.</p>
 <p>Use <code><a href="https://rdrr.io/r/base/rep.html">rep()</a></code> to create a vector of alternating <code>"A"</code> and <code>"B"</code> values of length 24.</p>
@@ -187,9 +177,9 @@
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/rep.html">rep</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"A"</span>, <span class="st">"B"</span><span class="op">)</span>, times <span class="op">=</span> <span class="fl">3</span>, each <span class="op">=</span> <span class="fl">2</span><span class="op">)</span></code></pre></div>
 <pre><code>##  [1] "A" "A" "B" "B" "A" "A" "B" "B" "A" "A" "B" "B"</code></pre>
 </div>
-<div id="seq" class="section level3" number="9.4.2">
+<div id="seq" class="section level3" number="9.3.2">
 <h3>
-<span class="header-section-number">9.4.2</span> seq()<a class="anchor" aria-label="anchor" href="#seq"><i class="fas fa-link"></i></a>
+<span class="header-section-number">9.3.2</span> seq()<a class="anchor" aria-label="anchor" href="#seq"><i class="fas fa-link"></i></a>
 </h3>
 <p>The function <code><a href="https://rdrr.io/r/base/seq.html">seq()</a></code> is useful for generating a sequence of numbers with some pattern.</p>
 <p>Use <code><a href="https://rdrr.io/r/base/seq.html">seq()</a></code> to create a vector of the integers 0 to 10.</p>
@@ -207,9 +197,9 @@
 ##  [7]  50.000000  58.333333  66.666667  75.000000  83.333333  91.666667
 ## [13] 100.000000</code></pre>
 </div>
-<div id="replicate" class="section level3" number="9.4.3">
+<div id="replicate" class="section level3" number="9.3.3">
 <h3>
-<span class="header-section-number">9.4.3</span> replicate()<a class="anchor" aria-label="anchor" href="#replicate"><i class="fas fa-link"></i></a>
+<span class="header-section-number">9.3.3</span> replicate()<a class="anchor" aria-label="anchor" href="#replicate"><i class="fas fa-link"></i></a>
 </h3>
 <p>You can use the <code><a href="https://rdrr.io/r/base/lapply.html">replicate()</a></code> function to run a function <code>n</code> times.</p>
 <p>For example, you can get 3 sets of 5 numbers from a random normal distribution by setting <code>n</code> to <code>3</code> and <code>expr</code> to <code><a href="https://rdrr.io/r/stats/Normal.html">rnorm(5)</a></code>.</p>
@@ -233,9 +223,9 @@
 ## [[3]]
 ## [1]  0.6832342  0.6902011  0.5334919 -0.1861048  0.3829458</code></pre>
 </div>
-<div id="map-apply" class="section level3" number="9.4.4">
+<div id="map-apply" class="section level3" number="9.3.4">
 <h3>
-<span class="header-section-number">9.4.4</span> map() and apply() functions<a class="anchor" aria-label="anchor" href="#map-apply"><i class="fas fa-link"></i></a>
+<span class="header-section-number">9.3.4</span> map() and apply() functions<a class="anchor" aria-label="anchor" href="#map-apply"><i class="fas fa-link"></i></a>
 </h3>
 <p><code><a href="https://purrr.tidyverse.org/reference/map.html">purrr::map()</a></code> and <code><a href="https://rdrr.io/r/base/lapply.html">lapply()</a></code> return a list of the same length as a vector or list, each element of which is the result of applying a function to the corresponding element. They function much the same, but purrr functions have some optimisations for working with the tidyverse. We'll be working mostly with purrr functions in this course, but apply functions are very common in code that you might see in examples on the web.</p>
 <p>Imagine you want to calculate the power for a two-sample t-test with a mean difference of 0.2 and SD of 1, for all the sample sizes 100 to 1000 (by 100s). You could run the <code><a href="https://rdrr.io/r/stats/power.t.test.html">power.t.test()</a></code> function 20 times and extract the values for "power" from the resulting list and put it in a table.</p>
@@ -334,14 +324,14 @@ Figure 9.1: Power for a two-sample t-test with d = 0.2
 </div>
 </div>
 </div>
-<div id="custom-functions" class="section level2" number="9.5">
+<div id="custom-functions" class="section level2" number="9.4">
 <h2>
-<span class="header-section-number">9.5</span> Custom functions<a class="anchor" aria-label="anchor" href="#custom-functions"><i class="fas fa-link"></i></a>
+<span class="header-section-number">9.4</span> Custom functions<a class="anchor" aria-label="anchor" href="#custom-functions"><i class="fas fa-link"></i></a>
 </h2>
 <p>In addition to the built-in functions and functions you can access from packages, you can also write your own functions (and eventually even packages!).</p>
-<div id="structure-function" class="section level3" number="9.5.1">
+<div id="structure-function" class="section level3" number="9.4.1">
 <h3>
-<span class="header-section-number">9.5.1</span> Structuring a function<a class="anchor" aria-label="anchor" href="#structure-function"><i class="fas fa-link"></i></a>
+<span class="header-section-number">9.4.1</span> Structuring a function<a class="anchor" aria-label="anchor" href="#structure-function"><i class="fas fa-link"></i></a>
 </h3>
 <p>The general structure of a function is as follows:</p>
 <div class="sourceCode" id="cb384"><pre class="downlit sourceCode r">
@@ -363,18 +353,18 @@ Figure 9.1: Power for a two-sample t-test with d = 0.2
 <code class="sourceCode R"><span class="va">report_p</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="op">)</span> <span class="op">{</span>
 <span class="op">}</span></code></pre></div>
 </div>
-<div id="arguments" class="section level3" number="9.5.2">
+<div id="arguments" class="section level3" number="9.4.2">
 <h3>
-<span class="header-section-number">9.5.2</span> Arguments<a class="anchor" aria-label="anchor" href="#arguments"><i class="fas fa-link"></i></a>
+<span class="header-section-number">9.4.2</span> Arguments<a class="anchor" aria-label="anchor" href="#arguments"><i class="fas fa-link"></i></a>
 </h3>
 <p>We need to add one <a class="glossary" target="_blank" title="A variable that provides input to a function." href="https://psyteachr.github.io/glossary/a#argument">argument</a>, the p-value you want to report. The names you choose for the arguments are private to that argument, so it is not a problem if they conflict with other variables in your script. You put the arguments in the parentheses of <code>function()</code> in the order you want them to default (just like the built-in functions you've used before).</p>
 <div class="sourceCode" id="cb388"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">report_p</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">p</span><span class="op">)</span> <span class="op">{</span>
 <span class="op">}</span></code></pre></div>
 </div>
-<div id="defaults" class="section level3" number="9.5.3">
+<div id="defaults" class="section level3" number="9.4.3">
 <h3>
-<span class="header-section-number">9.5.3</span> Argument defaults<a class="anchor" aria-label="anchor" href="#defaults"><i class="fas fa-link"></i></a>
+<span class="header-section-number">9.4.3</span> Argument defaults<a class="anchor" aria-label="anchor" href="#defaults"><i class="fas fa-link"></i></a>
 </h3>
 <p>You can add a default value to any argument. If that argument is skipped, then the function uses the default argument. It probably doesn't make sense to run this function without specifying the p-value, but we can add a second argument called <code>digits</code> that defaults to 3, so we can round p-values to any number of digits.</p>
 <div class="sourceCode" id="cb389"><pre class="downlit sourceCode r">
@@ -411,9 +401,9 @@ Figure 9.1: Power for a two-sample t-test with d = 0.2
 <pre><code>## [1] "p = 0.049"
 ## [1] "p &lt; .001"</code></pre>
 </div>
-<div id="scope" class="section level3" number="9.5.4">
+<div id="scope" class="section level3" number="9.4.4">
 <h3>
-<span class="header-section-number">9.5.4</span> Scope<a class="anchor" aria-label="anchor" href="#scope"><i class="fas fa-link"></i></a>
+<span class="header-section-number">9.4.4</span> Scope<a class="anchor" aria-label="anchor" href="#scope"><i class="fas fa-link"></i></a>
 </h3>
 <p>What happens in a function stays in a function. You can change the value of a variable passed to a function, but that won't change the value of the variable outside of the function, even if that variable has the same name as the one in the function.</p>
 <div class="sourceCode" id="cb394"><pre class="downlit sourceCode r">
@@ -426,9 +416,9 @@ Figure 9.1: Power for a two-sample t-test with d = 0.2
 <pre><code>## [1] "p = 0.002"
 ## [1] "not changed"</code></pre>
 </div>
-<div id="warnings-errors" class="section level3" number="9.5.5">
+<div id="warnings-errors" class="section level3" number="9.4.5">
 <h3>
-<span class="header-section-number">9.5.5</span> Warnings and errors<a class="anchor" aria-label="anchor" href="#warnings-errors"><i class="fas fa-link"></i></a>
+<span class="header-section-number">9.4.5</span> Warnings and errors<a class="anchor" aria-label="anchor" href="#warnings-errors"><i class="fas fa-link"></i></a>
 </h3>
 <div class="try">
 What happens when you omit the argument for <code>p</code>? Or if you set <code>p</code> to 1.5 or "a"?
@@ -467,22 +457,22 @@ What happens when you omit the argument for <code>p</code>? Or if you set <code>
 ## [1] "p = 2"</code></pre>
 </div>
 </div>
-<div id="iterating-your-own-functions" class="section level2" number="9.6">
+<div id="iterating-your-own-functions" class="section level2" number="9.5">
 <h2>
-<span class="header-section-number">9.6</span> Iterating your own functions<a class="anchor" aria-label="anchor" href="#iterating-your-own-functions"><i class="fas fa-link"></i></a>
+<span class="header-section-number">9.5</span> Iterating your own functions<a class="anchor" aria-label="anchor" href="#iterating-your-own-functions"><i class="fas fa-link"></i></a>
 </h2>
 <p>First, let's build up the code that we want to iterate.</p>
-<div id="rnorm" class="section level3" number="9.6.1">
+<div id="rnorm" class="section level3" number="9.5.1">
 <h3>
-<span class="header-section-number">9.6.1</span> rnorm()<a class="anchor" aria-label="anchor" href="#rnorm"><i class="fas fa-link"></i></a>
+<span class="header-section-number">9.5.1</span> rnorm()<a class="anchor" aria-label="anchor" href="#rnorm"><i class="fas fa-link"></i></a>
 </h3>
 <p>Create a vector of 20 random numbers drawn from a normal distribution with a mean of 5 and standard deviation of 1 using the <code><a href="https://rdrr.io/r/stats/Normal.html">rnorm()</a></code> function and store them in the variable <code>A</code>.</p>
 <div class="sourceCode" id="cb406"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">A</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span><span class="fl">20</span>, mean <span class="op">=</span> <span class="fl">5</span>, sd <span class="op">=</span> <span class="fl">1</span><span class="op">)</span></code></pre></div>
 </div>
-<div id="tibbletibble" class="section level3" number="9.6.2">
+<div id="tibbletibble" class="section level3" number="9.5.2">
 <h3>
-<span class="header-section-number">9.6.2</span> tibble::tibble()<a class="anchor" aria-label="anchor" href="#tibbletibble"><i class="fas fa-link"></i></a>
+<span class="header-section-number">9.5.2</span> tibble::tibble()<a class="anchor" aria-label="anchor" href="#tibbletibble"><i class="fas fa-link"></i></a>
 </h3>
 <p>A <code>tibble</code> is a type of table or <code>data.frame</code>. The function <code><a href="https://tibble.tidyverse.org/reference/tibble.html">tibble::tibble()</a></code> creates a tibble with a column for each argument. Each argument takes the form <code>column_name = data_vector</code>.</p>
 <p>Create a table called <code>dat</code> including two vectors: <code>A</code> that is a vector of 20 random normally distributed numbers with a mean of 5 and SD of 1, and <code>B</code> that is a vector of 20 random normally distributed numbers with a mean of 5.5 and SD of 1.</p>
@@ -492,9 +482,9 @@ What happens when you omit the argument for <code>p</code>? Or if you set <code>
   B <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span><span class="fl">20</span>, <span class="fl">5.5</span>, <span class="fl">1</span><span class="op">)</span>
 <span class="op">)</span></code></pre></div>
 </div>
-<div id="t.test" class="section level3" number="9.6.3">
+<div id="t.test" class="section level3" number="9.5.3">
 <h3>
-<span class="header-section-number">9.6.3</span> t.test()<a class="anchor" aria-label="anchor" href="#t.test"><i class="fas fa-link"></i></a>
+<span class="header-section-number">9.5.3</span> t.test()<a class="anchor" aria-label="anchor" href="#t.test"><i class="fas fa-link"></i></a>
 </h3>
 <p>You can run a Welch two-sample t-test by including the two samples you made as the first two arguments to the function <code>t.test</code>. You can reference one column of a table by its names using the format <code>table_name$column_name</code></p>
 <div class="sourceCode" id="cb408"><pre class="downlit sourceCode r">
@@ -527,9 +517,9 @@ What happens when you omit the argument for <code>p</code>? Or if you set <code>
 ## mean in group A mean in group B 
 ##        4.886096        5.466453</code></pre>
 </div>
-<div id="broomtidy" class="section level3" number="9.6.4">
+<div id="broomtidy" class="section level3" number="9.5.4">
 <h3>
-<span class="header-section-number">9.6.4</span> broom::tidy()<a class="anchor" aria-label="anchor" href="#broomtidy"><i class="fas fa-link"></i></a>
+<span class="header-section-number">9.5.4</span> broom::tidy()<a class="anchor" aria-label="anchor" href="#broomtidy"><i class="fas fa-link"></i></a>
 </h3>
 <p>You can use the function <code><a href="https://generics.r-lib.org/reference/tidy.html">broom::tidy()</a></code> to extract the data from a statistical test in a table format. The example below pipes everything together.</p>
 <div class="sourceCode" id="cb412"><pre class="downlit sourceCode r">
@@ -595,9 +585,9 @@ What happens when you omit the argument for <code>p</code>? Or if you set <code>
   <span class="fu">pull</span><span class="op">(</span><span class="va">p.value</span><span class="op">)</span></code></pre></div>
 <pre><code>## [1] 0.7075268</code></pre>
 </div>
-<div id="custom-function-t_sim" class="section level3" number="9.6.5">
+<div id="custom-function-t_sim" class="section level3" number="9.5.5">
 <h3>
-<span class="header-section-number">9.6.5</span> Custom function: t_sim()<a class="anchor" aria-label="anchor" href="#custom-function-t_sim"><i class="fas fa-link"></i></a>
+<span class="header-section-number">9.5.5</span> Custom function: t_sim()<a class="anchor" aria-label="anchor" href="#custom-function-t_sim"><i class="fas fa-link"></i></a>
 </h3>
 <p>First, name your function <code>t_sim</code> and wrap the code above in a function with no arguments.</p>
 <div class="sourceCode" id="cb415"><pre class="downlit sourceCode r">
@@ -616,9 +606,9 @@ What happens when you omit the argument for <code>p</code>? Or if you set <code>
 <code class="sourceCode R"><span class="fu">t_sim</span><span class="op">(</span><span class="op">)</span></code></pre></div>
 <pre><code>## [1] 0.00997552</code></pre>
 </div>
-<div id="iterate-t_sim" class="section level3" number="9.6.6">
+<div id="iterate-t_sim" class="section level3" number="9.5.6">
 <h3>
-<span class="header-section-number">9.6.6</span> Iterate t_sim()<a class="anchor" aria-label="anchor" href="#iterate-t_sim"><i class="fas fa-link"></i></a>
+<span class="header-section-number">9.5.6</span> Iterate t_sim()<a class="anchor" aria-label="anchor" href="#iterate-t_sim"><i class="fas fa-link"></i></a>
 </h3>
 <p>Let's run the <code>t_sim</code> function 1000 times, assign the resulting p-values to a vector called <code>reps</code>, and check what proportion of p-values are lower than alpha (e.g., .05). This number is the power for this analysis.</p>
 <div class="sourceCode" id="cb418"><pre class="downlit sourceCode r">
@@ -628,9 +618,9 @@ What happens when you omit the argument for <code>p</code>? Or if you set <code>
 <span class="va">power</span></code></pre></div>
 <pre><code>## [1] 0.328</code></pre>
 </div>
-<div id="seed" class="section level3" number="9.6.7">
+<div id="seed" class="section level3" number="9.5.7">
 <h3>
-<span class="header-section-number">9.6.7</span> Set seed<a class="anchor" aria-label="anchor" href="#seed"><i class="fas fa-link"></i></a>
+<span class="header-section-number">9.5.7</span> Set seed<a class="anchor" aria-label="anchor" href="#seed"><i class="fas fa-link"></i></a>
 </h3>
 <p>You can use the <code>set.seed</code> function before you run a function that uses random numbers to make sure that you get the same random data back each time. You can use any integer you like as the seed.</p>
 <div class="sourceCode" id="cb420"><pre class="downlit sourceCode r">
@@ -645,9 +635,9 @@ Figure 9.2: @KellyBodwin
 </p>
 </div>
 </div>
-<div id="add-arguments" class="section level3" number="9.6.8">
+<div id="add-arguments" class="section level3" number="9.5.8">
 <h3>
-<span class="header-section-number">9.6.8</span> Add arguments<a class="anchor" aria-label="anchor" href="#add-arguments"><i class="fas fa-link"></i></a>
+<span class="header-section-number">9.5.8</span> Add arguments<a class="anchor" aria-label="anchor" href="#add-arguments"><i class="fas fa-link"></i></a>
 </h3>
 <p>You can just edit your function each time you want to cacluate power for a different sample n, but it is more efficent to build this into your fuction as an arguments. Redefine <code>t_sim</code>, setting arguments for the mean and SD of group A, the mean and SD of group B, and the number of subjects per group. Give them all default values.</p>
 <div class="sourceCode" id="cb421"><pre class="downlit sourceCode r">
@@ -695,9 +685,9 @@ Figure 9.2: @KellyBodwin
 </ul>
 </div>
 </div>
-<div id="glossary-func" class="section level2" number="9.7">
+<div id="glossary-func" class="section level2" number="9.6">
 <h2>
-<span class="header-section-number">9.7</span> Glossary<a class="anchor" aria-label="anchor" href="#glossary-func"><i class="fas fa-link"></i></a>
+<span class="header-section-number">9.6</span> Glossary<a class="anchor" aria-label="anchor" href="#glossary-func"><i class="fas fa-link"></i></a>
 </h2>
 <div class="inline-table"><table class="table table-sm">
 <colgroup>
@@ -735,6 +725,16 @@ Figure 9.2: @KellyBodwin
 </tr>
 </tbody>
 </table></div>
+</div>
+<div id="resources-func" class="section level2" number="9.7">
+<h2>
+<span class="header-section-number">9.7</span> Further Resources<a class="anchor" aria-label="anchor" href="#resources-func"><i class="fas fa-link"></i></a>
+</h2>
+<ul>
+<li>Chapters 19 and 21 of <a href="http://r4ds.had.co.nz">R for Data Science</a>
+</li>
+<li><a href="https://github.com/rstudio/cheatsheets/raw/master/purrr.pdf">RStudio Apply Functions Cheatsheet</a></li>
+</ul>
 </div>
 </div>
 <div class="psyteachr_footer">
@@ -864,44 +864,44 @@ $( document ).ready(function() {
       <ul class="nav navbar-nav">
 <li><a class="nav-link" href="#func"><span class="header-section-number">9</span> Iteration &amp; Functions</a></li>
 <li>
-<a class="nav-link" href="#ilo7"><span class="header-section-number">9.1</span> Learning Objectives</a><ul class="nav navbar-nav">
+<a class="nav-link" href="#ilo-func"><span class="header-section-number">9.1</span> Learning Objectives</a><ul class="nav navbar-nav">
 <li><a class="nav-link" href="#basic-5">Basic</a></li>
 <li><a class="nav-link" href="#intermediate-5">Intermediate</a></li>
 <li><a class="nav-link" href="#advanced">Advanced</a></li>
 </ul>
 </li>
-<li><a class="nav-link" href="#resources7"><span class="header-section-number">9.2</span> Resources</a></li>
-<li><a class="nav-link" href="#setup7"><span class="header-section-number">9.3</span> Setup</a></li>
+<li><a class="nav-link" href="#setup-func"><span class="header-section-number">9.2</span> Setup</a></li>
 <li>
-<a class="nav-link" href="#iteration-functions"><span class="header-section-number">9.4</span> Iteration functions</a><ul class="nav navbar-nav">
-<li><a class="nav-link" href="#rep"><span class="header-section-number">9.4.1</span> rep()</a></li>
-<li><a class="nav-link" href="#seq"><span class="header-section-number">9.4.2</span> seq()</a></li>
-<li><a class="nav-link" href="#replicate"><span class="header-section-number">9.4.3</span> replicate()</a></li>
-<li><a class="nav-link" href="#map-apply"><span class="header-section-number">9.4.4</span> map() and apply() functions</a></li>
+<a class="nav-link" href="#iteration-functions"><span class="header-section-number">9.3</span> Iteration functions</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#rep"><span class="header-section-number">9.3.1</span> rep()</a></li>
+<li><a class="nav-link" href="#seq"><span class="header-section-number">9.3.2</span> seq()</a></li>
+<li><a class="nav-link" href="#replicate"><span class="header-section-number">9.3.3</span> replicate()</a></li>
+<li><a class="nav-link" href="#map-apply"><span class="header-section-number">9.3.4</span> map() and apply() functions</a></li>
 </ul>
 </li>
 <li>
-<a class="nav-link" href="#custom-functions"><span class="header-section-number">9.5</span> Custom functions</a><ul class="nav navbar-nav">
-<li><a class="nav-link" href="#structure-function"><span class="header-section-number">9.5.1</span> Structuring a function</a></li>
-<li><a class="nav-link" href="#arguments"><span class="header-section-number">9.5.2</span> Arguments</a></li>
-<li><a class="nav-link" href="#defaults"><span class="header-section-number">9.5.3</span> Argument defaults</a></li>
-<li><a class="nav-link" href="#scope"><span class="header-section-number">9.5.4</span> Scope</a></li>
-<li><a class="nav-link" href="#warnings-errors"><span class="header-section-number">9.5.5</span> Warnings and errors</a></li>
+<a class="nav-link" href="#custom-functions"><span class="header-section-number">9.4</span> Custom functions</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#structure-function"><span class="header-section-number">9.4.1</span> Structuring a function</a></li>
+<li><a class="nav-link" href="#arguments"><span class="header-section-number">9.4.2</span> Arguments</a></li>
+<li><a class="nav-link" href="#defaults"><span class="header-section-number">9.4.3</span> Argument defaults</a></li>
+<li><a class="nav-link" href="#scope"><span class="header-section-number">9.4.4</span> Scope</a></li>
+<li><a class="nav-link" href="#warnings-errors"><span class="header-section-number">9.4.5</span> Warnings and errors</a></li>
 </ul>
 </li>
 <li>
-<a class="nav-link" href="#iterating-your-own-functions"><span class="header-section-number">9.6</span> Iterating your own functions</a><ul class="nav navbar-nav">
-<li><a class="nav-link" href="#rnorm"><span class="header-section-number">9.6.1</span> rnorm()</a></li>
-<li><a class="nav-link" href="#tibbletibble"><span class="header-section-number">9.6.2</span> tibble::tibble()</a></li>
-<li><a class="nav-link" href="#t.test"><span class="header-section-number">9.6.3</span> t.test()</a></li>
-<li><a class="nav-link" href="#broomtidy"><span class="header-section-number">9.6.4</span> broom::tidy()</a></li>
-<li><a class="nav-link" href="#custom-function-t_sim"><span class="header-section-number">9.6.5</span> Custom function: t_sim()</a></li>
-<li><a class="nav-link" href="#iterate-t_sim"><span class="header-section-number">9.6.6</span> Iterate t_sim()</a></li>
-<li><a class="nav-link" href="#seed"><span class="header-section-number">9.6.7</span> Set seed</a></li>
-<li><a class="nav-link" href="#add-arguments"><span class="header-section-number">9.6.8</span> Add arguments</a></li>
+<a class="nav-link" href="#iterating-your-own-functions"><span class="header-section-number">9.5</span> Iterating your own functions</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#rnorm"><span class="header-section-number">9.5.1</span> rnorm()</a></li>
+<li><a class="nav-link" href="#tibbletibble"><span class="header-section-number">9.5.2</span> tibble::tibble()</a></li>
+<li><a class="nav-link" href="#t.test"><span class="header-section-number">9.5.3</span> t.test()</a></li>
+<li><a class="nav-link" href="#broomtidy"><span class="header-section-number">9.5.4</span> broom::tidy()</a></li>
+<li><a class="nav-link" href="#custom-function-t_sim"><span class="header-section-number">9.5.5</span> Custom function: t_sim()</a></li>
+<li><a class="nav-link" href="#iterate-t_sim"><span class="header-section-number">9.5.6</span> Iterate t_sim()</a></li>
+<li><a class="nav-link" href="#seed"><span class="header-section-number">9.5.7</span> Set seed</a></li>
+<li><a class="nav-link" href="#add-arguments"><span class="header-section-number">9.5.8</span> Add arguments</a></li>
 </ul>
 </li>
-<li><a class="nav-link" href="#glossary-func"><span class="header-section-number">9.7</span> Glossary</a></li>
+<li><a class="nav-link" href="#glossary-func"><span class="header-section-number">9.6</span> Glossary</a></li>
+<li><a class="nav-link" href="#resources-func"><span class="header-section-number">9.7</span> Further Resources</a></li>
 </ul>
 
       <div class="book-extra">
@@ -919,7 +919,7 @@ $( document ).ready(function() {
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Data Skills for Reproducible Research</strong>: v2" was written by . It was last built on 2021-08-31.</p>
+    <p>"<strong>Data Skills for Reproducible Research</strong>: v2" was written by . It was last built on 2021-09-03.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

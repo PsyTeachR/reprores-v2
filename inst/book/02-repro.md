@@ -21,19 +21,6 @@
 9. Format tables using `kableExtra`
 
 
-## Resources {#resources-repro}
-
-* [Chapter 27: R Markdown](http://r4ds.had.co.nz/r-markdown.html) in *R for Data Science*
-* [R Markdown Cheat Sheet](http://www.rstudio.com/wp-content/uploads/2016/03/rmarkdown-cheatsheet-2.0.pdf)
-* [R Markdown reference Guide](https://www.rstudio.com/wp-content/uploads/2015/03/rmarkdown-reference.pdf)
-* [R Markdown Tutorial](https://rmarkdown.rstudio.com/lesson-1.html)
-* [R Markdown: The Definitive Guide](https://bookdown.org/yihui/rmarkdown/) by Yihui Xie, J. J. Allaire, & Garrett Grolemund
-* [Project Structure](https://slides.djnavarro.net/project-structure/) by Danielle Navarro
-* [How to name files](https://speakerdeck.com/jennybc/how-to-name-files) by Jenny Bryan
-* [Papaja](https://crsh.github.io/papaja_man/) Reproducible APA Manuscripts
-* [The Turing Way](https://the-turing-way.netlify.app/)
-
-
 ## Setup {#setup-repro}
 
 
@@ -589,3 +576,15 @@ You can knit your file to PDF or Word if you have the right packages installed o
 
 
 
+
+## Further Resources {#resources-repro}
+
+* [Chapter 27: R Markdown](http://r4ds.had.co.nz/r-markdown.html) in *R for Data Science*
+* [R Markdown Cheat Sheet](http://www.rstudio.com/wp-content/uploads/2016/03/rmarkdown-cheatsheet-2.0.pdf)
+* [R Markdown reference Guide](https://www.rstudio.com/wp-content/uploads/2015/03/rmarkdown-reference.pdf)
+* [R Markdown Tutorial](https://rmarkdown.rstudio.com/lesson-1.html)
+* [R Markdown: The Definitive Guide](https://bookdown.org/yihui/rmarkdown/) by Yihui Xie, J. J. Allaire, & Garrett Grolemund
+* [Project Structure](https://slides.djnavarro.net/project-structure/) by Danielle Navarro
+* [How to name files](https://speakerdeck.com/jennybc/how-to-name-files) by Jenny Bryan
+* [Papaja](https://crsh.github.io/papaja_man/) Reproducible APA Manuscripts
+* [The Turing Way](https://the-turing-way.netlify.app/)

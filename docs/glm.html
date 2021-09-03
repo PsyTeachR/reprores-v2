@@ -89,9 +89,9 @@
 <div class="right meme"><img src="images/memes/linear_regression.jpg"
      alt="Woody and Buzz from Toy Story. Top text: Linear Regression; Bottom text: Linear regression everywhere" /></div>
      -->
-<div id="ilo9" class="section level2" number="8.1">
+<div id="ilo-glm" class="section level2" number="8.1">
 <h2>
-<span class="header-section-number">8.1</span> Learning Objectives<a class="anchor" aria-label="anchor" href="#ilo9"><i class="fas fa-link"></i></a>
+<span class="header-section-number">8.1</span> Learning Objectives<a class="anchor" aria-label="anchor" href="#ilo-glm"><i class="fas fa-link"></i></a>
 </h2>
 <div id="basic-4" class="section level3 unnumbered">
 <h3>Basic<a class="anchor" aria-label="anchor" href="#basic-4"><i class="fas fa-link"></i></a>
@@ -120,20 +120,9 @@
 </ol>
 </div>
 </div>
-<div id="resources9" class="section level2" number="8.2">
+<div id="setup-glm" class="section level2" number="8.2">
 <h2>
-<span class="header-section-number">8.2</span> Resources<a class="anchor" aria-label="anchor" href="#resources9"><i class="fas fa-link"></i></a>
-</h2>
-<ul>
-<li><a href="http://www.otago.ac.nz/psychology/otago039309.pdf">Jeff Miller and Patricia Haden, Statistical Analysis with the Linear Model (free online textbook)</a></li>
-<li><a href="slides/08_glm_slides.pdf">lecture slides introducing the General Linear Model</a></li>
-<li><a href="http://rstudio2.psy.gla.ac.uk/Dale/GLM">GLM shiny app</a></li>
-<li><a href="http://rstudio2.psy.gla.ac.uk/Dale/fdist">F distribution</a></li>
-</ul>
-</div>
-<div id="setup9" class="section level2" number="8.3">
-<h2>
-<span class="header-section-number">8.3</span> Setup<a class="anchor" aria-label="anchor" href="#setup9"><i class="fas fa-link"></i></a>
+<span class="header-section-number">8.2</span> Setup<a class="anchor" aria-label="anchor" href="#setup-glm"><i class="fas fa-link"></i></a>
 </h2>
 <div class="sourceCode" id="cb315"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># libraries needed for these examples</span>
@@ -141,19 +130,19 @@
 <span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://broom.tidymodels.org/">broom</a></span><span class="op">)</span>
 <span class="fu"><a href="https://rdrr.io/r/base/Random.html">set.seed</a></span><span class="op">(</span><span class="fl">30250</span><span class="op">)</span> <span class="co"># makes sure random numbers are reproducible</span></code></pre></div>
 </div>
-<div id="glm-1" class="section level2" number="8.4">
+<div id="glm-1" class="section level2" number="8.3">
 <h2>
-<span class="header-section-number">8.4</span> GLM<a class="anchor" aria-label="anchor" href="#glm-1"><i class="fas fa-link"></i></a>
+<span class="header-section-number">8.3</span> GLM<a class="anchor" aria-label="anchor" href="#glm-1"><i class="fas fa-link"></i></a>
 </h2>
-<div id="what-is-the-glm" class="section level3" number="8.4.1">
+<div id="what-is-the-glm" class="section level3" number="8.3.1">
 <h3>
-<span class="header-section-number">8.4.1</span> What is the GLM?<a class="anchor" aria-label="anchor" href="#what-is-the-glm"><i class="fas fa-link"></i></a>
+<span class="header-section-number">8.3.1</span> What is the GLM?<a class="anchor" aria-label="anchor" href="#what-is-the-glm"><i class="fas fa-link"></i></a>
 </h3>
 <p>The <a class="glossary" target="_blank" title="A mathematical model comparing how one or more independent variables affect a continuous dependent variable" href="https://psyteachr.github.io/glossary/g#general-linear-model">General Linear Model</a> (GLM) is a general mathematical framework for expressing relationships among variables that can express or test linear relationships between a numerical <a class="glossary" target="_blank" title="The target variable that is being analyzed, whose value is assumed to depend on other variables." href="https://psyteachr.github.io/glossary/d#dependent-variable">dependent variable</a> and any combination of <a class="glossary" target="_blank" title="Data that can only take certain values, such as types of pet." href="https://psyteachr.github.io/glossary/c#categorical">categorical</a> or <a class="glossary" target="_blank" title="Data that can take on any values between other existing values." href="https://psyteachr.github.io/glossary/c#continuous">continuous</a> <a class="glossary" target="_blank" title="A variable whose value is assumed to influence the value of a dependent variable." href="https://psyteachr.github.io/glossary/i#independent-variable">independent variables</a>.</p>
 </div>
-<div id="glm-components" class="section level3" number="8.4.2">
+<div id="glm-components" class="section level3" number="8.3.2">
 <h3>
-<span class="header-section-number">8.4.2</span> Components<a class="anchor" aria-label="anchor" href="#glm-components"><i class="fas fa-link"></i></a>
+<span class="header-section-number">8.3.2</span> Components<a class="anchor" aria-label="anchor" href="#glm-components"><i class="fas fa-link"></i></a>
 </h3>
 <p>There are some mathematical conventions that you need to learn to understand the equations representing linear models. Once you understand those, learning about the GLM will get much easier.</p>
 <div class="inline-table"><table class="table table-sm">
@@ -192,9 +181,9 @@
 <p><span class="math inline">\(Y\)</span> ~ <span class="math inline">\(\mu+A+B+AB+S(Group)\)</span></p>
 <p>Don't worry if this doesn't make sense until we walk through a concrete example.</p>
 </div>
-<div id="sim-glm" class="section level3" number="8.4.3">
+<div id="sim-glm" class="section level3" number="8.3.3">
 <h3>
-<span class="header-section-number">8.4.3</span> Simulating data from GLM<a class="anchor" aria-label="anchor" href="#sim-glm"><i class="fas fa-link"></i></a>
+<span class="header-section-number">8.3.3</span> Simulating data from GLM<a class="anchor" aria-label="anchor" href="#sim-glm"><i class="fas fa-link"></i></a>
 </h3>
 <p>A good way to learn about linear models is to <a class="glossary" target="_blank" title="Generating data from summary parameters" href="https://psyteachr.github.io/glossary/s#simulation">simulate</a> data where you know exactly how the variables are related, and then analyse this simulated data to see where the parameters show up in the analysis.</p>
 <p>We'll start with a very simple linear model that just has a single categorical factor with two levels. Let's say we're predicting reaction times for congruent and incongruent trials in a Stroop task for a single participant. Average reaction time (<code>mu</code>) is 800ms, and is 50ms faster for congruent than incongruent trials (<code>effect</code>).</p>
@@ -244,9 +233,9 @@ Figure 8.1: Simulated Data
 </p>
 </div>
 </div>
-<div id="linear-regression" class="section level3" number="8.4.4">
+<div id="linear-regression" class="section level3" number="8.3.4">
 <h3>
-<span class="header-section-number">8.4.4</span> Linear Regression<a class="anchor" aria-label="anchor" href="#linear-regression"><i class="fas fa-link"></i></a>
+<span class="header-section-number">8.3.4</span> Linear Regression<a class="anchor" aria-label="anchor" href="#linear-regression"><i class="fas fa-link"></i></a>
 </h3>
 <p>Now we can analyse the data we simulated using the function <code><a href="https://rdrr.io/r/stats/lm.html">lm()</a></code>. It takes the formula as the first argument. This is the same as the data-generating equation, but you can omit the error term (this is implied), and takes the data table as the second argument. Use the <code><a href="https://rdrr.io/r/base/summary.html">summary()</a></code> function to see the statistical summary.</p>
 <div class="sourceCode" id="cb319"><pre class="downlit sourceCode r">
@@ -275,9 +264,9 @@ Figure 8.1: Simulated Data
 <p>Change the values of <code>mu</code> and <code>effect</code>, resimulate the data, and re-run the linear model. What happens to the estimates?</p>
 </div>
 </div>
-<div id="residuals" class="section level3" number="8.4.5">
+<div id="residuals" class="section level3" number="8.3.5">
 <h3>
-<span class="header-section-number">8.4.5</span> Residuals<a class="anchor" aria-label="anchor" href="#residuals"><i class="fas fa-link"></i></a>
+<span class="header-section-number">8.3.5</span> Residuals<a class="anchor" aria-label="anchor" href="#residuals"><i class="fas fa-link"></i></a>
 </h3>
 <p>You can use the <code><a href="https://rdrr.io/r/stats/residuals.html">residuals()</a></code> function to extract the error term for each each data point. This is the DV values, minus the estimates for the intercept and trial type. We'll make a density plot of the <a class="glossary" target="_blank" title="That part of an observation that cannot be captured by the statistical model, and thus is assumed to reflect unknown factors." href="https://psyteachr.github.io/glossary/r#residual-error">residuals</a> below and compare it to the normal distribution we used for the error term.</p>
 <div class="sourceCode" id="cb321"><pre class="downlit sourceCode r">
@@ -310,9 +299,9 @@ Figure 8.3: Model residuals should be very similar to the simulated error
 <p>What happens to the residuals if you fit a model that ignores trial type (e.g., <code><a href="https://rdrr.io/r/stats/lm.html">lm(Y ~ 1, data = dat)</a></code>)?</p>
 </div>
 </div>
-<div id="predict" class="section level3" number="8.4.6">
+<div id="predict" class="section level3" number="8.3.6">
 <h3>
-<span class="header-section-number">8.4.6</span> Predict New Values<a class="anchor" aria-label="anchor" href="#predict"><i class="fas fa-link"></i></a>
+<span class="header-section-number">8.3.6</span> Predict New Values<a class="anchor" aria-label="anchor" href="#predict"><i class="fas fa-link"></i></a>
 </h3>
 <p>You can use the estimates from your model to predict new data points, given values for the model parameters. For this simple example, we just need to know the trial type to make a prediction.</p>
 <p>For congruent trials, you would predict that a new data point would be equal to the intercept estimate plus the trial type estimate multiplied by 0.5 (the effect code for congruent trials).</p>
@@ -333,9 +322,9 @@ Figure 8.3: Model residuals should be very similar to the simulated error
 What this means is that <code><a href="https://rdrr.io/r/stats/predict.html">predict()</a></code> works differently depending on whether you're predicting from the output of <code><a href="https://rdrr.io/r/stats/lm.html">lm()</a></code> or other analysis functions. You can search for help on the lm version with <code><a href="https://rdrr.io/r/stats/predict.lm.html">?predict.lm</a></code>.</p>
 </div>
 </div>
-<div id="coding-schemes" class="section level3" number="8.4.7">
+<div id="coding-schemes" class="section level3" number="8.3.7">
 <h3>
-<span class="header-section-number">8.4.7</span> Coding Categorical Variables<a class="anchor" aria-label="anchor" href="#coding-schemes"><i class="fas fa-link"></i></a>
+<span class="header-section-number">8.3.7</span> Coding Categorical Variables<a class="anchor" aria-label="anchor" href="#coding-schemes"><i class="fas fa-link"></i></a>
 </h3>
 <p>In the example above, we used <strong>effect coding</strong> for trial type. You can also use <strong>sum coding</strong>, which assigns +1 and -1 to the levels instead of +0.5 and -0.5. More commonly, you might want to use <strong>treatment coding</strong>, which assigns 0 to one level (usually a baseline or control condition) and 1 to the other level (usually a treatment or experimental condition).</p>
 <p>Here we will add sum-coded and treatment-coded versions of <code>trial_type</code> to the dataset using the <code>recode()</code> function.</p>
@@ -371,13 +360,13 @@ What this means is that <code><a href="https://rdrr.io/r/stats/predict.html">pre
 ##     757.22279      61.93773</code></pre>
 </div>
 </div>
-<div id="test-rels" class="section level2" number="8.5">
+<div id="test-rels" class="section level2" number="8.4">
 <h2>
-<span class="header-section-number">8.5</span> Relationships among tests<a class="anchor" aria-label="anchor" href="#test-rels"><i class="fas fa-link"></i></a>
+<span class="header-section-number">8.4</span> Relationships among tests<a class="anchor" aria-label="anchor" href="#test-rels"><i class="fas fa-link"></i></a>
 </h2>
-<div id="t-test-t-test-glm" class="section level3" number="8.5.1">
+<div id="t-test-t-test-glm" class="section level3" number="8.4.1">
 <h3>
-<span class="header-section-number">8.5.1</span> T-test {t-test-glm}<a class="anchor" aria-label="anchor" href="#t-test-t-test-glm"><i class="fas fa-link"></i></a>
+<span class="header-section-number">8.4.1</span> T-test {t-test-glm}<a class="anchor" aria-label="anchor" href="#t-test-t-test-glm"><i class="fas fa-link"></i></a>
 </h3>
 <p>The t-test is just a special, limited example of a general linear model.</p>
 <div class="sourceCode" id="cb335"><pre class="downlit sourceCode r">
@@ -397,9 +386,9 @@ What this means is that <code><a href="https://rdrr.io/r/stats/predict.html">pre
 <p>What happens when you use other codings for trial type in the t-test above? Which coding maps onto the results of the t-test best?</p>
 </div>
 </div>
-<div id="anova" class="section level3" number="8.5.2">
+<div id="anova" class="section level3" number="8.4.2">
 <h3>
-<span class="header-section-number">8.5.2</span> ANOVA<a class="anchor" aria-label="anchor" href="#anova"><i class="fas fa-link"></i></a>
+<span class="header-section-number">8.4.2</span> ANOVA<a class="anchor" aria-label="anchor" href="#anova"><i class="fas fa-link"></i></a>
 </h3>
 <p>ANOVA is also a special, limited version of the linear model.</p>
 <div class="sourceCode" id="cb337"><pre class="downlit sourceCode r">
@@ -418,16 +407,16 @@ What this means is that <code><a href="https://rdrr.io/r/stats/predict.html">pre
 <pre><code>## [1] 4.297498</code></pre>
 </div>
 </div>
-<div id="understanding-anova" class="section level2" number="8.6">
+<div id="understanding-anova" class="section level2" number="8.5">
 <h2>
-<span class="header-section-number">8.6</span> Understanding ANOVA<a class="anchor" aria-label="anchor" href="#understanding-anova"><i class="fas fa-link"></i></a>
+<span class="header-section-number">8.5</span> Understanding ANOVA<a class="anchor" aria-label="anchor" href="#understanding-anova"><i class="fas fa-link"></i></a>
 </h2>
 <p>We'll walk through an example of a one-way ANOVA with the following equation:</p>
 <p><span class="math inline">\(Y_{ij} = \mu + A_i + S(A)_{ij}\)</span></p>
 <p>This means that each data point (<span class="math inline">\(Y_{ij}\)</span>) is predicted to be the sum of the grand mean (<span class="math inline">\(\mu\)</span>), plus the effect of factor A (<span class="math inline">\(A_i\)</span>), plus some residual error (<span class="math inline">\(S(A)_{ij}\)</span>).</p>
-<div id="means-variability-and-deviation-scores" class="section level3" number="8.6.1">
+<div id="means-variability-and-deviation-scores" class="section level3" number="8.5.1">
 <h3>
-<span class="header-section-number">8.6.1</span> Means, Variability, and Deviation Scores<a class="anchor" aria-label="anchor" href="#means-variability-and-deviation-scores"><i class="fas fa-link"></i></a>
+<span class="header-section-number">8.5.1</span> Means, Variability, and Deviation Scores<a class="anchor" aria-label="anchor" href="#means-variability-and-deviation-scores"><i class="fas fa-link"></i></a>
 </h3>
 <p>Let's create a simple simulation function so you can quickly create a two-sample dataset with specified Ns, means, and SDs.</p>
 <div class="sourceCode" id="cb341"><pre class="downlit sourceCode r">
@@ -452,9 +441,9 @@ Figure 8.4: Deviations of each data point (Y) from the overall and group means
 </div>
 <p>You can use these deviations to calculate variability between groups and within groups. ANOVA tests whether the variability between groups is larger than that within groups, accounting for the number of groups and observations.</p>
 </div>
-<div id="decomp" class="section level3" number="8.6.2">
+<div id="decomp" class="section level3" number="8.5.2">
 <h3>
-<span class="header-section-number">8.6.2</span> Decomposition matrices<a class="anchor" aria-label="anchor" href="#decomp"><i class="fas fa-link"></i></a>
+<span class="header-section-number">8.5.2</span> Decomposition matrices<a class="anchor" aria-label="anchor" href="#decomp"><i class="fas fa-link"></i></a>
 </h3>
 <p>We can use the estimation equations for a one-factor ANOVA to calculate the model components.</p>
 <ul>
@@ -667,9 +656,9 @@ Figure 8.4: Deviations of each data point (Y) from the overall and group means
 </div>
 </div>
 </div>
-<div id="glossary-glm" class="section level2" number="8.7">
+<div id="glossary-glm" class="section level2" number="8.6">
 <h2>
-<span class="header-section-number">8.7</span> Glossary<a class="anchor" aria-label="anchor" href="#glossary-glm"><i class="fas fa-link"></i></a>
+<span class="header-section-number">8.6</span> Glossary<a class="anchor" aria-label="anchor" href="#glossary-glm"><i class="fas fa-link"></i></a>
 </h2>
 <div class="inline-table"><table class="table table-sm">
 <colgroup>
@@ -731,6 +720,17 @@ Figure 8.4: Deviations of each data point (Y) from the overall and group means
 </tr>
 </tbody>
 </table></div>
+</div>
+<div id="resources-glm" class="section level2" number="8.7">
+<h2>
+<span class="header-section-number">8.7</span> Further Resources<a class="anchor" aria-label="anchor" href="#resources-glm"><i class="fas fa-link"></i></a>
+</h2>
+<ul>
+<li><a href="http://www.otago.ac.nz/psychology/otago039309.pdf">Jeff Miller and Patricia Haden, Statistical Analysis with the Linear Model (free online textbook)</a></li>
+<li><a href="slides/08_glm_slides.pdf">lecture slides introducing the General Linear Model</a></li>
+<li><a href="http://rstudio2.psy.gla.ac.uk/Dale/GLM">GLM shiny app</a></li>
+<li><a href="http://rstudio2.psy.gla.ac.uk/Dale/fdist">F distribution</a></li>
+</ul>
 </div>
 </div>
 <div class="psyteachr_footer">
@@ -860,37 +860,37 @@ $( document ).ready(function() {
       <ul class="nav navbar-nav">
 <li><a class="nav-link" href="#glm"><span class="header-section-number">8</span> Introduction to GLM</a></li>
 <li>
-<a class="nav-link" href="#ilo9"><span class="header-section-number">8.1</span> Learning Objectives</a><ul class="nav navbar-nav">
+<a class="nav-link" href="#ilo-glm"><span class="header-section-number">8.1</span> Learning Objectives</a><ul class="nav navbar-nav">
 <li><a class="nav-link" href="#basic-4">Basic</a></li>
 <li><a class="nav-link" href="#intermediate-4">Intermediate</a></li>
 </ul>
 </li>
-<li><a class="nav-link" href="#resources9"><span class="header-section-number">8.2</span> Resources</a></li>
-<li><a class="nav-link" href="#setup9"><span class="header-section-number">8.3</span> Setup</a></li>
+<li><a class="nav-link" href="#setup-glm"><span class="header-section-number">8.2</span> Setup</a></li>
 <li>
-<a class="nav-link" href="#glm-1"><span class="header-section-number">8.4</span> GLM</a><ul class="nav navbar-nav">
-<li><a class="nav-link" href="#what-is-the-glm"><span class="header-section-number">8.4.1</span> What is the GLM?</a></li>
-<li><a class="nav-link" href="#glm-components"><span class="header-section-number">8.4.2</span> Components</a></li>
-<li><a class="nav-link" href="#sim-glm"><span class="header-section-number">8.4.3</span> Simulating data from GLM</a></li>
-<li><a class="nav-link" href="#linear-regression"><span class="header-section-number">8.4.4</span> Linear Regression</a></li>
-<li><a class="nav-link" href="#residuals"><span class="header-section-number">8.4.5</span> Residuals</a></li>
-<li><a class="nav-link" href="#predict"><span class="header-section-number">8.4.6</span> Predict New Values</a></li>
-<li><a class="nav-link" href="#coding-schemes"><span class="header-section-number">8.4.7</span> Coding Categorical Variables</a></li>
+<a class="nav-link" href="#glm-1"><span class="header-section-number">8.3</span> GLM</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#what-is-the-glm"><span class="header-section-number">8.3.1</span> What is the GLM?</a></li>
+<li><a class="nav-link" href="#glm-components"><span class="header-section-number">8.3.2</span> Components</a></li>
+<li><a class="nav-link" href="#sim-glm"><span class="header-section-number">8.3.3</span> Simulating data from GLM</a></li>
+<li><a class="nav-link" href="#linear-regression"><span class="header-section-number">8.3.4</span> Linear Regression</a></li>
+<li><a class="nav-link" href="#residuals"><span class="header-section-number">8.3.5</span> Residuals</a></li>
+<li><a class="nav-link" href="#predict"><span class="header-section-number">8.3.6</span> Predict New Values</a></li>
+<li><a class="nav-link" href="#coding-schemes"><span class="header-section-number">8.3.7</span> Coding Categorical Variables</a></li>
 </ul>
 </li>
 <li>
-<a class="nav-link" href="#test-rels"><span class="header-section-number">8.5</span> Relationships among tests</a><ul class="nav navbar-nav">
-<li><a class="nav-link" href="#t-test-t-test-glm"><span class="header-section-number">8.5.1</span> T-test {t-test-glm}</a></li>
-<li><a class="nav-link" href="#anova"><span class="header-section-number">8.5.2</span> ANOVA</a></li>
+<a class="nav-link" href="#test-rels"><span class="header-section-number">8.4</span> Relationships among tests</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#t-test-t-test-glm"><span class="header-section-number">8.4.1</span> T-test {t-test-glm}</a></li>
+<li><a class="nav-link" href="#anova"><span class="header-section-number">8.4.2</span> ANOVA</a></li>
 </ul>
 </li>
 <li>
-<a class="nav-link" href="#understanding-anova"><span class="header-section-number">8.6</span> Understanding ANOVA</a><ul class="nav navbar-nav">
-<li><a class="nav-link" href="#means-variability-and-deviation-scores"><span class="header-section-number">8.6.1</span> Means, Variability, and Deviation Scores</a></li>
-<li><a class="nav-link" href="#decomp"><span class="header-section-number">8.6.2</span> Decomposition matrices</a></li>
+<a class="nav-link" href="#understanding-anova"><span class="header-section-number">8.5</span> Understanding ANOVA</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#means-variability-and-deviation-scores"><span class="header-section-number">8.5.1</span> Means, Variability, and Deviation Scores</a></li>
+<li><a class="nav-link" href="#decomp"><span class="header-section-number">8.5.2</span> Decomposition matrices</a></li>
 </ul>
 </li>
-<li><a class="nav-link" href="#glossary-glm"><span class="header-section-number">8.7</span> Glossary</a></li>
+<li><a class="nav-link" href="#glossary-glm"><span class="header-section-number">8.6</span> Glossary</a></li>
+<li><a class="nav-link" href="#resources-glm"><span class="header-section-number">8.7</span> Further Resources</a></li>
 </ul>
 
       <div class="book-extra">
@@ -908,7 +908,7 @@ $( document ).ready(function() {
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Data Skills for Reproducible Research</strong>: v2" was written by . It was last built on 2021-08-31.</p>
+    <p>"<strong>Data Skills for Reproducible Research</strong>: v2" was written by . It was last built on 2021-09-03.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

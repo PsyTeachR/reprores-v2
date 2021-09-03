@@ -114,48 +114,26 @@
 </ol>
 </div>
 </div>
-<div id="resources-repro" class="section level2" number="2.2">
+<div id="setup-repro" class="section level2" number="2.2">
 <h2>
-<span class="header-section-number">2.2</span> Resources<a class="anchor" aria-label="anchor" href="#resources-repro"><i class="fas fa-link"></i></a>
-</h2>
-<ul>
-<li>
-<a href="http://r4ds.had.co.nz/r-markdown.html">Chapter 27: R Markdown</a> in <em>R for Data Science</em>
-</li>
-<li><a href="http://www.rstudio.com/wp-content/uploads/2016/03/rmarkdown-cheatsheet-2.0.pdf">R Markdown Cheat Sheet</a></li>
-<li><a href="https://www.rstudio.com/wp-content/uploads/2015/03/rmarkdown-reference.pdf">R Markdown reference Guide</a></li>
-<li><a href="https://rmarkdown.rstudio.com/lesson-1.html">R Markdown Tutorial</a></li>
-<li>
-<a href="https://bookdown.org/yihui/rmarkdown/">R Markdown: The Definitive Guide</a> by Yihui Xie, J. J. Allaire, &amp; Garrett Grolemund</li>
-<li>
-<a href="https://slides.djnavarro.net/project-structure/">Project Structure</a> by Danielle Navarro</li>
-<li>
-<a href="https://speakerdeck.com/jennybc/how-to-name-files">How to name files</a> by Jenny Bryan</li>
-<li>
-<a href="https://crsh.github.io/papaja_man/">Papaja</a> Reproducible APA Manuscripts</li>
-<li><a href="https://the-turing-way.netlify.app/">The Turing Way</a></li>
-</ul>
-</div>
-<div id="setup-repro" class="section level2" number="2.3">
-<h2>
-<span class="header-section-number">2.3</span> Setup<a class="anchor" aria-label="anchor" href="#setup-repro"><i class="fas fa-link"></i></a>
+<span class="header-section-number">2.2</span> Setup<a class="anchor" aria-label="anchor" href="#setup-repro"><i class="fas fa-link"></i></a>
 </h2>
 <div class="sourceCode" id="cb44"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span>
 <span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://yihui.org/knitr/">knitr</a></span><span class="op">)</span></code></pre></div>
 </div>
-<div id="why-learn-reproducible-reports" class="section level2" number="2.4">
+<div id="why-learn-reproducible-reports" class="section level2" number="2.3">
 <h2>
-<span class="header-section-number">2.4</span> Why learn reproducible reports?<a class="anchor" aria-label="anchor" href="#why-learn-reproducible-reports"><i class="fas fa-link"></i></a>
+<span class="header-section-number">2.3</span> Why learn reproducible reports?<a class="anchor" aria-label="anchor" href="#why-learn-reproducible-reports"><i class="fas fa-link"></i></a>
 </h2>
 <p>Have you ever worked on a report, creating a summary table for the demographics, making beautiful plots, getting the analysis just right, and copying all the relevant numbers into your manuscript, only to find out that you forgot to exclude a test run and have to redo everything?</p>
 <p>An R Markdown document produces a <a class="glossary" target="_blank" title="The extent to which the findings of a study can be repeated in some other context" href="https://psyteachr.github.io/glossary/r#reproducibility">reproducible</a> report that fixes this problem. Although this requires a bit of extra effort at the start, it will more than pay you back by allowing you to update your entire report with the push of a button whenever anything changes.</p>
 <p>Studies also show that many, if not most, papers in the scientific literature have reporting errors. For example, more than half of over 250,000 psychology papers published between 1985 and 2013 have at least one value that is statistically incompatible (e.g., a p-value that is not possible given a t-value and degrees of freedom) <span class="citation">(<a href="bookrefs.html#ref-nuijten2016prevalence" role="doc-biblioref">Nuijten et al. 2016</a>)</span>. Reproducible reports help avoid transcription and rounding errors.</p>
 <p>We will make reproducible reports following the principles of <a href="https://en.wikipedia.org/wiki/Literate_programming">literate programming</a>. The basic idea is to have the text of the report together in a single document along with the code needed to perform all analyses and generate the tables. The report is then "compiled" from the original format into some other, more portable format, such as HTML or PDF. This is different from traditional cutting and pasting approaches where, for instance, you create a graph in Microsoft Excel or a statistics program like SPSS and then paste it into Microsoft Word.</p>
 </div>
-<div id="projects" class="section level2" number="2.5">
+<div id="projects" class="section level2" number="2.4">
 <h2>
-<span class="header-section-number">2.5</span> Organising a project<a class="anchor" aria-label="anchor" href="#projects"><i class="fas fa-link"></i></a>
+<span class="header-section-number">2.4</span> Organising a project<a class="anchor" aria-label="anchor" href="#projects"><i class="fas fa-link"></i></a>
 </h2>
 <p>First, we need to get orgainsed.</p>
 <p><a class="glossary" target="_blank" title="A way to organise related files in RStudio" href="https://psyteachr.github.io/glossary/p#project">Projects</a> in RStudio are a way to group all of the files you need for one project. Most projects include scripts, data files, and output files like the PDF version of the script or images.</p>
@@ -163,9 +141,9 @@
 <p>Make a new <a class="glossary" target="_blank" title="A collection or “folder” of files on a computer." href="https://psyteachr.github.io/glossary/d#directory">directory</a> where you will keep all of your materials for this class. If you're using a lab computer, make sure you make this directory in your network drive so you can access it from other computers.</p>
 <p>Choose <strong><code>New Project...</code></strong> under the <strong><code>File</code></strong> menu to create a new project called <code class="path">01-repro</code> in this directory.</p>
 </div>
-<div id="working-directory" class="section level3" number="2.5.1">
+<div id="working-directory" class="section level3" number="2.4.1">
 <h3>
-<span class="header-section-number">2.5.1</span> Working Directory<a class="anchor" aria-label="anchor" href="#working-directory"><i class="fas fa-link"></i></a>
+<span class="header-section-number">2.4.1</span> Working Directory<a class="anchor" aria-label="anchor" href="#working-directory"><i class="fas fa-link"></i></a>
 </h3>
 <p>Where should you put all of your files? When developing an analysis, you usually want to have all of your scripts and data files in one subtree of your computer's directory structure. Usually there is a single <a class="glossary" target="_blank" title="The filepath where R is currently reading and writing files." href="https://psyteachr.github.io/glossary/w#working-directory">working directory</a> where your data and scripts are stored.</p>
 <p>Your script should only reference files in three locations, using the appropriate format.</p>
@@ -209,9 +187,9 @@
 <p>Also note the convention of using forward slashes, unlike the Windows-specific convention of using backward slashes. This is to make references to files platform independent.</p>
 </div>
 </div>
-<div id="naming-things" class="section level3" number="2.5.2">
+<div id="naming-things" class="section level3" number="2.4.2">
 <h3>
-<span class="header-section-number">2.5.2</span> Naming Things<a class="anchor" aria-label="anchor" href="#naming-things"><i class="fas fa-link"></i></a>
+<span class="header-section-number">2.4.2</span> Naming Things<a class="anchor" aria-label="anchor" href="#naming-things"><i class="fas fa-link"></i></a>
 </h3>
 <p>There are two perfect guides to naming files: Jenny Bryan's <a href="https://speakerdeck.com/jennybc/how-to-name-files" target="_blank">How to name files</a> and Danielle Navarro's <a href="https://slides.djnavarro.net/project-structure/" target="_blank">Project Structure</a> (which also has a YouTube video). I really recommend you check those out, but I'll list the most important principles here:</p>
 <ul>
@@ -250,9 +228,9 @@
 </div>
 </div>
 </div>
-<div id="r-markdown" class="section level2" number="2.6">
+<div id="r-markdown" class="section level2" number="2.5">
 <h2>
-<span class="header-section-number">2.6</span> R Markdown<a class="anchor" aria-label="anchor" href="#r-markdown"><i class="fas fa-link"></i></a>
+<span class="header-section-number">2.5</span> R Markdown<a class="anchor" aria-label="anchor" href="#r-markdown"><i class="fas fa-link"></i></a>
 </h2>
 <p>In this lesson, we will learn to make an R Markdown document with a table of contents, appropriate headers, code chunks, tables, images, inline R, and a bibliography.</p>
 <p>We will use <a class="glossary" target="_blank" title="The R-specific version of markdown: a way to specify formatting, such as headers, paragraphs, lists, bolding, and links, as well as code blocks and inline code." href="https://psyteachr.github.io/glossary/r#r-markdown">R Markdown</a> to create reproducible reports, which enables mixing of text and code. A reproducible script will contain sections of code in code blocks. A code block starts and ends with three backtick symbols in a row, with some information about the code between curly brackets, such as <code>{r chunk-name, echo=FALSE}</code> (this runs the code, but does not show the text of the code block in the compiled document). The text outside of code blocks is written in <a class="glossary" target="_blank" title="A way to specify formatting, such as headers, paragraphs, lists, bolding, and links." href="https://psyteachr.github.io/glossary/m#markdown">markdown</a>, which is a way to specify formatting, such as headers, paragraphs, lists, bolding, and links.</p>
@@ -266,9 +244,9 @@ Figure 2.1: A reproducible script.
 <div class="try">
 <p>Create a new R Markdown file from the <strong><code>File &gt; New File &gt; R Markdown...</code></strong> menu. Change the title and author, then click the knit button to create an html file.</p>
 </div>
-<div id="yaml-header" class="section level3" number="2.6.1">
+<div id="yaml-header" class="section level3" number="2.5.1">
 <h3>
-<span class="header-section-number">2.6.1</span> YAML Header<a class="anchor" aria-label="anchor" href="#yaml-header"><i class="fas fa-link"></i></a>
+<span class="header-section-number">2.5.1</span> YAML Header<a class="anchor" aria-label="anchor" href="#yaml-header"><i class="fas fa-link"></i></a>
 </h3>
 <p>The <a class="glossary" target="_blank" title="A structured format for information" href="https://psyteachr.github.io/glossary/y#yaml">YAML</a> header is where you can set several options.</p>
 <pre><code>---
@@ -300,9 +278,9 @@ Figure 2.2: Light themes in versions 3 and 4.
 </p>
 </div>
 </div>
-<div id="setup" class="section level3" number="2.6.2">
+<div id="setup" class="section level3" number="2.5.2">
 <h3>
-<span class="header-section-number">2.6.2</span> Setup<a class="anchor" aria-label="anchor" href="#setup"><i class="fas fa-link"></i></a>
+<span class="header-section-number">2.5.2</span> Setup<a class="anchor" aria-label="anchor" href="#setup"><i class="fas fa-link"></i></a>
 </h3>
 <p>When you create a new R Markdown file in RStudio, a setup chunk is automatically created.</p>
 <div class="verbatim">
@@ -349,9 +327,9 @@ Figure 2.2: Light themes in versions 3 and 4.
 <p>We'll be using function from the package <code class="package">tidyverse</code>, so load that in your setup chunk.</p>
 </div>
 </div>
-<div id="structure" class="section level3" number="2.6.3">
+<div id="structure" class="section level3" number="2.5.3">
 <h3>
-<span class="header-section-number">2.6.3</span> Structure<a class="anchor" aria-label="anchor" href="#structure"><i class="fas fa-link"></i></a>
+<span class="header-section-number">2.5.3</span> Structure<a class="anchor" aria-label="anchor" href="#structure"><i class="fas fa-link"></i></a>
 </h3>
 <p>If you include a table of contents (<code>toc</code>), it is created from your document headers. Headers in <a class="glossary" target="_blank" title="A way to specify formatting, such as headers, paragraphs, lists, bolding, and links." href="https://psyteachr.github.io/glossary/m#markdown">markdown</a> are created by prefacing the header title with one or more hashes (<code>#</code>).</p>
 <p>Use the following structure when developing your own analysis scripts:</p>
@@ -366,9 +344,9 @@ Figure 2.2: Light themes in versions 3 and 4.
 <p>Delete the default text and add some structure to your document by creating headers and subheaders. We're going to load some data, create a summary table, plot the data, and analyse it.</p>
 </div>
 </div>
-<div id="code-chunks" class="section level3" number="2.6.4">
+<div id="code-chunks" class="section level3" number="2.5.4">
 <h3>
-<span class="header-section-number">2.6.4</span> Code Chunks<a class="anchor" aria-label="anchor" href="#code-chunks"><i class="fas fa-link"></i></a>
+<span class="header-section-number">2.5.4</span> Code Chunks<a class="anchor" aria-label="anchor" href="#code-chunks"><i class="fas fa-link"></i></a>
 </h3>
 <p>You can include <a class="glossary" target="_blank" title="A section of code in an R Markdown file" href="https://psyteachr.github.io/glossary/c#chunk">code chunks</a> that create and display images, tables, or computations to include in your text. Let's start by loading some data.</p>
 <p>First, create a code chunk in your document. This code loads some data from the web.</p>
@@ -384,9 +362,9 @@ Figure 2.2: Light themes in versions 3 and 4.
 ##   age = col_double(),
 ##   weight = col_double()
 ## )</code></pre>
-<div id="comments" class="section level4" number="2.6.4.1">
+<div id="comments" class="section level4" number="2.5.4.1">
 <h4>
-<span class="header-section-number">2.6.4.1</span> Comments<a class="anchor" aria-label="anchor" href="#comments"><i class="fas fa-link"></i></a>
+<span class="header-section-number">2.5.4.1</span> Comments<a class="anchor" aria-label="anchor" href="#comments"><i class="fas fa-link"></i></a>
 </h4>
 <p>You can add comments inside R chunks with the hash symbol (<code>#</code>). The R interpreter will ignore characters from the hash to the end of the line.</p>
 <div class="sourceCode" id="cb52"><pre class="downlit sourceCode r">
@@ -401,15 +379,15 @@ Figure 2.2: Light themes in versions 3 and 4.
 <p>If you name your objects clearly, you often don't need to add clarifying comments. For example, if I'd named the three objects above <code>total_pet_n</code>, <code>mean_score</code> and <code>sd_score</code>, I would omit the comments.</p>
 <p>It's a bit of an art to comment your code well. The best way to develop this skill is to read a lot of other people's code and have others review your code.</p>
 </div>
-<div id="tables" class="section level4" number="2.6.4.2">
+<div id="tables" class="section level4" number="2.5.4.2">
 <h4>
-<span class="header-section-number">2.6.4.2</span> Tables<a class="anchor" aria-label="anchor" href="#tables"><i class="fas fa-link"></i></a>
+<span class="header-section-number">2.5.4.2</span> Tables<a class="anchor" aria-label="anchor" href="#tables"><i class="fas fa-link"></i></a>
 </h4>
 <p>Next, create a code chunk where you want to display a table of the descriptives (e.g., Participants section of the Methods). We'll use tidyverse functions you will learn in the <a href="tidyr.html#tidyr">data wrangling lectures</a> to create summary statistics for each group.</p>
 <div class="sourceCode" id="cb53"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">pets</span> <span class="op">%&gt;%</span>
-  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span><span class="op">(</span><span class="va">pet</span><span class="op">)</span> <span class="op">%&gt;%</span>
-  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/summarise.html">summarise</a></span><span class="op">(</span>
+  <span class="fu">group_by</span><span class="op">(</span><span class="va">pet</span><span class="op">)</span> <span class="op">%&gt;%</span>
+  <span class="fu">summarise</span><span class="op">(</span>
     n <span class="op">=</span> <span class="fu">n</span><span class="op">(</span><span class="op">)</span>,
     mean_weight <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">weight</span><span class="op">)</span>,
     mean_score <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">score</span><span class="op">)</span>
@@ -447,8 +425,8 @@ Figure 2.2: Light themes in versions 3 and 4.
 <p>The table above is OK, but it could be more reader-friendly by changing the column labels, rounding the means, and adding a caption. You can use <code><span class="fu">knitr</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/knitr/man/kable.html">kable</a></span><span class="op">(</span><span class="op">)</span></code> for this.</p>
 <div class="sourceCode" id="cb54"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">summary_table</span> <span class="op">&lt;-</span><span class="va">pets</span> <span class="op">%&gt;%</span>
-  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span><span class="op">(</span><span class="va">pet</span><span class="op">)</span> <span class="op">%&gt;%</span>
-  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/summarise.html">summarise</a></span><span class="op">(</span>
+  <span class="fu">group_by</span><span class="op">(</span><span class="va">pet</span><span class="op">)</span> <span class="op">%&gt;%</span>
+  <span class="fu">summarise</span><span class="op">(</span>
     n <span class="op">=</span> <span class="fu">n</span><span class="op">(</span><span class="op">)</span>,
     mean_weight <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">weight</span><span class="op">)</span>,
     mean_score <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">score</span><span class="op">)</span>
@@ -494,9 +472,9 @@ Figure 2.2: Light themes in versions 3 and 4.
 <p>Notice that the r chunk specifies the option <code>results='asis'</code>. This lets you format the table using the <code><a href="https://rdrr.io/pkg/knitr/man/kable.html">kable()</a></code> function from <code>knitr</code>. You can also use more specialised functions from <a href="https://crsh.github.io/papaja_man/reporting.html#tables">papaja</a> or <a href="https://haozhu233.github.io/kableExtra/awesome_table_in_html.html">kableExtra</a> to format your tables.</p>
 </div>
 </div>
-<div id="images" class="section level4" number="2.6.4.3">
+<div id="images" class="section level4" number="2.5.4.3">
 <h4>
-<span class="header-section-number">2.6.4.3</span> Images<a class="anchor" aria-label="anchor" href="#images"><i class="fas fa-link"></i></a>
+<span class="header-section-number">2.5.4.3</span> Images<a class="anchor" aria-label="anchor" href="#images"><i class="fas fa-link"></i></a>
 </h4>
 <p>Next, create a code chunk where you want to display an image in your document. Let's put it in the Results section. We'll use some code that you'll learn more about in the <a href="ggplot.html#ggplot">data visualisation lecture</a> to show violin-boxplots for the groups.</p>
 <p>Notice how the figure caption is formatted in the chunk options.</p>
@@ -532,15 +510,15 @@ Figure 2.3: Figure 1. Scores by pet type and country.
 <img src="images/memes/x-all-the-things.png" style="width: 50%" alt=""><p class="caption">All the Things by <a href="http://hyperboleandahalf.blogspot.com/">Hyperbole and a Half</a></p>
 </div>
 </div>
-<div id="in-line-r" class="section level4" number="2.6.4.4">
+<div id="in-line-r" class="section level4" number="2.5.4.4">
 <h4>
-<span class="header-section-number">2.6.4.4</span> In-line R<a class="anchor" aria-label="anchor" href="#in-line-r"><i class="fas fa-link"></i></a>
+<span class="header-section-number">2.5.4.4</span> In-line R<a class="anchor" aria-label="anchor" href="#in-line-r"><i class="fas fa-link"></i></a>
 </h4>
 <p>Now let's analyse the pets data to see if cats are heavier than ferrets. First we'll run the analysis code. Then we'll save any numbers we might want to use in our manuscript to variables and round them appropriately. Finally, we'll use <code><span class="fu">glue</span><span class="fu">::</span><span class="fu"><a href="https://glue.tidyverse.org/reference/glue.html">glue</a></span><span class="op">(</span><span class="op">)</span></code> to format a results string.</p>
 <div class="sourceCode" id="cb57"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># analysis</span>
-<span class="va">cat_weight</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">pets</span>, <span class="va">pet</span> <span class="op">==</span> <span class="st">"cat"</span><span class="op">)</span> <span class="op">%&gt;%</span> <span class="fu">pull</span><span class="op">(</span><span class="va">weight</span><span class="op">)</span>
-<span class="va">ferret_weight</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">pets</span>, <span class="va">pet</span> <span class="op">==</span> <span class="st">"ferret"</span><span class="op">)</span> <span class="op">%&gt;%</span> <span class="fu">pull</span><span class="op">(</span><span class="va">weight</span><span class="op">)</span>
+<span class="va">cat_weight</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/filter.html">filter</a></span><span class="op">(</span><span class="va">pets</span>, <span class="va">pet</span> <span class="op">==</span> <span class="st">"cat"</span><span class="op">)</span> <span class="op">%&gt;%</span> <span class="fu">pull</span><span class="op">(</span><span class="va">weight</span><span class="op">)</span>
+<span class="va">ferret_weight</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/filter.html">filter</a></span><span class="op">(</span><span class="va">pets</span>, <span class="va">pet</span> <span class="op">==</span> <span class="st">"ferret"</span><span class="op">)</span> <span class="op">%&gt;%</span> <span class="fu">pull</span><span class="op">(</span><span class="va">weight</span><span class="op">)</span>
 <span class="va">weight_test</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/t.test.html">t.test</a></span><span class="op">(</span><span class="va">cat_weight</span>, <span class="va">ferret_weight</span><span class="op">)</span>
 
 <span class="co"># round individual values you want to report</span>
@@ -559,20 +537,20 @@ Figure 2.3: Figure 1. Scores by pet type and country.
 Cats were significantly heavier than ferrets (t = 18.42, df = 180.4, p &lt; 0.001).</p>
 </div>
 </div>
-<div id="bibliography" class="section level3" number="2.6.5">
+<div id="bibliography" class="section level3" number="2.5.5">
 <h3>
-<span class="header-section-number">2.6.5</span> Bibliography<a class="anchor" aria-label="anchor" href="#bibliography"><i class="fas fa-link"></i></a>
+<span class="header-section-number">2.5.5</span> Bibliography<a class="anchor" aria-label="anchor" href="#bibliography"><i class="fas fa-link"></i></a>
 </h3>
 <p>There are several ways to do in-text citations and automatically generate a <a href="https://rmarkdown.rstudio.com/authoring_bibliographies_and_citations.html#bibliographies">bibliography</a> in R Markdown. Markdown files need a BibTex file that contains the references you need to cite. You specify the name of this file in the YAML header, like <code>bibliography: filename.bib</code> and reference citations in text using an at symbol and a shortname, like <code>[@tidyverse]</code>.</p>
-<div id="converting-from-reference-software" class="section level4" number="2.6.5.1">
+<div id="converting-from-reference-software" class="section level4" number="2.5.5.1">
 <h4>
-<span class="header-section-number">2.6.5.1</span> Converting from reference software<a class="anchor" aria-label="anchor" href="#converting-from-reference-software"><i class="fas fa-link"></i></a>
+<span class="header-section-number">2.5.5.1</span> Converting from reference software<a class="anchor" aria-label="anchor" href="#converting-from-reference-software"><i class="fas fa-link"></i></a>
 </h4>
 <p>Most reference software like EndNote, Zotero or Mendeley have exporting options that can export to BibTeX format. You just need to check the shortnames in the resulting file.</p>
 </div>
-<div id="create-a-bibtex-file-manually" class="section level4" number="2.6.5.2">
+<div id="create-a-bibtex-file-manually" class="section level4" number="2.5.5.2">
 <h4>
-<span class="header-section-number">2.6.5.2</span> Create a BibTeX File Manually<a class="anchor" aria-label="anchor" href="#create-a-bibtex-file-manually"><i class="fas fa-link"></i></a>
+<span class="header-section-number">2.5.5.2</span> Create a BibTeX File Manually<a class="anchor" aria-label="anchor" href="#create-a-bibtex-file-manually"><i class="fas fa-link"></i></a>
 </h4>
 <p>You can make a BibTeX file and add citations manually. Make a new Text File in RStudio called "bibliography.bib".</p>
 <p>Next, add the line <code>bibliography: bibliography.bib</code> to your YAML header.</p>
@@ -588,9 +566,9 @@ Cats were significantly heavier than ferrets (t = 18.42, df = 180.4, p &lt; 0.00
   doi = {doi}
 }</code></pre>
 </div>
-<div id="citing-r-packages" class="section level4" number="2.6.5.3">
+<div id="citing-r-packages" class="section level4" number="2.5.5.3">
 <h4>
-<span class="header-section-number">2.6.5.3</span> Citing R packages<a class="anchor" aria-label="anchor" href="#citing-r-packages"><i class="fas fa-link"></i></a>
+<span class="header-section-number">2.5.5.3</span> Citing R packages<a class="anchor" aria-label="anchor" href="#citing-r-packages"><i class="fas fa-link"></i></a>
 </h4>
 <p>You can get the citation for an R package using the functions <code><a href="https://rdrr.io/r/utils/citation.html">citation()</a></code> and <code><a href="https://rdrr.io/r/utils/toLatex.html">toBibtex()</a></code>. You can paste the bibtex entry into your bibliography.bib file. Make sure to add a short name (e.g., "faux") before the first comma to refer to the reference.</p>
 <div class="sourceCode" id="cb59"><pre class="downlit sourceCode r">
@@ -605,9 +583,9 @@ Cats were significantly heavier than ferrets (t = 18.42, df = 180.4, p &lt; 0.00
 ##   url = {https://debruine.github.io/faux/},
 ## }</code></pre>
 </div>
-<div id="download-citation-info" class="section level4" number="2.6.5.4">
+<div id="download-citation-info" class="section level4" number="2.5.5.4">
 <h4>
-<span class="header-section-number">2.6.5.4</span> Download Citation Info<a class="anchor" aria-label="anchor" href="#download-citation-info"><i class="fas fa-link"></i></a>
+<span class="header-section-number">2.5.5.4</span> Download Citation Info<a class="anchor" aria-label="anchor" href="#download-citation-info"><i class="fas fa-link"></i></a>
 </h4>
 <p><a href="https://scholar.google.com/">Google Scholar</a> entries have a BibTeX citation option. This is usually the easiest way to get the relevant values, although you have to add the DOI yourself.</p>
 <p>Some journal websites also let you download citations in bibtex format. For example, go to the publisher's page for <a href="https://journals.sagepub.com/doi/abs/10.1177/2515245918770963" target="_blank">Equivalence Testing for Psychological Research: A Tutorial</a>, click on the Cite button (in the sidebar or under the bottom Explore More menu), choose BibTeX format, and download the citation. You can open up the file in a text editor and copy the text. It should look like this:</p>
@@ -634,9 +612,9 @@ eprint = {
 }</code></pre>
 <p>Paste the reference into your bibliography.bib file. Change <code>doi:10.1177/2515245918770963</code> in the first line of the reference to a shortname you will use to cite the reference in your manuscript. We'll use <code>TOSTtutorial</code>.</p>
 </div>
-<div id="in-text-citations" class="section level4" number="2.6.5.5">
+<div id="in-text-citations" class="section level4" number="2.5.5.5">
 <h4>
-<span class="header-section-number">2.6.5.5</span> In-text citations<a class="anchor" aria-label="anchor" href="#in-text-citations"><i class="fas fa-link"></i></a>
+<span class="header-section-number">2.5.5.5</span> In-text citations<a class="anchor" aria-label="anchor" href="#in-text-citations"><i class="fas fa-link"></i></a>
 </h4>
 <p>You can cite reference in text like this:</p>
 <pre><code>This tutorial uses several R packages [@tidyverse;@rmarkdown].</code></pre>
@@ -645,9 +623,9 @@ eprint = {
 <pre><code>Lakens, Scheel and Isengar [-@TOSTtutorial] wrote a tutorial explaining how to test for the absence of an effect.</code></pre>
 <p>Lakens, Scheel and Isengar <span class="citation">(<a href="bookrefs.html#ref-TOSTtutorial" role="doc-biblioref">2018</a>)</span> wrote a tutorial explaining how to test for the absence of an effect.</p>
 </div>
-<div id="citation-styles" class="section level4" number="2.6.5.6">
+<div id="citation-styles" class="section level4" number="2.5.5.6">
 <h4>
-<span class="header-section-number">2.6.5.6</span> Citation Styles<a class="anchor" aria-label="anchor" href="#citation-styles"><i class="fas fa-link"></i></a>
+<span class="header-section-number">2.5.5.6</span> Citation Styles<a class="anchor" aria-label="anchor" href="#citation-styles"><i class="fas fa-link"></i></a>
 </h4>
 <p>You can search a <a href="https://www.zotero.org/styles" target="_blank">list of style files</a> for various journals and download a file that will format your bibliography for a specific journal's style. You'll need to add the line <code>csl: filename.csl</code> to your YAML header.</p>
 <div class="info">
@@ -655,16 +633,16 @@ eprint = {
 </div>
 </div>
 </div>
-<div id="output-formats" class="section level3" number="2.6.6">
+<div id="output-formats" class="section level3" number="2.5.6">
 <h3>
-<span class="header-section-number">2.6.6</span> Output Formats<a class="anchor" aria-label="anchor" href="#output-formats"><i class="fas fa-link"></i></a>
+<span class="header-section-number">2.5.6</span> Output Formats<a class="anchor" aria-label="anchor" href="#output-formats"><i class="fas fa-link"></i></a>
 </h3>
 <p>You can knit your file to PDF or Word if you have the right packages installed on your computer. You can also create presentations, dashboards, websites, and even books with R markdown. In fact, the book you are reading right now was created using R markdown. See <a href="https://rmarkdown.rstudio.com/formats.html" target="_blank">RStudio Formats</a> for a list of all the output types.</p>
 </div>
 </div>
-<div id="glossary-repro" class="section level2" number="2.7">
+<div id="glossary-repro" class="section level2" number="2.6">
 <h2>
-<span class="header-section-number">2.7</span> Glossary<a class="anchor" aria-label="anchor" href="#glossary-repro"><i class="fas fa-link"></i></a>
+<span class="header-section-number">2.6</span> Glossary<a class="anchor" aria-label="anchor" href="#glossary-repro"><i class="fas fa-link"></i></a>
 </h2>
 <div class="inline-table"><table class="table table-sm">
 <colgroup>
@@ -726,6 +704,28 @@ eprint = {
 </tr>
 </tbody>
 </table></div>
+</div>
+<div id="resources-repro" class="section level2" number="2.7">
+<h2>
+<span class="header-section-number">2.7</span> Further Resources<a class="anchor" aria-label="anchor" href="#resources-repro"><i class="fas fa-link"></i></a>
+</h2>
+<ul>
+<li>
+<a href="http://r4ds.had.co.nz/r-markdown.html">Chapter 27: R Markdown</a> in <em>R for Data Science</em>
+</li>
+<li><a href="http://www.rstudio.com/wp-content/uploads/2016/03/rmarkdown-cheatsheet-2.0.pdf">R Markdown Cheat Sheet</a></li>
+<li><a href="https://www.rstudio.com/wp-content/uploads/2015/03/rmarkdown-reference.pdf">R Markdown reference Guide</a></li>
+<li><a href="https://rmarkdown.rstudio.com/lesson-1.html">R Markdown Tutorial</a></li>
+<li>
+<a href="https://bookdown.org/yihui/rmarkdown/">R Markdown: The Definitive Guide</a> by Yihui Xie, J. J. Allaire, &amp; Garrett Grolemund</li>
+<li>
+<a href="https://slides.djnavarro.net/project-structure/">Project Structure</a> by Danielle Navarro</li>
+<li>
+<a href="https://speakerdeck.com/jennybc/how-to-name-files">How to name files</a> by Jenny Bryan</li>
+<li>
+<a href="https://crsh.github.io/papaja_man/">Papaja</a> Reproducible APA Manuscripts</li>
+<li><a href="https://the-turing-way.netlify.app/">The Turing Way</a></li>
+</ul>
 </div>
 </div>
 <div class="psyteachr_footer">
@@ -860,26 +860,26 @@ $( document ).ready(function() {
 <li><a class="nav-link" href="#intermediate">Intermediate</a></li>
 </ul>
 </li>
-<li><a class="nav-link" href="#resources-repro"><span class="header-section-number">2.2</span> Resources</a></li>
-<li><a class="nav-link" href="#setup-repro"><span class="header-section-number">2.3</span> Setup</a></li>
-<li><a class="nav-link" href="#why-learn-reproducible-reports"><span class="header-section-number">2.4</span> Why learn reproducible reports?</a></li>
+<li><a class="nav-link" href="#setup-repro"><span class="header-section-number">2.2</span> Setup</a></li>
+<li><a class="nav-link" href="#why-learn-reproducible-reports"><span class="header-section-number">2.3</span> Why learn reproducible reports?</a></li>
 <li>
-<a class="nav-link" href="#projects"><span class="header-section-number">2.5</span> Organising a project</a><ul class="nav navbar-nav">
-<li><a class="nav-link" href="#working-directory"><span class="header-section-number">2.5.1</span> Working Directory</a></li>
-<li><a class="nav-link" href="#naming-things"><span class="header-section-number">2.5.2</span> Naming Things</a></li>
+<a class="nav-link" href="#projects"><span class="header-section-number">2.4</span> Organising a project</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#working-directory"><span class="header-section-number">2.4.1</span> Working Directory</a></li>
+<li><a class="nav-link" href="#naming-things"><span class="header-section-number">2.4.2</span> Naming Things</a></li>
 </ul>
 </li>
 <li>
-<a class="nav-link" href="#r-markdown"><span class="header-section-number">2.6</span> R Markdown</a><ul class="nav navbar-nav">
-<li><a class="nav-link" href="#yaml-header"><span class="header-section-number">2.6.1</span> YAML Header</a></li>
-<li><a class="nav-link" href="#setup"><span class="header-section-number">2.6.2</span> Setup</a></li>
-<li><a class="nav-link" href="#structure"><span class="header-section-number">2.6.3</span> Structure</a></li>
-<li><a class="nav-link" href="#code-chunks"><span class="header-section-number">2.6.4</span> Code Chunks</a></li>
-<li><a class="nav-link" href="#bibliography"><span class="header-section-number">2.6.5</span> Bibliography</a></li>
-<li><a class="nav-link" href="#output-formats"><span class="header-section-number">2.6.6</span> Output Formats</a></li>
+<a class="nav-link" href="#r-markdown"><span class="header-section-number">2.5</span> R Markdown</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#yaml-header"><span class="header-section-number">2.5.1</span> YAML Header</a></li>
+<li><a class="nav-link" href="#setup"><span class="header-section-number">2.5.2</span> Setup</a></li>
+<li><a class="nav-link" href="#structure"><span class="header-section-number">2.5.3</span> Structure</a></li>
+<li><a class="nav-link" href="#code-chunks"><span class="header-section-number">2.5.4</span> Code Chunks</a></li>
+<li><a class="nav-link" href="#bibliography"><span class="header-section-number">2.5.5</span> Bibliography</a></li>
+<li><a class="nav-link" href="#output-formats"><span class="header-section-number">2.5.6</span> Output Formats</a></li>
 </ul>
 </li>
-<li><a class="nav-link" href="#glossary-repro"><span class="header-section-number">2.7</span> Glossary</a></li>
+<li><a class="nav-link" href="#glossary-repro"><span class="header-section-number">2.6</span> Glossary</a></li>
+<li><a class="nav-link" href="#resources-repro"><span class="header-section-number">2.7</span> Further Resources</a></li>
 </ul>
 
       <div class="book-extra">
@@ -897,7 +897,7 @@ $( document ).ready(function() {
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Data Skills for Reproducible Research</strong>: v2" was written by . It was last built on 2021-08-31.</p>
+    <p>"<strong>Data Skills for Reproducible Research</strong>: v2" was written by . It was last built on 2021-09-03.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

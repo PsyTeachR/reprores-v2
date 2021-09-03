@@ -121,24 +121,9 @@
 </ol>
 </div>
 </div>
-<div id="resources-tidyr" class="section level2" number="6.2">
+<div id="setup-tidyr" class="section level2" number="6.2">
 <h2>
-<span class="header-section-number">6.2</span> Resources<a class="anchor" aria-label="anchor" href="#resources-tidyr"><i class="fas fa-link"></i></a>
-</h2>
-<ul>
-<li><a href="http://vita.had.co.nz/papers/tidy-data.html">Tidy Data</a></li>
-<li>
-<a href="http://r4ds.had.co.nz/tidy-data.html">Chapter 12: Tidy Data</a> in <em>R for Data Science</em>
-</li>
-<li>
-<a href="http://r4ds.had.co.nz/pipes.html">Chapter 18: Pipes</a> in <em>R for Data Science</em>
-</li>
-<li><a href="https://www.rstudio.com/wp-content/uploads/2015/02/data-wrangling-cheatsheet.pdf">Data wrangling cheat sheet</a></li>
-</ul>
-</div>
-<div id="setup-tidyr" class="section level2" number="6.3">
-<h2>
-<span class="header-section-number">6.3</span> Setup<a class="anchor" aria-label="anchor" href="#setup-tidyr"><i class="fas fa-link"></i></a>
+<span class="header-section-number">6.2</span> Setup<a class="anchor" aria-label="anchor" href="#setup-tidyr"><i class="fas fa-link"></i></a>
 </h2>
 <div class="sourceCode" id="cb223"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># libraries needed</span>
@@ -147,13 +132,13 @@
 
 <span class="fu"><a href="https://rdrr.io/r/base/Random.html">set.seed</a></span><span class="op">(</span><span class="fl">8675309</span><span class="op">)</span> <span class="co"># makes sure random numbers are reproducible</span></code></pre></div>
 </div>
-<div id="tidy-data" class="section level2" number="6.4">
+<div id="tidy-data" class="section level2" number="6.3">
 <h2>
-<span class="header-section-number">6.4</span> Tidy Data<a class="anchor" aria-label="anchor" href="#tidy-data"><i class="fas fa-link"></i></a>
+<span class="header-section-number">6.3</span> Tidy Data<a class="anchor" aria-label="anchor" href="#tidy-data"><i class="fas fa-link"></i></a>
 </h2>
-<div id="three-rules" class="section level3" number="6.4.1">
+<div id="three-rules" class="section level3" number="6.3.1">
 <h3>
-<span class="header-section-number">6.4.1</span> Three Rules<a class="anchor" aria-label="anchor" href="#three-rules"><i class="fas fa-link"></i></a>
+<span class="header-section-number">6.3.1</span> Three Rules<a class="anchor" aria-label="anchor" href="#three-rules"><i class="fas fa-link"></i></a>
 </h3>
 <ul>
 <li>Each <a class="glossary" target="_blank" title="A word that identifies and stores the value of some data for later use." href="https://psyteachr.github.io/glossary/v#variable">variable</a> must have its own column</li>
@@ -363,9 +348,9 @@
 </tbody>
 </table></div>
 </div>
-<div id="wide_long" class="section level3" number="6.4.2">
+<div id="wide_long" class="section level3" number="6.3.2">
 <h3>
-<span class="header-section-number">6.4.2</span> Wide versus long<a class="anchor" aria-label="anchor" href="#wide_long"><i class="fas fa-link"></i></a>
+<span class="header-section-number">6.3.2</span> Wide versus long<a class="anchor" aria-label="anchor" href="#wide_long"><i class="fas fa-link"></i></a>
 </h3>
 <p>Data tables can be in <a class="glossary" target="_blank" title="Data where all of the observations about one subject are in the same row" href="https://psyteachr.github.io/glossary/w#wide">wide</a> format or <a class="glossary" target="_blank" title="Data where each observation is on a separate row" href="https://psyteachr.github.io/glossary/l#long">long</a> format (and sometimes a mix of the two). Wide data are where all of the observations about one subject are in the same row, while long data are where each observation is on a separate row. You often need to convert between these formats to do different types of analyses or data processing.</p>
 <p>Imagine a study where each subject completes a questionnaire with three items. Each answer is an <a class="glossary" target="_blank" title="All of the data about a single trial or question." href="https://psyteachr.github.io/glossary/o#observation">observation</a> of that subject. You are probably most familiar with data like this in a wide format, where the subject <code>id</code> is in one column, and each of the three item responses is in its own column.</p>
@@ -509,14 +494,14 @@ Answer
 </div>
 </div>
 </div>
-<div id="pivot" class="section level2" number="6.5">
+<div id="pivot" class="section level2" number="6.4">
 <h2>
-<span class="header-section-number">6.5</span> Pivot Functions<a class="anchor" aria-label="anchor" href="#pivot"><i class="fas fa-link"></i></a>
+<span class="header-section-number">6.4</span> Pivot Functions<a class="anchor" aria-label="anchor" href="#pivot"><i class="fas fa-link"></i></a>
 </h2>
 <p>The pivot functions allow you to transform a data table from wide to long or long to wide in one step.</p>
-<div id="load-data" class="section level3" number="6.5.1">
+<div id="load-data" class="section level3" number="6.4.1">
 <h3>
-<span class="header-section-number">6.5.1</span> Load Data<a class="anchor" aria-label="anchor" href="#load-data"><i class="fas fa-link"></i></a>
+<span class="header-section-number">6.4.1</span> Load Data<a class="anchor" aria-label="anchor" href="#load-data"><i class="fas fa-link"></i></a>
 </h3>
 <p>We will used the dataset <code>personality</code> from the reprores package (or download the data from <a href="./data/personality.csv">personality.csv</a>). These data are from a 5-factor (personality) personality questionnaire. Each question is labelled with the domain (Op = openness, Co = conscientiousness, Ex = extroversion, Ag = agreeableness, and Ne = neuroticism) and the question number.</p>
 <div class="sourceCode" id="cb224"><pre class="downlit sourceCode r">
@@ -886,9 +871,9 @@ Answer
 </tbody>
 </table></div>
 </div>
-<div id="pivot_longer" class="section level3" number="6.5.2">
+<div id="pivot_longer" class="section level3" number="6.4.2">
 <h3>
-<span class="header-section-number">6.5.2</span> pivot_longer()<a class="anchor" aria-label="anchor" href="#pivot_longer"><i class="fas fa-link"></i></a>
+<span class="header-section-number">6.4.2</span> pivot_longer()<a class="anchor" aria-label="anchor" href="#pivot_longer"><i class="fas fa-link"></i></a>
 </h3>
 <p><code>pivot_longer()</code> converts a wide data table to long format by converting the headers from specified columns into the values of new columns, and combining the values of those columns into a new condensed column.</p>
 <ul>
@@ -972,9 +957,9 @@ Answer
 </table></div>
 </div>
 </div>
-<div id="pivot_wider" class="section level3" number="6.5.3">
+<div id="pivot_wider" class="section level3" number="6.4.3">
 <h3>
-<span class="header-section-number">6.5.3</span> pivot_wider()<a class="anchor" aria-label="anchor" href="#pivot_wider"><i class="fas fa-link"></i></a>
+<span class="header-section-number">6.4.3</span> pivot_wider()<a class="anchor" aria-label="anchor" href="#pivot_wider"><i class="fas fa-link"></i></a>
 </h3>
 <p>We can also go from long to wide format using the <code>pivot_wider()</code> function.</p>
 <ul>
@@ -1040,14 +1025,14 @@ Answer
 ## $ Ex9     &lt;dbl&gt; 4, 6, 5, 5, 5, 2, 3, 3, 6, 3, 3, 4, 4, 3, 2, 5, 5, 4, 4, 0, 4,…</code></pre>
 </div>
 </div>
-<div id="tidy-verbs" class="section level2" number="6.6">
+<div id="tidy-verbs" class="section level2" number="6.5">
 <h2>
-<span class="header-section-number">6.6</span> Tidy Verbs<a class="anchor" aria-label="anchor" href="#tidy-verbs"><i class="fas fa-link"></i></a>
+<span class="header-section-number">6.5</span> Tidy Verbs<a class="anchor" aria-label="anchor" href="#tidy-verbs"><i class="fas fa-link"></i></a>
 </h2>
 <p>The pivot functions above are relatively new functions that combine the four basic tidy verbs. You can also convert data between long and wide formats using these functions. Many researchers still use these functions and older code will not use the pivot functions, so it is useful to know how to interpret these.</p>
-<div id="gather" class="section level3" number="6.6.1">
+<div id="gather" class="section level3" number="6.5.1">
 <h3>
-<span class="header-section-number">6.6.1</span> gather()<a class="anchor" aria-label="anchor" href="#gather"><i class="fas fa-link"></i></a>
+<span class="header-section-number">6.5.1</span> gather()<a class="anchor" aria-label="anchor" href="#gather"><i class="fas fa-link"></i></a>
 </h3>
 <p>Much like <code>pivot_longer()</code>, <code>gather()</code> makes a wide data table long by creating a column for the headers and a column for the values. The main difference is that you cannot turn the headers into more than one column.</p>
 <ul>
@@ -1074,9 +1059,9 @@ Answer
 ## $ question &lt;chr&gt; "Op1", "Op1", "Op1", "Op1", "Op1", "Op1", "Op1", "Op1", "Op1"…
 ## $ score    &lt;dbl&gt; 3, 6, 6, 6, 6, 3, 3, 6, 6, 3, 4, 5, 5, 5, 6, 4, 1, 2, 5, 6, 4…</code></pre>
 </div>
-<div id="separate" class="section level3" number="6.6.2">
+<div id="separate" class="section level3" number="6.5.2">
 <h3>
-<span class="header-section-number">6.6.2</span> separate()<a class="anchor" aria-label="anchor" href="#separate"><i class="fas fa-link"></i></a>
+<span class="header-section-number">6.5.2</span> separate()<a class="anchor" aria-label="anchor" href="#separate"><i class="fas fa-link"></i></a>
 </h3>
 <ul>
 <li>
@@ -1107,9 +1092,9 @@ Answer
 <p>If you want to separate just at full stops, you need to use <code>sep = "\\."</code>, not <code>sep = "."</code>. The two slashes <strong>escape</strong> the full stop, making it interpreted as a literal full stop and not the regular expression for any character.</p>
 </div>
 </div>
-<div id="unite" class="section level3" number="6.6.3">
+<div id="unite" class="section level3" number="6.5.3">
 <h3>
-<span class="header-section-number">6.6.3</span> unite()<a class="anchor" aria-label="anchor" href="#unite"><i class="fas fa-link"></i></a>
+<span class="header-section-number">6.5.3</span> unite()<a class="anchor" aria-label="anchor" href="#unite"><i class="fas fa-link"></i></a>
 </h3>
 <ul>
 <li>
@@ -1135,9 +1120,9 @@ Answer
 ## $ domain_n &lt;chr&gt; "Op_Q1", "Op_Q1", "Op_Q1", "Op_Q1", "Op_Q1", "Op_Q1", "Op_Q1"…
 ## $ score    &lt;dbl&gt; 3, 6, 6, 6, 6, 3, 3, 6, 6, 3, 4, 5, 5, 5, 6, 4, 1, 2, 5, 6, 4…</code></pre>
 </div>
-<div id="spread" class="section level3" number="6.6.4">
+<div id="spread" class="section level3" number="6.5.4">
 <h3>
-<span class="header-section-number">6.6.4</span> spread()<a class="anchor" aria-label="anchor" href="#spread"><i class="fas fa-link"></i></a>
+<span class="header-section-number">6.5.4</span> spread()<a class="anchor" aria-label="anchor" href="#spread"><i class="fas fa-link"></i></a>
 </h3>
 <p>You can reverse the processes above, as well. For example, you can convert data from long format into wide format.</p>
 <ul>
@@ -1200,9 +1185,9 @@ Answer
 ## $ Op_Q7   &lt;dbl&gt; 0, 6, 5, 5, 5, 4, 6, 2, 1, 3, 2, 4, 5, 5, 6, 3, 6, 5, 2, 6, 5,…</code></pre>
 </div>
 </div>
-<div id="pipes" class="section level2" number="6.7">
+<div id="pipes" class="section level2" number="6.6">
 <h2>
-<span class="header-section-number">6.7</span> Pipes<a class="anchor" aria-label="anchor" href="#pipes"><i class="fas fa-link"></i></a>
+<span class="header-section-number">6.6</span> Pipes<a class="anchor" aria-label="anchor" href="#pipes"><i class="fas fa-link"></i></a>
 </h2>
 <div class="small_right">
 <img src="images/tidyr/pipe_sticker.png" alt="Pipe hex sticker">
@@ -1373,13 +1358,13 @@ Answer
   <span class="fu">unite</span><span class="op">(</span><span class="st">"domain_n"</span>, <span class="va">domain</span>, <span class="va">qnumber</span>, sep <span class="op">=</span> <span class="st">"_Q"</span><span class="op">)</span> <span class="op">%&gt;%</span>
   <span class="fu">spread</span><span class="op">(</span><span class="va">domain_n</span>, <span class="va">score</span><span class="op">)</span></code></pre></div>
 </div>
-<div id="more-complex-example" class="section level2" number="6.8">
+<div id="more-complex-example" class="section level2" number="6.7">
 <h2>
-<span class="header-section-number">6.8</span> More Complex Example<a class="anchor" aria-label="anchor" href="#more-complex-example"><i class="fas fa-link"></i></a>
+<span class="header-section-number">6.7</span> More Complex Example<a class="anchor" aria-label="anchor" href="#more-complex-example"><i class="fas fa-link"></i></a>
 </h2>
-<div id="load-data-1" class="section level3" number="6.8.1">
+<div id="load-data-1" class="section level3" number="6.7.1">
 <h3>
-<span class="header-section-number">6.8.1</span> Load Data<a class="anchor" aria-label="anchor" href="#load-data-1"><i class="fas fa-link"></i></a>
+<span class="header-section-number">6.7.1</span> Load Data<a class="anchor" aria-label="anchor" href="#load-data-1"><i class="fas fa-link"></i></a>
 </h3>
 <p>Get data on infant and maternal mortality rates from the reprores package. If you don't have the package, you can download them here:</p>
 <ul>
@@ -1489,9 +1474,9 @@ Answer
 </table></div>
 </div>
 </div>
-<div id="wide-to-long" class="section level3" number="6.8.2">
+<div id="wide-to-long" class="section level3" number="6.7.2">
 <h3>
-<span class="header-section-number">6.8.2</span> Wide to Long<a class="anchor" aria-label="anchor" href="#wide-to-long"><i class="fas fa-link"></i></a>
+<span class="header-section-number">6.7.2</span> Wide to Long<a class="anchor" aria-label="anchor" href="#wide-to-long"><i class="fas fa-link"></i></a>
 </h3>
 <p><code>matmort</code> is in wide format, with a separate column for each year. Change it to long format, with a row for each Country/Year observation.</p>
 <p>This example is complicated because the column names to gather <em>are</em> numbers. If the column names are non-standard (e.g., have spaces, start with numbers, or have special characters), you can enclose them in backticks (`) like the example below.</p>
@@ -1520,9 +1505,9 @@ Answer
 ## $ Year    &lt;chr&gt; "1990", "1990", "1990", "1990", "1990", "1990", "1990", "1990"…
 ## $ stats   &lt;chr&gt; "1 340 [ 878 - 1 950]", "71 [ 58 -  88]", "216 [ 141 -  327]",…</code></pre>
 </div>
-<div id="one-piece-of-data-per-column" class="section level3" number="6.8.3">
+<div id="one-piece-of-data-per-column" class="section level3" number="6.7.3">
 <h3>
-<span class="header-section-number">6.8.3</span> One Piece of Data per Column<a class="anchor" aria-label="anchor" href="#one-piece-of-data-per-column"><i class="fas fa-link"></i></a>
+<span class="header-section-number">6.7.3</span> One Piece of Data per Column<a class="anchor" aria-label="anchor" href="#one-piece-of-data-per-column"><i class="fas fa-link"></i></a>
 </h3>
 <p>The data in the <code>stats</code> column is in an unusual format with some sort of confidence interval in brackets and lots of extra spaces. We don't need any of the spaces, so first we'll remove them with <code><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate()</a></code>, which we'll learn more about in the next lesson.</p>
 <p>The <code>separate</code> function will separate your data on anything that is not a number or letter, so try it first without specifying the <code>sep</code> argument. The <code>into</code> argument is a list of the new column names.</p>
@@ -1545,9 +1530,9 @@ Answer
 flexible way to do search and replace. The example above replaces all occurances of the <code>pattern</code> " " (a space), with the <code>replacement</code> "" (nothing), in the string <code>x</code> (the <code>stats</code> column). Use <code><a href="https://rdrr.io/r/base/grep.html">sub()</a></code> instead if you only want to replace the first occurance of a pattern. We only used a simple pattern here, but you can use more complicated <a href="https://stat.ethz.ch/R-manual/R-devel/library/base/html/regex.html">regex</a> patterns to replace, for example, all even numbers (e.g., <code><a href="https://rdrr.io/r/base/grep.html">gsub("[:02468:]", "*", "id = 123456")</a></code>) or all occurances of the word colour in US or UK spelling
 (e.g., <code><a href="https://rdrr.io/r/base/grep.html">gsub("colo(u)?r", "***", "replace color, colour, or colours, but not collors")</a></code>).</p>
 </div>
-<div id="extra" class="section level4" number="6.8.3.1">
+<div id="extra" class="section level4" number="6.7.3.1">
 <h4>
-<span class="header-section-number">6.8.3.1</span> Handle spare columns with <code>extra</code><a class="anchor" aria-label="anchor" href="#extra"><i class="fas fa-link"></i></a>
+<span class="header-section-number">6.7.3.1</span> Handle spare columns with <code>extra</code><a class="anchor" aria-label="anchor" href="#extra"><i class="fas fa-link"></i></a>
 </h4>
 <div class="warning">
 <p>The previous example should have given you an error warning about
@@ -1566,9 +1551,9 @@ flexible way to do search and replace. The example above replaces all occurances
 ## $ ci_low  &lt;chr&gt; "878", "58", "141", "627", "64", "51", "7", "7", "56", "34", "…
 ## $ ci_hi   &lt;chr&gt; "1950", "88", "327", "2020", "80", "65", "9", "10", "74", "61"…</code></pre>
 </div>
-<div id="sep" class="section level4" number="6.8.3.2">
+<div id="sep" class="section level4" number="6.7.3.2">
 <h4>
-<span class="header-section-number">6.8.3.2</span> Set delimiters with <code>sep</code><a class="anchor" aria-label="anchor" href="#sep"><i class="fas fa-link"></i></a>
+<span class="header-section-number">6.7.3.2</span> Set delimiters with <code>sep</code><a class="anchor" aria-label="anchor" href="#sep"><i class="fas fa-link"></i></a>
 </h4>
 <p>Now do the same with <code>infmort</code>. It's already in long format, so you don't need to use <code>gather</code>, but the third column has a ridiculously long name, so we can just refer to it by its column number (3).</p>
 <div class="sourceCode" id="cb253"><pre class="downlit sourceCode r">
@@ -1607,9 +1592,9 @@ to separate complex columns. Here, we want to separate on dashes and brackets. Y
 ## $ ci_low  &lt;chr&gt; "52.7", "55.7", "58.7", "61.6", "64.4", "66.9", "69.0", "71.2"…
 ## $ ci_hi   &lt;chr&gt; "83.9", "83.6", "83.5", "83.7", "84.2", "85.1", "86.1", "87.3"…</code></pre>
 </div>
-<div id="convert" class="section level4" number="6.8.3.3">
+<div id="convert" class="section level4" number="6.7.3.3">
 <h4>
-<span class="header-section-number">6.8.3.3</span> Fix data types with <code>convert</code><a class="anchor" aria-label="anchor" href="#convert"><i class="fas fa-link"></i></a>
+<span class="header-section-number">6.7.3.3</span> Fix data types with <code>convert</code><a class="anchor" aria-label="anchor" href="#convert"><i class="fas fa-link"></i></a>
 </h4>
 <p>That's better. Notice the <em><chr></chr></em> next to <code>Year</code>, <code>rate</code>, <code>ci_low</code> and <code>ci_hi</code>. That means these columns hold characters (like words), not numbers or integers. This can cause problems when you try to do thigs like average the numbers (you can't average words), so we can fix it by adding the argument <code>convert</code> and setting it to <code>TRUE</code>.</p>
 <div class="sourceCode" id="cb257"><pre class="downlit sourceCode r">
@@ -1645,9 +1630,9 @@ to separate complex columns. Here, we want to separate on dashes and brackets. Y
 ## $ ci_hi   &lt;int&gt; 1950, 88, 327, 2020, 80, 65, 9, 10, 74, 61, 33, 715, 72, 38, 1…</code></pre>
 </div>
 </div>
-<div id="all-in-one-step" class="section level3" number="6.8.4">
+<div id="all-in-one-step" class="section level3" number="6.7.4">
 <h3>
-<span class="header-section-number">6.8.4</span> All in one step<a class="anchor" aria-label="anchor" href="#all-in-one-step"><i class="fas fa-link"></i></a>
+<span class="header-section-number">6.7.4</span> All in one step<a class="anchor" aria-label="anchor" href="#all-in-one-step"><i class="fas fa-link"></i></a>
 </h3>
 <p>We can chain all the steps for <code>matmort</code> above together, since we don't need those intermediate data tables.</p>
 <div class="sourceCode" id="cb261"><pre class="downlit sourceCode r">
@@ -1669,9 +1654,9 @@ to separate complex columns. Here, we want to separate on dashes and brackets. Y
 ## $ ci_low  &lt;int&gt; 878, 58, 141, 627, 64, 51, 7, 7, 56, 34, 20, 446, 47, 28, 7, 4…
 ## $ ci_hi   &lt;int&gt; 1950, 88, 327, 2020, 80, 65, 9, 10, 74, 61, 33, 715, 72, 38, 1…</code></pre>
 </div>
-<div id="columns-by-year" class="section level3" number="6.8.5">
+<div id="columns-by-year" class="section level3" number="6.7.5">
 <h3>
-<span class="header-section-number">6.8.5</span> Columns by Year<a class="anchor" aria-label="anchor" href="#columns-by-year"><i class="fas fa-link"></i></a>
+<span class="header-section-number">6.7.5</span> Columns by Year<a class="anchor" aria-label="anchor" href="#columns-by-year"><i class="fas fa-link"></i></a>
 </h3>
 <p>Spread out the maternal mortality rate by year.</p>
 <div class="sourceCode" id="cb263"><pre class="downlit sourceCode r">
@@ -1717,9 +1702,9 @@ to separate complex columns. Here, we want to separate on dashes and brackets. Y
 ## $ ci_hi_2000  &lt;int&gt; 1570, 56, 241, 1730, 65, 46, 10, 6, 55, 74, 26, 496, 58, 3…
 ## $ ci_hi_2015  &lt;int&gt; 620, 46, 244, 988, 63, 31, 7, 5, 35, 124, 19, 280, 37, 6, …</code></pre>
 </div>
-<div id="experimentum-data" class="section level3" number="6.8.6">
+<div id="experimentum-data" class="section level3" number="6.7.6">
 <h3>
-<span class="header-section-number">6.8.6</span> Experimentum Data<a class="anchor" aria-label="anchor" href="#experimentum-data"><i class="fas fa-link"></i></a>
+<span class="header-section-number">6.7.6</span> Experimentum Data<a class="anchor" aria-label="anchor" href="#experimentum-data"><i class="fas fa-link"></i></a>
 </h3>
 <p>Students in the Institute of Neuroscience and Psychology at the University of Glasgow can use the online experiment builder platform, <a href="https://debruine.github.io/experimentum/">Experimentum</a>. The platform is also <a href="https://github.com/debruine/experimentum">open source on github</a> for anyone who can install it on a web server. It allows you to group questionnaires and experiments into <strong>projects</strong> with randomisation and counterbalancing. Data for questionnaires and experiments are downloadable in long format, but researchers often need to put them in wide format for analysis.</p>
 <p>Look at the help menu for built-in dataset <code>experimentum_quests</code> to learn what each column is. Subjects are asked questions about dogs to test the different questionnaire response types.</p>
@@ -1768,9 +1753,9 @@ to separate complex columns. Here, we want to separate on dashes and brackets. Y
 </div>
 </div>
 </div>
-<div id="glossary-tidyr" class="section level2" number="6.9">
+<div id="glossary-tidyr" class="section level2" number="6.8">
 <h2>
-<span class="header-section-number">6.9</span> Glossary<a class="anchor" aria-label="anchor" href="#glossary-tidyr"><i class="fas fa-link"></i></a>
+<span class="header-section-number">6.8</span> Glossary<a class="anchor" aria-label="anchor" href="#glossary-tidyr"><i class="fas fa-link"></i></a>
 </h2>
 <div class="inline-table"><table class="table table-sm">
 <colgroup>
@@ -1816,6 +1801,21 @@ to separate complex columns. Here, we want to separate on dashes and brackets. Y
 </tr>
 </tbody>
 </table></div>
+</div>
+<div id="resources-tidyr" class="section level2" number="6.9">
+<h2>
+<span class="header-section-number">6.9</span> Further Resources<a class="anchor" aria-label="anchor" href="#resources-tidyr"><i class="fas fa-link"></i></a>
+</h2>
+<ul>
+<li><a href="http://vita.had.co.nz/papers/tidy-data.html">Tidy Data</a></li>
+<li>
+<a href="http://r4ds.had.co.nz/tidy-data.html">Chapter 12: Tidy Data</a> in <em>R for Data Science</em>
+</li>
+<li>
+<a href="http://r4ds.had.co.nz/pipes.html">Chapter 18: Pipes</a> in <em>R for Data Science</em>
+</li>
+<li><a href="https://www.rstudio.com/wp-content/uploads/2015/02/data-wrangling-cheatsheet.pdf">Data wrangling cheat sheet</a></li>
+</ul>
 </div>
 </div>
 <div class="psyteachr_footer">
@@ -1950,41 +1950,41 @@ $( document ).ready(function() {
 <li><a class="nav-link" href="#intermediate-2">Intermediate</a></li>
 </ul>
 </li>
-<li><a class="nav-link" href="#resources-tidyr"><span class="header-section-number">6.2</span> Resources</a></li>
-<li><a class="nav-link" href="#setup-tidyr"><span class="header-section-number">6.3</span> Setup</a></li>
+<li><a class="nav-link" href="#setup-tidyr"><span class="header-section-number">6.2</span> Setup</a></li>
 <li>
-<a class="nav-link" href="#tidy-data"><span class="header-section-number">6.4</span> Tidy Data</a><ul class="nav navbar-nav">
-<li><a class="nav-link" href="#three-rules"><span class="header-section-number">6.4.1</span> Three Rules</a></li>
-<li><a class="nav-link" href="#wide_long"><span class="header-section-number">6.4.2</span> Wide versus long</a></li>
+<a class="nav-link" href="#tidy-data"><span class="header-section-number">6.3</span> Tidy Data</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#three-rules"><span class="header-section-number">6.3.1</span> Three Rules</a></li>
+<li><a class="nav-link" href="#wide_long"><span class="header-section-number">6.3.2</span> Wide versus long</a></li>
 </ul>
 </li>
 <li>
-<a class="nav-link" href="#pivot"><span class="header-section-number">6.5</span> Pivot Functions</a><ul class="nav navbar-nav">
-<li><a class="nav-link" href="#load-data"><span class="header-section-number">6.5.1</span> Load Data</a></li>
-<li><a class="nav-link" href="#pivot_longer"><span class="header-section-number">6.5.2</span> pivot_longer()</a></li>
-<li><a class="nav-link" href="#pivot_wider"><span class="header-section-number">6.5.3</span> pivot_wider()</a></li>
+<a class="nav-link" href="#pivot"><span class="header-section-number">6.4</span> Pivot Functions</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#load-data"><span class="header-section-number">6.4.1</span> Load Data</a></li>
+<li><a class="nav-link" href="#pivot_longer"><span class="header-section-number">6.4.2</span> pivot_longer()</a></li>
+<li><a class="nav-link" href="#pivot_wider"><span class="header-section-number">6.4.3</span> pivot_wider()</a></li>
 </ul>
 </li>
 <li>
-<a class="nav-link" href="#tidy-verbs"><span class="header-section-number">6.6</span> Tidy Verbs</a><ul class="nav navbar-nav">
-<li><a class="nav-link" href="#gather"><span class="header-section-number">6.6.1</span> gather()</a></li>
-<li><a class="nav-link" href="#separate"><span class="header-section-number">6.6.2</span> separate()</a></li>
-<li><a class="nav-link" href="#unite"><span class="header-section-number">6.6.3</span> unite()</a></li>
-<li><a class="nav-link" href="#spread"><span class="header-section-number">6.6.4</span> spread()</a></li>
+<a class="nav-link" href="#tidy-verbs"><span class="header-section-number">6.5</span> Tidy Verbs</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#gather"><span class="header-section-number">6.5.1</span> gather()</a></li>
+<li><a class="nav-link" href="#separate"><span class="header-section-number">6.5.2</span> separate()</a></li>
+<li><a class="nav-link" href="#unite"><span class="header-section-number">6.5.3</span> unite()</a></li>
+<li><a class="nav-link" href="#spread"><span class="header-section-number">6.5.4</span> spread()</a></li>
 </ul>
 </li>
-<li><a class="nav-link" href="#pipes"><span class="header-section-number">6.7</span> Pipes</a></li>
+<li><a class="nav-link" href="#pipes"><span class="header-section-number">6.6</span> Pipes</a></li>
 <li>
-<a class="nav-link" href="#more-complex-example"><span class="header-section-number">6.8</span> More Complex Example</a><ul class="nav navbar-nav">
-<li><a class="nav-link" href="#load-data-1"><span class="header-section-number">6.8.1</span> Load Data</a></li>
-<li><a class="nav-link" href="#wide-to-long"><span class="header-section-number">6.8.2</span> Wide to Long</a></li>
-<li><a class="nav-link" href="#one-piece-of-data-per-column"><span class="header-section-number">6.8.3</span> One Piece of Data per Column</a></li>
-<li><a class="nav-link" href="#all-in-one-step"><span class="header-section-number">6.8.4</span> All in one step</a></li>
-<li><a class="nav-link" href="#columns-by-year"><span class="header-section-number">6.8.5</span> Columns by Year</a></li>
-<li><a class="nav-link" href="#experimentum-data"><span class="header-section-number">6.8.6</span> Experimentum Data</a></li>
+<a class="nav-link" href="#more-complex-example"><span class="header-section-number">6.7</span> More Complex Example</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#load-data-1"><span class="header-section-number">6.7.1</span> Load Data</a></li>
+<li><a class="nav-link" href="#wide-to-long"><span class="header-section-number">6.7.2</span> Wide to Long</a></li>
+<li><a class="nav-link" href="#one-piece-of-data-per-column"><span class="header-section-number">6.7.3</span> One Piece of Data per Column</a></li>
+<li><a class="nav-link" href="#all-in-one-step"><span class="header-section-number">6.7.4</span> All in one step</a></li>
+<li><a class="nav-link" href="#columns-by-year"><span class="header-section-number">6.7.5</span> Columns by Year</a></li>
+<li><a class="nav-link" href="#experimentum-data"><span class="header-section-number">6.7.6</span> Experimentum Data</a></li>
 </ul>
 </li>
-<li><a class="nav-link" href="#glossary-tidyr"><span class="header-section-number">6.9</span> Glossary</a></li>
+<li><a class="nav-link" href="#glossary-tidyr"><span class="header-section-number">6.8</span> Glossary</a></li>
+<li><a class="nav-link" href="#resources-tidyr"><span class="header-section-number">6.9</span> Further Resources</a></li>
 </ul>
 
       <div class="book-extra">
@@ -2002,7 +2002,7 @@ $( document ).ready(function() {
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Data Skills for Reproducible Research</strong>: v2" was written by . It was last built on 2021-08-31.</p>
+    <p>"<strong>Data Skills for Reproducible Research</strong>: v2" was written by . It was last built on 2021-09-03.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

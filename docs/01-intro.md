@@ -11,16 +11,6 @@
 4. Install a [package](#install-package) [(video)](https://youtu.be/u_pvHnqkVCE){class="video"}
 
 
-## Resources {#resources-intro}
-
-* [Chapter 1: Introduction](http://r4ds.had.co.nz/introduction.html) in *R for Data Science*
-* [RStudio IDE Cheatsheet](https://github.com/rstudio/cheatsheets/raw/master/rstudio-ide.pdf)
-* [Introduction to R Markdown](https://rmarkdown.rstudio.com/lesson-1.html)
-* [R Markdown Cheatsheet](https://github.com/rstudio/cheatsheets/raw/master/rmarkdown-2.0.pdf)
-* [R Markdown Reference](https://www.rstudio.com/wp-content/uploads/2015/03/rmarkdown-reference.pdf)
-* [RStudio Cloud](https://rstudio.cloud/){target="_blank"}
-
-
 ## What is R?
 
 <div class="meme left"><img src="images/intro/new_R_logo.png" /></div>
@@ -355,8 +345,8 @@ rnorm(10)
 ```
 
 ```
-##  [1] -0.40353000 -0.49332048  0.50114749 -0.88632269 -0.94767406 -0.52130305
-##  [7] -0.63068844  0.94168582 -0.04627649  0.05358175
+##  [1] -1.45694005  0.20384501 -2.51934172 -1.05468710  0.42875052  0.28622032
+##  [7] -0.06619035 -1.20758942  1.12491365 -0.50810229
 ```
 
 If you want 10 numbers from a normal distribution with a mean of 100:
@@ -367,8 +357,8 @@ rnorm(10, 100)
 ```
 
 ```
-##  [1]  99.13123 100.15071 101.62584  99.94270  99.06869  99.20652 100.79920
-##  [8] 100.73805  99.74814  98.93820
+##  [1]  99.10040  99.66980  98.98062  99.48532  99.80667 100.80502 100.89591
+##  [8]  99.98705  99.96796 100.36471
 ```
 
 This would be an equivalent but less efficient way of calling the function:
@@ -379,8 +369,8 @@ rnorm(n = 10, mean = 100)
 ```
 
 ```
-##  [1]  98.38545 100.34920 101.82694 100.50222  99.22786  99.40100  99.38299
-##  [8] 100.42471  99.50980 101.37130
+##  [1] 102.16564  99.57360  99.37224 100.37644 100.81443 100.98251  98.39118
+##  [8]  99.52117 101.48476 100.46152
 ```
 
 We don't need to name the arguments because R will recognize that we intended to fill in the first and second arguments by their position in the function call. However, if we want to change the default for an argument coming later in the list, then we need to name it. For instance, if we wanted to keep the default `mean = 0` but change the standard deviation to 100, we would do it this way:
@@ -391,8 +381,8 @@ rnorm(10, sd = 100)
 ```
 
 ```
-##  [1]  -34.91586  198.12027  116.37352  127.79739  -46.09847  -73.20299
-##  [7]  -88.41558 -111.65645  -58.42029  -95.70162
+##  [1]   59.180686   77.768352   78.385481    2.556126   40.019833 -128.027475
+##  [7]   55.940884   88.927582  115.261588   94.136932
 ```
 
 Some functions give a list of options after an argument; this means the default value is the first option. The usage entry for the <code><span class='fu'><a href='https://rdrr.io/r/stats/power.t.test.html'>power.t.test</a></span><span class='op'>(</span><span class='op'>)</span></code> function looks like this:
@@ -577,3 +567,12 @@ Each chapter ends with a glossary table defining the jargon introduced in this c
 |[whitespace](https://psyteachr.github.io/glossary/w.html#whitespace){class="glossary" target="_blank"}                       |Spaces, tabs and line breaks                                                                                                                                               |
 
 
+
+## Further Resources {#resources-intro}
+
+* [Chapter 1: Introduction](http://r4ds.had.co.nz/introduction.html) in *R for Data Science*
+* [RStudio IDE Cheatsheet](https://github.com/rstudio/cheatsheets/raw/master/rstudio-ide.pdf)
+* [Introduction to R Markdown](https://rmarkdown.rstudio.com/lesson-1.html)
+* [R Markdown Cheatsheet](https://github.com/rstudio/cheatsheets/raw/master/rmarkdown-2.0.pdf)
+* [R Markdown Reference](https://www.rstudio.com/wp-content/uploads/2015/03/rmarkdown-reference.pdf)
+* [RStudio Cloud](https://rstudio.cloud/){target="_blank"}

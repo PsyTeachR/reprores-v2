@@ -127,23 +127,9 @@
 </ol>
 </div>
 </div>
-<div id="resources5" class="section level2" number="7.2">
+<div id="setup-dplyr" class="section level2" number="7.2">
 <h2>
-<span class="header-section-number">7.2</span> Resources<a class="anchor" aria-label="anchor" href="#resources5"><i class="fas fa-link"></i></a>
-</h2>
-<ul>
-<li>
-<a href="http://r4ds.had.co.nz/transform.html">Chapter 5: Data Transformation</a> in <em>R for Data Science</em>
-</li>
-<li><a href="https://github.com/rstudio/cheatsheets/raw/master/data-transformation.pdf">Data transformation cheat sheet</a></li>
-<li>
-<a href="http://r4ds.had.co.nz/dates-and-times.html">Chapter 16: Date and times</a> in <em>R for Data Science</em>
-</li>
-</ul>
-</div>
-<div id="setup-dplyr" class="section level2" number="7.3">
-<h2>
-<span class="header-section-number">7.3</span> Setup<a class="anchor" aria-label="anchor" href="#setup-dplyr"><i class="fas fa-link"></i></a>
+<span class="header-section-number">7.2</span> Setup<a class="anchor" aria-label="anchor" href="#setup-dplyr"><i class="fas fa-link"></i></a>
 </h2>
 <div class="sourceCode" id="cb269"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># libraries needed for these examples</span>
@@ -151,9 +137,9 @@
 <span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://lubridate.tidyverse.org">lubridate</a></span><span class="op">)</span>
 <span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/psyteachr/reprores-v2">reprores</a></span><span class="op">)</span>
 <span class="fu"><a href="https://rdrr.io/r/base/Random.html">set.seed</a></span><span class="op">(</span><span class="fl">8675309</span><span class="op">)</span> <span class="co"># makes sure random numbers are reproducible</span></code></pre></div>
-<div id="data-disgust" class="section level3" number="7.3.1">
+<div id="data-disgust" class="section level3" number="7.2.1">
 <h3>
-<span class="header-section-number">7.3.1</span> The <code>disgust</code> dataset<a class="anchor" aria-label="anchor" href="#data-disgust"><i class="fas fa-link"></i></a>
+<span class="header-section-number">7.2.1</span> The <code>disgust</code> dataset<a class="anchor" aria-label="anchor" href="#data-disgust"><i class="fas fa-link"></i></a>
 </h3>
 <p>These examples will use data from <code><a href="https://rdrr.io/pkg/reprores/man/disgust.html">reprores::disgust</a></code>, which contains data from the <a href="http://digitalrepository.unm.edu/cgi/viewcontent.cgi?article=1139&amp;context=psy_etds">Three Domain Disgust Scale</a>. Each participant is identified by a unique <code>user_id</code> and each questionnaire completion has a unique <code>id</code>. Look at the Help for this dataset to see the individual questions.</p>
 <div class="sourceCode" id="cb270"><pre class="downlit sourceCode r">
@@ -162,14 +148,14 @@
 <span class="co">#disgust &lt;- read_csv("https://psyteachr.github.io/reprores/data/disgust.csv")</span></code></pre></div>
 </div>
 </div>
-<div id="six-main-dplyr-verbs" class="section level2" number="7.4">
+<div id="six-main-dplyr-verbs" class="section level2" number="7.3">
 <h2>
-<span class="header-section-number">7.4</span> Six main dplyr verbs<a class="anchor" aria-label="anchor" href="#six-main-dplyr-verbs"><i class="fas fa-link"></i></a>
+<span class="header-section-number">7.3</span> Six main dplyr verbs<a class="anchor" aria-label="anchor" href="#six-main-dplyr-verbs"><i class="fas fa-link"></i></a>
 </h2>
 <p>Most of the <a class="glossary" target="_blank" title="The process of preparing data for visualisation and statistical analysis." href="https://psyteachr.github.io/glossary/d#data-wrangling">data wrangling</a> you'll want to do with psychological data will involve the <code>tidyr</code> functions you learned in <a href="tidyr.html#tidyr">Chapter 4</a> and the six main <code>dplyr</code> verbs: <code>select</code>, <code>filter</code>, <code>arrange</code>, <code>mutate</code>, <code>summarise</code>, and <code>group_by</code>.</p>
-<div id="select" class="section level3" number="7.4.1">
+<div id="select" class="section level3" number="7.3.1">
 <h3>
-<span class="header-section-number">7.4.1</span> select()<a class="anchor" aria-label="anchor" href="#select"><i class="fas fa-link"></i></a>
+<span class="header-section-number">7.3.1</span> select()<a class="anchor" aria-label="anchor" href="#select"><i class="fas fa-link"></i></a>
 </h3>
 <p>Select columns by name or number.</p>
 <p>You can select each column individually, separated by commas (e.g., <code>col1, col2</code>). You can also select all columns between two columns by separating them with a colon (e.g., <code>start_col:end_col</code>).</p>
@@ -190,14 +176,14 @@
 <span class="fu"><a href="https://rdrr.io/r/base/names.html">names</a></span><span class="op">(</span><span class="va">pathogen</span><span class="op">)</span></code></pre></div>
 <pre><code>## [1] "user_id"   "pathogen1" "pathogen2" "pathogen3" "pathogen4" "pathogen5"
 ## [7] "pathogen6" "pathogen7"</code></pre>
-<div id="select_helpers" class="section level4" number="7.4.1.1">
+<div id="select_helpers" class="section level4" number="7.3.1.1">
 <h4>
-<span class="header-section-number">7.4.1.1</span> Select helpers<a class="anchor" aria-label="anchor" href="#select_helpers"><i class="fas fa-link"></i></a>
+<span class="header-section-number">7.3.1.1</span> Select helpers<a class="anchor" aria-label="anchor" href="#select_helpers"><i class="fas fa-link"></i></a>
 </h4>
 <p>You can select columns based on criteria about the column names.</p>
-<div id="starts_with" class="section level5" number="7.4.1.1.1">
+<div id="starts_with" class="section level5" number="7.3.1.1.1">
 <h5>
-<span class="header-section-number">7.4.1.1.1</span> <code>starts_with()</code><a class="anchor" aria-label="anchor" href="#starts_with"><i class="fas fa-link"></i></a>
+<span class="header-section-number">7.3.1.1.1</span> <code>starts_with()</code><a class="anchor" aria-label="anchor" href="#starts_with"><i class="fas fa-link"></i></a>
 </h5>
 <p>Select columns that start with a character string.</p>
 <div class="sourceCode" id="cb277"><pre class="downlit sourceCode r">
@@ -205,9 +191,9 @@
 <span class="fu"><a href="https://rdrr.io/r/base/names.html">names</a></span><span class="op">(</span><span class="va">u</span><span class="op">)</span></code></pre></div>
 <pre><code>## [1] "user_id"</code></pre>
 </div>
-<div id="ends_with" class="section level5" number="7.4.1.1.2">
+<div id="ends_with" class="section level5" number="7.3.1.1.2">
 <h5>
-<span class="header-section-number">7.4.1.1.2</span> <code>ends_with()</code><a class="anchor" aria-label="anchor" href="#ends_with"><i class="fas fa-link"></i></a>
+<span class="header-section-number">7.3.1.1.2</span> <code>ends_with()</code><a class="anchor" aria-label="anchor" href="#ends_with"><i class="fas fa-link"></i></a>
 </h5>
 <p>Select columns that end with a character string.</p>
 <div class="sourceCode" id="cb279"><pre class="downlit sourceCode r">
@@ -215,9 +201,9 @@
 <span class="fu"><a href="https://rdrr.io/r/base/names.html">names</a></span><span class="op">(</span><span class="va">firstq</span><span class="op">)</span></code></pre></div>
 <pre><code>## [1] "moral1"    "sexual1"   "pathogen1"</code></pre>
 </div>
-<div id="contains" class="section level5" number="7.4.1.1.3">
+<div id="contains" class="section level5" number="7.3.1.1.3">
 <h5>
-<span class="header-section-number">7.4.1.1.3</span> <code>contains()</code><a class="anchor" aria-label="anchor" href="#contains"><i class="fas fa-link"></i></a>
+<span class="header-section-number">7.3.1.1.3</span> <code>contains()</code><a class="anchor" aria-label="anchor" href="#contains"><i class="fas fa-link"></i></a>
 </h5>
 <p>Select columns that contain a character string.</p>
 <div class="sourceCode" id="cb281"><pre class="downlit sourceCode r">
@@ -226,9 +212,9 @@
 <pre><code>## [1] "pathogen1" "pathogen2" "pathogen3" "pathogen4" "pathogen5" "pathogen6"
 ## [7] "pathogen7"</code></pre>
 </div>
-<div id="num_range" class="section level5" number="7.4.1.1.4">
+<div id="num_range" class="section level5" number="7.3.1.1.4">
 <h5>
-<span class="header-section-number">7.4.1.1.4</span> <code>num_range()</code><a class="anchor" aria-label="anchor" href="#num_range"><i class="fas fa-link"></i></a>
+<span class="header-section-number">7.3.1.1.4</span> <code>num_range()</code><a class="anchor" aria-label="anchor" href="#num_range"><i class="fas fa-link"></i></a>
 </h5>
 <p>Select columns with a name that matches the pattern <code>prefix</code>.</p>
 <div class="sourceCode" id="cb283"><pre class="downlit sourceCode r">
@@ -242,9 +228,9 @@ zeros. For example, <code>num_range('var_', 8:10, width=2)</code> selects column
 </div>
 </div>
 </div>
-<div id="filter" class="section level3" number="7.4.2">
+<div id="filter" class="section level3" number="7.3.2">
 <h3>
-<span class="header-section-number">7.4.2</span> filter()<a class="anchor" aria-label="anchor" href="#filter"><i class="fas fa-link"></i></a>
+<span class="header-section-number">7.3.2</span> filter()<a class="anchor" aria-label="anchor" href="#filter"><i class="fas fa-link"></i></a>
 </h3>
 <p>Select rows by matching column criteria.</p>
 <p>Select all rows where the user_id is 1 (that's Lisa).</p>
@@ -366,18 +352,18 @@ zeros. For example, <code>num_range('var_', 8:10, width=2)</code> selects column
 <span class="co"># everyone who did not answer 7 for all 7 moral questions</span>
 <span class="va">moral_no_ceiling</span> <span class="op">&lt;-</span> <span class="va">disgust</span> <span class="op">%&gt;%</span>
   <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">moral1</span><span class="op">+</span><span class="va">moral2</span><span class="op">+</span><span class="va">moral3</span><span class="op">+</span><span class="va">moral4</span><span class="op">+</span><span class="va">moral5</span><span class="op">+</span><span class="va">moral6</span><span class="op">+</span><span class="va">moral7</span> <span class="op">!=</span> <span class="fl">7</span><span class="op">*</span><span class="fl">7</span><span class="op">)</span></code></pre></div>
-<div id="match-operator" class="section level4" number="7.4.2.1">
+<div id="match-operator" class="section level4" number="7.3.2.1">
 <h4>
-<span class="header-section-number">7.4.2.1</span> Match operator (%in%)<a class="anchor" aria-label="anchor" href="#match-operator"><i class="fas fa-link"></i></a>
+<span class="header-section-number">7.3.2.1</span> Match operator (%in%)<a class="anchor" aria-label="anchor" href="#match-operator"><i class="fas fa-link"></i></a>
 </h4>
 <p>Sometimes you need to exclude some participant IDs for reasons that can't be described in code. The match operator (<code><a href="https://rdrr.io/r/base/match.html">%in%</a></code>) is useful here for testing if a column value is in a list. Surround the equation with parentheses and put <code><a href="https://rdrr.io/r/base/Logic.html">!</a></code> in front to test that a value is not in the list.</p>
 <div class="sourceCode" id="cb288"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">no_researchers</span> <span class="op">&lt;-</span> <span class="va">disgust</span> <span class="op">%&gt;%</span>
   <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="op">!</span><span class="op">(</span><span class="va">user_id</span> <span class="op">%in%</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1</span>,<span class="fl">2</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></code></pre></div>
 </div>
-<div id="dates" class="section level4" number="7.4.2.2">
+<div id="dates" class="section level4" number="7.3.2.2">
 <h4>
-<span class="header-section-number">7.4.2.2</span> Dates<a class="anchor" aria-label="anchor" href="#dates"><i class="fas fa-link"></i></a>
+<span class="header-section-number">7.3.2.2</span> Dates<a class="anchor" aria-label="anchor" href="#dates"><i class="fas fa-link"></i></a>
 </h4>
 <p>You can use the <code>lubridate</code> package to work with dates. For example, you can use the <code><a href="http://lubridate.tidyverse.org/reference/year.html">year()</a></code> function to return just the year from the <code>date</code> column and then select only data collected in 2010.</p>
 <div class="sourceCode" id="cb289"><pre class="downlit sourceCode r">
@@ -607,9 +593,9 @@ zeros. For example, <code>num_range('var_', 8:10, width=2)</code> selects column
 <pre><code>## [1] "2008-07-10" "2016-08-04"</code></pre>
 </div>
 </div>
-<div id="arrange" class="section level3" number="7.4.3">
+<div id="arrange" class="section level3" number="7.3.3">
 <h3>
-<span class="header-section-number">7.4.3</span> arrange()<a class="anchor" aria-label="anchor" href="#arrange"><i class="fas fa-link"></i></a>
+<span class="header-section-number">7.3.3</span> arrange()<a class="anchor" aria-label="anchor" href="#arrange"><i class="fas fa-link"></i></a>
 </h3>
 <p>Sort your dataset using <code><a href="https://dplyr.tidyverse.org/reference/arrange.html">arrange()</a></code>. You will find yourself needing to sort data in R much less than you do in Excel, since you don't need to have rows next to each other in order to, for example, calculate group means. But <code><a href="https://dplyr.tidyverse.org/reference/arrange.html">arrange()</a></code> can be useful when preparing data from display in tables.</p>
 <div class="sourceCode" id="cb292"><pre class="downlit sourceCode r">
@@ -1050,9 +1036,9 @@ zeros. For example, <code>num_range('var_', 8:10, width=2)</code> selects column
 </tbody>
 </table></div>
 </div>
-<div id="mutate" class="section level3" number="7.4.4">
+<div id="mutate" class="section level3" number="7.3.4">
 <h3>
-<span class="header-section-number">7.4.4</span> mutate()<a class="anchor" aria-label="anchor" href="#mutate"><i class="fas fa-link"></i></a>
+<span class="header-section-number">7.3.4</span> mutate()<a class="anchor" aria-label="anchor" href="#mutate"><i class="fas fa-link"></i></a>
 </h3>
 <p>Add new columns. This is one of the most useful functions in the tidyverse.</p>
 <p>Refer to other columns by their names (unquoted). You can add more than one column in the same mutate function, just separate the columns with a comma. Once you make a new column, you can use it in further column definitions e.g., <code>total</code> below).</p>
@@ -1316,9 +1302,9 @@ zeros. For example, <code>num_range('var_', 8:10, width=2)</code> selects column
 <p>You can overwrite a column by giving a new column the same name as the old column (see <code>user_id</code>) above. Make sure that you mean to do this and that you aren't trying to use the old column value after you redefine it.</p>
 </div>
 </div>
-<div id="summarise" class="section level3" number="7.4.5">
+<div id="summarise" class="section level3" number="7.3.5">
 <h3>
-<span class="header-section-number">7.4.5</span> summarise()<a class="anchor" aria-label="anchor" href="#summarise"><i class="fas fa-link"></i></a>
+<span class="header-section-number">7.3.5</span> summarise()<a class="anchor" aria-label="anchor" href="#summarise"><i class="fas fa-link"></i></a>
 </h3>
 <p>Create summary statistics for the dataset. Check the <a href="https://www.rstudio.org/links/data_wrangling_cheat_sheet">Data Wrangling Cheat Sheet</a> or the <a href="https://github.com/rstudio/cheatsheets/raw/master/source/pdfs/data-transformation-cheatsheet.pdf">Data Transformation Cheat Sheet</a> for various summary functions. Some common ones are: <code><a href="https://rdrr.io/r/base/mean.html">mean()</a></code>, <code><a href="https://rdrr.io/r/stats/sd.html">sd()</a></code>, <code>n()</code>, <code><a href="https://rdrr.io/r/base/sum.html">sum()</a></code>, and <code><a href="https://rdrr.io/r/stats/quantile.html">quantile()</a></code>.</p>
 <div class="sourceCode" id="cb295"><pre class="downlit sourceCode r">
@@ -1359,9 +1345,9 @@ zeros. For example, <code>num_range('var_', 8:10, width=2)</code> selects column
 </tr></tbody>
 </table></div>
 </div>
-<div id="group_by" class="section level3" number="7.4.6">
+<div id="group_by" class="section level3" number="7.3.6">
 <h3>
-<span class="header-section-number">7.4.6</span> group_by()<a class="anchor" aria-label="anchor" href="#group_by"><i class="fas fa-link"></i></a>
+<span class="header-section-number">7.3.6</span> group_by()<a class="anchor" aria-label="anchor" href="#group_by"><i class="fas fa-link"></i></a>
 </h3>
 <p>Create subsets of the data. You can use this to create summaries,
 like the mean value for all of your experimental groups.</p>
@@ -1606,9 +1592,9 @@ like the mean value for all of your experimental groups.</p>
 </tbody>
 </table></div>
 </div>
-<div id="all-together" class="section level3" number="7.4.7">
+<div id="all-together" class="section level3" number="7.3.7">
 <h3>
-<span class="header-section-number">7.4.7</span> All Together<a class="anchor" aria-label="anchor" href="#all-together"><i class="fas fa-link"></i></a>
+<span class="header-section-number">7.3.7</span> All Together<a class="anchor" aria-label="anchor" href="#all-together"><i class="fas fa-link"></i></a>
 </h3>
 <p>A lot of what we did above would be easier if the data were tidy, so let's do that first. Then we can use <code>group_by</code> to calculate the domain scores.</p>
 <p>After that, we can spread out the 3 domains, calculate the total score, remove any rows with a missing (<code>NA</code>) total, and calculate mean values by year.</p>
@@ -1880,14 +1866,14 @@ like the mean value for all of your experimental groups.</p>
 </table></div>
 </div>
 </div>
-<div id="additional-dplyr-one-table-verbs" class="section level2" number="7.5">
+<div id="additional-dplyr-one-table-verbs" class="section level2" number="7.4">
 <h2>
-<span class="header-section-number">7.5</span> Additional dplyr one-table verbs<a class="anchor" aria-label="anchor" href="#additional-dplyr-one-table-verbs"><i class="fas fa-link"></i></a>
+<span class="header-section-number">7.4</span> Additional dplyr one-table verbs<a class="anchor" aria-label="anchor" href="#additional-dplyr-one-table-verbs"><i class="fas fa-link"></i></a>
 </h2>
 <p>Use the code examples below and the help pages to figure out what the following one-table verbs do. Most have pretty self-explanatory names.</p>
-<div id="rename" class="section level3" number="7.5.1">
+<div id="rename" class="section level3" number="7.4.1">
 <h3>
-<span class="header-section-number">7.5.1</span> rename()<a class="anchor" aria-label="anchor" href="#rename"><i class="fas fa-link"></i></a>
+<span class="header-section-number">7.4.1</span> rename()<a class="anchor" aria-label="anchor" href="#rename"><i class="fas fa-link"></i></a>
 </h3>
 <p>You can rename columns with <code><a href="https://dplyr.tidyverse.org/reference/rename.html">rename()</a></code>. Set the argument name to the new name, and the value to the old name. You need to put a name in quotes or backticks if it doesn't follow the rules for a good variable name (contains only letter, numbers, underscores, and full stops; and doesn't start with a number).</p>
 <div class="sourceCode" id="cb302"><pre class="downlit sourceCode r">
@@ -1908,9 +1894,9 @@ like the mean value for all of your experimental groups.</p>
 <p>Almost everyone gets confused at some point with <code><a href="https://dplyr.tidyverse.org/reference/rename.html">rename()</a></code> and tries to put the original names on the left and the new names on the right. Try it and see what the error message looks like.</p>
 </div>
 </div>
-<div id="distinct" class="section level3" number="7.5.2">
+<div id="distinct" class="section level3" number="7.4.2">
 <h3>
-<span class="header-section-number">7.5.2</span> distinct()<a class="anchor" aria-label="anchor" href="#distinct"><i class="fas fa-link"></i></a>
+<span class="header-section-number">7.4.2</span> distinct()<a class="anchor" aria-label="anchor" href="#distinct"><i class="fas fa-link"></i></a>
 </h3>
 <p>Get rid of exactly duplicate rows with <code><a href="https://dplyr.tidyverse.org/reference/distinct.html">distinct()</a></code>. This can be helpful if, for example, you are merging data from multiple computers and some of the data got copied from one computer to another, creating duplicate rows.</p>
 <div class="sourceCode" id="cb304"><pre class="downlit sourceCode r">
@@ -1948,9 +1934,9 @@ like the mean value for all of your experimental groups.</p>
 </table></div>
 </div>
 </div>
-<div id="count" class="section level3" number="7.5.3">
+<div id="count" class="section level3" number="7.4.3">
 <h3>
-<span class="header-section-number">7.5.3</span> count()<a class="anchor" aria-label="anchor" href="#count"><i class="fas fa-link"></i></a>
+<span class="header-section-number">7.4.3</span> count()<a class="anchor" aria-label="anchor" href="#count"><i class="fas fa-link"></i></a>
 </h3>
 <p>The function <code>count()</code> is a quick shortcut for the common combination of <code><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by()</a></code> and <code><a href="https://dplyr.tidyverse.org/reference/summarise.html">summarise()</a></code> used to count the number of rows per group.</p>
 <div class="sourceCode" id="cb305"><pre class="downlit sourceCode r">
@@ -2020,9 +2006,9 @@ like the mean value for all of your experimental groups.</p>
 </table></div>
 </div>
 </div>
-<div id="slice" class="section level3" number="7.5.4">
+<div id="slice" class="section level3" number="7.4.4">
 <h3>
-<span class="header-section-number">7.5.4</span> slice()<a class="anchor" aria-label="anchor" href="#slice"><i class="fas fa-link"></i></a>
+<span class="header-section-number">7.4.4</span> slice()<a class="anchor" aria-label="anchor" href="#slice"><i class="fas fa-link"></i></a>
 </h3>
 <div class="sourceCode" id="cb307"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://dplyr.tidyverse.org/reference/slice.html">slice</a></span><span class="op">(</span><span class="va">starwars</span>, <span class="fl">1</span><span class="op">:</span><span class="fl">3</span>, <span class="fl">10</span><span class="op">)</span></code></pre></div>
@@ -2129,9 +2115,9 @@ like the mean value for all of your experimental groups.</p>
 </table></div>
 </div>
 </div>
-<div id="pull" class="section level3" number="7.5.5">
+<div id="pull" class="section level3" number="7.4.5">
 <h3>
-<span class="header-section-number">7.5.5</span> pull()<a class="anchor" aria-label="anchor" href="#pull"><i class="fas fa-link"></i></a>
+<span class="header-section-number">7.4.5</span> pull()<a class="anchor" aria-label="anchor" href="#pull"><i class="fas fa-link"></i></a>
 </h3>
 <div class="sourceCode" id="cb308"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">starwars</span> <span class="op">%&gt;%</span>
@@ -2140,15 +2126,15 @@ like the mean value for all of your experimental groups.</p>
 <pre><code>## [1] "C-3PO"  "R2-D2"  "R5-D4"  "IG-88"  "R4-P17" "BB8"</code></pre>
 </div>
 </div>
-<div id="window" class="section level2" number="7.6">
+<div id="window" class="section level2" number="7.5">
 <h2>
-<span class="header-section-number">7.6</span> Window functions<a class="anchor" aria-label="anchor" href="#window"><i class="fas fa-link"></i></a>
+<span class="header-section-number">7.5</span> Window functions<a class="anchor" aria-label="anchor" href="#window"><i class="fas fa-link"></i></a>
 </h2>
 <p>Window functions use the order of rows to calculate values. You can use them to do things that require ranking or ordering, like choose the top scores in each class, or accessing the previous and next rows, like calculating cumulative sums or means.</p>
 <p>The <a href="https://dplyr.tidyverse.org/articles/window-functions.html">dplyr window functions vignette</a> has very good detailed explanations of these functions, but we've described a few of the most useful ones below.</p>
-<div id="ranking-functions" class="section level3" number="7.6.1">
+<div id="ranking-functions" class="section level3" number="7.5.1">
 <h3>
-<span class="header-section-number">7.6.1</span> Ranking functions<a class="anchor" aria-label="anchor" href="#ranking-functions"><i class="fas fa-link"></i></a>
+<span class="header-section-number">7.5.1</span> Ranking functions<a class="anchor" aria-label="anchor" href="#ranking-functions"><i class="fas fa-link"></i></a>
 </h3>
 <div class="sourceCode" id="cb310"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">grades</span> <span class="op">&lt;-</span> <span class="fu">tibble</span><span class="op">(</span>
@@ -2352,9 +2338,9 @@ like the mean value for all of your experimental groups.</p>
 <p>Why is there a row of <code>NA</code> values? How would you get rid of them?</p>
 </div>
 </div>
-<div id="offset-functions" class="section level3" number="7.6.2">
+<div id="offset-functions" class="section level3" number="7.5.2">
 <h3>
-<span class="header-section-number">7.6.2</span> Offset functions<a class="anchor" aria-label="anchor" href="#offset-functions"><i class="fas fa-link"></i></a>
+<span class="header-section-number">7.5.2</span> Offset functions<a class="anchor" aria-label="anchor" href="#offset-functions"><i class="fas fa-link"></i></a>
 </h3>
 <p>The function <code><a href="https://rdrr.io/r/stats/lag.html">lag()</a></code> gives a previous row's value. It defaults to 1 row back, but you can change that with the <code>n</code> argument. The function <code>lead()</code> gives values ahead of the current row.</p>
 <div class="sourceCode" id="cb312"><pre class="downlit sourceCode r">
@@ -2517,9 +2503,9 @@ like the mean value for all of your experimental groups.</p>
 </ul>
 </div>
 </div>
-<div id="cumulative-aggregates" class="section level3" number="7.6.3">
+<div id="cumulative-aggregates" class="section level3" number="7.5.3">
 <h3>
-<span class="header-section-number">7.6.3</span> Cumulative aggregates<a class="anchor" aria-label="anchor" href="#cumulative-aggregates"><i class="fas fa-link"></i></a>
+<span class="header-section-number">7.5.3</span> Cumulative aggregates<a class="anchor" aria-label="anchor" href="#cumulative-aggregates"><i class="fas fa-link"></i></a>
 </h3>
 <p><code><a href="https://rdrr.io/r/base/cumsum.html">cumsum()</a></code>, <code><a href="https://rdrr.io/r/base/cumsum.html">cummin()</a></code>, and <code><a href="https://rdrr.io/r/base/cumsum.html">cummax()</a></code> are base R functions for calculating cumulative means, minimums, and maximums. The dplyr package introduces <code>cumany()</code> and <code>cumall()</code>, which return <code>TRUE</code> if any or all of the previous values meet their criteria.</p>
 <div class="sourceCode" id="cb314"><pre class="downlit sourceCode r">
@@ -2649,9 +2635,9 @@ like the mean value for all of your experimental groups.</p>
 </div>
 </div>
 </div>
-<div id="glossary-dplyr" class="section level2" number="7.7">
+<div id="glossary-dplyr" class="section level2" number="7.6">
 <h2>
-<span class="header-section-number">7.7</span> Glossary<a class="anchor" aria-label="anchor" href="#glossary-dplyr"><i class="fas fa-link"></i></a>
+<span class="header-section-number">7.6</span> Glossary<a class="anchor" aria-label="anchor" href="#glossary-dplyr"><i class="fas fa-link"></i></a>
 </h2>
 <div class="inline-table"><table class="table table-sm">
 <colgroup>
@@ -2667,6 +2653,20 @@ like the mean value for all of your experimental groups.</p>
 <td align="left">The process of preparing data for visualisation and statistical analysis.</td>
 </tr></tbody>
 </table></div>
+</div>
+<div id="resources-dplyr" class="section level2" number="7.7">
+<h2>
+<span class="header-section-number">7.7</span> Further Resources<a class="anchor" aria-label="anchor" href="#resources-dplyr"><i class="fas fa-link"></i></a>
+</h2>
+<ul>
+<li>
+<a href="http://r4ds.had.co.nz/transform.html">Chapter 5: Data Transformation</a> in <em>R for Data Science</em>
+</li>
+<li><a href="https://github.com/rstudio/cheatsheets/raw/master/data-transformation.pdf">Data transformation cheat sheet</a></li>
+<li>
+<a href="http://r4ds.had.co.nz/dates-and-times.html">Chapter 16: Date and times</a> in <em>R for Data Science</em>
+</li>
+</ul>
 </div>
 </div>
 <div class="psyteachr_footer">
@@ -2801,38 +2801,38 @@ $( document ).ready(function() {
 <li><a class="nav-link" href="#intermediate-3">Intermediate</a></li>
 </ul>
 </li>
-<li><a class="nav-link" href="#resources5"><span class="header-section-number">7.2</span> Resources</a></li>
 <li>
-<a class="nav-link" href="#setup-dplyr"><span class="header-section-number">7.3</span> Setup</a><ul class="nav navbar-nav"><li><a class="nav-link" href="#data-disgust"><span class="header-section-number">7.3.1</span> The disgust dataset</a></li></ul>
+<a class="nav-link" href="#setup-dplyr"><span class="header-section-number">7.2</span> Setup</a><ul class="nav navbar-nav"><li><a class="nav-link" href="#data-disgust"><span class="header-section-number">7.2.1</span> The disgust dataset</a></li></ul>
 </li>
 <li>
-<a class="nav-link" href="#six-main-dplyr-verbs"><span class="header-section-number">7.4</span> Six main dplyr verbs</a><ul class="nav navbar-nav">
-<li><a class="nav-link" href="#select"><span class="header-section-number">7.4.1</span> select()</a></li>
-<li><a class="nav-link" href="#filter"><span class="header-section-number">7.4.2</span> filter()</a></li>
-<li><a class="nav-link" href="#arrange"><span class="header-section-number">7.4.3</span> arrange()</a></li>
-<li><a class="nav-link" href="#mutate"><span class="header-section-number">7.4.4</span> mutate()</a></li>
-<li><a class="nav-link" href="#summarise"><span class="header-section-number">7.4.5</span> summarise()</a></li>
-<li><a class="nav-link" href="#group_by"><span class="header-section-number">7.4.6</span> group_by()</a></li>
-<li><a class="nav-link" href="#all-together"><span class="header-section-number">7.4.7</span> All Together</a></li>
+<a class="nav-link" href="#six-main-dplyr-verbs"><span class="header-section-number">7.3</span> Six main dplyr verbs</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#select"><span class="header-section-number">7.3.1</span> select()</a></li>
+<li><a class="nav-link" href="#filter"><span class="header-section-number">7.3.2</span> filter()</a></li>
+<li><a class="nav-link" href="#arrange"><span class="header-section-number">7.3.3</span> arrange()</a></li>
+<li><a class="nav-link" href="#mutate"><span class="header-section-number">7.3.4</span> mutate()</a></li>
+<li><a class="nav-link" href="#summarise"><span class="header-section-number">7.3.5</span> summarise()</a></li>
+<li><a class="nav-link" href="#group_by"><span class="header-section-number">7.3.6</span> group_by()</a></li>
+<li><a class="nav-link" href="#all-together"><span class="header-section-number">7.3.7</span> All Together</a></li>
 </ul>
 </li>
 <li>
-<a class="nav-link" href="#additional-dplyr-one-table-verbs"><span class="header-section-number">7.5</span> Additional dplyr one-table verbs</a><ul class="nav navbar-nav">
-<li><a class="nav-link" href="#rename"><span class="header-section-number">7.5.1</span> rename()</a></li>
-<li><a class="nav-link" href="#distinct"><span class="header-section-number">7.5.2</span> distinct()</a></li>
-<li><a class="nav-link" href="#count"><span class="header-section-number">7.5.3</span> count()</a></li>
-<li><a class="nav-link" href="#slice"><span class="header-section-number">7.5.4</span> slice()</a></li>
-<li><a class="nav-link" href="#pull"><span class="header-section-number">7.5.5</span> pull()</a></li>
+<a class="nav-link" href="#additional-dplyr-one-table-verbs"><span class="header-section-number">7.4</span> Additional dplyr one-table verbs</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#rename"><span class="header-section-number">7.4.1</span> rename()</a></li>
+<li><a class="nav-link" href="#distinct"><span class="header-section-number">7.4.2</span> distinct()</a></li>
+<li><a class="nav-link" href="#count"><span class="header-section-number">7.4.3</span> count()</a></li>
+<li><a class="nav-link" href="#slice"><span class="header-section-number">7.4.4</span> slice()</a></li>
+<li><a class="nav-link" href="#pull"><span class="header-section-number">7.4.5</span> pull()</a></li>
 </ul>
 </li>
 <li>
-<a class="nav-link" href="#window"><span class="header-section-number">7.6</span> Window functions</a><ul class="nav navbar-nav">
-<li><a class="nav-link" href="#ranking-functions"><span class="header-section-number">7.6.1</span> Ranking functions</a></li>
-<li><a class="nav-link" href="#offset-functions"><span class="header-section-number">7.6.2</span> Offset functions</a></li>
-<li><a class="nav-link" href="#cumulative-aggregates"><span class="header-section-number">7.6.3</span> Cumulative aggregates</a></li>
+<a class="nav-link" href="#window"><span class="header-section-number">7.5</span> Window functions</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#ranking-functions"><span class="header-section-number">7.5.1</span> Ranking functions</a></li>
+<li><a class="nav-link" href="#offset-functions"><span class="header-section-number">7.5.2</span> Offset functions</a></li>
+<li><a class="nav-link" href="#cumulative-aggregates"><span class="header-section-number">7.5.3</span> Cumulative aggregates</a></li>
 </ul>
 </li>
-<li><a class="nav-link" href="#glossary-dplyr"><span class="header-section-number">7.7</span> Glossary</a></li>
+<li><a class="nav-link" href="#glossary-dplyr"><span class="header-section-number">7.6</span> Glossary</a></li>
+<li><a class="nav-link" href="#resources-dplyr"><span class="header-section-number">7.7</span> Further Resources</a></li>
 </ul>
 
       <div class="book-extra">
@@ -2850,7 +2850,7 @@ $( document ).ready(function() {
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Data Skills for Reproducible Research</strong>: v2" was written by . It was last built on 2021-08-31.</p>
+    <p>"<strong>Data Skills for Reproducible Research</strong>: v2" was written by . It was last built on 2021-09-03.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">
