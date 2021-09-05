@@ -45,10 +45,12 @@ Imports:
     ukbabynames,
     patchwork,
     rio,
+    haven,
     rstudioapi,
     glue,
     tidytext,
-    ggwordcloud
+    ggwordcloud,
+    googlesheets4
 Suggests: 
     rmarkdown,
     zip,

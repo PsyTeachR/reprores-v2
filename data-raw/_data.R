@@ -720,6 +720,35 @@ vardesc <- list(
 make_dataset("users2", "User Demographics 2",
              "A dataset with unique participant ID, birth year, and sex. To be used in conjunction with data from [disgust], [disgust_scores], [personality], [personality_scores], and [users].", vardesc)
 
+
+# demo data ----
+demo <- tibble(
+  character = LETTERS[1:6],
+  integer = 1:6,
+  double = 1.5:6.5,
+  logical = c(T, T, F, F, NA, T),
+  date = format((lubridate::today() - 0:5), format = "%d-%b-%y")
+)
+
+rio::export(demo, "data-raw/demo.csv")
+rio::export(demo, "data-raw/demo.tsv")
+rio::export(demo, "data-raw/demo.xlsx", overwrite = TRUE)
+rio::export(demo, "data-raw/demo.sav")
+rio::export(demo, "data-raw/demo.json")
+
+vardesc <- list(
+  description = list(
+    character = "letters",
+    integer = "Numbers with no decimal places",
+    double = "Numbers with decimal places",
+    logical = "TRUE/FALSE values",
+    date = "Dates in the format 31-Jan-21"
+  )
+)
+
+make_dataset("demo", "Importing Demo",
+             "A dataset with five different types of columns, and in five different formats (csv, tsv, xlsx, sav, and json), used to practice importing.", vardesc)
+
 # update documentation -----
 devtools::document()
 
