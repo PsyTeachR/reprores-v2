@@ -12,7 +12,7 @@ This book will use the following conventions:
 * Logical values: `r hl(TRUE)`, `r hl(FALSE)`
 * Glossary items: `r glossary("ordinal")`
 * Citations: @R-tidyverse
-* Internal links: Chapter\ \@ref(viz)
+* Internal links: Chapter\ \@ref(intro)
 * External links: [Mastering Shiny](https://mastering-shiny.org/){target="_blank"}
 * Menu/interface options: **`New File...`**
 * Quiz question: I am going to learn a lot: `r torf(TRUE)`

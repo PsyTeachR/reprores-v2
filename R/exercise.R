@@ -13,17 +13,15 @@ exercise <- function(chapter, filename = NULL, answers = FALSE) {
                      chapter,
                      ifelse(is.numeric(chapter), "_", ""),
                      ifelse(answers, "answers", "exercise"))
-  dir <- system.file("book/exercises/", package = "reprores")
+  dir <- system.file("book/exercises", package = "reprores")
   
   f <- list.files(dir, pattern)
   
-  if (f == "") stop("Exercise ", chapter, " doesn't exist")
+  if (length(f) != 1) stop("Exercise ", chapter, " doesn't exist")
   
-  if (is.null(filename)) {
-    filename <- gsub("^book/exercises/", "", fname)
-  }
+  if (is.null(filename)) filename <- f
   
-  file.copy(f, filename)
+  file.copy(file.path(dir, f), filename)
   
   #open file for editing
   if(rstudioapi::hasFun("navigateToFile")){

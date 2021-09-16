@@ -54,13 +54,13 @@ The `print()` method can be run explicitly, but is more commonly called by just 
 
 Let's look at the `smalldata` table that we made above. 
 
-```{r print}
+```{r print-smalldata}
 smalldata
 ```
 
 The function `glimpse()` gives a sideways version of the tibble. This is useful if the table is very wide and you can't see all of the columns. It also tells you the data type of each column in angled brackets after each column name. We'll learn about [data types](#data_types) below.
 
-```{r sw_glimpse}
+```{r glimpse-smalldata}
 glimpse(smalldata)
 ```
 
@@ -124,13 +124,13 @@ There are five variables in this dataset, and their names are given in the first
 Use `readr::read_csv()` to read in the data as assign it to an `r glossary("object")` called `demo_csv`.
 
 
-```{r}
+```{r read-csv}
 demo_csv  <- readr::read_csv("data/demo.csv")
 ```
 
 This function will give you some information about the data you just read in so you can check the column names and [data types](#data_types). If it makes a mistake, such as reading the "date" column as a `r glossary("character")`, you can manually set the column data types. Just copy the "Column specification" that was printed when you first imported the data, and make any changes you need.
 
-```{r}
+```{r col-types}
 ct <- cols(
   character = col_character(),
   integer = col_double(),
@@ -152,7 +152,7 @@ We'll learn more about how to fix data import problems in the [troubleshooting](
 
 Use the functions below to read in other file types.
 
-```{r, message=FALSE}
+```{r other-file-functions, message=FALSE}
 demo_tsv  <- readr::read_tsv("data/demo.tsv")
 demo_xls  <- readxl::read_excel("data/demo.xlsx")
 demo_sav  <- haven::read_sav("data/demo.sav")
@@ -161,7 +161,7 @@ demo_json <- jsonlite::read_json("data/demo.json")
 
 You can access Google Sheets directly from R using `r pkg("googlesheets4", "https://googlesheets4.tidyverse.org/")`.
 
-```{r, message = FALSE}
+```{r gs4, message = FALSE}
 library(googlesheets4)
 
 gs4_deauth() # skip authorisation for public data
@@ -174,7 +174,7 @@ demo_goo  <- googlesheets4::read_sheet(url)
 ::: {.try data-latex=""}
 Try loading in all five of the `5factor` datasets in the data directory.
 
-```{r, webex.hide="Solution", eval = FALSE}
+```{r data-load, webex.hide="Solution", eval = FALSE}
 ocean_csv  <- readr::read_csv("data/5factor.csv")
 ocean_tsv  <- readr::read_tsv("data/5factor.txt")
 ocean_xls  <- readxl::read_excel("data/5factor.xls")
@@ -200,15 +200,15 @@ The `r hl(print())` method can be run explicitly, but is more commonly called by
 
 Let's look at the `demo_tsv` table that we loaded above. Depending on how wide your screen is, you might need to click on an arrow at the right of the table to see the last column. 
 
-```{r print}
+```{r print-demo}
 demo_tsv
 ```
 
 #### glimpse() 
 
-The function `r hl(tibble::glimpse())` gives a sideways version of the table. This is useful if the table is very wide and you can't see all of the columns. It also tells you the `r glossary("data type")` of each column in angled brackets after each column name. You can learn about data types in Appendix\ \@ref(data-types).
+The function `r hl(tibble::glimpse())` gives a sideways version of the table. This is useful if the table is very wide and you can't see all of the columns. It also tells you the `r glossary("data type")` of each column in angled brackets after each column name. 
 
-```{r sw_glimpse}
+```{r glimpse-demo}
 glimpse(demo_xls)
 ```
 
@@ -216,7 +216,7 @@ glimpse(demo_xls)
 
 You can get a quick summary of a dataset with the `r hl(summary())` function.
 
-```{r}
+```{r summary-demo}
 summary(demo_sav)
 ```
 
@@ -696,7 +696,7 @@ OK, that's a little better, but this table is still a serious mess in several wa
 * `min_max` contains two pieces of numeric information, but is a character column
 * `date` should be a date column
 
-We'll learn how to deal with this mess in Chapters\ \@ref(tidy) and \@ref(dplyr), but we can fix a few things by setting the `col_types` argument in `r hl(read_csv())` to specify the column types for our two columns that were guessed wrong and skip the "junk" column. The argument `col_types` takes a list where the name of each item in the list is a column name and the value is from the table below. You can use the function, like `r hl(col_double())` or the abbreviation, like `r hl("l")`. Omitted column names are guessed.
+We'll learn how to deal with this mess in Chapters\ \@ref(tidyr) and \@ref(dplyr), but we can fix a few things by setting the `col_types` argument in `r hl(read_csv())` to specify the column types for our two columns that were guessed wrong and skip the "junk" column. The argument `col_types` takes a list where the name of each item in the list is a column name and the value is from the table below. You can use the function, like `r hl(col_double())` or the abbreviation, like `r hl("l")`. Omitted column names are guessed.
 
 | function | |abbreviation | type |
 |:---------|:--------------|:-----|

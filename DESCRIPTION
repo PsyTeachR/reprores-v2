@@ -1,7 +1,7 @@
 Package: reprores
 Title: Data Skills for Reproducible Research
-Version: 2.12
-Date: 2021-08-22
+Version: 2.13
+Date: 2021-09-16
 Authors@R: 
   c(
     person(
@@ -26,7 +26,7 @@ Authors@R:
         comment = c(ORCID = "0000-0001-7055-2036")
     ))
 Description: This course provides an overview of skills needed for reproducible research and open science using the statistical programming language R. Students will learn about data visualisation, data tidying and wrangling, archiving, iteration and functions, probability and data simulations, general linear models, and reproducible workflows. Learning is reinforced through weekly assignments that involve working with different types of data.
-License: CC BY 4.0
+License: CC BY 4.0 + LICENSE 
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)

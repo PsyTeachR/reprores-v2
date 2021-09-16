@@ -1,4 +1,4 @@
-# Exercise Answers {#exercise-answers}
+# Exercises {#exercises}
 
 You can access exercises and answers for all of the chapters through the `r pkg("reprores")` package.
 

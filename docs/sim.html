@@ -16,7 +16,7 @@
 <meta name="twitter:title" content="Chapter 10 Probability &amp; Simulation | Data Skills for Reproducible Research">
 <meta name="twitter:description" content="10.1 Learning Objectives  Basic Generate and plot data randomly sampled from common distributions (video) uniform binomial normal poisson Generate related variables from a multivariate...">
 <meta name="twitter:image" content="https://psyteachr.github.io/reprores-v2/images/logos/logo.png">
-<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/header-attrs-2.9.4/header-attrs.js"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/header-attrs-2.10.6/header-attrs.js"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
 <script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.2.5.1/tabs.js"></script><script src="libs/bs3compat-0.2.5.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
 <script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="libs/htmlwidgets-1.5.3/htmlwidgets.js"></script><script src="libs/plotly-binding-4.9.4.1/plotly.js"></script><script src="libs/typedarray-0.1/typedarray.min.js"></script><link href="libs/crosstalk-1.1.1/css/crosstalk.css" rel="stylesheet">
@@ -27,9 +27,9 @@
       gtag('js', new Date());
 
       gtag('config', 'G-6NP3MF25W3');
-    </script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><link rel="stylesheet" href="include/psyteachr.css">
+    </script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><link rel="stylesheet" href="include/webex.css">
+<link rel="stylesheet" href="include/psyteachr.css">
 <link rel="stylesheet" href="include/style.css">
-<link rel="stylesheet" href="include/webex.css">
 </head>
 <body data-spy="scroll" data-target="#toc">
 
@@ -69,7 +69,7 @@
 <li><a class="" href="conventions.html"><span class="header-section-number">B</span> Conventions</a></li>
 <li><a class="" href="symbols.html"><span class="header-section-number">C</span> Symbols</a></li>
 <li><a class="" href="datasets.html"><span class="header-section-number">D</span> Datasets</a></li>
-<li><a class="" href="exercise-answers.html"><span class="header-section-number">E</span> Exercise Answers</a></li>
+<li><a class="" href="exercises.html"><span class="header-section-number">E</span> Exercises</a></li>
 <li><a class="" href="bookrefs.html"><span class="header-section-number">F</span> References</a></li>
 </ul>
 
@@ -142,7 +142,7 @@
 <h2>
 <span class="header-section-number">10.2</span> Setup<a class="anchor" aria-label="anchor" href="#setup8"><i class="fas fa-link"></i></a>
 </h2>
-<div class="sourceCode" id="cb429"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb446"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># libraries needed for these examples</span>
 <span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span>
 <span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://plotly-r.com">plotly</a></span><span class="op">)</span>
@@ -170,7 +170,7 @@
 </h4>
 <p><code><a href="https://rdrr.io/r/stats/Uniform.html">runif(n, min=0, max=1)</a></code></p>
 <p>Use <code><a href="https://rdrr.io/r/stats/Uniform.html">runif()</a></code> to sample from a continuous uniform distribution.</p>
-<div class="sourceCode" id="cb430"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb447"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">u</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/Uniform.html">runif</a></span><span class="op">(</span><span class="fl">100000</span>, min <span class="op">=</span> <span class="fl">0</span>, max <span class="op">=</span> <span class="fl">1</span><span class="op">)</span>
 
 <span class="co"># plot to visualise</span>
@@ -186,7 +186,7 @@
 <p><code><a href="https://rdrr.io/r/base/sample.html">sample(x, size, replace = FALSE, prob = NULL)</a></code></p>
 <p>Use <code><a href="https://rdrr.io/r/base/sample.html">sample()</a></code> to sample from a <a class="glossary" target="_blank" title="Data that can only take certain values, such as integers." href="https://psyteachr.github.io/glossary/d#discrete">discrete</a> distribution.</p>
 <p>You can use <code><a href="https://rdrr.io/r/base/sample.html">sample()</a></code> to simulate events like rolling dice or choosing from a deck of cards. The code below simulates rolling a 6-sided die 10000 times. We set <code>replace</code> to <code>TRUE</code> so that each event is independent. See what happens if you set <code>replace</code> to <code>FALSE</code>.</p>
-<div class="sourceCode" id="cb431"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb448"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">rolls</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/sample.html">sample</a></span><span class="op">(</span><span class="fl">1</span><span class="op">:</span><span class="fl">6</span>, <span class="fl">10000</span>, replace <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>
 
 <span class="co"># plot the results</span>
@@ -200,13 +200,13 @@ Figure 10.1: Distribution of dice rolls.
 </p>
 </div>
 <p>You can also use sample to sample from a list of named outcomes.</p>
-<div class="sourceCode" id="cb432"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb449"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">pet_types</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"cat"</span>, <span class="st">"dog"</span>, <span class="st">"ferret"</span>, <span class="st">"bird"</span>, <span class="st">"fish"</span><span class="op">)</span>
 <span class="fu"><a href="https://rdrr.io/r/base/sample.html">sample</a></span><span class="op">(</span><span class="va">pet_types</span>, <span class="fl">10</span>, replace <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></code></pre></div>
 <pre><code>##  [1] "cat"    "cat"    "cat"    "cat"    "ferret" "dog"    "bird"   "cat"   
 ##  [9] "dog"    "fish"</code></pre>
 <p>Ferrets are a much less common pet than cats and dogs, so our sample isn't very realistic. You can set the probabilities of each item in the list with the <code>prob</code> argument.</p>
-<div class="sourceCode" id="cb434"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb451"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">pet_types</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"cat"</span>, <span class="st">"dog"</span>, <span class="st">"ferret"</span>, <span class="st">"bird"</span>, <span class="st">"fish"</span><span class="op">)</span>
 <span class="va">pet_prob</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">0.3</span>, <span class="fl">0.4</span>, <span class="fl">0.1</span>, <span class="fl">0.1</span>, <span class="fl">0.1</span><span class="op">)</span>
 <span class="fu"><a href="https://rdrr.io/r/base/sample.html">sample</a></span><span class="op">(</span><span class="va">pet_types</span>, <span class="fl">10</span>, replace <span class="op">=</span> <span class="cn">TRUE</span>, prob <span class="op">=</span> <span class="va">pet_prob</span><span class="op">)</span></code></pre></div>
@@ -229,24 +229,24 @@ Figure 10.1: Distribution of dice rolls.
 <code>prob</code> = probability of success on each trial</li>
 </ul>
 <p>Coin flips are a typical example of a binomial distribution, where we can assign heads to 1 and tails to 0.</p>
-<div class="sourceCode" id="cb436"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb453"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># 20 individual coin flips of a fair coin</span>
 <span class="fu"><a href="https://rdrr.io/r/stats/Binomial.html">rbinom</a></span><span class="op">(</span><span class="fl">20</span>, <span class="fl">1</span>, <span class="fl">0.5</span><span class="op">)</span></code></pre></div>
 <pre><code>##  [1] 1 1 1 0 1 1 0 1 0 0 1 1 1 0 0 0 1 0 0 0</code></pre>
-<div class="sourceCode" id="cb438"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb455"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># 20 individual coin flips of a baised (0.75) coin</span>
 <span class="fu"><a href="https://rdrr.io/r/stats/Binomial.html">rbinom</a></span><span class="op">(</span><span class="fl">20</span>, <span class="fl">1</span>, <span class="fl">0.75</span><span class="op">)</span></code></pre></div>
 <pre><code>##  [1] 1 1 1 0 1 0 1 1 1 0 1 1 1 0 0 1 1 1 1 1</code></pre>
 <p>You can generate the total number of heads in 1 set of 20 coin flips by setting <code>size</code> to 20 and <code>n</code> to 1.</p>
-<div class="sourceCode" id="cb440"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb457"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/stats/Binomial.html">rbinom</a></span><span class="op">(</span><span class="fl">1</span>, <span class="fl">20</span>, <span class="fl">0.75</span><span class="op">)</span></code></pre></div>
 <pre><code>## [1] 13</code></pre>
 <p>You can generate more sets of 20 coin flips by increasing the <code>n</code>.</p>
-<div class="sourceCode" id="cb442"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb459"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/stats/Binomial.html">rbinom</a></span><span class="op">(</span><span class="fl">10</span>, <span class="fl">20</span>, <span class="fl">0.5</span><span class="op">)</span></code></pre></div>
 <pre><code>##  [1] 10 14 11  7 11 13  6 10  9  9</code></pre>
 <p>You should always check your randomly generated data to check that it makes sense. For large samples, it's easiest to do that graphically. A histogram is usually the best choice for plotting binomial data.</p>
-<div class="sourceCode" id="cb444"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb461"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">flips</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/Binomial.html">rbinom</a></span><span class="op">(</span><span class="fl">1000</span>, <span class="fl">20</span>, <span class="fl">0.5</span><span class="op">)</span>
 
 <span class="fu">ggplot</span><span class="op">(</span><span class="op">)</span> <span class="op">+</span>
@@ -267,7 +267,7 @@ Figure 10.1: Distribution of dice rolls.
 </h3>
 <p><code><a href="https://rdrr.io/r/stats/Normal.html">rnorm(n, mean, sd)</a></code></p>
 <p>We can simulate a <a class="glossary" target="_blank" title="A symmetric distribution of data where values near the centre are most probable." href="https://psyteachr.github.io/glossary/n#normal-distribution">normal distribution</a> of size <code>n</code> if we know the <code>mean</code> and standard deviation (<code>sd</code>). A density plot is usually the best way to visualise this type of data if your <code>n</code> is large.</p>
-<div class="sourceCode" id="cb445"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb462"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">dv</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span><span class="fl">1e5</span>, <span class="fl">10</span>, <span class="fl">2</span><span class="op">)</span>
 
 <span class="co"># proportions of normally-distributed data </span>
@@ -308,7 +308,7 @@ Figure 10.1: Distribution of dice rolls.
 <code>lambda</code> = the mean number of events per observation</li>
 </ul>
 <p>Let's say we want to model how many texts you get each day for a whole. You know that you get an average of 20 texts per day. So we set <code>n = 365</code> and <code>lambda = 20</code>. Lambda is a <a class="glossary" target="_blank" title="A value that describes a distribution, such as the mean or SD" href="https://psyteachr.github.io/glossary/p#parameter">parameter</a> that describes the Poisson distribution, just like mean and standard deviation are parameters that describe the normal distribution.</p>
-<div class="sourceCode" id="cb446"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb463"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">texts</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/Poisson.html">rpois</a></span><span class="op">(</span>n <span class="op">=</span> <span class="fl">365</span>, lambda <span class="op">=</span> <span class="fl">20</span><span class="op">)</span>
 
 <span class="fu">ggplot</span><span class="op">(</span><span class="op">)</span> <span class="op">+</span>
@@ -336,7 +336,7 @@ Figure 10.1: Distribution of dice rolls.
 <p>Don't load MASS with the <code><a href="https://rdrr.io/r/base/library.html">library()</a></code> function because it will create a conflict with the <code><a href="https://dplyr.tidyverse.org/reference/select.html">select()</a></code> function from dplyr and you will always need to preface it with <code>dplyr::</code>. Just use <code><a href="https://rdrr.io/pkg/MASS/man/mvrnorm.html">MASS::mvrnorm()</a></code>.</p>
 </div>
 <p>You need to know how many observations you want to simulate (<code>n</code>) the means of the two variables (<code>mu</code>) and you need to calculate a <a class="glossary" target="_blank" title="Parameters showing how a set of vectors vary and are correlated." href="https://psyteachr.github.io/glossary/c#covariance-matrix">covariance matrix</a> (<code>sigma</code>) from the correlation between the variables (<code>rho</code>) and their standard deviations (<code>sd</code>).</p>
-<div class="sourceCode" id="cb447"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb464"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">n</span>   <span class="op">&lt;-</span> <span class="fl">1000</span> <span class="co"># number of random samples</span>
 <span class="co"># name the mu values to give the resulting columns names</span>
 <span class="va">mu</span>     <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span>x <span class="op">=</span> <span class="fl">10</span>, y <span class="op">=</span> <span class="fl">20</span><span class="op">)</span> <span class="co"># the means of the samples</span>
@@ -354,7 +354,7 @@ Figure 10.1: Distribution of dice rolls.
 <span class="co"># sample from bivariate normal distribution</span>
 <span class="va">bvn</span> <span class="op">&lt;-</span> <span class="fu">MASS</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/MASS/man/mvrnorm.html">mvrnorm</a></span><span class="op">(</span><span class="va">n</span>, <span class="va">mu</span>, <span class="va">sigma</span><span class="op">)</span> </code></pre></div>
 <p>Plot your sampled variables to check everything worked like you expect. It's easiest to convert the output of <code>mvnorm</code> into a tibble in order to use it in ggplot.</p>
-<div class="sourceCode" id="cb448"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb465"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">bvn</span> <span class="op">%&gt;%</span>
   <span class="fu">as_tibble</span><span class="op">(</span><span class="op">)</span> <span class="op">%&gt;%</span>
   <span class="fu">ggplot</span><span class="op">(</span><span class="fu">aes</span><span class="op">(</span><span class="va">x</span>, <span class="va">y</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span>
@@ -369,7 +369,7 @@ Figure 10.1: Distribution of dice rolls.
 <span class="header-section-number">10.4.2</span> Multivariate Normal<a class="anchor" aria-label="anchor" href="#mvnorm"><i class="fas fa-link"></i></a>
 </h3>
 <p>You can generate more than 2 correlated variables, but it gets a little trickier to create the correlation matrix.</p>
-<div class="sourceCode" id="cb450"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb467"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">n</span>      <span class="op">&lt;-</span> <span class="fl">200</span> <span class="co"># number of random samples</span>
 <span class="va">mu</span>     <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span>x <span class="op">=</span> <span class="fl">10</span>, y <span class="op">=</span> <span class="fl">20</span>, z <span class="op">=</span> <span class="fl">30</span><span class="op">)</span> <span class="co"># the means of the samples</span>
 <span class="va">sd</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">8</span>, <span class="fl">9</span>, <span class="fl">10</span><span class="op">)</span>   <span class="co"># the SDs of the samples</span>
@@ -392,7 +392,7 @@ Figure 10.1: Distribution of dice rolls.
 ## y 0.5896674 1.0000000 0.7468737
 ## z 0.1513108 0.7468737 1.0000000</code></pre>
 <p>You can use the <code>plotly</code> library to make a 3D graph.</p>
-<div class="sourceCode" id="cb452"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb469"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co">#set up the marker style</span>
 <span class="va">marker_style</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>
     color <span class="op">=</span> <span class="st">"#ff0000"</span>, 
@@ -410,14 +410,14 @@ Figure 10.1: Distribution of dice rolls.
   <span class="fu"><a href="https://docs.ropensci.org/plotly/reference/plot_ly.html">plot_ly</a></span><span class="op">(</span>x <span class="op">=</span> <span class="op">~</span><span class="va">x</span>, y <span class="op">=</span> <span class="op">~</span><span class="va">y</span>, z <span class="op">=</span> <span class="op">~</span><span class="va">z</span>, marker <span class="op">=</span> <span class="va">marker_style</span><span class="op">)</span> <span class="op">%&gt;%</span>
   <span class="fu"><a href="https://docs.ropensci.org/plotly/reference/add_trace.html">add_markers</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
 <div id="htmlwidget-97464c64ba44c92dfe95" style="width:100%;height:480px;" class="plotly html-widget"></div>
-<script type="application/json" data-for="htmlwidget-97464c64ba44c92dfe95">{"x":{"visdat":{"112d072fa19e1":["function () ","plotlyVisDat"]},"cur_data":"112d072fa19e1","attrs":{"112d072fa19e1":{"x":{},"y":{},"z":{},"marker":{"color":"#ff0000","line":{"color":"#444","width":1},"opacity":0.5,"size":5},"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"scatter3d","mode":"markers","inherit":true}},"layout":{"margin":{"b":40,"l":60,"t":25,"r":10},"scene":{"xaxis":{"title":"x"},"yaxis":{"title":"y"},"zaxis":{"title":"z"}},"hovermode":"closest","showlegend":false},"source":"A","config":{"showSendToCloud":false},"data":[{"x":[13.2706709668516,8.93168444153148,-0.813387275721611,12.1578345710007,3.1370729255489,0.588751826150403,18.0389693200385,17.2963444009539,10.1712133132531,12.811663072921,17.6674354852706,6.10990855003802,5.60590631481004,0.38993459624322,9.34457529455401,1.53724655103631,6.24133441834187,14.401965727951,15.6457154691537,9.59709731116506,19.3173199361119,0.622580498158262,8.46304220003606,14.5813002771313,15.2264594835635,24.4271454399806,14.5132557792455,9.94454127290208,15.4061242685495,6.18224971857149,11.4282133624854,1.46375023282721,18.4692737130189,-3.28990169600508,-0.913686386683796,-2.4003534775947,7.03251675101586,1.80590839812145,8.03501014956297,10.8925311637571,22.2012828662421,13.3686338774044,9.12930700468325,9.8477282958243,1.08155053444772,16.8467327437297,13.7544210834525,14.0459618146538,20.1909316422867,5.42848535607914,8.63530227133701,10.2400492882952,16.9828686952306,9.56003641494665,-3.73668704494906,17.6766426911933,14.6639952881569,10.9529581705025,13.1491754298513,1.97143797485862,12.0865755579754,27.007198580839,-0.96888046101337,12.357113212896,26.550958431147,-1.43431254069437,-0.659520305605257,3.26622528837262,-2.86864435547944,5.52723451818546,-1.54551910128612,17.5369808679526,2.02874040522986,12.179315632306,19.4700281958726,0.459033504960017,11.0753906584131,13.2417204648878,2.73035803865556,11.3497625780328,11.9752931773355,7.07383906662482,21.4625908180738,12.2026610746263,6.81816865204819,-4.62694055427287,-11.380686633026,18.195619814301,14.6207493053649,12.2940172154462,15.5421160339095,-0.672774526108778,1.86972619322493,2.72229175713346,-2.00691146026704,4.95191783500539,18.4997841781159,12.5454158111554,-1.8404297726578,12.1902134551205,-2.29950617995802,19.673384310892,19.2168753625664,7.55406878892677,10.8773622863717,10.897027461134,8.03729813701766,15.8416625804243,-2.25905877156731,13.6069354875793,15.9824699767045,12.3106078035442,8.8320886040444,-2.97585523808295,15.2928501639154,6.11953423544784,9.02611660736083,8.0985627432282,10.6676747737893,3.98116307923491,18.3984394405679,1.37497061925478,16.9270210889064,13.3360218387562,21.5672950632267,19.9187417634688,16.3868136348461,11.2022185465382,4.88573050763658,26.6681977307611,6.79915892973593,4.50521184554046,17.3659164510831,15.7730341335897,5.99526264750795,11.0817897487973,13.1944184100001,6.37069013415835,-2.29753038392569,21.2865881708463,8.37464722802101,6.03091916124688,9.42871520426261,23.0699749685797,17.2413550133616,16.0716191192048,16.2059199827799,12.711243879281,11.4511425012223,-3.14413914082388,0.368548845387581,11.1620640818684,5.41608718137467,24.671441819042,6.218372815113,-4.79886489232777,8.6347040388807,19.5607446376234,-2.70652530542612,12.3155309524205,17.2567438490898,21.3167714548801,8.46999688538251,12.9632544463787,11.4602093096755,13.675343592708,21.9809043508721,12.2553788557737,27.8633018209696,8.77084070895008,22.1274407589319,3.5904845898889,10.7340661324872,8.14551408874184,5.14687786400795,14.857205112184,15.6647833914829,12.3688267162181,21.1215184143489,1.86262784211056,4.81040438890318,0.023176320419461,2.62959504899839,24.3170624819592,9.53382568391016,-5.07278431092461,13.4196199094012,5.70479269666768,11.6165303211878,7.33640180918653,8.67379936570955,4.57526565966647,1.78535668840494,-2.73661222058224,14.8144210422508,1.26553010129849,14.0268118139695,23.0582031885629,6.8110053606729,10.5061561293097],"y":[16.9198331608329,15.5658836832766,12.0023292985872,31.679326329184,9.23356054103155,12.0379646890813,30.5132404746528,30.0288555793709,12.1313332257353,20.4367440384523,25.0394478658701,16.8786774241211,14.5251105850616,8.817015305264,14.9771207122924,13.8998632218387,19.0301939568932,36.0639314654669,16.0629508046166,24.8130781086024,31.1367365111203,15.4674114227803,20.6466626287577,21.2221543424767,13.9582776785546,37.9063595505304,26.8439103642856,17.0436727933381,23.632047219502,26.4721252061231,28.1071508144323,6.6463859359384,34.8486725983831,10.2391919786298,25.063141960649,8.58350978010821,8.13559018965644,16.1516652097313,8.08379361646939,21.2269319377933,33.5048105243542,15.6386415036746,35.4581043685889,13.9561548826582,5.43145555037317,29.4511177347454,29.8444471845666,17.2392706903176,18.7927602077705,30.5029214885579,18.8901776195703,3.7407762948643,32.6947159346627,27.9656502991536,13.7433261479156,26.9990218833437,30.2681221985182,16.5557834939042,14.0100345057208,27.8340635870348,27.4926872612182,24.0712466737601,16.0029155836746,11.7532442355804,25.5451176990467,12.8721860076752,3.25138463393827,5.85628816201969,4.87377407816796,18.0601565766599,13.2853419508613,17.9481280352954,16.891477437754,28.8906607118671,33.3426179073316,14.8748841335256,20.1565857902668,14.127585273994,6.26979898708169,24.402974317688,14.0650504615791,15.2552999707202,28.0242918725971,20.5524484287738,17.6292481317418,13.1581104421769,-9.68899326686151,39.7870527756354,16.3882485913436,12.8128647515335,17.7259616056233,8.67263224542787,14.4973550714307,2.9645879774206,12.6463587658133,16.6955638994355,28.1150181728562,39.1568359333324,27.1679818399565,23.4520311472258,21.9052357849411,27.6669921919361,19.496851500702,22.359076552224,21.8406142591989,30.5387069982231,27.6127322774043,25.7046142671252,11.4856385308798,21.0875751878586,23.3165312025342,15.4610822396932,21.0833258656906,23.5559513696089,27.9163182678118,7.40377766875541,13.6450513903449,19.236860420892,25.9253808571449,12.8640629615166,39.7451402586857,5.17152959807915,29.110111657828,23.5266054973775,24.0565273145455,25.0579081575753,25.0366159142909,27.3587096469808,22.4826471639297,23.9723986784714,10.2930041351836,10.6824491844929,35.1320705335896,7.93956187033599,18.7696687335155,12.9146241003076,20.5809450160067,10.3171485962211,9.0748001441284,25.4839179689133,26.3272775302125,11.599359503269,18.1155972348606,24.8230370124131,22.8916414019595,40.2039858196023,23.2773585756821,14.9014769971921,31.2919199431885,15.3269430707585,31.9723597701598,20.361699142628,15.5873389454796,27.5009646900296,28.3094065495796,3.89129717746682,23.2044682837122,43.4959279746153,11.0336965796605,14.0322506009497,14.1939675872121,31.4672229213866,28.8908732407647,32.3184900728454,9.39565508227873,26.4115246916896,23.7595417971252,25.8449954791114,36.1406820489328,23.8957658266721,20.1081181822945,10.6486921596689,27.3283606670254,20.3704157388002,29.6208111694907,16.3907852603418,24.1643604339493,15.8883973399799,9.12117996102224,21.0935025653128,17.5268445773091,22.7095589290196,17.1224857052403,39.3875041170685,26.1579731017364,9.04674189912384,21.9116240681364,19.4859588929281,37.9071401199012,24.0328572411991,20.3959188912875,15.9699290911366,-3.46093598369791,11.4669636870686,21.0537429779256,10.5465244672573,29.0319698993054,30.0153710500562,8.00797409802549,23.6089462848738],"z":[19.2062719926933,23.588055433883,26.6134610116593,34.6725476679983,17.5708990198933,35.210366024235,42.7254320390705,40.7468156648732,26.9010684738314,30.134911690258,22.6642811112674,32.4487032887693,26.823675696731,15.82312810408,26.0205324579493,22.5037758644187,30.5215375892708,46.3291955781557,17.6074496380245,42.4420002488632,33.7621701799632,28.8034576186699,39.2422475108156,30.8121556484111,23.6616222028932,57.2863036501298,43.3912603447884,13.6062566245833,34.892478902389,38.6066229108527,31.0367568251055,20.4033516661958,37.4720621808091,30.8193911162637,43.6539965962052,27.3456510969491,11.1710134243923,34.9792837825506,24.5514495886198,31.0233228647886,34.702139885793,33.7699060873917,45.6234454801048,21.601635189741,20.1716469740381,38.1111622910167,32.2907794619215,20.7382560703102,21.5224040622655,40.5403568716143,31.5668978483637,12.7464541315052,39.6789664486128,41.3567397415191,37.2699996922043,32.7856395420863,28.2061227600225,19.7832783656106,13.4827162539304,39.3876159080588,32.4095805621494,35.0659839351875,39.3654832179884,25.5186047831619,29.8692962378668,19.4416661704333,15.5634825744365,23.7829385445516,22.6602922012576,38.536427099433,40.4852965099212,20.8644078931986,29.0275378105262,43.6112511536925,53.9505596155704,31.3118403940161,29.845341081328,27.2793563077147,28.6899431137287,38.2512213523988,18.5593961899849,28.8983442766938,37.7919184621219,23.4757180552543,32.7231137007303,39.840955144914,4.61144065425453,45.4935675129272,27.2109124173466,21.9197650129508,24.9625061182506,35.0371202263133,25.9659591342815,11.8363648147318,24.4015742661329,40.082619325999,35.1649607185412,40.7491071462748,47.6096185483039,28.788311481114,45.5366644102063,28.4915128012374,17.5887933222663,37.110547271328,31.6485289664478,38.1149046849818,34.283040413936,41.5775031359886,20.7660060723277,27.1104273567518,27.7342942450294,24.5442553128023,37.9715680921479,35.6364539407857,35.7215427502046,17.9593443934155,20.4123477910357,24.314948324537,39.8832033220211,18.2460561434262,44.8709401376837,24.8803935864573,28.7523128626513,39.3588489183819,27.0618158471014,29.0278206228743,31.3738197897443,36.8900597421059,39.9212676009594,23.4271335303297,19.6734501073981,21.2388077827545,43.2812063859017,21.1900116982767,19.7999927616118,19.3622049176971,18.2813904396589,20.7299855909213,31.6195657183907,40.4049935730591,29.0908942831343,25.5926821537464,35.1819877238928,27.2714394775107,25.6843376041916,53.7600779326658,28.3564958209498,27.4605711922906,48.3380995708241,31.3692961065872,41.3721081116561,25.9751024857371,23.61105920394,32.5133639334142,48.2976211537806,25.1443349549736,38.9353280770253,53.8029190522997,18.4003009323106,17.5974573275823,20.851871646152,35.1630185656284,41.1194645948639,39.927181512426,21.0959086133842,44.8767275536531,22.7797038813969,41.331669902403,36.7774146287894,27.3327020681334,21.864299896001,19.9364876432779,45.270422419574,36.7326818519174,49.0140678410229,24.230017814132,30.5137169763084,15.5376311268585,13.2488299404187,42.9397039249466,30.0640945002077,38.3626141440506,42.2446392810559,45.6487636938188,32.2943723151426,24.2226441488186,31.1980072666,39.0853007350223,48.3420681198385,36.6930379130742,30.8865002930965,23.5219722493582,7.93827048449956,23.6907019483521,27.3117567334967,21.9106752981063,33.8971452522022,23.7314823207738,26.8895816229995,27.2250297609142],"marker":{"color":"#ff0000","line":{"color":"#444","width":1},"opacity":0.5,"size":5},"type":"scatter3d","mode":"markers","error_y":{"color":"rgba(31,119,180,1)"},"error_x":{"color":"rgba(31,119,180,1)"},"line":{"color":"rgba(31,119,180,1)"},"frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+<script type="application/json" data-for="htmlwidget-97464c64ba44c92dfe95">{"x":{"visdat":{"727728b31128":["function () ","plotlyVisDat"]},"cur_data":"727728b31128","attrs":{"727728b31128":{"x":{},"y":{},"z":{},"marker":{"color":"#ff0000","line":{"color":"#444","width":1},"opacity":0.5,"size":5},"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"scatter3d","mode":"markers","inherit":true}},"layout":{"margin":{"b":40,"l":60,"t":25,"r":10},"scene":{"xaxis":{"title":"x"},"yaxis":{"title":"y"},"zaxis":{"title":"z"}},"hovermode":"closest","showlegend":false},"source":"A","config":{"showSendToCloud":false},"data":[{"x":[13.2706709668516,8.93168444153148,-0.813387275721611,12.1578345710007,3.1370729255489,0.588751826150403,18.0389693200385,17.2963444009539,10.1712133132531,12.811663072921,17.6674354852706,6.10990855003802,5.60590631481004,0.38993459624322,9.34457529455401,1.53724655103631,6.24133441834187,14.401965727951,15.6457154691537,9.59709731116506,19.3173199361119,0.622580498158262,8.46304220003606,14.5813002771313,15.2264594835635,24.4271454399806,14.5132557792455,9.94454127290208,15.4061242685495,6.18224971857149,11.4282133624854,1.46375023282721,18.4692737130189,-3.28990169600508,-0.913686386683796,-2.4003534775947,7.03251675101586,1.80590839812145,8.03501014956297,10.8925311637571,22.2012828662421,13.3686338774044,9.12930700468325,9.8477282958243,1.08155053444772,16.8467327437297,13.7544210834525,14.0459618146538,20.1909316422867,5.42848535607914,8.63530227133701,10.2400492882952,16.9828686952306,9.56003641494665,-3.73668704494906,17.6766426911933,14.6639952881569,10.9529581705025,13.1491754298513,1.97143797485862,12.0865755579754,27.007198580839,-0.96888046101337,12.357113212896,26.550958431147,-1.43431254069437,-0.659520305605257,3.26622528837262,-2.86864435547944,5.52723451818546,-1.54551910128612,17.5369808679526,2.02874040522986,12.179315632306,19.4700281958726,0.459033504960017,11.0753906584131,13.2417204648878,2.73035803865556,11.3497625780328,11.9752931773355,7.07383906662482,21.4625908180738,12.2026610746263,6.81816865204819,-4.62694055427287,-11.380686633026,18.195619814301,14.6207493053649,12.2940172154462,15.5421160339095,-0.672774526108778,1.86972619322493,2.72229175713346,-2.00691146026704,4.95191783500539,18.4997841781159,12.5454158111554,-1.8404297726578,12.1902134551205,-2.29950617995802,19.673384310892,19.2168753625664,7.55406878892677,10.8773622863717,10.897027461134,8.03729813701766,15.8416625804243,-2.25905877156731,13.6069354875793,15.9824699767045,12.3106078035442,8.8320886040444,-2.97585523808295,15.2928501639154,6.11953423544784,9.02611660736083,8.0985627432282,10.6676747737893,3.98116307923491,18.3984394405679,1.37497061925478,16.9270210889064,13.3360218387562,21.5672950632267,19.9187417634688,16.3868136348461,11.2022185465382,4.88573050763658,26.6681977307611,6.79915892973593,4.50521184554046,17.3659164510831,15.7730341335897,5.99526264750795,11.0817897487973,13.1944184100001,6.37069013415835,-2.29753038392569,21.2865881708463,8.37464722802101,6.03091916124688,9.42871520426261,23.0699749685797,17.2413550133616,16.0716191192048,16.2059199827799,12.711243879281,11.4511425012223,-3.14413914082388,0.368548845387581,11.1620640818684,5.41608718137467,24.671441819042,6.218372815113,-4.79886489232777,8.6347040388807,19.5607446376234,-2.70652530542612,12.3155309524205,17.2567438490898,21.3167714548801,8.46999688538251,12.9632544463787,11.4602093096755,13.675343592708,21.9809043508721,12.2553788557737,27.8633018209696,8.77084070895008,22.1274407589319,3.5904845898889,10.7340661324872,8.14551408874184,5.14687786400795,14.857205112184,15.6647833914829,12.3688267162181,21.1215184143489,1.86262784211056,4.81040438890318,0.023176320419461,2.62959504899839,24.3170624819592,9.53382568391016,-5.07278431092461,13.4196199094012,5.70479269666768,11.6165303211878,7.33640180918653,8.67379936570955,4.57526565966647,1.78535668840494,-2.73661222058224,14.8144210422508,1.26553010129849,14.0268118139695,23.0582031885629,6.8110053606729,10.5061561293097],"y":[16.9198331608329,15.5658836832766,12.0023292985872,31.679326329184,9.23356054103155,12.0379646890813,30.5132404746528,30.0288555793709,12.1313332257353,20.4367440384523,25.0394478658701,16.8786774241211,14.5251105850616,8.817015305264,14.9771207122924,13.8998632218387,19.0301939568932,36.0639314654669,16.0629508046166,24.8130781086024,31.1367365111203,15.4674114227803,20.6466626287577,21.2221543424767,13.9582776785546,37.9063595505304,26.8439103642856,17.0436727933381,23.632047219502,26.4721252061231,28.1071508144323,6.6463859359384,34.8486725983831,10.2391919786298,25.063141960649,8.58350978010821,8.13559018965644,16.1516652097313,8.08379361646939,21.2269319377933,33.5048105243542,15.6386415036746,35.4581043685889,13.9561548826582,5.43145555037317,29.4511177347454,29.8444471845666,17.2392706903176,18.7927602077705,30.5029214885579,18.8901776195703,3.7407762948643,32.6947159346627,27.9656502991536,13.7433261479156,26.9990218833437,30.2681221985182,16.5557834939042,14.0100345057208,27.8340635870348,27.4926872612182,24.0712466737601,16.0029155836746,11.7532442355804,25.5451176990467,12.8721860076752,3.25138463393827,5.85628816201969,4.87377407816796,18.0601565766599,13.2853419508613,17.9481280352954,16.891477437754,28.8906607118671,33.3426179073316,14.8748841335256,20.1565857902668,14.127585273994,6.26979898708169,24.402974317688,14.0650504615791,15.2552999707202,28.0242918725971,20.5524484287738,17.6292481317418,13.1581104421769,-9.68899326686151,39.7870527756354,16.3882485913436,12.8128647515335,17.7259616056233,8.67263224542787,14.4973550714307,2.9645879774206,12.6463587658133,16.6955638994355,28.1150181728562,39.1568359333324,27.1679818399565,23.4520311472258,21.9052357849411,27.6669921919361,19.496851500702,22.359076552224,21.8406142591989,30.5387069982231,27.6127322774043,25.7046142671252,11.4856385308798,21.0875751878586,23.3165312025342,15.4610822396932,21.0833258656906,23.5559513696089,27.9163182678118,7.40377766875541,13.6450513903449,19.236860420892,25.9253808571449,12.8640629615166,39.7451402586857,5.17152959807915,29.110111657828,23.5266054973775,24.0565273145455,25.0579081575753,25.0366159142909,27.3587096469808,22.4826471639297,23.9723986784714,10.2930041351836,10.6824491844929,35.1320705335896,7.93956187033599,18.7696687335155,12.9146241003076,20.5809450160067,10.3171485962211,9.0748001441284,25.4839179689133,26.3272775302125,11.599359503269,18.1155972348606,24.8230370124131,22.8916414019595,40.2039858196023,23.2773585756821,14.9014769971921,31.2919199431885,15.3269430707585,31.9723597701598,20.361699142628,15.5873389454796,27.5009646900296,28.3094065495796,3.89129717746682,23.2044682837122,43.4959279746153,11.0336965796605,14.0322506009497,14.1939675872121,31.4672229213866,28.8908732407647,32.3184900728454,9.39565508227873,26.4115246916896,23.7595417971252,25.8449954791114,36.1406820489328,23.8957658266721,20.1081181822945,10.6486921596689,27.3283606670254,20.3704157388002,29.6208111694907,16.3907852603418,24.1643604339493,15.8883973399799,9.12117996102224,21.0935025653128,17.5268445773091,22.7095589290196,17.1224857052403,39.3875041170685,26.1579731017364,9.04674189912384,21.9116240681364,19.4859588929281,37.9071401199012,24.0328572411991,20.3959188912875,15.9699290911366,-3.46093598369791,11.4669636870686,21.0537429779256,10.5465244672573,29.0319698993054,30.0153710500562,8.00797409802549,23.6089462848738],"z":[19.2062719926933,23.588055433883,26.6134610116593,34.6725476679983,17.5708990198933,35.210366024235,42.7254320390705,40.7468156648732,26.9010684738314,30.134911690258,22.6642811112674,32.4487032887693,26.823675696731,15.82312810408,26.0205324579493,22.5037758644187,30.5215375892708,46.3291955781557,17.6074496380245,42.4420002488632,33.7621701799632,28.8034576186699,39.2422475108156,30.8121556484111,23.6616222028932,57.2863036501298,43.3912603447884,13.6062566245833,34.892478902389,38.6066229108527,31.0367568251055,20.4033516661958,37.4720621808091,30.8193911162637,43.6539965962052,27.3456510969491,11.1710134243923,34.9792837825506,24.5514495886198,31.0233228647886,34.702139885793,33.7699060873917,45.6234454801048,21.601635189741,20.1716469740381,38.1111622910167,32.2907794619215,20.7382560703102,21.5224040622655,40.5403568716143,31.5668978483637,12.7464541315052,39.6789664486128,41.3567397415191,37.2699996922043,32.7856395420863,28.2061227600225,19.7832783656106,13.4827162539304,39.3876159080588,32.4095805621494,35.0659839351875,39.3654832179884,25.5186047831619,29.8692962378668,19.4416661704333,15.5634825744365,23.7829385445516,22.6602922012576,38.536427099433,40.4852965099212,20.8644078931986,29.0275378105262,43.6112511536925,53.9505596155704,31.3118403940161,29.845341081328,27.2793563077147,28.6899431137287,38.2512213523988,18.5593961899849,28.8983442766938,37.7919184621219,23.4757180552543,32.7231137007303,39.840955144914,4.61144065425453,45.4935675129272,27.2109124173466,21.9197650129508,24.9625061182506,35.0371202263133,25.9659591342815,11.8363648147318,24.4015742661329,40.082619325999,35.1649607185412,40.7491071462748,47.6096185483039,28.788311481114,45.5366644102063,28.4915128012374,17.5887933222663,37.110547271328,31.6485289664478,38.1149046849818,34.283040413936,41.5775031359886,20.7660060723277,27.1104273567518,27.7342942450294,24.5442553128023,37.9715680921479,35.6364539407857,35.7215427502046,17.9593443934155,20.4123477910357,24.314948324537,39.8832033220211,18.2460561434262,44.8709401376837,24.8803935864573,28.7523128626513,39.3588489183819,27.0618158471014,29.0278206228743,31.3738197897443,36.8900597421059,39.9212676009594,23.4271335303297,19.6734501073981,21.2388077827545,43.2812063859017,21.1900116982767,19.7999927616118,19.3622049176971,18.2813904396589,20.7299855909213,31.6195657183907,40.4049935730591,29.0908942831343,25.5926821537464,35.1819877238928,27.2714394775107,25.6843376041916,53.7600779326658,28.3564958209498,27.4605711922906,48.3380995708241,31.3692961065872,41.3721081116561,25.9751024857371,23.61105920394,32.5133639334142,48.2976211537806,25.1443349549736,38.9353280770253,53.8029190522997,18.4003009323106,17.5974573275823,20.851871646152,35.1630185656284,41.1194645948639,39.927181512426,21.0959086133842,44.8767275536531,22.7797038813969,41.331669902403,36.7774146287894,27.3327020681334,21.864299896001,19.9364876432779,45.270422419574,36.7326818519174,49.0140678410229,24.230017814132,30.5137169763084,15.5376311268585,13.2488299404187,42.9397039249466,30.0640945002077,38.3626141440506,42.2446392810559,45.6487636938188,32.2943723151426,24.2226441488186,31.1980072666,39.0853007350223,48.3420681198385,36.6930379130742,30.8865002930965,23.5219722493582,7.93827048449956,23.6907019483521,27.3117567334967,21.9106752981063,33.8971452522022,23.7314823207738,26.8895816229995,27.2250297609142],"marker":{"color":"#ff0000","line":{"color":"#444","width":1},"opacity":0.5,"size":5},"type":"scatter3d","mode":"markers","error_y":{"color":"rgba(31,119,180,1)"},"error_x":{"color":"rgba(31,119,180,1)"},"line":{"color":"rgba(31,119,180,1)"},"frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
 </div>
 <div id="faux" class="section level3" number="10.4.3">
 <h3>
 <span class="header-section-number">10.4.3</span> Faux<a class="anchor" aria-label="anchor" href="#faux"><i class="fas fa-link"></i></a>
 </h3>
 <p>Alternatively, you can use the package <a href="https://debruine.github.io/faux/" target="_blank">faux</a> to generate any number of correlated variables. It also has a function for checking the parameters of your new simulated data (<code><a href="https://rdrr.io/pkg/faux/man/get_params.html">check_sim_stats()</a></code>).</p>
-<div class="sourceCode" id="cb453"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb470"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">bvn3</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/faux/man/rnorm_multi.html">rnorm_multi</a></span><span class="op">(</span>
   n <span class="op">=</span> <span class="va">n</span>, 
   vars <span class="op">=</span> <span class="fl">3</span>,
@@ -471,7 +471,7 @@ Figure 10.1: Distribution of dice rolls.
 </table></div>
 </div>
 <p>You can also use faux to simulate data for factorial designs. Set up the between-subject and within-subject factors as lists with the levels as (named) vectors. Means and standard deviations can be included as vectors or data frames. The function calculates sigma for you, structures your dataset, and outputs a plot of the design.</p>
-<div class="sourceCode" id="cb454"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb471"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">b</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>pet <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span>cat <span class="op">=</span> <span class="st">"Cat Owners"</span>,
                   dog <span class="op">=</span> <span class="st">"Dog Owners"</span><span class="op">)</span><span class="op">)</span>
 <span class="va">w</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>time <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"morning"</span>,
@@ -493,7 +493,7 @@ Figure 10.1: Distribution of dice rolls.
   r <span class="op">=</span> <span class="fl">.5</span><span class="op">)</span></code></pre></div>
 <div class="inline-figure"><img src="10-sim_files/figure-html/faux-sim-design-1.png" width="100%" style="display: block; margin: auto;"></div>
 <p>You can use the <code><a href="https://rdrr.io/pkg/faux/man/get_params.html">check_sim_stats()</a></code> function, but you need to set the argument <code>between</code> to a vector of all the between-subject factor columns.</p>
-<div class="sourceCode" id="cb455"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb472"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/pkg/faux/man/get_params.html">check_sim_stats</a></span><span class="op">(</span><span class="va">pet_data</span>, between <span class="op">=</span> <span class="st">"pet"</span><span class="op">)</span></code></pre></div>
 <div class="kable-table">
 <div class="inline-table"><table class="table table-sm">
@@ -613,7 +613,7 @@ Figure 10.1: Distribution of dice rolls.
 <h3>
 <span class="header-section-number">10.5.5</span> Power and SESOI<a class="anchor" aria-label="anchor" href="#power"><i class="fas fa-link"></i></a>
 </h3>
-<p><a class="glossary" target="_blank" title="The probability of rejecting the null hypothesis when it is false." href="https://psyteachr.github.io/glossary/p#power">Power</a> is equal to 1 minus beta (i.e., the <a class="glossary" target="_blank" title="When a test concludes there is an effect when there is really is an effect" href="https://psyteachr.github.io/glossary/t#true-positive">true positive</a> rate), and depends on the effect size, how many samples we take (n), and what we set alpha to. For any test, if you specify all but one of these values, you can calculate the last. The effect size you use in power calculations should be the smallest effect size of interest (<a class="glossary" target="_blank" title="Smallest Effect Size of Interest: the smallest effect that is theoretically or practically meaningful" href="https://psyteachr.github.io/glossary/s#sesoi">SESOI</a>). See <span class="citation">(<a href="bookrefs.html#ref-TOSTtutorial" role="doc-biblioref">Daniël Lakens, Scheel, and Isager 2018</a>)</span>(<a href="https://doi.org/10.1177/2515245918770963" class="uri">https://doi.org/10.1177/2515245918770963</a>) for a tutorial on methods for choosing an SESOI.</p>
+<p><a class="glossary" target="_blank" title="The probability of rejecting the null hypothesis when it is false." href="https://psyteachr.github.io/glossary/p#power">Power</a> is equal to 1 minus beta (i.e., the <a class="glossary" target="_blank" title="When a test concludes there is an effect when there is really is an effect" href="https://psyteachr.github.io/glossary/t#true-positive">true positive</a> rate), and depends on the effect size, how many samples we take (n), and what we set alpha to. For any test, if you specify all but one of these values, you can calculate the last. The effect size you use in power calculations should be the smallest effect size of interest (<a class="glossary" target="_blank" title="Smallest Effect Size of Interest: the smallest effect that is theoretically or practically meaningful" href="https://psyteachr.github.io/glossary/s#sesoi">SESOI</a>). See <span class="citation">(<a href="bookrefs.html#ref-TOSTtutorial" role="doc-biblioref">Daniël Lakens et al., 2018</a>)</span>(<a href="https://doi.org/10.1177/2515245918770963" class="uri">https://doi.org/10.1177/2515245918770963</a>) for a tutorial on methods for choosing an SESOI.</p>
 <div class="try">
 <p>Let's say you want to be able to detect at least a 15% difference from chance (50%) in a coin's fairness, and you want your test to have a 5% chance of false positives and a 10% chance of false negatives. What are the following values?</p>
 <ul>
@@ -638,7 +638,7 @@ Figure 10.1: Distribution of dice rolls.
 </h3>
 <p>The <a class="glossary" target="_blank" title="A type of interval estimate used to summarise a given statistic or measurement where a proportion of intervals calculated from the sample(s) will contain the true value of the statistic." href="https://psyteachr.github.io/glossary/c#confidence-interval">confidence interval</a> is a range around some value (such as a mean) that has some probability of containing the parameter, if you repeated the process many times. Traditionally in psychology, we use 95% confidence intervals, but you can calculate CIs for any percentage.</p>
 <div class="info">
-<p>A 95% CI does <em>not</em> mean that there is a 95% probability that the true mean lies within this range, but that, if you repeated the study many times and calculated the CI this same way every time, you'd expect the true mean to be inside the CI in 95% of the studies. This seems like a subtle distinction, but can lead to some misunderstandings. See <span class="citation">(<a href="bookrefs.html#ref-Morey2016" role="doc-biblioref">Morey et al. 2016</a>)</span>(<a href="https://link.springer.com/article/10.3758/s13423-015-0947-8" class="uri">https://link.springer.com/article/10.3758/s13423-015-0947-8</a>) for more detailed discussion.</p>
+<p>A 95% CI does <em>not</em> mean that there is a 95% probability that the true mean lies within this range, but that, if you repeated the study many times and calculated the CI this same way every time, you'd expect the true mean to be inside the CI in 95% of the studies. This seems like a subtle distinction, but can lead to some misunderstandings. See <span class="citation">(<a href="bookrefs.html#ref-Morey2016" role="doc-biblioref">Morey et al., 2016</a>)</span>(<a href="https://link.springer.com/article/10.3758/s13423-015-0947-8" class="uri">https://link.springer.com/article/10.3758/s13423-015-0947-8</a>) for more detailed discussion.</p>
 </div>
 </div>
 </div>
@@ -661,7 +661,7 @@ Figure 10.1: Distribution of dice rolls.
 <code>p</code> = hypothesised probability of success</li>
 </ul>
 <p>Here we can test a series of 10 coin flips from a fair coin and a biased coin against the hypothesised probability of 0.5 (even odds).</p>
-<div class="sourceCode" id="cb456"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb473"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">n</span> <span class="op">&lt;-</span> <span class="fl">10</span>
 <span class="va">fair_coin</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/Binomial.html">rbinom</a></span><span class="op">(</span><span class="fl">1</span>, <span class="va">n</span>, <span class="fl">0.5</span><span class="op">)</span>
 <span class="va">biased_coin</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/Binomial.html">rbinom</a></span><span class="op">(</span><span class="fl">1</span>, <span class="va">n</span>, <span class="fl">0.6</span><span class="op">)</span>
@@ -711,7 +711,7 @@ Figure 10.1: Distribution of dice rolls.
 <li>different effects (<code>bias</code>)</li>
 <li>different hypothesised probabilities (<code>p</code>, defaults to 0.5)</li>
 </ul>
-<div class="sourceCode" id="cb458"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb475"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">sim_binom_test</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">n</span>, <span class="va">bias</span>, <span class="va">p</span> <span class="op">=</span> <span class="fl">0.5</span><span class="op">)</span> <span class="op">{</span>
   <span class="co"># simulate 1 coin flip n times with the specified bias</span>
   <span class="va">coin</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/Binomial.html">rbinom</a></span><span class="op">(</span><span class="fl">1</span>, <span class="va">n</span>, <span class="va">bias</span><span class="op">)</span>
@@ -721,7 +721,7 @@ Figure 10.1: Distribution of dice rolls.
   <span class="va">btest</span><span class="op">$</span><span class="va">p.value</span>
 <span class="op">}</span></code></pre></div>
 <p>Once you've created your function, test it a few times, changing the values.</p>
-<div class="sourceCode" id="cb459"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb476"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu">sim_binom_test</span><span class="op">(</span><span class="fl">100</span>, <span class="fl">0.6</span><span class="op">)</span></code></pre></div>
 <pre><code>## [1] 0.1332106</code></pre>
 </div>
@@ -730,7 +730,7 @@ Figure 10.1: Distribution of dice rolls.
 <span class="header-section-number">10.6.1.2</span> Calculate power<a class="anchor" aria-label="anchor" href="#calc-power-binom"><i class="fas fa-link"></i></a>
 </h4>
 <p>Then you can use the <code><a href="https://rdrr.io/r/base/lapply.html">replicate()</a></code> function to run it many times and save all the output values. You can calculate the <a class="glossary" target="_blank" title="The probability of rejecting the null hypothesis when it is false." href="https://psyteachr.github.io/glossary/p#power">power</a> of your analysis by checking the proportion of your simulated analyses that have a p-value less than your <a class="glossary" target="_blank" title="(stats) The cutoff value for making a decision to reject the null hypothesis; (graphics) A value between 0 and 1 used to control the levels of transparency in a plot" href="https://psyteachr.github.io/glossary/a#alpha">alpha</a> (the probability of rejecting the null hypothesis when the null hypothesis is true).</p>
-<div class="sourceCode" id="cb461"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb478"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">my_reps</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/lapply.html">replicate</a></span><span class="op">(</span><span class="fl">1e4</span>, <span class="fu">sim_binom_test</span><span class="op">(</span><span class="fl">100</span>, <span class="fl">0.6</span><span class="op">)</span><span class="op">)</span>
 
 <span class="va">alpha</span> <span class="op">&lt;-</span> <span class="fl">0.05</span> <span class="co"># this does not always have to be 0.05</span>
@@ -741,7 +741,7 @@ Figure 10.1: Distribution of dice rolls.
 <p><code>1e4</code> is just scientific notation for a 1 followed by 4 zeros (<code>10000</code>). When you're running simulations, you usually want to run a lot of them. It's a pain to keep track of whether you've typed 5 or 6 zeros (100000 vs 1000000) and this will change your running time by an order of magnitude.</p>
 </div>
 <p>You can plot the distribution of p-values.</p>
-<div class="sourceCode" id="cb463"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb480"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu">ggplot</span><span class="op">(</span><span class="op">)</span> <span class="op">+</span> 
   <span class="fu">geom_histogram</span><span class="op">(</span>
     <span class="fu">aes</span><span class="op">(</span><span class="va">my_reps</span><span class="op">)</span>, 
@@ -760,7 +760,7 @@ Figure 10.1: Distribution of dice rolls.
 <p><code><a href="https://rdrr.io/r/stats/t.test.html">t.test(x, y, alternative, mu, paired)</a></code></p>
 <p>Use a t-test to compare the mean of one distribution to a null hypothesis (one-sample t-test), compare the means of two samples (independent-samples t-test), or compare pairs of values (paired-samples t-test).</p>
 <p>You can run a one-sample t-test comparing the mean of your data to <code>mu</code>. Here is a simulated distribution with a mean of 0.5 and an SD of 1, creating an effect size of 0.5 SD when tested against a <code>mu</code> of 0. Run the simulation a few times to see how often the t-test returns a significant p-value (or run it in the <a href="http://shiny.psy.gla.ac.uk/debruine/normsim/">shiny app</a>).</p>
-<div class="sourceCode" id="cb464"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb481"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">sim_norm</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span><span class="fl">100</span>, <span class="fl">0.5</span>, <span class="fl">1</span><span class="op">)</span>
 <span class="fu"><a href="https://rdrr.io/r/stats/t.test.html">t.test</a></span><span class="op">(</span><span class="va">sim_norm</span>, mu <span class="op">=</span> <span class="fl">0</span><span class="op">)</span></code></pre></div>
 <pre><code>## 
@@ -775,7 +775,7 @@ Figure 10.1: Distribution of dice rolls.
 ## mean of x 
 ## 0.5917337</code></pre>
 <p>Run an independent-samples t-test by comparing two lists of values.</p>
-<div class="sourceCode" id="cb466"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb483"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">a</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span><span class="fl">100</span>, <span class="fl">0.5</span>, <span class="fl">1</span><span class="op">)</span>
 <span class="va">b</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span><span class="fl">100</span>, <span class="fl">0.7</span>, <span class="fl">1</span><span class="op">)</span>
 <span class="va">t_ind</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/t.test.html">t.test</a></span><span class="op">(</span><span class="va">a</span>, <span class="va">b</span>, paired <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span>
@@ -799,7 +799,7 @@ Figure 10.1: Distribution of dice rolls.
 <span class="header-section-number">10.6.2.1</span> Sampling function<a class="anchor" aria-label="anchor" href="#sampling-t"><i class="fas fa-link"></i></a>
 </h4>
 <p>We can use the <code><a href="https://rdrr.io/r/base/names.html">names()</a></code> function to find out the names of all the t.test parameters and use this to just get one type of data, like the test statistic (e.g., t-value).</p>
-<div class="sourceCode" id="cb468"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb485"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/names.html">names</a></span><span class="op">(</span><span class="va">t_ind</span><span class="op">)</span>
 <span class="va">t_ind</span><span class="op">$</span><span class="va">statistic</span></code></pre></div>
 <pre><code>##  [1] "statistic"   "parameter"   "p.value"     "conf.int"    "estimate"   
@@ -807,7 +807,7 @@ Figure 10.1: Distribution of dice rolls.
 ##         t 
 ## -1.806051</code></pre>
 <p>If you want to run the simulation many times and record information each time, first you need to turn your simulation into a function.</p>
-<div class="sourceCode" id="cb470"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb487"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">sim_t_ind</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">n</span>, <span class="va">m1</span>, <span class="va">sd1</span>, <span class="va">m2</span>, <span class="va">sd2</span><span class="op">)</span> <span class="op">{</span>
   <span class="co"># simulate v1</span>
   <span class="va">v1</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span><span class="va">n</span>, <span class="va">m1</span>, <span class="va">sd1</span><span class="op">)</span>
@@ -822,7 +822,7 @@ Figure 10.1: Distribution of dice rolls.
   <span class="kw"><a href="https://rdrr.io/r/base/function.html">return</a></span><span class="op">(</span><span class="va">t_ind</span><span class="op">$</span><span class="va">p.value</span><span class="op">)</span>
 <span class="op">}</span></code></pre></div>
 <p>Run it a few times to check that it gives you sensible values.</p>
-<div class="sourceCode" id="cb471"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb488"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu">sim_t_ind</span><span class="op">(</span><span class="fl">100</span>, <span class="fl">0.7</span>, <span class="fl">1</span>, <span class="fl">0.5</span>, <span class="fl">1</span><span class="op">)</span></code></pre></div>
 <pre><code>## [1] 0.362521</code></pre>
 </div>
@@ -831,7 +831,7 @@ Figure 10.1: Distribution of dice rolls.
 <span class="header-section-number">10.6.2.2</span> Calculate power<a class="anchor" aria-label="anchor" href="#calc-power-t"><i class="fas fa-link"></i></a>
 </h4>
 <p>Now replicate the simulation 1000 times.</p>
-<div class="sourceCode" id="cb473"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb490"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">my_reps</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/lapply.html">replicate</a></span><span class="op">(</span><span class="fl">1e4</span>, <span class="fu">sim_t_ind</span><span class="op">(</span><span class="fl">100</span>, <span class="fl">0.7</span>, <span class="fl">1</span>, <span class="fl">0.5</span>, <span class="fl">1</span><span class="op">)</span><span class="op">)</span>
 
 <span class="va">alpha</span> <span class="op">&lt;-</span> <span class="fl">0.05</span>
@@ -842,7 +842,7 @@ Figure 10.1: Distribution of dice rolls.
 <p>Run the code above several times. How much does the power value fluctuate? How many replications do you need to run to get a reliable estimate of power?</p>
 </div>
 <p>Compare your power estimate from simluation to a power calculation using <code><a href="https://rdrr.io/r/stats/power.t.test.html">power.t.test()</a></code>. Here, <code>delta</code> is the difference between <code>m1</code> and <code>m2</code> above.</p>
-<div class="sourceCode" id="cb475"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb492"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/stats/power.t.test.html">power.t.test</a></span><span class="op">(</span>n <span class="op">=</span> <span class="fl">100</span>, 
              delta <span class="op">=</span> <span class="fl">0.2</span>, 
              sd <span class="op">=</span> <span class="fl">1</span>, 
@@ -860,7 +860,7 @@ Figure 10.1: Distribution of dice rolls.
 ## 
 ## NOTE: n is number in *each* group</code></pre>
 <p>You can plot the distribution of p-values.</p>
-<div class="sourceCode" id="cb477"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb494"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu">ggplot</span><span class="op">(</span><span class="op">)</span> <span class="op">+</span> 
   <span class="fu">geom_histogram</span><span class="op">(</span>
     <span class="fu">aes</span><span class="op">(</span><span class="va">my_reps</span><span class="op">)</span>, 
@@ -884,7 +884,7 @@ when there is no effect (i.e., the means are identical)? Check this yourself.</p
 <span class="header-section-number">10.6.3</span> Correlation<a class="anchor" aria-label="anchor" href="#correlation"><i class="fas fa-link"></i></a>
 </h3>
 <p>You can test if continuous variables are related to each other using the <code><a href="https://rdrr.io/r/stats/cor.html">cor()</a></code> function. Let's use <code><a href="https://rdrr.io/pkg/faux/man/rnorm_multi.html">rnorm_multi()</a></code> to make a quick table of correlated values.</p>
-<div class="sourceCode" id="cb478"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb495"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">dat</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/faux/man/rnorm_multi.html">rnorm_multi</a></span><span class="op">(</span>
   n <span class="op">=</span> <span class="fl">100</span>, 
   vars <span class="op">=</span> <span class="fl">2</span>, 
@@ -898,7 +898,7 @@ when there is no effect (i.e., the means are identical)? Check this yourself.</p
 <p>Set <code>n</code> to a large number like 1e6 so that the correlations are less affected by chance. Change the value of the <strong>mean</strong> for <code>a</code>, <code>x</code>, or <code>y</code>. Does it change the correlation between <code>x</code> and <code>y</code>? What happens when you increase or decrease the <strong>sd</strong>? Can you work out any rules here?</p>
 </div>
 <p><code><a href="https://rdrr.io/r/stats/cor.html">cor()</a></code> defaults to Pearson's correlations. Set the <code>method</code> argument to use Kendall or Spearman correlations.</p>
-<div class="sourceCode" id="cb480"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb497"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/stats/cor.html">cor</a></span><span class="op">(</span><span class="va">dat</span><span class="op">$</span><span class="va">x</span>, <span class="va">dat</span><span class="op">$</span><span class="va">y</span>, method <span class="op">=</span> <span class="st">"spearman"</span><span class="op">)</span></code></pre></div>
 <pre><code>## [1] -0.4724992</code></pre>
 <div id="sampling-cor" class="section level4" number="10.6.3.1">
@@ -906,7 +906,7 @@ when there is no effect (i.e., the means are identical)? Check this yourself.</p
 <span class="header-section-number">10.6.3.1</span> Sampling function<a class="anchor" aria-label="anchor" href="#sampling-cor"><i class="fas fa-link"></i></a>
 </h4>
 <p>Create a function that creates two variables with <code>n</code> observations and <code>r</code> correlation. Use the function <code><a href="https://rdrr.io/r/stats/cor.test.html">cor.test()</a></code> to give you p-values for the correlation.</p>
-<div class="sourceCode" id="cb482"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb499"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">sim_cor_test</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">n</span> <span class="op">=</span> <span class="fl">100</span>, <span class="va">r</span> <span class="op">=</span> <span class="fl">0</span><span class="op">)</span> <span class="op">{</span>
   <span class="va">dat</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/faux/man/rnorm_multi.html">rnorm_multi</a></span><span class="op">(</span>
     n <span class="op">=</span> <span class="va">n</span>, 
@@ -919,7 +919,7 @@ when there is no effect (i.e., the means are identical)? Check this yourself.</p
   <span class="va">ctest</span><span class="op">$</span><span class="va">p.value</span>
 <span class="op">}</span></code></pre></div>
 <p>Once you've created your function, test it a few times, changing the values.</p>
-<div class="sourceCode" id="cb483"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb500"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu">sim_cor_test</span><span class="op">(</span><span class="fl">50</span>, <span class="fl">.5</span><span class="op">)</span></code></pre></div>
 <pre><code>## [1] 0.001354836</code></pre>
 </div>
@@ -928,7 +928,7 @@ when there is no effect (i.e., the means are identical)? Check this yourself.</p
 <span class="header-section-number">10.6.3.2</span> Calculate power<a class="anchor" aria-label="anchor" href="#calc-power-cor"><i class="fas fa-link"></i></a>
 </h4>
 <p>Now replicate the simulation 1000 times.</p>
-<div class="sourceCode" id="cb485"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb502"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">my_reps</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/lapply.html">replicate</a></span><span class="op">(</span><span class="fl">1e4</span>, <span class="fu">sim_cor_test</span><span class="op">(</span><span class="fl">50</span>, <span class="fl">0.5</span><span class="op">)</span><span class="op">)</span>
 
 <span class="va">alpha</span> <span class="op">&lt;-</span> <span class="fl">0.05</span>
@@ -936,7 +936,7 @@ when there is no effect (i.e., the means are identical)? Check this yourself.</p
 <span class="va">power</span></code></pre></div>
 <pre><code>## [1] 0.965</code></pre>
 <p>Compare to the value calcuated by the pwr package.</p>
-<div class="sourceCode" id="cb487"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb504"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu">pwr</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/pwr/man/pwr.r.test.html">pwr.r.test</a></span><span class="op">(</span>n <span class="op">=</span> <span class="fl">50</span>, r <span class="op">=</span> <span class="fl">0.5</span><span class="op">)</span></code></pre></div>
 <pre><code>## 
 ##      approximate correlation power calculation (arctangh transformation) 
@@ -959,7 +959,7 @@ when there is no effect (i.e., the means are identical)? Check this yourself.</p
 <span class="header-section-number">10.7.1</span> Load &amp; wrangle<a class="anchor" aria-label="anchor" href="#load-wrangle"><i class="fas fa-link"></i></a>
 </h3>
 <p>We have to do a little data wrangling first. Have a look at the data after you import it and relabel <code>Sex</code> to <code>male</code> and <code>female</code> instead of <code>1</code> and <code>2</code>. Also convert <code>Agemos</code> (age in months) to years. Relabel the column <code>0</code> as <code>mean</code> and calculate a new column named <code>sd</code> as the difference between columns <code>1</code> and <code>0</code>.</p>
-<div class="sourceCode" id="cb489"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb506"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">orig_height_age</span> <span class="op">&lt;-</span> <span class="fu">read_csv</span><span class="op">(</span><span class="st">"https://www.cdc.gov/growthcharts/data/zscore/zstatage.csv"</span><span class="op">)</span> </code></pre></div>
 <pre><code>## 
 ## ── Column specification ────────────────────────────────────────────────────────
@@ -976,7 +976,7 @@ when there is no effect (i.e., the means are identical)? Check this yourself.</p
 ##   `1.5` = col_double(),
 ##   `2` = col_double()
 ## )</code></pre>
-<div class="sourceCode" id="cb491"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb508"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">height_age</span> <span class="op">&lt;-</span> <span class="va">orig_height_age</span> <span class="op">%&gt;%</span>
   <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">Sex</span> <span class="op">%in%</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1</span>,<span class="fl">2</span><span class="op">)</span><span class="op">)</span> <span class="op">%&gt;%</span>
   <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>
@@ -991,7 +991,7 @@ when there is no effect (i.e., the means are identical)? Check this yourself.</p
 <span class="header-section-number">10.7.2</span> Plot<a class="anchor" aria-label="anchor" href="#plot"><i class="fas fa-link"></i></a>
 </h3>
 <p>Plot your new data frame to see how mean height changes with age for boys and girls.</p>
-<div class="sourceCode" id="cb492"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb509"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu">ggplot</span><span class="op">(</span><span class="va">height_age</span>, <span class="fu">aes</span><span class="op">(</span><span class="va">age</span>, <span class="va">mean</span>, color <span class="op">=</span> <span class="va">sex</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span>
   <span class="fu">geom_smooth</span><span class="op">(</span><span class="fu">aes</span><span class="op">(</span>ymin <span class="op">=</span> <span class="va">mean</span> <span class="op">-</span> <span class="va">sd</span>, 
                   ymax <span class="op">=</span> <span class="va">mean</span> <span class="op">+</span> <span class="va">sd</span><span class="op">)</span>,
@@ -1003,7 +1003,7 @@ when there is no effect (i.e., the means are identical)? Check this yourself.</p
 <span class="header-section-number">10.7.3</span> Simulate a population<a class="anchor" aria-label="anchor" href="#simulate-a-population"><i class="fas fa-link"></i></a>
 </h3>
 <p>Simulate 50 random male heights and 50 random female heights for 20-year-olds using the <code><a href="https://rdrr.io/r/stats/Normal.html">rnorm()</a></code> function and the means and SDs from the <code>height_age</code> table. Plot the data.</p>
-<div class="sourceCode" id="cb493"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb510"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">age_filter</span> <span class="op">&lt;-</span> <span class="fl">20</span>
 <span class="va">m</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">height_age</span>, <span class="va">age</span> <span class="op">==</span> <span class="va">age_filter</span>, <span class="va">sex</span> <span class="op">==</span> <span class="st">"male"</span><span class="op">)</span>
 <span class="va">f</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">height_age</span>, <span class="va">age</span> <span class="op">==</span> <span class="va">age_filter</span>, <span class="va">sex</span> <span class="op">==</span> <span class="st">"female"</span><span class="op">)</span>
@@ -1027,7 +1027,7 @@ when there is no effect (i.e., the means are identical)? Check this yourself.</p
 <span class="header-section-number">10.7.4</span> Analyse simulated data<a class="anchor" aria-label="anchor" href="#analyse-simulated-data"><i class="fas fa-link"></i></a>
 </h3>
 <p>Use the <code>sim_t_ind(n, m1, sd1, m2, sd2)</code> function we created above to generate one simulation with a sample size of 50 in each group using the means and SDs of male and female 14-year-olds.</p>
-<div class="sourceCode" id="cb494"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb511"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">age_filter</span> <span class="op">&lt;-</span> <span class="fl">14</span>
 <span class="va">m</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">height_age</span>, <span class="va">age</span> <span class="op">==</span> <span class="va">age_filter</span>, <span class="va">sex</span> <span class="op">==</span> <span class="st">"male"</span><span class="op">)</span>
 <span class="va">f</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">height_age</span>, <span class="va">age</span> <span class="op">==</span> <span class="va">age_filter</span>, <span class="va">sex</span> <span class="op">==</span> <span class="st">"female"</span><span class="op">)</span>
@@ -1040,7 +1040,7 @@ when there is no effect (i.e., the means are identical)? Check this yourself.</p
 <span class="header-section-number">10.7.5</span> Replicate simulation<a class="anchor" aria-label="anchor" href="#replicate-simulation"><i class="fas fa-link"></i></a>
 </h3>
 <p>Now replicate this 1e4 times using the <code><a href="https://rdrr.io/r/base/lapply.html">replicate()</a></code> function. This function will save the returned p-values in a list (<code>my_reps</code>). We can then check what proportion of those p-values are less than our alpha value. This is the power of our test.</p>
-<div class="sourceCode" id="cb496"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb513"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">my_reps</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/lapply.html">replicate</a></span><span class="op">(</span><span class="fl">1e4</span>, <span class="fu">sim_t_ind</span><span class="op">(</span><span class="fl">50</span>, <span class="va">m</span><span class="op">$</span><span class="va">mean</span>, <span class="va">m</span><span class="op">$</span><span class="va">sd</span>, <span class="va">f</span><span class="op">$</span><span class="va">mean</span>, <span class="va">f</span><span class="op">$</span><span class="va">sd</span><span class="op">)</span><span class="op">)</span>
 
 <span class="va">alpha</span> <span class="op">&lt;-</span> <span class="fl">0.05</span>
@@ -1054,7 +1054,7 @@ when there is no effect (i.e., the means are identical)? Check this yourself.</p
 </h3>
 <p>This design has about 65% power to detect the sex difference in height (with a 2-tailed test). Modify the <code>sim_t_ind</code> function for a 1-tailed prediction.</p>
 <p>You could just set <code>alternative</code> equal to "greater" in the function, but it might be better to add the <code>alt</code> argument to your function (giving it the same default value as <code>t.test</code>) and change the value of <code>alternative</code> in the function to <code>alt</code>.</p>
-<div class="sourceCode" id="cb498"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb515"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">sim_t_ind</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">n</span>, <span class="va">m1</span>, <span class="va">sd1</span>, <span class="va">m2</span>, <span class="va">sd2</span>, <span class="va">alt</span> <span class="op">=</span> <span class="st">"two.sided"</span><span class="op">)</span> <span class="op">{</span>
   <span class="va">v1</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span><span class="va">n</span>, <span class="va">m1</span>, <span class="va">sd1</span><span class="op">)</span>
   <span class="va">v2</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span><span class="va">n</span>, <span class="va">m2</span>, <span class="va">sd2</span><span class="op">)</span>
@@ -1077,7 +1077,7 @@ when there is no effect (i.e., the means are identical)? Check this yourself.</p
 <p>This might seem like overkill for a t-test, where you can easily look up sample size calculators online, but it is a valuable skill to learn for when your analyses become more complicated.</p>
 </div>
 <p>Start with a relatively low number of replications and/or more spread-out samples to estimate where you should be looking more specifically. Then you can repeat with a narrower/denser range of sample sizes and more iterations.</p>
-<div class="sourceCode" id="cb500"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb517"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># make another custom function to return power</span>
 <span class="va">pwr_func</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">n</span>, <span class="va">reps</span> <span class="op">=</span> <span class="fl">100</span>, <span class="va">alpha</span> <span class="op">=</span> <span class="fl">0.05</span><span class="op">)</span> <span class="op">{</span>
   <span class="va">ps</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/lapply.html">replicate</a></span><span class="op">(</span><span class="va">reps</span>, <span class="fu">sim_t_ind</span><span class="op">(</span><span class="va">n</span>, <span class="va">m</span><span class="op">$</span><span class="va">mean</span>, <span class="va">m</span><span class="op">$</span><span class="va">sd</span>, <span class="va">f</span><span class="op">$</span><span class="va">mean</span>, <span class="va">f</span><span class="op">$</span><span class="va">sd</span>, <span class="st">"greater"</span><span class="op">)</span><span class="op">)</span>
@@ -1099,7 +1099,7 @@ when there is no effect (i.e., the means are identical)? Check this yourself.</p
 <pre><code>## `geom_smooth()` using method = 'loess' and formula 'y ~ x'</code></pre>
 <div class="inline-figure"><img src="10-sim_files/figure-html/range-sample-sizes-1.png" width="100%" style="display: block; margin: auto;"></div>
 <p>Now we can narrow down our search to values around 55 (plus or minus 5) and increase the number of replications from 1e3 to 1e4.</p>
-<div class="sourceCode" id="cb502"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb519"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">power_table</span> <span class="op">&lt;-</span> <span class="fu">tibble</span><span class="op">(</span>
   n <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/seq.html">seq</a></span><span class="op">(</span><span class="fl">50</span>, <span class="fl">60</span><span class="op">)</span>
 <span class="op">)</span> <span class="op">%&gt;%</span>
@@ -1263,10 +1263,10 @@ when there is no effect (i.e., the means are identical)? Check this yourself.</p
 <li>
 <a href="https://debruine.github.io/faux/">Faux</a> package for data simulation</li>
 <li>
-<a href="https://psyarxiv.com/baxsf">Simulation-Based Power-Analysis for Factorial ANOVA Designs</a> <span class="citation">(<a href="bookrefs.html#ref-lakens_caldwell_2019" role="doc-biblioref">Daniel Lakens and Caldwell 2019</a>)</span>
+<a href="https://psyarxiv.com/baxsf">Simulation-Based Power-Analysis for Factorial ANOVA Designs</a> <span class="citation">(<a href="bookrefs.html#ref-lakens_caldwell_2019" role="doc-biblioref">Daniel Lakens &amp; Caldwell, 2019</a>)</span>
 </li>
 <li>
-<a href="https://psyarxiv.com/xp5cy/">Understanding mixed effects models through data simulation</a> <span class="citation">(<a href="bookrefs.html#ref-debruine_barr_2019" role="doc-biblioref">DeBruine and Barr 2019</a>)</span>
+<a href="https://psyarxiv.com/xp5cy/">Understanding mixed effects models through data simulation</a> <span class="citation">(<a href="bookrefs.html#ref-debruine_barr_2019" role="doc-biblioref">DeBruine &amp; Barr, 2019</a>)</span>
 </li>
 </ul>
 </div>
@@ -1278,15 +1278,22 @@ when there is no effect (i.e., the means are identical)? Check this yourself.</p
 
 /* update total correct if #webex-total_correct exists */
 update_total_correct = function() {
+  console.log("webex: update total_correct");
+
   if (t = document.getElementById("webex-total_correct")) {
-    t.innerHTML =
-      document.getElementsByClassName("webex-correct").length + " of " +
-      document.getElementsByClassName("webex-solveme").length + " correct";
+    var correct = document.getElementsByClassName("webex-correct").length;
+    var solvemes = document.getElementsByClassName("webex-solveme").length;
+    var radiogroups = document.getElementsByClassName("webex-radiogroup").length;
+    var selects = document.getElementsByClassName("webex-select").length;
+    
+    t.innerHTML = correct + " of " + (solvemes + radiogroups + selects) + " correct";
   }
 }
 
 /* webex-solution button toggling function */
 b_func = function() {
+  console.log("webex: toggle hide");
+  
   var cl = this.parentElement.classList;
   if (cl.contains('open')) {
     cl.remove("open");
@@ -1297,6 +1304,8 @@ b_func = function() {
 
 /* function for checking solveme answers */
 solveme_func = function(e) {
+  console.log("webex: check solveme");
+
   var real_answers = JSON.parse(this.dataset.answer);
   var my_answer = this.value;
   var cl = this.classList;
@@ -1340,9 +1349,28 @@ solveme_func = function(e) {
   update_total_correct();
 }
 
+/* function for checking select answers */
+select_func = function(e) {
+  console.log("webex: check select");
+  
+  var cl = this.classList
+  
+  /* add style */
+  cl.remove("webex-incorrect");
+  cl.remove("webex-correct");
+  if (this.value == "answer") {
+    cl.add("webex-correct");
+  } else if (this.value != "blank") {
+    cl.add("webex-incorrect");
+  }
+  
+  update_total_correct();
+}
+
 /* function for checking radiogroups answers */
 radiogroups_func = function(e) {
-  console.log(this.id);
+  console.log("webex: check radiogroups");
+
   var checked_button = document.querySelector('input[name=' + this.id + ']:checked');
   var cl = checked_button.parentElement.classList;
   var labels = checked_button.parentElement.parentElement.children;
@@ -1405,6 +1433,12 @@ window.onload = function() {
   var radiogroups = document.getElementsByClassName("webex-radiogroup");
   for (var i = 0; i < radiogroups.length; i++) {
     radiogroups[i].onchange = radiogroups_func;
+  }
+  
+  /* set up selects */
+  var selects = document.getElementsByClassName("webex-select");
+  for (var i = 0; i < selects.length; i++) {
+    selects[i].onchange = select_func;
   }
 
   update_total_correct();
@@ -1496,7 +1530,7 @@ $( document ).ready(function() {
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Data Skills for Reproducible Research</strong>: v2" was written by . It was last built on 2021-09-03.</p>
+    <p>"<strong>Data Skills for Reproducible Research</strong>: v2" was written by . It was last built on 2021-09-16.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

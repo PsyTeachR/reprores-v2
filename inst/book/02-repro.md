@@ -126,7 +126,7 @@ Here is one way to structure them so that similar files have the same structure 
 * <code class='path'>analysis_v3.R</code>
 * <code class='path'>data_experiment_2021-11-12.xls</code>
 * <code class='path'>data_experiment_2021-11-15.xls</code>
-* <select class='webex-solveme' data-answer='["data_subjects_2021-11-15.xls"]'> <option></option> <option>subject-data_2021-11-15.xls</option> <option>data-subjects-2021_11_15.xls</option> <option>data_subjects_2021-11-15.xls</option> <option>data_2021-11-15_subjects.xls</option></select>
+* <select class='webex-select'><option value='blank'></option><option value=''>subject-data_2021-11-15.xls</option><option value=''>data-subjects-2021_11_15.xls</option><option value='answer'>data_subjects_2021-11-15.xls</option><option value=''>data_2021-11-15_subjects.xls</option></select>
 
 ::: {.try data-latex=""}
 Think of other ways to name the files above. Look at the project directory for your last study and see what you can improve.
@@ -484,7 +484,7 @@ citation(package="faux") %>% toBibtex()
 ##   doi = {10.5281/zenodo.2669586},
 ##   publisher = {Zenodo},
 ##   year = {2021},
-##   note = {R package version 1.0.0},
+##   note = {R package version 1.0.0.9006},
 ##   url = {https://debruine.github.io/faux/},
 ## }
 ```
@@ -580,7 +580,7 @@ You can knit your file to PDF or Word if you have the right packages installed o
 ## Further Resources {#resources-repro}
 
 * [Chapter 27: R Markdown](http://r4ds.had.co.nz/r-markdown.html) in *R for Data Science*
-* [R Markdown Cheat Sheet](http://www.rstudio.com/wp-content/uploads/2016/03/rmarkdown-cheatsheet-2.0.pdf)
+* [R Markdown Cheat Sheet](https://github.com/rstudio/cheatsheets/raw/master/rmarkdown.pdf)
 * [R Markdown reference Guide](https://www.rstudio.com/wp-content/uploads/2015/03/rmarkdown-reference.pdf)
 * [R Markdown Tutorial](https://rmarkdown.rstudio.com/lesson-1.html)
 * [R Markdown: The Definitive Guide](https://bookdown.org/yihui/rmarkdown/) by Yihui Xie, J. J. Allaire, & Garrett Grolemund

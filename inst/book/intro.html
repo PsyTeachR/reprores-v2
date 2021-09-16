@@ -16,7 +16,7 @@
 <meta name="twitter:title" content="Chapter 1 Getting Started | Data Skills for Reproducible Research">
 <meta name="twitter:description" content="1.1 Learning Objectives Understand the components of the RStudio IDE (video) Type commands into the console (video) Understand function syntax (video) Install a package (video)   1.2 What is R?  R...">
 <meta name="twitter:image" content="https://psyteachr.github.io/reprores-v2/images/logos/logo.png">
-<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/header-attrs-2.9.4/header-attrs.js"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/header-attrs-2.10.6/header-attrs.js"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
 <script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.2.5.1/tabs.js"></script><script src="libs/bs3compat-0.2.5.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
 <script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="libs/htmlwidgets-1.5.3/htmlwidgets.js"></script><script src="libs/plotly-binding-4.9.4.1/plotly.js"></script><script src="libs/typedarray-0.1/typedarray.min.js"></script><link href="libs/crosstalk-1.1.1/css/crosstalk.css" rel="stylesheet">
@@ -27,9 +27,9 @@
       gtag('js', new Date());
 
       gtag('config', 'G-6NP3MF25W3');
-    </script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><link rel="stylesheet" href="include/psyteachr.css">
+    </script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><link rel="stylesheet" href="include/webex.css">
+<link rel="stylesheet" href="include/psyteachr.css">
 <link rel="stylesheet" href="include/style.css">
-<link rel="stylesheet" href="include/webex.css">
 </head>
 <body data-spy="scroll" data-target="#toc">
 
@@ -69,7 +69,7 @@
 <li><a class="" href="conventions.html"><span class="header-section-number">B</span> Conventions</a></li>
 <li><a class="" href="symbols.html"><span class="header-section-number">C</span> Symbols</a></li>
 <li><a class="" href="datasets.html"><span class="header-section-number">D</span> Datasets</a></li>
-<li><a class="" href="exercise-answers.html"><span class="header-section-number">E</span> Exercise Answers</a></li>
+<li><a class="" href="exercises.html"><span class="header-section-number">E</span> Exercises</a></li>
 <li><a class="" href="bookrefs.html"><span class="header-section-number">F</span> References</a></li>
 </ul>
 
@@ -160,14 +160,14 @@ Figure 1.3: Alter these settings for increased reproducibility.
 <div class="try">
 <p>Your settings should have:</p>
 <ul>
-<li>Restore .RData into workspace at startup: <select class="webex-solveme" data-answer='["Not Checked"]'><option></option>
-<option>Checked</option>
-<option>Not Checked</option></select>
+<li>Restore .RData into workspace at startup: <select class="webex-select"><option value="blank"></option>
+<option value="">Checked</option>
+<option value="answer">Not Checked</option></select>
 </li>
-<li>Save workspace to .RData on exit: <select class="webex-solveme" data-answer='["Never"]'><option></option>
-<option>Always</option>
-<option>Never</option>
-<option>Ask</option></select>
+<li>Save workspace to .RData on exit: <select class="webex-select"><option value="blank"></option>
+<option value="">Always</option>
+<option value="answer">Never</option>
+<option value="">Ask</option></select>
 </li>
 </ul>
 </div>
@@ -282,28 +282,28 @@ He turned to me as if to say, \"Hurry boy, it's waiting there for you\"
 <p>After all the code above is run:</p>
 <ul>
 <li>
-<code>this_year</code> = <select class="webex-solveme" data-answer='["2020"]'><option></option>
-<option>43</option>
-<option>44</option>
-<option>1976</option>
-<option>2019</option>
-<option>2020</option></select>
+<code>this_year</code> = <select class="webex-select"><option value="blank"></option>
+<option value="">43</option>
+<option value="">44</option>
+<option value="">1976</option>
+<option value="">2019</option>
+<option value="answer">2020</option></select>
 </li>
 <li>
-<code>my_birth_year</code> = <select class="webex-solveme" data-answer='["1976"]'><option></option>
-<option>43</option>
-<option>44</option>
-<option>1976</option>
-<option>2019</option>
-<option>2020</option></select>
+<code>my_birth_year</code> = <select class="webex-select"><option value="blank"></option>
+<option value="">43</option>
+<option value="">44</option>
+<option value="answer">1976</option>
+<option value="">2019</option>
+<option value="">2020</option></select>
 </li>
 <li>
-<code>my_age</code> = <select class="webex-solveme" data-answer='["43"]'><option></option>
-<option>43</option>
-<option>44</option>
-<option>1976</option>
-<option>2019</option>
-<option>2020</option></select>
+<code>my_age</code> = <select class="webex-select"><option value="blank"></option>
+<option value="answer">43</option>
+<option value="">44</option>
+<option value="">1976</option>
+<option value="">2019</option>
+<option value="">2020</option></select>
 </li>
 </ul>
 </div>
@@ -373,23 +373,23 @@ He turned to me as if to say, \"Hurry boy, it's waiting there for you\"
 <p>If you want 10 random numbers from a normal distribution with mean of 0 and standard deviation, you can just use the defaults.</p>
 <div class="sourceCode" id="cb28"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span><span class="fl">10</span><span class="op">)</span></code></pre></div>
-<pre><code>##  [1]  0.08571673  0.57505843 -1.21671268  1.37196949  0.39024474  0.77958767
-##  [7]  1.83148585 -0.23283766  0.97848527 -0.79488399</code></pre>
+<pre><code>##  [1] -0.25848124  2.85218298  0.05018543 -0.45101356  2.32086376 -1.14216515
+##  [7]  0.31834418 -0.82882975  0.63439952 -0.82893243</code></pre>
 <p>If you want 10 numbers from a normal distribution with a mean of 100:</p>
 <div class="sourceCode" id="cb30"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span><span class="fl">10</span>, <span class="fl">100</span><span class="op">)</span></code></pre></div>
-<pre><code>##  [1]  99.66847  98.98484 101.43916  99.49610  99.84190 100.45355  99.89289
-##  [8]  99.38652 100.61345 101.25859</code></pre>
+<pre><code>##  [1] 100.72741  99.41810  99.61205 101.28465  99.54080  99.97880 100.18295
+##  [8] 100.82343  99.00408  99.52842</code></pre>
 <p>This would be an equivalent but less efficient way of calling the function:</p>
 <div class="sourceCode" id="cb32"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span>n <span class="op">=</span> <span class="fl">10</span>, mean <span class="op">=</span> <span class="fl">100</span><span class="op">)</span></code></pre></div>
-<pre><code>##  [1] 100.01439  99.57700 101.05737  99.65466 100.32962  99.52804  98.43124
-##  [8] 100.33794 100.89923  97.81565</code></pre>
+<pre><code>##  [1]  98.93272 100.52875  99.39154 100.92565  97.54219  97.51995  98.81054
+##  [8]  98.71236 100.28241  99.73474</code></pre>
 <p>We don't need to name the arguments because R will recognize that we intended to fill in the first and second arguments by their position in the function call. However, if we want to change the default for an argument coming later in the list, then we need to name it. For instance, if we wanted to keep the default <code>mean = 0</code> but change the standard deviation to 100, we would do it this way:</p>
 <div class="sourceCode" id="cb34"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span><span class="fl">10</span>, sd <span class="op">=</span> <span class="fl">100</span><span class="op">)</span></code></pre></div>
-<pre><code>##  [1]  -61.06934   75.94744 -100.44128 -115.44736  -86.16600 -135.88264
-##  [7]  -25.64329  -55.62088  -95.12204   43.69802</code></pre>
+<pre><code>##  [1] -110.211002   -3.869000  131.286067  235.602134   30.480895   31.832045
+##  [7]  127.416020    1.074061  202.920131  -39.476516</code></pre>
 <p>Some functions give a list of options after an argument; this means the default value is the first option. The usage entry for the <code><span class="fu"><a href="https://rdrr.io/r/stats/power.t.test.html">power.t.test</a></span><span class="op">(</span><span class="op">)</span></code> function looks like this:</p>
 <div class="sourceCode" id="cb36"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/stats/power.t.test.html">power.t.test</a></span><span class="op">(</span>n <span class="op">=</span> <span class="cn">NULL</span>, delta <span class="op">=</span> <span class="cn">NULL</span>, sd <span class="op">=</span> <span class="fl">1</span>, sig.level <span class="op">=</span> <span class="fl">0.05</span>,
@@ -399,21 +399,21 @@ He turned to me as if to say, \"Hurry boy, it's waiting there for you\"
              strict <span class="op">=</span> <span class="cn">FALSE</span>, tol <span class="op">=</span> <span class="va">.Machine</span><span class="op">$</span><span class="va">double.eps</span><span class="op">^</span><span class="fl">0.25</span><span class="op">)</span></code></pre></div>
 <div class="try">
 <ul>
-<li>What is the default value for <code>sd</code>? <select class="webex-solveme" data-answer='["1"]'><option></option>
-<option>two.sample</option>
-<option>1</option>
-<option>NULL</option>
-<option>0.05</option></select>
+<li>What is the default value for <code>sd</code>? <select class="webex-select"><option value="blank"></option>
+<option value="">0.05</option>
+<option value="answer">1</option>
+<option value="">two.sample</option>
+<option value="">NULL</option></select>
 </li>
-<li>What is the default value for <code>type</code>? <select class="webex-solveme" data-answer='["two.sample"]'><option></option>
-<option>NULL</option>
-<option>paired</option>
-<option>one.sample</option>
-<option>two.sample</option></select>
+<li>What is the default value for <code>type</code>? <select class="webex-select"><option value="blank"></option>
+<option value="">NULL</option>
+<option value="answer">two.sample</option>
+<option value="">one.sample</option>
+<option value="">paired</option></select>
 </li>
 <li>Which is equivalent to <code><span class="fu"><a href="https://rdrr.io/r/stats/power.t.test.html">power.t.test</a></span><span class="op">(</span><span class="fl">100</span>, <span class="fl">0.5</span><span class="op">)</span></code>?
-<div id="radio_BAAOLAKGGD" class="webex-radiogroup">
-<label><input type="radio" autocomplete="off" name="radio_BAAOLAKGGD" value=""><span>power.t.test(100, 0.5, sig.level = 1, sd = 0.05)</span></label><label><input type="radio" autocomplete="off" name="radio_BAAOLAKGGD" value="answer"><span>power.t.test(delta = 0.5, n = 100)</span></label><label><input type="radio" autocomplete="off" name="radio_BAAOLAKGGD" value=""><span>power.t.test()</span></label><label><input type="radio" autocomplete="off" name="radio_BAAOLAKGGD" value=""><span>power.t.test(n = 100)</span></label>
+<div id="radio_OBLVMZHIET" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_OBLVMZHIET" value=""><span>power.t.test(n = 100)</span></label><label><input type="radio" autocomplete="off" name="radio_OBLVMZHIET" value="answer"><span>power.t.test(delta = 0.5, n = 100)</span></label><label><input type="radio" autocomplete="off" name="radio_OBLVMZHIET" value=""><span>power.t.test()</span></label><label><input type="radio" autocomplete="off" name="radio_OBLVMZHIET" value=""><span>power.t.test(100, 0.5, sig.level = 1, sd = 0.05)</span></label>
 </div>
 </li>
 </ul>
@@ -433,17 +433,17 @@ He turned to me as if to say, \"Hurry boy, it's waiting there for you\"
 <p>When the package isn't loaded or you aren't sure what package the function is in, use the shortcut <code>??function_name</code>.</p>
 <div class="try">
 <ul>
-<li>What is the first argument to the <code>mean</code> function? <select class="webex-solveme" data-answer='["x"]'><option></option>
-<option>trim</option>
-<option>na.rm</option>
-<option>mean</option>
-<option>x</option></select>
+<li>What is the first argument to the <code>mean</code> function? <select class="webex-select"><option value="blank"></option>
+<option value="">trim</option>
+<option value="">na.rm</option>
+<option value="">mean</option>
+<option value="answer">x</option></select>
 </li>
-<li>What package is <code>read_excel</code> in? <select class="webex-solveme" data-answer='["readxl"]'><option></option>
-<option>readr</option>
-<option>readxl</option>
-<option>base</option>
-<option>stats</option></select>
+<li>What package is <code>read_excel</code> in? <select class="webex-select"><option value="blank"></option>
+<option value="">readr</option>
+<option value="answer">readxl</option>
+<option value="">base</option>
+<option value="">stats</option></select>
 </li>
 </ul>
 </div>
@@ -663,15 +663,22 @@ Figure 1.4: Check installed and loaded packages in the packages tab in the lower
 
 /* update total correct if #webex-total_correct exists */
 update_total_correct = function() {
+  console.log("webex: update total_correct");
+
   if (t = document.getElementById("webex-total_correct")) {
-    t.innerHTML =
-      document.getElementsByClassName("webex-correct").length + " of " +
-      document.getElementsByClassName("webex-solveme").length + " correct";
+    var correct = document.getElementsByClassName("webex-correct").length;
+    var solvemes = document.getElementsByClassName("webex-solveme").length;
+    var radiogroups = document.getElementsByClassName("webex-radiogroup").length;
+    var selects = document.getElementsByClassName("webex-select").length;
+    
+    t.innerHTML = correct + " of " + (solvemes + radiogroups + selects) + " correct";
   }
 }
 
 /* webex-solution button toggling function */
 b_func = function() {
+  console.log("webex: toggle hide");
+  
   var cl = this.parentElement.classList;
   if (cl.contains('open')) {
     cl.remove("open");
@@ -682,6 +689,8 @@ b_func = function() {
 
 /* function for checking solveme answers */
 solveme_func = function(e) {
+  console.log("webex: check solveme");
+
   var real_answers = JSON.parse(this.dataset.answer);
   var my_answer = this.value;
   var cl = this.classList;
@@ -725,9 +734,28 @@ solveme_func = function(e) {
   update_total_correct();
 }
 
+/* function for checking select answers */
+select_func = function(e) {
+  console.log("webex: check select");
+  
+  var cl = this.classList
+  
+  /* add style */
+  cl.remove("webex-incorrect");
+  cl.remove("webex-correct");
+  if (this.value == "answer") {
+    cl.add("webex-correct");
+  } else if (this.value != "blank") {
+    cl.add("webex-incorrect");
+  }
+  
+  update_total_correct();
+}
+
 /* function for checking radiogroups answers */
 radiogroups_func = function(e) {
-  console.log(this.id);
+  console.log("webex: check radiogroups");
+
   var checked_button = document.querySelector('input[name=' + this.id + ']:checked');
   var cl = checked_button.parentElement.classList;
   var labels = checked_button.parentElement.parentElement.children;
@@ -790,6 +818,12 @@ window.onload = function() {
   var radiogroups = document.getElementsByClassName("webex-radiogroup");
   for (var i = 0; i < radiogroups.length; i++) {
     radiogroups[i].onchange = radiogroups_func;
+  }
+  
+  /* set up selects */
+  var selects = document.getElementsByClassName("webex-select");
+  for (var i = 0; i < selects.length; i++) {
+    selects[i].onchange = select_func;
   }
 
   update_total_correct();
@@ -856,7 +890,7 @@ $( document ).ready(function() {
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Data Skills for Reproducible Research</strong>: v2" was written by . It was last built on 2021-09-03.</p>
+    <p>"<strong>Data Skills for Reproducible Research</strong>: v2" was written by . It was last built on 2021-09-16.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

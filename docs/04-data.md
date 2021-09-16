@@ -151,14 +151,16 @@ post_mean - pre_mean
 
 Built-in data are nice for examples, but you're probably more interested in your own data. There are many different types of files that you might work with when doing data analysis. These different file types are usually distinguished by the three letter <a class='glossary' target='_blank' title='The end part of a file name that tells you what type of file it is (e.g., .R or .Rmd).' href='https://psyteachr.github.io/glossary/e#extension'>extension</a> following a period at the end of the file name. Here are some examples of different types of files and the functions you would use to read them in or write them out.
 
-| Extension   | File Type              | Reading                | Writing |
-|-------------|------------------------|------------------------|---------|
+| Extension   | File Type              | Reading                | Writing              |
+|-------------|------------------------|------------------------|----------------------|
 | .csv        | Comma-separated values | `readr::read_csv()`    | `readr::write_csv()` |
 | .tsv, .txt  | Tab-separated values   | `readr::read_tsv()`    | `readr::write_tsv()` |
-| .xls, .xlsx | Excel workbook         | `readxl::read_excel()` | NA |
-| .sav, .mat, ... | Multiple types     | `rio::import()`          | NA |
+| .xls, .xlsx | Excel workbook         | `readxl::read_excel()` | `rio::export()`      |
+| .sav        | SPSS files             | `haven::read_sav()`    | `haven::write_sav()` |
+| .json       | JSON files        | `jsonlite::read_json()` | `jsonlite::write_json()` |
+| .mat, ...   | Multiple types         | `rio::import()`        | `rio::export()`      |
 
-The double colon means that the function on the right comes from the package on the left, so `readr::read_csv()` refers to the `read_csv()` function in the `readr` package, and `readxl::read_excel()` refers to the function `read_excel()` in the package `readxl`. The function `rio::import()` from the `rio` package will read almost any type of data file, including SPSS and Matlab. Check the help with `?rio::import` to see a full list.
+The double colon means that the function on the right comes from the package on the left, so `readr::read_csv()` refers to the `read_csv()` function in the <code class='package'>readr</code> package, and `readxl::read_excel()` refers to the function `read_excel()` in the <code class='package'>readxl</code> package. The function `rio::import()` from the <code class='package'>rio</code> package will read almost any type of data file, including SPSS and Matlab. Check the help with `?rio::import` to see a full list.
 
 You can get a directory of data files used in this class for tutorials and exercises with the following code, which will create a directory called "data" in your project directory. Alternatively, you can download a [zip file of the datasets](data/data.zip).
 
@@ -167,62 +169,193 @@ You can get a directory of data files used in this class for tutorials and exerc
 psyteachr::getdata()
 ```
 
+#### CSV Files
 
-Probably the most common file type you will encounter is <a class='glossary' target='_blank' title='Comma-separated variable: a file type for representing data where each variable is separated from the next by a comma.' href='https://psyteachr.github.io/glossary/c#csv'>.csv</a> (comma-separated values).  As the name suggests, a CSV file distinguishes which values go with which variable by separating them with commas, and text values are sometimes enclosed in double quotes. The first line of a file usually provides the names of the variables. 
+The most common file type you will encounter in this class is <a class='glossary' target='_blank' title='Comma-separated variable: a file type for representing data where each variable is separated from the next by a comma.' href='https://psyteachr.github.io/glossary/c#csv'>.csv</a> (comma-separated values).  As the name suggests, a CSV file distinguishes which values go with which variable by separating them with commas, and text values are sometimes enclosed in double quotes. The first line of a file usually provides the names of the variables. 
 
-For example, here are the first few lines of a CSV containing personality scores:
+For example, here is a small CSV containing demo data:
 
     ```
-    subj_id,O,C,E,A,N
-    S01,4.428571429,4.5,3.333333333,5.142857143,1.625
-    S02,5.714285714,2.9,3.222222222,3,2.625
-    S03,5.142857143,2.8,6,3.571428571,2.5
-    S04,3.142857143,5.2,1.333333333,1.571428571,3.125
-    S05,5.428571429,4.4,2.444444444,4.714285714,1.625
+    character,integer,double,logical,date
+    A,1,1.5,TRUE,05-Sep-21
+    B,2,2.5,TRUE,04-Sep-21
+    C,3,3.5,FALSE,03-Sep-21
+    D,4,4.5,FALSE,02-Sep-21
+    E,5,5.5,,01-Sep-21
+    F,6,6.5,TRUE,31-Aug-21
     ```
 
-There are six variables in this dataset, and their names are given in the first line of the file: `subj_id`, `O`, `C`, `E`, `A`, and `N`. You can see that the values for each of these variables are given in order, separated by commas, on each subsequent line of the file.
+There are five variables in this dataset, and their names are given in the first line of the file: `character`, `integer`, `double` ,``logical`, and `date`. You can see that the values for each of these variables are given in order, separated by commas, on each subsequent line of the file.
 
-When you read in CSV files, it is best practice to use the `readr::read_csv()` function. The `readr` package is automatically loaded as part of the `tidyverse` package, which we will be using in almost every script. Note that you would normally want to store the result of the `read_csv()` function to an object, as so:
+Use `readr::read_csv()` to read in the data as assign it to an <a class='glossary' target='_blank' title='A word that identifies and stores the value of some data for later use.' href='https://psyteachr.github.io/glossary/o#object'>object</a> called `demo_csv`.
+
 
 
 ```r
-csv_data <- read_csv("data/5factor.csv")
+demo_csv  <- readr::read_csv("data/demo.csv")
 ```
 
 ```
 ## 
 ## ── Column specification ────────────────────────────────────────────────────────
 ## cols(
-##   subj_id = col_character(),
-##   O = col_double(),
-##   C = col_double(),
-##   E = col_double(),
-##   A = col_double(),
-##   N = col_double()
+##   character = col_character(),
+##   integer = col_double(),
+##   double = col_double(),
+##   logical = col_logical(),
+##   date = col_character()
 ## )
 ```
 
-
-The `read_csv()` and `read_tsv()` functions will give you some information about the data you just read in so you can check the column names and [data types](#data_types). For now, it's enough to know that `col_double()` refers to columns with numbers and `col_character()` refers to columns with words. We'll learn in the [toroubleshooting](#troubleshooting) section below how to fix it if the function guesses the wrong data type.
+This function will give you some information about the data you just read in so you can check the column names and [data types](#data_types). If it makes a mistake, such as reading the "date" column as a <a class='glossary' target='_blank' title='A data type representing strings of text.' href='https://psyteachr.github.io/glossary/c#character'>character</a>, you can manually set the column data types. Just copy the "Column specification" that was printed when you first imported the data, and make any changes you need.
 
 
 ```r
-tsv_data <- read_tsv("data/5factor.txt")
-xls_data <- readxl::read_xls("data/5factor.xls")
-# you can load sheets from excel files by name or number
-rep_data <- readxl::read_xls("data/5factor.xls", sheet = "replication")
-spss_data <- rio::import("data/5factor.sav")
+ct <- cols(
+  character = col_character(),
+  integer = col_double(),
+  double = col_double(),
+  logical = col_logical(),
+  date = col_date(format = "%d-%b-%y")
+)
+
+demo  <- readr::read_csv("data/demo.csv", col_types = ct)
 ```
 
-Once loaded, you can view your data using the data viewer.  In the upper right hand window of RStudio, under the Environment tab, you will see the object `csv_data` listed.
+::: {.info data-latex=""}
+For dates, you might need to set the format. See `?strptime` for a list of the codes used to represent different date formats. Above, <code><span class='st'>"%d-%b-%y"</span></code> means that the dates are formatted like `{day number}-{month abbreviation}-{2-digit year}`. 
+:::
+
+We'll learn more about how to fix data import problems in the [troubleshooting](#troubleshooting) section below.
+
+#### Other File Types
+
+Use the functions below to read in other file types.
 
 
-If you click on the View icon, it will bring up a table view of the data you loaded in the top left pane of RStudio. This allows you to check that the data have been loaded in properly.  You can close the tab when you're done looking at it, it won't remove the object.
+```r
+demo_tsv  <- readr::read_tsv("data/demo.tsv")
+demo_xls  <- readxl::read_excel("data/demo.xlsx")
+demo_sav  <- haven::read_sav("data/demo.sav")
+demo_json <- jsonlite::read_json("data/demo.json")
+```
+
+You can access Google Sheets directly from R using <code class='package'><a href='https://googlesheets4.tidyverse.org/' target='_blank'>googlesheets4</a></code>.
+
+
+```r
+library(googlesheets4)
+
+gs4_deauth() # skip authorisation for public data
+
+url <- "https://docs.google.com/spreadsheets/d/1yhAPP0hk6fNssL9UdpJ7m_vx00VY5PQKHspx6DNQNSY/"
+
+demo_goo  <- googlesheets4::read_sheet(url)
+```
+
+::: {.try data-latex=""}
+Try loading in all five of the `5factor` datasets in the data directory.
+
+
+<div class='webex-solution'><button>Solution</button>
+
+```r
+ocean_csv  <- readr::read_csv("data/5factor.csv")
+ocean_tsv  <- readr::read_tsv("data/5factor.txt")
+ocean_xls  <- readxl::read_excel("data/5factor.xls")
+ocean_xlsx <- readxl::read_excel("data/5factor.xlsx")
+ocean_sav  <- haven::read_sav("data/5factor.sav")
+```
+
+
+</div>
+:::
+
+
+### Looking at data
+
+Now that you've loaded some data, look the upper right hand window of RStudio, under the Environment tab. You will see the objects listed, along with their number of observations (rows) and variables (columns). This is your first check that everything went OK.
+
+Always, always, always, look at your data once you've created or loaded a table. Also look at it after each step that transforms your table. There are three main ways to look at your table: <code><span class='fu'><a href='https://rdrr.io/r/utils/View.html'>View</a></span><span class='op'>(</span><span class='op'>)</span></code>, <code><span class='fu'><a href='https://rdrr.io/r/base/print.html'>print</a></span><span class='op'>(</span><span class='op'>)</span></code>, <code><span class='fu'>tibble</span><span class='fu'>::</span><span class='fu'><a href='https://pillar.r-lib.org/reference/glimpse.html'>glimpse</a></span><span class='op'>(</span><span class='op'>)</span></code>. 
+
+#### View() 
+
+A familiar way to look at the table is given by <code><span class='fu'><a href='https://rdrr.io/r/utils/View.html'>View</a></span><span class='op'>(</span><span class='op'>)</span></code> (uppercase 'V'). This command can be useful in the console, but don't ever put this one in a script because it will create an annoying pop-up window when the user runs it. Or you can click on an objects in the  <a class='glossary' target='_blank' title='RStudio is arranged with four window “panes.”' href='https://psyteachr.github.io/glossary/p#panes'>environment pane</a> to open it up in a viewer that looks a bit like Excel. You can close the tab when you're done looking at it; it won't remove the object.
+
+#### print() 
+
+The <code><span class='fu'><a href='https://rdrr.io/r/base/print.html'>print</a></span><span class='op'>(</span><span class='op'>)</span></code> method can be run explicitly, but is more commonly called by just typing the variable name on the blank line. The default is not to print the entire table, but just the first 10 rows. 
+
+Let's look at the `demo_tsv` table that we loaded above. Depending on how wide your screen is, you might need to click on an arrow at the right of the table to see the last column. 
+
+
+```r
+demo_tsv
+```
+
+<div class="kable-table">
+
+|character | integer| double|logical |date      |
+|:---------|-------:|------:|:-------|:---------|
+|A         |       1|    1.5|TRUE    |05-Sep-21 |
+|B         |       2|    2.5|TRUE    |04-Sep-21 |
+|C         |       3|    3.5|FALSE   |03-Sep-21 |
+|D         |       4|    4.5|FALSE   |02-Sep-21 |
+|E         |       5|    5.5|NA      |01-Sep-21 |
+|F         |       6|    6.5|TRUE    |31-Aug-21 |
+
+</div>
+
+#### glimpse() 
+
+The function <code><span class='fu'>tibble</span><span class='fu'>::</span><span class='fu'><a href='https://pillar.r-lib.org/reference/glimpse.html'>glimpse</a></span><span class='op'>(</span><span class='op'>)</span></code> gives a sideways version of the table. This is useful if the table is very wide and you can't see all of the columns. It also tells you the <a class='glossary' target='_blank' title='The kind of data represented by an object.' href='https://psyteachr.github.io/glossary/d#data-type'>data type</a> of each column in angled brackets after each column name. 
+
+
+```r
+glimpse(demo_xls)
+```
+
+```
+## Rows: 6
+## Columns: 5
+## $ character <chr> "A", "B", "C", "D", "E", "F"
+## $ integer   <dbl> 1, 2, 3, 4, 5, 6
+## $ double    <dbl> 1.5, 2.5, 3.5, 4.5, 5.5, 6.5
+## $ logical   <lgl> TRUE, TRUE, FALSE, FALSE, NA, TRUE
+## $ date      <chr> "05-Sep-21", "04-Sep-21", "03-Sep-21", "02-Sep-21", "01-Sep-…
+```
+
+#### summary() {#summary-function}
+
+You can get a quick summary of a dataset with the <code><span class='fu'><a href='https://rdrr.io/r/base/summary.html'>summary</a></span><span class='op'>(</span><span class='op'>)</span></code> function.
+
+
+```r
+summary(demo_sav)
+```
+
+```
+##   character            integer         double        logical   
+##  Length:6           Min.   :1.00   Min.   :1.50   Min.   :0.0  
+##  Class :character   1st Qu.:2.25   1st Qu.:2.75   1st Qu.:0.0  
+##  Mode  :character   Median :3.50   Median :4.00   Median :1.0  
+##                     Mean   :3.50   Mean   :4.00   Mean   :0.6  
+##                     3rd Qu.:4.75   3rd Qu.:5.25   3rd Qu.:1.0  
+##                     Max.   :6.00   Max.   :6.50   Max.   :1.0  
+##                                                   NA's   :1    
+##      date          
+##  Length:6          
+##  Class :character  
+##  Mode  :character  
+##                    
+##                    
+##                    
+## 
+```
 
 ### Creating data 
 
-If we are creating a data table from scratch, we can use the `tibble::tibble()` function, and type the data right in. The `tibble` package is part of the <a class='glossary' target='_blank' title='A set of R packages that help you create and work with tidy data' href='https://psyteachr.github.io/glossary/t#tidyverse'>tidyverse</a> package that we loaded at the start of this chapter. 
+If we are creating a data table from scratch, we can use the `tibble::tibble()` function, and type the data right in. The <code class='package'>tibble</code> package is part of the <a class='glossary' target='_blank' title='A set of R packages that help you create and work with tidy data' href='https://psyteachr.github.io/glossary/t#tidyverse'>tidyverse</a> package that we loaded at the start of this chapter. 
 
 Let's create a small table with the names of three Avatar characters and their bending type. The `tibble()` function takes arguments with the names that you want your columns to have. The values are vectors that list the column values in order.
 
@@ -262,24 +395,71 @@ write_csv(avatar, "avatar.csv")
 
 This will save the data in CSV format to your working directory.
 
+Writing to Google Sheets is a little trickier. Even if a Google Sheet is publicly editable, you can't add data to it without authorising your account. 
+
+You can authorise interactively using the following code (and your own email), which will prompt you to authorise "Tidyverse API Packages" the first time you do this.
+
+
+```r
+gs4_auth(email = "debruine@gmail.com")
+sheet_id <- gs4_create("demo-file", sheets = demo)
+
+new_data <- tibble(
+  character = "Z",
+  integer = 0L,
+  double = 0.5,
+  logical = FALSE,
+  date = "01-Jan-00"
+)
+
+sheet_append(sheet_id, new_data)
+demo <- read_sheet(sheet_id)
+```
+
+
 ::: {.try data-latex=""}
 * Create a new table called `family` with the first name, last name, and age of your family members. 
-* Save it to a CSV file called "family.csv". 
-* Clear the object from your environment by restarting R or with the code `remove(family)`.
+* Save it to a CSV file called <code class='path'>family.csv</code>. 
+* Clear the object from your environment by restarting R or with the code <code><span class='fu'><a href='https://rdrr.io/r/base/rm.html'>remove</a></span><span class='op'>(</span><span class='va'>family</span><span class='op'>)</span></code>.
 * Load the data back in and view it.
+:::
+
+
+<div class='webex-solution'><button>Solution</button>
+
+```r
+# create the table
+family <- tribble(
+  ~first_name, ~last_name, ~age,
+  "Lisa", "DeBruine", 45,
+  "Robbie", "Jones", 14
+)
+
+# save the data to CSV
+export(family, "data/family.csv")
+
+# remove the object from the environment
+remove(family)
+
+# load the data
+family <- import("data/family.csv")
+```
+
+
+</div>
 :::
 
 We'll be working with <a class='glossary' target='_blank' title='Data in a rectangular table format, where each row has an entry for each column.' href='https://psyteachr.github.io/glossary/t#tabular-data'>tabular data</a> a lot in this class, but tabular data is made up of <a class='glossary' target='_blank' title='A type of data structure that is basically a list of things like T/F values, numbers, or strings.' href='https://psyteachr.github.io/glossary/v#vector'>vectors</a>, which group together data with the same basic <a class='glossary' target='_blank' title='The kind of data represented by an object.' href='https://psyteachr.github.io/glossary/d#data-type'>data type</a>. The following sections explain some of this terminology to help you understand the functions we'll be learning to process and analyse data.
 
 ## Basic data types {#data_types}
 
-Data can be numbers, words, true/false values or combinations of these. In order to understand some later concepts, it's useful to have a basic understanding of <a class='glossary' target='_blank' title='The kind of data represented by an object.' href='https://psyteachr.github.io/glossary/d#data-type'>data types</a> in R: <a class='glossary' target='_blank' title='A data type representing a real decimal number or integer.' href='https://psyteachr.github.io/glossary/n#numeric'>numeric</a>, <a class='glossary' target='_blank' title='A data type representing strings of text.' href='https://psyteachr.github.io/glossary/c#character'>character</a>, and <a class='glossary' target='_blank' title='A data type representing TRUE or FALSE values.' href='https://psyteachr.github.io/glossary/l#logical'>logical</a> There is also a specific data type called a <a class='glossary' target='_blank' title='A data type where a specific set of values are stored with labels; An explanatory variable manipulated by the experimenter' href='https://psyteachr.github.io/glossary/f#factor'>factor</a>, which will probably give you a headache sooner or later, but we can ignore it for now.
+Data can be numbers, words, true/false values or combinations of these. In order to understand some later concepts, it's useful to have a basic understanding of <a class='glossary' target='_blank' title='The kind of data represented by an object.' href='https://psyteachr.github.io/glossary/d#data-type'>data types</a> in R: <a class='glossary' target='_blank' title='A data type representing a real decimal number or integer.' href='https://psyteachr.github.io/glossary/n#numeric'>numeric</a>, <a class='glossary' target='_blank' title='A data type representing strings of text.' href='https://psyteachr.github.io/glossary/c#character'>character</a>, and <a class='glossary' target='_blank' title='A data type representing TRUE or FALSE values.' href='https://psyteachr.github.io/glossary/l#logical'>logical</a> 
 
 ### Numeric data
 
-All of the real numbers are <a class='glossary' target='_blank' title='A data type representing a real decimal number or integer.' href='https://psyteachr.github.io/glossary/n#numeric'>numeric</a> data types (imaginary numbers are "complex"). There are two types of numeric data, <a class='glossary' target='_blank' title='A data type representing whole numbers.' href='https://psyteachr.github.io/glossary/i#integer'>integer</a> and <a class='glossary' target='_blank' title='A data type representing a real decimal number' href='https://psyteachr.github.io/glossary/d#double'>double</a>. Integers are the whole numbers, like -1, 0 and 1. Doubles are numbers that can have fractional amounts. If you just type a plain number such as `10`, it is stored as a double, even if it doesn't have a decimal point. If you want it to be an exact integer, use the `L` suffix (10L).
+All of the real numbers are <a class='glossary' target='_blank' title='A data type representing a real decimal number or integer.' href='https://psyteachr.github.io/glossary/n#numeric'>numeric</a> data types (imaginary numbers are "complex"). There are two types of numeric data, <a class='glossary' target='_blank' title='A data type representing whole numbers.' href='https://psyteachr.github.io/glossary/i#integer'>integer</a> and <a class='glossary' target='_blank' title='A data type representing a real decimal number' href='https://psyteachr.github.io/glossary/d#double'>double</a>. Integers are the whole numbers, like <code><span class='op'>-</span><span class='fl'>1</span></code>, <code><span class='fl'>0</span></code> and <code><span class='fl'>1</span></code>. Doubles are numbers that can have fractional amounts. If you just type a plain number such as <code><span class='fl'>10</span></code>, it is stored as a double, even if it doesn't have a decimal point. If you want it to be an exact integer, use the `L` suffix (<code><span class='fl'>10L</span></code>).
 
-If you ever want to know the data type of something, use the `typeof` function.
+If you ever want to know the data type of something, use the `typeof()` function.
 
 
 ```r
@@ -368,6 +548,61 @@ is.logical(10 > 5)
 You might also see logical values abbreviated as `T` and `F`, or `0` and `1`. This can cause some problems down the road, so we will always spell out the whole thing.
 :::
 
+### Factors
+
+A <a class='glossary' target='_blank' title='A data type where a specific set of values are stored with labels; An explanatory variable manipulated by the experimenter' href='https://psyteachr.github.io/glossary/f#factor'>factor</a> is a specific type of integer that lets you specify the categories and their order. This is useful in data tables to make plots display with categories in the correct order.
+
+
+```r
+myfactor <- factor("B", levels = c("A", "B","C"))
+myfactor
+```
+
+```
+## [1] B
+## Levels: A B C
+```
+
+Factors are a type of integer, but you can tell that they are factors by checking their `class()`.
+
+
+```r
+typeof(myfactor)
+class(myfactor)
+```
+
+```
+## [1] "integer"
+## [1] "factor"
+```
+
+### Dates and Times
+
+Dates and times are represented by doubles with special classes. Dates and times are very hard to work with, but the <code class='package'><a href='https://lubridate.tidyverse.org/' target='_blank'>lubridate</a></code> package provides functions to help you with this.
+
+
+```r
+today <- lubridate::today()
+now <- lubridate::now(tzone = "GMT")
+```
+
+Date and datetimes are a type of double, but you can tell that they are dates by checking their `class()`. Datetimes can have one or more of a few classes that start with `POSIX`.
+
+
+```r
+typeof(today)
+typeof(now)
+class(today)
+class(now)
+```
+
+```
+## [1] "double"
+## [1] "double"
+## [1] "Date"
+## [1] "POSIXct" "POSIXt"
+```
+
 
 
 
@@ -375,18 +610,19 @@ You might also see logical values abbreviated as `T` and `F`, or `0` and `1`. Th
 ::: {.try data-latex=""}
 What data types are these:
 
-* `100` <select class='webex-solveme' data-answer='["double"]'> <option></option> <option>integer</option> <option>double</option> <option>character</option> <option>logical</option> <option>factor</option></select>
-* `100L` <select class='webex-solveme' data-answer='["integer"]'> <option></option> <option>integer</option> <option>double</option> <option>character</option> <option>logical</option> <option>factor</option></select>
-* `"100"` <select class='webex-solveme' data-answer='["character"]'> <option></option> <option>integer</option> <option>double</option> <option>character</option> <option>logical</option> <option>factor</option></select>
-* `100.0` <select class='webex-solveme' data-answer='["double"]'> <option></option> <option>integer</option> <option>double</option> <option>character</option> <option>logical</option> <option>factor</option></select>
-* `-100L` <select class='webex-solveme' data-answer='["integer"]'> <option></option> <option>integer</option> <option>double</option> <option>character</option> <option>logical</option> <option>factor</option></select>
-* `factor(100)` <select class='webex-solveme' data-answer='["factor"]'> <option></option> <option>integer</option> <option>double</option> <option>character</option> <option>logical</option> <option>factor</option></select>
-* `TRUE` <select class='webex-solveme' data-answer='["logical"]'> <option></option> <option>integer</option> <option>double</option> <option>character</option> <option>logical</option> <option>factor</option></select>
-* `"TRUE"` <select class='webex-solveme' data-answer='["character"]'> <option></option> <option>integer</option> <option>double</option> <option>character</option> <option>logical</option> <option>factor</option></select>
-* `FALSE` <select class='webex-solveme' data-answer='["logical"]'> <option></option> <option>integer</option> <option>double</option> <option>character</option> <option>logical</option> <option>factor</option></select>
-* `1 == 2` <select class='webex-solveme' data-answer='["logical"]'> <option></option> <option>integer</option> <option>double</option> <option>character</option> <option>logical</option> <option>factor</option></select>
+* `100` <select class='webex-select'><option value='blank'></option><option value=''>integer</option><option value='answer'>double</option><option value=''>character</option><option value=''>logical</option><option value=''>factor</option></select>
+* `100L` <select class='webex-select'><option value='blank'></option><option value='answer'>integer</option><option value=''>double</option><option value=''>character</option><option value=''>logical</option><option value=''>factor</option></select>
+* `"100"` <select class='webex-select'><option value='blank'></option><option value=''>integer</option><option value=''>double</option><option value='answer'>character</option><option value=''>logical</option><option value=''>factor</option></select>
+* `100.0` <select class='webex-select'><option value='blank'></option><option value=''>integer</option><option value='answer'>double</option><option value=''>character</option><option value=''>logical</option><option value=''>factor</option></select>
+* `-100L` <select class='webex-select'><option value='blank'></option><option value='answer'>integer</option><option value=''>double</option><option value=''>character</option><option value=''>logical</option><option value=''>factor</option></select>
+* `factor(100)` <select class='webex-select'><option value='blank'></option><option value=''>integer</option><option value=''>double</option><option value=''>character</option><option value=''>logical</option><option value='answer'>factor</option></select>
+* `TRUE` <select class='webex-select'><option value='blank'></option><option value=''>integer</option><option value=''>double</option><option value=''>character</option><option value='answer'>logical</option><option value=''>factor</option></select>
+* `"TRUE"` <select class='webex-select'><option value='blank'></option><option value=''>integer</option><option value=''>double</option><option value='answer'>character</option><option value=''>logical</option><option value=''>factor</option></select>
+* `FALSE` <select class='webex-select'><option value='blank'></option><option value=''>integer</option><option value=''>double</option><option value=''>character</option><option value='answer'>logical</option><option value=''>factor</option></select>
+* `1 == 2` <select class='webex-select'><option value='blank'></option><option value=''>integer</option><option value=''>double</option><option value=''>character</option><option value='answer'>logical</option><option value=''>factor</option></select>
 
 :::
+
 
 ## Basic container types {#containers}
 
@@ -723,7 +959,7 @@ friendly   <- avatar$friendly  # by column name
 
 ## Troubleshooting
 
-What if you import some data and it guesses the wrong column type? The most common reason is that a numeric column has some non-numbers in it somewhere. Maybe someone wrote a note in an otherwise numeric column. Columns have to be all one data type, so if there are any characters, the whole column is converted to character strings, and numbers like `1.2` get represented as "1.2", which will cause very weird errors like `"100" < "9" == TRUE`. You can catch this by looking at the output from `read_csv()` or using `glimpse()` to check your data.
+What if you import some data and it guesses the wrong column type? The most common reason is that a numeric column has some non-numbers in it somewhere. Maybe someone wrote a note in an otherwise numeric column. Columns have to be all one data type, so if there are any characters, the whole column is converted to character strings, and numbers like <code><span class='fl'>1.2</span></code> get represented as <code><span class='st'>"1.2"</span></code>, which will cause very weird errors like `"100" < "9" == TRUE`. You can catch this by using <code><span class='fu'>glimpse</span><span class='op'>(</span><span class='op'>)</span></code> to check your data.
 
 The data directory you created with `reprores::getdata()` contains a file called "mess.csv". Let's try loading this dataset.
 
@@ -834,7 +1070,7 @@ OK, that's a little better, but this table is still a serious mess in several wa
 * `min_max` contains two pieces of numeric information, but is a character column
 * `date` should be a date column
 
-We'll learn how to deal with this mess in the chapters on [tidy data](#tidyr) and [data wrangling](#dplyr), but we can fix a few things by setting the `col_types` argument in `read_csv()` to specify the column types for our two columns that were guessed wrong and skip the "junk" column. The argument `col_types` takes a list where the name of each item in the list is a column name and the value is from the table below. You can use the function, like `col_double()` or the abbreviation, like `"l"`. Omitted column names are guessed.
+We'll learn how to deal with this mess in Chapters\ \@ref(tidyr) and \@ref(dplyr), but we can fix a few things by setting the `col_types` argument in <code><span class='fu'>read_csv</span><span class='op'>(</span><span class='op'>)</span></code> to specify the column types for our two columns that were guessed wrong and skip the "junk" column. The argument `col_types` takes a list where the name of each item in the list is a column name and the value is from the table below. You can use the function, like <code><span class='fu'>col_double</span><span class='op'>(</span><span class='op'>)</span></code> or the abbreviation, like <code><span class='st'>"l"</span></code>. Omitted column names are guessed.
 
 | function | |abbreviation | type |
 |:---------|:--------------|:-----|
@@ -872,7 +1108,7 @@ tidier <- read_csv("data/mess.csv",
 ##   2 order an integer missing 'data/mess.csv'
 ```
 
-You will get a message about "1 parsing failure" when you run this. Warnings look scary at first, but always start by reading the message. The table tells you what row (`2`) and column (`order`) the error was found in, what kind of data was expected (`integer`), and what the actual value was (`missing`). If you specifically tell `read_csv()` to import a column as an integer, any characters in the column will produce a warning like this and then be recorded as `NA`. You can manually set what the missing values are recorded as with the `na` argument.
+You will get a message about "1 parsing failure" when you run this. Warnings look scary at first, but always start by reading the message. The table tells you what row (`2`) and column (`order`) the error was found in, what kind of data was expected (`integer`), and what the actual value was (<code><span class='st'>"missing"</span></code>). If you specifically tell <code><span class='fu'>read_csv</span><span class='op'>(</span><span class='op'>)</span></code> to import a column as an integer, any characters in the column will produce a warning like this and then be recorded as `NA`. You can manually set what the missing values were recorded as with the `na` argument.
 
 
 ```r
@@ -882,8 +1118,7 @@ tidiest <- read_csv("data/mess.csv",
                    col_types = ct)
 ```
 
-
-Now `order` is an integer where "missing" is now `NA`, `good` is a logical value, where `0` and `F` are converted to `FALSE` and `1` and `T` are converted to `TRUE`, and `date` is a date type (adding leading zeros to the day). We'll learn in later chapters how to fix the other problems.
+Now `order` is an integer where "missing" is now `NA`, `good` is a logical value, where <code><span class='fl'>0</span></code> and <code><span class='cn'>F</span></code> are converted to <code><span class='cn'>FALSE</span></code> and <code><span class='fl'>1</span></code> and <code><span class='cn'>T</span></code> are converted to <code><span class='cn'>TRUE</span></code>, and `date` is a date type (adding leading zeros to the day). We'll learn in later chapters how to fix other problems, such as the `min_max` column containing two different types of data.
 
 
 ```r
@@ -945,7 +1180,9 @@ tidiest
 |[list](https://psyteachr.github.io/glossary/l.html#list){class="glossary" target="_blank"}                             |A container data type that allows items with different data types to be grouped together.                                  |
 |[logical](https://psyteachr.github.io/glossary/l.html#logical){class="glossary" target="_blank"}                       |A data type representing TRUE or FALSE values.                                                                             |
 |[numeric](https://psyteachr.github.io/glossary/n.html#numeric){class="glossary" target="_blank"}                       |A data type representing a real decimal number or integer.                                                                 |
+|[object](https://psyteachr.github.io/glossary/o.html#object){class="glossary" target="_blank"}                         |A word that identifies and stores the value of some data for later use.                                                    |
 |[operator](https://psyteachr.github.io/glossary/o.html#operator){class="glossary" target="_blank"}                     |A symbol that performs a mathematical operation, such as +, -, *, /                                                        |
+|[panes](https://psyteachr.github.io/glossary/p.html#panes){class="glossary" target="_blank"}                           |RStudio is arranged with four window “panes.”                                                                              |
 |[tabular data](https://psyteachr.github.io/glossary/t.html#tabular-data){class="glossary" target="_blank"}             |Data in a rectangular table format, where each row has an entry for each column.                                           |
 |[tidy data](https://psyteachr.github.io/glossary/t.html#tidy-data){class="glossary" target="_blank"}                   |A format for data that maps the meaning onto the structure.                                                                |
 |[tidyverse](https://psyteachr.github.io/glossary/t.html#tidyverse){class="glossary" target="_blank"}                   |A set of R packages that help you create and work with tidy data                                                           |

@@ -14,7 +14,7 @@ The whole [psyTeachR](https://psyteachr.github.io) team at the University of Gla
 
 We greatly appreciate [Iris Holzleitner](https://github.com/orgs/facelab/people/iholzleitner)'s volunteer in-class assistance with the first year of this course. We were ever so lucky to get [Rebecca Lai](https://github.com/RebeccaJLai) as a teaching assistant in the second year; her kind and patient approach to teaching technical skills is an inspiration. [Benedict Jones](https://www.strath.ac.uk/staff/jonesbenedictprofessor/) made invaluable contributions to the ethos of reproducible research at Glasgow. Thanks to [Daniël Lakens](https://github.com/Lakens) for many inspirational discussions and resources.
 
-## Contributors
+## Contributors {-}
 
 Several people contributed to testing these materials.
 

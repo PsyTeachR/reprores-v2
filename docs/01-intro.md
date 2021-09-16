@@ -69,8 +69,8 @@ There are two tweaks that you should do to your RStudio installation to maximize
 ::: {.try data-latex=""}
 Your settings should have:
 
-* Restore .RData into workspace at startup: <select class='webex-solveme' data-answer='["Not Checked"]'> <option></option> <option>Checked</option> <option>Not Checked</option></select>
-* Save workspace to .RData on exit: <select class='webex-solveme' data-answer='["Never"]'> <option></option> <option>Always</option> <option>Never</option> <option>Ask</option></select>
+* Restore .RData into workspace at startup: <select class='webex-select'><option value='blank'></option><option value=''>Checked</option><option value='answer'>Not Checked</option></select>
+* Save workspace to .RData on exit: <select class='webex-select'><option value='blank'></option><option value=''>Always</option><option value='answer'>Never</option><option value=''>Ask</option></select>
 :::
 
 ## Getting Started
@@ -234,9 +234,9 @@ this_year <- 2020
 ::: {.try data-latex=""}
 After all the code above is run:
 
-* `this_year` = <select class='webex-solveme' data-answer='["2020"]'> <option></option> <option>43</option> <option>44</option> <option>1976</option> <option>2019</option> <option>2020</option></select>
-* `my_birth_year` = <select class='webex-solveme' data-answer='["1976"]'> <option></option> <option>43</option> <option>44</option> <option>1976</option> <option>2019</option> <option>2020</option></select>
-* `my_age` = <select class='webex-solveme' data-answer='["43"]'> <option></option> <option>43</option> <option>44</option> <option>1976</option> <option>2019</option> <option>2020</option></select>
+* `this_year` = <select class='webex-select'><option value='blank'></option><option value=''>43</option><option value=''>44</option><option value=''>1976</option><option value=''>2019</option><option value='answer'>2020</option></select>
+* `my_birth_year` = <select class='webex-select'><option value='blank'></option><option value=''>43</option><option value=''>44</option><option value='answer'>1976</option><option value=''>2019</option><option value=''>2020</option></select>
+* `my_age` = <select class='webex-select'><option value='blank'></option><option value='answer'>43</option><option value=''>44</option><option value=''>1976</option><option value=''>2019</option><option value=''>2020</option></select>
 :::
 
 
@@ -345,8 +345,8 @@ rnorm(10)
 ```
 
 ```
-##  [1]  0.08571673  0.57505843 -1.21671268  1.37196949  0.39024474  0.77958767
-##  [7]  1.83148585 -0.23283766  0.97848527 -0.79488399
+##  [1] -0.25848124  2.85218298  0.05018543 -0.45101356  2.32086376 -1.14216515
+##  [7]  0.31834418 -0.82882975  0.63439952 -0.82893243
 ```
 
 If you want 10 numbers from a normal distribution with a mean of 100:
@@ -357,8 +357,8 @@ rnorm(10, 100)
 ```
 
 ```
-##  [1]  99.66847  98.98484 101.43916  99.49610  99.84190 100.45355  99.89289
-##  [8]  99.38652 100.61345 101.25859
+##  [1] 100.72741  99.41810  99.61205 101.28465  99.54080  99.97880 100.18295
+##  [8] 100.82343  99.00408  99.52842
 ```
 
 This would be an equivalent but less efficient way of calling the function:
@@ -369,8 +369,8 @@ rnorm(n = 10, mean = 100)
 ```
 
 ```
-##  [1] 100.01439  99.57700 101.05737  99.65466 100.32962  99.52804  98.43124
-##  [8] 100.33794 100.89923  97.81565
+##  [1]  98.93272 100.52875  99.39154 100.92565  97.54219  97.51995  98.81054
+##  [8]  98.71236 100.28241  99.73474
 ```
 
 We don't need to name the arguments because R will recognize that we intended to fill in the first and second arguments by their position in the function call. However, if we want to change the default for an argument coming later in the list, then we need to name it. For instance, if we wanted to keep the default `mean = 0` but change the standard deviation to 100, we would do it this way:
@@ -381,8 +381,8 @@ rnorm(10, sd = 100)
 ```
 
 ```
-##  [1]  -61.06934   75.94744 -100.44128 -115.44736  -86.16600 -135.88264
-##  [7]  -25.64329  -55.62088  -95.12204   43.69802
+##  [1] -110.211002   -3.869000  131.286067  235.602134   30.480895   31.832045
+##  [7]  127.416020    1.074061  202.920131  -39.476516
 ```
 
 Some functions give a list of options after an argument; this means the default value is the first option. The usage entry for the <code><span class='fu'><a href='https://rdrr.io/r/stats/power.t.test.html'>power.t.test</a></span><span class='op'>(</span><span class='op'>)</span></code> function looks like this:
@@ -400,9 +400,9 @@ power.t.test(n = NULL, delta = NULL, sd = 1, sig.level = 0.05,
 
 
 
-* What is the default value for `sd`? <select class='webex-solveme' data-answer='["1"]'> <option></option> <option>two.sample</option> <option>1</option> <option>NULL</option> <option>0.05</option></select>
-* What is the default value for `type`? <select class='webex-solveme' data-answer='["two.sample"]'> <option></option> <option>NULL</option> <option>paired</option> <option>one.sample</option> <option>two.sample</option></select>
-* Which is equivalent to <code><span class='fu'><a href='https://rdrr.io/r/stats/power.t.test.html'>power.t.test</a></span><span class='op'>(</span><span class='fl'>100</span>, <span class='fl'>0.5</span><span class='op'>)</span></code>? <div class='webex-radiogroup' id='radio_BAAOLAKGGD'><label><input type="radio" autocomplete="off" name="radio_BAAOLAKGGD" value=""></input> <span>power.t.test(100, 0.5, sig.level = 1, sd = 0.05)</span></label><label><input type="radio" autocomplete="off" name="radio_BAAOLAKGGD" value="answer"></input> <span>power.t.test(delta = 0.5, n = 100)</span></label><label><input type="radio" autocomplete="off" name="radio_BAAOLAKGGD" value=""></input> <span>power.t.test()</span></label><label><input type="radio" autocomplete="off" name="radio_BAAOLAKGGD" value=""></input> <span>power.t.test(n = 100)</span></label></div>
+* What is the default value for `sd`? <select class='webex-select'><option value='blank'></option><option value=''>0.05</option><option value='answer'>1</option><option value=''>two.sample</option><option value=''>NULL</option></select>
+* What is the default value for `type`? <select class='webex-select'><option value='blank'></option><option value=''>NULL</option><option value='answer'>two.sample</option><option value=''>one.sample</option><option value=''>paired</option></select>
+* Which is equivalent to <code><span class='fu'><a href='https://rdrr.io/r/stats/power.t.test.html'>power.t.test</a></span><span class='op'>(</span><span class='fl'>100</span>, <span class='fl'>0.5</span><span class='op'>)</span></code>? <div class='webex-radiogroup' id='radio_OBLVMZHIET'><label><input type="radio" autocomplete="off" name="radio_OBLVMZHIET" value=""></input> <span>power.t.test(n = 100)</span></label><label><input type="radio" autocomplete="off" name="radio_OBLVMZHIET" value="answer"></input> <span>power.t.test(delta = 0.5, n = 100)</span></label><label><input type="radio" autocomplete="off" name="radio_OBLVMZHIET" value=""></input> <span>power.t.test()</span></label><label><input type="radio" autocomplete="off" name="radio_OBLVMZHIET" value=""></input> <span>power.t.test(100, 0.5, sig.level = 1, sd = 0.05)</span></label></div>
 
 
 
@@ -426,8 +426,8 @@ When the package isn't loaded or you aren't sure what package the function is in
 
 ::: {.try data-latex=""}
 
-* What is the first argument to the `mean` function? <select class='webex-solveme' data-answer='["x"]'> <option></option> <option>trim</option> <option>na.rm</option> <option>mean</option> <option>x</option></select>
-* What package is `read_excel` in? <select class='webex-solveme' data-answer='["readxl"]'> <option></option> <option>readr</option> <option>readxl</option> <option>base</option> <option>stats</option></select>
+* What is the first argument to the `mean` function? <select class='webex-select'><option value='blank'></option><option value=''>trim</option><option value=''>na.rm</option><option value=''>mean</option><option value='answer'>x</option></select>
+* What package is `read_excel` in? <select class='webex-select'><option value='blank'></option><option value=''>readr</option><option value='answer'>readxl</option><option value=''>base</option><option value=''>stats</option></select>
 :::
 
 ## Add-on packages {#install-package}

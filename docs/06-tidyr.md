@@ -215,9 +215,9 @@ What would you set `names_sep` to in order to split the `cols` headers listed be
 
 | `cols` | `names_to`  | `names_sep` |
 |:-------|:------------|:------------|
-| `A_1`, `A_2`, `B_1`, `B_2` | `c("condition", "version")` | <select class='webex-solveme' data-answer='["_"]'> <option></option> <option>A</option> <option>B</option> <option>1</option> <option>2</option> <option>_</option></select> |
-| `A1`, `A2`, `B1`, `B2` | `c("condition", "version")` | <select class='webex-solveme' data-answer='["1"]'> <option></option> <option>A</option> <option>B</option> <option>1</option> <option>2</option> <option>_</option></select> |
-| `cat-day&pre`, `cat-day&post`, `cat-night&pre`, `cat-night&post`, `dog-day&pre`, `dog-day&post`, `dog-night&pre`, `dog-night&post` | `c("pet", "time", "condition")` | <select class='webex-solveme' data-answer='["-","-|&"]'> <option></option> <option>-</option> <option>&</option> <option>-|&</option> <option>c(3, 7)</option></select> |
+| `A_1`, `A_2`, `B_1`, `B_2` | `c("condition", "version")` | <select class='webex-select'><option value='blank'></option><option value=''>A</option><option value=''>B</option><option value=''>1</option><option value=''>2</option><option value='answer'>_</option></select> |
+| `A1`, `A2`, `B1`, `B2` | `c("condition", "version")` | <select class='webex-select'><option value='blank'></option><option value=''>A</option><option value=''>B</option><option value='answer'>1</option><option value=''>2</option><option value=''>_</option></select> |
+| `cat-day&pre`, `cat-day&post`, `cat-night&pre`, `cat-night&post`, `dog-day&pre`, `dog-day&post`, `dog-night&pre`, `dog-night&post` | `c("pet", "time", "condition")` | <select class='webex-select'><option value='blank'></option><option value='answer'>-</option><option value=''>&</option><option value='answer'>-|&</option><option value=''>c(3, 7)</option></select> |
 
 :::
 

@@ -12,10 +12,10 @@ This book will use the following conventions:
 * Logical values: <code><span class='cn'>TRUE</span></code>, <code><span class='cn'>FALSE</span></code>
 * Glossary items: <a class='glossary' target='_blank' title='Discrete variables that have an inherent order, such as number of legs' href='https://psyteachr.github.io/glossary/o#ordinal'>ordinal</a>
 * Citations: @R-tidyverse
-* Internal links: Chapter\ \@ref(viz)
+* Internal links: Chapter\ \@ref(intro)
 * External links: [Mastering Shiny](https://mastering-shiny.org/){target="_blank"}
 * Menu/interface options: **`New File...`**
-* Quiz question: I am going to learn a lot: <select class='webex-solveme' data-answer='["TRUE"]'> <option></option> <option>TRUE</option> <option>FALSE</option></select>
+* Quiz question: I am going to learn a lot: <select class='webex-select'><option value='blank'></option><option value='answer'>TRUE</option><option value=''>FALSE</option></select>
 
 
 <div class='webex-solution'><button>Hidden Solutions</button>

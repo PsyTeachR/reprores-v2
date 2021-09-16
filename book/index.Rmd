@@ -1,7 +1,7 @@
 --- 
 title: Data Skills for Reproducible Research
 subtitle: v2
-authors: Lisa DeBruine & Dale Barr
+authors: "Lisa DeBruine & Dale Barr"
 date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
 documentclass: book
@@ -69,6 +69,6 @@ This book is a work in progress, so you might find errors. Please help me fix th
 ```{r include=FALSE}
 # automatically create a bib database for R packages
 knitr::write_bib(c(
-  .packages(), 'bookdown', 'knitr', 'rmarkdown'
+  .packages(), 'bookdown', 'knitr', 'rmarkdown', 'tinytex'
 ), 'packages.bib')
 ```
