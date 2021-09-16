@@ -17,6 +17,13 @@ Authors@R:
         role = c("aut"), 
         email = "dale.barr@glasgow.ac.uk", 
         comment = c(ORCID = "0000-0002-1121-4608")
+    ),
+    person(
+        given = "Rebecca", 
+        family = "Lai", 
+        role = c("ctb"), 
+        email = "rebecca.lai@glasgow.ac.uk", 
+        comment = c(ORCID = "0000-0001-7055-2036")
     ))
 Description: This course provides an overview of skills needed for reproducible research and open science using the statistical programming language R. Students will learn about data visualisation, data tidying and wrangling, archiving, iteration and functions, probability and data simulations, general linear models, and reproducible workflows. Learning is reinforced through weekly assignments that involve working with different types of data.
 License: CC BY 4.0
@@ -54,7 +61,7 @@ Imports:
 Suggests: 
     rmarkdown,
     zip,
-    webex,
+    webexercises,
     R.utils,
     glossary
 VignetteBuilder: knitr

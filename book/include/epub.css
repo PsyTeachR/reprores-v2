@@ -62,3 +62,13 @@ pre {
 .try {
   border: 2px solid var(--purple);
 }
+
+.webex-radiogroup label {
+  border: none;
+}
+
+.webex-solution {
+    height: auto;
+    border: 2px solid var(--blue);
+    border-radius: 5px;
+}

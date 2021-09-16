@@ -1,5 +1,5 @@
 # knit all exercise and answer Rmd files
-input <- list.files("book/exercises", "02_.*\\.Rmd", full.names = TRUE)
+input <- list.files("book/exercises", "\\.Rmd", full.names = TRUE)
 purrr::map(input, rmarkdown::render, quiet = TRUE)
 
 # zip exercises files
@@ -24,8 +24,14 @@ file.remove("docs/reprores-v2.epub")
 file.rename("docs/_main.epub", "docs/reprores-v2.epub")
 
 ## make MOBI ----
-file.remove("docs/reprores-v2.mobi")
-system("/Applications/calibre.app/Contents/MacOS/ebook-convert ~/rproj/psyteachr/reprores-v2/docs/reprores-v2.epub ~/rproj/psyteachr/reprores-v2/docs/reprores-v2.mobi")
+epub <- file.path(getwd(), "docs/reprores-v2.epub")
+# requires the command line tools from calibre
+ebook_convert <- "/Applications/calibre.app/Contents/MacOS/ebook-convert"
+if (file.exists(epub) & file.exists(ebook_convert)) {
+  mobi <- gsub(".epub$", ".mobi", epub)
+  if (file.exists(mobi)) file.remove(mobi)
+  system(paste(ebook_convert, epub, mobi))
+}
 
 ## make html ----
 browseURL(

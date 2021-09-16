@@ -13,9 +13,9 @@ bookdown::bs4_book:
     - include/webex.js
     - include/script.js
   css:
+  - include/webex.css
   - include/psyteachr.css
   - include/style.css
-  - include/webex.css
   theme:
     primary: '#127AB2'
 bookdown::pdf_book:
