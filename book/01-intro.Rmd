@@ -351,9 +351,9 @@ When the package isn't loaded or you aren't sure what package the function is in
 
 One of the great things about R is that it is **user extensible**: anyone can create a new add-on software package that extends its functionality. There are currently thousands of add-on packages that R users have created to solve many different kinds of problems, or just simply to have fun. There are packages for data visualisation, machine learning, neuroimaging, eyetracking, web scraping, and playing games such as Sudoku.
 
-Add-on packages are not distributed with base R, but have to be downloaded and installed from an archive, in the same way that you would, for instance, download and install a fitness app on your smartphone.
+Add-on packages are not distributed with `r glossary("base R")`, but have to be downloaded and installed from an archive, in the same way that you would, for instance, download and install PokemonGo on your smartphone.
 
-The main repository where packages reside is called CRAN, the Comprehensive R Archive Network. A package has to pass strict tests devised by the R core team to be allowed to be part of the CRAN archive. You can install from the CRAN archive through R using the `r hl(install.packages())` function.
+The main repository where packages reside is called `r glossary("CRAN")`, the Comprehensive R Archive Network. A package has to pass strict tests devised by the R core team to be allowed to be part of the CRAN archive. You can install from the CRAN archive through R using the `r hl(install.packages())` function.
 
 There is an important distinction between **installing** a package and **loading** a package.
 
@@ -367,37 +367,53 @@ This is done using `r hl(install.packages())`. This is like installing an app on
 You may only be able to permanently install packages if you are using R on your own system; you may not be able to do this on public workstations if you lack the appropriate privileges.
 :::
 
-Install the `r pkg("ggExtra")` package on your system. This package lets you create plots with marginal histograms.
+Install the `r pkg("esquisse")` package on your system. This package lets you create plots interactively and copy the code needed to make them reproducibly.
 
 ```{r install-pckg, eval = FALSE}
-install.packages("ggExtra")
+# type this in the console pane
+install.packages("esquisse")
 ```
 
 If you don't already have packages like `r pkg("ggplot2")` and `r pkg("shiny")` installed, it will also install these **dependencies** for you. If you don't get an error message at the end, the installation was successful. 
+
+::: {.dangerous data-latex=""}
+Never install a package from inside a script. Only do this from the console pane.
+:::
 
 ### Loading a package
 
 This is done using `r hl(library(packagename))`. This is like **launching** an app on your phone: the functionality is only there where the app is launched and remains there until you close the app or restart. Likewise, when you run `r hl(library(packagename))` within a session, the functionality of the package referred to by `packagename` will be made available for your R session. The next time you start R, you will need to run the `r hl(library())` function again if you want to access its functionality.
 
-You can load the functions in `r pkg("ggExtra")` for your current R session as follows:
+You can load the functions in `r pkg("esquisse")` for your current R session as follows:
 
 ```{r library-pckg}
-library(ggExtra)
+library(esquisse)
 ```
 
 You might get some red text when you load a package, this is normal. It is usually warning you that this package has functions that have the same name as other packages you've already loaded.
+
+Now you can run the function `r hl(esquisse::esquisser())`, which runs an interactive plotting example on the built-in dataset `diamonds` from the `r pkg("ggplot2")` package.
+
+```{r esquisser-demo, eval = FALSE}
+esquisse::esquisser(ggplot2::diamonds)
+```
 
 ::: {.info data-latex=""}
 You can use the convention `package::function()` to indicate in which add-on package a function resides. For instance, if you see `r hl(readr::read_csv())`, that refers to the function `r hl(read_csv())` in the `r pkg("readr")` add-on package.
 :::
 
-Now you can run the function `r hl(ggExtra::runExample())`, which runs an interactive example of marginal plots using shiny.
+### Tidyverse
 
-```{r ggExtra-demo, eval = FALSE}
-ggExtra::runExample()
-```
+`r pkg("tidyverse")`is a meta-package that loads several packages we'll be using in almost every script:
 
-
+- `r pkg("ggplot2")`, for data visualisation (Chapter\ \@ref(ggplot))
+- `r pkg("readr")`, for data import (Chapter\ \@ref(data))
+- `r pkg("tibble")`, for tables (Chapter\ \@ref(data))
+- `r pkg("tidyr")`, for data tidying (Chapter\ \@ref(tidyr))
+- `r pkg("dplyr")`, for data manipulation (Chapter\ \@ref(dplyr))
+- `r pkg("purrr")`, for repeating things (Chapter\ \@ref(func))
+- `r pkg("stringr")`, for `r glossary("string", "strings")`
+- `r pkg("forcats")`, for `r glossary("factor", "factors")`
 
 ### Install from GitHub
 
@@ -469,7 +485,4 @@ glossary::book()
 
 * [Chapter 1: Introduction](http://r4ds.had.co.nz/introduction.html) in *R for Data Science*
 * [RStudio IDE Cheatsheet](https://github.com/rstudio/cheatsheets/raw/master/rstudio-ide.pdf)
-* [Introduction to R Markdown](https://rmarkdown.rstudio.com/lesson-1.html)
-* [R Markdown Cheatsheet](https://github.com/rstudio/cheatsheets/raw/master/rmarkdown-2.0.pdf)
-* [R Markdown Reference](https://www.rstudio.com/wp-content/uploads/2015/03/rmarkdown-reference.pdf)
 * [RStudio Cloud](https://rstudio.cloud/){target="_blank"}

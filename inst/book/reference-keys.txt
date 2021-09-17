@@ -107,6 +107,7 @@ help
 install-package
 installing-a-package
 loading-a-package
+tidyverse
 install-from-github
 glossaryintro
 resources-intro

@@ -345,8 +345,8 @@ rnorm(10)
 ```
 
 ```
-##  [1] -0.25848124  2.85218298  0.05018543 -0.45101356  2.32086376 -1.14216515
-##  [7]  0.31834418 -0.82882975  0.63439952 -0.82893243
+##  [1] -1.4600284  0.3883631  0.3716939  0.5054995  0.8642370  1.4645069
+##  [7]  0.7306364  0.5203927 -0.9412732  2.4613793
 ```
 
 If you want 10 numbers from a normal distribution with a mean of 100:
@@ -357,8 +357,8 @@ rnorm(10, 100)
 ```
 
 ```
-##  [1] 100.72741  99.41810  99.61205 101.28465  99.54080  99.97880 100.18295
-##  [8] 100.82343  99.00408  99.52842
+##  [1]  98.78503  97.56071 100.91796 100.27340 101.32092  97.45869 100.50569
+##  [8] 101.23254 101.05885  97.62777
 ```
 
 This would be an equivalent but less efficient way of calling the function:
@@ -369,8 +369,8 @@ rnorm(n = 10, mean = 100)
 ```
 
 ```
-##  [1]  98.93272 100.52875  99.39154 100.92565  97.54219  97.51995  98.81054
-##  [8]  98.71236 100.28241  99.73474
+##  [1] 101.92488 100.07904 100.47320 100.49320 100.51016 101.58657 100.07120
+##  [8]  99.16701  99.78157 101.38979
 ```
 
 We don't need to name the arguments because R will recognize that we intended to fill in the first and second arguments by their position in the function call. However, if we want to change the default for an argument coming later in the list, then we need to name it. For instance, if we wanted to keep the default `mean = 0` but change the standard deviation to 100, we would do it this way:
@@ -381,8 +381,8 @@ rnorm(10, sd = 100)
 ```
 
 ```
-##  [1] -110.211002   -3.869000  131.286067  235.602134   30.480895   31.832045
-##  [7]  127.416020    1.074061  202.920131  -39.476516
+##  [1] -53.1824771 -63.9484975  65.1955399  -0.8753247  41.1791646  20.3971650
+##  [7]  -1.8067562  34.9650065   0.9652474  -0.5728417
 ```
 
 Some functions give a list of options after an argument; this means the default value is the first option. The usage entry for the <code><span class='fu'><a href='https://rdrr.io/r/stats/power.t.test.html'>power.t.test</a></span><span class='op'>(</span><span class='op'>)</span></code> function looks like this:
@@ -400,9 +400,9 @@ power.t.test(n = NULL, delta = NULL, sd = 1, sig.level = 0.05,
 
 
 
-* What is the default value for `sd`? <select class='webex-select'><option value='blank'></option><option value=''>0.05</option><option value='answer'>1</option><option value=''>two.sample</option><option value=''>NULL</option></select>
-* What is the default value for `type`? <select class='webex-select'><option value='blank'></option><option value=''>NULL</option><option value='answer'>two.sample</option><option value=''>one.sample</option><option value=''>paired</option></select>
-* Which is equivalent to <code><span class='fu'><a href='https://rdrr.io/r/stats/power.t.test.html'>power.t.test</a></span><span class='op'>(</span><span class='fl'>100</span>, <span class='fl'>0.5</span><span class='op'>)</span></code>? <div class='webex-radiogroup' id='radio_OBLVMZHIET'><label><input type="radio" autocomplete="off" name="radio_OBLVMZHIET" value=""></input> <span>power.t.test(n = 100)</span></label><label><input type="radio" autocomplete="off" name="radio_OBLVMZHIET" value="answer"></input> <span>power.t.test(delta = 0.5, n = 100)</span></label><label><input type="radio" autocomplete="off" name="radio_OBLVMZHIET" value=""></input> <span>power.t.test()</span></label><label><input type="radio" autocomplete="off" name="radio_OBLVMZHIET" value=""></input> <span>power.t.test(100, 0.5, sig.level = 1, sd = 0.05)</span></label></div>
+* What is the default value for `sd`? <select class='webex-select'><option value='blank'></option><option value=''>two.sample</option><option value=''>NULL</option><option value='answer'>1</option><option value=''>0.05</option></select>
+* What is the default value for `type`? <select class='webex-select'><option value='blank'></option><option value=''>paired</option><option value='answer'>two.sample</option><option value=''>NULL</option><option value=''>one.sample</option></select>
+* Which is equivalent to <code><span class='fu'><a href='https://rdrr.io/r/stats/power.t.test.html'>power.t.test</a></span><span class='op'>(</span><span class='fl'>100</span>, <span class='fl'>0.5</span><span class='op'>)</span></code>? <div class='webex-radiogroup' id='radio_NNHRHHWJAT'><label><input type="radio" autocomplete="off" name="radio_NNHRHHWJAT" value=""></input> <span>power.t.test(n = 100)</span></label><label><input type="radio" autocomplete="off" name="radio_NNHRHHWJAT" value=""></input> <span>power.t.test(100, 0.5, sig.level = 1, sd = 0.05)</span></label><label><input type="radio" autocomplete="off" name="radio_NNHRHHWJAT" value="answer"></input> <span>power.t.test(delta = 0.5, n = 100)</span></label><label><input type="radio" autocomplete="off" name="radio_NNHRHHWJAT" value=""></input> <span>power.t.test()</span></label></div>
 
 
 
@@ -434,9 +434,9 @@ When the package isn't loaded or you aren't sure what package the function is in
 
 One of the great things about R is that it is **user extensible**: anyone can create a new add-on software package that extends its functionality. There are currently thousands of add-on packages that R users have created to solve many different kinds of problems, or just simply to have fun. There are packages for data visualisation, machine learning, neuroimaging, eyetracking, web scraping, and playing games such as Sudoku.
 
-Add-on packages are not distributed with base R, but have to be downloaded and installed from an archive, in the same way that you would, for instance, download and install a fitness app on your smartphone.
+Add-on packages are not distributed with <a class='glossary' target='_blank' title='The set of R functions that come with a basic installation of R, before you add external packages' href='https://psyteachr.github.io/glossary/b#base-r'>base R</a>, but have to be downloaded and installed from an archive, in the same way that you would, for instance, download and install PokemonGo on your smartphone.
 
-The main repository where packages reside is called CRAN, the Comprehensive R Archive Network. A package has to pass strict tests devised by the R core team to be allowed to be part of the CRAN archive. You can install from the CRAN archive through R using the <code><span class='fu'><a href='https://rdrr.io/r/utils/install.packages.html'>install.packages</a></span><span class='op'>(</span><span class='op'>)</span></code> function.
+The main repository where packages reside is called <a class='glossary' target='_blank' title='The Comprehensive R Archive Network: a network of ftp and web servers around the world that store identical, up-to-date, versions of code and documentation for R.' href='https://psyteachr.github.io/glossary/c#cran'>CRAN</a>, the Comprehensive R Archive Network. A package has to pass strict tests devised by the R core team to be allowed to be part of the CRAN archive. You can install from the CRAN archive through R using the <code><span class='fu'><a href='https://rdrr.io/r/utils/install.packages.html'>install.packages</a></span><span class='op'>(</span><span class='op'>)</span></code> function.
 
 There is an important distinction between **installing** a package and **loading** a package.
 
@@ -450,40 +450,56 @@ This is done using <code><span class='fu'><a href='https://rdrr.io/r/utils/insta
 You may only be able to permanently install packages if you are using R on your own system; you may not be able to do this on public workstations if you lack the appropriate privileges.
 :::
 
-Install the <code class='package'>ggExtra</code> package on your system. This package lets you create plots with marginal histograms.
+Install the <code class='package'>esquisse</code> package on your system. This package lets you create plots interactively and copy the code needed to make them reproducibly.
 
 
 ```r
-install.packages("ggExtra")
+# type this in the console pane
+install.packages("esquisse")
 ```
 
 If you don't already have packages like <code class='package'>ggplot2</code> and <code class='package'>shiny</code> installed, it will also install these **dependencies** for you. If you don't get an error message at the end, the installation was successful. 
+
+::: {.dangerous data-latex=""}
+Never install a package from inside a script. Only do this from the console pane.
+:::
 
 ### Loading a package
 
 This is done using <code><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'>packagename</span><span class='op'>)</span></code>. This is like **launching** an app on your phone: the functionality is only there where the app is launched and remains there until you close the app or restart. Likewise, when you run <code><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'>packagename</span><span class='op'>)</span></code> within a session, the functionality of the package referred to by `packagename` will be made available for your R session. The next time you start R, you will need to run the <code><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='op'>)</span></code> function again if you want to access its functionality.
 
-You can load the functions in <code class='package'>ggExtra</code> for your current R session as follows:
+You can load the functions in <code class='package'>esquisse</code> for your current R session as follows:
 
 
 ```r
-library(ggExtra)
+library(esquisse)
 ```
 
 You might get some red text when you load a package, this is normal. It is usually warning you that this package has functions that have the same name as other packages you've already loaded.
+
+Now you can run the function <code><span class='fu'>esquisse</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/esquisse/man/esquisser.html'>esquisser</a></span><span class='op'>(</span><span class='op'>)</span></code>, which runs an interactive plotting example on the built-in dataset `diamonds` from the <code class='package'>ggplot2</code> package.
+
+
+```r
+esquisse::esquisser(ggplot2::diamonds)
+```
 
 ::: {.info data-latex=""}
 You can use the convention `package::function()` to indicate in which add-on package a function resides. For instance, if you see <code><span class='fu'>readr</span><span class='fu'>::</span><span class='fu'><a href='https://readr.tidyverse.org/reference/read_delim.html'>read_csv</a></span><span class='op'>(</span><span class='op'>)</span></code>, that refers to the function <code><span class='fu'>read_csv</span><span class='op'>(</span><span class='op'>)</span></code> in the <code class='package'>readr</code> add-on package.
 :::
 
-Now you can run the function <code><span class='fu'>ggExtra</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/ggExtra/man/runExample.html'>runExample</a></span><span class='op'>(</span><span class='op'>)</span></code>, which runs an interactive example of marginal plots using shiny.
+### Tidyverse
 
+<code class='package'>tidyverse</code>is a meta-package that loads several packages we'll be using in almost every script:
 
-```r
-ggExtra::runExample()
-```
-
-
+- <code class='package'>ggplot2</code>, for data visualisation (Chapter\ \@ref(ggplot))
+- <code class='package'>readr</code>, for data import (Chapter\ \@ref(data))
+- <code class='package'>tibble</code>, for tables (Chapter\ \@ref(data))
+- <code class='package'>tidyr</code>, for data tidying (Chapter\ \@ref(tidyr))
+- <code class='package'>dplyr</code>, for data manipulation (Chapter\ \@ref(dplyr))
+- <code class='package'>purrr</code>, for repeating things (Chapter\ \@ref(func))
+- <code class='package'>stringr</code>, for <a class='glossary' target='_blank' title='A piece of text inside of quotes.' href='https://psyteachr.github.io/glossary/s#string'>strings</a>
+- <code class='package'>forcats</code>, for <a class='glossary' target='_blank' title='A data type where a specific set of values are stored with labels; An explanatory variable manipulated by the experimenter' href='https://psyteachr.github.io/glossary/f#factor'>factors</a>
 
 ### Install from GitHub
 
@@ -564,6 +580,7 @@ glossary::book()
 |[console](https://psyteachr.github.io/glossary/c.html#console){class="glossary" target="_blank"}                             |The pane in RStudio where you can type in commands and view output messages.                                                                                               |
 |[cran](https://psyteachr.github.io/glossary/c.html#cran){class="glossary" target="_blank"}                                   |The Comprehensive R Archive Network: a network of ftp and web servers around the world that store identical, up-to-date, versions of code and documentation for R.         |
 |[escape](https://psyteachr.github.io/glossary/e.html#escape){class="glossary" target="_blank"}                               |Include special characters like " inside of a string by prefacing them with a backslash.                                                                                   |
+|[factor](https://psyteachr.github.io/glossary/f.html#factor){class="glossary" target="_blank"}                               |A data type where a specific set of values are stored with labels; An explanatory variable manipulated by the experimenter                                                 |
 |[function](https://psyteachr.github.io/glossary/f.html#function){class="glossary" target="_blank"}                           |A named section of code that can be reused.                                                                                                                                |
 |[global environment](https://psyteachr.github.io/glossary/g.html#global-environment){class="glossary" target="_blank"}       |The interactive workspace where your script runs                                                                                                                           |
 |[ide](https://psyteachr.github.io/glossary/i.html#ide){class="glossary" target="_blank"}                                     |Integrated Development Environment: a program that serves as a text editor, file manager, and provides functions to help you read and write code. RStudio is an IDE for R. |
@@ -586,7 +603,4 @@ glossary::book()
 
 * [Chapter 1: Introduction](http://r4ds.had.co.nz/introduction.html) in *R for Data Science*
 * [RStudio IDE Cheatsheet](https://github.com/rstudio/cheatsheets/raw/master/rstudio-ide.pdf)
-* [Introduction to R Markdown](https://rmarkdown.rstudio.com/lesson-1.html)
-* [R Markdown Cheatsheet](https://github.com/rstudio/cheatsheets/raw/master/rmarkdown-2.0.pdf)
-* [R Markdown Reference](https://www.rstudio.com/wp-content/uploads/2015/03/rmarkdown-reference.pdf)
 * [RStudio Cloud](https://rstudio.cloud/){target="_blank"}

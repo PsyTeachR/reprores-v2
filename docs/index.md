@@ -2,7 +2,7 @@
 title: Data Skills for Reproducible Research
 subtitle: v2
 authors: "Lisa DeBruine & Dale Barr"
-date: "2021-09-16"
+date: "2021-09-17"
 site: bookdown::bookdown_site
 documentclass: book
 classoption: oneside # for PDFs
