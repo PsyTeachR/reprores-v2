@@ -379,10 +379,16 @@ glossary-sim
 resources8
 installingr
 installing-base-r
+rstudio-online
+updating-r
 installing-rstudio
+updating-rstudio
 rstudio-settings
 installing-latex
-rstudio-online
+installing-packages
+development-packages
+updating-packages
+troubleshooting-1
 conventions
 symbols
 datasets

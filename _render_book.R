@@ -12,6 +12,7 @@ zip(zipfile, c(f.zip), flags = "-j")
 # render the book ----
 
 ## make PDF ----
+set.seed(8675309)
 browseURL(
   xfun::in_dir("book", bookdown::render_book("index.Rmd", "bookdown::pdf_book"))
 )
@@ -19,6 +20,7 @@ file.remove("docs/reprores-v2.pdf")
 file.rename("docs/_main.pdf", "docs/reprores-v2.pdf")
 
 ## make EPUB ----
+set.seed(8675309)
 xfun::in_dir("book", bookdown::render_book("index.Rmd", "bookdown::epub_book"))
 file.remove("docs/reprores-v2.epub")
 file.rename("docs/_main.epub", "docs/reprores-v2.epub")
@@ -34,6 +36,7 @@ if (file.exists(epub) & file.exists(ebook_convert)) {
 }
 
 ## make html ----
+set.seed(8675309)
 browseURL(
   xfun::in_dir("book", bookdown::render_book("index.Rmd", "bookdown::bs4_book"))
 )

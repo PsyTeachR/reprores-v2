@@ -65,7 +65,7 @@
 <li><a class="" href="sim.html"><span class="header-section-number">10</span> Probability &amp; Simulation</a></li>
 <li><a class="" href="acknowledgements.html">Acknowledgements</a></li>
 <li class="book-part">Appendices</li>
-<li><a class="" href="installingr.html"><span class="header-section-number">A</span> Installing R</a></li>
+<li><a class="" href="installingr.html"><span class="header-section-number">A</span> Installing and Updating</a></li>
 <li><a class="" href="conventions.html"><span class="header-section-number">B</span> Conventions</a></li>
 <li><a class="" href="symbols.html"><span class="header-section-number">C</span> Symbols</a></li>
 <li><a class="" href="datasets.html"><span class="header-section-number">D</span> Datasets</a></li>
@@ -139,7 +139,7 @@ Figure 1.1: The R Console window.
 Figure 1.2: The RStudio IDE
 </p>
 </div>
-<p>RStudio is arranged with four window <a class="glossary" target="_blank" title="RStudio is arranged with four window “panes.”" href="https://psyteachr.github.io/glossary/p#panes">panes</a>. By default, the upper left pane is the <strong>source pane</strong>, where you view and edit source code from files. The bottom left pane is usually the <strong>console pane</strong>, where you can type in commands and view output messages. The right panes have several different tabs that show you information about your code. You can change the location of panes and what tabs are shown under <strong><code>Preferences &gt; Pane Layout</code></strong>.</p>
+<p>RStudio is arranged with four window <a class="glossary" target="_blank" title='RStudio is arranged with four window "panes".' href="https://psyteachr.github.io/glossary/p#panes">panes</a>. By default, the upper left pane is the <strong>source pane</strong>, where you view and edit source code from files. The bottom left pane is usually the <strong>console pane</strong>, where you can type in commands and view output messages. The right panes have several different tabs that show you information about your code. You can change the location of panes and what tabs are shown under <strong><code>Preferences &gt; Pane Layout</code></strong>.</p>
 </div>
 <div id="configure-rstudio" class="section level3" number="1.2.3">
 <h3>
@@ -373,23 +373,23 @@ He turned to me as if to say, \"Hurry boy, it's waiting there for you\"
 <p>If you want 10 random numbers from a normal distribution with mean of 0 and standard deviation, you can just use the defaults.</p>
 <div class="sourceCode" id="cb28"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span><span class="fl">10</span><span class="op">)</span></code></pre></div>
-<pre><code>##  [1] -1.4600284  0.3883631  0.3716939  0.5054995  0.8642370  1.4645069
-##  [7]  0.7306364  0.5203927 -0.9412732  2.4613793</code></pre>
+<pre><code>##  [1]  0.32664704  0.90765276  0.03611039  0.15467156  1.19413632  0.54841417
+##  [7] -0.89897593 -0.97918182  0.22268068 -0.23137920</code></pre>
 <p>If you want 10 numbers from a normal distribution with a mean of 100:</p>
 <div class="sourceCode" id="cb30"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span><span class="fl">10</span>, <span class="fl">100</span><span class="op">)</span></code></pre></div>
-<pre><code>##  [1]  98.78503  97.56071 100.91796 100.27340 101.32092  97.45869 100.50569
-##  [8] 101.23254 101.05885  97.62777</code></pre>
+<pre><code>##  [1] 100.36849  98.63611  98.05460 100.30968  98.13807  99.17730  99.58484
+##  [8]  98.47213 100.32655  99.92915</code></pre>
 <p>This would be an equivalent but less efficient way of calling the function:</p>
 <div class="sourceCode" id="cb32"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span>n <span class="op">=</span> <span class="fl">10</span>, mean <span class="op">=</span> <span class="fl">100</span><span class="op">)</span></code></pre></div>
-<pre><code>##  [1] 101.92488 100.07904 100.47320 100.49320 100.51016 101.58657 100.07120
-##  [8]  99.16701  99.78157 101.38979</code></pre>
+<pre><code>##  [1] 100.16197  98.13908  99.26602  99.70163 100.66184 100.98958  99.15920
+##  [8] 101.19345 100.98224  99.33337</code></pre>
 <p>We don't need to name the arguments because R will recognize that we intended to fill in the first and second arguments by their position in the function call. However, if we want to change the default for an argument coming later in the list, then we need to name it. For instance, if we wanted to keep the default <code>mean = 0</code> but change the standard deviation to 100, we would do it this way:</p>
 <div class="sourceCode" id="cb34"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span><span class="fl">10</span>, sd <span class="op">=</span> <span class="fl">100</span><span class="op">)</span></code></pre></div>
-<pre><code>##  [1] -53.1824771 -63.9484975  65.1955399  -0.8753247  41.1791646  20.3971650
-##  [7]  -1.8067562  34.9650065   0.9652474  -0.5728417</code></pre>
+<pre><code>##  [1]  101.88610 -152.92216  -72.63855  143.83814  107.43711 -110.09915
+##  [7]  161.14938   64.91752 -173.15875  -28.19267</code></pre>
 <p>Some functions give a list of options after an argument; this means the default value is the first option. The usage entry for the <code><span class="fu"><a href="https://rdrr.io/r/stats/power.t.test.html">power.t.test</a></span><span class="op">(</span><span class="op">)</span></code> function looks like this:</p>
 <div class="sourceCode" id="cb36"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/stats/power.t.test.html">power.t.test</a></span><span class="op">(</span>n <span class="op">=</span> <span class="cn">NULL</span>, delta <span class="op">=</span> <span class="cn">NULL</span>, sd <span class="op">=</span> <span class="fl">1</span>, sig.level <span class="op">=</span> <span class="fl">0.05</span>,
@@ -401,19 +401,19 @@ He turned to me as if to say, \"Hurry boy, it's waiting there for you\"
 <ul>
 <li>What is the default value for <code>sd</code>? <select class="webex-select"><option value="blank"></option>
 <option value="">two.sample</option>
-<option value="">NULL</option>
+<option value="">0.05</option>
 <option value="answer">1</option>
-<option value="">0.05</option></select>
+<option value="">NULL</option></select>
 </li>
 <li>What is the default value for <code>type</code>? <select class="webex-select"><option value="blank"></option>
 <option value="">paired</option>
 <option value="answer">two.sample</option>
-<option value="">NULL</option>
-<option value="">one.sample</option></select>
+<option value="">one.sample</option>
+<option value="">NULL</option></select>
 </li>
 <li>Which is equivalent to <code><span class="fu"><a href="https://rdrr.io/r/stats/power.t.test.html">power.t.test</a></span><span class="op">(</span><span class="fl">100</span>, <span class="fl">0.5</span><span class="op">)</span></code>?
-<div id="radio_NNHRHHWJAT" class="webex-radiogroup">
-<label><input type="radio" autocomplete="off" name="radio_NNHRHHWJAT" value=""><span>power.t.test(n = 100)</span></label><label><input type="radio" autocomplete="off" name="radio_NNHRHHWJAT" value=""><span>power.t.test(100, 0.5, sig.level = 1, sd = 0.05)</span></label><label><input type="radio" autocomplete="off" name="radio_NNHRHHWJAT" value="answer"><span>power.t.test(delta = 0.5, n = 100)</span></label><label><input type="radio" autocomplete="off" name="radio_NNHRHHWJAT" value=""><span>power.t.test()</span></label>
+<div id="radio_DDXKOMCCLH" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_DDXKOMCCLH" value=""><span>power.t.test(n = 100)</span></label><label><input type="radio" autocomplete="off" name="radio_DDXKOMCCLH" value="answer"><span>power.t.test(delta = 0.5, n = 100)</span></label><label><input type="radio" autocomplete="off" name="radio_DDXKOMCCLH" value=""><span>power.t.test(100, 0.5, sig.level = 1, sd = 0.05)</span></label><label><input type="radio" autocomplete="off" name="radio_DDXKOMCCLH" value=""><span>power.t.test()</span></label>
 </div>
 </li>
 </ul>
@@ -523,7 +523,7 @@ He turned to me as if to say, \"Hurry boy, it's waiting there for you\"
 <h3>
 <span class="header-section-number">1.4.4</span> Install from GitHub<a class="anchor" aria-label="anchor" href="#install-from-github"><i class="fas fa-link"></i></a>
 </h3>
-<p>Many R packages are not yet on <a class="glossary" target="_blank" title="The Comprehensive R Archive Network: a network of ftp and web servers around the world that store identical, up-to-date, versions of code and documentation for R." href="https://psyteachr.github.io/glossary/c#cran">CRAN</a> because they are still in development. Increasingly, datasets and code for papers are available as packages you can download from github. You'll need to install the devtools package to be able to install packages from github. Check if you have a package installed by trying to load it (e.g., if you don't have devtools installed, <code><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://devtools.r-lib.org/">devtools</a></span><span class="op">)</span></code> will display an error message) or by searching for it in the packages tab in the lower right pane. All listed packages are installed; all checked packages are currently loaded.</p>
+<p>Many R packages are not yet on <a class="glossary" target="_blank" title="The Comprehensive R Archive Network: a network of ftp and web servers around the world that store identical, up-to-date, versions of code and documentation for R." href="https://psyteachr.github.io/glossary/c#cran">CRAN</a> because they are still in development. Increasingly, datasets and code for papers are available as packages you can download from github. You'll need to install the <code class="package">devtools</code> package to be able to install packages from github. Check if you have a package installed by trying to load it (e.g., if you don't have devtools installed, <code><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://devtools.r-lib.org/">devtools</a></span><span class="op">)</span></code> will display an error message) or by searching for it in the packages tab in the lower right pane. All listed packages are installed; all checked packages are currently loaded.</p>
 <div class="figure" style="text-align: center">
 <span style="display:block;" id="fig:img-packages"></span>
 <img src="images/intro/packages.png" alt="Check installed and loaded packages in the packages tab in the lower right pane." width="100%"><p class="caption">
@@ -637,7 +637,7 @@ Figure 1.4: Check installed and loaded packages in the packages tab in the lower
 </tr>
 <tr class="even">
 <td align="left"><a href="https://psyteachr.github.io/glossary/p.html#panes" class="glossary" target="_blank">panes</a></td>
-<td align="left">RStudio is arranged with four window “panes.”</td>
+<td align="left">RStudio is arranged with four window "panes".</td>
 </tr>
 <tr class="odd">
 <td align="left"><a href="https://psyteachr.github.io/glossary/r.html#r-markdown" class="glossary" target="_blank">r markdown</a></td>
@@ -862,13 +862,24 @@ window.onload = function() {
 
 </script><script>
 $( document ).ready(function() {
-  var cite = ' <a href="https://zenodo.org/badge/latestdoi/166541547"><img src="https://zenodo.org/badge/166541547.svg" alt="DOI"></a>';
-  var psyteachr = ' <a href="https://psyteachr.github.io/"><img src="images/psyteachr_logo.png" style="height: 31px; color: white;" alt="psyTeachR: Reproducible Research" /></a>';
+  var cite = ' ';
+  var psyteachr = ' <a href="https://psyteachr.github.io/"><img src="images/logos/psyTeachR_logo.png" style="height: 31px; color: white;" alt="psyTeachR: Reproducible Research" /></a>';
   var license = ' <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/" target="blank"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png"></a>';
 
   $("footer div.row div:eq(1) p").html(
     psyteachr + license + cite
   );
+
+  function move_sidebar() {
+    var w = window.innerWidth;
+    if (w < 992) {
+      $("#toc").appendTo($("#main-nav"));
+    } else {
+      $("#toc").appendTo($("div.sidebar-chapter"));
+    }
+  }
+  move_sidebar();
+  window.onresize = move_sidebar;
 });
 </script><div class="chapter-nav">
 <div class="prev"><a href="index.html">Overview</a></div>
@@ -922,7 +933,7 @@ $( document ).ready(function() {
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Data Skills for Reproducible Research</strong>: v2" was written by . It was last built on 2021-09-17.</p>
+    <p>"<strong>Data Skills for Reproducible Research</strong>: v2" was written by . It was last built on 2021-09-18.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

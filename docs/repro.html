@@ -65,7 +65,7 @@
 <li><a class="" href="sim.html"><span class="header-section-number">10</span> Probability &amp; Simulation</a></li>
 <li><a class="" href="acknowledgements.html">Acknowledgements</a></li>
 <li class="book-part">Appendices</li>
-<li><a class="" href="installingr.html"><span class="header-section-number">A</span> Installing R</a></li>
+<li><a class="" href="installingr.html"><span class="header-section-number">A</span> Installing and Updating</a></li>
 <li><a class="" href="conventions.html"><span class="header-section-number">B</span> Conventions</a></li>
 <li><a class="" href="symbols.html"><span class="header-section-number">C</span> Symbols</a></li>
 <li><a class="" href="datasets.html"><span class="header-section-number">D</span> Datasets</a></li>
@@ -138,7 +138,7 @@
 <p>First, we need to get orgainsed.</p>
 <p><a class="glossary" target="_blank" title="A way to organise related files in RStudio" href="https://psyteachr.github.io/glossary/p#project">Projects</a> in RStudio are a way to group all of the files you need for one project. Most projects include scripts, data files, and output files like the PDF version of the script or images.</p>
 <div class="try">
-<p>Make a new <a class="glossary" target="_blank" title="A collection or “folder” of files on a computer." href="https://psyteachr.github.io/glossary/d#directory">directory</a> where you will keep all of your materials for this class. If you're using a lab computer, make sure you make this directory in your network drive so you can access it from other computers.</p>
+<p>Make a new <a class="glossary" target="_blank" title='A collection or "folder" of files on a computer.' href="https://psyteachr.github.io/glossary/d#directory">directory</a> where you will keep all of your materials for this class. If you're using a lab computer, make sure you make this directory in your network drive so you can access it from other computers.</p>
 <p>Choose <strong><code>New Project...</code></strong> under the <strong><code>File</code></strong> menu to create a new project called <code class="path">01-repro</code> in this directory.</p>
 </div>
 <div id="working-directory" class="section level3" number="2.4.1">
@@ -386,8 +386,8 @@ Figure 2.2: Light themes in versions 3 and 4.
 <p>Next, create a code chunk where you want to display a table of the descriptives (e.g., Participants section of the Methods). We'll use tidyverse functions you will learn in the <a href="tidyr.html#tidyr">data wrangling lectures</a> to create summary statistics for each group.</p>
 <div class="sourceCode" id="cb54"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">pets</span> <span class="op">%&gt;%</span>
-  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span><span class="op">(</span><span class="va">pet</span><span class="op">)</span> <span class="op">%&gt;%</span>
-  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/summarise.html">summarise</a></span><span class="op">(</span>
+  <span class="fu">group_by</span><span class="op">(</span><span class="va">pet</span><span class="op">)</span> <span class="op">%&gt;%</span>
+  <span class="fu">summarise</span><span class="op">(</span>
     n <span class="op">=</span> <span class="fu">n</span><span class="op">(</span><span class="op">)</span>,
     mean_weight <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">weight</span><span class="op">)</span>,
     mean_score <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">score</span><span class="op">)</span>
@@ -425,8 +425,8 @@ Figure 2.2: Light themes in versions 3 and 4.
 <p>The table above is OK, but it could be more reader-friendly by changing the column labels, rounding the means, and adding a caption. You can use <code><span class="fu">knitr</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/knitr/man/kable.html">kable</a></span><span class="op">(</span><span class="op">)</span></code> for this.</p>
 <div class="sourceCode" id="cb55"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">summary_table</span> <span class="op">&lt;-</span><span class="va">pets</span> <span class="op">%&gt;%</span>
-  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span><span class="op">(</span><span class="va">pet</span><span class="op">)</span> <span class="op">%&gt;%</span>
-  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/summarise.html">summarise</a></span><span class="op">(</span>
+  <span class="fu">group_by</span><span class="op">(</span><span class="va">pet</span><span class="op">)</span> <span class="op">%&gt;%</span>
+  <span class="fu">summarise</span><span class="op">(</span>
     n <span class="op">=</span> <span class="fu">n</span><span class="op">(</span><span class="op">)</span>,
     mean_weight <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">weight</span><span class="op">)</span>,
     mean_score <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">score</span><span class="op">)</span>
@@ -517,8 +517,8 @@ Figure 2.3: Figure 1. Scores by pet type and country.
 <p>Now let's analyse the pets data to see if cats are heavier than ferrets. First we'll run the analysis code. Then we'll save any numbers we might want to use in our manuscript to variables and round them appropriately. Finally, we'll use <code><span class="fu">glue</span><span class="fu">::</span><span class="fu"><a href="https://glue.tidyverse.org/reference/glue.html">glue</a></span><span class="op">(</span><span class="op">)</span></code> to format a results string.</p>
 <div class="sourceCode" id="cb58"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># analysis</span>
-<span class="va">cat_weight</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">pets</span>, <span class="va">pet</span> <span class="op">==</span> <span class="st">"cat"</span><span class="op">)</span> <span class="op">%&gt;%</span> <span class="fu">pull</span><span class="op">(</span><span class="va">weight</span><span class="op">)</span>
-<span class="va">ferret_weight</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">pets</span>, <span class="va">pet</span> <span class="op">==</span> <span class="st">"ferret"</span><span class="op">)</span> <span class="op">%&gt;%</span> <span class="fu">pull</span><span class="op">(</span><span class="va">weight</span><span class="op">)</span>
+<span class="va">cat_weight</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/filter.html">filter</a></span><span class="op">(</span><span class="va">pets</span>, <span class="va">pet</span> <span class="op">==</span> <span class="st">"cat"</span><span class="op">)</span> <span class="op">%&gt;%</span> <span class="fu">pull</span><span class="op">(</span><span class="va">weight</span><span class="op">)</span>
+<span class="va">ferret_weight</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/filter.html">filter</a></span><span class="op">(</span><span class="va">pets</span>, <span class="va">pet</span> <span class="op">==</span> <span class="st">"ferret"</span><span class="op">)</span> <span class="op">%&gt;%</span> <span class="fu">pull</span><span class="op">(</span><span class="va">weight</span><span class="op">)</span>
 <span class="va">weight_test</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/t.test.html">t.test</a></span><span class="op">(</span><span class="va">cat_weight</span>, <span class="va">ferret_weight</span><span class="op">)</span>
 
 <span class="co"># round individual values you want to report</span>
@@ -664,7 +664,7 @@ eprint = {
 </tr>
 <tr class="odd">
 <td align="left"><a href="https://psyteachr.github.io/glossary/d.html#directory" class="glossary" target="_blank">directory</a></td>
-<td align="left">A collection or “folder” of files on a computer.</td>
+<td align="left">A collection or "folder" of files on a computer.</td>
 </tr>
 <tr class="even">
 <td align="left"><a href="https://psyteachr.github.io/glossary/e.html#extension" class="glossary" target="_blank">extension</a></td>
@@ -903,13 +903,24 @@ window.onload = function() {
 
 </script><script>
 $( document ).ready(function() {
-  var cite = ' <a href="https://zenodo.org/badge/latestdoi/166541547"><img src="https://zenodo.org/badge/166541547.svg" alt="DOI"></a>';
-  var psyteachr = ' <a href="https://psyteachr.github.io/"><img src="images/psyteachr_logo.png" style="height: 31px; color: white;" alt="psyTeachR: Reproducible Research" /></a>';
+  var cite = ' ';
+  var psyteachr = ' <a href="https://psyteachr.github.io/"><img src="images/logos/psyTeachR_logo.png" style="height: 31px; color: white;" alt="psyTeachR: Reproducible Research" /></a>';
   var license = ' <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/" target="blank"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png"></a>';
 
   $("footer div.row div:eq(1) p").html(
     psyteachr + license + cite
   );
+
+  function move_sidebar() {
+    var w = window.innerWidth;
+    if (w < 992) {
+      $("#toc").appendTo($("#main-nav"));
+    } else {
+      $("#toc").appendTo($("div.sidebar-chapter"));
+    }
+  }
+  move_sidebar();
+  window.onresize = move_sidebar;
 });
 </script><div class="chapter-nav">
 <div class="prev"><a href="intro.html"><span class="header-section-number">1</span> Getting Started</a></div>
@@ -961,7 +972,7 @@ $( document ).ready(function() {
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Data Skills for Reproducible Research</strong>: v2" was written by . It was last built on 2021-09-17.</p>
+    <p>"<strong>Data Skills for Reproducible Research</strong>: v2" was written by . It was last built on 2021-09-18.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

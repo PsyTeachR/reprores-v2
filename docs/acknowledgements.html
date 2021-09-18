@@ -65,7 +65,7 @@
 <li><a class="" href="sim.html"><span class="header-section-number">10</span> Probability &amp; Simulation</a></li>
 <li><a class="active" href="acknowledgements.html">Acknowledgements</a></li>
 <li class="book-part">Appendices</li>
-<li><a class="" href="installingr.html"><span class="header-section-number">A</span> Installing R</a></li>
+<li><a class="" href="installingr.html"><span class="header-section-number">A</span> Installing and Updating</a></li>
 <li><a class="" href="conventions.html"><span class="header-section-number">B</span> Conventions</a></li>
 <li><a class="" href="symbols.html"><span class="header-section-number">C</span> Symbols</a></li>
 <li><a class="" href="datasets.html"><span class="header-section-number">D</span> Datasets</a></li>
@@ -106,7 +106,7 @@
 
 <div class="chapter-nav">
 <div class="prev"><a href="sim.html"><span class="header-section-number">10</span> Probability &amp; Simulation</a></div>
-<div class="next"><a href="installingr.html"><span class="header-section-number">A</span> Installing R</a></div>
+<div class="next"><a href="installingr.html"><span class="header-section-number">A</span> Installing and Updating</a></div>
 </div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
     <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
       <ul class="nav navbar-nav">
@@ -298,13 +298,24 @@ window.onload = function() {
 
 </script><script>
 $( document ).ready(function() {
-  var cite = ' <a href="https://zenodo.org/badge/latestdoi/166541547"><img src="https://zenodo.org/badge/166541547.svg" alt="DOI"></a>';
-  var psyteachr = ' <a href="https://psyteachr.github.io/"><img src="images/psyteachr_logo.png" style="height: 31px; color: white;" alt="psyTeachR: Reproducible Research" /></a>';
+  var cite = ' ';
+  var psyteachr = ' <a href="https://psyteachr.github.io/"><img src="images/logos/psyTeachR_logo.png" style="height: 31px; color: white;" alt="psyTeachR: Reproducible Research" /></a>';
   var license = ' <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/" target="blank"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png"></a>';
 
   $("footer div.row div:eq(1) p").html(
     psyteachr + license + cite
   );
+
+  function move_sidebar() {
+    var w = window.innerWidth;
+    if (w < 992) {
+      $("#toc").appendTo($("#main-nav"));
+    } else {
+      $("#toc").appendTo($("div.sidebar-chapter"));
+    }
+  }
+  move_sidebar();
+  window.onresize = move_sidebar;
 });
 </script>
 
@@ -314,7 +325,7 @@ $( document ).ready(function() {
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Data Skills for Reproducible Research</strong>: v2" was written by . It was last built on 2021-09-17.</p>
+    <p>"<strong>Data Skills for Reproducible Research</strong>: v2" was written by . It was last built on 2021-09-18.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

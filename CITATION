@@ -1,0 +1,13 @@
+cff-version: 1.2.0
+message: "If you use this book, please cite it as below."
+authors:
+- family-names: "DeBruine"
+  given-names: "Lisa"
+  orcid: "https://orcid.org/0000-0002-7523-5539"
+- family-names: "Barr"
+  given-names: "Dale"
+  orcid: "https://orcid.org/0000-0002-1121-4608"
+title: "Data Skills for Reproducible Research"
+version: 2.0
+date-released: 2021-09-18
+url: "https://github.com/psyteachr/reprores-v2/"

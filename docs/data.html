@@ -65,7 +65,7 @@
 <li><a class="" href="sim.html"><span class="header-section-number">10</span> Probability &amp; Simulation</a></li>
 <li><a class="" href="acknowledgements.html">Acknowledgements</a></li>
 <li class="book-part">Appendices</li>
-<li><a class="" href="installingr.html"><span class="header-section-number">A</span> Installing R</a></li>
+<li><a class="" href="installingr.html"><span class="header-section-number">A</span> Installing and Updating</a></li>
 <li><a class="" href="conventions.html"><span class="header-section-number">B</span> Conventions</a></li>
 <li><a class="" href="symbols.html"><span class="header-section-number">C</span> Symbols</a></li>
 <li><a class="" href="datasets.html"><span class="header-section-number">D</span> Datasets</a></li>
@@ -456,7 +456,7 @@ Solution
 <h4>
 <span class="header-section-number">4.3.3.1</span> View()<a class="anchor" aria-label="anchor" href="#view"><i class="fas fa-link"></i></a>
 </h4>
-<p>A familiar way to look at the table is given by <code><span class="fu"><a href="https://rdrr.io/r/utils/View.html">View</a></span><span class="op">(</span><span class="op">)</span></code> (uppercase 'V'). This command can be useful in the console, but don't ever put this one in a script because it will create an annoying pop-up window when the user runs it. Or you can click on an objects in the <a class="glossary" target="_blank" title="RStudio is arranged with four window “panes.”" href="https://psyteachr.github.io/glossary/p#panes">environment pane</a> to open it up in a viewer that looks a bit like Excel. You can close the tab when you're done looking at it; it won't remove the object.</p>
+<p>A familiar way to look at the table is given by <code><span class="fu"><a href="https://rdrr.io/r/utils/View.html">View</a></span><span class="op">(</span><span class="op">)</span></code> (uppercase 'V'). This command can be useful in the console, but don't ever put this one in a script because it will create an annoying pop-up window when the user runs it. Or you can click on an objects in the <a class="glossary" target="_blank" title='RStudio is arranged with four window "panes".' href="https://psyteachr.github.io/glossary/p#panes">environment pane</a> to open it up in a viewer that looks a bit like Excel. You can close the tab when you're done looking at it; it won't remove the object.</p>
 </div>
 <div id="print" class="section level4" number="4.3.3.2">
 <h4>
@@ -1776,7 +1776,7 @@ junk,4,2.03,d,T,4 - 5,2020-01-4</code></pre>
 </tr>
 <tr class="even">
 <td align="left"><a href="https://psyteachr.github.io/glossary/p.html#panes" class="glossary" target="_blank">panes</a></td>
-<td align="left">RStudio is arranged with four window “panes.”</td>
+<td align="left">RStudio is arranged with four window "panes".</td>
 </tr>
 <tr class="odd">
 <td align="left"><a href="https://psyteachr.github.io/glossary/t.html#tabular-data" class="glossary" target="_blank">tabular data</a></td>
@@ -1988,13 +1988,24 @@ window.onload = function() {
 
 </script><script>
 $( document ).ready(function() {
-  var cite = ' <a href="https://zenodo.org/badge/latestdoi/166541547"><img src="https://zenodo.org/badge/166541547.svg" alt="DOI"></a>';
-  var psyteachr = ' <a href="https://psyteachr.github.io/"><img src="images/psyteachr_logo.png" style="height: 31px; color: white;" alt="psyTeachR: Reproducible Research" /></a>';
+  var cite = ' ';
+  var psyteachr = ' <a href="https://psyteachr.github.io/"><img src="images/logos/psyTeachR_logo.png" style="height: 31px; color: white;" alt="psyTeachR: Reproducible Research" /></a>';
   var license = ' <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/" target="blank"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png"></a>';
 
   $("footer div.row div:eq(1) p").html(
     psyteachr + license + cite
   );
+
+  function move_sidebar() {
+    var w = window.innerWidth;
+    if (w < 992) {
+      $("#toc").appendTo($("#main-nav"));
+    } else {
+      $("#toc").appendTo($("div.sidebar-chapter"));
+    }
+  }
+  move_sidebar();
+  window.onresize = move_sidebar;
 });
 </script><div class="chapter-nav">
 <div class="prev"><a href="ggplot.html"><span class="header-section-number">3</span> Data Visualisation</a></div>
@@ -2050,7 +2061,7 @@ $( document ).ready(function() {
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Data Skills for Reproducible Research</strong>: v2" was written by . It was last built on 2021-09-17.</p>
+    <p>"<strong>Data Skills for Reproducible Research</strong>: v2" was written by . It was last built on 2021-09-18.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

@@ -65,7 +65,7 @@
 <li><a class="" href="sim.html"><span class="header-section-number">10</span> Probability &amp; Simulation</a></li>
 <li><a class="" href="acknowledgements.html">Acknowledgements</a></li>
 <li class="book-part">Appendices</li>
-<li><a class="" href="installingr.html"><span class="header-section-number">A</span> Installing R</a></li>
+<li><a class="" href="installingr.html"><span class="header-section-number">A</span> Installing and Updating</a></li>
 <li><a class="" href="conventions.html"><span class="header-section-number">B</span> Conventions</a></li>
 <li><a class="" href="symbols.html"><span class="header-section-number">C</span> Symbols</a></li>
 <li><a class="" href="datasets.html"><span class="header-section-number">D</span> Datasets</a></li>
@@ -870,7 +870,7 @@ Figure 5.9: Anti Join (Reversed)
 </table></div>
 </div>
 <p>The columns just have to have the same names, they don't have to be in the same order. Any columns that differ between the two tables will just have <code>NA</code> values for entries from the other table.</p>
-<p>If a row is duplicated between the two tables (like id 5 below), the row will also be duplicated in the resulting table. If your tables have the exact same columns, you can use <code><a href="https://generics.r-lib.org/reference/setops.html">union()</a></code> (see below) to avoid duplicates.</p>
+<p>If a row is duplicated between the two tables (like id 5 below), the row will also be duplicated in the resulting table. If your tables have the exact same columns, you can use <code><a href="https://rdrr.io/r/base/sets.html">union()</a></code> (see below) to avoid duplicates.</p>
 <div class="sourceCode" id="cb230"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">new_subjects</span> <span class="op">&lt;-</span> <span class="fu">tibble</span><span class="op">(</span>
   id <span class="op">=</span> <span class="fl">5</span><span class="op">:</span><span class="fl">9</span>,
@@ -1017,7 +1017,7 @@ Figure 5.9: Anti Join (Reversed)
 <h3>
 <span class="header-section-number">5.7.1</span> intersect()<a class="anchor" aria-label="anchor" href="#intersect"><i class="fas fa-link"></i></a>
 </h3>
-<p><code><a href="https://generics.r-lib.org/reference/setops.html">intersect()</a></code> returns all rows in two tables that match exactly. The columns don't have to be in the same order.</p>
+<p><code><a href="https://rdrr.io/r/base/sets.html">intersect()</a></code> returns all rows in two tables that match exactly. The columns don't have to be in the same order.</p>
 <div class="sourceCode" id="cb232"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">new_subjects</span> <span class="op">&lt;-</span> <span class="fu">tibble</span><span class="op">(</span>
   id <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/seq.html">seq</a></span><span class="op">(</span><span class="fl">4</span>, <span class="fl">9</span><span class="op">)</span>,
@@ -1025,7 +1025,7 @@ Figure 5.9: Anti Join (Reversed)
   gender <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"f"</span>, <span class="st">"f"</span>, <span class="st">"m"</span>, <span class="st">"m"</span>, <span class="st">"f"</span>, <span class="st">"f"</span><span class="op">)</span>
 <span class="op">)</span>
 
-<span class="fu"><a href="https://generics.r-lib.org/reference/setops.html">intersect</a></span><span class="op">(</span><span class="va">subject</span>, <span class="va">new_subjects</span><span class="op">)</span></code></pre></div>
+<span class="fu"><a href="https://rdrr.io/r/base/sets.html">intersect</a></span><span class="op">(</span><span class="va">subject</span>, <span class="va">new_subjects</span><span class="op">)</span></code></pre></div>
 <div class="kable-table">
 <div class="inline-table"><table class="table table-sm">
 <thead><tr class="header">
@@ -1041,7 +1041,7 @@ Figure 5.9: Anti Join (Reversed)
 </table></div>
 </div>
 <div class="warning">
-<p>If you've forgotten to load dplyr or the tidyverse, <a class="glossary" target="_blank" title="The set of R functions that come with a basic installation of R, before you add external packages" href="https://psyteachr.github.io/glossary/b#base-r">base R</a> also has an <code><a href="https://generics.r-lib.org/reference/setops.html">intersect()</a></code> function. The error message can be confusing and looks something like this:</p>
+<p>If you've forgotten to load dplyr or the tidyverse, <a class="glossary" target="_blank" title="The set of R functions that come with a basic installation of R, before you add external packages" href="https://psyteachr.github.io/glossary/b#base-r">base R</a> also has an <code><a href="https://rdrr.io/r/base/sets.html">intersect()</a></code> function. The error message can be confusing and looks something like this:</p>
 <div class="sourceCode" id="cb233"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu">base</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/r/base/sets.html">intersect</a></span><span class="op">(</span><span class="va">subject</span>, <span class="va">new_subjects</span><span class="op">)</span></code></pre></div>
 <pre><code>## Error: Must subset rows with a valid subscript vector.
@@ -1053,9 +1053,9 @@ Figure 5.9: Anti Join (Reversed)
 <h3>
 <span class="header-section-number">5.7.2</span> union()<a class="anchor" aria-label="anchor" href="#union"><i class="fas fa-link"></i></a>
 </h3>
-<p><code><a href="https://generics.r-lib.org/reference/setops.html">union()</a></code> returns all the rows from both tables, removing duplicate rows.</p>
+<p><code><a href="https://rdrr.io/r/base/sets.html">union()</a></code> returns all the rows from both tables, removing duplicate rows.</p>
 <div class="sourceCode" id="cb235"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="https://generics.r-lib.org/reference/setops.html">union</a></span><span class="op">(</span><span class="va">subject</span>, <span class="va">new_subjects</span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/sets.html">union</a></span><span class="op">(</span><span class="va">subject</span>, <span class="va">new_subjects</span><span class="op">)</span></code></pre></div>
 <div class="kable-table">
 <div class="inline-table"><table class="table table-sm">
 <thead><tr class="header">
@@ -1118,7 +1118,7 @@ Figure 5.9: Anti Join (Reversed)
 </table></div>
 </div>
 <div class="warning">
-<p>If you've forgotten to load dplyr or the tidyverse, <a class="glossary" target="_blank" title="The set of R functions that come with a basic installation of R, before you add external packages" href="https://psyteachr.github.io/glossary/b#base-r">base R</a> also has a <code><a href="https://generics.r-lib.org/reference/setops.html">union()</a></code> function. You usually won't get an error message, but the output won't be what you expect.</p>
+<p>If you've forgotten to load dplyr or the tidyverse, <a class="glossary" target="_blank" title="The set of R functions that come with a basic installation of R, before you add external packages" href="https://psyteachr.github.io/glossary/b#base-r">base R</a> also has a <code><a href="https://rdrr.io/r/base/sets.html">union()</a></code> function. You usually won't get an error message, but the output won't be what you expect.</p>
 <div class="sourceCode" id="cb236"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu">base</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/r/base/sets.html">union</a></span><span class="op">(</span><span class="va">subject</span>, <span class="va">new_subjects</span><span class="op">)</span></code></pre></div>
 <pre><code>## [[1]]
@@ -1146,7 +1146,7 @@ Figure 5.9: Anti Join (Reversed)
 </h3>
 <p><code>setdiff</code> returns rows that are in the first table, but not in the second table.</p>
 <div class="sourceCode" id="cb238"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="https://generics.r-lib.org/reference/setops.html">setdiff</a></span><span class="op">(</span><span class="va">subject</span>, <span class="va">new_subjects</span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/sets.html">setdiff</a></span><span class="op">(</span><span class="va">subject</span>, <span class="va">new_subjects</span><span class="op">)</span></code></pre></div>
 <div class="kable-table">
 <div class="inline-table"><table class="table table-sm">
 <thead><tr class="header">
@@ -1180,7 +1180,7 @@ Figure 5.9: Anti Join (Reversed)
 </div>
 <p>Order matters for <code>setdiff</code>.</p>
 <div class="sourceCode" id="cb239"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="https://generics.r-lib.org/reference/setops.html">setdiff</a></span><span class="op">(</span><span class="va">new_subjects</span>, <span class="va">subject</span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/sets.html">setdiff</a></span><span class="op">(</span><span class="va">new_subjects</span>, <span class="va">subject</span><span class="op">)</span></code></pre></div>
 <div class="kable-table">
 <div class="inline-table"><table class="table table-sm">
 <thead><tr class="header">
@@ -1218,7 +1218,7 @@ Figure 5.9: Anti Join (Reversed)
 </table></div>
 </div>
 <div class="warning">
-<p>If you've forgotten to load dplyr or the tidyverse, <a class="glossary" target="_blank" title="The set of R functions that come with a basic installation of R, before you add external packages" href="https://psyteachr.github.io/glossary/b#base-r">base R</a> also has a <code><a href="https://generics.r-lib.org/reference/setops.html">setdiff()</a></code> function. You usually won't get an error message, but the output might not be what you expect because the base R <code><a href="https://generics.r-lib.org/reference/setops.html">setdiff()</a></code> expects columns to be in the same order, so id 5 here registers as different between the two tables.</p>
+<p>If you've forgotten to load dplyr or the tidyverse, <a class="glossary" target="_blank" title="The set of R functions that come with a basic installation of R, before you add external packages" href="https://psyteachr.github.io/glossary/b#base-r">base R</a> also has a <code><a href="https://rdrr.io/r/base/sets.html">setdiff()</a></code> function. You usually won't get an error message, but the output might not be what you expect because the base R <code><a href="https://rdrr.io/r/base/sets.html">setdiff()</a></code> expects columns to be in the same order, so id 5 here registers as different between the two tables.</p>
 <div class="sourceCode" id="cb240"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu">base</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/r/base/sets.html">setdiff</a></span><span class="op">(</span><span class="va">subject</span>, <span class="va">new_subjects</span><span class="op">)</span></code></pre></div>
 <div class="kable-table">
@@ -1485,13 +1485,24 @@ window.onload = function() {
 
 </script><script>
 $( document ).ready(function() {
-  var cite = ' <a href="https://zenodo.org/badge/latestdoi/166541547"><img src="https://zenodo.org/badge/166541547.svg" alt="DOI"></a>';
-  var psyteachr = ' <a href="https://psyteachr.github.io/"><img src="images/psyteachr_logo.png" style="height: 31px; color: white;" alt="psyTeachR: Reproducible Research" /></a>';
+  var cite = ' ';
+  var psyteachr = ' <a href="https://psyteachr.github.io/"><img src="images/logos/psyTeachR_logo.png" style="height: 31px; color: white;" alt="psyTeachR: Reproducible Research" /></a>';
   var license = ' <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/" target="blank"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png"></a>';
 
   $("footer div.row div:eq(1) p").html(
     psyteachr + license + cite
   );
+
+  function move_sidebar() {
+    var w = window.innerWidth;
+    if (w < 992) {
+      $("#toc").appendTo($("#main-nav"));
+    } else {
+      $("#toc").appendTo($("div.sidebar-chapter"));
+    }
+  }
+  move_sidebar();
+  window.onresize = move_sidebar;
 });
 </script><div class="chapter-nav">
 <div class="prev"><a href="data.html"><span class="header-section-number">4</span> Working with Data</a></div>
@@ -1549,7 +1560,7 @@ $( document ).ready(function() {
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Data Skills for Reproducible Research</strong>: v2" was written by . It was last built on 2021-09-17.</p>
+    <p>"<strong>Data Skills for Reproducible Research</strong>: v2" was written by . It was last built on 2021-09-18.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

@@ -48,7 +48,7 @@ Launch <img src="images/intro/rstudio_icon.png" style="height: 2em; vertical-ali
 <p class="caption">(\#fig:img-rstudio)The RStudio IDE</p>
 </div>
 
-RStudio is arranged with four window <a class='glossary' target='_blank' title='RStudio is arranged with four window “panes.”' href='https://psyteachr.github.io/glossary/p#panes'>panes</a>. By default, the upper left pane is the **source pane**, where you view and edit source code from files. The bottom left pane is usually the **console pane**, where you can type in commands and view output messages. The right panes have several different tabs that show you information about your code. You can change the location of panes and what tabs are shown under **`Preferences > Pane Layout`**.
+RStudio is arranged with four window <a class='glossary' target='_blank' title='RStudio is arranged with four window "panes".' href='https://psyteachr.github.io/glossary/p#panes'>panes</a>. By default, the upper left pane is the **source pane**, where you view and edit source code from files. The bottom left pane is usually the **console pane**, where you can type in commands and view output messages. The right panes have several different tabs that show you information about your code. You can change the location of panes and what tabs are shown under **`Preferences > Pane Layout`**.
 
 ### Configure RStudio
 
@@ -345,8 +345,8 @@ rnorm(10)
 ```
 
 ```
-##  [1] -1.4600284  0.3883631  0.3716939  0.5054995  0.8642370  1.4645069
-##  [7]  0.7306364  0.5203927 -0.9412732  2.4613793
+##  [1]  0.32664704  0.90765276  0.03611039  0.15467156  1.19413632  0.54841417
+##  [7] -0.89897593 -0.97918182  0.22268068 -0.23137920
 ```
 
 If you want 10 numbers from a normal distribution with a mean of 100:
@@ -357,8 +357,8 @@ rnorm(10, 100)
 ```
 
 ```
-##  [1]  98.78503  97.56071 100.91796 100.27340 101.32092  97.45869 100.50569
-##  [8] 101.23254 101.05885  97.62777
+##  [1] 100.36849  98.63611  98.05460 100.30968  98.13807  99.17730  99.58484
+##  [8]  98.47213 100.32655  99.92915
 ```
 
 This would be an equivalent but less efficient way of calling the function:
@@ -369,8 +369,8 @@ rnorm(n = 10, mean = 100)
 ```
 
 ```
-##  [1] 101.92488 100.07904 100.47320 100.49320 100.51016 101.58657 100.07120
-##  [8]  99.16701  99.78157 101.38979
+##  [1] 100.16197  98.13908  99.26602  99.70163 100.66184 100.98958  99.15920
+##  [8] 101.19345 100.98224  99.33337
 ```
 
 We don't need to name the arguments because R will recognize that we intended to fill in the first and second arguments by their position in the function call. However, if we want to change the default for an argument coming later in the list, then we need to name it. For instance, if we wanted to keep the default `mean = 0` but change the standard deviation to 100, we would do it this way:
@@ -381,8 +381,8 @@ rnorm(10, sd = 100)
 ```
 
 ```
-##  [1] -53.1824771 -63.9484975  65.1955399  -0.8753247  41.1791646  20.3971650
-##  [7]  -1.8067562  34.9650065   0.9652474  -0.5728417
+##  [1]  101.88610 -152.92216  -72.63855  143.83814  107.43711 -110.09915
+##  [7]  161.14938   64.91752 -173.15875  -28.19267
 ```
 
 Some functions give a list of options after an argument; this means the default value is the first option. The usage entry for the <code><span class='fu'><a href='https://rdrr.io/r/stats/power.t.test.html'>power.t.test</a></span><span class='op'>(</span><span class='op'>)</span></code> function looks like this:
@@ -400,9 +400,9 @@ power.t.test(n = NULL, delta = NULL, sd = 1, sig.level = 0.05,
 
 
 
-* What is the default value for `sd`? <select class='webex-select'><option value='blank'></option><option value=''>two.sample</option><option value=''>NULL</option><option value='answer'>1</option><option value=''>0.05</option></select>
-* What is the default value for `type`? <select class='webex-select'><option value='blank'></option><option value=''>paired</option><option value='answer'>two.sample</option><option value=''>NULL</option><option value=''>one.sample</option></select>
-* Which is equivalent to <code><span class='fu'><a href='https://rdrr.io/r/stats/power.t.test.html'>power.t.test</a></span><span class='op'>(</span><span class='fl'>100</span>, <span class='fl'>0.5</span><span class='op'>)</span></code>? <div class='webex-radiogroup' id='radio_NNHRHHWJAT'><label><input type="radio" autocomplete="off" name="radio_NNHRHHWJAT" value=""></input> <span>power.t.test(n = 100)</span></label><label><input type="radio" autocomplete="off" name="radio_NNHRHHWJAT" value=""></input> <span>power.t.test(100, 0.5, sig.level = 1, sd = 0.05)</span></label><label><input type="radio" autocomplete="off" name="radio_NNHRHHWJAT" value="answer"></input> <span>power.t.test(delta = 0.5, n = 100)</span></label><label><input type="radio" autocomplete="off" name="radio_NNHRHHWJAT" value=""></input> <span>power.t.test()</span></label></div>
+* What is the default value for `sd`? <select class='webex-select'><option value='blank'></option><option value=''>two.sample</option><option value=''>0.05</option><option value='answer'>1</option><option value=''>NULL</option></select>
+* What is the default value for `type`? <select class='webex-select'><option value='blank'></option><option value=''>paired</option><option value='answer'>two.sample</option><option value=''>one.sample</option><option value=''>NULL</option></select>
+* Which is equivalent to <code><span class='fu'><a href='https://rdrr.io/r/stats/power.t.test.html'>power.t.test</a></span><span class='op'>(</span><span class='fl'>100</span>, <span class='fl'>0.5</span><span class='op'>)</span></code>? <div class='webex-radiogroup' id='radio_DDXKOMCCLH'><label><input type="radio" autocomplete="off" name="radio_DDXKOMCCLH" value=""></input> <span>power.t.test(n = 100)</span></label><label><input type="radio" autocomplete="off" name="radio_DDXKOMCCLH" value="answer"></input> <span>power.t.test(delta = 0.5, n = 100)</span></label><label><input type="radio" autocomplete="off" name="radio_DDXKOMCCLH" value=""></input> <span>power.t.test(100, 0.5, sig.level = 1, sd = 0.05)</span></label><label><input type="radio" autocomplete="off" name="radio_DDXKOMCCLH" value=""></input> <span>power.t.test()</span></label></div>
 
 
 
@@ -503,7 +503,7 @@ You can use the convention `package::function()` to indicate in which add-on pac
 
 ### Install from GitHub
 
-Many R packages are not yet on <a class='glossary' target='_blank' title='The Comprehensive R Archive Network: a network of ftp and web servers around the world that store identical, up-to-date, versions of code and documentation for R.' href='https://psyteachr.github.io/glossary/c#cran'>CRAN</a> because they are still in development. Increasingly, datasets and code for papers are available as packages you can download from github. You'll need to install the devtools package to be able to install packages from github. Check if you have a package installed by trying to load it (e.g., if you don't have devtools installed, <code><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://devtools.r-lib.org/'>devtools</a></span><span class='op'>)</span></code> will display an error message) or by searching for it in the packages tab in the lower right pane. All listed packages are installed; all checked packages are currently loaded.
+Many R packages are not yet on <a class='glossary' target='_blank' title='The Comprehensive R Archive Network: a network of ftp and web servers around the world that store identical, up-to-date, versions of code and documentation for R.' href='https://psyteachr.github.io/glossary/c#cran'>CRAN</a> because they are still in development. Increasingly, datasets and code for papers are available as packages you can download from github. You'll need to install the <code class='package'>devtools</code> package to be able to install packages from github. Check if you have a package installed by trying to load it (e.g., if you don't have devtools installed, <code><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://devtools.r-lib.org/'>devtools</a></span><span class='op'>)</span></code> will display an error message) or by searching for it in the packages tab in the lower right pane. All listed packages are installed; all checked packages are currently loaded.
 
 <div class="figure" style="text-align: center">
 <img src="images/intro/packages.png" alt="Check installed and loaded packages in the packages tab in the lower right pane." width="100%" />
@@ -587,7 +587,7 @@ glossary::book()
 |[normal distribution](https://psyteachr.github.io/glossary/n.html#normal-distribution){class="glossary" target="_blank"}     |A symmetric distribution of data where values near the centre are most probable.                                                                                           |
 |[object](https://psyteachr.github.io/glossary/o.html#object){class="glossary" target="_blank"}                               |A word that identifies and stores the value of some data for later use.                                                                                                    |
 |[package](https://psyteachr.github.io/glossary/p.html#package){class="glossary" target="_blank"}                             |A group of R functions.                                                                                                                                                    |
-|[panes](https://psyteachr.github.io/glossary/p.html#panes){class="glossary" target="_blank"}                                 |RStudio is arranged with four window “panes.”                                                                                                                              |
+|[panes](https://psyteachr.github.io/glossary/p.html#panes){class="glossary" target="_blank"}                                 |RStudio is arranged with four window "panes".                                                                                                                              |
 |[r markdown](https://psyteachr.github.io/glossary/r.html#r-markdown){class="glossary" target="_blank"}                       |The R-specific version of markdown: a way to specify formatting, such as headers, paragraphs, lists, bolding, and links, as well as code blocks and inline code.           |
 |[reproducible research](https://psyteachr.github.io/glossary/r.html#reproducible-research){class="glossary" target="_blank"} |Research that documents all of the steps between raw data and results in a way that can be verified.                                                                       |
 |[script](https://psyteachr.github.io/glossary/s.html#script){class="glossary" target="_blank"}                               |A plain-text file that contains commands in a coding language, such as R.                                                                                                  |

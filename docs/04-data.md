@@ -280,7 +280,7 @@ Always, always, always, look at your data once you've created or loaded a table.
 
 #### View() 
 
-A familiar way to look at the table is given by <code><span class='fu'><a href='https://rdrr.io/r/utils/View.html'>View</a></span><span class='op'>(</span><span class='op'>)</span></code> (uppercase 'V'). This command can be useful in the console, but don't ever put this one in a script because it will create an annoying pop-up window when the user runs it. Or you can click on an objects in the  <a class='glossary' target='_blank' title='RStudio is arranged with four window “panes.”' href='https://psyteachr.github.io/glossary/p#panes'>environment pane</a> to open it up in a viewer that looks a bit like Excel. You can close the tab when you're done looking at it; it won't remove the object.
+A familiar way to look at the table is given by <code><span class='fu'><a href='https://rdrr.io/r/utils/View.html'>View</a></span><span class='op'>(</span><span class='op'>)</span></code> (uppercase 'V'). This command can be useful in the console, but don't ever put this one in a script because it will create an annoying pop-up window when the user runs it. Or you can click on an objects in the  <a class='glossary' target='_blank' title='RStudio is arranged with four window "panes".' href='https://psyteachr.github.io/glossary/p#panes'>environment pane</a> to open it up in a viewer that looks a bit like Excel. You can close the tab when you're done looking at it; it won't remove the object.
 
 #### print() 
 
@@ -1182,7 +1182,7 @@ tidiest
 |[numeric](https://psyteachr.github.io/glossary/n.html#numeric){class="glossary" target="_blank"}                       |A data type representing a real decimal number or integer.                                                                 |
 |[object](https://psyteachr.github.io/glossary/o.html#object){class="glossary" target="_blank"}                         |A word that identifies and stores the value of some data for later use.                                                    |
 |[operator](https://psyteachr.github.io/glossary/o.html#operator){class="glossary" target="_blank"}                     |A symbol that performs a mathematical operation, such as +, -, *, /                                                        |
-|[panes](https://psyteachr.github.io/glossary/p.html#panes){class="glossary" target="_blank"}                           |RStudio is arranged with four window “panes.”                                                                              |
+|[panes](https://psyteachr.github.io/glossary/p.html#panes){class="glossary" target="_blank"}                           |RStudio is arranged with four window "panes".                                                                              |
 |[tabular data](https://psyteachr.github.io/glossary/t.html#tabular-data){class="glossary" target="_blank"}             |Data in a rectangular table format, where each row has an entry for each column.                                           |
 |[tidy data](https://psyteachr.github.io/glossary/t.html#tidy-data){class="glossary" target="_blank"}                   |A format for data that maps the meaning onto the structure.                                                                |
 |[tidyverse](https://psyteachr.github.io/glossary/t.html#tidyverse){class="glossary" target="_blank"}                   |A set of R packages that help you create and work with tidy data                                                           |

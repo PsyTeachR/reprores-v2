@@ -417,7 +417,7 @@ You can use the convention `package::function()` to indicate in which add-on pac
 
 ### Install from GitHub
 
-Many R packages are not yet on `r glossary("CRAN")` because they are still in development. Increasingly, datasets and code for papers are available as packages you can download from github. You'll need to install the devtools package to be able to install packages from github. Check if you have a package installed by trying to load it (e.g., if you don't have devtools installed, `r hl(library(devtools))` will display an error message) or by searching for it in the packages tab in the lower right pane. All listed packages are installed; all checked packages are currently loaded.
+Many R packages are not yet on `r glossary("CRAN")` because they are still in development. Increasingly, datasets and code for papers are available as packages you can download from github. You'll need to install the `r pkg("devtools")` package to be able to install packages from github. Check if you have a package installed by trying to load it (e.g., if you don't have devtools installed, `r hl(library(devtools))` will display an error message) or by searching for it in the packages tab in the lower right pane. All listed packages are installed; all checked packages are currently loaded.
 
 ```{r img-packages, echo=FALSE, out.width='100%', fig.cap="Check installed and loaded packages in the packages tab in the lower right pane."}
 knitr::include_graphics("images/intro/packages.png")
