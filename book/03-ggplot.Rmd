@@ -803,7 +803,7 @@ Hover over the data points above and click on the legend items.
 
 `r glossary_table()`
 
-## Further Resources {#resources3}
+## Further Resources {#resources-ggplot}
 
 * [Data visualisation using R, for researchers who don't use R](https://psyarxiv.com/4huvw/)
 * [Chapter 3: Data Visualisation](http://r4ds.had.co.nz/data-visualisation.html) of *R for Data Science*

@@ -91,6 +91,9 @@ fig:img-seed-alignment
 fig:sample-replace
 fig:settings-general
 fig:settings-code
+fig:alpha-demo
+fig:shape-demo
+fig:linetype-demo
 intro
 ilo-intro
 what-is-r
@@ -177,7 +180,7 @@ geom_tile
 word-clouds
 plotly
 glossary-ggplot
-resources3
+resources-ggplot
 data
 ilo-data
 setup-data
@@ -392,5 +395,11 @@ troubleshooting-1
 conventions
 symbols
 datasets
+plotstyle
+aesthetics
+colour
+alpha-1
+shape
+linetype
 exercises
 bookrefs
