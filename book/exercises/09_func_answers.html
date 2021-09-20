@@ -175,9 +175,9 @@ pre code {
 <h3>Question 1</h3>
 <p>Set the vector <code>v1</code> equal to the following: 11, 13, 15, 17, 19, …, 99, 101 (use a function; don’t just type all the numbers).</p>
 <pre class="r"><code>v1 &lt;- seq(11, 101, by = 2) %&gt;% print()</code></pre>
-<pre><code>##  [1]  11  13  15  17  19  21  23  25  27  29  31  33  35  37  39  41  43  45
-## [19]  47  49  51  53  55  57  59  61  63  65  67  69  71  73  75  77  79  81
-## [37]  83  85  87  89  91  93  95  97  99 101</code></pre>
+<pre><code>##  [1]  11  13  15  17  19  21  23  25  27  29  31  33  35  37  39  41  43  45  47
+## [20]  49  51  53  55  57  59  61  63  65  67  69  71  73  75  77  79  81  83  85
+## [39]  87  89  91  93  95  97  99 101</code></pre>
 </div>
 <div id="question-2" class="section level3">
 <h3>Question 2</h3>
@@ -217,8 +217,8 @@ samples &lt;- lapply(mu, rnorm, n = 100)</code></pre>
 ## alternatively
 
 sample_means &lt;- sapply(samples, mean) %&gt;% print()</code></pre>
-<pre><code>##  [1] 0.08304484 0.21226580 0.16840128 0.12930317 0.53216771 0.40842952
-##  [7] 0.72589166 0.63446436 0.81040369 1.02317536 0.91126680</code></pre>
+<pre><code>##  [1] 0.08304484 0.21226580 0.16840128 0.12930317 0.53216771 0.40842952 0.72589166
+##  [8] 0.63446436 0.81040369 1.02317536 0.91126680</code></pre>
 </div>
 </div>
 <div id="custom-functions" class="section level2">
@@ -312,9 +312,9 @@ dat &lt;- tibble(
   broom::tidy() %&gt;%
   print()</code></pre>
 <pre><code>## # A tibble: 1 x 8
-##   estimate statistic p.value parameter conf.low conf.high method alternative
-##      &lt;dbl&gt;     &lt;dbl&gt;   &lt;dbl&gt;     &lt;dbl&gt;    &lt;dbl&gt;     &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;      
-## 1   -0.479     -1.54   0.140        19    -1.13     0.172 Paire… two.sided</code></pre>
+##   estimate statistic p.value parameter conf.low conf.high method        alternative
+##      &lt;dbl&gt;     &lt;dbl&gt;   &lt;dbl&gt;     &lt;dbl&gt;    &lt;dbl&gt;     &lt;dbl&gt; &lt;chr&gt;         &lt;chr&gt;      
+## 1   -0.479     -1.54   0.140        19    -1.13     0.172 Paired t-test two.sided</code></pre>
 </div>
 <div id="question-10" class="section level3">
 <h3>Question 10</h3>
