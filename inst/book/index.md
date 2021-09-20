@@ -26,11 +26,11 @@ favicon: "images/logos/favicon.ico"
 
 This book provides an overview of skills needed for reproducible research and open science using the statistical programming language R and tidyverse packages. It covers data visualisation, data tidying and wrangling, archiving, iteration and functions, probability and data simulations, general linear models, and reproducible workflows.
 
-<!--
-The book is also available in [ePub](reprores-v2.epub) and [Kindle](reprores-v2.mobi) formats.
--->
 
-## Course Resources {-}
+The book is also available in [PDF](reprores-v2.pdf), [ePub](reprores-v2.epub) and [Kindle](reprores-v2.mobi) formats, but these may have odd formatting where the onlne book has interactive elements like quizzes and shiny apps.
+
+
+## Resources {-}
 
 * [Data Skills Videos](https://www.youtube.com/playlist?list=PLA2iRWVwbpTKqULIFGBIe4Bg-YounTV1J){target="_blank"}
     Each chapter has several short video lectures for the main learning outcomes. The videos are captioned and watching with the captioning on is a useful way to learn the jargon of computational reproducibility. If you cannot access YouTube, the videos are available by request.
@@ -62,7 +62,7 @@ Learning to code involves making a **lot** of mistakes. These mistakes are compl
 
 ## I found a bug! {-}
 
-This book is a work in progress, so you might find errors. Please help me fix them! The best way is to open an [issue on github](https://github.com/PsyTeachR/reprores-v2/issues){target="_blank"} that describes the error, but you can also mention it on the class Teams forum or [email Lisa](mailto:lisa.debruine@glasgow.ac.uk?subject=reprores).
+This book is a work in progress, so you might find errors. Please help me fix them! The best way is to open an [issue on github](https://github.com/PsyTeachR/reprores-v2/issues){target="_blank"} that describes the error, but you can also [email Lisa](mailto:lisa.debruine@glasgow.ac.uk?subject=reprores).
 
 ## Other Resources {-}
 

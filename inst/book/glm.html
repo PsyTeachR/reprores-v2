@@ -269,7 +269,7 @@ Figure 8.1: Simulated Data
 <h3>
 <span class="header-section-number">8.3.5</span> Residuals<a class="anchor" aria-label="anchor" href="#residuals"><i class="fas fa-link"></i></a>
 </h3>
-<p>You can use the <code><a href="https://rdrr.io/r/stats/residuals.html">residuals()</a></code> function to extract the error term for each each data point. This is the DV values, minus the estimates for the intercept and trial type. We'll make a density plot of the <a class="glossary" target="_blank" title="That part of an observation that cannot be captured by the statistical model, and thus is assumed to reflect unknown factors." href="https://psyteachr.github.io/glossary/r#residual-error">residuals</a> below and compare it to the normal distribution we used for the error term.</p>
+<p>You can use the <code><a href="https://rdrr.io/r/stats/residuals.html">residuals()</a></code> function to extract the error term for each each data point. This is the DV values, minus the estimates for the intercept and trial type. We'll make a density plot of the <a class="glossary" target="_blank" title="" href="https://psyteachr.github.io/glossary/r#residual-error">residuals</a> below and compare it to the normal distribution we used for the error term.</p>
 <div class="sourceCode" id="cb339"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">res</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/residuals.html">residuals</a></span><span class="op">(</span><span class="va">my_lm</span><span class="op">)</span>
 <span class="fu">ggplot</span><span class="op">(</span><span class="va">dat</span><span class="op">)</span> <span class="op">+</span> 
@@ -663,8 +663,8 @@ Figure 8.4: Deviations of each data point (Y) from the overall and group means
 </h2>
 <div class="inline-table"><table class="table table-sm">
 <colgroup>
-<col width="49%">
-<col width="50%">
+<col width="52%">
+<col width="47%">
 </colgroup>
 <thead><tr class="header">
 <th align="left">term</th>
@@ -709,7 +709,7 @@ Figure 8.4: Deviations of each data point (Y) from the overall and group means
 </tr>
 <tr class="even">
 <td align="left"><a href="https://psyteachr.github.io/glossary/r.html#residual-error" class="glossary" target="_blank">residual error</a></td>
-<td align="left">That part of an observation that cannot be captured by the statistical model, and thus is assumed to reflect unknown factors.</td>
+<td align="left"></td>
 </tr>
 <tr class="odd">
 <td align="left"><a href="https://psyteachr.github.io/glossary/s.html#simulation" class="glossary" target="_blank">simulation</a></td>

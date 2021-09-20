@@ -167,7 +167,7 @@ Change the values of `mu` and `effect`, resimulate the data, and re-run the line
 
 ### Residuals {#residuals}
 
-You can use the `residuals()` function to extract the error term for each each data point. This is the DV values, minus the estimates for the intercept and trial type. We'll make a density plot of the <a class='glossary' target='_blank' title='That part of an observation that cannot be captured by the statistical model, and thus is assumed to reflect unknown factors.' href='https://psyteachr.github.io/glossary/r#residual-error'>residuals</a> below and compare it to the normal distribution we used for the error term.
+You can use the `residuals()` function to extract the error term for each each data point. This is the DV values, minus the estimates for the intercept and trial type. We'll make a density plot of the <a class='glossary' target='_blank' title='' href='https://psyteachr.github.io/glossary/r#residual-error'>residuals</a> below and compare it to the normal distribution we used for the error term.
 
 
 ```r
@@ -557,20 +557,20 @@ Using the code above, write your own function that takes a table of data and ret
 
 
 
-|term                                                                                                                       |definition                                                                                                                    |
-|:--------------------------------------------------------------------------------------------------------------------------|:-----------------------------------------------------------------------------------------------------------------------------|
-|[categorical](https://psyteachr.github.io/glossary/c.html#categorical){class="glossary" target="_blank"}                   |Data that can only take certain values, such as types of pet.                                                                 |
-|[coding scheme](https://psyteachr.github.io/glossary/c.html#coding-scheme){class="glossary" target="_blank"}               |How to represent categorical variables with numbers for use in models                                                         |
-|[continuous](https://psyteachr.github.io/glossary/c.html#continuous){class="glossary" target="_blank"}                     |Data that can take on any values between other existing values.                                                               |
-|[dependent variable](https://psyteachr.github.io/glossary/d.html#dependent-variable){class="glossary" target="_blank"}     |The target variable that is being analyzed, whose value is assumed to depend on other variables.                              |
-|[effect code](https://psyteachr.github.io/glossary/e.html#effect-code){class="glossary" target="_blank"}                   |A coding scheme for categorical variables that contrasts each group mean with the mean of all the group means.                |
-|[error term](https://psyteachr.github.io/glossary/e.html#error-term){class="glossary" target="_blank"}                     |The term in a model that represents the difference between the actual and predicted values                                    |
-|[general linear model](https://psyteachr.github.io/glossary/g.html#general-linear-model){class="glossary" target="_blank"} |A mathematical model comparing how one or more independent variables affect a continuous dependent variable                   |
-|[independent variable](https://psyteachr.github.io/glossary/i.html#independent-variable){class="glossary" target="_blank"} |A variable whose value is assumed to influence the value of a dependent variable.                                             |
-|[normal distribution](https://psyteachr.github.io/glossary/n.html#normal-distribution){class="glossary" target="_blank"}   |A symmetric distribution of data where values near the centre are most probable.                                              |
-|[residual error](https://psyteachr.github.io/glossary/r.html#residual-error){class="glossary" target="_blank"}             |That part of an observation that cannot be captured by the statistical model, and thus is assumed to reflect unknown factors. |
-|[simulation](https://psyteachr.github.io/glossary/s.html#simulation){class="glossary" target="_blank"}                     |Generating data from summary parameters                                                                                       |
-|[standard deviation](https://psyteachr.github.io/glossary/s.html#standard-deviation){class="glossary" target="_blank"}     |A descriptive statistic that measures how spread out data are relative to the mean.                                           |
+|term                                                                                                                       |definition                                                                                                     |
+|:--------------------------------------------------------------------------------------------------------------------------|:--------------------------------------------------------------------------------------------------------------|
+|[categorical](https://psyteachr.github.io/glossary/c.html#categorical){class="glossary" target="_blank"}                   |Data that can only take certain values, such as types of pet.                                                  |
+|[coding scheme](https://psyteachr.github.io/glossary/c.html#coding-scheme){class="glossary" target="_blank"}               |How to represent categorical variables with numbers for use in models                                          |
+|[continuous](https://psyteachr.github.io/glossary/c.html#continuous){class="glossary" target="_blank"}                     |Data that can take on any values between other existing values.                                                |
+|[dependent variable](https://psyteachr.github.io/glossary/d.html#dependent-variable){class="glossary" target="_blank"}     |The target variable that is being analyzed, whose value is assumed to depend on other variables.               |
+|[effect code](https://psyteachr.github.io/glossary/e.html#effect-code){class="glossary" target="_blank"}                   |A coding scheme for categorical variables that contrasts each group mean with the mean of all the group means. |
+|[error term](https://psyteachr.github.io/glossary/e.html#error-term){class="glossary" target="_blank"}                     |The term in a model that represents the difference between the actual and predicted values                     |
+|[general linear model](https://psyteachr.github.io/glossary/g.html#general-linear-model){class="glossary" target="_blank"} |A mathematical model comparing how one or more independent variables affect a continuous dependent variable    |
+|[independent variable](https://psyteachr.github.io/glossary/i.html#independent-variable){class="glossary" target="_blank"} |A variable whose value is assumed to influence the value of a dependent variable.                              |
+|[normal distribution](https://psyteachr.github.io/glossary/n.html#normal-distribution){class="glossary" target="_blank"}   |A symmetric distribution of data where values near the centre are most probable.                               |
+|[residual error](https://psyteachr.github.io/glossary/r.html#residual-error){class="glossary" target="_blank"}             |                                                                                                               |
+|[simulation](https://psyteachr.github.io/glossary/s.html#simulation){class="glossary" target="_blank"}                     |Generating data from summary parameters                                                                        |
+|[standard deviation](https://psyteachr.github.io/glossary/s.html#standard-deviation){class="glossary" target="_blank"}     |A descriptive statistic that measures how spread out data are relative to the mean.                            |
 
 
 
