@@ -98,6 +98,9 @@ fig:unnamed-chunk-3
 fig:unnamed-chunk-4
 fig:unnamed-chunk-5
 fig:unnamed-chunk-6
+fig:unnamed-chunk-8
+fig:unnamed-chunk-9
+fig:unnamed-chunk-10
 intro
 ilo-intro
 what-is-r
@@ -413,5 +416,7 @@ brewer-palettes
 qualitative-brewer-palettes
 sequential-brewer-palettes
 diverging-brewer-palettes
+themes-1
+ggthemes
 exercises
 bookrefs

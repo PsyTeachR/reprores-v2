@@ -374,23 +374,23 @@ He turned to me as if to say, \"Hurry boy, it's waiting there for you\"
 <p>If you want 10 random numbers from a normal distribution with mean of 0 and standard deviation, you can just use the defaults.</p>
 <div class="sourceCode" id="cb28"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span><span class="fl">10</span><span class="op">)</span></code></pre></div>
-<pre><code>##  [1] -0.1353092755  0.8102228093 -0.0007965334 -2.1546456787 -1.1348712141
-##  [6]  0.0544606188  0.2400073798 -0.2247218196  0.9620408801 -0.1463717951</code></pre>
+<pre><code>##  [1] -0.78185904 -0.19731608  0.20082260  0.48130491 -0.02560774 -0.16625062
+##  [7]  2.22746583  0.73298835 -0.65036817  0.42178258</code></pre>
 <p>If you want 10 numbers from a normal distribution with a mean of 100:</p>
 <div class="sourceCode" id="cb30"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span><span class="fl">10</span>, <span class="fl">100</span><span class="op">)</span></code></pre></div>
-<pre><code>##  [1]  99.71096  99.78878 100.82932 100.80376  99.12827  99.87947  99.61345
-##  [8]  98.82475  99.40106 100.44248</code></pre>
+<pre><code>##  [1]  99.86542  98.70812  98.72601 100.84847  99.39616 100.76876 102.58909
+##  [8] 101.88033 100.34079 100.75561</code></pre>
 <p>This would be an equivalent but less efficient way of calling the function:</p>
 <div class="sourceCode" id="cb32"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span>n <span class="op">=</span> <span class="fl">10</span>, mean <span class="op">=</span> <span class="fl">100</span><span class="op">)</span></code></pre></div>
-<pre><code>##  [1]  99.51479  99.14470  99.88731 101.01385 101.20128 100.11733  97.94263
-##  [8]  99.65466  98.12582  98.77732</code></pre>
+<pre><code>##  [1] 100.61314 101.03146 100.88264 101.36429 101.37770  99.71442 100.06746
+##  [8] 100.42275  99.82964  98.78452</code></pre>
 <p>We don't need to name the arguments because R will recognize that we intended to fill in the first and second arguments by their position in the function call. However, if we want to change the default for an argument coming later in the list, then we need to name it. For instance, if we wanted to keep the default <code>mean = 0</code> but change the standard deviation to 100, we would do it this way:</p>
 <div class="sourceCode" id="cb34"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span><span class="fl">10</span>, sd <span class="op">=</span> <span class="fl">100</span><span class="op">)</span></code></pre></div>
-<pre><code>##  [1] 149.90666 188.13886 -30.01220  98.25648  24.29815  21.13108 -27.73150
-##  [8] -62.15495 -77.92078 148.04737</code></pre>
+<pre><code>##  [1]    9.998249  -12.196486   54.748047  -34.410534 -123.305285  -68.369054
+##  [7]   31.755734   17.436676   44.322710   79.945858</code></pre>
 <p>Some functions give a list of options after an argument; this means the default value is the first option. The usage entry for the <code><span class="fu"><a href="https://rdrr.io/r/stats/power.t.test.html">power.t.test</a></span><span class="op">(</span><span class="op">)</span></code> function looks like this:</p>
 <div class="sourceCode" id="cb36"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/stats/power.t.test.html">power.t.test</a></span><span class="op">(</span>n <span class="op">=</span> <span class="cn">NULL</span>, delta <span class="op">=</span> <span class="cn">NULL</span>, sd <span class="op">=</span> <span class="fl">1</span>, sig.level <span class="op">=</span> <span class="fl">0.05</span>,
@@ -401,20 +401,20 @@ He turned to me as if to say, \"Hurry boy, it's waiting there for you\"
 <div class="try">
 <ul>
 <li>What is the default value for <code>sd</code>? <select class="webex-select"><option value="blank"></option>
+<option value="answer">1</option>
 <option value="">two.sample</option>
 <option value="">0.05</option>
-<option value="">NULL</option>
-<option value="answer">1</option></select>
-</li>
-<li>What is the default value for <code>type</code>? <select class="webex-select"><option value="blank"></option>
-<option value="">paired</option>
-<option value="">one.sample</option>
-<option value="answer">two.sample</option>
 <option value="">NULL</option></select>
 </li>
+<li>What is the default value for <code>type</code>? <select class="webex-select"><option value="blank"></option>
+<option value="">NULL</option>
+<option value="">paired</option>
+<option value="answer">two.sample</option>
+<option value="">one.sample</option></select>
+</li>
 <li>Which is equivalent to <code><span class="fu"><a href="https://rdrr.io/r/stats/power.t.test.html">power.t.test</a></span><span class="op">(</span><span class="fl">100</span>, <span class="fl">0.5</span><span class="op">)</span></code>?
-<div id="radio_OOUXHLTPQT" class="webex-radiogroup">
-<label><input type="radio" autocomplete="off" name="radio_OOUXHLTPQT" value="answer"><span>power.t.test(delta = 0.5, n = 100)</span></label><label><input type="radio" autocomplete="off" name="radio_OOUXHLTPQT" value=""><span>power.t.test(n = 100)</span></label><label><input type="radio" autocomplete="off" name="radio_OOUXHLTPQT" value=""><span>power.t.test(100, 0.5, sig.level = 1, sd = 0.05)</span></label><label><input type="radio" autocomplete="off" name="radio_OOUXHLTPQT" value=""><span>power.t.test()</span></label>
+<div id="radio_VATKQDUOXM" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_VATKQDUOXM" value=""><span>power.t.test()</span></label><label><input type="radio" autocomplete="off" name="radio_VATKQDUOXM" value=""><span>power.t.test(100, 0.5, sig.level = 1, sd = 0.05)</span></label><label><input type="radio" autocomplete="off" name="radio_VATKQDUOXM" value=""><span>power.t.test(n = 100)</span></label><label><input type="radio" autocomplete="off" name="radio_VATKQDUOXM" value="answer"><span>power.t.test(delta = 0.5, n = 100)</span></label>
 </div>
 </li>
 </ul>
