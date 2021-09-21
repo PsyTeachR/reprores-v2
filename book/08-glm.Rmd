@@ -413,7 +413,7 @@ Using the code above, write your own function that takes a table of data and ret
 
 ## Further Resources {#resources-glm}
 
-* [Jeff Miller and Patricia Haden, Statistical Analysis with the Linear Model (free online textbook)](http://www.otago.ac.nz/psychology/otago039309.pdf)
-* [lecture slides introducing the General Linear Model](slides/08_glm_slides.pdf)
+* [Statistical Models](https://psyteachr.github.io/stat-models-v1/) by Dale Barr from the psyTeachR team
 * [GLM shiny app](http://rstudio2.psy.gla.ac.uk/Dale/GLM)
 * [F distribution](http://rstudio2.psy.gla.ac.uk/Dale/fdist)
+* [Jeff Miller and Patricia Haden, Statistical Analysis with the Linear Model (free online textbook)](http://www.otago.ac.nz/psychology/otago039309.pdf)

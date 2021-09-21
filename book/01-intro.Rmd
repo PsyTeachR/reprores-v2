@@ -7,11 +7,12 @@
 
 1. Understand the components of the [RStudio IDE](#rstudio_ide) [(video)](https://youtu.be/CbA6ZVlJE78){class="video"}
 2. Type commands into the [console](#console) [(video)](https://youtu.be/wbI4c_7y0kE){class="video"}
-3. Understand [function syntax](#function_syx) [(video)](https://youtu.be/X5P038N5Q8I){class="video"}
+3. Understand [coding terms](#coding-terms) and [function syntax](#function_syx) [(video)](https://youtu.be/X5P038N5Q8I){class="video"}
 4. Install a [package](#install-package) [(video)](https://youtu.be/u_pvHnqkVCE){class="video"}
+5. Know the methods for getting [help](#help)
 
 
-## What is R?
+## R and RStudio
 
 <div class="meme left"><img src="images/intro/new_R_logo.png" /></div>
 
@@ -70,9 +71,8 @@ Your settings should have:
 * Save workspace to .RData on exit: `r mcq(c("Always", answer = "Never", "Ask"))`
 :::
 
-## Getting Started
 
-### Console commands {#console}
+## Console commands {#console}
 
 We are first going to learn about how to interact with the `r glossary("console")`. In general, you will be developing R `r glossary("script", "scripts")` or `r glossary("R Markdown")` files, rather than working directly in the console window. However, you can consider the console a kind of "sandbox" where you can try out lines of code and adapt them until you get them to do what you want. Then you can copy them back into the script editor.
 
@@ -125,6 +125,7 @@ He turned to me as if to say, \"Hurry boy, it's waiting there for you\"
 cat(africa) # cat() prints the string
 ```
 
+## Coding Terms {#coding-terms}
 
 ### Objects {#vars}
 
@@ -323,29 +324,8 @@ equiv <- c("power.t.test(100, 0.5, sig.level = 1, sd = 0.05)",
 * What is the default value for `type`? `r mcq(default_type)`
 * Which is equivalent to `r hl(power.t.test(100, 0.5))`? `r longmcq(equiv)`
 
-
 :::
 
-### Getting help {#help}
-
-Start up help in a browser using the function `help.start()`.
-
-If a function is in `r glossary("base R")` or a loaded `r glossary("package")`, you can use the `help("function_name")` function or the `?function_name` shortcut to access the help file. If the package isn't loaded, specify the package name as the second argument to the help function.
-
-```{r help, eval = FALSE}
-# these methods are all equivalent ways of getting help
-help("rnorm")
-?rnorm
-help("rnorm", package="stats") 
-```
-
-When the package isn't loaded or you aren't sure what package the function is in, use the shortcut `??function_name`.
-
-::: {.try data-latex=""}
-
-* What is the first argument to the `mean` function? `r mcq(c("trim", "na.rm", "mean", answer="x"))`
-* What package is `read_excel` in? `r mcq(c("readr", answer="readxl", "base", "stats"))`
-:::
 
 ## Add-on packages {#install-package}
 
@@ -463,7 +443,45 @@ data("disgust")
 getdata("data")
 ```
 
+## Getting help {#help}
 
+You will feel like you need a *lot* of help when you're starting to learn. This won't really go away, and it isn't supposed to. Experienced coders are also constantly looking things up; it's impossible to memorise everything. The goal is to learn enough about the structure of R that you can look things up quickly. This is why there is so much specialised jargon in coding; it's easier to google "adding `r glossary("vector", "vectors")` in R" than "adding lists of things that are the same kind of data in R".
+
+### Function Help
+
+Start up help in a browser using the function `help.start()`.
+
+If a function is in `r glossary("base R")` or a loaded `r glossary("package")`, you can use the `help("function_name")` function or the `?function_name` shortcut to access the help file. If the package isn't loaded, specify the package name as the second argument to the help function.
+
+```{r help, eval = FALSE}
+# these methods are all equivalent ways of getting help
+help("rnorm")
+?rnorm
+help("rnorm", package="stats") 
+```
+
+When the package isn't loaded or you aren't sure what package the function is in, use the shortcut `??function_name`.
+
+::: {.try data-latex=""}
+
+* What is the first argument to the `mean` function? `r mcq(c("trim", "na.rm", "mean", answer="x"))`
+* What package is `read_excel` in? `r mcq(c("readr", answer="readxl", "base", "stats"))`
+:::
+
+### Googling
+
+If the function help doesn't help, or you're not even sure what function you need, try Googling your question. It will take some practice to be able to use the right jargon in your search terms to get what you want. It helps to put "R" or "rstats", or "tidyverse" in the search text, or the name of the relevant package, like `r pkg("ggplot2")`. 
+
+### Vignettes
+
+Many packages, especially [tidyverse](https://www.tidyverse.org/packages/){target="_blank"} ones, have helpful websites with vignettes explaining how to use their functions. Some of the vignettes are also available inside R. 
+```{r, eval = FALSE}
+# opens a list of available vignettes
+vignette(package = "ggplot2")
+
+# opens a specific vignette in the Help pane
+vignette("ggplot2-specs", package = "ggplot2")
+```
 
 
 ## Glossary  {#glossaryintro}

@@ -2,7 +2,7 @@
 title: Data Skills for Reproducible Research
 subtitle: v2
 authors: "Lisa DeBruine & Dale Barr"
-date: "`r Sys.Date()`"
+date: "2021-09-21"
 site: bookdown::bookdown_site
 documentclass: book
 classoption: oneside # for PDFs
@@ -38,7 +38,8 @@ The book is also available in [PDF](reprores-v2.pdf), [ePub](reprores-v2.epub) a
 * [reprores](https://github.com/psyteachr/reprores-v2){target="_blank"}
     This is a custom R package for this course. You can install it with the code below. It will download all of the packages that are used in the book, along with an offline copy of this book, the shiny apps used in the book, and the exercises.
     
-    ```{r, eval = FALSE}
+    
+    ```r
     devtools::install_github("psyteachr/reprores-v2")
     ```
 
@@ -77,9 +78,4 @@ This book is a work in progress, so you might find errors. Please help me fix th
 - [Style guide for R programming](http://style.tidyverse.org)
 - [#rstats on twitter](https://twitter.com/search?q=%2523rstats) highly recommended!
 
-```{r include=FALSE}
-# automatically create a bib database for R packages
-knitr::write_bib(c(
-  .packages(), 'bookdown', 'knitr', 'rmarkdown', 'tinytex'
-), 'packages.bib')
-```
+

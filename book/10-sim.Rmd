@@ -848,7 +848,7 @@ ggplot(power_table, aes(n, power)) +
 ## Further Resources {#resources8}
 
 * [Distribution Shiny App](http://shiny.psy.gla.ac.uk/debruine/simulate/) (or run `reprores::app("simulate")`
-* [Simulation tutorials](https://debruine.github.io/tutorials/sim-data.html)
+* [Simulation tutorials](https://debruine.github.io/data-sim-workshops/) by Lisa DeBruine
 * [Chapter 21: Iteration](http://r4ds.had.co.nz/iteration.html)  of *R for Data Science*
 * [Improving your statistical inferences](https://www.coursera.org/learn/statistical-inferences/) on Coursera (week 1)
 * [Faux](https://debruine.github.io/faux/) package for data simulation
