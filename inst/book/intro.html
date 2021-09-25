@@ -5,16 +5,16 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <title>Chapter 1 Getting Started | Data Skills for Reproducible Research</title>
-<meta name="description" content="1.1 Learning Objectives Understand the components of the RStudio IDE (video) Type commands into the console (video) Understand function syntax (video) Install a package (video)   1.2 What is R?  R...">
-<meta name="generator" content="bookdown 0.23 with bs4_book()">
+<meta name="description" content="1.1 Learning Objectives Understand the components of the RStudio IDE (video) Type commands into the console (video) Understand coding terms and function syntax (video) Install a package (video)...">
+<meta name="generator" content="bookdown 0.24 with bs4_book()">
 <meta property="og:title" content="Chapter 1 Getting Started | Data Skills for Reproducible Research">
 <meta property="og:type" content="book">
 <meta property="og:url" content="https://psyteachr.github.io/reprores-v2/intro.html">
 <meta property="og:image" content="https://psyteachr.github.io/reprores-v2/images/logos/logo.png">
-<meta property="og:description" content="1.1 Learning Objectives Understand the components of the RStudio IDE (video) Type commands into the console (video) Understand function syntax (video) Install a package (video)   1.2 What is R?  R...">
+<meta property="og:description" content="1.1 Learning Objectives Understand the components of the RStudio IDE (video) Type commands into the console (video) Understand coding terms and function syntax (video) Install a package (video)...">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Chapter 1 Getting Started | Data Skills for Reproducible Research">
-<meta name="twitter:description" content="1.1 Learning Objectives Understand the components of the RStudio IDE (video) Type commands into the console (video) Understand function syntax (video) Install a package (video)   1.2 What is R?  R...">
+<meta name="twitter:description" content="1.1 Learning Objectives Understand the components of the RStudio IDE (video) Type commands into the console (video) Understand coding terms and function syntax (video) Install a package (video)...">
 <meta name="twitter:image" content="https://psyteachr.github.io/reprores-v2/images/logos/logo.png">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/header-attrs-2.10.6/header-attrs.js"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
@@ -95,15 +95,17 @@
 </li>
 <li>Type commands into the <a href="intro.html#console">console</a> <a href="https://youtu.be/wbI4c_7y0kE" class="video">(video)</a>
 </li>
-<li>Understand <a href="intro.html#function_syx">function syntax</a> <a href="https://youtu.be/X5P038N5Q8I" class="video">(video)</a>
+<li>Understand <a href="intro.html#coding-terms">coding terms</a> and <a href="intro.html#function_syx">function syntax</a> <a href="https://youtu.be/X5P038N5Q8I" class="video">(video)</a>
 </li>
 <li>Install a <a href="intro.html#install-package">package</a> <a href="https://youtu.be/u_pvHnqkVCE" class="video">(video)</a>
 </li>
+<li>Know the methods for getting <a href="intro.html#help">help</a>
+</li>
 </ol>
 </div>
-<div id="what-is-r" class="section level2" number="1.2">
+<div id="r-and-rstudio" class="section level2" number="1.2">
 <h2>
-<span class="header-section-number">1.2</span> What is R?<a class="anchor" aria-label="anchor" href="#what-is-r"><i class="fas fa-link"></i></a>
+<span class="header-section-number">1.2</span> R and RStudio<a class="anchor" aria-label="anchor" href="#r-and-rstudio"><i class="fas fa-link"></i></a>
 </h2>
 <div class="meme left">
 <img src="images/intro/new_R_logo.png">
@@ -174,14 +176,10 @@ Figure 1.3: Alter these settings for increased reproducibility.
 </div>
 </div>
 </div>
-<div id="getting-started" class="section level2" number="1.3">
+<div id="console" class="section level2" number="1.3">
 <h2>
-<span class="header-section-number">1.3</span> Getting Started<a class="anchor" aria-label="anchor" href="#getting-started"><i class="fas fa-link"></i></a>
+<span class="header-section-number">1.3</span> Console commands<a class="anchor" aria-label="anchor" href="#console"><i class="fas fa-link"></i></a>
 </h2>
-<div id="console" class="section level3" number="1.3.1">
-<h3>
-<span class="header-section-number">1.3.1</span> Console commands<a class="anchor" aria-label="anchor" href="#console"><i class="fas fa-link"></i></a>
-</h3>
 <p>We are first going to learn about how to interact with the <a class="glossary" target="_blank" title="The pane in RStudio where you can type in commands and view output messages." href="https://psyteachr.github.io/glossary/c#console">console</a>. In general, you will be developing R <a class="glossary" target="_blank" title="A plain-text file that contains commands in a coding language, such as R." href="https://psyteachr.github.io/glossary/s#script">scripts</a> or <a class="glossary" target="_blank" title="The R-specific version of markdown: a way to specify formatting, such as headers, paragraphs, lists, bolding, and links, as well as code blocks and inline code." href="https://psyteachr.github.io/glossary/r#r-markdown">R Markdown</a> files, rather than working directly in the console window. However, you can consider the console a kind of "sandbox" where you can try out lines of code and adapt them until you get them to do what you want. Then you can copy them back into the script editor.</p>
 <p>Mostly, however, you will be typing into the script editor window (either into an R script or an R Markdown file) and then sending the commands to the console by placing the cursor on the line and holding down the Ctrl key while you press Enter. The Ctrl+Enter key sequence sends the command in the script to the console.</p>
 <div class="meme right">
@@ -230,9 +228,13 @@ He turned to me as if to say, \"Hurry boy, it's waiting there for you\"
 ## 
 ## - Toto</code></pre>
 </div>
-<div id="vars" class="section level3" number="1.3.2">
+<div id="coding-terms" class="section level2" number="1.4">
+<h2>
+<span class="header-section-number">1.4</span> Coding Terms<a class="anchor" aria-label="anchor" href="#coding-terms"><i class="fas fa-link"></i></a>
+</h2>
+<div id="vars" class="section level3" number="1.4.1">
 <h3>
-<span class="header-section-number">1.3.2</span> Objects<a class="anchor" aria-label="anchor" href="#vars"><i class="fas fa-link"></i></a>
+<span class="header-section-number">1.4.1</span> Objects<a class="anchor" aria-label="anchor" href="#vars"><i class="fas fa-link"></i></a>
 </h3>
 <p>Often you want to store the result of some computation for later use. You can store it in an <a class="glossary" target="_blank" title="A word that identifies and stores the value of some data for later use." href="https://psyteachr.github.io/glossary/o#object">object</a> (also sometimes called a <a class="glossary" target="_blank" title="A word that identifies and stores the value of some data for later use." href="https://psyteachr.github.io/glossary/v#variable">variable</a>). An object in R:</p>
 <ul>
@@ -309,9 +311,9 @@ He turned to me as if to say, \"Hurry boy, it's waiting there for you\"
 </ul>
 </div>
 </div>
-<div id="the-environment" class="section level3" number="1.3.3">
+<div id="the-environment" class="section level3" number="1.4.2">
 <h3>
-<span class="header-section-number">1.3.3</span> The environment<a class="anchor" aria-label="anchor" href="#the-environment"><i class="fas fa-link"></i></a>
+<span class="header-section-number">1.4.2</span> The environment<a class="anchor" aria-label="anchor" href="#the-environment"><i class="fas fa-link"></i></a>
 </h3>
 <p>Any time you assign something to a new object, R creates a new entry in the <a class="glossary" target="_blank" title="The interactive workspace where your script runs" href="https://psyteachr.github.io/glossary/g#global-environment">global environment</a>. Objects in the global environment exist until you end your session; then they disappear forever (unless you save them).</p>
 <p>Look at the <strong><code>Environment</code></strong> tab in the upper right pane. It lists all of the objects you have created. Click the broom icon to clear all of the objects and start fresh. You can also use the following functions in the console to view all objects, remove one object, or remove all objects.</p>
@@ -323,9 +325,9 @@ He turned to me as if to say, \"Hurry boy, it's waiting there for you\"
 <p>In the upper right corner of the Environment tab, change <strong><code>List</code></strong> to <strong><code>Grid</code></strong>. Now you can see the type, length, and size of your objects, and reorder the list by any of these attributes.</p>
 </div>
 </div>
-<div id="whitespace" class="section level3" number="1.3.4">
+<div id="whitespace" class="section level3" number="1.4.3">
 <h3>
-<span class="header-section-number">1.3.4</span> Whitespace<a class="anchor" aria-label="anchor" href="#whitespace"><i class="fas fa-link"></i></a>
+<span class="header-section-number">1.4.3</span> Whitespace<a class="anchor" aria-label="anchor" href="#whitespace"><i class="fas fa-link"></i></a>
 </h3>
 <p>R mostly ignores <a class="glossary" target="_blank" title="Spaces, tabs and line breaks" href="https://psyteachr.github.io/glossary/w#whitespace">whitespace</a>: spaces, tabs, and line breaks. This means that you can use whitespace to help you organise your code.</p>
 <div class="sourceCode" id="cb19"><pre class="downlit sourceCode r">
@@ -354,12 +356,12 @@ He turned to me as if to say, \"Hurry boy, it's waiting there for you\"
 ## The line broke, the monkey got choked  
 ## And they all went to heaven in a little rowboat</code></pre>
 </div>
-<div id="function_syx" class="section level3" number="1.3.5">
+<div id="function_syx" class="section level3" number="1.4.4">
 <h3>
-<span class="header-section-number">1.3.5</span> Function syntax<a class="anchor" aria-label="anchor" href="#function_syx"><i class="fas fa-link"></i></a>
+<span class="header-section-number">1.4.4</span> Function syntax<a class="anchor" aria-label="anchor" href="#function_syx"><i class="fas fa-link"></i></a>
 </h3>
 <p>A lot of what you do in R involves calling a <a class="glossary" target="_blank" title="A named section of code that can be reused." href="https://psyteachr.github.io/glossary/f#function">function</a> and storing the results. A function is a named section of code that can be reused.</p>
-<p>For example, <code>sd</code> is a function that returns the <a class="glossary" target="_blank" title="A descriptive statistic that measures how spread out data are relative to the mean." href="https://psyteachr.github.io/glossary/s#standard-deviation">standard deviation</a> of the <a class="glossary" target="_blank" title="A type of data structure that is basically a list of things like T/F values, numbers, or strings." href="https://psyteachr.github.io/glossary/v#vector">vector</a> of numbers that you provide as the input <a class="glossary" target="_blank" title="A variable that provides input to a function." href="https://psyteachr.github.io/glossary/a#argument">argument</a>. Functions are set up like this:</p>
+<p>For example, <code>sd</code> is a function that returns the <a class="glossary" target="_blank" title="A descriptive statistic that measures how spread out data are relative to the mean." href="https://psyteachr.github.io/glossary/s#standard-deviation">standard deviation</a> of the <a class="glossary" target="_blank" title="A type of data structure that collects values with the same data type, like T/F values, numbers, or strings." href="https://psyteachr.github.io/glossary/v#vector">vector</a> of numbers that you provide as the input <a class="glossary" target="_blank" title="A variable that provides input to a function." href="https://psyteachr.github.io/glossary/a#argument">argument</a>. Functions are set up like this:</p>
 <div class="sourceCode" id="cb24"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu">function_name</span><span class="op">(</span><span class="va">argument1</span>, argument2 <span class="op">=</span> <span class="st">"value"</span><span class="op">)</span></code></pre></div>
 <p>The arguments in parentheses can be named (e.g., <code>argument1 = 10</code>) or you can skip the names if you put them in the exact same order that they're defined in the function. You can check this by typing <code><a href="https://rdrr.io/r/stats/sd.html">?sd</a></code> (or whatever function name you're looking up) into the console and the Help pane will show you the default order under <strong>Usage</strong>. You can skip arguments that have a default value specified.</p>
@@ -374,23 +376,23 @@ He turned to me as if to say, \"Hurry boy, it's waiting there for you\"
 <p>If you want 10 random numbers from a normal distribution with mean of 0 and standard deviation, you can just use the defaults.</p>
 <div class="sourceCode" id="cb28"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span><span class="fl">10</span><span class="op">)</span></code></pre></div>
-<pre><code>##  [1] -0.78185904 -0.19731608  0.20082260  0.48130491 -0.02560774 -0.16625062
-##  [7]  2.22746583  0.73298835 -0.65036817  0.42178258</code></pre>
+<pre><code>##  [1]  0.2114796  1.7258784  0.3250602  0.2062184 -0.9869948 -3.5992797
+##  [7] -1.2071569 -0.9118389 -1.0975608 -0.3948670</code></pre>
 <p>If you want 10 numbers from a normal distribution with a mean of 100:</p>
 <div class="sourceCode" id="cb30"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span><span class="fl">10</span>, <span class="fl">100</span><span class="op">)</span></code></pre></div>
-<pre><code>##  [1]  99.86542  98.70812  98.72601 100.84847  99.39616 100.76876 102.58909
-##  [8] 101.88033 100.34079 100.75561</code></pre>
+<pre><code>##  [1]  98.73818  97.69398 101.53352  99.82588  99.80927  99.99922 101.24333
+##  [8]  99.55582 100.07431  99.76865</code></pre>
 <p>This would be an equivalent but less efficient way of calling the function:</p>
 <div class="sourceCode" id="cb32"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span>n <span class="op">=</span> <span class="fl">10</span>, mean <span class="op">=</span> <span class="fl">100</span><span class="op">)</span></code></pre></div>
-<pre><code>##  [1] 100.61314 101.03146 100.88264 101.36429 101.37770  99.71442 100.06746
-##  [8] 100.42275  99.82964  98.78452</code></pre>
+<pre><code>##  [1]  99.82777 101.40314 100.06942 101.24027  98.98366 100.79356  99.22346
+##  [8] 100.73277  99.96829  99.09531</code></pre>
 <p>We don't need to name the arguments because R will recognize that we intended to fill in the first and second arguments by their position in the function call. However, if we want to change the default for an argument coming later in the list, then we need to name it. For instance, if we wanted to keep the default <code>mean = 0</code> but change the standard deviation to 100, we would do it this way:</p>
 <div class="sourceCode" id="cb34"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span><span class="fl">10</span>, sd <span class="op">=</span> <span class="fl">100</span><span class="op">)</span></code></pre></div>
-<pre><code>##  [1]    9.998249  -12.196486   54.748047  -34.410534 -123.305285  -68.369054
-##  [7]   31.755734   17.436676   44.322710   79.945858</code></pre>
+<pre><code>##  [1]   56.54831  -19.50086   10.09649 -127.14808  143.07223  115.36135
+##  [7] -156.89073  -18.75795  187.06075   35.81077</code></pre>
 <p>Some functions give a list of options after an argument; this means the default value is the first option. The usage entry for the <code><span class="fu"><a href="https://rdrr.io/r/stats/power.t.test.html">power.t.test</a></span><span class="op">(</span><span class="op">)</span></code> function looks like this:</p>
 <div class="sourceCode" id="cb36"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/stats/power.t.test.html">power.t.test</a></span><span class="op">(</span>n <span class="op">=</span> <span class="cn">NULL</span>, delta <span class="op">=</span> <span class="cn">NULL</span>, sd <span class="op">=</span> <span class="fl">1</span>, sig.level <span class="op">=</span> <span class="fl">0.05</span>,
@@ -402,65 +404,36 @@ He turned to me as if to say, \"Hurry boy, it's waiting there for you\"
 <ul>
 <li>What is the default value for <code>sd</code>? <select class="webex-select"><option value="blank"></option>
 <option value="answer">1</option>
-<option value="">two.sample</option>
 <option value="">0.05</option>
-<option value="">NULL</option></select>
+<option value="">NULL</option>
+<option value="">two.sample</option></select>
 </li>
 <li>What is the default value for <code>type</code>? <select class="webex-select"><option value="blank"></option>
-<option value="">NULL</option>
-<option value="">paired</option>
+<option value="">one.sample</option>
 <option value="answer">two.sample</option>
-<option value="">one.sample</option></select>
+<option value="">paired</option>
+<option value="">NULL</option></select>
 </li>
 <li>Which is equivalent to <code><span class="fu"><a href="https://rdrr.io/r/stats/power.t.test.html">power.t.test</a></span><span class="op">(</span><span class="fl">100</span>, <span class="fl">0.5</span><span class="op">)</span></code>?
-<div id="radio_VATKQDUOXM" class="webex-radiogroup">
-<label><input type="radio" autocomplete="off" name="radio_VATKQDUOXM" value=""><span>power.t.test()</span></label><label><input type="radio" autocomplete="off" name="radio_VATKQDUOXM" value=""><span>power.t.test(100, 0.5, sig.level = 1, sd = 0.05)</span></label><label><input type="radio" autocomplete="off" name="radio_VATKQDUOXM" value=""><span>power.t.test(n = 100)</span></label><label><input type="radio" autocomplete="off" name="radio_VATKQDUOXM" value="answer"><span>power.t.test(delta = 0.5, n = 100)</span></label>
+<div id="radio_GKFITIZQQI" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_GKFITIZQQI" value="answer"><span>power.t.test(delta = 0.5, n = 100)</span></label><label><input type="radio" autocomplete="off" name="radio_GKFITIZQQI" value=""><span>power.t.test()</span></label><label><input type="radio" autocomplete="off" name="radio_GKFITIZQQI" value=""><span>power.t.test(n = 100)</span></label><label><input type="radio" autocomplete="off" name="radio_GKFITIZQQI" value=""><span>power.t.test(100, 0.5, sig.level = 1, sd = 0.05)</span></label>
 </div>
 </li>
 </ul>
 </div>
 </div>
-<div id="help" class="section level3" number="1.3.6">
-<h3>
-<span class="header-section-number">1.3.6</span> Getting help<a class="anchor" aria-label="anchor" href="#help"><i class="fas fa-link"></i></a>
-</h3>
-<p>Start up help in a browser using the function <code><a href="https://rdrr.io/r/utils/help.start.html">help.start()</a></code>.</p>
-<p>If a function is in <a class="glossary" target="_blank" title="The set of R functions that come with a basic installation of R, before you add external packages" href="https://psyteachr.github.io/glossary/b#base-r">base R</a> or a loaded <a class="glossary" target="_blank" title="A group of R functions." href="https://psyteachr.github.io/glossary/p#package">package</a>, you can use the <code>help("function_name")</code> function or the <code>?function_name</code> shortcut to access the help file. If the package isn't loaded, specify the package name as the second argument to the help function.</p>
-<div class="sourceCode" id="cb37"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="co"># these methods are all equivalent ways of getting help</span>
-<span class="fu"><a href="https://rdrr.io/r/utils/help.html">help</a></span><span class="op">(</span><span class="st">"rnorm"</span><span class="op">)</span>
-<span class="op">?</span><span class="va">rnorm</span>
-<span class="fu"><a href="https://rdrr.io/r/utils/help.html">help</a></span><span class="op">(</span><span class="st">"rnorm"</span>, package<span class="op">=</span><span class="st">"stats"</span><span class="op">)</span> </code></pre></div>
-<p>When the package isn't loaded or you aren't sure what package the function is in, use the shortcut <code>??function_name</code>.</p>
-<div class="try">
-<ul>
-<li>What is the first argument to the <code>mean</code> function? <select class="webex-select"><option value="blank"></option>
-<option value="">trim</option>
-<option value="">na.rm</option>
-<option value="">mean</option>
-<option value="answer">x</option></select>
-</li>
-<li>What package is <code>read_excel</code> in? <select class="webex-select"><option value="blank"></option>
-<option value="">readr</option>
-<option value="answer">readxl</option>
-<option value="">base</option>
-<option value="">stats</option></select>
-</li>
-</ul>
 </div>
-</div>
-</div>
-<div id="install-package" class="section level2" number="1.4">
+<div id="install-package" class="section level2" number="1.5">
 <h2>
-<span class="header-section-number">1.4</span> Add-on packages<a class="anchor" aria-label="anchor" href="#install-package"><i class="fas fa-link"></i></a>
+<span class="header-section-number">1.5</span> Add-on packages<a class="anchor" aria-label="anchor" href="#install-package"><i class="fas fa-link"></i></a>
 </h2>
 <p>One of the great things about R is that it is <strong>user extensible</strong>: anyone can create a new add-on software package that extends its functionality. There are currently thousands of add-on packages that R users have created to solve many different kinds of problems, or just simply to have fun. There are packages for data visualisation, machine learning, neuroimaging, eyetracking, web scraping, and playing games such as Sudoku.</p>
 <p>Add-on packages are not distributed with <a class="glossary" target="_blank" title="The set of R functions that come with a basic installation of R, before you add external packages" href="https://psyteachr.github.io/glossary/b#base-r">base R</a>, but have to be downloaded and installed from an archive, in the same way that you would, for instance, download and install PokemonGo on your smartphone.</p>
 <p>The main repository where packages reside is called <a class="glossary" target="_blank" title="The Comprehensive R Archive Network: a network of ftp and web servers around the world that store identical, up-to-date, versions of code and documentation for R." href="https://psyteachr.github.io/glossary/c#cran">CRAN</a>, the Comprehensive R Archive Network. A package has to pass strict tests devised by the R core team to be allowed to be part of the CRAN archive. You can install from the CRAN archive through R using the <code><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span><span class="op">(</span><span class="op">)</span></code> function.</p>
 <p>There is an important distinction between <strong>installing</strong> a package and <strong>loading</strong> a package.</p>
-<div id="installing-a-package" class="section level3" number="1.4.1">
+<div id="installing-a-package" class="section level3" number="1.5.1">
 <h3>
-<span class="header-section-number">1.4.1</span> Installing a package<a class="anchor" aria-label="anchor" href="#installing-a-package"><i class="fas fa-link"></i></a>
+<span class="header-section-number">1.5.1</span> Installing a package<a class="anchor" aria-label="anchor" href="#installing-a-package"><i class="fas fa-link"></i></a>
 </h3>
 <div class="meme right">
 <img src="images/memes/pokemon.gif">
@@ -470,7 +443,7 @@ He turned to me as if to say, \"Hurry boy, it's waiting there for you\"
 <p>You may only be able to permanently install packages if you are using R on your own system; you may not be able to do this on public workstations if you lack the appropriate privileges.</p>
 </div>
 <p>Install the <code class="package">esquisse</code> package on your system. This package lets you create plots interactively and copy the code needed to make them reproducibly.</p>
-<div class="sourceCode" id="cb38"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb37"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># type this in the console pane</span>
 <span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span><span class="op">(</span><span class="st">"esquisse"</span><span class="op">)</span></code></pre></div>
 <p>If you don't already have packages like <code class="package">ggplot2</code> and <code class="package">shiny</code> installed, it will also install these <strong>dependencies</strong> for you. If you don't get an error message at the end, the installation was successful.</p>
@@ -478,25 +451,25 @@ He turned to me as if to say, \"Hurry boy, it's waiting there for you\"
 <p>Never install a package from inside a script. Only do this from the console pane.</p>
 </div>
 </div>
-<div id="loading-a-package" class="section level3" number="1.4.2">
+<div id="loading-a-package" class="section level3" number="1.5.2">
 <h3>
-<span class="header-section-number">1.4.2</span> Loading a package<a class="anchor" aria-label="anchor" href="#loading-a-package"><i class="fas fa-link"></i></a>
+<span class="header-section-number">1.5.2</span> Loading a package<a class="anchor" aria-label="anchor" href="#loading-a-package"><i class="fas fa-link"></i></a>
 </h3>
 <p>This is done using <code><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">packagename</span><span class="op">)</span></code>. This is like <strong>launching</strong> an app on your phone: the functionality is only there where the app is launched and remains there until you close the app or restart. Likewise, when you run <code><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">packagename</span><span class="op">)</span></code> within a session, the functionality of the package referred to by <code>packagename</code> will be made available for your R session. The next time you start R, you will need to run the <code><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="op">)</span></code> function again if you want to access its functionality.</p>
 <p>You can load the functions in <code class="package">esquisse</code> for your current R session as follows:</p>
-<div class="sourceCode" id="cb39"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb38"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/dreamRs/esquisse">esquisse</a></span><span class="op">)</span></code></pre></div>
 <p>You might get some red text when you load a package, this is normal. It is usually warning you that this package has functions that have the same name as other packages you've already loaded.</p>
 <p>Now you can run the function <code><span class="fu">esquisse</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/esquisse/man/esquisser.html">esquisser</a></span><span class="op">(</span><span class="op">)</span></code>, which runs an interactive plotting example on the built-in dataset <code>diamonds</code> from the <code class="package">ggplot2</code> package.</p>
-<div class="sourceCode" id="cb40"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb39"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu">esquisse</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/esquisse/man/esquisser.html">esquisser</a></span><span class="op">(</span><span class="fu">ggplot2</span><span class="fu">::</span><span class="va"><a href="https://ggplot2.tidyverse.org/reference/diamonds.html">diamonds</a></span><span class="op">)</span></code></pre></div>
 <div class="info">
 <p>You can use the convention <code>package::function()</code> to indicate in which add-on package a function resides. For instance, if you see <code><span class="fu">readr</span><span class="fu">::</span><span class="fu"><a href="https://readr.tidyverse.org/reference/read_delim.html">read_csv</a></span><span class="op">(</span><span class="op">)</span></code>, that refers to the function <code><span class="fu">read_csv</span><span class="op">(</span><span class="op">)</span></code> in the <code class="package">readr</code> add-on package.</p>
 </div>
 </div>
-<div id="tidyverse" class="section level3" number="1.4.3">
+<div id="tidyverse" class="section level3" number="1.5.3">
 <h3>
-<span class="header-section-number">1.4.3</span> Tidyverse<a class="anchor" aria-label="anchor" href="#tidyverse"><i class="fas fa-link"></i></a>
+<span class="header-section-number">1.5.3</span> Tidyverse<a class="anchor" aria-label="anchor" href="#tidyverse"><i class="fas fa-link"></i></a>
 </h3>
 <p><code class="package">tidyverse</code>is a meta-package that loads several packages we'll be using in almost every script:</p>
 <ul>
@@ -520,9 +493,9 @@ He turned to me as if to say, \"Hurry boy, it's waiting there for you\"
 </li>
 </ul>
 </div>
-<div id="install-from-github" class="section level3" number="1.4.4">
+<div id="install-from-github" class="section level3" number="1.5.4">
 <h3>
-<span class="header-section-number">1.4.4</span> Install from GitHub<a class="anchor" aria-label="anchor" href="#install-from-github"><i class="fas fa-link"></i></a>
+<span class="header-section-number">1.5.4</span> Install from GitHub<a class="anchor" aria-label="anchor" href="#install-from-github"><i class="fas fa-link"></i></a>
 </h3>
 <p>Many R packages are not yet on <a class="glossary" target="_blank" title="The Comprehensive R Archive Network: a network of ftp and web servers around the world that store identical, up-to-date, versions of code and documentation for R." href="https://psyteachr.github.io/glossary/c#cran">CRAN</a> because they are still in development. Increasingly, datasets and code for papers are available as packages you can download from github. You'll need to install the <code class="package">devtools</code> package to be able to install packages from github. Check if you have a package installed by trying to load it (e.g., if you don't have devtools installed, <code><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://devtools.r-lib.org/">devtools</a></span><span class="op">)</span></code> will display an error message) or by searching for it in the packages tab in the lower right pane. All listed packages are installed; all checked packages are currently loaded.</p>
 <div class="figure" style="text-align: center">
@@ -531,13 +504,13 @@ He turned to me as if to say, \"Hurry boy, it's waiting there for you\"
 Figure 1.4: Check installed and loaded packages in the packages tab in the lower right pane.
 </p>
 </div>
-<div class="sourceCode" id="cb41"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb40"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># install devtools if you get</span>
 <span class="co"># Error in loadNamespace(name) : there is no package called ‘devtools’</span>
 <span class="co"># install.packages("devtools")</span>
 <span class="fu">devtools</span><span class="fu">::</span><span class="fu"><a href="https://devtools.r-lib.org//reference/remote-reexports.html">install_github</a></span><span class="op">(</span><span class="st">"psyteachr/reprores-v2"</span><span class="op">)</span></code></pre></div>
 <p>After you install the <code class="package">reprores</code> package, load it using the <code><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="op">)</span></code> function. You can then try out some of the functions below.</p>
-<div class="sourceCode" id="cb42"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb41"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/psyteachr/reprores-v2">reprores</a></span><span class="op">)</span>
 
 <span class="co"># opens a local copy of this book in your web browser</span>
@@ -552,7 +525,7 @@ Figure 1.4: Check installed and loaded packages in the packages tab in the lower
 <p>How many different ways can you find to discover what functions are available in the <code class="package">reprores</code> package?</p>
 </div>
 <p><code class="package">reprores</code> contains datasets that we will be using in future lessons. <code><span class="fu">getdata</span><span class="op">(</span><span class="op">)</span></code> creates a directory called <code class="path">data</code> with all of the class datasets.</p>
-<div class="sourceCode" id="cb43"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb42"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># loads the disgust dataset</span>
 <span class="fu"><a href="https://rdrr.io/r/utils/data.html">data</a></span><span class="op">(</span><span class="st">"disgust"</span><span class="op">)</span>
 
@@ -563,12 +536,65 @@ Figure 1.4: Check installed and loaded packages in the packages tab in the lower
 <span class="fu"><a href="https://rdrr.io/pkg/reprores/man/getdata.html">getdata</a></span><span class="op">(</span><span class="st">"data"</span><span class="op">)</span></code></pre></div>
 </div>
 </div>
-<div id="glossaryintro" class="section level2" number="1.5">
+<div id="help" class="section level2" number="1.6">
 <h2>
-<span class="header-section-number">1.5</span> Glossary<a class="anchor" aria-label="anchor" href="#glossaryintro"><i class="fas fa-link"></i></a>
+<span class="header-section-number">1.6</span> Getting help<a class="anchor" aria-label="anchor" href="#help"><i class="fas fa-link"></i></a>
+</h2>
+<p>You will feel like you need a <em>lot</em> of help when you're starting to learn. This won't really go away, and it isn't supposed to. Experienced coders are also constantly looking things up; it's impossible to memorise everything. The goal is to learn enough about the structure of R that you can look things up quickly. This is why there is so much specialised jargon in coding; it's easier to google "adding <a class="glossary" target="_blank" title="A type of data structure that collects values with the same data type, like T/F values, numbers, or strings." href="https://psyteachr.github.io/glossary/v#vector">vectors</a> in R" than "adding lists of things that are the same kind of data in R".</p>
+<div id="function-help" class="section level3" number="1.6.1">
+<h3>
+<span class="header-section-number">1.6.1</span> Function Help<a class="anchor" aria-label="anchor" href="#function-help"><i class="fas fa-link"></i></a>
+</h3>
+<p>Start up help in a browser using the function <code><a href="https://rdrr.io/r/utils/help.start.html">help.start()</a></code>.</p>
+<p>If a function is in <a class="glossary" target="_blank" title="The set of R functions that come with a basic installation of R, before you add external packages" href="https://psyteachr.github.io/glossary/b#base-r">base R</a> or a loaded <a class="glossary" target="_blank" title="A group of R functions." href="https://psyteachr.github.io/glossary/p#package">package</a>, you can use the <code>help("function_name")</code> function or the <code>?function_name</code> shortcut to access the help file. If the package isn't loaded, specify the package name as the second argument to the help function.</p>
+<div class="sourceCode" id="cb43"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co"># these methods are all equivalent ways of getting help</span>
+<span class="fu"><a href="https://rdrr.io/r/utils/help.html">help</a></span><span class="op">(</span><span class="st">"rnorm"</span><span class="op">)</span>
+<span class="op">?</span><span class="va">rnorm</span>
+<span class="fu"><a href="https://rdrr.io/r/utils/help.html">help</a></span><span class="op">(</span><span class="st">"rnorm"</span>, package<span class="op">=</span><span class="st">"stats"</span><span class="op">)</span> </code></pre></div>
+<p>When the package isn't loaded or you aren't sure what package the function is in, use the shortcut <code>??function_name</code>.</p>
+<div class="try">
+<ul>
+<li>What is the first argument to the <code>mean</code> function? <select class="webex-select"><option value="blank"></option>
+<option value="">trim</option>
+<option value="">na.rm</option>
+<option value="">mean</option>
+<option value="answer">x</option></select>
+</li>
+<li>What package is <code>read_excel</code> in? <select class="webex-select"><option value="blank"></option>
+<option value="">readr</option>
+<option value="answer">readxl</option>
+<option value="">base</option>
+<option value="">stats</option></select>
+</li>
+</ul>
+</div>
+</div>
+<div id="googling" class="section level3" number="1.6.2">
+<h3>
+<span class="header-section-number">1.6.2</span> Googling<a class="anchor" aria-label="anchor" href="#googling"><i class="fas fa-link"></i></a>
+</h3>
+<p>If the function help doesn't help, or you're not even sure what function you need, try Googling your question. It will take some practice to be able to use the right jargon in your search terms to get what you want. It helps to put "R" or "rstats", or "tidyverse" in the search text, or the name of the relevant package, like <code class="package">ggplot2</code>.</p>
+</div>
+<div id="vignettes" class="section level3" number="1.6.3">
+<h3>
+<span class="header-section-number">1.6.3</span> Vignettes<a class="anchor" aria-label="anchor" href="#vignettes"><i class="fas fa-link"></i></a>
+</h3>
+<p>Many packages, especially <a href="https://www.tidyverse.org/packages/" target="_blank">tidyverse</a> ones, have helpful websites with vignettes explaining how to use their functions. Some of the vignettes are also available inside R.</p>
+<div class="sourceCode" id="cb44"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co"># opens a list of available vignettes</span>
+<span class="fu"><a href="https://rdrr.io/r/utils/vignette.html">vignette</a></span><span class="op">(</span>package <span class="op">=</span> <span class="st">"ggplot2"</span><span class="op">)</span>
+
+<span class="co"># opens a specific vignette in the Help pane</span>
+<span class="fu"><a href="https://rdrr.io/r/utils/vignette.html">vignette</a></span><span class="op">(</span><span class="st">"ggplot2-specs"</span>, package <span class="op">=</span> <span class="st">"ggplot2"</span><span class="op">)</span></code></pre></div>
+</div>
+</div>
+<div id="glossaryintro" class="section level2" number="1.7">
+<h2>
+<span class="header-section-number">1.7</span> Glossary<a class="anchor" aria-label="anchor" href="#glossaryintro"><i class="fas fa-link"></i></a>
 </h2>
 <p>Each chapter ends with a glossary table defining the jargon introduced in this chapter. The links below take you to the <a href="https://psyteachr.github.io/glossary">glossary book</a>, which you can also download for offline use.</p>
-<div class="sourceCode" id="cb44"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb45"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># install the glossary package (only once)</span>
 <span class="fu">devtools</span><span class="fu">::</span><span class="fu"><a href="https://devtools.r-lib.org//reference/remote-reexports.html">install_github</a></span><span class="op">(</span><span class="st">"psyteachr/glossary"</span><span class="op">)</span>
 
@@ -666,7 +692,7 @@ Figure 1.4: Check installed and loaded packages in the packages tab in the lower
 </tr>
 <tr class="odd">
 <td align="left"><a href="https://psyteachr.github.io/glossary/v.html#vector" class="glossary" target="_blank">vector</a></td>
-<td align="left">A type of data structure that is basically a list of things like T/F values, numbers, or strings.</td>
+<td align="left">A type of data structure that collects values with the same data type, like T/F values, numbers, or strings.</td>
 </tr>
 <tr class="even">
 <td align="left"><a href="https://psyteachr.github.io/glossary/w.html#whitespace" class="glossary" target="_blank">whitespace</a></td>
@@ -675,9 +701,9 @@ Figure 1.4: Check installed and loaded packages in the packages tab in the lower
 </tbody>
 </table></div>
 </div>
-<div id="resources-intro" class="section level2" number="1.6">
+<div id="resources-intro" class="section level2" number="1.8">
 <h2>
-<span class="header-section-number">1.6</span> Further Resources<a class="anchor" aria-label="anchor" href="#resources-intro"><i class="fas fa-link"></i></a>
+<span class="header-section-number">1.8</span> Further Resources<a class="anchor" aria-label="anchor" href="#resources-intro"><i class="fas fa-link"></i></a>
 </h2>
 <ul>
 <li>
@@ -687,9 +713,6 @@ Figure 1.4: Check installed and loaded packages in the packages tab in the lower
 <li><a href="https://rstudio.cloud/" target="_blank">RStudio Cloud</a></li>
 </ul>
 </div>
-</div>
-<div class="psyteachr_footer">
-  
 </div>
 <script>
 
@@ -891,32 +914,38 @@ $( document ).ready(function() {
 <li><a class="nav-link" href="#intro"><span class="header-section-number">1</span> Getting Started</a></li>
 <li><a class="nav-link" href="#ilo-intro"><span class="header-section-number">1.1</span> Learning Objectives</a></li>
 <li>
-<a class="nav-link" href="#what-is-r"><span class="header-section-number">1.2</span> What is R?</a><ul class="nav navbar-nav">
+<a class="nav-link" href="#r-and-rstudio"><span class="header-section-number">1.2</span> R and RStudio</a><ul class="nav navbar-nav">
 <li><a class="nav-link" href="#rconsole"><span class="header-section-number">1.2.1</span> The Base R Console</a></li>
 <li><a class="nav-link" href="#rstudio_ide"><span class="header-section-number">1.2.2</span> RStudio</a></li>
 <li><a class="nav-link" href="#configure-rstudio"><span class="header-section-number">1.2.3</span> Configure RStudio</a></li>
 </ul>
 </li>
+<li><a class="nav-link" href="#console"><span class="header-section-number">1.3</span> Console commands</a></li>
 <li>
-<a class="nav-link" href="#getting-started"><span class="header-section-number">1.3</span> Getting Started</a><ul class="nav navbar-nav">
-<li><a class="nav-link" href="#console"><span class="header-section-number">1.3.1</span> Console commands</a></li>
-<li><a class="nav-link" href="#vars"><span class="header-section-number">1.3.2</span> Objects</a></li>
-<li><a class="nav-link" href="#the-environment"><span class="header-section-number">1.3.3</span> The environment</a></li>
-<li><a class="nav-link" href="#whitespace"><span class="header-section-number">1.3.4</span> Whitespace</a></li>
-<li><a class="nav-link" href="#function_syx"><span class="header-section-number">1.3.5</span> Function syntax</a></li>
-<li><a class="nav-link" href="#help"><span class="header-section-number">1.3.6</span> Getting help</a></li>
+<a class="nav-link" href="#coding-terms"><span class="header-section-number">1.4</span> Coding Terms</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#vars"><span class="header-section-number">1.4.1</span> Objects</a></li>
+<li><a class="nav-link" href="#the-environment"><span class="header-section-number">1.4.2</span> The environment</a></li>
+<li><a class="nav-link" href="#whitespace"><span class="header-section-number">1.4.3</span> Whitespace</a></li>
+<li><a class="nav-link" href="#function_syx"><span class="header-section-number">1.4.4</span> Function syntax</a></li>
 </ul>
 </li>
 <li>
-<a class="nav-link" href="#install-package"><span class="header-section-number">1.4</span> Add-on packages</a><ul class="nav navbar-nav">
-<li><a class="nav-link" href="#installing-a-package"><span class="header-section-number">1.4.1</span> Installing a package</a></li>
-<li><a class="nav-link" href="#loading-a-package"><span class="header-section-number">1.4.2</span> Loading a package</a></li>
-<li><a class="nav-link" href="#tidyverse"><span class="header-section-number">1.4.3</span> Tidyverse</a></li>
-<li><a class="nav-link" href="#install-from-github"><span class="header-section-number">1.4.4</span> Install from GitHub</a></li>
+<a class="nav-link" href="#install-package"><span class="header-section-number">1.5</span> Add-on packages</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#installing-a-package"><span class="header-section-number">1.5.1</span> Installing a package</a></li>
+<li><a class="nav-link" href="#loading-a-package"><span class="header-section-number">1.5.2</span> Loading a package</a></li>
+<li><a class="nav-link" href="#tidyverse"><span class="header-section-number">1.5.3</span> Tidyverse</a></li>
+<li><a class="nav-link" href="#install-from-github"><span class="header-section-number">1.5.4</span> Install from GitHub</a></li>
 </ul>
 </li>
-<li><a class="nav-link" href="#glossaryintro"><span class="header-section-number">1.5</span> Glossary</a></li>
-<li><a class="nav-link" href="#resources-intro"><span class="header-section-number">1.6</span> Further Resources</a></li>
+<li>
+<a class="nav-link" href="#help"><span class="header-section-number">1.6</span> Getting help</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#function-help"><span class="header-section-number">1.6.1</span> Function Help</a></li>
+<li><a class="nav-link" href="#googling"><span class="header-section-number">1.6.2</span> Googling</a></li>
+<li><a class="nav-link" href="#vignettes"><span class="header-section-number">1.6.3</span> Vignettes</a></li>
+</ul>
+</li>
+<li><a class="nav-link" href="#glossaryintro"><span class="header-section-number">1.7</span> Glossary</a></li>
+<li><a class="nav-link" href="#resources-intro"><span class="header-section-number">1.8</span> Further Resources</a></li>
 </ul>
 
       <div class="book-extra">
@@ -934,7 +963,7 @@ $( document ).ready(function() {
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Data Skills for Reproducible Research</strong>: v2" was written by . It was last built on 2021-09-20.</p>
+    <p>"<strong>Data Skills for Reproducible Research</strong>: v2" was written by . It was last built on 2021-09-25.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

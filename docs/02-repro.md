@@ -41,97 +41,115 @@ We will make reproducible reports following the principles of [literate programm
 
 ## Organising a project {#projects}
 
-First, we need to get orgainsed.
+First, we need to get organised. <a class='glossary' target='_blank' title='A way to organise related files in RStudio' href='https://psyteachr.github.io/glossary/p#project'>Projects</a> in RStudio are a way to group all of the files you need for one project. Most projects include scripts, data files, and output files like the PDF report created by the script or images. 
 
-<a class='glossary' target='_blank' title='A way to organise related files in RStudio' href='https://psyteachr.github.io/glossary/p#project'>Projects</a> in RStudio are a way to group all of the files you need for one project. Most projects include scripts, data files, and output files like the PDF version of the script or images.
+### File System
 
-::: {.try data-latex=""}
-Make a new <a class='glossary' target='_blank' title='A collection or "folder" of files on a computer.' href='https://psyteachr.github.io/glossary/d#directory'>directory</a> where you will keep all of your materials for this class. If you're using a lab computer, make sure you make this directory in your network drive so you can access it from other computers. 
+Modern computers tend to hide the file system from users, but we need to understand a little bit about how files are stored on your computer in order to get a script to find your data. Your computer's file system is like a big box (or <a class='glossary' target='_blank' title='A collection or "folder" of files on a computer.' href='https://psyteachr.github.io/glossary/d#directory'>directory</a>) that contains both files and smaller boxes, or "subdirectories". You can specify the location of a file with its name and the names of all the directories it is inside.
 
-Choose **`New Project...`** under the **`File`** menu to create a new project called <code class='path'>01-repro</code> in this directory.
-:::
-
+For example, if Lisa is looking for a file called `report.Rmd`on their Desktop, they can specify the full file <a class='glossary' target='_blank' title='A string representing the location of a file or directory.' href='https://psyteachr.github.io/glossary/p#path'>path</a> like this: `/Users/lisad/Desktop/report.Rmd`, because the `Desktop` directory is inside the `lisad` directory, which is inside the `Users` directory, which is located at the base of the whole file system. If that file was on *your* desktop, you would probably have a different path unless your user directory is also called `lisad`. You can also use the `~` shortcut to represent the user directory of the person who is currently logged in, like this: `~/Desktop/report.Rmd`.
 
 ### Working Directory
 
-Where should you put all of your files? When developing an analysis, you usually want to have all of your scripts and data files in one subtree of your computer's directory structure. Usually there is a single <a class='glossary' target='_blank' title='The filepath where R is currently reading and writing files.' href='https://psyteachr.github.io/glossary/w#working-directory'>working directory</a> where your data and scripts are stored.
+Where should you put all of your files? You usually want to have all of your scripts and data files for a single project inside one folder on your computer, the <a class='glossary' target='_blank' title='The filepath where R is currently reading and writing files.' href='https://psyteachr.github.io/glossary/w#working-directory'>working directory</a> for that project. You can organise files in subdirectories inside this main project directory, such as putting all raw data files in a directory called <code class='path'>data</code> and saving any image files to a directory called <code class='path'>images</code>.
 
 Your script should only reference files in three locations, using the appropriate format.
 
-| Where                    | Example |
-|--------------------------|---------|
-| on the web               | "https://psyteachr.github.io/reprores/data/disgust_scores.csv" |
-| in the working directory | "disgust_scores.csv"  |
-| in a subdirectory        | "data/disgust_scores.csv" |
+| Where                    | Example                                                          |
+|--------------------------|------------------------------------------------------------------|
+| on the web               | "<https://psyteachr.github.io/ads-v1/data/widgets_gadgets.xlsx>" |
+| in the working directory | "widgets_gadgets.xlsx"                                           |
+| in a subdirectory        | "data/widgets_gadgets.xlsx"                                      |
 
 ::: {.warning data-latex=""}
-Never set or change your working directory in a script. 
+Never set or change your working directory in a script.
 :::
 
-If you are working with an R Markdown file, it will automatically use the same directory the .Rmd file is in as the working directory. 
+R Markdown files will automatically use the same directory the .Rmd file is in as the working directory.
 
-If you are working with R scripts, store your main script file in the top-level directory and manually set your working directory to that location. You will have to reset the working directory each time you open RStudio, unless you create a <a class='glossary' target='_blank' title='A way to organise related files in RStudio' href='https://psyteachr.github.io/glossary/p#project'>project</a> and access the script from the project. 
-
-For instance, if you are on a Windows machine your data and scripts are in the directory <code class='path'>C:\Carla's_files\thesis2\my_thesis\new_analysis</code>, you will set your working directory in one of two ways: (1) by going to the **`Session`** pull down menu in RStudio and choosing **`Set Working Directory`**, or (2) by typing <code><span class='fu'><a href='https://rdrr.io/r/base/getwd.html'>setwd</a></span><span class='op'>(</span><span class='st'>"C:/Carla's_files/thesis2/my_thesis/new_analysis"</span><span class='op'>)</span></code> in the console window.
-
-::: {.warning data-latex=""}
-It's tempting to make your life simple by putting the <code><span class='fu'><a href='https://rdrr.io/r/base/getwd.html'>setwd</a></span><span class='op'>(</span><span class='op'>)</span></code> command in your script. Don't do this! Others will not have the same directory tree as you (and when your laptop dies and you get a new one, neither will you).
-
-When manually setting the working directory, always do so by using the **`Session > Set Working Directory`** pull-down option or by typing <code><span class='fu'><a href='https://rdrr.io/r/base/getwd.html'>setwd</a></span><span class='op'>(</span><span class='op'>)</span></code> in the console.
-:::
-
-If your script needs a file in a subdirectory of <code class='path'>new_analysis</code>, say, <code class='path'>data/questionnaire.csv</code>, load it in using a <a class='glossary' target='_blank' title='The location of a file in relation to the working directory.' href='https://psyteachr.github.io/glossary/r#relative-path'>relative path</a> so that it is accessible if you move the folder <code class='path'>new_analysis</code> to another location or computer:
+If your script needs a file in a subdirectory of your working directory, such as, <code class='path'>data/widgets_gadgets.xlsx</code>, load it in using a <a class='glossary' target='_blank' title='The location of a file in relation to the working directory.' href='https://psyteachr.github.io/glossary/r#relative-path'>relative path</a> so that it is accessible if you move the working directory to another location or computer:
 
 
 ```r
-dat <- read_csv("data/questionnaire.csv")  # correct
+dat <- read_csv("data/widgets_gadgets.xlsx")  # correct
 ```
 
 Do not load it in using an <a class='glossary' target='_blank' title='A file path that starts with / and is not appended to the working directory' href='https://psyteachr.github.io/glossary/a#absolute-path'>absolute path</a>:
 
 
 ```r
-dat <- read_csv("C:/Carla's_files/thesis22/my_thesis/new_analysis/data/questionnaire.csv")   # wrong
+dat <- read_csv("C:/My Files/2020-2021/data/widgets_gadgets.xlsx")   # wrong
 ```
 
 ::: {.info data-latex=""}
-Also note the convention of using forward slashes, unlike the Windows-specific convention of using backward slashes. This is to make references to files platform independent.
+Also note the convention of using forward slashes, unlike the Windows-specific convention of using backward slashes. This is to make references to files work for everyone, regardless of their operating system.
 :::
 
 ### Naming Things
 
-There are two perfect guides to naming files: Jenny Bryan's [How to name files](https://speakerdeck.com/jennybc/how-to-name-files){target="_blank"} and Danielle Navarro's [Project Structure](https://slides.djnavarro.net/project-structure/){target="_blank"} (which also has a YouTube video). I really recommend you check those out, but I'll list the most important principles here:
+Name files so that both people and computers can easily find things. Here are some important principles:
 
-* file and directory names should only contain letters, numbers, dashes, and underscores, with a full stop (`.`) between the file name and <a class='glossary' target='_blank' title='The end part of a file name that tells you what type of file it is (e.g., .R or .Rmd).' href='https://psyteachr.github.io/glossary/e#extension'>extension</a> (that means no spaces!)
-* be consistent with capitalisation (I prefer to never use it to make it easy to remember)
-* use underscores (`_`) to separate parts of the file name, and dashes (`-`) to separate words in a section
-* name files with a pattern that alphabetises in a sensible order and makes it easy for you to find the file you're looking for
-* prefix a filename with an underscore to move it to the top of the list, or prefix all files with numbers to control their order
+-   file and directory names should only contain letters, numbers, dashes, and underscores, with a full stop (`.`) between the file name and <a class='glossary' target='_blank' title='The end part of a file name that tells you what type of file it is (e.g., .R or .Rmd).' href='https://psyteachr.github.io/glossary/e#extension'>extension</a> (that means no spaces!)
+-   be consistent with capitalisation (set a rule to make it easy to remember, like always use lowercase)
+-   use underscores (`_`) to separate parts of the file name, and dashes (`-`) to separate words in a section
+-   name files with a pattern that alphabetises in a sensible order and makes it easy for you to find the file you're looking for
+-   prefix a filename with an underscore to move it to the top of the list, or prefix all files with numbers to control their order
 
 For example, these file names are a mess:
 
-* <code class='path'>analysis.R</code>
-* <code class='path'>analysis final.R</code>
-* <code class='path'>Data (Expmnt) 11-15.xls</code>
-* <code class='path'>Experiment Data Nov 12.xls</code>
-* <code class='path'>final analysis2.R</code>
-* <code class='path'>project notes.txt</code>
-* <code class='path'>Subject Data November 15.xls</code>
+-   <code class='path'>report.doc</code>
+-   <code class='path'>report final.doc</code>
+-   <code class='path'>Data (Customers) 11-15.xls</code>
+-   <code class='path'>Customers Data Nov 12.xls</code>
+-   <code class='path'>final report2.doc</code>
+-   <code class='path'>project notes.txt</code>
+-   <code class='path'>Vendor Data November 15.xls</code>
 
 Here is one way to structure them so that similar files have the same structure and it's easy for a human to scan the list or to use code to find relevant files. See if you can figure out what the last one should be.
 
-* <code class='path'>_project-notes.txt</code>
-* <code class='path'>analysis_v1.R</code>
-* <code class='path'>analysis_v2.R</code>
-* <code class='path'>analysis_v3.R</code>
-* <code class='path'>data_experiment_2021-11-12.xls</code>
-* <code class='path'>data_experiment_2021-11-15.xls</code>
-* <select class='webex-select'><option value='blank'></option><option value=''>subject-data_2021-11-15.xls</option><option value=''>data-subjects-2021_11_15.xls</option><option value='answer'>data_subjects_2021-11-15.xls</option><option value=''>data_2021-11-15_subjects.xls</option></select>
+-   <code class='path'>_project-notes.txt</code>
+-   <code class='path'>report_v1.doc</code>
+-   <code class='path'>report_v2.doc</code>
+-   <code class='path'>report_v3.doc</code>
+-   <code class='path'>data_customer_2021-11-12.xls</code>
+-   <code class='path'>data_customer_2021-11-15.xls</code>
+-   <select class='webex-select'><option value='blank'></option><option value=''>vendor-data_2021-11-15.xls</option><option value=''>data-vendor-2021_11_15.xls</option><option value='answer'>data_vendor_2021-11-15.xls</option><option value=''>data_2021-11-15_vendor.xls</option></select>
 
 ::: {.try data-latex=""}
-Think of other ways to name the files above. Look at the project directory for your last study and see what you can improve.
+Think of other ways to name the files above. Look at some of your own project files and see what you can improve.
 :::
 
+### Start a Project
+
+Now that we understand how the file system work and how to name things to make it easier for scripts to access them, we're ready to make our first project. 
+
+First, make a new <a class='glossary' target='_blank' title='A collection or "folder" of files on a computer.' href='https://psyteachr.github.io/glossary/d#directory'>directory</a> where you will keep all of your materials for this class. You can set this directory to be the default working directory under the General tab of the Global Options. This means that files will be saved here by default if you aren't working in a project. 
+
+Next, choose **`New Project...`** under the **`File`** menu to create a new project called <code class='path'>02-reports</code>. Make sure you save it inside the directory you just made. RStudio will restart itself and open with this new project directory as the working directory. 
+
+
+```r
+include_graphics(c("images/repro/new_proj_1.png",
+                   "images/repro/new_proj_2.png",
+                   "images/repro/new_proj_3.png"))
+```
+
+<div class="figure" style="text-align: center">
+<img src="images/repro/new_proj_1.png" alt="Starting a new project." width="100%" />
+<p class="caption">(\#fig:unnamed-chunk-2-1)Starting a new project.</p>
+</div><div class="figure" style="text-align: center">
+<img src="images/repro/new_proj_2.png" alt="Starting a new project." width="100%" />
+<p class="caption">(\#fig:unnamed-chunk-2-2)Starting a new project.</p>
+</div><div class="figure" style="text-align: center">
+<img src="images/repro/new_proj_3.png" alt="Starting a new project." width="100%" />
+<p class="caption">(\#fig:unnamed-chunk-2-3)Starting a new project.</p>
+</div>
+
+Click on the Files tab in the lower right pane to see the contents of the project directory. You will see a file called `02-reports.Rproj`, which is a file that contains all of the project information.You can double-click on it to open up the project. 
+
+::: {.info data-latex=""}
+Depending on your settings, you may also see a directory called `.Rproj.user`, which contains your specific user settings. You can ignore this and other "invisible" files that start with a full stop.
+:::
 
 ## R Markdown
 
@@ -269,16 +287,20 @@ pets <- read_csv("https://psyteachr.github.io/reprores/data/pets.csv")
 ```
 
 ```
-## 
+## Rows: 800 Columns: 6
+```
+
+```
 ## ── Column specification ────────────────────────────────────────────────────────
-## cols(
-##   id = col_character(),
-##   pet = col_character(),
-##   country = col_character(),
-##   score = col_double(),
-##   age = col_double(),
-##   weight = col_double()
-## )
+## Delimiter: ","
+## chr (3): id, pet, country
+## dbl (3): score, age, weight
+```
+
+```
+## 
+## ℹ Use `spec()` to retrieve the full column specification for this data.
+## ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
 ```
 
 #### Comments
@@ -349,7 +371,7 @@ knitr::kable(summary_table,
 
 
 
-Table: (\#tab:unnamed-chunk-5)Summary statistics for the pets dataset.
+Table: (\#tab:unnamed-chunk-6)Summary statistics for the pets dataset.
 
 |Pet Type |   N| Mean Weight| Mean Score|
 |:--------|---:|-----------:|----------:|
@@ -383,14 +405,14 @@ ggplot(pets, aes(pet, score, fill = country)) +
 ```
 
 <div class="figure" style="text-align: center">
-<img src="02-repro_files/figure-html/unnamed-chunk-6-1.png" alt="Figure 1. Scores by pet type and country." width="100%" />
-<p class="caption">(\#fig:unnamed-chunk-6)Figure 1. Scores by pet type and country.</p>
+<img src="02-repro_files/figure-html/unnamed-chunk-7-1.png" alt="Figure 1. Scores by pet type and country." width="100%" />
+<p class="caption">(\#fig:unnamed-chunk-7)Figure 1. Scores by pet type and country.</p>
 </div>
 ````
 
 <div class="figure" style="text-align: center">
-<img src="02-repro_files/figure-html/unnamed-chunk-7-1.png" alt="Figure 1. Scores by pet type and country." width="100%" />
-<p class="caption">(\#fig:unnamed-chunk-7)Figure 1. Scores by pet type and country.</p>
+<img src="02-repro_files/figure-html/unnamed-chunk-8-1.png" alt="Figure 1. Scores by pet type and country." width="100%" />
+<p class="caption">(\#fig:unnamed-chunk-8)Figure 1. Scores by pet type and country.</p>
 </div>
 
 ::: {.info data-latex=""}
@@ -484,7 +506,7 @@ citation(package="faux") %>% toBibtex()
 ##   doi = {10.5281/zenodo.2669586},
 ##   publisher = {Zenodo},
 ##   year = {2021},
-##   note = {R package version 1.0.0.9006},
+##   note = {R package version 1.1.0},
 ##   url = {https://debruine.github.io/faux/},
 ## }
 ```
@@ -567,6 +589,7 @@ You can knit your file to PDF or Word if you have the right packages installed o
 |[extension](https://psyteachr.github.io/glossary/e.html#extension){class="glossary" target="_blank"}                 |The end part of a file name that tells you what type of file it is (e.g., .R or .Rmd).                                                                           |
 |[knit](https://psyteachr.github.io/glossary/k.html#knit){class="glossary" target="_blank"}                           |To create an HTML, PDF, or Word document from an R Markdown (Rmd) document                                                                                       |
 |[markdown](https://psyteachr.github.io/glossary/m.html#markdown){class="glossary" target="_blank"}                   |A way to specify formatting, such as headers, paragraphs, lists, bolding, and links.                                                                             |
+|[path](https://psyteachr.github.io/glossary/p.html#path){class="glossary" target="_blank"}                           |A string representing the location of a file or directory.                                                                                                       |
 |[project](https://psyteachr.github.io/glossary/p.html#project){class="glossary" target="_blank"}                     |A way to organise related files in RStudio                                                                                                                       |
 |[r markdown](https://psyteachr.github.io/glossary/r.html#r-markdown){class="glossary" target="_blank"}               |The R-specific version of markdown: a way to specify formatting, such as headers, paragraphs, lists, bolding, and links, as well as code blocks and inline code. |
 |[relative path](https://psyteachr.github.io/glossary/r.html#relative-path){class="glossary" target="_blank"}         |The location of a file in relation to the working directory.                                                                                                     |

@@ -196,15 +196,21 @@ demo_csv  <- readr::read_csv("data/demo.csv")
 ```
 
 ```
-## 
+## Rows: 6 Columns: 5
+```
+
+```
 ## ── Column specification ────────────────────────────────────────────────────────
-## cols(
-##   character = col_character(),
-##   integer = col_double(),
-##   double = col_double(),
-##   logical = col_logical(),
-##   date = col_character()
-## )
+## Delimiter: ","
+## chr (2): character, date
+## dbl (2): integer, double
+## lgl (1): logical
+```
+
+```
+## 
+## ℹ Use `spec()` to retrieve the full column specification for this data.
+## ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
 ```
 
 This function will give you some information about the data you just read in so you can check the column names and [data types](#data_types). If it makes a mistake, such as reading the "date" column as a <a class='glossary' target='_blank' title='A data type representing strings of text.' href='https://psyteachr.github.io/glossary/c#character'>character</a>, you can manually set the column data types. Just copy the "Column specification" that was printed when you first imported the data, and make any changes you need.
@@ -449,7 +455,7 @@ family <- import("data/family.csv")
 </div>
 :::
 
-We'll be working with <a class='glossary' target='_blank' title='Data in a rectangular table format, where each row has an entry for each column.' href='https://psyteachr.github.io/glossary/t#tabular-data'>tabular data</a> a lot in this class, but tabular data is made up of <a class='glossary' target='_blank' title='A type of data structure that is basically a list of things like T/F values, numbers, or strings.' href='https://psyteachr.github.io/glossary/v#vector'>vectors</a>, which group together data with the same basic <a class='glossary' target='_blank' title='The kind of data represented by an object.' href='https://psyteachr.github.io/glossary/d#data-type'>data type</a>. The following sections explain some of this terminology to help you understand the functions we'll be learning to process and analyse data.
+We'll be working with <a class='glossary' target='_blank' title='Data in a rectangular table format, where each row has an entry for each column.' href='https://psyteachr.github.io/glossary/t#tabular-data'>tabular data</a> a lot in this class, but tabular data is made up of <a class='glossary' target='_blank' title='A type of data structure that collects values with the same data type, like T/F values, numbers, or strings.' href='https://psyteachr.github.io/glossary/v#vector'>vectors</a>, which group together data with the same basic <a class='glossary' target='_blank' title='The kind of data represented by an object.' href='https://psyteachr.github.io/glossary/d#data-type'>data type</a>. The following sections explain some of this terminology to help you understand the functions we'll be learning to process and analyse data.
 
 ## Basic data types {#data_types}
 
@@ -630,7 +636,7 @@ Individual data values can be grouped together into containers. The main types o
 
 ### Vectors {#vectors}
 
-A <a class='glossary' target='_blank' title='A type of data structure that is basically a list of things like T/F values, numbers, or strings.' href='https://psyteachr.github.io/glossary/v#vector'>vector</a> in R is like a vector in mathematics: a set of ordered elements.  All of the elements in a vector must be of the same **data type** (numeric, character, logical). You can create a vector by enclosing the elements in the function `c()`.
+A <a class='glossary' target='_blank' title='A type of data structure that collects values with the same data type, like T/F values, numbers, or strings.' href='https://psyteachr.github.io/glossary/v#vector'>vector</a> in R is like a vector in mathematics: a set of ordered elements.  All of the elements in a vector must be of the same <a class='glossary' target='_blank' title='The kind of data represented by an object.' href='https://psyteachr.github.io/glossary/d#data-type'>data type</a> (<a class='glossary' target='_blank' title='A data type representing a real decimal number or integer.' href='https://psyteachr.github.io/glossary/n#numeric'>numeric</a>, <a class='glossary' target='_blank' title='A data type representing strings of text.' href='https://psyteachr.github.io/glossary/c#character'>character</a>, <a class='glossary' target='_blank' title='A data type representing TRUE or FALSE values.' href='https://psyteachr.github.io/glossary/l#logical'>logical</a>). You can create a vector by enclosing the elements in the function `c()`.
 
 
 ```r
@@ -655,7 +661,7 @@ mixed <- c(2, "good", 2L, "b", TRUE)
 :::
 
 ::: {.warning data-latex=""}
-You can't mix data types in a vector; all elements of the vector must be the same data type. If you mix them, R will "coerce" them so that they are all the same. If you mix doubles and integers, the integers will be changed to doubles. If you mix characters and numeric types, the numbers will be coerced to characters, so `10` would turn into "10".
+You can't mix data types in a vector; all elements of the vector must be the same data type. If you mix them, R will "coerce" them so that they are all the same. If you mix doubles and integers, the integers will be changed to doubles. If you mix characters and numeric types, the numbers will be <a class='glossary' target='_blank' title='Changing the data type of values in a vector to a single compatible type.' href='https://psyteachr.github.io/glossary/c#coercion'>coerced</a> to characters, so `10` would turn into "10".
 :::
 
 #### Selecting values from a vector
@@ -969,23 +975,19 @@ mess <- read_csv("data/mess.csv")
 ```
 
 ```
-## 
-## ── Column specification ────────────────────────────────────────────────────────
-## cols(
-##   `This is my messy dataset` = col_character()
-## )
+## Rows: 27 Columns: 1
 ```
 
 ```
-## Warning: 27 parsing failures.
-## row col  expected    actual            file
-##   1  -- 1 columns 7 columns 'data/mess.csv'
-##   2  -- 1 columns 7 columns 'data/mess.csv'
-##   3  -- 1 columns 7 columns 'data/mess.csv'
-##   4  -- 1 columns 7 columns 'data/mess.csv'
-##   5  -- 1 columns 7 columns 'data/mess.csv'
-## ... ... ......... ......... ...............
-## See problems(...) for more details.
+## ── Column specification ────────────────────────────────────────────────────────
+## Delimiter: ","
+## chr (1): This is my messy dataset
+```
+
+```
+## 
+## ℹ Use `spec()` to retrieve the full column specification for this data.
+## ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
 ```
 
 You'll get a warning with many parsing errors and `mess` is just a single column of the word "junk". View the file `data/mess.csv` by clicking on it in the File pane, and choosing "View File". Here are the first 10 lines. What went wrong?
@@ -1011,17 +1013,20 @@ mess <- read_csv("data/mess.csv", skip = 2)
 ```
 
 ```
-## 
+## Rows: 26 Columns: 7
+```
+
+```
 ## ── Column specification ────────────────────────────────────────────────────────
-## cols(
-##   junk = col_character(),
-##   order = col_character(),
-##   score = col_double(),
-##   letter = col_character(),
-##   good = col_character(),
-##   min_max = col_character(),
-##   date = col_character()
-## )
+## Delimiter: ","
+## chr (6): junk, order, letter, good, min_max, date
+## dbl (1): score
+```
+
+```
+## 
+## ℹ Use `spec()` to retrieve the full column specification for this data.
+## ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
 ```
 
 ```r
@@ -1102,12 +1107,6 @@ tidier <- read_csv("data/mess.csv",
                    col_types = ct)
 ```
 
-```
-## Warning: 1 parsing failure.
-## row   col   expected  actual            file
-##   2 order an integer missing 'data/mess.csv'
-```
-
 You will get a message about "1 parsing failure" when you run this. Warnings look scary at first, but always start by reading the message. The table tells you what row (`2`) and column (`order`) the error was found in, what kind of data was expected (`integer`), and what the actual value was (<code><span class='st'>"missing"</span></code>). If you specifically tell <code><span class='fu'>read_csv</span><span class='op'>(</span><span class='op'>)</span></code> to import a column as an integer, any characters in the column will produce a warning like this and then be recorded as `NA`. You can manually set what the missing values were recorded as with the `na` argument.
 
 
@@ -1167,6 +1166,7 @@ tidiest
 |:----------------------------------------------------------------------------------------------------------------------|:--------------------------------------------------------------------------------------------------------------------------|
 |[base r](https://psyteachr.github.io/glossary/b.html#base-r){class="glossary" target="_blank"}                         |The set of R functions that come with a basic installation of R, before you add external packages                          |
 |[character](https://psyteachr.github.io/glossary/c.html#character){class="glossary" target="_blank"}                   |A data type representing strings of text.                                                                                  |
+|[coercion](https://psyteachr.github.io/glossary/c.html#coercion){class="glossary" target="_blank"}                     |Changing the data type of values in a vector to a single compatible type.                                                  |
 |[csv](https://psyteachr.github.io/glossary/c.html#csv){class="glossary" target="_blank"}                               |Comma-separated variable: a file type for representing data where each variable is separated from the next by a comma.     |
 |[data type](https://psyteachr.github.io/glossary/d.html#data-type){class="glossary" target="_blank"}                   |The kind of data represented by an object.                                                                                 |
 |[deviation score](https://psyteachr.github.io/glossary/d.html#deviation-score){class="glossary" target="_blank"}       |A score minus the mean                                                                                                     |
@@ -1186,7 +1186,7 @@ tidiest
 |[tabular data](https://psyteachr.github.io/glossary/t.html#tabular-data){class="glossary" target="_blank"}             |Data in a rectangular table format, where each row has an entry for each column.                                           |
 |[tidy data](https://psyteachr.github.io/glossary/t.html#tidy-data){class="glossary" target="_blank"}                   |A format for data that maps the meaning onto the structure.                                                                |
 |[tidyverse](https://psyteachr.github.io/glossary/t.html#tidyverse){class="glossary" target="_blank"}                   |A set of R packages that help you create and work with tidy data                                                           |
-|[vector](https://psyteachr.github.io/glossary/v.html#vector){class="glossary" target="_blank"}                         |A type of data structure that is basically a list of things like T/F values, numbers, or strings.                          |
+|[vector](https://psyteachr.github.io/glossary/v.html#vector){class="glossary" target="_blank"}                         |A type of data structure that collects values with the same data type, like T/F values, numbers, or strings.               |
 |[vectorized](https://psyteachr.github.io/glossary/v.html#vectorized){class="glossary" target="_blank"}                 |An operator or function that acts on each element in a vector                                                              |
 
 

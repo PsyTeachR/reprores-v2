@@ -898,7 +898,7 @@ matmort_wide <- matmort2 %>%
 ```
 
 ```
-## # A tibble: 542 x 6
+## # A tibble: 542 × 6
 ##    Country     ci_low ci_hi `1990` `2000` `2015`
 ##    <chr>        <int> <int>  <int>  <int>  <int>
 ##  1 Afghanistan    253   620     NA     NA    396
@@ -974,7 +974,7 @@ q <- experimentum_quests %>%
 ```
 
 ```
-## # A tibble: 24 x 15
+## # A tibble: 24 × 15
 ##    session_id project_id quest_id user_id user_sex user_status user_age current
 ##         <int>      <int>    <int>   <int> <chr>    <chr>          <dbl>   <int>
 ##  1      34034          1        1   31105 female   guest           28.2       1

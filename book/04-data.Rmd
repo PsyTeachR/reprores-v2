@@ -342,7 +342,7 @@ cat(my_string) # cat() prints the arguments
 
 ### Logical Data
 
-`r glossary("logical", "Logical")` data (also sometimes called "boolean" values) is one of two values: true or false. In R, we always write them in uppercase: `TRUE` and `FALSE`.
+`r glossary("Logical")` data (also sometimes called "boolean" values) is one of two values: true or false. In R, we always write them in uppercase: `TRUE` and `FALSE`.
 
 ```{r logical-data}
 class(TRUE)
@@ -426,7 +426,7 @@ Individual data values can be grouped together into containers. The main types o
 
 ### Vectors {#vectors}
 
-A `r glossary("vector")` in R is like a vector in mathematics: a set of ordered elements.  All of the elements in a vector must be of the same `r glossary("data type")` (`r glossary("numeric")`, `r glossary("character")`, `r glossary("logical)`). You can create a vector by enclosing the elements in the function `c()`.
+A `r glossary("vector")` in R is like a vector in mathematics: a set of ordered elements.  All of the elements in a vector must be of the same `r glossary("data type")` (`r glossary("numeric")`, `r glossary("character")`, `r glossary("logical")`). You can create a vector by enclosing the elements in the function `c()`.
 
 ```{r vectors}
 ## put information into a vector using c(...)

@@ -7,11 +7,12 @@
 
 1. Understand the components of the [RStudio IDE](#rstudio_ide) [(video)](https://youtu.be/CbA6ZVlJE78){class="video"}
 2. Type commands into the [console](#console) [(video)](https://youtu.be/wbI4c_7y0kE){class="video"}
-3. Understand [function syntax](#function_syx) [(video)](https://youtu.be/X5P038N5Q8I){class="video"}
+3. Understand [coding terms](#coding-terms) and [function syntax](#function_syx) [(video)](https://youtu.be/X5P038N5Q8I){class="video"}
 4. Install a [package](#install-package) [(video)](https://youtu.be/u_pvHnqkVCE){class="video"}
+5. Know the methods for getting [help](#help)
 
 
-## What is R?
+## R and RStudio
 
 <div class="meme left"><img src="images/intro/new_R_logo.png" /></div>
 
@@ -73,9 +74,8 @@ Your settings should have:
 * Save workspace to .RData on exit: <select class='webex-select'><option value='blank'></option><option value=''>Always</option><option value='answer'>Never</option><option value=''>Ask</option></select>
 :::
 
-## Getting Started
 
-### Console commands {#console}
+## Console commands {#console}
 
 We are first going to learn about how to interact with the <a class='glossary' target='_blank' title='The pane in RStudio where you can type in commands and view output messages.' href='https://psyteachr.github.io/glossary/c#console'>console</a>. In general, you will be developing R <a class='glossary' target='_blank' title='A plain-text file that contains commands in a coding language, such as R.' href='https://psyteachr.github.io/glossary/s#script'>scripts</a> or <a class='glossary' target='_blank' title='The R-specific version of markdown: a way to specify formatting, such as headers, paragraphs, lists, bolding, and links, as well as code blocks and inline code.' href='https://psyteachr.github.io/glossary/r#r-markdown'>R Markdown</a> files, rather than working directly in the console window. However, you can consider the console a kind of "sandbox" where you can try out lines of code and adapt them until you get them to do what you want. Then you can copy them back into the script editor.
 
@@ -161,6 +161,7 @@ cat(africa) # cat() prints the string
 ## - Toto
 ```
 
+## Coding Terms {#coding-terms}
 
 ### Objects {#vars}
 
@@ -308,7 +309,7 @@ cat("3, 6, 9, the goose drank wine",
 
 A lot of what you do in R involves calling a <a class='glossary' target='_blank' title='A named section of code that can be reused.' href='https://psyteachr.github.io/glossary/f#function'>function</a> and storing the results. A function is a named section of code that can be reused. 
 
-For example, `sd` is a function that returns the <a class='glossary' target='_blank' title='A descriptive statistic that measures how spread out data are relative to the mean.' href='https://psyteachr.github.io/glossary/s#standard-deviation'>standard deviation</a> of the <a class='glossary' target='_blank' title='A type of data structure that is basically a list of things like T/F values, numbers, or strings.' href='https://psyteachr.github.io/glossary/v#vector'>vector</a> of numbers that you provide as the input <a class='glossary' target='_blank' title='A variable that provides input to a function.' href='https://psyteachr.github.io/glossary/a#argument'>argument</a>. Functions are set up like this: 
+For example, `sd` is a function that returns the <a class='glossary' target='_blank' title='A descriptive statistic that measures how spread out data are relative to the mean.' href='https://psyteachr.github.io/glossary/s#standard-deviation'>standard deviation</a> of the <a class='glossary' target='_blank' title='A type of data structure that collects values with the same data type, like T/F values, numbers, or strings.' href='https://psyteachr.github.io/glossary/v#vector'>vector</a> of numbers that you provide as the input <a class='glossary' target='_blank' title='A variable that provides input to a function.' href='https://psyteachr.github.io/glossary/a#argument'>argument</a>. Functions are set up like this: 
 
 
 ```r
@@ -345,8 +346,8 @@ rnorm(10)
 ```
 
 ```
-##  [1] -0.78185904 -0.19731608  0.20082260  0.48130491 -0.02560774 -0.16625062
-##  [7]  2.22746583  0.73298835 -0.65036817  0.42178258
+##  [1]  0.2114796  1.7258784  0.3250602  0.2062184 -0.9869948 -3.5992797
+##  [7] -1.2071569 -0.9118389 -1.0975608 -0.3948670
 ```
 
 If you want 10 numbers from a normal distribution with a mean of 100:
@@ -357,8 +358,8 @@ rnorm(10, 100)
 ```
 
 ```
-##  [1]  99.86542  98.70812  98.72601 100.84847  99.39616 100.76876 102.58909
-##  [8] 101.88033 100.34079 100.75561
+##  [1]  98.73818  97.69398 101.53352  99.82588  99.80927  99.99922 101.24333
+##  [8]  99.55582 100.07431  99.76865
 ```
 
 This would be an equivalent but less efficient way of calling the function:
@@ -369,8 +370,8 @@ rnorm(n = 10, mean = 100)
 ```
 
 ```
-##  [1] 100.61314 101.03146 100.88264 101.36429 101.37770  99.71442 100.06746
-##  [8] 100.42275  99.82964  98.78452
+##  [1]  99.82777 101.40314 100.06942 101.24027  98.98366 100.79356  99.22346
+##  [8] 100.73277  99.96829  99.09531
 ```
 
 We don't need to name the arguments because R will recognize that we intended to fill in the first and second arguments by their position in the function call. However, if we want to change the default for an argument coming later in the list, then we need to name it. For instance, if we wanted to keep the default `mean = 0` but change the standard deviation to 100, we would do it this way:
@@ -381,8 +382,8 @@ rnorm(10, sd = 100)
 ```
 
 ```
-##  [1]    9.998249  -12.196486   54.748047  -34.410534 -123.305285  -68.369054
-##  [7]   31.755734   17.436676   44.322710   79.945858
+##  [1]   56.54831  -19.50086   10.09649 -127.14808  143.07223  115.36135
+##  [7] -156.89073  -18.75795  187.06075   35.81077
 ```
 
 Some functions give a list of options after an argument; this means the default value is the first option. The usage entry for the <code><span class='fu'><a href='https://rdrr.io/r/stats/power.t.test.html'>power.t.test</a></span><span class='op'>(</span><span class='op'>)</span></code> function looks like this:
@@ -400,35 +401,13 @@ power.t.test(n = NULL, delta = NULL, sd = 1, sig.level = 0.05,
 
 
 
-* What is the default value for `sd`? <select class='webex-select'><option value='blank'></option><option value='answer'>1</option><option value=''>two.sample</option><option value=''>0.05</option><option value=''>NULL</option></select>
-* What is the default value for `type`? <select class='webex-select'><option value='blank'></option><option value=''>NULL</option><option value=''>paired</option><option value='answer'>two.sample</option><option value=''>one.sample</option></select>
-* Which is equivalent to <code><span class='fu'><a href='https://rdrr.io/r/stats/power.t.test.html'>power.t.test</a></span><span class='op'>(</span><span class='fl'>100</span>, <span class='fl'>0.5</span><span class='op'>)</span></code>? <div class='webex-radiogroup' id='radio_VATKQDUOXM'><label><input type="radio" autocomplete="off" name="radio_VATKQDUOXM" value=""></input> <span>power.t.test()</span></label><label><input type="radio" autocomplete="off" name="radio_VATKQDUOXM" value=""></input> <span>power.t.test(100, 0.5, sig.level = 1, sd = 0.05)</span></label><label><input type="radio" autocomplete="off" name="radio_VATKQDUOXM" value=""></input> <span>power.t.test(n = 100)</span></label><label><input type="radio" autocomplete="off" name="radio_VATKQDUOXM" value="answer"></input> <span>power.t.test(delta = 0.5, n = 100)</span></label></div>
-
+* What is the default value for `sd`? <select class='webex-select'><option value='blank'></option><option value='answer'>1</option><option value=''>0.05</option><option value=''>NULL</option><option value=''>two.sample</option></select>
+* What is the default value for `type`? <select class='webex-select'><option value='blank'></option><option value=''>one.sample</option><option value='answer'>two.sample</option><option value=''>paired</option><option value=''>NULL</option></select>
+* Which is equivalent to <code><span class='fu'><a href='https://rdrr.io/r/stats/power.t.test.html'>power.t.test</a></span><span class='op'>(</span><span class='fl'>100</span>, <span class='fl'>0.5</span><span class='op'>)</span></code>? <div class='webex-radiogroup' id='radio_GKFITIZQQI'><label><input type="radio" autocomplete="off" name="radio_GKFITIZQQI" value="answer"></input> <span>power.t.test(delta = 0.5, n = 100)</span></label><label><input type="radio" autocomplete="off" name="radio_GKFITIZQQI" value=""></input> <span>power.t.test()</span></label><label><input type="radio" autocomplete="off" name="radio_GKFITIZQQI" value=""></input> <span>power.t.test(n = 100)</span></label><label><input type="radio" autocomplete="off" name="radio_GKFITIZQQI" value=""></input> <span>power.t.test(100, 0.5, sig.level = 1, sd = 0.05)</span></label></div>
 
 
 :::
 
-### Getting help {#help}
-
-Start up help in a browser using the function `help.start()`.
-
-If a function is in <a class='glossary' target='_blank' title='The set of R functions that come with a basic installation of R, before you add external packages' href='https://psyteachr.github.io/glossary/b#base-r'>base R</a> or a loaded <a class='glossary' target='_blank' title='A group of R functions.' href='https://psyteachr.github.io/glossary/p#package'>package</a>, you can use the `help("function_name")` function or the `?function_name` shortcut to access the help file. If the package isn't loaded, specify the package name as the second argument to the help function.
-
-
-```r
-# these methods are all equivalent ways of getting help
-help("rnorm")
-?rnorm
-help("rnorm", package="stats") 
-```
-
-When the package isn't loaded or you aren't sure what package the function is in, use the shortcut `??function_name`.
-
-::: {.try data-latex=""}
-
-* What is the first argument to the `mean` function? <select class='webex-select'><option value='blank'></option><option value=''>trim</option><option value=''>na.rm</option><option value=''>mean</option><option value='answer'>x</option></select>
-* What package is `read_excel` in? <select class='webex-select'><option value='blank'></option><option value=''>readr</option><option value='answer'>readxl</option><option value=''>base</option><option value=''>stats</option></select>
-:::
 
 ## Add-on packages {#install-package}
 
@@ -553,7 +532,47 @@ data("disgust")
 getdata("data")
 ```
 
+## Getting help {#help}
 
+You will feel like you need a *lot* of help when you're starting to learn. This won't really go away, and it isn't supposed to. Experienced coders are also constantly looking things up; it's impossible to memorise everything. The goal is to learn enough about the structure of R that you can look things up quickly. This is why there is so much specialised jargon in coding; it's easier to google "adding <a class='glossary' target='_blank' title='A type of data structure that collects values with the same data type, like T/F values, numbers, or strings.' href='https://psyteachr.github.io/glossary/v#vector'>vectors</a> in R" than "adding lists of things that are the same kind of data in R".
+
+### Function Help
+
+Start up help in a browser using the function `help.start()`.
+
+If a function is in <a class='glossary' target='_blank' title='The set of R functions that come with a basic installation of R, before you add external packages' href='https://psyteachr.github.io/glossary/b#base-r'>base R</a> or a loaded <a class='glossary' target='_blank' title='A group of R functions.' href='https://psyteachr.github.io/glossary/p#package'>package</a>, you can use the `help("function_name")` function or the `?function_name` shortcut to access the help file. If the package isn't loaded, specify the package name as the second argument to the help function.
+
+
+```r
+# these methods are all equivalent ways of getting help
+help("rnorm")
+?rnorm
+help("rnorm", package="stats") 
+```
+
+When the package isn't loaded or you aren't sure what package the function is in, use the shortcut `??function_name`.
+
+::: {.try data-latex=""}
+
+* What is the first argument to the `mean` function? <select class='webex-select'><option value='blank'></option><option value=''>trim</option><option value=''>na.rm</option><option value=''>mean</option><option value='answer'>x</option></select>
+* What package is `read_excel` in? <select class='webex-select'><option value='blank'></option><option value=''>readr</option><option value='answer'>readxl</option><option value=''>base</option><option value=''>stats</option></select>
+:::
+
+### Googling
+
+If the function help doesn't help, or you're not even sure what function you need, try Googling your question. It will take some practice to be able to use the right jargon in your search terms to get what you want. It helps to put "R" or "rstats", or "tidyverse" in the search text, or the name of the relevant package, like <code class='package'>ggplot2</code>. 
+
+### Vignettes
+
+Many packages, especially [tidyverse](https://www.tidyverse.org/packages/){target="_blank"} ones, have helpful websites with vignettes explaining how to use their functions. Some of the vignettes are also available inside R. 
+
+```r
+# opens a list of available vignettes
+vignette(package = "ggplot2")
+
+# opens a specific vignette in the Help pane
+vignette("ggplot2-specs", package = "ggplot2")
+```
 
 
 ## Glossary  {#glossaryintro}
@@ -594,7 +613,7 @@ glossary::book()
 |[standard deviation](https://psyteachr.github.io/glossary/s.html#standard-deviation){class="glossary" target="_blank"}       |A descriptive statistic that measures how spread out data are relative to the mean.                                                                                        |
 |[string](https://psyteachr.github.io/glossary/s.html#string){class="glossary" target="_blank"}                               |A piece of text inside of quotes.                                                                                                                                          |
 |[variable](https://psyteachr.github.io/glossary/v.html#variable){class="glossary" target="_blank"}                           |A word that identifies and stores the value of some data for later use.                                                                                                    |
-|[vector](https://psyteachr.github.io/glossary/v.html#vector){class="glossary" target="_blank"}                               |A type of data structure that is basically a list of things like T/F values, numbers, or strings.                                                                          |
+|[vector](https://psyteachr.github.io/glossary/v.html#vector){class="glossary" target="_blank"}                               |A type of data structure that collects values with the same data type, like T/F values, numbers, or strings.                                                               |
 |[whitespace](https://psyteachr.github.io/glossary/w.html#whitespace){class="glossary" target="_blank"}                       |Spaces, tabs and line breaks                                                                                                                                               |
 
 

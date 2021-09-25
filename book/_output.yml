@@ -9,7 +9,6 @@ bookdown::bs4_book:
   includes:
     in_header: include/header.html
     after_body:
-    - include/footer.html
     - include/webex.js
     - include/script.js
   css:
@@ -20,7 +19,7 @@ bookdown::bs4_book:
     primary: '#127AB2'
 bookdown::pdf_book:
   includes:
-    in_header: preamble.tex
+    in_header: include/preamble.tex
   latex_engine: xelatex
   citation_package: natbib
   keep_tex: yes

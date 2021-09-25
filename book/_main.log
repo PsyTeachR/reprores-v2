@@ -1,11 +1,11 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021) (preloaded format=xelatex 2021.8.23)  23 AUG 2021 04:17
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021) (preloaded format=xelatex 2021.9.18)  25 SEP 2021 13:39
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
 **_main.tex
 (./_main.tex
 LaTeX2e <2021-06-01> patch level 1
-L3 programming layer <2021-07-12> (/Users/lisad/Library/TinyTeX/texmf-dist/tex/
+L3 programming layer <2021-08-27> (/Users/lisad/Library/TinyTeX/texmf-dist/tex/
 latex/base/book.cls
 Document Class: book 2021/02/12 v1.4n Standard LaTeX document class
 (/Users/lisad/Library/TinyTeX/texmf-dist/tex/latex/base/bk10.clo
@@ -124,7 +124,7 @@ Package: iftex 2020/03/06 v1.0d TeX engine tests
 )
 (/Users/lisad/Library/TinyTeX/texmf-dist/tex/latex/unicode-math/unicode-math.st
 y (/Users/lisad/Library/TinyTeX/texmf-dist/tex/latex/l3kernel/expl3.sty
-Package: expl3 2021-07-12 L3 programming layer (loader) 
+Package: expl3 2021-08-27 L3 programming layer (loader) 
 
 (/Users/lisad/Library/TinyTeX/texmf-dist/tex/latex/l3backend/l3backend-xetex.de
 f
@@ -147,11 +147,11 @@ Package: unicode-math-xetex 2020/01/31 v0.8q Unicode maths in XeLaTeX and LuaLa
 TeX
 
 (/Users/lisad/Library/TinyTeX/texmf-dist/tex/latex/l3packages/xparse/xparse.sty
-Package: xparse 2021-08-04 L3 Experimental document command parser
+Package: xparse 2021-08-27 L3 Experimental document command parser
 )
 (/Users/lisad/Library/TinyTeX/texmf-dist/tex/latex/l3packages/l3keys2e/l3keys2e
 .sty
-Package: l3keys2e 2021-08-04 LaTeX2e option processing using LaTeX3 keys
+Package: l3keys2e 2021-08-27 LaTeX2e option processing using LaTeX3 keys
 ) (/Users/lisad/Library/TinyTeX/texmf-dist/tex/latex/fontspec/fontspec.sty
 Package: fontspec 2020/02/21 v2.7i Font selection for XeLaTeX and LuaLaTeX
 (/Users/lisad/Library/TinyTeX/texmf-dist/tex/latex/fontspec/fontspec-xetex.sty
@@ -716,40 +716,40 @@ LaTeX Info: Redefining \cite on input line 694.
 No file _main.aux.
 \openout1 = `_main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 162.
-LaTeX Font Info:    ... okay on input line 162.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 162.
-LaTeX Font Info:    ... okay on input line 162.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 162.
-LaTeX Font Info:    ... okay on input line 162.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 162.
-LaTeX Font Info:    ... okay on input line 162.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 162.
-LaTeX Font Info:    ... okay on input line 162.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 162.
-LaTeX Font Info:    ... okay on input line 162.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 162.
-LaTeX Font Info:    ... okay on input line 162.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 162.
-LaTeX Font Info:    ... okay on input line 162.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 162.
-LaTeX Font Info:    ... okay on input line 162.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 162.
-LaTeX Font Info:    ... okay on input line 162.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 169.
+LaTeX Font Info:    ... okay on input line 169.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 169.
+LaTeX Font Info:    ... okay on input line 169.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 169.
+LaTeX Font Info:    ... okay on input line 169.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 169.
+LaTeX Font Info:    ... okay on input line 169.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 169.
+LaTeX Font Info:    ... okay on input line 169.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 169.
+LaTeX Font Info:    ... okay on input line 169.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 169.
+LaTeX Font Info:    ... okay on input line 169.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 169.
+LaTeX Font Info:    ... okay on input line 169.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 169.
+LaTeX Font Info:    ... okay on input line 169.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 169.
+LaTeX Font Info:    ... okay on input line 169.
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `normal'
-(Font)                  OT1/lmr/m/n --> TU/lmr/m/n on input line 162.
+(Font)                  OT1/lmr/m/n --> TU/lmr/m/n on input line 169.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
-(Font)                  OT1/lmr/m/it --> TU/lmr/m/it on input line 162.
+(Font)                  OT1/lmr/m/it --> TU/lmr/m/it on input line 169.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
-(Font)                  OT1/lmr/bx/n --> TU/lmr/bx/n on input line 162.
+(Font)                  OT1/lmr/bx/n --> TU/lmr/bx/n on input line 169.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
-(Font)                  OT1/lmss/m/n --> TU/lmss/m/n on input line 162.
+(Font)                  OT1/lmss/m/n --> TU/lmss/m/n on input line 169.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/lmss/bx/n --> TU/lmss/bx/n on input line 162.
+(Font)                  OT1/lmss/bx/n --> TU/lmss/bx/n on input line 169.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
-(Font)                  OT1/lmtt/m/n --> TU/lmtt/m/n on input line 162.
+(Font)                  OT1/lmtt/m/n --> TU/lmtt/m/n on input line 169.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/lmtt/m/n --> TU/lmtt/bx/n on input line 162.
+(Font)                  OT1/lmtt/m/n --> TU/lmtt/bx/n on input line 169.
 
 Package fontspec Info: latinmodern-math scale = 0.9989520677190833.
 
@@ -778,11 +778,11 @@ pt=math;language=dflt;"
 (fontspec)             - 'bold small caps'  (b/sc) with NFSS spec.: 
 
 LaTeX Font Info:    Trying to load font information for T1+latinmodern-math.otf
-(0) on input line 162.
-LaTeX Font Info:    No file T1latinmodern-math.otf(0).fd. on input line 162.
+(0) on input line 169.
+LaTeX Font Info:    No file T1latinmodern-math.otf(0).fd. on input line 169.
 
 LaTeX Font Warning: Font shape `T1/latinmodern-math.otf(0)/m/n' undefined
-(Font)              using `T1/cmr/m/n' instead on input line 162.
+(Font)              using `T1/cmr/m/n' instead on input line 169.
 
 
 Package unicode-math Warning: The first font loaded by unicode-math must be an
@@ -830,24 +830,24 @@ pt=math;language=dflt;"
 (fontspec)             - 'bold small caps'  (b/sc) with NFSS spec.: 
 
 LaTeX Font Info:    Trying to load font information for T1+latinmodern-math.otf
-(1) on input line 162.
-LaTeX Font Info:    No file T1latinmodern-math.otf(1).fd. on input line 162.
+(1) on input line 169.
+LaTeX Font Info:    No file T1latinmodern-math.otf(1).fd. on input line 169.
 
 LaTeX Font Warning: Font shape `T1/latinmodern-math.otf(1)/m/n' undefined
-(Font)              using `T1/cmr/m/n' instead on input line 162.
+(Font)              using `T1/cmr/m/n' instead on input line 169.
 
 LaTeX Font Info:    Encoding `OT1' has changed to `T1' for symbol font
-(Font)              `operators' in the math version `normal' on input line 162.
+(Font)              `operators' in the math version `normal' on input line 169.
 
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
 (Font)                  OT1/lmr/m/n --> T1/latinmodern-math.otf(1)/m/n on input
- line 162.
+ line 169.
 LaTeX Font Info:    Encoding `OT1' has changed to `T1' for symbol font
-(Font)              `operators' in the math version `bold' on input line 162.
+(Font)              `operators' in the math version `bold' on input line 169.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
 (Font)                  OT1/lmr/bx/n --> T1/latinmodern-math.otf(1)/b/n on inpu
-t line 162.
-Package hyperref Info: Link coloring OFF on input line 162.
+t line 169.
+Package hyperref Info: Link coloring OFF on input line 169.
 (/Users/lisad/Library/TinyTeX/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2021-04-02 v2.47 Cross-referencing by name of section
 (/Users/lisad/Library/TinyTeX/texmf-dist/tex/latex/refcount/refcount.sty
@@ -859,9 +859,9 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
 \c@section@level=\count334
 )
-LaTeX Info: Redefining \ref on input line 162.
-LaTeX Info: Redefining \pageref on input line 162.
-LaTeX Info: Redefining \nameref on input line 162.
+LaTeX Info: Redefining \ref on input line 169.
+LaTeX Info: Redefining \pageref on input line 169.
+LaTeX Info: Redefining \nameref on input line 169.
 \@outlinefile=\write5
 \openout5 = `_main.out'.
 
@@ -903,32 +903,32 @@ Package hyperref Warning: Rerun to get /PageLabels entry.
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 LaTeX Font Info:    Trying to load font information for OML+lmm on input line 1
-64.
+71.
 (/Users/lisad/Library/TinyTeX/texmf-dist/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 
-164.
+171.
 (/Users/lisad/Library/TinyTeX/texmf-dist/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 
-164.
+171.
 (/Users/lisad/Library/TinyTeX/texmf-dist/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <12> on input line 164.
+(Font)              <12> on input line 171.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 164.
+(Font)              <8> on input line 171.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 164.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 164
+(Font)              <6> on input line 171.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 171
 .
 (/Users/lisad/Library/TinyTeX/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 164
+LaTeX Font Info:    Trying to load font information for U+msb on input line 171
 .
 (/Users/lisad/Library/TinyTeX/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
@@ -943,7 +943,7 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 
 ]
 LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 1
-88.
+97.
 (/Users/lisad/Library/TinyTeX/texmf-dist/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 ) [2
@@ -951,116 +951,126 @@ File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 ] [3]
 Chapter 1.
 
-LaTeX Warning: Reference `installingr' on page 4 undefined on input line 275.
+LaTeX Warning: Reference `installingr' on page 4 undefined on input line 279.
 
-File: images/01/r_console.png Graphic file (type bmp)
-<images/01/r_console.png>
+File: images/intro/r_console.png Graphic file (type bmp)
+<images/intro/r_console.png>
+File: images/intro/rstudio.png Graphic file (type bmp)
+<images/intro/rstudio.png>
+LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <10> not available
+(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 320.
 [4
 
-] [5]
-File: images/01/rstudio.png Graphic file (type bmp)
-<images/01/rstudio.png>
-LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <10> not available
-(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 316.
-[6]
-File: images/01/repro.png Graphic file (type bmp)
-<images/01/repro.png>
+] [5] [6]
+File: images/intro/repro.png Graphic file (type bmp)
+<images/intro/repro.png>
 [7]
 
 LaTeX Font Warning: Font shape `T1/lmtt/bx/it' in size <10> not available
-(Font)              Font shape `T1/lmtt/b/sl' tried instead on input line 388.
+(Font)              Font shape `T1/lmtt/b/sl' tried instead on input line 389.
 
 LaTeX Font Info:    Trying to load font information for TS1+lmtt on input line 
-389.
+390.
 (/Users/lisad/Library/TinyTeX/texmf-dist/tex/latex/lm/ts1lmtt.fd
 File: ts1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 
 LaTeX Font Warning: Font shape `TS1/lmtt/bx/it' in size <10> not available
-(Font)              Font shape `TS1/lmtt/b/sl' tried instead on input line 389.
+(Font)              Font shape `TS1/lmtt/b/sl' tried instead on input line 390.
 
 
-[8] [9] [10] [11] [12] [13]
-File: images/01/packages.png Graphic file (type bmp)
-<images/01/packages.png>
+[8] [9] [10] [11] [12]
+Underfull \hbox (badness 1515) in paragraph at lines 742--743
+[]\T1/lmr/m/n/10 power.t.test() power.t.test(n = 100) power.t.test(100, 0.5, si
+g.level = 1, sd = 0.05)
+ []
+
+[13]
+
+LaTeX Warning: Reference `ggplot' on page 14 undefined on input line 820.
+
+
+LaTeX Warning: Reference `data' on page 14 undefined on input line 822.
+
+
+LaTeX Warning: Reference `data' on page 14 undefined on input line 824.
+
+
+LaTeX Warning: Reference `tidyr' on page 14 undefined on input line 826.
+
+
+LaTeX Warning: Reference `dplyr' on page 14 undefined on input line 828.
+
+
+LaTeX Warning: Reference `func' on page 14 undefined on input line 830.
+
+File: images/intro/packages.png Graphic file (type bmp)
+<images/intro/packages.png>
 Missing character: There is no ‘ ("2018) in font ec-lmtti10!
 Missing character: There is no ’ ("2019) in font ec-lmtti10!
-[14]
-Underfull \hbox (badness 1642) in paragraph at lines 892--893
-\T1/lmr/m/n/10 Each chap-ter ends with a glos-sary ta-ble defin-ing the jar-gon
- in-tro-duced in this chap-ter. The
- []
-
-
-Underfull \hbox (badness 1721) in paragraph at lines 892--893
-\T1/lmr/m/n/10 links be-low take you to the []glos-sary book[], which you can a
-lso down-load for of-fline use with
- []
-
-
-Overfull \hbox (10.78839pt too wide) in paragraph at lines 892--893
-\T1/lmtt/m/n/10 devtools::install_github("psyteachr/glossary") \T1/lmr/m/n/10 a
-nd ac-cess the glos-sary of-fline with \T1/lmtt/m/n/10 glossary::book()\T1/lmr/
-m/n/10 . 
- []
-
+[14] [15] [16]
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 894.
+(Font)              <10> on input line 967.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 894.
+(Font)              <7> on input line 967.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 894.
-Missing character: There is no “ ("201C) in font ec-lmr10!
-Missing character: There is no ” ("201D) in font ec-lmr10!
+(Font)              <5> on input line 967.
 
-Overfull \hbox (410.4505pt too wide) in paragraph at lines 894--941
+Overfull \hbox (410.4505pt too wide) in paragraph at lines 967--1016
 [][] 
  []
 
-[15] [16]
+[17]
 Chapter 2.
-[17
+
+Package natbib Warning: Citation `nuijten2016prevalence' on page 18 undefined o
+n input line 1090.
+
+[18
 
 ]
 
-Package natbib Warning: Citation `nuijten2016prevalence' on page 18 undefined o
-n input line 1038.
+Package longtable Warning: Column widths have changed
+(longtable)                in table 2.1 on input line 1122.
 
-[18]
-Overfull \hbox (155.35252pt too wide) in paragraph at lines 1085--1086
-[]\T1/lmr/m/n/10 For in-stance, if you are on a Win-dows ma-chine your data and
- scripts are in the di-rec-tory \T1/lmtt/m/n/10 C:\Carla\TS1/lmtt/m/n/10 '\T1/l
-mtt/m/n/10 s_files\thesis2\my_thesis\new_analysis\T1/lmr/m/n/10 ,
+[19]
+Underfull \hbox (badness 10000) in paragraph at lines 1208--1209
+[]\T1/lmr/m/n/10 vendor-data_2021-11-15.xlsdata-vendor-2021_11_15.xlsdata_vendo
+r_2021-11-15.xlsdata_2021-11-
  []
 
-
-Overfull \hbox (66.72188pt too wide) in paragraph at lines 1085--1086
-\T1/lmr/m/n/10 and choos-ing \T1/lmtt/m/n/10 Set Working Directory\T1/lmr/m/n/1
-0 , or (2) by typ-ing \T1/lmtt/m/n/10 setwd("C:\Carla\TS1/lmtt/m/n/10 '\T1/lmtt
-/m/n/10 s_files\thesis2\my_thesis\new_analysis")
- []
-
-File: images/01/reproducibleScript.png Graphic file (type bmp)
-<images/01/reproducibleScript.png>
-[19] [20] [21] [22] [23] [24]
-Overfull \hbox (23.74355pt too wide) in paragraph at lines 1400--1400
+[20]
+File: images/repro/new_proj_1.png Graphic file (type bmp)
+<images/repro/new_proj_1.png>
+File: images/repro/new_proj_2.png Graphic file (type bmp)
+<images/repro/new_proj_2.png>
+File: images/repro/new_proj_3.png Graphic file (type bmp)
+<images/repro/new_proj_3.png>
+[21] [22] [23]
+File: images/repro/reproducible_script.png Graphic file (type bmp)
+<images/repro/reproducible_script.png>
+[24] [25]
+File: images/repro/bootswatch.png Graphic file (type bmp)
+<images/repro/bootswatch.png>
+[26] [27] [28]
+Overfull \hbox (23.74355pt too wide) in paragraph at lines 1557--1557
 []\T1/lmtt/m/n/10 {\centering \includegraphics[width=1\linewidth]{02-repro_file
-s/figure-latex/unnamed-chunk-6-1}[] 
+s/figure-latex/unnamed-chunk-7-1}[] 
  []
 
-File: 02-repro_files/figure-latex/unnamed-chunk-7-1.pdf Graphic file (type pdf)
+File: 02-repro_files/figure-latex/unnamed-chunk-8-1.pdf Graphic file (type pdf)
 
-<use 02-repro_files/figure-latex/unnamed-chunk-7-1.pdf>
-
-Overfull \hbox (149.74318pt too wide) in paragraph at lines 1425--1425
+<use 02-repro_files/figure-latex/unnamed-chunk-8-1.pdf>
+[29]
+Overfull \hbox (254.74287pt too wide) in paragraph at lines 1582--1582
 []\T1/lmtt/m/n/10 ![All the Things by [Hyperbole and a Half](http://hyperbolean
-dahalf.blogspot.com/)](images/memes/x-all-the-things.png) 
+dahalf.blogspot.com/)](images/memes/x-all-the-things.png){style="width: 50%"} 
  []
 
 File: images/memes/x-all-the-things.png Graphic file (type bmp)
 <images/memes/x-all-the-things.png>
-[25] [26] [27]
-Overfull \hbox (4003.23198pt too wide) in paragraph at lines 1542--1542
+[30] [31] [32]
+Overfull \hbox (4003.23198pt too wide) in paragraph at lines 1703--1703
 []    \T1/lmtt/m/n/10 abstract = { Psychologists must be able to test both for 
 the presence of an effect and for the absence of an effect. In addition to test
 ing against zero, researchers can use the two one-sided tests (TOST) procedure 
@@ -1075,91 +1085,92 @@ redictions about the presence, and declare the absence, of meaningful effects.
 }[] 
  []
 
-[28]
 
-Package natbib Warning: Citation `tidyverse' on page 29 undefined on input line
- 1562.
-
-
-Package natbib Warning: Citation `rmarkdown' on page 29 undefined on input line
- 1562.
+Package natbib Warning: Citation `tidyverse' on page 33 undefined on input line
+ 1718.
 
 
-Overfull \hbox (123.49326pt too wide) in paragraph at lines 1567--1567
+Package natbib Warning: Citation `rmarkdown' on page 33 undefined on input line
+ 1718.
+
+
+Overfull \hbox (123.49326pt too wide) in paragraph at lines 1723--1723
 []\T1/lmtt/m/n/10 Lakens, Scheel and Isengar [-@TOSTtutorial] wrote a tutorial 
 explaining how to test for the absence of an effect. 
  []
 
+[33]
 
-Package natbib Warning: Citation `TOSTtutorial' on page 29 undefined on input l
-ine 1570.
+Package natbib Warning: Citation `TOSTtutorial' on page 34 undefined on input l
+ine 1726.
 
 
-Overfull \hbox (326.0333pt too wide) in paragraph at lines 1597--1622
+Overfull \hbox (326.0333pt too wide) in paragraph at lines 1746--1777
 [] 
  []
 
-[29] [30]
+[34]
 Chapter 3.
-[31
+[35
 
-] [32]
+] [36]
 File: 03-ggplot_files/figure-latex/plot0-1.pdf Graphic file (type pdf)
 <use 03-ggplot_files/figure-latex/plot0-1.pdf>
 File: 03-ggplot_files/figure-latex/plot1-1.pdf Graphic file (type pdf)
 <use 03-ggplot_files/figure-latex/plot1-1.pdf>
 File: 03-ggplot_files/figure-latex/plot2-1.pdf Graphic file (type pdf)
 <use 03-ggplot_files/figure-latex/plot2-1.pdf>
+[37] [38]
 File: 03-ggplot_files/figure-latex/hist-1.pdf Graphic file (type pdf)
 <use 03-ggplot_files/figure-latex/hist-1.pdf>
-[33] [34] [35]
 File: 03-ggplot_files/figure-latex/ggplot-empty-1.pdf Graphic file (type pdf)
 <use 03-ggplot_files/figure-latex/ggplot-empty-1.pdf>
+[39] [40]
 File: 03-ggplot_files/figure-latex/ggplot-labels-1.pdf Graphic file (type pdf)
 <use 03-ggplot_files/figure-latex/ggplot-labels-1.pdf>
-[36] [37]
 File: 03-ggplot_files/figure-latex/ggplot-geom-1.pdf Graphic file (type pdf)
 <use 03-ggplot_files/figure-latex/ggplot-geom-1.pdf>
-[38]
+[41] [42]
 File: 03-ggplot_files/figure-latex/barplot-1.pdf Graphic file (type pdf)
 <use 03-ggplot_files/figure-latex/barplot-1.pdf>
 File: 03-ggplot_files/figure-latex/density-1.pdf Graphic file (type pdf)
 <use 03-ggplot_files/figure-latex/density-1.pdf>
+[43] [44]
 File: 03-ggplot_files/figure-latex/density-grouped-1.pdf Graphic file (type pdf
 )
 <use 03-ggplot_files/figure-latex/density-grouped-1.pdf>
-[39] [40] [41]
 File: 03-ggplot_files/figure-latex/freqpoly-1.pdf Graphic file (type pdf)
 <use 03-ggplot_files/figure-latex/freqpoly-1.pdf>
+[45] [46]
 File: 03-ggplot_files/figure-latex/histogram-1.pdf Graphic file (type pdf)
 <use 03-ggplot_files/figure-latex/histogram-1.pdf>
-[42] [43]
 File: 03-ggplot_files/figure-latex/histogram-grouped-1.pdf Graphic file (type p
 df)
 <use 03-ggplot_files/figure-latex/histogram-grouped-1.pdf>
+[47] [48]
 File: 03-ggplot_files/figure-latex/colplot-statsum-1.pdf Graphic file (type pdf
 )
 <use 03-ggplot_files/figure-latex/colplot-statsum-1.pdf>
-[44] [45]
 File: 03-ggplot_files/figure-latex/boxplot-1.pdf Graphic file (type pdf)
 <use 03-ggplot_files/figure-latex/boxplot-1.pdf>
+[49] [50]
 File: 03-ggplot_files/figure-latex/violin-1.pdf Graphic file (type pdf)
 <use 03-ggplot_files/figure-latex/violin-1.pdf>
-[46] [47]
+[51]
 File: 03-ggplot_files/figure-latex/geom-crossbar-1.pdf Graphic file (type pdf)
 <use 03-ggplot_files/figure-latex/geom-crossbar-1.pdf>
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.2258 \caption{geom_crossbar()}
+l.2382 \caption{geom_crossbar()}
                                 \label{fig:geom-crossbar} 
 Here is how much of TeX's memory you used:
- 26809 strings out of 478475
- 517144 string characters out of 5858441
- 879485 words of memory out of 5000000
- 46669 multiletter control sequences out of 15000+600000
+ 26889 strings out of 478492
+ 519715 string characters out of 5861265
+ 877981 words of memory out of 5000000
+ 46727 multiletter control sequences out of 15000+600000
  458117 words of font info for 85 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  87i,8n,119p,883b,482s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on _main.pdf (48 pages).
+Output written on _main.pdf (52 pages).

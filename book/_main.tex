@@ -153,11 +153,18 @@
   \usepackage{selnolig}  % disable illegal ligatures
 \fi
 \usepackage[]{natbib}
-\bibliographystyle{apalike}
+\bibliographystyle{plainnat}
 
 \title{Data Skills for Reproducible Research}
+\usepackage{etoolbox}
+\makeatletter
+\providecommand{\subtitle}[1]{% add subtitle to \maketitle
+  \apptocmd{\@title}{\par {\large #1 \par}}{}{}
+}
+\makeatother
+\subtitle{v2}
 \author{}
-\date{\vspace{-2.5em}2021-08-23}
+\date{\vspace{-2.5em}2021-09-25}
 
 \begin{document}
 \maketitle
@@ -172,14 +179,16 @@
 
 This book provides an overview of skills needed for reproducible research and open science using the statistical programming language R and tidyverse packages. It covers data visualisation, data tidying and wrangling, archiving, iteration and functions, probability and data simulations, general linear models, and reproducible workflows.
 
-\hypertarget{course-resources}{%
-\section*{Course Resources}\label{course-resources}}
-\addcontentsline{toc}{section}{Course Resources}
+The book is also available in \href{reprores-v2.pdf}{PDF}, \href{reprores-v2.epub}{ePub} and \href{reprores-v2.mobi}{Kindle} formats, but these may have odd formatting where the onlne book has interactive elements like quizzes and shiny apps.
+
+\hypertarget{resources}{%
+\section*{Resources}\label{resources}}
+\addcontentsline{toc}{section}{Resources}
 
 \begin{itemize}
 \item
-  \href{https://www.youtube.com/playlist?list=PLA2iRWVwbpTIweEBHD2dOKjZHK1atRmXt}{Data Skills Videos}
-  Each chapter has several short video lectures for the main learning outcomes at the playlist . The videos are captioned and watching with the captioning on is a useful way to learn the jargon of computational reproducibility. If you cannot access YouTube, the videos are available on the course Teams and Moodle sites or by request from the instructor.
+  \href{https://www.youtube.com/playlist?list=PLA2iRWVwbpTKqULIFGBIe4Bg-YounTV1J}{Data Skills Videos}
+  Each chapter has several short video lectures for the main learning outcomes. The videos are captioned and watching with the captioning on is a useful way to learn the jargon of computational reproducibility. If you cannot access YouTube, the videos are available by request.
 \item
   \href{https://github.com/psyteachr/reprores-v2}{reprores}
   This is a custom R package for this course. You can install it with the code below. It will download all of the packages that are used in the book, along with an offline copy of this book, the shiny apps used in the book, and the exercises.
@@ -194,11 +203,21 @@ This book provides an overview of skills needed for reproducible research and op
   Coding and statistics both have a lot of specialist terms. Throughout this book, jargon will be linked to the glossary.
 \end{itemize}
 
+\hypertarget{how-to-learn-data-skills}{%
+\section*{How to learn data skills}\label{how-to-learn-data-skills}}
+\addcontentsline{toc}{section}{How to learn data skills}
+
+Learning data skills is kind of like having a gym membership (HT to \href{https://twitter.com/McAleerP}{Phil McAleer} for the analogy). You'll be given state-of-the-art equipment to use and instructions for how to use them, but your data skills won't get any stronger unless you practice.
+
+Data skills do not require you to memorise lots of code. You will be introduced to many different functions, but the main skill to learn is how to efficiently find the information you need. This will require getting used to the structure of help files and \href{https://www.rstudio.com/resources/cheatsheets/}{cheat sheets}, learning how to Goggle your problem and choose a helpful solution, and learning how to read error messages.
+
+Learning to code involves making a \textbf{lot} of mistakes. These mistakes are completely essential to the process, so try not to feel too frustrated. Many of the chapter exercises will give you broken code to fix so you get experience seeing what common errors look like. As you become a more experienced coder, you might not make fewer errors, but you'll recover from them much faster.
+
 \hypertarget{i-found-a-bug}{%
 \section*{I found a bug!}\label{i-found-a-bug}}
 \addcontentsline{toc}{section}{I found a bug!}
 
-This book is a work in progress, so you might find errors. Please help me fix them! The best way is to open an \href{https://github.com/PsyTeachR/reprores-v2/issues}{issue on github} that describes the error, but you can also mention it on the class Teams forum or \href{mailto:lisa.debruine@glasgow.ac.uk?subject=reprores}{email Lisa}.
+This book is a work in progress, so you might find errors. Please help me fix them! The best way is to open an \href{https://github.com/PsyTeachR/reprores-v2/issues}{issue on github} that describes the error, but you can also \href{mailto:lisa.debruine@glasgow.ac.uk?subject=reprores}{email Lisa}.
 
 \hypertarget{other-resources}{%
 \section*{Other Resources}\label{other-resources}}
@@ -208,6 +227,8 @@ This book is a work in progress, so you might find errors. Please help me fix th
 \tightlist
 \item
   \href{https://www.rstudio.com/resources/cheatsheets/}{RStudio Cheat Sheets}
+\item
+  \href{https://psyarxiv.com/q34k8}{Improving Pedagogy through Registered Reports}
 \item
   \href{https://learningstatisticswithr-bookdown.netlify.com}{Learning Statistics with R} by Navarro
 \item
@@ -242,32 +263,15 @@ This book is a work in progress, so you might find errors. Please help me fix th
 \item
   Type commands into the \protect\hyperlink{console}{console} \href{https://youtu.be/wbI4c_7y0kE}{(video)}
 \item
-  Understand \protect\hyperlink{function_syx}{function syntax} \href{https://youtu.be/X5P038N5Q8I}{(video)}
+  Understand \protect\hyperlink{coding-terms}{coding terms} and \protect\hyperlink{function_syx}{function syntax} \href{https://youtu.be/X5P038N5Q8I}{(video)}
 \item
   Install a \protect\hyperlink{install-package}{package} \href{https://youtu.be/u_pvHnqkVCE}{(video)}
+\item
+  Know the methods for getting \protect\hyperlink{help}{help}
 \end{enumerate}
 
-\hypertarget{resources-intro}{%
-\section{Resources}\label{resources-intro}}
-
-\begin{itemize}
-\tightlist
-\item
-  \href{http://r4ds.had.co.nz/introduction.html}{Chapter 1: Introduction} in \emph{R for Data Science}
-\item
-  \href{https://github.com/rstudio/cheatsheets/raw/master/rstudio-ide.pdf}{RStudio IDE Cheatsheet}
-\item
-  \href{https://rmarkdown.rstudio.com/lesson-1.html}{Introduction to R Markdown}
-\item
-  \href{https://github.com/rstudio/cheatsheets/raw/master/rmarkdown-2.0.pdf}{R Markdown Cheatsheet}
-\item
-  \href{https://www.rstudio.com/wp-content/uploads/2015/03/rmarkdown-reference.pdf}{R Markdown Reference}
-\item
-  \href{https://rstudio.cloud/}{RStudio Cloud}
-\end{itemize}
-
-\hypertarget{what-is-r}{%
-\section{What is R?}\label{what-is-r}}
+\hypertarget{r-and-rstudio}{%
+\section{R and RStudio}\label{r-and-rstudio}}
 
 R is a programming environment for data processing and statistical analysis. We use R in Psychology at the University of Glasgow to promote reproducible research. This refers to being able to document and reproduce all of the steps between raw data and results. R allows you to write scripts that combine data files, clean data, and run analyses. There are many other ways to do this, including writing SPSS syntax files, but we find R to be a useful tool that is free, open source, and commonly used by research psychologists.
 
@@ -283,7 +287,7 @@ If you open up the application called R, you will see an ``R Console'' window th
 
 \begin{figure}
 
-{\centering \includegraphics[width=1\linewidth]{images/01/r_console} 
+{\centering \includegraphics[width=1\linewidth]{images/intro/r_console} 
 
 }
 
@@ -306,7 +310,7 @@ Launch (RStudio.app), not (R.app).
 
 \begin{figure}
 
-{\centering \includegraphics[width=1\linewidth]{images/01/rstudio} 
+{\centering \includegraphics[width=1\linewidth]{images/intro/rstudio} 
 
 }
 
@@ -326,7 +330,7 @@ There are two tweaks that you should do to your RStudio installation to maximize
 
 \begin{figure}
 
-{\centering \includegraphics[width=0.66\linewidth]{images/01/repro} 
+{\centering \includegraphics[width=0.66\linewidth]{images/intro/repro} 
 
 }
 
@@ -340,18 +344,15 @@ Your settings should have:
 \begin{itemize}
 \tightlist
 \item
-  Restore .RData into workspace at startup: Checked Not Checked
+  Restore .RData into workspace at startup: CheckedNot Checked
 \item
-  Save workspace to .RData on exit: Always Never Ask
+  Save workspace to .RData on exit: AlwaysNeverAsk
 \end{itemize}
 
 \end{try}
 
-\hypertarget{getting-started}{%
-\section{Getting Started}\label{getting-started}}
-
 \hypertarget{console}{%
-\subsection{Console commands}\label{console}}
+\section{Console commands}\label{console}}
 
 We are first going to learn about how to interact with the console. In general, you will be developing R scripts or R Markdown files, rather than working directly in the console window. However, you can consider the console a kind of ``sandbox'' where you can try out lines of code and adapt them until you get them to do what you want. Then you can copy them back into the script editor.
 
@@ -438,6 +439,9 @@ You can break up text over multiple lines; R waits for a close quote before proc
 ## 
 ## - Toto
 \end{verbatim}
+
+\hypertarget{coding-terms}{%
+\section{Coding Terms}\label{coding-terms}}
 
 \hypertarget{vars}{%
 \subsection{Objects}\label{vars}}
@@ -543,11 +547,11 @@ After all the code above is run:
 \begin{itemize}
 \tightlist
 \item
-  \texttt{this\_year} = 43 44 1976 2019 2020
+  \texttt{this\_year} = 4344197620192020
 \item
-  \texttt{my\_birth\_year} = 43 44 1976 2019 2020
+  \texttt{my\_birth\_year} = 4344197620192020
 \item
-  \texttt{my\_age} = 43 44 1976 2019 2020
+  \texttt{my\_age} = 4344197620192020
 \end{itemize}
 
 \end{try}
@@ -555,9 +559,9 @@ After all the code above is run:
 \hypertarget{the-environment}{%
 \subsection{The environment}\label{the-environment}}
 
-Anytime you assign something to a new object, R creates a new entry in the global environment. Objects in the global environment exist until you end your session; then they disappear forever (unless you save them).
+Any time you assign something to a new object, R creates a new entry in the global environment. Objects in the global environment exist until you end your session; then they disappear forever (unless you save them).
 
-Look at the \textbf{Environment} tab in the upper right pane. It lists all of the objects you have created. Click the broom icon to clear all of the objects and start fresh. You can also use the following functions in the console to view all objects, remove one object, or remove all objects.
+Look at the \textbf{\texttt{Environment}} tab in the upper right pane. It lists all of the objects you have created. Click the broom icon to clear all of the objects and start fresh. You can also use the following functions in the console to view all objects, remove one object, or remove all objects.
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -668,8 +672,8 @@ If you want 10 random numbers from a normal distribution with mean of 0 and stan
 \end{Shaded}
 
 \begin{verbatim}
-##  [1] -1.42585195  0.01157288 -0.57497343  0.99645302  0.51340445  0.86863551
-##  [7]  0.97483455 -0.78045226  1.27881474 -0.04757403
+##  [1]  0.3644909  1.0551302  2.0720850  0.6152214 -0.2526608 -0.4186245
+##  [7] -0.1663370  0.1821596  1.1473016  0.9838531
 \end{verbatim}
 
 If you want 10 numbers from a normal distribution with a mean of 100:
@@ -681,8 +685,8 @@ If you want 10 numbers from a normal distribution with a mean of 100:
 \end{Shaded}
 
 \begin{verbatim}
-##  [1] 101.02258 101.30517 101.89997 100.80969 100.09842  99.30328 100.79257
-##  [8] 100.47622  98.34542  99.09833
+##  [1] 100.32126  99.03195 100.08633  98.23100  98.76142  99.97122 101.28922
+##  [8] 100.83947  99.28170 100.09866
 \end{verbatim}
 
 This would be an equivalent but less efficient way of calling the function:
@@ -694,8 +698,8 @@ This would be an equivalent but less efficient way of calling the function:
 \end{Shaded}
 
 \begin{verbatim}
-##  [1]  99.34622  99.53111 101.57509  98.51156  99.03433  99.99020 100.92146
-##  [8]  99.74942 100.19356  99.01972
+##  [1] 100.13668 100.11537  99.73778 101.14736 101.39270 100.92577  99.07943
+##  [8] 100.45524 100.72273 100.62765
 \end{verbatim}
 
 We don't need to name the arguments because R will recognize that we intended to fill in the first and second arguments by their position in the function call. However, if we want to change the default for an argument coming later in the list, then we need to name it. For instance, if we wanted to keep the default \texttt{mean\ =\ 0} but change the standard deviation to 100, we would do it this way:
@@ -707,11 +711,11 @@ We don't need to name the arguments because R will recognize that we intended to
 \end{Shaded}
 
 \begin{verbatim}
-##  [1] -70.598740 194.963228 110.146513   7.784041 -64.296012 163.954364
-##  [7] 131.114980 -18.909535 -51.260032 -55.204150
+##  [1] -145.718925 -246.111293   45.212757   -7.484518   63.115975  128.406898
+##  [7]   35.714157  170.416315  -39.284274  -65.863168
 \end{verbatim}
 
-Some functions give a list of options after an argument; this means the default value is the first option. The usage entry for the \texttt{power.t.test()} function looks like this:
+Some functions give a list of options after an argument; this means the default value is the first option. The usage entry for the {power.t.test}{(}{)} function looks like this:
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -728,41 +732,14 @@ Some functions give a list of options after an argument; this means the default 
 \begin{itemize}
 \tightlist
 \item
-  What is the default value for \texttt{sd}? NULL 1 0.05 two.sample
+  What is the default value for \texttt{sd}? 1NULLtwo.sample0.05
 \item
-  What is the default value for \texttt{type}? NULL two.sample one.sample paired
+  What is the default value for \texttt{type}? one.samplepairedNULLtwo.sample
 \item
-  Which is equivalent to \texttt{power.t.test(100,\ 0.5)}? power.t.test(100, 0.5, sig.level = 1, sd = 0.05) power.t.test() power.t.test(n = 100) power.t.test(delta = 0.5, n = 100)
-\end{itemize}
+  Which is equivalent to {power.t.test}{(}{100}, {0.5}{)}?
 
-\end{try}
-
-\hypertarget{help}{%
-\subsection{Getting help}\label{help}}
-
-Start up help in a browser using the function \texttt{help.start()}.
-
-If a function is in base R or a loaded package, you can use the \texttt{help("function\_name")} function or the \texttt{?function\_name} shortcut to access the help file. If the package isn't loaded, specify the package name as the second argument to the help function.
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\CommentTok{\# these methods are all equivalent ways of getting help}
-\FunctionTok{help}\NormalTok{(}\StringTok{"rnorm"}\NormalTok{)}
-\NormalTok{?rnorm}
-\FunctionTok{help}\NormalTok{(}\StringTok{"rnorm"}\NormalTok{, }\AttributeTok{package=}\StringTok{"stats"}\NormalTok{) }
-\end{Highlighting}
-\end{Shaded}
-
-When the package isn't loaded or you aren't sure what package the function is in, use the shortcut \texttt{??function\_name}.
-
-\begin{try}
-
-\begin{itemize}
-\tightlist
-\item
-  What is the first argument to the \texttt{mean} function? trim na.rm mean x
-\item
-  What package is \texttt{read\_excel} in? readr readxl base stats
+  \hypertarget{radio_DMJHDVUVPF}{}
+  {power.t.test()} {power.t.test(n = 100)} {power.t.test(100, 0.5, sig.level = 1, sd = 0.05)} {power.t.test(delta = 0.5, n = 100)}
 \end{itemize}
 
 \end{try}
@@ -772,68 +749,99 @@ When the package isn't loaded or you aren't sure what package the function is in
 
 One of the great things about R is that it is \textbf{user extensible}: anyone can create a new add-on software package that extends its functionality. There are currently thousands of add-on packages that R users have created to solve many different kinds of problems, or just simply to have fun. There are packages for data visualisation, machine learning, neuroimaging, eyetracking, web scraping, and playing games such as Sudoku.
 
-Add-on packages are not distributed with base R, but have to be downloaded and installed from an archive, in the same way that you would, for instance, download and install a fitness app on your smartphone.
+Add-on packages are not distributed with base R, but have to be downloaded and installed from an archive, in the same way that you would, for instance, download and install PokemonGo on your smartphone.
 
-The main repository where packages reside is called CRAN, the Comprehensive R Archive Network. A package has to pass strict tests devised by the R core team to be allowed to be part of the CRAN archive. You can install from the CRAN archive through R using the \texttt{install.packages()} function.
+The main repository where packages reside is called CRAN, the Comprehensive R Archive Network. A package has to pass strict tests devised by the R core team to be allowed to be part of the CRAN archive. You can install from the CRAN archive through R using the {install.packages}{(}{)} function.
 
 There is an important distinction between \textbf{installing} a package and \textbf{loading} a package.
 
 \hypertarget{installing-a-package}{%
 \subsection{Installing a package}\label{installing-a-package}}
 
-This is done using \texttt{install.packages()}. This is like installing an app on your phone: you only have to do it once and the app will remain installed until you remove it. For instance, if you want to use PokemonGo on your phone, you install it once from the App Store or Play Store, and you don't have to re-install it each time you want to use it. Once you launch the app, it will run in the background until you close it or restart your phone. Likewise, when you install a package, the package will be available (but not \emph{loaded}) every time you open up R.
+This is done using {install.packages}{(}{)}. This is like installing an app on your phone: you only have to do it once and the app will remain installed until you remove it. For instance, if you want to use PokemonGo on your phone, you install it once from the App Store or Play Store, and you don't have to re-install it each time you want to use it. Once you launch the app, it will run in the background until you close it or restart your phone. Likewise, when you install a package, the package will be available (but not \emph{loaded}) every time you open up R.
 
 \begin{warning}
 You may only be able to permanently install packages if you are using R on your own system; you may not be able to do this on public workstations if you lack the appropriate privileges.
 
 \end{warning}
 
-Install the \texttt{ggExtra} package on your system. This package lets you create plots with marginal histograms.
+Install the esquisse package on your system. This package lets you create plots interactively and copy the code needed to make them reproducibly.
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\FunctionTok{install.packages}\NormalTok{(}\StringTok{"ggExtra"}\NormalTok{)}
+\CommentTok{\# type this in the console pane}
+\FunctionTok{install.packages}\NormalTok{(}\StringTok{"esquisse"}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
 
 If you don't already have packages like ggplot2 and shiny installed, it will also install these \textbf{dependencies} for you. If you don't get an error message at the end, the installation was successful.
 
+\begin{dangerous}
+Never install a package from inside a script. Only do this from the console pane.
+
+\end{dangerous}
+
 \hypertarget{loading-a-package}{%
 \subsection{Loading a package}\label{loading-a-package}}
 
-This is done using \texttt{library(packagename)}. This is like \textbf{launching} an app on your phone: the functionality is only there where the app is launched and remains there until you close the app or restart. Likewise, when you run \texttt{library(packagename)} within a session, the functionality of the package referred to by \texttt{packagename} will be made available for your R session. The next time you start R, you will need to run the \texttt{library()} function again if you want to access its functionality.
+This is done using {library}{(}{packagename}{)}. This is like \textbf{launching} an app on your phone: the functionality is only there where the app is launched and remains there until you close the app or restart. Likewise, when you run {library}{(}{packagename}{)} within a session, the functionality of the package referred to by \texttt{packagename} will be made available for your R session. The next time you start R, you will need to run the {library}{(}{)} function again if you want to access its functionality.
 
-You can load the functions in \texttt{ggExtra} for your current R session as follows:
+You can load the functions in esquisse for your current R session as follows:
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\FunctionTok{library}\NormalTok{(ggExtra)}
+\FunctionTok{library}\NormalTok{(esquisse)}
 \end{Highlighting}
 \end{Shaded}
 
 You might get some red text when you load a package, this is normal. It is usually warning you that this package has functions that have the same name as other packages you've already loaded.
 
-\begin{info}
-You can use the convention \texttt{package::function()} to indicate in which add-on package a function resides. For instance, if you see \texttt{readr::read\_csv()}, that refers to the function \texttt{read\_csv()} in the \texttt{readr} add-on package.
-
-\end{info}
-
-Now you can run the function \texttt{ggExtra::runExample()}, which runs an interactive example of marginal plots using shiny.
+Now you can run the function {esquisse}{::}{esquisser}{(}{)}, which runs an interactive plotting example on the built-in dataset \texttt{diamonds} from the ggplot2 package.
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{ggExtra}\SpecialCharTok{::}\FunctionTok{runExample}\NormalTok{()}
+\NormalTok{esquisse}\SpecialCharTok{::}\FunctionTok{esquisser}\NormalTok{(ggplot2}\SpecialCharTok{::}\NormalTok{diamonds)}
 \end{Highlighting}
 \end{Shaded}
+
+\begin{info}
+You can use the convention \texttt{package::function()} to indicate in which add-on package a function resides. For instance, if you see {readr}{::}{read\_csv}{(}{)}, that refers to the function {read\_csv}{(}{)} in the readr add-on package.
+
+\end{info}
+
+\hypertarget{tidyverse}{%
+\subsection{Tidyverse}\label{tidyverse}}
+
+tidyverseis a meta-package that loads several packages we'll be using in almost every script:
+
+\begin{itemize}
+\tightlist
+\item
+  ggplot2, for data visualisation (Chapter~\ref{ggplot})
+\item
+  readr, for data import (Chapter~\ref{data})
+\item
+  tibble, for tables (Chapter~\ref{data})
+\item
+  tidyr, for data tidying (Chapter~\ref{tidyr})
+\item
+  dplyr, for data manipulation (Chapter~\ref{dplyr})
+\item
+  purrr, for repeating things (Chapter~\ref{func})
+\item
+  stringr, for strings
+\item
+  forcats, for factors
+\end{itemize}
 
 \hypertarget{install-from-github}{%
 \subsection{Install from GitHub}\label{install-from-github}}
 
-Many R packages are not yet on CRAN because they are still in development. Increasingly, datasets and code for papers are available as packages you can download from github. You'll need to install the devtools package to be able to install packages from github. Check if you have a package installed by trying to load it (e.g., if you don't have devtools installed, \texttt{library("devtools")} will display an error message) or by searching for it in the packages tab in the lower right pane. All listed packages are installed; all checked packages are currently loaded.
+Many R packages are not yet on CRAN because they are still in development. Increasingly, datasets and code for papers are available as packages you can download from github. You'll need to install the devtools package to be able to install packages from github. Check if you have a package installed by trying to load it (e.g., if you don't have devtools installed, {library}{(}{devtools}{)} will display an error message) or by searching for it in the packages tab in the lower right pane. All listed packages are installed; all checked packages are currently loaded.
 
 \begin{figure}
 
-{\centering \includegraphics[width=1\linewidth]{images/01/packages} 
+{\centering \includegraphics[width=1\linewidth]{images/intro/packages} 
 
 }
 
@@ -849,7 +857,7 @@ Many R packages are not yet on CRAN because they are still in development. Incre
 \end{Highlighting}
 \end{Shaded}
 
-After you install the reprores package, load it using the \texttt{library()} function. You can then try out some of the functions below.
+After you install the reprores package, load it using the {library}{(}{)} function. You can then try out some of the functions below.
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -871,7 +879,7 @@ How many different ways can you find to discover what functions are available in
 
 \end{try}
 
-Reprores contains datasets that we will be using in future lessons. \texttt{getdata()} creates a directory called ``data'' with all of the class datasets.
+reprores contains datasets that we will be using in future lessons. {getdata}{(}{)} creates a directory called data with all of the class datasets.
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -886,10 +894,75 @@ Reprores contains datasets that we will be using in future lessons. \texttt{getd
 \end{Highlighting}
 \end{Shaded}
 
+\hypertarget{help}{%
+\section{Getting help}\label{help}}
+
+You will feel like you need a \emph{lot} of help when you're starting to learn. This won't really go away, and it isn't supposed to. Experienced coders are also constantly looking things up; it's impossible to memorise everything. The goal is to learn enough about the structure of R that you can look things up quickly. This is why there is so much specialised jargon in coding; it's easier to google ``adding vectors in R'' than ``adding lists of things that are the same kind of data in R''.
+
+\hypertarget{function-help}{%
+\subsection{Function Help}\label{function-help}}
+
+Start up help in a browser using the function \texttt{help.start()}.
+
+If a function is in base R or a loaded package, you can use the \texttt{help("function\_name")} function or the \texttt{?function\_name} shortcut to access the help file. If the package isn't loaded, specify the package name as the second argument to the help function.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# these methods are all equivalent ways of getting help}
+\FunctionTok{help}\NormalTok{(}\StringTok{"rnorm"}\NormalTok{)}
+\NormalTok{?rnorm}
+\FunctionTok{help}\NormalTok{(}\StringTok{"rnorm"}\NormalTok{, }\AttributeTok{package=}\StringTok{"stats"}\NormalTok{) }
+\end{Highlighting}
+\end{Shaded}
+
+When the package isn't loaded or you aren't sure what package the function is in, use the shortcut \texttt{??function\_name}.
+
+\begin{try}
+
+\begin{itemize}
+\tightlist
+\item
+  What is the first argument to the \texttt{mean} function? trimna.rmmeanx
+\item
+  What package is \texttt{read\_excel} in? readrreadxlbasestats
+\end{itemize}
+
+\end{try}
+
+\hypertarget{googling}{%
+\subsection{Googling}\label{googling}}
+
+If the function help doesn't help, or you're not even sure what function you need, try Googling your question. It will take some practice to be able to use the right jargon in your search terms to get what you want. It helps to put ``R'' or ``rstats'', or ``tidyverse'' in the search text, or the name of the relevant package, like ggplot2.
+
+\hypertarget{vignettes}{%
+\subsection{Vignettes}\label{vignettes}}
+
+Many packages, especially \href{https://www.tidyverse.org/packages/}{tidyverse} ones, have helpful websites with vignettes explaining how to use their functions. Some of the vignettes are also available inside R.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# opens a list of available vignettes}
+\FunctionTok{vignette}\NormalTok{(}\AttributeTok{package =} \StringTok{"ggplot2"}\NormalTok{)}
+
+\CommentTok{\# opens a specific vignette in the Help pane}
+\FunctionTok{vignette}\NormalTok{(}\StringTok{"ggplot2{-}specs"}\NormalTok{, }\AttributeTok{package =} \StringTok{"ggplot2"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
 \hypertarget{glossaryintro}{%
 \section{Glossary}\label{glossaryintro}}
 
-Each chapter ends with a glossary table defining the jargon introduced in this chapter. The links below take you to the \href{https://psyteachr.github.io/glossary}{glossary book}, which you can also download for offline use with \texttt{devtools::install\_github("psyteachr/glossary")} and access the glossary offline with \texttt{glossary::book()}.
+Each chapter ends with a glossary table defining the jargon introduced in this chapter. The links below take you to the \href{https://psyteachr.github.io/glossary}{glossary book}, which you can also download for offline use.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# install the glossary package (only once)}
+\NormalTok{devtools}\SpecialCharTok{::}\FunctionTok{install\_github}\NormalTok{(}\StringTok{"psyteachr/glossary"}\NormalTok{)}
+
+\CommentTok{\# open the glossary offline }
+\NormalTok{glossary}\SpecialCharTok{::}\FunctionTok{book}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
 
 \begin{tabular}{l|l}
 \hline
@@ -907,6 +980,8 @@ cran & The Comprehensive R Archive Network: a network of ftp and web servers aro
 \hline
 escape & Include special characters like " inside of a string by prefacing them with a backslash.\\
 \hline
+factor & A data type where a specific set of values are stored with labels; An explanatory variable manipulated by the experimenter\\
+\hline
 function & A named section of code that can be reused.\\
 \hline
 global-environment & The interactive workspace where your script runs\\
@@ -919,7 +994,7 @@ object & A word that identifies and stores the value of some data for later use.
 \hline
 package & A group of R functions.\\
 \hline
-panes & RStudio is arranged with four window “panes.”\\
+panes & RStudio is arranged with four window "panes".\\
 \hline
 r-markdown & The R-specific version of markdown: a way to specify formatting, such as headers, paragraphs, lists, bolding, and links, as well as code blocks and inline code.\\
 \hline
@@ -933,26 +1008,24 @@ string & A piece of text inside of quotes.\\
 \hline
 variable & A word that identifies and stores the value of some data for later use.\\
 \hline
-vector & A type of data structure that is basically a list of things like T/F values, numbers, or strings.\\
+vector & A type of data structure that collects values with the same data type, like T/F values, numbers, or strings.\\
 \hline
 whitespace & Spaces, tabs and line breaks\\
 \hline
 \end{tabular}
 
-\hypertarget{exercises-intro}{%
-\section{Exercises}\label{exercises-intro}}
+\hypertarget{resources-intro}{%
+\section{Further Resources}\label{resources-intro}}
 
-Download the first set of \href{exercises/01_intro_exercise.Rmd}{exercises}. See the \href{exercises/01_intro_answers.Rmd}{answers} only after you've attempted all the questions.
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\CommentTok{\# run this to access the exercise}
-\NormalTok{reprores}\SpecialCharTok{::}\FunctionTok{exercise}\NormalTok{(}\DecValTok{1}\NormalTok{)}
-
-\CommentTok{\# run this to access the answers}
-\NormalTok{reprores}\SpecialCharTok{::}\FunctionTok{exercise}\NormalTok{(}\DecValTok{1}\NormalTok{, }\AttributeTok{answers =} \ConstantTok{TRUE}\NormalTok{)}
-\end{Highlighting}
-\end{Shaded}
+\begin{itemize}
+\tightlist
+\item
+  \href{http://r4ds.had.co.nz/introduction.html}{Chapter 1: Introduction} in \emph{R for Data Science}
+\item
+  \href{https://github.com/rstudio/cheatsheets/raw/master/rstudio-ide.pdf}{RStudio IDE Cheatsheet}
+\item
+  \href{https://rstudio.cloud/}{RStudio Cloud}
+\end{itemize}
 
 \hypertarget{repro}{%
 \chapter{Reproducible Workflows}\label{repro}}
@@ -961,7 +1034,8 @@ Download the first set of \href{exercises/01_intro_exercise.Rmd}{exercises}. See
 \section{Learning Objectives}\label{ilo-repro}}
 
 \hypertarget{basic}{%
-\subsection{Basic}\label{basic}}
+\subsection*{Basic}\label{basic}}
+\addcontentsline{toc}{subsection}{Basic}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -983,7 +1057,8 @@ Download the first set of \href{exercises/01_intro_exercise.Rmd}{exercises}. See
 \end{enumerate}
 
 \hypertarget{intermediate}{%
-\subsection{Intermediate}\label{intermediate}}
+\subsection*{Intermediate}\label{intermediate}}
+\addcontentsline{toc}{subsection}{Intermediate}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -995,27 +1070,6 @@ Download the first set of \href{exercises/01_intro_exercise.Rmd}{exercises}. See
   Format tables using \texttt{kableExtra}
 \end{enumerate}
 
-\hypertarget{resources-repro}{%
-\section{Resources}\label{resources-repro}}
-
-\begin{itemize}
-\tightlist
-\item
-  \href{http://r4ds.had.co.nz/r-markdown.html}{Chapter 27: R Markdown} in \emph{R for Data Science}
-\item
-  \href{http://www.rstudio.com/wp-content/uploads/2016/03/rmarkdown-cheatsheet-2.0.pdf}{R Markdown Cheat Sheet}
-\item
-  \href{https://www.rstudio.com/wp-content/uploads/2015/03/rmarkdown-reference.pdf}{R Markdown reference Guide}
-\item
-  \href{https://rmarkdown.rstudio.com/lesson-1.html}{R Markdown Tutorial}
-\item
-  \href{https://bookdown.org/yihui/rmarkdown/}{R Markdown: The Definitive Guide} by Yihui Xie, J. J. Allaire, \& Garrett Grolemund
-\item
-  \href{https://crsh.github.io/papaja_man/}{Papaja} Reproducible APA Manuscripts
-\item
-  \href{https://codeocean.com/}{Code Ocean} for Computational Reproducibility
-\end{itemize}
-
 \hypertarget{setup-repro}{%
 \section{Setup}\label{setup-repro}}
 
@@ -1023,8 +1077,6 @@ Download the first set of \href{exercises/01_intro_exercise.Rmd}{exercises}. See
 \begin{Highlighting}[]
 \FunctionTok{library}\NormalTok{(tidyverse)}
 \FunctionTok{library}\NormalTok{(knitr)}
-\FunctionTok{library}\NormalTok{(broom)}
-\FunctionTok{set.seed}\NormalTok{(}\DecValTok{8675309}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
 
@@ -1042,34 +1094,30 @@ We will make reproducible reports following the principles of \href{https://en.w
 \hypertarget{projects}{%
 \section{Organising a project}\label{projects}}
 
-First, we need to get orgainsed.
+First, we need to get organised. Projects in RStudio are a way to group all of the files you need for one project. Most projects include scripts, data files, and output files like the PDF report created by the script or images.
 
-Projects in RStudio are a way to group all of the files you need for one project. Most projects include scripts, data files, and output files like the PDF version of the script or images.
+\hypertarget{file-system}{%
+\subsection{File System}\label{file-system}}
 
-\begin{try}
-Make a new directory where you will keep all of your materials for this class. If you're using a lab computer, make sure you make this directory in your network drive so you can access it from other computers.
+Modern computers tend to hide the file system from users, but we need to understand a little bit about how files are stored on your computer in order to get a script to find your data. Your computer's file system is like a big box (or directory) that contains both files and smaller boxes, or ``subdirectories''. You can specify the location of a file with its name and the names of all the directories it is inside.
 
-Choose \textbf{\texttt{New\ Project...}} under the \textbf{\texttt{File}} menu to create a new project called \texttt{01-repro} in this directory.
-
-\end{try}
+For example, if Lisa is looking for a file called \texttt{report.Rmd}on their Desktop, they can specify the full file path like this: \texttt{/Users/lisad/Desktop/report.Rmd}, because the \texttt{Desktop} directory is inside the \texttt{lisad} directory, which is inside the \texttt{Users} directory, which is located at the base of the whole file system. If that file was on \emph{your} desktop, you would probably have a different path unless your user directory is also called \texttt{lisad}. You can also use the \texttt{\textasciitilde{}} shortcut to represent the user directory of the person who is currently logged in, like this: \texttt{\textasciitilde{}/Desktop/report.Rmd}.
 
 \hypertarget{working-directory}{%
 \subsection{Working Directory}\label{working-directory}}
 
-Where should you put all of your files? When developing an analysis, you usually want to have all of your scripts and data files in one subtree of your computer's directory structure. Usually there is a single working directory where your data and scripts are stored.
+Where should you put all of your files? You usually want to have all of your scripts and data files for a single project inside one folder on your computer, the working directory for that project. You can organise files in subdirectories inside this main project directory, such as putting all raw data files in a directory called data and saving any image files to a directory called images.
 
 Your script should only reference files in three locations, using the appropriate format.
 
-\begin{longtable}[]{@{}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.74}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.26}}@{}}
+\begin{longtable}[]{@{}ll@{}}
 \toprule
 Where & Example \\
 \midrule
 \endhead
-on the web & ``\url{https://psyteachr.github.io/psyteachr/data/disgust_scores.csv}'' \\
-in the working directory & ``disgust\_scores.csv'' \\
-in a subdirectory & ``data/disgust\_scores.csv'' \\
+on the web & ``\url{https://psyteachr.github.io/ads-v1/data/widgets_gadgets.xlsx}'' \\
+in the working directory & ``widgets\_gadgets.xlsx'' \\
+in a subdirectory & ``data/widgets\_gadgets.xlsx'' \\
 \bottomrule
 \end{longtable}
 
@@ -1078,24 +1126,13 @@ Never set or change your working directory in a script.
 
 \end{warning}
 
-If you are working with an R Markdown file, it will automatically use the same directory the .Rmd file is in as the working directory.
+R Markdown files will automatically use the same directory the .Rmd file is in as the working directory.
 
-If you are working with R scripts, store your main script file in the top-level directory and manually set your working directory to that location. You will have to reset the working directory each time you open RStudio, unless you create a project and access the script from the project.
-
-For instance, if you are on a Windows machine your data and scripts are in the directory \texttt{C:\textbackslash{}Carla\textquotesingle{}s\_files\textbackslash{}thesis2\textbackslash{}my\_thesis\textbackslash{}new\_analysis}, you will set your working directory in one of two ways: (1) by going to the \texttt{Session} pull down menu in RStudio and choosing \texttt{Set\ Working\ Directory}, or (2) by typing \texttt{setwd("C:\textbackslash{}Carla\textquotesingle{}s\_files\textbackslash{}thesis2\textbackslash{}my\_thesis\textbackslash{}new\_analysis")} in the console window.
-
-\begin{warning}
-It's tempting to make your life simple by putting the \texttt{setwd()} command in your script. Don't do this! Others will not have the same directory tree as you (and when your laptop dies and you get a new one, neither will you).
-
-When manually setting the working directory, always do so by using the \textbf{\texttt{Session\ \textgreater{}\ Set\ Working\ Directory}} pull-down option or by typing \texttt{setwd()} in the console.
-
-\end{warning}
-
-If your script needs a file in a subdirectory of \texttt{new\_analysis}, say, \texttt{data/questionnaire.csv}, load it in using a relative path so that it is accessible if you move the folder \texttt{new\_analysis} to another location or computer:
+If your script needs a file in a subdirectory of your working directory, such as, data/widgets\_gadgets.xlsx, load it in using a relative path so that it is accessible if you move the working directory to another location or computer:
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{dat }\OtherTok{\textless{}{-}} \FunctionTok{read\_csv}\NormalTok{(}\StringTok{"data/questionnaire.csv"}\NormalTok{)  }\CommentTok{\# correct}
+\NormalTok{dat }\OtherTok{\textless{}{-}} \FunctionTok{read\_csv}\NormalTok{(}\StringTok{"data/widgets\_gadgets.xlsx"}\NormalTok{)  }\CommentTok{\# correct}
 \end{Highlighting}
 \end{Shaded}
 
@@ -1103,12 +1140,125 @@ Do not load it in using an absolute path:
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{dat }\OtherTok{\textless{}{-}} \FunctionTok{read\_csv}\NormalTok{(}\StringTok{"C:/Carla\textquotesingle{}s\_files/thesis22/my\_thesis/new\_analysis/data/questionnaire.csv"}\NormalTok{)   }\CommentTok{\# wrong}
+\NormalTok{dat }\OtherTok{\textless{}{-}} \FunctionTok{read\_csv}\NormalTok{(}\StringTok{"C:/My Files/2020{-}2021/data/widgets\_gadgets.xlsx"}\NormalTok{)   }\CommentTok{\# wrong}
 \end{Highlighting}
 \end{Shaded}
 
 \begin{info}
-Also note the convention of using forward slashes, unlike the Windows-specific convention of using backward slashes. This is to make references to files platform independent.
+Also note the convention of using forward slashes, unlike the Windows-specific convention of using backward slashes. This is to make references to files work for everyone, regardless of their operating system.
+
+\end{info}
+
+\hypertarget{naming-things}{%
+\subsection{Naming Things}\label{naming-things}}
+
+Name files so that both people and computers can easily find things. Here are some important principles:
+
+\begin{itemize}
+\tightlist
+\item
+  file and directory names should only contain letters, numbers, dashes, and underscores, with a full stop (\texttt{.}) between the file name and extension (that means no spaces!)
+\item
+  be consistent with capitalisation (set a rule to make it easy to remember, like always use lowercase)
+\item
+  use underscores (\texttt{\_}) to separate parts of the file name, and dashes (\texttt{-}) to separate words in a section
+\item
+  name files with a pattern that alphabetises in a sensible order and makes it easy for you to find the file you're looking for
+\item
+  prefix a filename with an underscore to move it to the top of the list, or prefix all files with numbers to control their order
+\end{itemize}
+
+For example, these file names are a mess:
+
+\begin{itemize}
+\tightlist
+\item
+  report.doc
+\item
+  report final.doc
+\item
+  Data (Customers) 11-15.xls
+\item
+  Customers Data Nov 12.xls
+\item
+  final report2.doc
+\item
+  project notes.txt
+\item
+  Vendor Data November 15.xls
+\end{itemize}
+
+Here is one way to structure them so that similar files have the same structure and it's easy for a human to scan the list or to use code to find relevant files. See if you can figure out what the last one should be.
+
+\begin{itemize}
+\tightlist
+\item
+  \_project-notes.txt
+\item
+  report\_v1.doc
+\item
+  report\_v2.doc
+\item
+  report\_v3.doc
+\item
+  data\_customer\_2021-11-12.xls
+\item
+  data\_customer\_2021-11-15.xls
+\item
+  vendor-data\_2021-11-15.xlsdata-vendor-2021\_11\_15.xlsdata\_vendor\_2021-11-15.xlsdata\_2021-11-15\_vendor.xls
+\end{itemize}
+
+\begin{try}
+Think of other ways to name the files above. Look at some of your own project files and see what you can improve.
+
+\end{try}
+
+\hypertarget{start-a-project}{%
+\subsection{Start a Project}\label{start-a-project}}
+
+Now that we understand how the file system work and how to name things to make it easier for scripts to access them, we're ready to make our first project.
+
+First, make a new directory where you will keep all of your materials for this class. You can set this directory to be the default working directory under the General tab of the Global Options. This means that files will be saved here by default if you aren't working in a project.
+
+Next, choose \textbf{\texttt{New\ Project...}} under the \textbf{\texttt{File}} menu to create a new project called 02-reports. Make sure you save it inside the directory you just made. RStudio will restart itself and open with this new project directory as the working directory.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{include\_graphics}\NormalTok{(}\FunctionTok{c}\NormalTok{(}\StringTok{"images/repro/new\_proj\_1.png"}\NormalTok{,}
+                   \StringTok{"images/repro/new\_proj\_2.png"}\NormalTok{,}
+                   \StringTok{"images/repro/new\_proj\_3.png"}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{images/repro/new_proj_1} 
+
+}
+
+\caption{Starting a new project.}\label{fig:unnamed-chunk-2-1}
+\end{figure}
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{images/repro/new_proj_2} 
+
+}
+
+\caption{Starting a new project.}\label{fig:unnamed-chunk-2-2}
+\end{figure}
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{images/repro/new_proj_3} 
+
+}
+
+\caption{Starting a new project.}\label{fig:unnamed-chunk-2-3}
+\end{figure}
+
+Click on the Files tab in the lower right pane to see the contents of the project directory. You will see a file called \texttt{02-reports.Rproj}, which is a file that contains all of the project information.You can double-click on it to open up the project.
+
+\begin{info}
+Depending on your settings, you may also see a directory called \texttt{.Rproj.user}, which contains your specific user settings. You can ignore this and other ``invisible'' files that start with a full stop.
 
 \end{info}
 
@@ -1117,15 +1267,15 @@ Also note the convention of using forward slashes, unlike the Windows-specific c
 
 In this lesson, we will learn to make an R Markdown document with a table of contents, appropriate headers, code chunks, tables, images, inline R, and a bibliography.
 
-We will use R Markdown to create reproducible reports, which enables mixing of text and code. A reproducible script will contain sections of code in code blocks. A code block starts and ends with backtick symbols in a row, with some information about the code between curly brackets, such as \texttt{\{r\ chunk-name,\ echo=FALSE\}} (this runs the code, but does not show the text of the code block in the compiled document). The text outside of code blocks is written in markdown, which is a way to specify formatting, such as headers, paragraphs, lists, bolding, and links.
+We will use R Markdown to create reproducible reports, which enables mixing of text and code. A reproducible script will contain sections of code in code blocks. A code block starts and ends with three backtick symbols in a row, with some information about the code between curly brackets, such as \texttt{\{r\ chunk-name,\ echo=FALSE\}} (this runs the code, but does not show the text of the code block in the compiled document). The text outside of code blocks is written in markdown, which is a way to specify formatting, such as headers, paragraphs, lists, bolding, and links.
 
 \begin{figure}
 
-{\centering \includegraphics[width=1\linewidth]{images/01/reproducibleScript} 
+{\centering \includegraphics[width=1\linewidth]{images/repro/reproducible_script} 
 
 }
 
-\caption{A reproducible script.}\label{fig:img-reproducibleScript}
+\caption{A reproducible script.}\label{fig:img-reproducible-script}
 \end{figure}
 
 If you open up a new R Markdown file from a template, you will see an example document with several code blocks in it. To create an HTML or PDF report from an R Markdown (Rmd) document, you compile it. Compiling a document is called knitting in RStudio. There is a button that looks like a ball of yarn with needles through it that you click on to compile your file into a report.
@@ -1147,7 +1297,9 @@ author: "Me"
 output:
   html_document:
     df_print: kable
-    theme: spacelab
+    theme: 
+      version: 4
+      bootswatch: yeti
     highlight: tango
     toc: true
     toc_float:
@@ -1158,21 +1310,28 @@ output:
 ---
 \end{verbatim}
 
-The \texttt{df\_print:\ kable} option prints data frames using \texttt{knitr::kable}. You'll learn below how to further customise tables.
-
-The built-in themes are: ``cerulean'', ``cosmo'', ``flatly'', ``journal'', ``lumen'', ``paper'', ``readable'', ``sandstone'', ``simplex'', ``spacelab'', ``united'', and ``yeti''. You can \href{http://www.datadreaming.org/post/r-markdown-theme-gallery/}{view and download more themes}.
-
 \begin{info}
 Try changing the values from \texttt{false} to \texttt{true} to see what the options do.
 
 \end{info}
 
+The \texttt{df\_print:\ kable} option prints data frames using \texttt{knitr::kable}. You'll learn below how to further customise tables.
+
+The built-in bootswatch themes are: default, cerulean, cosmo, darkly, flatly, journal, lumen, paper, readable, sandstone, simplex, spacelab, united, and yeti. You can \href{https://bootswatch.com/4/}{view and download more themes}.
+
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{images/repro/bootswatch} 
+
+}
+
+\caption{Light themes in versions 3 and 4.}\label{fig:img-bootswatch}
+\end{figure}
+
 \hypertarget{setup}{%
 \subsection{Setup}\label{setup}}
 
 When you create a new R Markdown file in RStudio, a setup chunk is automatically created.
-
-```\{r setup, include=FALSE\}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -1180,11 +1339,7 @@ When you create a new R Markdown file in RStudio, a setup chunk is automatically
 \end{Highlighting}
 \end{Shaded}
 
-```
-
 You can set more default options for code chunks here. See the \href{https://yihui.name/knitr/options/}{knitr options documentation} for explanations of the possible options.
-
-```\{r setup, include=FALSE\}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -1199,8 +1354,6 @@ You can set more default options for code chunks here. See the \href{https://yih
 \NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
-
-```
 
 The code above sets the following options:
 
@@ -1222,12 +1375,12 @@ The code above sets the following options:
   \texttt{cache\ \ \ \ \ \ =\ FALSE} : run all the code to create all of the images and objects each time you knit (set to \texttt{TRUE} if you have time-consuming code)
 \end{itemize}
 
-Find a list of the current chunk options by typing \texttt{str(knitr::opts\_chunk\$get())} in the console.
+Find a list of the current chunk options by typing {str}{(}{knitr}{::}{opts\_chunk}{\$}{get}{(}{)}{)} in the console.
 
-You can also add the packages you need in this chunk using \texttt{library()}. Often when you are working on a script, you will realize that you need to load another add-on package. Don't bury the call to \texttt{library(package\_I\_need)} way down in the script. Put it in the top, so the user has an overview of what packages are needed.
+You can also add the packages you need in this chunk using {library}{(}{)}. Often when you are working on a script, you will realize that you need to load another add-on package. Don't bury the call to {library}{(}{package\_I\_need}{)} way down in the script. Put it in the top, so the user has an overview of what packages are needed.
 
 \begin{try}
-We'll be using function from the package \texttt{tidyverse}, so load that in your setup chunk.
+We'll be using function from the package tidyverse, so load that in your setup chunk.
 
 \end{try}
 
@@ -1266,21 +1419,25 @@ First, create a code chunk in your document. This code loads some data from the 
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{pets }\OtherTok{\textless{}{-}} \FunctionTok{read\_csv}\NormalTok{(}\StringTok{"https://psyteachr.github.io/psyteachr/data/pets.csv"}\NormalTok{)}
+\NormalTok{pets }\OtherTok{\textless{}{-}} \FunctionTok{read\_csv}\NormalTok{(}\StringTok{"https://psyteachr.github.io/reprores/data/pets.csv"}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
 
 \begin{verbatim}
-## 
+## Rows: 800 Columns: 6
+\end{verbatim}
+
+\begin{verbatim}
 ## -- Column specification --------------------------------------------------------
-## cols(
-##   id = col_character(),
-##   pet = col_character(),
-##   country = col_character(),
-##   score = col_double(),
-##   age = col_double(),
-##   weight = col_double()
-## )
+## Delimiter: ","
+## chr (3): id, pet, country
+## dbl (3): score, age, weight
+\end{verbatim}
+
+\begin{verbatim}
+## 
+## i Use `spec()` to retrieve the full column specification for this data.
+## i Specify the column types or set `show_col_types = FALSE` to quiet this message.
 \end{verbatim}
 
 \hypertarget{comments}{%
@@ -1332,7 +1489,7 @@ Next, create a code chunk where you want to display a table of the descriptives 
 ## 3 ferret   100        4.78      112.
 \end{verbatim}
 
-The table above is OK, but it could be more reader-friendly by changing the column labels, rounding the means, and adding a caption. You can use \texttt{knitr::kable()} for this.
+The table above is OK, but it could be more reader-friendly by changing the column labels, rounding the means, and adding a caption. You can use {knitr}{::}{kable}{(}{)} for this.
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -1355,7 +1512,7 @@ The table above is OK, but it could be more reader-friendly by changing the colu
 
 \begin{table}
 
-\caption{\label{tab:unnamed-chunk-5}Summary statistics for the pets dataset.}
+\caption{\label{tab:unnamed-chunk-6}Summary statistics for the pets dataset.}
 \centering
 \begin{tabular}[t]{l|r|r|r}
 \hline
@@ -1397,21 +1554,21 @@ ggplot(pets, aes(pet, score, fill = country)) +
 
 \begin{figure}
 
-{\centering \includegraphics[width=1\linewidth]{02-repro_files/figure-latex/unnamed-chunk-6-1} 
-
-}
-
-\caption{Figure 1. Scores by pet type and country.}\label{fig:unnamed-chunk-6}
-\end{figure}
-\end{verbatim}
-
-\begin{figure}
-
 {\centering \includegraphics[width=1\linewidth]{02-repro_files/figure-latex/unnamed-chunk-7-1} 
 
 }
 
 \caption{Figure 1. Scores by pet type and country.}\label{fig:unnamed-chunk-7}
+\end{figure}
+\end{verbatim}
+
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{02-repro_files/figure-latex/unnamed-chunk-8-1} 
+
+}
+
+\caption{Figure 1. Scores by pet type and country.}\label{fig:unnamed-chunk-8}
 \end{figure}
 
 \begin{info}
@@ -1422,7 +1579,7 @@ The last line changes the default text size and font, which can be useful for ge
 You can also include images that you did not create in R using the typical markdown syntax for images:
 
 \begin{verbatim}
-![All the Things by [Hyperbole and a Half](http://hyperboleandahalf.blogspot.com/)](images/memes/x-all-the-things.png)
+![All the Things by [Hyperbole and a Half](http://hyperboleandahalf.blogspot.com/)](images/memes/x-all-the-things.png){style="width: 50%"}
 \end{verbatim}
 
 \begin{figure}
@@ -1434,7 +1591,7 @@ You can also include images that you did not create in R using the typical markd
 \hypertarget{in-line-r}{%
 \subsubsection{In-line R}\label{in-line-r}}
 
-Now let's analyse the pets data to see if cats are heavier than ferrets. First we'll run the analysis code. Then we'll save any numbers we might want to use in our manuscript to variables and round them appropriately. Finally, we'll use \texttt{glue::glue()} to format a results string.
+Now let's analyse the pets data to see if cats are heavier than ferrets. First we'll run the analysis code. Then we'll save any numbers we might want to use in our manuscript to variables and round them appropriately. Finally, we'll use {glue}{::}{glue}{(}{)} to format a results string.
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -1464,12 +1621,17 @@ Cats were significantly heavier than ferrets (t = 18.42, df = 180.4, p \textless
 \hypertarget{bibliography}{%
 \subsection{Bibliography}\label{bibliography}}
 
-There are several ways to do in-text citations and automatically generate a \href{https://rmarkdown.rstudio.com/authoring_bibliographies_and_citations.html\#bibliographies}{bibliography} in RMarkdown.
+There are several ways to do in-text citations and automatically generate a \href{https://rmarkdown.rstudio.com/authoring_bibliographies_and_citations.html\#bibliographies}{bibliography} in R Markdown. Markdown files need a BibTex file that contains the references you need to cite. You specify the name of this file in the YAML header, like \texttt{bibliography:\ filename.bib} and reference citations in text using an at symbol and a shortname, like \texttt{{[}@tidyverse{]}}.
+
+\hypertarget{converting-from-reference-software}{%
+\subsubsection{Converting from reference software}\label{converting-from-reference-software}}
+
+Most reference software like EndNote, Zotero or Mendeley have exporting options that can export to BibTeX format. You just need to check the shortnames in the resulting file.
 
 \hypertarget{create-a-bibtex-file-manually}{%
 \subsubsection{Create a BibTeX File Manually}\label{create-a-bibtex-file-manually}}
 
-You can just make a BibTeX file and add citations manually. Make a new Text File in RStudio called ``bibliography.bib''.
+You can make a BibTeX file and add citations manually. Make a new Text File in RStudio called ``bibliography.bib''.
 
 Next, add the line \texttt{bibliography:\ bibliography.bib} to your YAML header.
 
@@ -1506,7 +1668,7 @@ You can get the citation for an R package using the functions \texttt{citation()
 ##   doi = {10.5281/zenodo.2669586},
 ##   publisher = {Zenodo},
 ##   year = {2021},
-##   note = {R package version 1.0.0.9004},
+##   note = {R package version 1.1.0},
 ##   url = {https://debruine.github.io/faux/},
 ## }
 \end{verbatim}
@@ -1516,8 +1678,7 @@ You can get the citation for an R package using the functions \texttt{citation()
 
 \href{https://scholar.google.com/}{Google Scholar} entries have a BibTeX citation option. This is usually the easiest way to get the relevant values, although you have to add the DOI yourself.
 
-Some journal websites also let you download citations in bibtex format.
-For example, go to the publisher's page for \href{https://journals.sagepub.com/doi/abs/10.1177/2515245918770963}{Equivalence Testing for Psychological Research: A Tutorial}, click on the Cite button (in the sidebar or under the bottom Explore More menu), choose BibTeX format, and download the citation. You can open up the file in a text editor and copy the text. It should look like this:
+Some journal websites also let you download citations in bibtex format. For example, go to the publisher's page for \href{https://journals.sagepub.com/doi/abs/10.1177/2515245918770963}{Equivalence Testing for Psychological Research: A Tutorial}, click on the Cite button (in the sidebar or under the bottom Explore More menu), choose BibTeX format, and download the citation. You can open up the file in a text editor and copy the text. It should look like this:
 
 \begin{verbatim}
 @article{doi:10.1177/2515245918770963,
@@ -1543,12 +1704,7 @@ eprint = {
 }
 \end{verbatim}
 
-Paste the reference into your bibliography.bib file. Change \texttt{doi:10.1177/2515245918770963} in the first line of the reference to a short string you will use to cite the reference in your manuscript. We'll use \texttt{TOSTtutorial}.
-
-\hypertarget{converting-from-reference-software}{%
-\subsubsection{Converting from reference software}\label{converting-from-reference-software}}
-
-Most reference software like EndNote, Zotero or Mendeley have exporting options that can export to BibTeX format. You just need to check the shortnames in the resulting file.
+Paste the reference into your bibliography.bib file. Change \texttt{doi:10.1177/2515245918770963} in the first line of the reference to a shortname you will use to cite the reference in your manuscript. We'll use \texttt{TOSTtutorial}.
 
 \hypertarget{in-text-citations}{%
 \subsubsection{In-text citations}\label{in-text-citations}}
@@ -1584,13 +1740,6 @@ Add some citations to your bibliography.bib file, reference them in your text, a
 
 You can knit your file to PDF or Word if you have the right packages installed on your computer. You can also create presentations, dashboards, websites, and even books with R markdown. In fact, the book you are reading right now was created using R markdown. See \href{https://rmarkdown.rstudio.com/formats.html}{RStudio Formats} for a list of all the output types.
 
-\hypertarget{computational-reproducibility}{%
-\subsection{Computational Reproducibility}\label{computational-reproducibility}}
-
-Computational reproducibility refers to making all aspects of your analysis reproducible, including specifics of the software you used to run the code you wrote. R packages get updated periodically and some of these updates may break your code. Using a computational reproducibility platform guards against this by always running your code in the same environment.
-
-\href{https://codeocean.com/}{Code Ocean} is a platform that lets you run your code in the cloud via a web browser.
-
 \hypertarget{glossary-repro}{%
 \section{Glossary}\label{glossary-repro}}
 
@@ -1602,9 +1751,15 @@ absolute-path & A file path that starts with / and is not appended to the workin
 \hline
 chunk & A section of code in an R Markdown file\\
 \hline
+directory & A collection or "folder" of files on a computer.\\
+\hline
+extension & The end part of a file name that tells you what type of file it is (e.g., .R or .Rmd).\\
+\hline
 knit & To create an HTML, PDF, or Word document from an R Markdown (Rmd) document\\
 \hline
 markdown & A way to specify formatting, such as headers, paragraphs, lists, bolding, and links.\\
+\hline
+path & A string representing the location of a file or directory.\\
 \hline
 project & A way to organise related files in RStudio\\
 \hline
@@ -1620,40 +1775,40 @@ yaml & A structured format for information\\
 \hline
 \end{tabular}
 
-\hypertarget{exercises-repro}{%
-\section{Exercises}\label{exercises-repro}}
-
-Create a new project called ``website''.
-
-In the ``website'' project, create a new Rmarkdown document called ``index.Rmd''. Do the following in this document:
+\hypertarget{resources-repro}{%
+\section{Further Resources}\label{resources-repro}}
 
 \begin{itemize}
 \tightlist
 \item
-  Edit the YAML header to output tables using kable and to use a custom theme.
+  \href{http://r4ds.had.co.nz/r-markdown.html}{Chapter 27: R Markdown} in \emph{R for Data Science}
 \item
-  Write a short paragraph describing your research interests.
+  \href{https://github.com/rstudio/cheatsheets/raw/master/rmarkdown.pdf}{R Markdown Cheat Sheet}
 \item
-  Include a bullet-point list of links to websites that are useful for your research.
+  \href{https://www.rstudio.com/wp-content/uploads/2015/03/rmarkdown-reference.pdf}{R Markdown reference Guide}
 \item
-  Add an image of anything relevant.
+  \href{https://rmarkdown.rstudio.com/lesson-1.html}{R Markdown Tutorial}
 \item
-  Include a code chunk at the end that displays a small table of fortunes from the fortunes package.
+  \href{https://bookdown.org/yihui/rmarkdown/}{R Markdown: The Definitive Guide} by Yihui Xie, J. J. Allaire, \& Garrett Grolemund
 \item
-  Knit this document to html.
+  \href{https://slides.djnavarro.net/project-structure/}{Project Structure} by Danielle Navarro
+\item
+  \href{https://speakerdeck.com/jennybc/how-to-name-files}{How to name files} by Jenny Bryan
+\item
+  \href{https://crsh.github.io/papaja_man/}{Papaja} Reproducible APA Manuscripts
+\item
+  \href{https://the-turing-way.netlify.app/}{The Turing Way}
 \end{itemize}
-
-\hypertarget{references}{%
-\section{References}\label{references}}
 
 \hypertarget{ggplot}{%
 \chapter{Data Visualisation}\label{ggplot}}
 
-\hypertarget{ilo_ggplot}{%
-\section{Learning Objectives}\label{ilo_ggplot}}
+\hypertarget{ilo-ggplot}{%
+\section{Learning Objectives}\label{ilo-ggplot}}
 
 \hypertarget{basic-1}{%
-\subsection{Basic}\label{basic-1}}
+\subsection*{Basic}\label{basic-1}}
+\addcontentsline{toc}{subsection}{Basic}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -1726,7 +1881,8 @@ In the ``website'' project, create a new Rmarkdown document called ``index.Rmd''
 \end{enumerate}
 
 \hypertarget{intermediate-1}{%
-\subsection{Intermediate}\label{intermediate-1}}
+\subsection*{Intermediate}\label{intermediate-1}}
+\addcontentsline{toc}{subsection}{Intermediate}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -1758,39 +1914,6 @@ In the ``website'' project, create a new Rmarkdown document called ``index.Rmd''
   Create interactive graphs with \protect\hyperlink{plotly}{\texttt{plotly}}
 \end{enumerate}
 
-\hypertarget{resources3}{%
-\section{Resources}\label{resources3}}
-
-\begin{itemize}
-\tightlist
-\item
-  \href{https://psyarxiv.com/4huvw/}{Data visualisation using R, for researchers who don't use R}
-\item
-  \href{http://r4ds.had.co.nz/data-visualisation.html}{Chapter 3: Data Visualisation} of \emph{R for Data Science}
-\item
-  \href{https://github.com/rstudio/cheatsheets/raw/master/data-visualization-2.1.pdf}{ggplot2 cheat sheet}
-\item
-  \href{http://r4ds.had.co.nz/graphics-for-communication.html}{Chapter 28: Graphics for communication} of \emph{R for Data Science}
-\item
-  \href{http://socviz.co/look-at-data.html}{Look at Data} from \href{http://socviz.co/}{Data Vizualization for Social Science}
-\item
-  \href{https://psyteachr.github.io/hack-your-data/}{Hack Your Data Beautiful} workshop by University of Glasgow postgraduate students
-\item
-  \href{http://www.cookbook-r.com/Graphs}{Graphs} in \emph{Cookbook for R}
-\item
-  \href{https://ggplot2.tidyverse.org/reference/}{ggplot2 documentation}
-\item
-  \href{http://www.r-graph-gallery.com/}{The R Graph Gallery} (this is really useful)
-\item
-  \href{http://r-statistics.co/Top50-Ggplot2-Visualizations-MasterList-R-Code.html}{Top 50 ggplot2 Visualizations}
-\item
-  \href{http://www.cookbook-r.com/Graphs/}{R Graphics Cookbook} by Winston Chang
-\item
-  \href{https://www.ggplot2-exts.org/}{ggplot extensions}
-\item
-  \href{https://plot.ly/ggplot2/}{plotly} for creating interactive graphs
-\end{itemize}
-
 \hypertarget{setup_ggplot}{%
 \section{Setup}\label{setup_ggplot}}
 
@@ -1799,8 +1922,9 @@ In the ``website'' project, create a new Rmarkdown document called ``index.Rmd''
 \CommentTok{\# libraries needed for these graphs}
 \FunctionTok{library}\NormalTok{(tidyverse)}
 \FunctionTok{library}\NormalTok{(patchwork) }
-\FunctionTok{library}\NormalTok{(reprores)}
 \FunctionTok{library}\NormalTok{(plotly)}
+\FunctionTok{library}\NormalTok{(ggwordcloud)}
+\FunctionTok{library}\NormalTok{(reprores)}
 
 \FunctionTok{set.seed}\NormalTok{(}\DecValTok{30250}\NormalTok{) }\CommentTok{\# makes sure random numbers are reproducible}
 \end{Highlighting}
@@ -2423,16 +2547,12 @@ You can change the size, aspect ratio and position of plots in an R Markdown doc
 
 You can change defaults for any single image using chunk options.
 
-```\{r fig-pet1, fig.width=10, fig.height=3, out.width=``100\%'', fig.align=``center'', fig.cap=``10x3 inches at 100\% width centre aligned.''\}
-
 \begin{Shaded}
 \begin{Highlighting}[]
 \FunctionTok{ggplot}\NormalTok{(pets, }\FunctionTok{aes}\NormalTok{(age, score, }\AttributeTok{color =}\NormalTok{ pet)) }\SpecialCharTok{+}
   \FunctionTok{geom\_smooth}\NormalTok{(}\AttributeTok{formula =}\NormalTok{ y}\SpecialCharTok{\textasciitilde{}}\NormalTok{x, }\AttributeTok{method =}\NormalTok{ lm)}
 \end{Highlighting}
 \end{Shaded}
-
-```
 
 \textbackslash begin\{figure\}
 
@@ -2443,16 +2563,12 @@ You can change defaults for any single image using chunk options.
 \textbackslash caption\{10x3 inches at 100\% width centre aligned.\}\label{fig:fig-chunk-example1-out}
 \textbackslash end\{figure\}
 
-```\{r fig-pet2, fig.width=5, fig.height=3, out.width=``50\%'', fig.align=``left'', fig.cap=``5x3 inches at 50\% width aligned left.''\}
-
 \begin{Shaded}
 \begin{Highlighting}[]
 \FunctionTok{ggplot}\NormalTok{(pets, }\FunctionTok{aes}\NormalTok{(age, score, }\AttributeTok{color =}\NormalTok{ pet)) }\SpecialCharTok{+}
   \FunctionTok{geom\_smooth}\NormalTok{(}\AttributeTok{formula =}\NormalTok{ y}\SpecialCharTok{\textasciitilde{}}\NormalTok{x, }\AttributeTok{method =}\NormalTok{ lm)}
 \end{Highlighting}
 \end{Shaded}
-
-```
 
 \textbackslash begin\{figure\}
 
@@ -2470,9 +2586,9 @@ You can set custom titles and axis labels in a few different ways.
 \begin{Highlighting}[]
 \FunctionTok{ggplot}\NormalTok{(pets, }\FunctionTok{aes}\NormalTok{(age, score, }\AttributeTok{color =}\NormalTok{ pet)) }\SpecialCharTok{+}
   \FunctionTok{geom\_smooth}\NormalTok{(}\AttributeTok{formula =}\NormalTok{ y }\SpecialCharTok{\textasciitilde{}}\NormalTok{ x, }\AttributeTok{method=}\StringTok{"lm"}\NormalTok{) }\SpecialCharTok{+}
-  \FunctionTok{labs}\NormalTok{(}\AttributeTok{title =} \StringTok{"Pet score with Age"}\NormalTok{,}
+  \FunctionTok{labs}\NormalTok{(}\AttributeTok{title =} \StringTok{"Pet Score with Age"}\NormalTok{,}
        \AttributeTok{x =} \StringTok{"Age (in Years)"}\NormalTok{,}
-       \AttributeTok{y =} \StringTok{"score Score"}\NormalTok{,}
+       \AttributeTok{y =} \StringTok{"Pet Score"}\NormalTok{,}
        \AttributeTok{color =} \StringTok{"Pet Type"}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
@@ -2490,10 +2606,9 @@ You can set custom titles and axis labels in a few different ways.
 \begin{Highlighting}[]
 \FunctionTok{ggplot}\NormalTok{(pets, }\FunctionTok{aes}\NormalTok{(age, score, }\AttributeTok{color =}\NormalTok{ pet)) }\SpecialCharTok{+}
   \FunctionTok{geom\_smooth}\NormalTok{(}\AttributeTok{formula =}\NormalTok{ y }\SpecialCharTok{\textasciitilde{}}\NormalTok{ x, }\AttributeTok{method=}\StringTok{"lm"}\NormalTok{) }\SpecialCharTok{+}
-  \FunctionTok{ggtitle}\NormalTok{(}\StringTok{"Pet score with Age"}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{ggtitle}\NormalTok{(}\StringTok{"Pet Score with Age"}\NormalTok{) }\SpecialCharTok{+}
   \FunctionTok{xlab}\NormalTok{(}\StringTok{"Age (in Years)"}\NormalTok{) }\SpecialCharTok{+}
-  \FunctionTok{ylab}\NormalTok{(}\StringTok{"score Score"}\NormalTok{) }\SpecialCharTok{+}
-  \FunctionTok{scale\_color\_discrete}\NormalTok{(}\AttributeTok{name =} \StringTok{"Pet Type"}\NormalTok{)}
+  \FunctionTok{ylab}\NormalTok{(}\StringTok{"Pet Score"}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
 
@@ -2506,10 +2621,45 @@ You can set custom titles and axis labels in a few different ways.
 \caption{Set custom labels with individual functions}\label{fig:line-labels2}
 \end{figure}
 
+The functions {labs}{(}{)}, {xlab}{(}{)}, and {ylab}{(}{)} are convenient when you just want to change a label name, but the \texttt{scale\_\{aesthetic\}\_\{type\}} functions are worth learning because they let you customise many things about any aesthetic property (e.g., \texttt{x}, \texttt{y}, \texttt{colour}, \texttt{fill}, \texttt{shape}, \texttt{linetype}), as long as you choose the correct type (usually \texttt{continuous} or \texttt{discrete}, but there are also special scale functions for other data types like dates).
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{ggplot}\NormalTok{(pets, }\FunctionTok{aes}\NormalTok{(age, score, }\AttributeTok{color =}\NormalTok{ pet)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_smooth}\NormalTok{(}\AttributeTok{formula =}\NormalTok{ y }\SpecialCharTok{\textasciitilde{}}\NormalTok{ x, }\AttributeTok{method=}\StringTok{"lm"}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{ggtitle}\NormalTok{(}\StringTok{"Pet Score with Age"}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{scale\_x\_continuous}\NormalTok{(}\AttributeTok{name =} \StringTok{"Age (in Years)"}\NormalTok{, }
+                     \AttributeTok{breaks =} \DecValTok{0}\SpecialCharTok{:}\DecValTok{16}\NormalTok{,}
+                     \AttributeTok{minor\_breaks =} \ConstantTok{NULL}\NormalTok{, }
+                     \AttributeTok{trans =} \StringTok{"reverse"}\NormalTok{,}
+                     \AttributeTok{position =} \StringTok{"top"}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{scale\_y\_continuous}\NormalTok{(}\AttributeTok{name =} \StringTok{"Pet Score"}\NormalTok{, }
+                     \AttributeTok{n.breaks =} \DecValTok{16}\NormalTok{, }
+                     \AttributeTok{limits =} \FunctionTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{, }\DecValTok{150}\NormalTok{)) }\SpecialCharTok{+}
+  \FunctionTok{scale\_color\_discrete}\NormalTok{(}\AttributeTok{name =} \StringTok{"Pet Type"}\NormalTok{, }
+                       \AttributeTok{labels =} \FunctionTok{c}\NormalTok{(}\StringTok{"Dogs"}\NormalTok{, }\StringTok{"Cats"}\NormalTok{, }\StringTok{"Ferrets"}\NormalTok{), }
+                       \AttributeTok{type =} \FunctionTok{c}\NormalTok{(}\StringTok{"purple"}\NormalTok{, }\StringTok{"green"}\NormalTok{, }\StringTok{"orange"}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.9\linewidth]{images/line-labels3-1} 
+
+}
+
+\caption{Set custom labels with scale functions}\label{fig:line-labels3}
+\end{figure}
+
+\begin{try}
+Use the help on the scale functions above to learn about the possible arguments. See what happens when you change the arguments above.
+
+\end{try}
+
 \hypertarget{custom-colours}{%
 \subsection{Colours}\label{custom-colours}}
 
-You can set custom values for colour and fill using functions like \texttt{scale\_colour\_manual()} and \texttt{scale\_fill\_manual()}. The \href{http://www.cookbook-r.com/Graphs/Colors_(ggplot2)/}{Colours chapter in Cookbook for R} has many more ways to customise colour.
+You can set custom values for colour and fill using the \texttt{scale\_\{aesthetic\}\_\{type\}} functions like \texttt{scale\_colour\_manual()} or \texttt{scale\_fill\_manual()}.
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -2528,6 +2678,8 @@ You can set custom values for colour and fill using functions like \texttt{scale
 
 \caption{Set custom colour}\label{fig:line-labels}
 \end{figure}
+
+The \href{http://www.cookbook-r.com/Graphs/Colors_(ggplot2)/}{Colours chapter in Cookbook for R} has many more ways to customise colour.
 
 \hypertarget{themes}{%
 \subsection{Themes}\label{themes}}
@@ -3021,6 +3173,34 @@ Once you have a correlation matrix in the correct (long) format, it's easy to ma
 \caption{Heatmap using geom_tile()}\label{fig:heatmap}
 \end{figure}
 
+\hypertarget{word-clouds}{%
+\section{Word Clouds}\label{word-clouds}}
+
+You can visualise qualitative data using the package ggwordcloud. In the example below, we'll use a dataset from ggwordcloud called \texttt{thankyou\_words\_small} that lists the words for ``thank you'' in 34 languages, plus the number of native speakers and total speakers. We're going to plot the names of the languages, sized by the number of speakers.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# load the data}
+\FunctionTok{data}\NormalTok{(}\StringTok{"thankyou\_words\_small"}\NormalTok{, }\AttributeTok{package =} \StringTok{"ggwordcloud"}\NormalTok{)}
+
+\CommentTok{\# create the ggwordclouds}
+\FunctionTok{ggplot}\NormalTok{(thankyou\_words\_small, }
+                   \FunctionTok{aes}\NormalTok{(}\AttributeTok{label =}\NormalTok{ name, }
+                       \AttributeTok{color =}\NormalTok{ name, }
+                       \AttributeTok{size =}\NormalTok{ speakers)) }\SpecialCharTok{+}
+\NormalTok{  ggwordcloud}\SpecialCharTok{::}\FunctionTok{geom\_text\_wordcloud}\NormalTok{() }\SpecialCharTok{+}
+  \FunctionTok{scale\_size\_area}\NormalTok{(}\AttributeTok{max\_size =} \DecValTok{12}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{theme\_minimal}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{center}\includegraphics[width=0.9\linewidth]{images/unnamed-chunk-6-1} \end{center}
+
+\begin{try}
+Look at the \href{https://cran.r-project.org/web/packages/ggwordcloud/vignettes/ggwordcloud.html}{ggwordcloud vignette} and see what elese you can do with the plot above. Try changing the colour scheme or the maximum word size. What happens if you use the \texttt{thankyou\_words} dataset with 147 words?
+
+\end{try}
+
 \hypertarget{plotly}{%
 \section{Interactive Plots}\label{plotly}}
 
@@ -3067,32 +3247,52 @@ geom & The geometric style in which data are displayed, such as boxplot, density
 \hline
 likert & A rating scale with a small number of discrete points in order\\
 \hline
-nominal & Categorical variables that don’t have an inherent order, such as types of animal.\\
+nominal & Categorical variables that don\&\#39;t have an inherent order, such as types of animal.\\
 \hline
 ordinal & Discrete variables that have an inherent order, such as number of legs\\
 \hline
 \end{tabular}
 
-\hypertarget{exercises-ggplot}{%
-\section{Exercises}\label{exercises-ggplot}}
+\hypertarget{resources-ggplot}{%
+\section{Further Resources}\label{resources-ggplot}}
 
-Download the \href{exercises/03_ggplot_exercise.Rmd}{exercises}. See the \href{exercises/03_ggplot_answers.html}{plots} to see what your plots should look like (this doesn't contain the answer code). See the \href{exercises/03_ggplot_answers.Rmd}{answers} only after you've attempted all the questions.
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\CommentTok{\# run this to access the exercise}
-\NormalTok{reprores}\SpecialCharTok{::}\FunctionTok{exercise}\NormalTok{(}\DecValTok{3}\NormalTok{)}
-
-\CommentTok{\# run this to access the answers}
-\NormalTok{reprores}\SpecialCharTok{::}\FunctionTok{exercise}\NormalTok{(}\DecValTok{3}\NormalTok{, }\AttributeTok{answers =} \ConstantTok{TRUE}\NormalTok{)}
-\end{Highlighting}
-\end{Shaded}
+\begin{itemize}
+\tightlist
+\item
+  \href{https://psyarxiv.com/4huvw/}{Data visualisation using R, for researchers who don't use R}
+\item
+  \href{http://r4ds.had.co.nz/data-visualisation.html}{Chapter 3: Data Visualisation} of \emph{R for Data Science}
+\item
+  \href{https://github.com/rstudio/cheatsheets/raw/master/data-visualization-2.1.pdf}{ggplot2 cheat sheet}
+\item
+  \href{https://ggplot2.tidyverse.org/articles/}{ggplot2 FAQs}
+\item
+  \href{http://r4ds.had.co.nz/graphics-for-communication.html}{Chapter 28: Graphics for communication} of \emph{R for Data Science}
+\item
+  \href{http://socviz.co/look-at-data.html}{Look at Data} from \href{http://socviz.co/}{Data Vizualization for Social Science}
+\item
+  \href{https://psyteachr.github.io/hack-your-data/}{Hack Your Data Beautiful} workshop by University of Glasgow postgraduate students
+\item
+  \href{http://www.cookbook-r.com/Graphs}{Graphs} in \emph{Cookbook for R}
+\item
+  \href{https://ggplot2.tidyverse.org/reference/}{ggplot2 documentation}
+\item
+  \href{http://www.r-graph-gallery.com/}{The R Graph Gallery} (this is really useful)
+\item
+  \href{http://r-statistics.co/Top50-Ggplot2-Visualizations-MasterList-R-Code.html}{Top 50 ggplot2 Visualizations}
+\item
+  \href{http://www.cookbook-r.com/Graphs/}{R Graphics Cookbook} by Winston Chang
+\item
+  \href{https://www.ggplot2-exts.org/}{ggplot extensions}
+\item
+  \href{https://plot.ly/ggplot2/}{plotly} for creating interactive graphs
+\end{itemize}
 
 \hypertarget{data}{%
 \chapter{Working with Data}\label{data}}
 
-\hypertarget{ilo2}{%
-\section{Learning Objectives}\label{ilo2}}
+\hypertarget{ilo-data}{%
+\section{Learning Objectives}\label{ilo-data}}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -3113,19 +3313,8 @@ Download the \href{exercises/03_ggplot_exercise.Rmd}{exercises}. See the \href{e
   Be able to \protect\hyperlink{Troubleshooting}{troubleshoot} common data import problems \href{https://youtu.be/gcxn4LJ_vAI}{(video)}
 \end{enumerate}
 
-\hypertarget{resources2}{%
-\section{Resources}\label{resources2}}
-
-\begin{itemize}
-\tightlist
-\item
-  \href{http://r4ds.had.co.nz/data-import.html}{Chapter 11: Data Import} in \emph{R for Data Science}
-\item
-  \href{https://github.com/rstudio/cheatsheets/raw/master/data-import.pdf}{RStudio Data Import Cheatsheet}
-\end{itemize}
-
-\hypertarget{setup2}{%
-\section{Setup}\label{setup2}}
+\hypertarget{setup-data}{%
+\section{Setup}\label{setup-data}}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -3275,12 +3464,14 @@ Extension & File Type & Reading & Writing \\
 \endhead
 .csv & Comma-separated values & \texttt{readr::read\_csv()} & \texttt{readr::write\_csv()} \\
 .tsv, .txt & Tab-separated values & \texttt{readr::read\_tsv()} & \texttt{readr::write\_tsv()} \\
-.xls, .xlsx & Excel workbook & \texttt{readxl::read\_excel()} & NA \\
-.sav, .mat, \ldots{} & Multiple types & \texttt{rio::import()} & NA \\
+.xls, .xlsx & Excel workbook & \texttt{readxl::read\_excel()} & \texttt{rio::export()} \\
+.sav & SPSS files & \texttt{haven::read\_sav()} & \texttt{haven::write\_sav()} \\
+.json & JSON files & \texttt{jsonlite::read\_json()} & \texttt{jsonlite::write\_json()} \\
+.mat, \ldots{} & Multiple types & \texttt{rio::import()} & \texttt{rio::export()} \\
 \bottomrule
 \end{longtable}
 
-The double colon means that the function on the right comes from the package on the left, so \texttt{readr::read\_csv()} refers to the \texttt{read\_csv()} function in the \texttt{readr} package, and \texttt{readxl::read\_excel()} refers to the function \texttt{read\_excel()} in the package \texttt{readxl}. The function \texttt{rio::import()} from the \texttt{rio} package will read almost any type of data file, including SPSS and Matlab. Check the help with \texttt{?rio::import} to see a full list.
+The double colon means that the function on the right comes from the package on the left, so \texttt{readr::read\_csv()} refers to the \texttt{read\_csv()} function in the readr package, and \texttt{readxl::read\_excel()} refers to the function \texttt{read\_excel()} in the readxl package. The function \texttt{rio::import()} from the rio package will read almost any type of data file, including SPSS and Matlab. Check the help with \texttt{?rio::import} to see a full list.
 
 You can get a directory of data files used in this class for tutorials and exercises with the following code, which will create a directory called ``data'' in your project directory. Alternatively, you can download a \href{data/data.zip}{zip file of the datasets}.
 
@@ -3290,64 +3481,214 @@ You can get a directory of data files used in this class for tutorials and exerc
 \end{Highlighting}
 \end{Shaded}
 
-Probably the most common file type you will encounter is .csv (comma-separated values). As the name suggests, a CSV file distinguishes which values go with which variable by separating them with commas, and text values are sometimes enclosed in double quotes. The first line of a file usually provides the names of the variables.
+\hypertarget{csv-files}{%
+\subsubsection{CSV Files}\label{csv-files}}
 
-For example, here are the first few lines of a CSV containing personality scores:
+The most common file type you will encounter in this class is .csv (comma-separated values). As the name suggests, a CSV file distinguishes which values go with which variable by separating them with commas, and text values are sometimes enclosed in double quotes. The first line of a file usually provides the names of the variables.
+
+For example, here is a small CSV containing demo data:
 
 \begin{verbatim}
 ```
-subj_id,O,C,E,A,N
-S01,4.428571429,4.5,3.333333333,5.142857143,1.625
-S02,5.714285714,2.9,3.222222222,3,2.625
-S03,5.142857143,2.8,6,3.571428571,2.5
-S04,3.142857143,5.2,1.333333333,1.571428571,3.125
-S05,5.428571429,4.4,2.444444444,4.714285714,1.625
+character,integer,double,logical,date
+A,1,1.5,TRUE,05-Sep-21
+B,2,2.5,TRUE,04-Sep-21
+C,3,3.5,FALSE,03-Sep-21
+D,4,4.5,FALSE,02-Sep-21
+E,5,5.5,,01-Sep-21
+F,6,6.5,TRUE,31-Aug-21
 ```
 \end{verbatim}
 
-There are six variables in this dataset, and their names are given in the first line of the file: \texttt{subj\_id}, \texttt{O}, \texttt{C}, \texttt{E}, \texttt{A}, and \texttt{N}. You can see that the values for each of these variables are given in order, separated by commas, on each subsequent line of the file.
+There are five variables in this dataset, and their names are given in the first line of the file: \texttt{character}, \texttt{integer}, \texttt{double} ,`\texttt{logical}, and \texttt{date}. You can see that the values for each of these variables are given in order, separated by commas, on each subsequent line of the file.
 
-When you read in CSV files, it is best practice to use the \texttt{readr::read\_csv()} function. The \texttt{readr} package is automatically loaded as part of the \texttt{tidyverse} package, which we will be using in almost every script. Note that you would normally want to store the result of the \texttt{read\_csv()} function to an object, as so:
+Use \texttt{readr::read\_csv()} to read in the data as assign it to an object called \texttt{demo\_csv}.
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{csv\_data }\OtherTok{\textless{}{-}} \FunctionTok{read\_csv}\NormalTok{(}\StringTok{"data/5factor.csv"}\NormalTok{)}
+\NormalTok{demo\_csv  }\OtherTok{\textless{}{-}}\NormalTok{ readr}\SpecialCharTok{::}\FunctionTok{read\_csv}\NormalTok{(}\StringTok{"data/demo.csv"}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
+
+\begin{verbatim}
+## Rows: 6 Columns: 5
+\end{verbatim}
+
+\begin{verbatim}
+## -- Column specification --------------------------------------------------------
+## Delimiter: ","
+## chr (2): character, date
+## dbl (2): integer, double
+## lgl (1): logical
+\end{verbatim}
 
 \begin{verbatim}
 ## 
-## -- Column specification --------------------------------------------------------
-## cols(
-##   subj_id = col_character(),
-##   O = col_double(),
-##   C = col_double(),
-##   E = col_double(),
-##   A = col_double(),
-##   N = col_double()
-## )
+## i Use `spec()` to retrieve the full column specification for this data.
+## i Specify the column types or set `show_col_types = FALSE` to quiet this message.
 \end{verbatim}
 
-The \texttt{read\_csv()} and \texttt{read\_tsv()} functions will give you some information about the data you just read in so you can check the column names and \protect\hyperlink{data_types}{data types}. For now, it's enough to know that \texttt{col\_double()} refers to columns with numbers and \texttt{col\_character()} refers to columns with words. We'll learn in the \protect\hyperlink{troubleshooting}{toroubleshooting} section below how to fix it if the function guesses the wrong data type.
+This function will give you some information about the data you just read in so you can check the column names and \protect\hyperlink{data_types}{data types}. If it makes a mistake, such as reading the ``date'' column as a character, you can manually set the column data types. Just copy the ``Column specification'' that was printed when you first imported the data, and make any changes you need.
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{tsv\_data }\OtherTok{\textless{}{-}} \FunctionTok{read\_tsv}\NormalTok{(}\StringTok{"data/5factor.txt"}\NormalTok{)}
-\NormalTok{xls\_data }\OtherTok{\textless{}{-}}\NormalTok{ readxl}\SpecialCharTok{::}\FunctionTok{read\_xls}\NormalTok{(}\StringTok{"data/5factor.xls"}\NormalTok{)}
-\CommentTok{\# you can load sheets from excel files by name or number}
-\NormalTok{rep\_data }\OtherTok{\textless{}{-}}\NormalTok{ readxl}\SpecialCharTok{::}\FunctionTok{read\_xls}\NormalTok{(}\StringTok{"data/5factor.xls"}\NormalTok{, }\AttributeTok{sheet =} \StringTok{"replication"}\NormalTok{)}
-\NormalTok{spss\_data }\OtherTok{\textless{}{-}}\NormalTok{ rio}\SpecialCharTok{::}\FunctionTok{import}\NormalTok{(}\StringTok{"data/5factor.sav"}\NormalTok{)}
+\NormalTok{ct }\OtherTok{\textless{}{-}} \FunctionTok{cols}\NormalTok{(}
+  \AttributeTok{character =} \FunctionTok{col\_character}\NormalTok{(),}
+  \AttributeTok{integer =} \FunctionTok{col\_double}\NormalTok{(),}
+  \AttributeTok{double =} \FunctionTok{col\_double}\NormalTok{(),}
+  \AttributeTok{logical =} \FunctionTok{col\_logical}\NormalTok{(),}
+  \AttributeTok{date =} \FunctionTok{col\_date}\NormalTok{(}\AttributeTok{format =} \StringTok{"\%d{-}\%b{-}\%y"}\NormalTok{)}
+\NormalTok{)}
+
+\NormalTok{demo  }\OtherTok{\textless{}{-}}\NormalTok{ readr}\SpecialCharTok{::}\FunctionTok{read\_csv}\NormalTok{(}\StringTok{"data/demo.csv"}\NormalTok{, }\AttributeTok{col\_types =}\NormalTok{ ct)}
 \end{Highlighting}
 \end{Shaded}
 
-Once loaded, you can view your data using the data viewer. In the upper right hand window of RStudio, under the Environment tab, you will see the object \texttt{csv\_data} listed.
+\begin{info}
+For dates, you might need to set the format. See \texttt{?strptime} for a list of the codes used to represent different date formats. Above, {``\%d-\%b-\%y''} means that the dates are formatted like \texttt{\{day\ number\}-\{month\ abbreviation\}-\{2-digit\ year\}}.
 
-If you click on the View icon, it will bring up a table view of the data you loaded in the top left pane of RStudio. This allows you to check that the data have been loaded in properly. You can close the tab when you're done looking at it, it won't remove the object.
+\end{info}
+
+We'll learn more about how to fix data import problems in the \protect\hyperlink{troubleshooting}{troubleshooting} section below.
+
+\hypertarget{other-file-types}{%
+\subsubsection{Other File Types}\label{other-file-types}}
+
+Use the functions below to read in other file types.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{demo\_tsv  }\OtherTok{\textless{}{-}}\NormalTok{ readr}\SpecialCharTok{::}\FunctionTok{read\_tsv}\NormalTok{(}\StringTok{"data/demo.tsv"}\NormalTok{)}
+\NormalTok{demo\_xls  }\OtherTok{\textless{}{-}}\NormalTok{ readxl}\SpecialCharTok{::}\FunctionTok{read\_excel}\NormalTok{(}\StringTok{"data/demo.xlsx"}\NormalTok{)}
+\NormalTok{demo\_sav  }\OtherTok{\textless{}{-}}\NormalTok{ haven}\SpecialCharTok{::}\FunctionTok{read\_sav}\NormalTok{(}\StringTok{"data/demo.sav"}\NormalTok{)}
+\NormalTok{demo\_json }\OtherTok{\textless{}{-}}\NormalTok{ jsonlite}\SpecialCharTok{::}\FunctionTok{read\_json}\NormalTok{(}\StringTok{"data/demo.json"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+You can access Google Sheets directly from R using googlesheets4.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(googlesheets4)}
+
+\FunctionTok{gs4\_deauth}\NormalTok{() }\CommentTok{\# skip authorisation for public data}
+
+\NormalTok{url }\OtherTok{\textless{}{-}} \StringTok{"https://docs.google.com/spreadsheets/d/1yhAPP0hk6fNssL9UdpJ7m\_vx00VY5PQKHspx6DNQNSY/"}
+
+\NormalTok{demo\_goo  }\OtherTok{\textless{}{-}}\NormalTok{ googlesheets4}\SpecialCharTok{::}\FunctionTok{read\_sheet}\NormalTok{(url)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{try}
+
+Try loading in all five of the \texttt{5factor} datasets in the data directory.
+
+Solution
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{ocean\_csv  }\OtherTok{\textless{}{-}}\NormalTok{ readr}\SpecialCharTok{::}\FunctionTok{read\_csv}\NormalTok{(}\StringTok{"data/5factor.csv"}\NormalTok{)}
+\NormalTok{ocean\_tsv  }\OtherTok{\textless{}{-}}\NormalTok{ readr}\SpecialCharTok{::}\FunctionTok{read\_tsv}\NormalTok{(}\StringTok{"data/5factor.txt"}\NormalTok{)}
+\NormalTok{ocean\_xls  }\OtherTok{\textless{}{-}}\NormalTok{ readxl}\SpecialCharTok{::}\FunctionTok{read\_excel}\NormalTok{(}\StringTok{"data/5factor.xls"}\NormalTok{)}
+\NormalTok{ocean\_xlsx }\OtherTok{\textless{}{-}}\NormalTok{ readxl}\SpecialCharTok{::}\FunctionTok{read\_excel}\NormalTok{(}\StringTok{"data/5factor.xlsx"}\NormalTok{)}
+\NormalTok{ocean\_sav  }\OtherTok{\textless{}{-}}\NormalTok{ haven}\SpecialCharTok{::}\FunctionTok{read\_sav}\NormalTok{(}\StringTok{"data/5factor.sav"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\end{try}
+
+\hypertarget{looking-at-data}{%
+\subsection{Looking at data}\label{looking-at-data}}
+
+Now that you've loaded some data, look the upper right hand window of RStudio, under the Environment tab. You will see the objects listed, along with their number of observations (rows) and variables (columns). This is your first check that everything went OK.
+
+Always, always, always, look at your data once you've created or loaded a table. Also look at it after each step that transforms your table. There are three main ways to look at your table: {View}{(}{)}, {print}{(}{)}, {tibble}{::}{glimpse}{(}{)}.
+
+\hypertarget{view}{%
+\subsubsection{View()}\label{view}}
+
+A familiar way to look at the table is given by {View}{(}{)} (uppercase `V'). This command can be useful in the console, but don't ever put this one in a script because it will create an annoying pop-up window when the user runs it. Or you can click on an objects in the environment pane to open it up in a viewer that looks a bit like Excel. You can close the tab when you're done looking at it; it won't remove the object.
+
+\hypertarget{print}{%
+\subsubsection{print()}\label{print}}
+
+The {print}{(}{)} method can be run explicitly, but is more commonly called by just typing the variable name on the blank line. The default is not to print the entire table, but just the first 10 rows.
+
+Let's look at the \texttt{demo\_tsv} table that we loaded above. Depending on how wide your screen is, you might need to click on an arrow at the right of the table to see the last column.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{demo\_tsv}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## # A tibble: 6 x 5
+##   character integer double logical date     
+##   <chr>       <dbl>  <dbl> <lgl>   <chr>    
+## 1 A               1    1.5 TRUE    05-Sep-21
+## 2 B               2    2.5 TRUE    04-Sep-21
+## 3 C               3    3.5 FALSE   03-Sep-21
+## 4 D               4    4.5 FALSE   02-Sep-21
+## 5 E               5    5.5 NA      01-Sep-21
+## 6 F               6    6.5 TRUE    31-Aug-21
+\end{verbatim}
+
+\hypertarget{glimpse}{%
+\subsubsection{glimpse()}\label{glimpse}}
+
+The function {tibble}{::}{glimpse}{(}{)} gives a sideways version of the table. This is useful if the table is very wide and you can't see all of the columns. It also tells you the data type of each column in angled brackets after each column name.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{glimpse}\NormalTok{(demo\_xls)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Rows: 6
+## Columns: 5
+## $ character <chr> "A", "B", "C", "D", "E", "F"
+## $ integer   <dbl> 1, 2, 3, 4, 5, 6
+## $ double    <dbl> 1.5, 2.5, 3.5, 4.5, 5.5, 6.5
+## $ logical   <lgl> TRUE, TRUE, FALSE, FALSE, NA, TRUE
+## $ date      <chr> "05-Sep-21", "04-Sep-21", "03-Sep-21", "02-Sep-21", "01-Sep-~
+\end{verbatim}
+
+\hypertarget{summary-function}{%
+\subsubsection{summary()}\label{summary-function}}
+
+You can get a quick summary of a dataset with the {summary}{(}{)} function.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{summary}\NormalTok{(demo\_sav)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##   character            integer         double        logical   
+##  Length:6           Min.   :1.00   Min.   :1.50   Min.   :0.0  
+##  Class :character   1st Qu.:2.25   1st Qu.:2.75   1st Qu.:0.0  
+##  Mode  :character   Median :3.50   Median :4.00   Median :1.0  
+##                     Mean   :3.50   Mean   :4.00   Mean   :0.6  
+##                     3rd Qu.:4.75   3rd Qu.:5.25   3rd Qu.:1.0  
+##                     Max.   :6.00   Max.   :6.50   Max.   :1.0  
+##                                                   NA's   :1    
+##      date          
+##  Length:6          
+##  Class :character  
+##  Mode  :character  
+##                    
+##                    
+##                    
+## 
+\end{verbatim}
 
 \hypertarget{creating-data}{%
 \subsection{Creating data}\label{creating-data}}
 
-If we are creating a data table from scratch, we can use the \texttt{tibble::tibble()} function, and type the data right in. The \texttt{tibble} package is part of the tidyverse package that we loaded at the start of this chapter.
+If we are creating a data table from scratch, we can use the \texttt{tibble::tibble()} function, and type the data right in. The tibble package is part of the tidyverse package that we loaded at the start of this chapter.
 
 Let's create a small table with the names of three Avatar characters and their bending type. The \texttt{tibble()} function takes arguments with the names that you want your columns to have. The values are vectors that list the column values in order.
 
@@ -3388,6 +3729,28 @@ If you have data that you want to save to a CSV file, use \texttt{readr::write\_
 
 This will save the data in CSV format to your working directory.
 
+Writing to Google Sheets is a little trickier. Even if a Google Sheet is publicly editable, you can't add data to it without authorising your account.
+
+You can authorise interactively using the following code (and your own email), which will prompt you to authorise ``Tidyverse API Packages'' the first time you do this.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{gs4\_auth}\NormalTok{(}\AttributeTok{email =} \StringTok{"debruine@gmail.com"}\NormalTok{)}
+\NormalTok{sheet\_id }\OtherTok{\textless{}{-}} \FunctionTok{gs4\_create}\NormalTok{(}\StringTok{"demo{-}file"}\NormalTok{, }\AttributeTok{sheets =}\NormalTok{ demo)}
+
+\NormalTok{new\_data }\OtherTok{\textless{}{-}} \FunctionTok{tibble}\NormalTok{(}
+  \AttributeTok{character =} \StringTok{"Z"}\NormalTok{,}
+  \AttributeTok{integer =}\NormalTok{ 0L,}
+  \AttributeTok{double =} \FloatTok{0.5}\NormalTok{,}
+  \AttributeTok{logical =} \ConstantTok{FALSE}\NormalTok{,}
+  \AttributeTok{date =} \StringTok{"01{-}Jan{-}00"}
+\NormalTok{)}
+
+\FunctionTok{sheet\_append}\NormalTok{(sheet\_id, new\_data)}
+\NormalTok{demo }\OtherTok{\textless{}{-}} \FunctionTok{read\_sheet}\NormalTok{(sheet\_id)}
+\end{Highlighting}
+\end{Shaded}
+
 \begin{try}
 
 \begin{itemize}
@@ -3395,28 +3758,52 @@ This will save the data in CSV format to your working directory.
 \item
   Create a new table called \texttt{family} with the first name, last name, and age of your family members.
 \item
-  Save it to a CSV file called ``family.csv''.
+  Save it to a CSV file called family.csv.
 \item
-  Clear the object from your environment by restarting R or with the code \texttt{remove(family)}.
+  Clear the object from your environment by restarting R or with the code {remove}{(}{family}{)}.
 \item
   Load the data back in and view it.
 \end{itemize}
 
 \end{try}
 
+Solution
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# create the table}
+\NormalTok{family }\OtherTok{\textless{}{-}} \FunctionTok{tribble}\NormalTok{(}
+  \SpecialCharTok{\textasciitilde{}}\NormalTok{first\_name, }\SpecialCharTok{\textasciitilde{}}\NormalTok{last\_name, }\SpecialCharTok{\textasciitilde{}}\NormalTok{age,}
+  \StringTok{"Lisa"}\NormalTok{, }\StringTok{"DeBruine"}\NormalTok{, }\DecValTok{45}\NormalTok{,}
+  \StringTok{"Robbie"}\NormalTok{, }\StringTok{"Jones"}\NormalTok{, }\DecValTok{14}
+\NormalTok{)}
+
+\CommentTok{\# save the data to CSV}
+\FunctionTok{export}\NormalTok{(family, }\StringTok{"data/family.csv"}\NormalTok{)}
+
+\CommentTok{\# remove the object from the environment}
+\FunctionTok{remove}\NormalTok{(family)}
+
+\CommentTok{\# load the data}
+\NormalTok{family }\OtherTok{\textless{}{-}} \FunctionTok{import}\NormalTok{(}\StringTok{"data/family.csv"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+:::
+
 We'll be working with tabular data a lot in this class, but tabular data is made up of vectors, which group together data with the same basic data type. The following sections explain some of this terminology to help you understand the functions we'll be learning to process and analyse data.
 
 \hypertarget{data_types}{%
 \section{Basic data types}\label{data_types}}
 
-Data can be numbers, words, true/false values or combinations of these. In order to understand some later concepts, it's useful to have a basic understanding of data types in R: numeric, character, and logical There is also a specific data type called a factor, which will probably give you a headache sooner or later, but we can ignore it for now.
+Data can be numbers, words, true/false values or combinations of these. In order to understand some later concepts, it's useful to have a basic understanding of data types in R: numeric, character, and logical
 
 \hypertarget{numeric-data}{%
 \subsection{Numeric data}\label{numeric-data}}
 
-All of the real numbers are numeric data types (imaginary numbers are ``complex''). There are two types of numeric data, integer and double. Integers are the whole numbers, like -1, 0 and 1. Doubles are numbers that can have fractional amounts. If you just type a plain number such as \texttt{10}, it is stored as a double, even if it doesn't have a decimal point. If you want it to be an exact integer, use the \texttt{L} suffix (10L).
+All of the real numbers are numeric data types (imaginary numbers are ``complex''). There are two types of numeric data, integer and double. Integers are the whole numbers, like {-}{1}, {0} and {1}. Doubles are numbers that can have fractional amounts. If you just type a plain number such as {10}, it is stored as a double, even if it doesn't have a decimal point. If you want it to be an exact integer, use the \texttt{L} suffix ({10L}).
 
-If you ever want to know the data type of something, use the \texttt{typeof} function.
+If you ever want to know the data type of something, use the \texttt{typeof()} function.
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -3514,6 +3901,67 @@ You might also see logical values abbreviated as \texttt{T} and \texttt{F}, or \
 
 \end{info}
 
+\hypertarget{factors}{%
+\subsection{Factors}\label{factors}}
+
+A factor is a specific type of integer that lets you specify the categories and their order. This is useful in data tables to make plots display with categories in the correct order.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{myfactor }\OtherTok{\textless{}{-}} \FunctionTok{factor}\NormalTok{(}\StringTok{"B"}\NormalTok{, }\AttributeTok{levels =} \FunctionTok{c}\NormalTok{(}\StringTok{"A"}\NormalTok{, }\StringTok{"B"}\NormalTok{,}\StringTok{"C"}\NormalTok{))}
+\NormalTok{myfactor}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] B
+## Levels: A B C
+\end{verbatim}
+
+Factors are a type of integer, but you can tell that they are factors by checking their \texttt{class()}.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{typeof}\NormalTok{(myfactor)}
+\FunctionTok{class}\NormalTok{(myfactor)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "integer"
+## [1] "factor"
+\end{verbatim}
+
+\hypertarget{dates-and-times}{%
+\subsection{Dates and Times}\label{dates-and-times}}
+
+Dates and times are represented by doubles with special classes. Dates and times are very hard to work with, but the lubridate package provides functions to help you with this.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{today }\OtherTok{\textless{}{-}}\NormalTok{ lubridate}\SpecialCharTok{::}\FunctionTok{today}\NormalTok{()}
+\NormalTok{now }\OtherTok{\textless{}{-}}\NormalTok{ lubridate}\SpecialCharTok{::}\FunctionTok{now}\NormalTok{(}\AttributeTok{tzone =} \StringTok{"GMT"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+Date and datetimes are a type of double, but you can tell that they are dates by checking their \texttt{class()}. Datetimes can have one or more of a few classes that start with \texttt{POSIX}.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{typeof}\NormalTok{(today)}
+\FunctionTok{typeof}\NormalTok{(now)}
+\FunctionTok{class}\NormalTok{(today)}
+\FunctionTok{class}\NormalTok{(now)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "double"
+## [1] "double"
+## [1] "Date"
+## [1] "POSIXct" "POSIXt"
+\end{verbatim}
+
 \begin{try}
 
 What data types are these:
@@ -3521,25 +3969,25 @@ What data types are these:
 \begin{itemize}
 \tightlist
 \item
-  \texttt{100} integer double character logical factor
+  \texttt{100} integerdoublecharacterlogicalfactor
 \item
-  \texttt{100L} integer double character logical factor
+  \texttt{100L} integerdoublecharacterlogicalfactor
 \item
-  \texttt{"100"} integer double character logical factor
+  \texttt{"100"} integerdoublecharacterlogicalfactor
 \item
-  \texttt{100.0} integer double character logical factor
+  \texttt{100.0} integerdoublecharacterlogicalfactor
 \item
-  \texttt{-100L} integer double character logical factor
+  \texttt{-100L} integerdoublecharacterlogicalfactor
 \item
-  \texttt{factor(100)} integer double character logical factor
+  \texttt{factor(100)} integerdoublecharacterlogicalfactor
 \item
-  \texttt{TRUE} integer double character logical factor
+  \texttt{TRUE} integerdoublecharacterlogicalfactor
 \item
-  \texttt{"TRUE"} integer double character logical factor
+  \texttt{"TRUE"} integerdoublecharacterlogicalfactor
 \item
-  \texttt{FALSE} integer double character logical factor
+  \texttt{FALSE} integerdoublecharacterlogicalfactor
 \item
-  \texttt{1\ ==\ 2} integer double character logical factor
+  \texttt{1\ ==\ 2} integerdoublecharacterlogicalfactor
 \end{itemize}
 
 \end{try}
@@ -3552,7 +4000,7 @@ Individual data values can be grouped together into containers. The main types o
 \hypertarget{vectors}{%
 \subsection{Vectors}\label{vectors}}
 
-A vector in R is like a vector in mathematics: a set of ordered elements. All of the elements in a vector must be of the same \textbf{data type} (numeric, character, logical). You can create a vector by enclosing the elements in the function \texttt{c()}.
+A vector in R is like a vector in mathematics: a set of ordered elements. All of the elements in a vector must be of the same data type (numeric, character, logical). You can create a vector by enclosing the elements in the function \texttt{c()}.
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -3915,7 +4363,7 @@ There are various ways of accessing specific columns or rows from a table. The o
 \hypertarget{troubleshooting}{%
 \section{Troubleshooting}\label{troubleshooting}}
 
-What if you import some data and it guesses the wrong column type? The most common reason is that a numeric column has some non-numbers in it somewhere. Maybe someone wrote a note in an otherwise numeric column. Columns have to be all one data type, so if there are any characters, the whole column is converted to character strings, and numbers like \texttt{1.2} get represented as ``1.2'', which will cause very weird errors like \texttt{"100"\ \textless{}\ "9"\ ==\ TRUE}. You can catch this by looking at the output from \texttt{read\_csv()} or using \texttt{glimpse()} to check your data.
+What if you import some data and it guesses the wrong column type? The most common reason is that a numeric column has some non-numbers in it somewhere. Maybe someone wrote a note in an otherwise numeric column. Columns have to be all one data type, so if there are any characters, the whole column is converted to character strings, and numbers like {1.2} get represented as {``1.2''}, which will cause very weird errors like \texttt{"100"\ \textless{}\ "9"\ ==\ TRUE}. You can catch this by using {glimpse}{(}{)} to check your data.
 
 The data directory you created with \texttt{reprores::getdata()} contains a file called ``mess.csv''. Let's try loading this dataset.
 
@@ -3926,23 +4374,19 @@ The data directory you created with \texttt{reprores::getdata()} contains a file
 \end{Shaded}
 
 \begin{verbatim}
-## 
-## -- Column specification --------------------------------------------------------
-## cols(
-##   `This is my messy dataset` = col_character()
-## )
+## Rows: 27 Columns: 1
 \end{verbatim}
 
 \begin{verbatim}
-## Warning: 27 parsing failures.
-## row col  expected    actual            file
-##   1  -- 1 columns 7 columns 'data/mess.csv'
-##   2  -- 1 columns 7 columns 'data/mess.csv'
-##   3  -- 1 columns 7 columns 'data/mess.csv'
-##   4  -- 1 columns 7 columns 'data/mess.csv'
-##   5  -- 1 columns 7 columns 'data/mess.csv'
-## ... ... ......... ......... ...............
-## See problems(...) for more details.
+## -- Column specification --------------------------------------------------------
+## Delimiter: ","
+## chr (1): This is my messy dataset
+\end{verbatim}
+
+\begin{verbatim}
+## 
+## i Use `spec()` to retrieve the full column specification for this data.
+## i Specify the column types or set `show_col_types = FALSE` to quiet this message.
 \end{verbatim}
 
 You'll get a warning with many parsing errors and \texttt{mess} is just a single column of the word ``junk''. View the file \texttt{data/mess.csv} by clicking on it in the File pane, and choosing ``View File''. Here are the first 10 lines. What went wrong?
@@ -3969,17 +4413,20 @@ First, the file starts with a note: ``This is my messy dataset''. We want to ski
 \end{Shaded}
 
 \begin{verbatim}
-## 
+## Rows: 26 Columns: 7
+\end{verbatim}
+
+\begin{verbatim}
 ## -- Column specification --------------------------------------------------------
-## cols(
-##   junk = col_character(),
-##   order = col_character(),
-##   score = col_double(),
-##   letter = col_character(),
-##   good = col_character(),
-##   min_max = col_character(),
-##   date = col_character()
-## )
+## Delimiter: ","
+## chr (6): junk, order, letter, good, min_max, date
+## dbl (1): score
+\end{verbatim}
+
+\begin{verbatim}
+## 
+## i Use `spec()` to retrieve the full column specification for this data.
+## i Specify the column types or set `show_col_types = FALSE` to quiet this message.
 \end{verbatim}
 
 \begin{Shaded}
@@ -4023,7 +4470,7 @@ OK, that's a little better, but this table is still a serious mess in several wa
   \texttt{date} should be a date column
 \end{itemize}
 
-We'll learn how to deal with this mess in the chapters on \protect\hyperlink{tidyr}{tidy data} and \protect\hyperlink{dplyr}{data wrangling}, but we can fix a few things by setting the \texttt{col\_types} argument in \texttt{read\_csv()} to specify the column types for our two columns that were guessed wrong and skip the ``junk'' column. The argument \texttt{col\_types} takes a list where the name of each item in the list is a column name and the value is from the table below. You can use the function, like \texttt{col\_double()} or the abbreviation, like \texttt{"l"}. Omitted column names are guessed.
+We'll learn how to deal with this mess in Chapters~\ref{tidyr} and \ref{dplyr}, but we can fix a few things by setting the \texttt{col\_types} argument in {read\_csv}{(}{)} to specify the column types for our two columns that were guessed wrong and skip the ``junk'' column. The argument \texttt{col\_types} takes a list where the name of each item in the list is a column name and the value is from the table below. You can use the function, like {col\_double}{(}{)} or the abbreviation, like {``l''}. Omitted column names are guessed.
 
 \begin{longtable}[]{@{}lll@{}}
 \toprule
@@ -4061,13 +4508,7 @@ col\_guess() & ? & parse using the ``best'' type based on the input \\
 \end{Highlighting}
 \end{Shaded}
 
-\begin{verbatim}
-## Warning: 1 parsing failure.
-## row   col   expected  actual            file
-##   2 order an integer missing 'data/mess.csv'
-\end{verbatim}
-
-You will get a message about ``1 parsing failure'' when you run this. Warnings look scary at first, but always start by reading the message. The table tells you what row (\texttt{2}) and column (\texttt{order}) the error was found in, what kind of data was expected (\texttt{integer}), and what the actual value was (\texttt{missing}). If you specifically tell \texttt{read\_csv()} to import a column as an integer, any characters in the column will produce a warning like this and then be recorded as \texttt{NA}. You can manually set what the missing values are recorded as with the \texttt{na} argument.
+You will get a message about ``1 parsing failure'' when you run this. Warnings look scary at first, but always start by reading the message. The table tells you what row (\texttt{2}) and column (\texttt{order}) the error was found in, what kind of data was expected (\texttt{integer}), and what the actual value was ({``missing''}). If you specifically tell {read\_csv}{(}{)} to import a column as an integer, any characters in the column will produce a warning like this and then be recorded as \texttt{NA}. You can manually set what the missing values were recorded as with the \texttt{na} argument.
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -4078,7 +4519,7 @@ You will get a message about ``1 parsing failure'' when you run this. Warnings l
 \end{Highlighting}
 \end{Shaded}
 
-Now \texttt{order} is an integer where ``missing'' is now \texttt{NA}, \texttt{good} is a logical value, where \texttt{0} and \texttt{F} are converted to \texttt{FALSE} and \texttt{1} and \texttt{T} are converted to \texttt{TRUE}, and \texttt{date} is a date type (adding leading zeros to the day). We'll learn in later chapters how to fix the other problems.
+Now \texttt{order} is an integer where ``missing'' is now \texttt{NA}, \texttt{good} is a logical value, where {0} and {F} are converted to {FALSE} and {1} and {T} are converted to {TRUE}, and \texttt{date} is a date type (adding leading zeros to the day). We'll learn in later chapters how to fix other problems, such as the \texttt{min\_max} column containing two different types of data.
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -4114,6 +4555,8 @@ base-r & The set of R functions that come with a basic installation of R, before
 \hline
 character & A data type representing strings of text.\\
 \hline
+coercion & Changing the data type of values in a vector to a single compatible type.\\
+\hline
 csv & Comma-separated variable: a file type for representing data where each variable is separated from the next by a comma.\\
 \hline
 data-type & The kind of data represented by an object.\\
@@ -4140,7 +4583,11 @@ logical & A data type representing TRUE or FALSE values.\\
 \hline
 numeric & A data type representing a real decimal number or integer.\\
 \hline
+object & A word that identifies and stores the value of some data for later use.\\
+\hline
 operator & A symbol that performs a mathematical operation, such as +, -, *, /\\
+\hline
+panes & RStudio is arranged with four window "panes".\\
 \hline
 tabular-data & Data in a rectangular table format, where each row has an entry for each column.\\
 \hline
@@ -4148,26 +4595,22 @@ tidy-data & A format for data that maps the meaning onto the structure.\\
 \hline
 tidyverse & A set of R packages that help you create and work with tidy data\\
 \hline
-vector & A type of data structure that is basically a list of things like T/F values, numbers, or strings.\\
+vector & A type of data structure that collects values with the same data type, like T/F values, numbers, or strings.\\
 \hline
 vectorized & An operator or function that acts on each element in a vector\\
 \hline
 \end{tabular}
 
-\hypertarget{exercises-data}{%
-\section{Exercises}\label{exercises-data}}
+\hypertarget{resources-data}{%
+\section{Further Resources}\label{resources-data}}
 
-Download the \href{exercises/04_data_exercise.Rmd}{exercises}. See the \href{exercises/04_data_answers.Rmd}{answers} only after you've attempted all the questions.
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\CommentTok{\# run this to access the exercise}
-\NormalTok{reprores}\SpecialCharTok{::}\FunctionTok{exercise}\NormalTok{(}\DecValTok{4}\NormalTok{)}
-
-\CommentTok{\# run this to access the answers}
-\NormalTok{reprores}\SpecialCharTok{::}\FunctionTok{exercise}\NormalTok{(}\DecValTok{4}\NormalTok{, }\AttributeTok{answers =} \ConstantTok{TRUE}\NormalTok{)}
-\end{Highlighting}
-\end{Shaded}
+\begin{itemize}
+\tightlist
+\item
+  \href{http://r4ds.had.co.nz/data-import.html}{Chapter 11: Data Import} in \emph{R for Data Science}
+\item
+  \href{https://github.com/rstudio/cheatsheets/raw/master/data-import.pdf}{RStudio Data Import Cheatsheet}
+\end{itemize}
 
 \hypertarget{joins}{%
 \chapter{Data Relations}\label{joins}}
@@ -4225,19 +4668,6 @@ Download the \href{exercises/04_data_exercise.Rmd}{exercises}. See the \href{exe
     \protect\hyperlink{setdiff}{\texttt{setdiff()}}
   \end{itemize}
 \end{enumerate}
-
-\hypertarget{resources6}{%
-\section{Resources}\label{resources6}}
-
-\begin{itemize}
-\tightlist
-\item
-  \href{http://r4ds.had.co.nz/relational-data.html}{Chapter 13: Relational Data} in \emph{R for Data Science}
-\item
-  \href{http://stat545.com/bit001_dplyr-cheatsheet.html}{Cheatsheet for dplyr join functions}
-\item
-  \href{slides/05_joins_slides.pdf}{Lecture slides on dplyr two-table verbs}
-\end{itemize}
 
 \hypertarget{setup-joins}{%
 \section{Setup}\label{setup-joins}}
@@ -4925,20 +5355,18 @@ set-operations & Functions that compare two tables and return rows that match (i
 \hline
 \end{tabular}
 
-\hypertarget{exercises-joins}{%
-\section{Exercises}\label{exercises-joins}}
+\hypertarget{resources-joins}{%
+\section{Further Resources}\label{resources-joins}}
 
-Download the \href{exercises/05_joins_exercise.Rmd}{exercises}. See the \href{exercises/05_joins_answers.Rmd}{answers} only after you've attempted all the questions.
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\CommentTok{\# run this to access the exercise}
-\NormalTok{reprores}\SpecialCharTok{::}\FunctionTok{exercise}\NormalTok{(}\DecValTok{5}\NormalTok{)}
-
-\CommentTok{\# run this to access the answers}
-\NormalTok{reprores}\SpecialCharTok{::}\FunctionTok{exercise}\NormalTok{(}\DecValTok{5}\NormalTok{, }\AttributeTok{answers =} \ConstantTok{TRUE}\NormalTok{)}
-\end{Highlighting}
-\end{Shaded}
+\begin{itemize}
+\tightlist
+\item
+  \href{http://r4ds.had.co.nz/relational-data.html}{Chapter 13: Relational Data} in \emph{R for Data Science}
+\item
+  \href{http://stat545.com/bit001_dplyr-cheatsheet.html}{Cheatsheet for dplyr join functions}
+\item
+  \href{slides/05_joins_slides.pdf}{Lecture slides on dplyr two-table verbs}
+\end{itemize}
 
 \hypertarget{tidyr}{%
 \chapter{Tidy Data}\label{tidyr}}
@@ -4947,7 +5375,8 @@ Download the \href{exercises/05_joins_exercise.Rmd}{exercises}. See the \href{ex
 \section{Learning Objectives}\label{ilo-tidyr}}
 
 \hypertarget{basic-2}{%
-\subsection{Basic}\label{basic-2}}
+\subsection*{Basic}\label{basic-2}}
+\addcontentsline{toc}{subsection}{Basic}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -4982,8 +5411,9 @@ Download the \href{exercises/05_joins_exercise.Rmd}{exercises}. See the \href{ex
   Be able to chain functions using \protect\hyperlink{pipes}{pipes} \href{https://youtu.be/itfrlLaN4SE}{(video)}
 \end{enumerate}
 
-\hypertarget{advanced}{%
-\subsection{Advanced}\label{advanced}}
+\hypertarget{intermediate-2}{%
+\subsection*{Intermediate}\label{intermediate-2}}
+\addcontentsline{toc}{subsection}{Intermediate}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -4992,21 +5422,6 @@ Download the \href{exercises/05_joins_exercise.Rmd}{exercises}. See the \href{ex
 \item
   Be able to use \protect\hyperlink{regex}{regular expressions} to separate complex columns
 \end{enumerate}
-
-\hypertarget{resources-tidyr}{%
-\section{Resources}\label{resources-tidyr}}
-
-\begin{itemize}
-\tightlist
-\item
-  \href{http://vita.had.co.nz/papers/tidy-data.html}{Tidy Data}
-\item
-  \href{http://r4ds.had.co.nz/tidy-data.html}{Chapter 12: Tidy Data} in \emph{R for Data Science}
-\item
-  \href{http://r4ds.had.co.nz/pipes.html}{Chapter 18: Pipes} in \emph{R for Data Science}
-\item
-  \href{https://www.rstudio.com/wp-content/uploads/2015/02/data-wrangling-cheatsheet.pdf}{Data wrangling cheat sheet}
-\end{itemize}
 
 \hypertarget{setup-tidyr}{%
 \section{Setup}\label{setup-tidyr}}
@@ -5276,9 +5691,9 @@ What would you set \texttt{names\_sep} to in order to split the \texttt{cols} he
 \texttt{cols} & \texttt{names\_to} & \texttt{names\_sep} \\
 \midrule
 \endhead
-\texttt{A\_1}, \texttt{A\_2}, \texttt{B\_1}, \texttt{B\_2} & \texttt{c("condition",\ "version")} & A B 1 2 \_ \\
-\texttt{A1}, \texttt{A2}, \texttt{B1}, \texttt{B2} & \texttt{c("condition",\ "version")} & A B 1 2 \_ \\
-\texttt{cat-day\&pre}, \texttt{cat-day\&post}, \texttt{cat-night\&pre}, \texttt{cat-night\&post}, \texttt{dog-day\&pre}, \texttt{dog-day\&post}, \texttt{dog-night\&pre}, \texttt{dog-night\&post} & \texttt{c("pet",\ "time",\ "condition")} & - \& - \\
+\texttt{A\_1}, \texttt{A\_2}, \texttt{B\_1}, \texttt{B\_2} & \texttt{c("condition",\ "version")} & AB12\_ \\
+\texttt{A1}, \texttt{A2}, \texttt{B1}, \texttt{B2} & \texttt{c("condition",\ "version")} & AB12\_ \\
+\texttt{cat-day\&pre}, \texttt{cat-day\&post}, \texttt{cat-night\&pre}, \texttt{cat-night\&post}, \texttt{dog-day\&pre}, \texttt{dog-day\&post}, \texttt{dog-night\&pre}, \texttt{dog-night\&post} & \texttt{c("pet",\ "time",\ "condition")} & -\&- \\
 \bottomrule
 \end{longtable}
 
@@ -5751,14 +6166,14 @@ Get data on infant and maternal mortality rates from the reprores package. If yo
 
 \begin{verbatim}
 ## # A tibble: 6 x 3
-##   Country     Year `Infant mortality rate (probability of dying between birth a~
-##   <chr>      <dbl> <chr>                                                        
-## 1 Afghanist~  2015 66.3 [52.7-83.9]                                             
-## 2 Afghanist~  2014 68.1 [55.7-83.6]                                             
-## 3 Afghanist~  2013 69.9 [58.7-83.5]                                             
-## 4 Afghanist~  2012 71.7 [61.6-83.7]                                             
-## 5 Afghanist~  2011 73.4 [64.4-84.2]                                             
-## 6 Afghanist~  2010 75.1 [66.9-85.1]
+##   Country      Year `Infant mortality rate (probability of dying between birth ~
+##   <chr>       <dbl> <chr>                                                       
+## 1 Afghanistan  2015 66.3 [52.7-83.9]                                            
+## 2 Afghanistan  2014 68.1 [55.7-83.6]                                            
+## 3 Afghanistan  2013 69.9 [58.7-83.5]                                            
+## 4 Afghanistan  2012 71.7 [61.6-83.7]                                            
+## 5 Afghanistan  2011 73.4 [64.4-84.2]                                            
+## 6 Afghanistan  2010 75.1 [66.9-85.1]
 \end{verbatim}
 
 \begin{Shaded}
@@ -6185,20 +6600,20 @@ wide & Data where all of the observations about one subject are in the same row\
 \hline
 \end{tabular}
 
-\hypertarget{exercises-tidyr}{%
-\section{Exercises}\label{exercises-tidyr}}
+\hypertarget{resources-tidyr}{%
+\section{Further Resources}\label{resources-tidyr}}
 
-Download the \href{exercises/06_tidyr_exercise.Rmd}{exercises}. See the \href{exercises/06_tidyr_answers.Rmd}{answers} only after you've attempted all the questions.
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\CommentTok{\# run this to access the exercise}
-\NormalTok{reprores}\SpecialCharTok{::}\FunctionTok{exercise}\NormalTok{(}\DecValTok{6}\NormalTok{)}
-
-\CommentTok{\# run this to access the answers}
-\NormalTok{reprores}\SpecialCharTok{::}\FunctionTok{exercise}\NormalTok{(}\DecValTok{6}\NormalTok{, }\AttributeTok{answers =} \ConstantTok{TRUE}\NormalTok{)}
-\end{Highlighting}
-\end{Shaded}
+\begin{itemize}
+\tightlist
+\item
+  \href{http://vita.had.co.nz/papers/tidy-data.html}{Tidy Data}
+\item
+  \href{http://r4ds.had.co.nz/tidy-data.html}{Chapter 12: Tidy Data} in \emph{R for Data Science}
+\item
+  \href{http://r4ds.had.co.nz/pipes.html}{Chapter 18: Pipes} in \emph{R for Data Science}
+\item
+  \href{https://www.rstudio.com/wp-content/uploads/2015/02/data-wrangling-cheatsheet.pdf}{Data wrangling cheat sheet}
+\end{itemize}
 
 \hypertarget{dplyr}{%
 \chapter{Data Wrangling}\label{dplyr}}
@@ -6207,7 +6622,8 @@ Download the \href{exercises/06_tidyr_exercise.Rmd}{exercises}. See the \href{ex
 \section{Learning Objectives}\label{ilo-dplyr}}
 
 \hypertarget{basic-3}{%
-\subsection{Basic}\label{basic-3}}
+\subsection*{Basic}\label{basic-3}}
+\addcontentsline{toc}{subsection}{Basic}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -6250,8 +6666,9 @@ Download the \href{exercises/06_tidyr_exercise.Rmd}{exercises}. See the \href{ex
   \end{itemize}
 \end{enumerate}
 
-\hypertarget{intermediate-2}{%
-\subsection{Intermediate}\label{intermediate-2}}
+\hypertarget{intermediate-3}{%
+\subsection*{Intermediate}\label{intermediate-3}}
+\addcontentsline{toc}{subsection}{Intermediate}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -6262,19 +6679,6 @@ Download the \href{exercises/06_tidyr_exercise.Rmd}{exercises}. See the \href{ex
 \item
   Use \protect\hyperlink{window}{window functions} \href{https://youtu.be/uo4b0W9mqPc}{(video)}
 \end{enumerate}
-
-\hypertarget{resources5}{%
-\section{Resources}\label{resources5}}
-
-\begin{itemize}
-\tightlist
-\item
-  \href{http://r4ds.had.co.nz/transform.html}{Chapter 5: Data Transformation} in \emph{R for Data Science}
-\item
-  \href{https://github.com/rstudio/cheatsheets/raw/master/data-transformation.pdf}{Data transformation cheat sheet}
-\item
-  \href{http://r4ds.had.co.nz/dates-and-times.html}{Chapter 16: Date and times} in \emph{R for Data Science}
-\end{itemize}
 
 \hypertarget{setup-dplyr}{%
 \section{Setup}\label{setup-dplyr}}
@@ -6559,7 +6963,7 @@ Or select data from at least 5 years ago. You can use the \texttt{range} functio
 \end{Shaded}
 
 \begin{verbatim}
-## [1] "2008-07-10" "2016-08-04"
+## [1] "2008-07-10" "2016-09-20"
 \end{verbatim}
 
 \hypertarget{arrange}{%
@@ -7411,29 +7815,28 @@ data-wrangling & The process of preparing data for visualisation and statistical
 \hline
 \end{tabular}
 
-\hypertarget{exercises-dplyr}{%
-\section{Exercises}\label{exercises-dplyr}}
+\hypertarget{resources-dplyr}{%
+\section{Further Resources}\label{resources-dplyr}}
 
-Download the \href{exercises/07_dplyr_exercise.Rmd}{exercises}. See the \href{exercises/07_dplyr_answers.Rmd}{answers} only after you've attempted all the questions.
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\CommentTok{\# run this to access the exercise}
-\NormalTok{reprores}\SpecialCharTok{::}\FunctionTok{exercise}\NormalTok{(}\DecValTok{7}\NormalTok{)}
-
-\CommentTok{\# run this to access the answers}
-\NormalTok{reprores}\SpecialCharTok{::}\FunctionTok{exercise}\NormalTok{(}\DecValTok{7}\NormalTok{, }\AttributeTok{answers =} \ConstantTok{TRUE}\NormalTok{)}
-\end{Highlighting}
-\end{Shaded}
+\begin{itemize}
+\tightlist
+\item
+  \href{http://r4ds.had.co.nz/transform.html}{Chapter 5: Data Transformation} in \emph{R for Data Science}
+\item
+  \href{https://github.com/rstudio/cheatsheets/raw/master/data-transformation.pdf}{Data transformation cheat sheet}
+\item
+  \href{http://r4ds.had.co.nz/dates-and-times.html}{Chapter 16: Date and times} in \emph{R for Data Science}
+\end{itemize}
 
 \hypertarget{glm}{%
 \chapter{Introduction to GLM}\label{glm}}
 
-\hypertarget{ilo9}{%
-\section{Learning Objectives}\label{ilo9}}
+\hypertarget{ilo-glm}{%
+\section{Learning Objectives}\label{ilo-glm}}
 
 \hypertarget{basic-4}{%
-\subsection{Basic}\label{basic-4}}
+\subsection*{Basic}\label{basic-4}}
+\addcontentsline{toc}{subsection}{Basic}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -7452,8 +7855,9 @@ Download the \href{exercises/07_dplyr_exercise.Rmd}{exercises}. See the \href{ex
   Explain the differences among \protect\hyperlink{coding-schemes}{coding schemes} \href{https://youtu.be/SqL28AbLj3g}{(video)}
 \end{enumerate}
 
-\hypertarget{intermediate-3}{%
-\subsection{Intermediate}\label{intermediate-3}}
+\hypertarget{intermediate-4}{%
+\subsection*{Intermediate}\label{intermediate-4}}
+\addcontentsline{toc}{subsection}{Intermediate}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -7465,23 +7869,8 @@ Download the \href{exercises/07_dplyr_exercise.Rmd}{exercises}. See the \href{ex
   Given data and a GLM, \protect\hyperlink{decomp}{generate a decomposition matrix} and calculate sums of squares, mean squares, and F ratios for a one-way ANOVA
 \end{enumerate}
 
-\hypertarget{resources9}{%
-\section{Resources}\label{resources9}}
-
-\begin{itemize}
-\tightlist
-\item
-  \href{http://www.otago.ac.nz/psychology/otago039309.pdf}{Jeff Miller and Patricia Haden, Statistical Analysis with the Linear Model (free online textbook)}
-\item
-  \href{slides/08_glm_slides.pdf}{lecture slides introducing the General Linear Model}
-\item
-  \href{http://rstudio2.psy.gla.ac.uk/Dale/GLM}{GLM shiny app}
-\item
-  \href{http://rstudio2.psy.gla.ac.uk/Dale/fdist}{F distribution}
-\end{itemize}
-
-\hypertarget{setup9}{%
-\section{Setup}\label{setup9}}
+\hypertarget{setup-glm}{%
+\section{Setup}\label{setup-glm}}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -7534,7 +7923,7 @@ We'll start with a very simple linear model that just has a single categorical f
 \begin{warning}
 A \textbf{factor} is a categorical variable that is used to divide subjects into groups, usually to draw some comparison. Factors are composed of different \textbf{levels}. Do not confuse factors with levels!
 
-In the example above, trial type is a factor level, incongrunt is a factor level, and congruent is a factor level.
+In the example above, trial type is a factorlevel, incongrunt is a factorlevel, and congruent is a factorlevel.
 
 \end{warning}
 
@@ -8104,7 +8493,7 @@ independent-variable & A variable whose value is assumed to influence the value 
 \hline
 normal-distribution & A symmetric distribution of data where values near the centre are most probable.\\
 \hline
-residual-error & That part of an observation that cannot be captured by the statistical model, and thus is assumed to reflect unknown factors.\\
+residual-error & \\
 \hline
 simulation & Generating data from summary parameters\\
 \hline
@@ -8112,31 +8501,32 @@ standard-deviation & A descriptive statistic that measures how spread out data a
 \hline
 \end{tabular}
 
-\hypertarget{exercises-glm}{%
-\section{Exercises}\label{exercises-glm}}
+\hypertarget{resources-glm}{%
+\section{Further Resources}\label{resources-glm}}
 
-Download the \href{exercises/08_glm_exercise.Rmd}{exercises}. See the \href{exercises/08_glm_answers.Rmd}{answers} only after you've attempted all the questions.
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\CommentTok{\# run this to access the exercise}
-\NormalTok{reprores}\SpecialCharTok{::}\FunctionTok{exercise}\NormalTok{(}\DecValTok{8}\NormalTok{)}
-
-\CommentTok{\# run this to access the answers}
-\NormalTok{reprores}\SpecialCharTok{::}\FunctionTok{exercise}\NormalTok{(}\DecValTok{8}\NormalTok{, }\AttributeTok{answers =} \ConstantTok{TRUE}\NormalTok{)}
-\end{Highlighting}
-\end{Shaded}
+\begin{itemize}
+\tightlist
+\item
+  \href{https://psyteachr.github.io/stat-models-v1/}{Statistical Models} by Dale Barr from the psyTeachR team
+\item
+  \href{http://rstudio2.psy.gla.ac.uk/Dale/GLM}{GLM shiny app}
+\item
+  \href{http://rstudio2.psy.gla.ac.uk/Dale/fdist}{F distribution}
+\item
+  \href{http://www.otago.ac.nz/psychology/otago039309.pdf}{Jeff Miller and Patricia Haden, Statistical Analysis with the Linear Model (free online textbook)}
+\end{itemize}
 
 \hypertarget{func}{%
 \chapter{Iteration \& Functions}\label{func}}
 
-\hypertarget{ilo7}{%
-\section{Learning Objectives}\label{ilo7}}
+\hypertarget{ilo-func}{%
+\section{Learning Objectives}\label{ilo-func}}
 
 You will learn about functions and iteration by using simulation to calculate a power analysis for an independent samples t-test.
 
 \hypertarget{basic-5}{%
-\subsection{Basic}\label{basic-5}}
+\subsection*{Basic}\label{basic-5}}
+\addcontentsline{toc}{subsection}{Basic}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -8151,8 +8541,9 @@ You will learn about functions and iteration by using simulation to calculate a 
   Set \protect\hyperlink{defaults}{default values} for the arguments in your functions
 \end{enumerate}
 
-\hypertarget{intermediate-4}{%
-\subsection{Intermediate}\label{intermediate-4}}
+\hypertarget{intermediate-5}{%
+\subsection*{Intermediate}\label{intermediate-5}}
+\addcontentsline{toc}{subsection}{Intermediate}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -8164,8 +8555,9 @@ You will learn about functions and iteration by using simulation to calculate a 
   Use \protect\hyperlink{warnings-errors}{error handling and warnings} in a function
 \end{enumerate}
 
-\hypertarget{advanced-1}{%
-\subsection{Advanced}\label{advanced-1}}
+\hypertarget{advanced}{%
+\subsection*{Advanced}\label{advanced}}
+\addcontentsline{toc}{subsection}{Advanced}
 
 The topics below are not (yet) covered in these materials, but they are directions for independent learning.
 
@@ -8183,21 +8575,10 @@ The topics below are not (yet) covered in these materials, but they are directio
   Capture and deal with errors using `adverb' functions \texttt{purrr::safely()} and \texttt{purrr::possibly()}
 \end{enumerate}
 
-\hypertarget{resources7}{%
-\section{Resources}\label{resources7}}
-
-\begin{itemize}
-\tightlist
-\item
-  Chapters 19 and 21 of \href{http://r4ds.had.co.nz}{R for Data Science}
-\item
-  \href{https://github.com/rstudio/cheatsheets/raw/master/purrr.pdf}{RStudio Apply Functions Cheatsheet}
-\end{itemize}
-
 In the next two lectures, we are going to learn more about iteration (doing the same commands over and over) and custom functions through a data simulation exercise, which will also lead us into more traditional statistical topics.
 
-\hypertarget{setup7}{%
-\section{Setup}\label{setup7}}
+\hypertarget{setup-func}{%
+\section{Setup}\label{setup-func}}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -9027,29 +9408,26 @@ matrix & A container data type consisting of numbers arranged into a fixed numbe
 \hline
 \end{tabular}
 
-\hypertarget{exercises-func}{%
-\section{Exercises}\label{exercises-func}}
+\hypertarget{resources-func}{%
+\section{Further Resources}\label{resources-func}}
 
-Download the \href{exercises/09_func_exercise.Rmd}{exercises}. See the \href{exercises/09_func_answers.Rmd}{answers} only after you've attempted all the questions.
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\CommentTok{\# run this to access the exercise}
-\NormalTok{reprores}\SpecialCharTok{::}\FunctionTok{exercise}\NormalTok{(}\DecValTok{9}\NormalTok{)}
-
-\CommentTok{\# run this to access the answers}
-\NormalTok{reprores}\SpecialCharTok{::}\FunctionTok{exercise}\NormalTok{(}\DecValTok{9}\NormalTok{, }\AttributeTok{answers =} \ConstantTok{TRUE}\NormalTok{)}
-\end{Highlighting}
-\end{Shaded}
+\begin{itemize}
+\tightlist
+\item
+  Chapters 19 and 21 of \href{http://r4ds.had.co.nz}{R for Data Science}
+\item
+  \href{https://github.com/rstudio/cheatsheets/raw/master/purrr.pdf}{RStudio Apply Functions Cheatsheet}
+\end{itemize}
 
 \hypertarget{sim}{%
 \chapter{Probability \& Simulation}\label{sim}}
 
-\hypertarget{ilo8}{%
-\section{Learning Objectives}\label{ilo8}}
+\hypertarget{ilo-sim}{%
+\section{Learning Objectives}\label{ilo-sim}}
 
 \hypertarget{basic-6}{%
-\subsection{Basic}\label{basic-6}}
+\subsection*{Basic}\label{basic-6}}
+\addcontentsline{toc}{subsection}{Basic}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -9106,37 +9484,19 @@ Download the \href{exercises/09_func_exercise.Rmd}{exercises}. See the \href{exe
   \protect\hyperlink{calc-power-binom}{Calculate power} using iteration and a sampling function
 \end{enumerate}
 
-\hypertarget{intermediate-5}{%
-\subsection{Intermediate}\label{intermediate-5}}
+\hypertarget{intermediate-6}{%
+\subsection*{Intermediate}\label{intermediate-6}}
+\addcontentsline{toc}{subsection}{Intermediate}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
-\setcounter{enumi}{5}
+\setcounter{enumi}{4}
 \tightlist
 \item
   Calculate the minimum sample size for a specific power level and design
+\item
+  Calculate power over a range of study parameters
 \end{enumerate}
-
-\hypertarget{resources8}{%
-\section{Resources}\label{resources8}}
-
-\begin{itemize}
-\tightlist
-\item
-  \href{http://shiny.psy.gla.ac.uk/debruine/simulate/}{Distribution Shiny App} (or run \texttt{reprores::app("simulate")}
-\item
-  \href{https://debruine.github.io/tutorials/sim-data.html}{Simulation tutorials}
-\item
-  \href{http://r4ds.had.co.nz/iteration.html}{Chapter 21: Iteration} of \emph{R for Data Science}
-\item
-  \href{https://www.coursera.org/learn/statistical-inferences/}{Improving your statistical inferences} on Coursera (week 1)
-\item
-  \href{https://debruine.github.io/faux/}{Faux} package for data simulation
-\item
-  \href{https://psyarxiv.com/baxsf}{Simulation-Based Power-Analysis for Factorial ANOVA Designs} \citep{lakens_caldwell_2019}
-\item
-  \href{https://psyarxiv.com/xp5cy/}{Understanding mixed effects models through data simulation} \citep{debruine_barr_2019}
-\end{itemize}
 
 \hypertarget{setup8}{%
 \section{Setup}\label{setup8}}
@@ -9187,13 +9547,7 @@ Use \texttt{runif()} to sample from a continuous uniform distribution.
 \end{Highlighting}
 \end{Shaded}
 
-\begin{figure}
-
-{\centering \includegraphics[width=1\linewidth]{10-sim_files/figure-latex/runif-1} 
-
-}
-
-\end{figure}
+\begin{center}\includegraphics[width=1\linewidth]{10-sim_files/figure-latex/runif-1} \end{center}
 
 \hypertarget{discrete}{%
 \subsubsection{Discrete}\label{discrete}}
@@ -9335,13 +9689,7 @@ You should always check your randomly generated data to check that it makes sens
 \end{Highlighting}
 \end{Shaded}
 
-\begin{figure}
-
-{\centering \includegraphics[width=1\linewidth]{10-sim_files/figure-latex/sim_flips-1} 
-
-}
-
-\end{figure}
+\begin{center}\includegraphics[width=1\linewidth]{10-sim_files/figure-latex/sim_flips-1} \end{center}
 
 \begin{try}
 Run the simulation above several times, noting how the histogram changes. Try changing the values of \texttt{n}, \texttt{size}, and \texttt{prob}.
@@ -9381,13 +9729,7 @@ We can simulate a normal distribution of size \texttt{n} if we know the \texttt{
 \end{Highlighting}
 \end{Shaded}
 
-\begin{figure}
-
-{\centering \includegraphics[width=1\linewidth]{10-sim_files/figure-latex/rnorm-1} 
-
-}
-
-\end{figure}
+\begin{center}\includegraphics[width=1\linewidth]{10-sim_files/figure-latex/rnorm-1} \end{center}
 
 \begin{info}
 Run the simulation above several times, noting how the density plot changes. What do the vertical lines represent? Try changing the values of \texttt{n}, \texttt{mean}, and \texttt{sd}.
@@ -9427,13 +9769,7 @@ Let's say we want to model how many texts you get each day for a whole. You know
 \end{Highlighting}
 \end{Shaded}
 
-\begin{figure}
-
-{\centering \includegraphics[width=1\linewidth]{10-sim_files/figure-latex/rpois-1} 
-
-}
-
-\end{figure}
+\begin{center}\includegraphics[width=1\linewidth]{10-sim_files/figure-latex/rpois-1} \end{center}
 
 So we can see that over a year, you're unlikely to get fewer than 5 texts in a day, or more than 35 (although it's not impossible).
 
@@ -9492,13 +9828,7 @@ Plot your sampled variables to check everything worked like you expect. It's eas
 ## `geom_smooth()` using formula 'y ~ x'
 \end{verbatim}
 
-\begin{figure}
-
-{\centering \includegraphics[width=1\linewidth]{10-sim_files/figure-latex/graph-bvn-1} 
-
-}
-
-\end{figure}
+\begin{center}\includegraphics[width=1\linewidth]{10-sim_files/figure-latex/graph-bvn-1} \end{center}
 
 \hypertarget{mvnorm}{%
 \subsection{Multivariate Normal}\label{mvnorm}}
@@ -9557,13 +9887,7 @@ You can use the \texttt{plotly} library to make a 3D graph.
 \end{Highlighting}
 \end{Shaded}
 
-\begin{figure}
-
-{\centering \includegraphics[width=1\linewidth]{10-sim_files/figure-latex/3d-graph-mvn-1} 
-
-}
-
-\end{figure}
+\begin{center}\includegraphics[width=1\linewidth]{10-sim_files/figure-latex/3d-graph-mvn-1} \end{center}
 
 \hypertarget{faux}{%
 \subsection{Faux}\label{faux}}
@@ -9618,13 +9942,7 @@ You can also use faux to simulate data for factorial designs. Set up the between
 \end{Highlighting}
 \end{Shaded}
 
-\begin{figure}
-
-{\centering \includegraphics[width=1\linewidth]{10-sim_files/figure-latex/faux-sim-design-1} 
-
-}
-
-\end{figure}
+\begin{center}\includegraphics[width=1\linewidth]{10-sim_files/figure-latex/faux-sim-design-1} \end{center}
 
 You can use the \texttt{check\_sim\_stats()} function, but you need to set the argument \texttt{between} to a vector of all the between-subject factor columns.
 
@@ -9871,13 +10189,7 @@ You can plot the distribution of p-values.
 \end{Highlighting}
 \end{Shaded}
 
-\begin{figure}
-
-{\centering \includegraphics[width=1\linewidth]{10-sim_files/figure-latex/plot-reps-binom-1} 
-
-}
-
-\end{figure}
+\begin{center}\includegraphics[width=1\linewidth]{10-sim_files/figure-latex/plot-reps-binom-1} \end{center}
 
 \hypertarget{t-test}{%
 \subsection{T-test}\label{t-test}}
@@ -10055,13 +10367,7 @@ You can plot the distribution of p-values.
 \end{Highlighting}
 \end{Shaded}
 
-\begin{figure}
-
-{\centering \includegraphics[width=1\linewidth]{10-sim_files/figure-latex/plot-reps-t-1} 
-
-}
-
-\end{figure}
+\begin{center}\includegraphics[width=1\linewidth]{10-sim_files/figure-latex/plot-reps-t-1} \end{center}
 
 \begin{try}
 What do you think the distribution of p-values is
@@ -10201,21 +10507,20 @@ We have to do a little data wrangling first. Have a look at the data after you i
 \end{Shaded}
 
 \begin{verbatim}
-## 
+## Rows: 872 Columns: 11
+\end{verbatim}
+
+\begin{verbatim}
 ## -- Column specification --------------------------------------------------------
-## cols(
-##   Sex = col_character(),
-##   Agemos = col_character(),
-##   `-2` = col_double(),
-##   `-1.5` = col_double(),
-##   `-1` = col_double(),
-##   `-0.5` = col_double(),
-##   `0` = col_double(),
-##   `0.5` = col_double(),
-##   `1` = col_double(),
-##   `1.5` = col_double(),
-##   `2` = col_double()
-## )
+## Delimiter: ","
+## chr (2): Sex, Agemos
+## dbl (9): -2, -1.5, -1, -0.5, 0, 0.5, 1, 1.5, 2
+\end{verbatim}
+
+\begin{verbatim}
+## 
+## i Use `spec()` to retrieve the full column specification for this data.
+## i Specify the column types or set `show_col_types = FALSE` to quiet this message.
 \end{verbatim}
 
 \begin{Shaded}
@@ -10245,13 +10550,7 @@ Plot your new data frame to see how mean height changes with age for boys and gi
 \end{Highlighting}
 \end{Shaded}
 
-\begin{figure}
-
-{\centering \includegraphics[width=1\linewidth]{10-sim_files/figure-latex/plot-height-means-1} 
-
-}
-
-\end{figure}
+\begin{center}\includegraphics[width=1\linewidth]{10-sim_files/figure-latex/plot-height-means-1} \end{center}
 
 \hypertarget{simulate-a-population}{%
 \subsection{Simulate a population}\label{simulate-a-population}}
@@ -10276,13 +10575,7 @@ Simulate 50 random male heights and 50 random female heights for 20-year-olds us
 \end{Highlighting}
 \end{Shaded}
 
-\begin{figure}
-
-{\centering \includegraphics[width=1\linewidth]{10-sim_files/figure-latex/sim-height-20-1} 
-
-}
-
-\end{figure}
+\begin{center}\includegraphics[width=1\linewidth]{10-sim_files/figure-latex/sim-height-20-1} \end{center}
 
 \begin{try}
 Run the simulation above several times, noting how the density plot changes. Try changing the age you're simulating.
@@ -10393,13 +10686,7 @@ Start with a relatively low number of replications and/or more spread-out sample
 ## `geom_smooth()` using method = 'loess' and formula 'y ~ x'
 \end{verbatim}
 
-\begin{figure}
-
-{\centering \includegraphics[width=1\linewidth]{10-sim_files/figure-latex/range-sample-sizes-1} 
-
-}
-
-\end{figure}
+\begin{center}\includegraphics[width=1\linewidth]{10-sim_files/figure-latex/range-sample-sizes-1} \end{center}
 
 Now we can narrow down our search to values around 55 (plus or minus 5) and increase the number of replications from 1e3 to 1e4.
 
@@ -10421,13 +10708,7 @@ Now we can narrow down our search to values around 55 (plus or minus 5) and incr
 ## `geom_smooth()` using method = 'loess' and formula 'y ~ x'
 \end{verbatim}
 
-\begin{figure}
-
-{\centering \includegraphics[width=1\linewidth]{10-sim_files/figure-latex/narrow-range-sample-sizes-1} 
-
-}
-
-\end{figure}
+\begin{center}\includegraphics[width=1\linewidth]{10-sim_files/figure-latex/narrow-range-sample-sizes-1} \end{center}
 
 \hypertarget{glossary-sim}{%
 \section{Glossary}\label{glossary-sim}}
@@ -10470,7 +10751,7 @@ null-effect & An outcome that does not show an otherwise expected effect.\\
 \hline
 p-value & The probability of seeing an effect at least as extreme as what you have, if the real effect was the value you are testing against (e.g., a null effect)\\
 \hline
-parameter & A value that describes a distribution, such as the mean or SD\\
+parameter & A quantity characterizing a population.\\
 \hline
 poisson-distribution & A distribution that models independent events happening over a unit of time\\
 \hline
@@ -10496,20 +10777,26 @@ univariate & Relating to a single variable.\\
 \hline
 \end{tabular}
 
-\hypertarget{exercises-sim}{%
-\section{Exercises}\label{exercises-sim}}
+\hypertarget{resources8}{%
+\section{Further Resources}\label{resources8}}
 
-Download the \href{exercises/10_sim_exercise.Rmd}{exercises}. See the \href{exercises/10_sim_answers.Rmd}{answers} only after you've attempted all the questions.
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\CommentTok{\# run this to access the exercise}
-\NormalTok{reprores}\SpecialCharTok{::}\FunctionTok{exercise}\NormalTok{(}\DecValTok{10}\NormalTok{)}
-
-\CommentTok{\# run this to access the answers}
-\NormalTok{reprores}\SpecialCharTok{::}\FunctionTok{exercise}\NormalTok{(}\DecValTok{10}\NormalTok{, }\AttributeTok{answers =} \ConstantTok{TRUE}\NormalTok{)}
-\end{Highlighting}
-\end{Shaded}
+\begin{itemize}
+\tightlist
+\item
+  \href{http://shiny.psy.gla.ac.uk/debruine/simulate/}{Distribution Shiny App} (or run \texttt{reprores::app("simulate")}
+\item
+  \href{https://debruine.github.io/data-sim-workshops/}{Simulation tutorials} by Lisa DeBruine
+\item
+  \href{http://r4ds.had.co.nz/iteration.html}{Chapter 21: Iteration} of \emph{R for Data Science}
+\item
+  \href{https://www.coursera.org/learn/statistical-inferences/}{Improving your statistical inferences} on Coursera (week 1)
+\item
+  \href{https://debruine.github.io/faux/}{Faux} package for data simulation
+\item
+  \href{https://psyarxiv.com/baxsf}{Simulation-Based Power-Analysis for Factorial ANOVA Designs} \citep{lakens_caldwell_2019}
+\item
+  \href{https://psyarxiv.com/xp5cy/}{Understanding mixed effects models through data simulation} \citep{debruine_barr_2019}
+\end{itemize}
 
 \hypertarget{acknowledgements}{%
 \chapter*{Acknowledgements}\label{acknowledgements}}
@@ -10528,7 +10815,8 @@ The whole \href{https://psyteachr.github.io}{psyTeachR} team at the University o
 We greatly appreciate \href{https://github.com/orgs/facelab/people/iholzleitner}{Iris Holzleitner}'s volunteer in-class assistance with the first year of this course. We were ever so lucky to get \href{https://github.com/RebeccaJLai}{Rebecca Lai} as a teaching assistant in the second year; her kind and patient approach to teaching technical skills is an inspiration. \href{https://www.strath.ac.uk/staff/jonesbenedictprofessor/}{Benedict Jones} made invaluable contributions to the ethos of reproducible research at Glasgow. Thanks to \href{https://github.com/Lakens}{Daniël Lakens} for many inspirational discussions and resources.
 
 \hypertarget{contributors}{%
-\section{Contributors}\label{contributors}}
+\section*{Contributors}\label{contributors}}
+\addcontentsline{toc}{section}{Contributors}
 
 Several people contributed to testing these materials.
 
@@ -10547,58 +10835,236 @@ Several people contributed to testing these materials.
 
 
 \hypertarget{installingr}{%
-\chapter{Installing R}\label{installingr}}
+\chapter{Installing and Updating}\label{installingr}}
 
 Installing R and RStudio is usually straightforward. The sections below explain how and \href{https://www.youtube.com/watch?v=lVKMsaWju8w}{there is a helpful YouTube video here}.
+
+From time-to-time, updated version of R, RStudio, and the packages you use (e.g., ggplot2) will become available. Remember that each of these are separate, so they each have a different process and come with different considerations. We recommend updating to the latest version of all three at the start of each academic year.
 
 \hypertarget{installing-base-r}{%
 \section{Installing Base R}\label{installing-base-r}}
 
-Install base R from \url{https://cran.rstudio.com/}. Choose the download link for your operating system (Linux, Mac OS X, or Windows).
+\href{https://cran.rstudio.com/}{Install base R}. Choose the download link for your operating system (Linux, Mac OS X, or Windows).
 
-If you have a Mac, install the latest release from the newest \texttt{R-x.x.x.pkg} link (or a legacy version if you have an older operating system). After you install R, you should also install \href{http://xquartz.macosforge.org/}{XQuartz} to be able to use some visualisation packages.
+If you have a \textbf{Mac}, install the latest release from the newest \texttt{R-x.x.x.pkg} link (or a legacy version if you have an older operating system). After you install R, you should also install \href{http://xquartz.macosforge.org/}{XQuartz} to be able to use some visualisation packages.
 
-If you are installing the Windows version, choose the ``\href{https://cran.rstudio.com/bin/windows/base/}{base}'' subdirectory and click on the download link at the top of the page. After you install R, you should also install \href{https://cran.rstudio.com/bin/windows/Rtools/}{RTools}; use the ``recommended'' version highlighted near the top of the list.
+If you are installing the \textbf{Windows} version, choose the ``\href{https://cran.rstudio.com/bin/windows/base/}{base}'' subdirectory and click on the download link at the top of the page. After you install R, you should also install \href{https://cran.rstudio.com/bin/windows/Rtools/}{RTools}; use the ``recommended'' version highlighted near the top of the list.
 
-If you are using Linux, choose your specific operating system and follow the installation instructions.
+If you are using \textbf{Linux}, choose your specific operating system and follow the installation instructions.
+
+\hypertarget{rstudio-online}{%
+\subsection{R Online}\label{rstudio-online}}
+
+You may need to access R and RStudio online if you use a tablet or Chromebook that can't install R.
+
+Students in the School of Psychology and Neuroscience at the University of Glasgow can access \href{https://rstudio.psy.gla.ac.uk}{Glasgow Psychology RStudio} with their GUID and password.
+
+\href{https://rstudio.cloud/}{RStudio Cloud} is a free online service that allows access to R and RStudio.
+
+\hypertarget{updating-r}{%
+\subsection{Updating R}\label{updating-r}}
+
+The key thing to be aware of is that when you update R, if you just download the latest version from the website, you will lose all your packages. The easiest way to update R and not cause yourself a huge headache is to use the installr package. When you use the \texttt{updateR()} function, a series of dialogue boxes will appear. These should be fairly self-explanatory but there is a \href{https://www.r-statistics.com/2015/06/a-step-by-step-screenshots-tutorial-for-upgrading-r-on-windows/}{full step-by-step guide} for how to use installr, the important bit is to select ``Yes'' when it asked if you would like to copy your packages from the older version of R.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Install the installr package}
+\FunctionTok{install.packages}\NormalTok{(}\StringTok{"installr"}\NormalTok{)}
+
+\CommentTok{\# Load installr}
+\FunctionTok{library}\NormalTok{(installr)}
+
+\CommentTok{\# Run the update function}
+\FunctionTok{updateR}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
 
 \hypertarget{installing-rstudio}{%
 \section{Installing RStudio}\label{installing-rstudio}}
 
 Go to \href{https://www.rstudio.com/products/rstudio/download/\#download}{rstudio.com} and download the RStudio Desktop (Open Source License) version for your operating system under the list titled \textbf{Installers for Supported Platforms}.
 
+\hypertarget{updating-rstudio}{%
+\subsection{Updating RStudio}\label{updating-rstudio}}
+
+Typically, updates to RStudio won't affect your code, instead they add in new features, like spell-check or upgrades to what RStudio can do. There's usually very little downside to updating RStudio and it's easy to do.
+
+Click \textbf{\texttt{Help\ \textgreater{}\ Check\ for\ updates}}; if an update is available, it will prompt you to download it and you can install it as usual.
+
+\hypertarget{rstudio-settings}{%
+\subsection{RStudio Settings}\label{rstudio-settings}}
+
+There are a few settings you should fix immediately after updating RStudio. Go to \textbf{\texttt{Global\ Options...}} under the \textbf{\texttt{Tools}} menu (⌘,), and in the General tab, uncheck the box that says \textbf{\texttt{Restore\ .RData\ into\ workspace\ at\ startup}}. If you keep things around in your workspace, things will get messy, and unexpected things will happen. You should always start with a clear workspace. This also means that you never want to save your workspace when you exit, so set this to \textbf{\texttt{Never}}. The only thing you want to save are your scripts.
+
+You may also want to change the appearance of your code. Different fonts and themes can sometimes help with visual difficulties or \href{https://datacarpentry.org/blog/2017/09/coding-and-dyslexia}{dyslexia}.
+
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{images/appendices/rstudio_settings_general_appearance} 
+
+}
+
+\caption{RStudio General and Appearance settings}\label{fig:settings-general}
+\end{figure}
+
+You may also want to change the settings in the Code tab. For example, some prefer two spaces instead of tabs for indenting and like to be able to see the whitespace characters. But these are all a matter of personal preference.
+
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{images/appendices/rstudio_settings_code} 
+
+}
+
+\caption{RStudio Code settings}\label{fig:settings-code}
+\end{figure}
+
 \hypertarget{installing-latex}{%
 \section{Installing LaTeX}\label{installing-latex}}
 
-You can install the LaTeX typesetting system to produce PDF reports from RStudio. Without this additional installation, you will be able to produce reports in HTML but not PDF. To generate PDF reports, you will additionally need:
+You can install the LaTeX typesetting system to produce PDF reports from RStudio. Without this additional installation, you will be able to produce reports in HTML but not PDF. This course will not require you to make PDFs. To generate PDF reports, you will additionally need to install tinytex \citep{R-tinytex} and run the following code:
 
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{tinytex}\SpecialCharTok{::}\FunctionTok{install\_tinytex}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{installing-packages}{%
+\section{Installing Packages}\label{installing-packages}}
+
+Add-on packages are not distributed with base R, but have to be downloaded and installed from an archive, in the same way that you would, for instance, download and install PokemonGo on your smartphone.
+
+The main repository where packages reside is called CRAN, the Comprehensive R Archive Network. A package has to pass strict tests devised by the R core team to be allowed to be part of the CRAN archive. You can install from the CRAN archive with the {install.packages}{(}{)} function.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{install.packages}\NormalTok{(}\StringTok{"tidyverse"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{dangerous}
+Never install a package from inside a script. Only do this from the console pane.
+
+\end{dangerous}
+
+\hypertarget{development-packages}{%
+\subsection{Development Packages}\label{development-packages}}
+
+Many R packages are not yet on CRAN because they are still in development. Increasingly, datasets and code for papers are available as packages you can download from github. You'll need to install the devtools package to be able to install packages from github.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# install devtools if you get}
+\CommentTok{\# Error in loadNamespace(name) : there is no package called ‘devtools’}
+\CommentTok{\# install.packages("devtools")}
+\NormalTok{devtools}\SpecialCharTok{::}\FunctionTok{install\_github}\NormalTok{(}\StringTok{"psyteachr/reprores{-}v2"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+If you use a development package in a script, it is good practice to include a comment with the website where you downloaded the package. Other people who use your script are unlikely to have that package or know where to find it.
+
+\hypertarget{updating-packages}{%
+\subsection{Updating Packages}\label{updating-packages}}
+
+Package developers will occasionally release updates to their packages. This is typically to add in new functions to the package, or to fix or amend existing functions. \textbf{Be aware that some package updates may cause your previous code to stop working}. This does not tend to happen with minor updates to packages, but occasionally with major updates, you can have serious issues if the developer has made fundamental changes to how the code works. For this reason, we recommend updating all your packages once at the beginning of each academic year (or semester) -- don't do it before an assessment or deadline just in case!
+
+To update an individual package, the easiest way is to use the \texttt{install.packages()} function, as this always installs the most recent version of the package.
+
+To update multiple packages, or indeed all packages, RStudio provides helpful tools. Click \textbf{\texttt{Tools\ \textgreater{}\ Check\ for\ Package\ Updates}}. A dialogue box will appear and you can select the packages you wish to update. Be aware that if you select all packages, this may take some time and you will be unable to use R whilst the process completes.
+
+\hypertarget{troubleshooting-1}{%
+\subsection{Troubleshooting}\label{troubleshooting-1}}
+
+Occasionally, you might have a few problem packages that seemingly refuse to update, for me, \texttt{rlang} and \texttt{vctrs} cause me no end of trouble. These aren't packages that you will likely ever explicitly load, but they're required beneath the surface for RStudio to do things like knit your Markdown files.
+
+If you try to update a package and get an error message that says something like \texttt{Warning\ in\ install.packages\ :\ installation\ of\ package\ ‘vctrs’\ had\ non-zero\ exit\ status} or perhaps \texttt{Error\ in\ loadNamespace(i,\ c(lib.loc,\ .libPaths()),\ versionCheck\ =\ vI{[}{[}i{]}{]})\ :\ \ namespace\ \textquotesingle{}rlang\textquotesingle{}\ 0.4.9\ is\ being\ loaded,\ but\ \textgreater{}=\ 0.4.10\ is\ required} one solution I have found is to manually uninstall the package, restart R, and then install the package new, rather than trying to update an existing version. The \texttt{rpkg("installr")} package has a useful function for uninstalling packages.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Load installr}
+\FunctionTok{library}\NormalTok{(installr)}
+
+\CommentTok{\# Uninstall the problem package}
+\FunctionTok{uninstall.packages}\NormalTok{(}\StringTok{"package\_name"}\NormalTok{)}
+
+\CommentTok{\# Then restart R using session {-} restart R}
+
+\CommentTok{\# Then install the package fresh}
+\FunctionTok{install.packages}\NormalTok{(}\StringTok{"package"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{conventions}{%
+\chapter{Conventions}\label{conventions}}
+
+This book will use the following conventions:
+
+\begin{itemize}
 \tightlist
 \item
-  \href{http://pandoc.org/installing.html}{pandoc}, and
+  Generic code: \texttt{list(number\ =\ 1,\ letter\ =\ "A")}
 \item
-  LaTeX, a typesetting language, available for
+  Highlighted code: {list}{(}number {=} {1}, letter {=} {``A''}{)}
+\item
+  File paths: data/sales.csv
+\item
+  R Packages: tidyverse
+\item
+  Functions: {paste}{(}{)}
+\item
+  Strings: {``Lisa''}, {``Dale''}
+\item
+  Numbers: {100}, {3.14}
+\item
+  Logical values: {TRUE}, {FALSE}
+\item
+  Glossary items: ordinal
+\item
+  Citations: \citet{R-tidyverse}
+\item
+  Internal links: Chapter~\ref{intro}
+\item
+  External links: \href{https://mastering-shiny.org/}{Mastering Shiny}
+\item
+  Menu/interface options: \textbf{\texttt{New\ File...}}
+\item
+  Quiz question: I am going to learn a lot: TRUEFALSE
+\end{itemize}
 
-  \begin{itemize}
-  \tightlist
-  \item
-    WINDOWS: \href{http://miktex.org/}{MikTeX}
-  \item
-    Mac OS: \href{https://tug.org/mactex/downloading.html}{MacTex} (3.2GB download) or \href{http://ww.tug.org/mactex/morepackages.html}{BasicTeX} (78MB download, but should work fine)
-  \item
-    Linux: \href{https://www.tug.org/texlive/}{TeX Live}
-  \end{itemize}
-\end{enumerate}
+Hidden Solutions
 
-\hypertarget{rstudio-online}{%
-\section{RStudio Online}\label{rstudio-online}}
+You found it!
 
-You may need to access R and RStudio online if you use a tablet or chromebook that can't install R.
+\begin{info}
+Informational asides.
 
-Students in the Institute of Neuroscience and Psychology at the University of Glasgow can access \href{https://rstudio.psy.gla.ac.uk}{Glasgow Psychology RStudio} with their GUID and password.
+\end{info}
 
-\href{https://rstudio.cloud/}{RStudio Cloud} is a free online service that allows access to R and RStudio.
+\begin{warning}
+Notes to warn you about something.
+
+\end{warning}
+
+\begin{dangerous}
+Notes about things that could cause serious errors.
+
+\end{dangerous}
+
+\begin{try}
+Try it yourself.
+
+\end{try}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# code chunks}
+\FunctionTok{paste}\NormalTok{(}\StringTok{"Reproducible "}\NormalTok{, }\StringTok{"Research"}\NormalTok{, }\DecValTok{1}\NormalTok{, }\AttributeTok{sep =} \StringTok{" "}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "Reproducible  Research 1"
+\end{verbatim}
 
 \hypertarget{symbols}{%
 \chapter{Symbols}\label{symbols}}
@@ -10639,33 +11105,6 @@ Symbol & psyTeachR Term & Also Known As \\
 \bottomrule
 \end{longtable}
 
-\hypertarget{exercise-answers}{%
-\chapter{Exercise Answers}\label{exercise-answers}}
-
-Download all \href{exercises/exercises.zip}{exercises and data files} below as a ZIP archive. The answers are not included in the zip file.
-
-\begin{itemize}
-\tightlist
-\item
-  \href{exercises/01_intro_exercise.Rmd}{01 intro} (\href{exercises/01_intro_answers.html}{answers}): Intro to R, functions, R markdown
-\item
-  \href{exercises/02_ggplot_exercise.Rmd}{02 ggplot} (\href{exercises/02_ggplot_answers.html}{answers}): Data visualisation
-\item
-  \href{exercises/03_data_exercise.Rmd}{03 data} (\href{exercises/03_data_answers.html}{answers}): Vectors, tabular data, data import, pipes
-\item
-  \href{exercises/04_tidyr_exercise.Rmd}{04 tidyr} (\href{exercises/04_tidyr_answers.html}{answers}): Tidy Data
-\item
-  \href{exercises/05_dplyr_exercise.Rmd}{05 dplyr} (\href{exercises/05_dplyr_answers.html}{answers}): Data wrangling
-\item
-  \href{exercises/06_joins_exercise.Rmd}{06 joins} (\href{exercises/06_joins_answers.html}{answers}): Data relations
-\item
-  \href{exercises/07_glm_exercise.Rmd}{07 glm} (\href{exercises/07_glm_answers.html}{answers}): GLM
-\item
-  \href{exercises/08_func_exercise.Rmd}{08 functions} (\href{exercises/08_func_answers.html}{answers}): Functions and iteration
-\item
-  \href{exercises/09_sim_exercise.Rmd}{09 simulation} (\href{exercises/09_sim_answers.html}{answers}): Simulation
-\end{itemize}
-
 \hypertarget{datasets}{%
 \chapter{Datasets}\label{datasets}}
 
@@ -10675,6 +11114,10 @@ You can download a \href{data/data.zip}{zip file of the datasets} or access them
 \tightlist
 \item
   \href{data/country_codes.csv}{Country Codes} Multiple country, subregion, and region codes for 249 countries.
+\item
+  \href{data/demo.csv}{Importing Demo} A dataset with five different types of columns, and in five different formats (csv, tsv, xlsx, sav, and json), used to practice importing.
+\item
+  \href{data/demo.xlsx}{Importing Demo} A dataset with five different types of columns, and in five different formats (csv, tsv, xlsx, sav, and json), used to practice importing.
 \item
   \href{data/disgust_cors.csv}{Three Domain Disgust Questionnaire (correlations)} Correlations among questions on the Three Domain Disgust Questionnaire (Tybur et al.)
 \item
@@ -10688,7 +11131,27 @@ You can download a \href{data/data.zip}{zip file of the datasets} or access them
 \item
   \href{data/experimentum_exps.csv}{Experimentum Project Experiment} Data from a demo experiment on Experimentum \url{https://debruine.github.io/experimentum/}. Subjects are shown pairs of upright and inverted Mooney faces and asked to click on the upright face.
 \item
-  \href{data/experimentum_quests.csv}{Experimentum Project Questionnaires} Data from a demo questionnaire on Experimentum \url{https://debruine.github.io/experimentum/}. Subjects are asked questions about dogs to test the different questionnaire response types. Questions * current: Do you own a dog? (yes/no) * past: Have you ever owned a dog? (yes/no) * name: What is the best name for a dog? (free short text) * good: How good are dogs? (1=pretty good:7=very good) * country: What country do borzois come from? * good\_borzoi: How good are borzois? (0=pretty good:100=very good) * text: Write some text about dogs. (free long text) * time: What time is it? (time)
+  \href{data/experimentum_quests.csv}{Experimentum Project Questionnaires} Data from a demo questionnaire on Experimentum \url{https://debruine.github.io/experimentum/}. Subjects are asked questions about dogs to test the different questionnaire response types. Questions
+
+  \begin{itemize}
+  \tightlist
+  \item
+    current: Do you own a dog? (yes/no)
+  \item
+    past: Have you ever owned a dog? (yes/no)
+  \item
+    name: What is the best name for a dog? (free short text)
+  \item
+    good: How good are dogs? (1=pretty good:7=very good)
+  \item
+    country: What country do borzois come from?
+  \item
+    good\_borzoi: How good are borzois? (0=pretty good:100=very good)
+  \item
+    text: Write some text about dogs. (free long text)
+  \item
+    time: What time is it? (time)
+  \end{itemize}
 \item
   \href{data/eye_descriptions.csv}{Descriptions of Eyes} Participant's written descriptions of the eyes of 50 people
 \item
@@ -10715,17 +11178,1266 @@ You can download a \href{data/data.zip}{zip file of the datasets} or access them
   \href{data/smalldata.csv}{Small Factorial Design: 2w*2b} Small simulated dataset (n = 5) with one within-subject factor (time) having 2 levels (pre and post) and one beteen-subject factor (group) having two levels (control and experimental). The dataset is in wide format and created with faux.
 \item
   \href{data/sq_data.csv}{Systemizing Quotient} Reverse coded (Q\#R) questions coded as strongly disagree = 2, slightly disagree = 1, else = 0. The other questions are coded as strongly agree = 2, slightly agree = 1, else = 0.
-  c(``* \href{data/stroop.csv}{Stroop Task} 50 simulated subject in a stroop task viewing all combinations of word and ink colours blue, purple, green, red, and brown, 5 times each. Subjects respond with the ink colour. Subjects who do not respond in time have NA for response and rt.'', ``* \href{data/stroop.xlsx}{Stroop Task} 50 simulated subject in a stroop task viewing all combinations of word and ink colours blue, purple, green, red, and brown, 5 times each. Subjects respond with the ink colour. Subjects who do not respond in time have NA for response and rt.''
-  )
+\item
+  \href{data/stroop.csv}{Stroop Task} 50 simulated subject in a stroop task viewing all combinations of word and ink colours blue, purple, green, red, and brown, 5 times each. Subjects respond with the ink colour. Subjects who do not respond in time have NA for response and rt.
+\item
+  \href{data/stroop.xlsx}{Stroop Task} 50 simulated subject in a stroop task viewing all combinations of word and ink colours blue, purple, green, red, and brown, 5 times each. Subjects respond with the ink colour. Subjects who do not respond in time have NA for response and rt.
 \item
   \href{data/users.csv}{User Demographics} A dataset with unique participant ID, sex and birth year. To be used in conjunction with data from {[}disgust{]}, {[}disgust\_scores{]}, {[}personality{]}, {[}personality\_scores{]}, and {[}users2{]}.
 \item
   \href{data/users2.csv}{User Demographics 2} A dataset with unique participant ID, birth year, and sex. To be used in conjunction with data from {[}disgust{]}, {[}disgust\_scores{]}, {[}personality{]}, {[}personality\_scores{]}, and {[}users{]}.
 \end{itemize}
 
+\hypertarget{plotstyle}{%
+\chapter{Styling Plots}\label{plotstyle}}
+
+\hypertarget{aesthetics}{%
+\section{Aesthetics}\label{aesthetics}}
+
+\hypertarget{colourfill}{%
+\subsection{Colour/Fill}\label{colourfill}}
+
+The \texttt{colour} argument changes the point and line colour, while the \texttt{fill} argument changes the interior colour of shapes. Type \texttt{colours()} into the console to see a list of all the named colours in R. Alternatively, you can use hexadecimal colours like \texttt{"\#FF8000"} or the \texttt{rgb()} function to set red, green, and blue values on a scale from 0 to 1.
+
+Hover over a colour to see its R name.
+
+{black}
+
+{gray1}
+
+{gray2}
+
+{gray3}
+
+{gray4}
+
+{gray5}
+
+{gray6}
+
+{gray7}
+
+{gray8}
+
+{gray9}
+
+{gray10}
+
+{gray11}
+
+{gray12}
+
+{gray13}
+
+{gray14}
+
+{gray15}
+
+{gray16}
+
+{gray17}
+
+{gray18}
+
+{gray19}
+
+{gray20}
+
+{gray21}
+
+{gray22}
+
+{gray23}
+
+{gray24}
+
+{gray25}
+
+{gray26}
+
+{gray27}
+
+{gray28}
+
+{gray29}
+
+{gray30}
+
+{gray31}
+
+{gray32}
+
+{gray33}
+
+{gray34}
+
+{gray35}
+
+{gray36}
+
+{gray37}
+
+{gray38}
+
+{gray39}
+
+{gray40}
+
+{dimgray}
+
+{gray42}
+
+{gray43}
+
+{gray44}
+
+{gray45}
+
+{gray46}
+
+{gray47}
+
+{gray48}
+
+{gray49}
+
+{gray50}
+
+{gray51}
+
+{gray52}
+
+{gray53}
+
+{gray54}
+
+{gray55}
+
+{gray56}
+
+{gray57}
+
+{gray58}
+
+{gray59}
+
+{gray60}
+
+{gray61}
+
+{gray62}
+
+{gray63}
+
+{gray64}
+
+{gray65}
+
+{darkgray}
+
+{gray66}
+
+{gray67}
+
+{gray68}
+
+{gray69}
+
+{gray70}
+
+{gray71}
+
+{gray72}
+
+{gray73}
+
+{gray74}
+
+{gray}
+
+{gray75}
+
+{gray76}
+
+{gray77}
+
+{gray78}
+
+{gray79}
+
+{gray80}
+
+{gray81}
+
+{gray82}
+
+{gray83}
+
+{lightgray}
+
+{gray84}
+
+{gray85}
+
+{gainsboro}
+
+{gray86}
+
+{gray87}
+
+{gray88}
+
+{gray89}
+
+{gray90}
+
+{gray91}
+
+{gray92}
+
+{gray93}
+
+{gray94}
+
+{gray95}
+
+{gray96}
+
+{gray97}
+
+{gray98}
+
+{gray99}
+
+{white}
+
+{snow4}
+
+{snow3}
+
+{snow2}
+
+{snow}
+
+{rosybrown4}
+
+{rosybrown}
+
+{rosybrown3}
+
+{rosybrown2}
+
+{rosybrown1}
+
+{lightcoral}
+
+{indianred}
+
+{indianred4}
+
+{indianred2}
+
+{indianred1}
+
+{indianred3}
+
+{brown4}
+
+{brown}
+
+{brown3}
+
+{brown2}
+
+{brown1}
+
+{firebrick4}
+
+{firebrick}
+
+{firebrick3}
+
+{firebrick1}
+
+{firebrick2}
+
+{darkred}
+
+{red3}
+
+{red2}
+
+{red}
+
+{mistyrose3}
+
+{mistyrose4}
+
+{mistyrose2}
+
+{mistyrose}
+
+{salmon}
+
+{tomato3}
+
+{coral4}
+
+{coral3}
+
+{coral2}
+
+{coral1}
+
+{tomato2}
+
+{tomato}
+
+{tomato4}
+
+{darksalmon}
+
+{salmon4}
+
+{salmon3}
+
+{salmon2}
+
+{salmon1}
+
+{coral}
+
+{orangered4}
+
+{orangered3}
+
+{orangered2}
+
+{lightsalmon3}
+
+{lightsalmon2}
+
+{lightsalmon}
+
+{lightsalmon4}
+
+{sienna}
+
+{sienna3}
+
+{sienna2}
+
+{sienna1}
+
+{sienna4}
+
+{orangered}
+
+{seashell4}
+
+{seashell3}
+
+{seashell2}
+
+{seashell}
+
+{chocolate4}
+
+{chocolate3}
+
+{chocolate}
+
+{chocolate2}
+
+{chocolate1}
+
+{linen}
+
+{peachpuff4}
+
+{peachpuff3}
+
+{peachpuff2}
+
+{peachpuff}
+
+{sandybrown}
+
+{tan4}
+
+{peru}
+
+{tan2}
+
+{tan1}
+
+{darkorange4}
+
+{darkorange3}
+
+{darkorange2}
+
+{darkorange1}
+
+{antiquewhite3}
+
+{antiquewhite2}
+
+{antiquewhite1}
+
+{bisque4}
+
+{bisque3}
+
+{bisque2}
+
+{bisque}
+
+{burlywood4}
+
+{burlywood3}
+
+{burlywood}
+
+{burlywood2}
+
+{burlywood1}
+
+{darkorange}
+
+{antiquewhite4}
+
+{antiquewhite}
+
+{papayawhip}
+
+{blanchedalmond}
+
+{navajowhite4}
+
+{navajowhite3}
+
+{navajowhite2}
+
+{navajowhite}
+
+{tan}
+
+{floralwhite}
+
+{oldlace}
+
+{wheat4}
+
+{wheat3}
+
+{wheat2}
+
+{wheat}
+
+{wheat1}
+
+{moccasin}
+
+{orange4}
+
+{orange3}
+
+{orange2}
+
+{orange}
+
+{goldenrod}
+
+{goldenrod1}
+
+{goldenrod4}
+
+{goldenrod3}
+
+{goldenrod2}
+
+{darkgoldenrod4}
+
+{darkgoldenrod}
+
+{darkgoldenrod3}
+
+{darkgoldenrod2}
+
+{darkgoldenrod1}
+
+{cornsilk}
+
+{cornsilk4}
+
+{cornsilk3}
+
+{cornsilk2}
+
+{lightgoldenrod4}
+
+{lightgoldenrod3}
+
+{lightgoldenrod}
+
+{lightgoldenrod2}
+
+{lightgoldenrod1}
+
+{gold4}
+
+{gold3}
+
+{gold2}
+
+{gold}
+
+{lemonchiffon4}
+
+{lemonchiffon3}
+
+{lemonchiffon2}
+
+{lemonchiffon}
+
+{palegoldenrod}
+
+{khaki}
+
+{darkkhaki}
+
+{khaki4}
+
+{khaki3}
+
+{khaki2}
+
+{khaki1}
+
+{ivory4}
+
+{ivory3}
+
+{ivory2}
+
+{ivory}
+
+{beige}
+
+{lightyellow4}
+
+{lightyellow3}
+
+{lightyellow2}
+
+{lightyellow}
+
+{lightgoldenrodyellow}
+
+{yellow4}
+
+{yellow3}
+
+{yellow2}
+
+{yellow}
+
+{olivedrab}
+
+{olivedrab4}
+
+{olivedrab3}
+
+{olivedrab2}
+
+{olivedrab1}
+
+{darkolivegreen}
+
+{darkolivegreen4}
+
+{darkolivegreen3}
+
+{darkolivegreen2}
+
+{darkolivegreen1}
+
+{greenyellow}
+
+{chartreuse4}
+
+{chartreuse3}
+
+{chartreuse2}
+
+{lawngreen}
+
+{chartreuse}
+
+{honeydew4}
+
+{honeydew3}
+
+{honeydew2}
+
+{honeydew}
+
+{darkseagreen4}
+
+{darkseagreen}
+
+{darkseagreen3}
+
+{darkseagreen2}
+
+{darkseagreen1}
+
+{lightgreen}
+
+{palegreen}
+
+{palegreen4}
+
+{palegreen3}
+
+{palegreen1}
+
+{forestgreen}
+
+{limegreen}
+
+{darkgreen}
+
+{green4}
+
+{green3}
+
+{green2}
+
+{green}
+
+{mediumseagreen}
+
+{seagreen}
+
+{seagreen3}
+
+{seagreen2}
+
+{seagreen1}
+
+{mintcream}
+
+{springgreen4}
+
+{springgreen3}
+
+{springgreen2}
+
+{springgreen}
+
+{aquamarine3}
+
+{aquamarine2}
+
+{aquamarine}
+
+{mediumspringgreen}
+
+{aquamarine4}
+
+{turquoise}
+
+{mediumturquoise}
+
+{lightseagreen}
+
+{azure4}
+
+{azure3}
+
+{azure2}
+
+{azure}
+
+{lightcyan4}
+
+{lightcyan3}
+
+{lightcyan2}
+
+{lightcyan}
+
+{paleturquoise}
+
+{paleturquoise4}
+
+{paleturquoise3}
+
+{paleturquoise2}
+
+{paleturquoise1}
+
+{darkslategray}
+
+{darkslategray4}
+
+{darkslategray3}
+
+{darkslategray2}
+
+{darkslategray1}
+
+{cyan4}
+
+{cyan3}
+
+{darkturquoise}
+
+{cyan2}
+
+{cyan}
+
+{cadetblue4}
+
+{cadetblue}
+
+{turquoise4}
+
+{turquoise3}
+
+{turquoise2}
+
+{turquoise1}
+
+{powderblue}
+
+{cadetblue3}
+
+{cadetblue2}
+
+{cadetblue1}
+
+{lightblue4}
+
+{lightblue3}
+
+{lightblue}
+
+{lightblue2}
+
+{lightblue1}
+
+{deepskyblue4}
+
+{deepskyblue3}
+
+{deepskyblue2}
+
+{deepskyblue}
+
+{skyblue}
+
+{lightskyblue4}
+
+{lightskyblue3}
+
+{lightskyblue2}
+
+{lightskyblue1}
+
+{lightskyblue}
+
+{skyblue4}
+
+{skyblue3}
+
+{skyblue2}
+
+{skyblue1}
+
+{aliceblue}
+
+{slategray}
+
+{lightslategray}
+
+{slategray3}
+
+{slategray2}
+
+{slategray1}
+
+{steelblue4}
+
+{steelblue}
+
+{steelblue3}
+
+{steelblue2}
+
+{steelblue1}
+
+{dodgerblue4}
+
+{dodgerblue3}
+
+{dodgerblue2}
+
+{dodgerblue}
+
+{lightsteelblue4}
+
+{lightsteelblue3}
+
+{lightsteelblue}
+
+{lightsteelblue2}
+
+{lightsteelblue1}
+
+{slategray4}
+
+{cornflowerblue}
+
+{royalblue}
+
+{royalblue4}
+
+{royalblue3}
+
+{royalblue2}
+
+{royalblue1}
+
+{ghostwhite}
+
+{lavender}
+
+{midnightblue}
+
+{navy}
+
+{blue4}
+
+{blue3}
+
+{blue2}
+
+{blue}
+
+{darkslateblue}
+
+{slateblue}
+
+{mediumslateblue}
+
+{lightslateblue}
+
+{slateblue1}
+
+{slateblue4}
+
+{slateblue3}
+
+{slateblue2}
+
+{mediumpurple4}
+
+{mediumpurple3}
+
+{mediumpurple}
+
+{mediumpurple2}
+
+{mediumpurple1}
+
+{purple4}
+
+{purple3}
+
+{blueviolet}
+
+{purple1}
+
+{purple2}
+
+{purple}
+
+{darkorchid}
+
+{darkorchid4}
+
+{darkorchid3}
+
+{darkorchid2}
+
+{darkorchid1}
+
+{darkviolet}
+
+{mediumorchid4}
+
+{mediumorchid3}
+
+{mediumorchid}
+
+{mediumorchid2}
+
+{mediumorchid1}
+
+{thistle4}
+
+{thistle3}
+
+{thistle}
+
+{thistle2}
+
+{thistle1}
+
+{plum4}
+
+{plum3}
+
+{plum2}
+
+{plum1}
+
+{plum}
+
+{violet}
+
+{darkmagenta}
+
+{magenta3}
+
+{magenta2}
+
+{magenta}
+
+{orchid4}
+
+{orchid3}
+
+{orchid}
+
+{orchid2}
+
+{orchid1}
+
+{maroon4}
+
+{violetred}
+
+{maroon3}
+
+{maroon2}
+
+{maroon1}
+
+{mediumvioletred}
+
+{deeppink3}
+
+{deeppink2}
+
+{deeppink}
+
+{deeppink4}
+
+{hotpink2}
+
+{hotpink1}
+
+{hotpink4}
+
+{hotpink}
+
+{violetred4}
+
+{violetred3}
+
+{violetred2}
+
+{violetred1}
+
+{hotpink3}
+
+{lavenderblush4}
+
+{lavenderblush3}
+
+{lavenderblush2}
+
+{lavenderblush}
+
+{maroon}
+
+{palevioletred4}
+
+{palevioletred3}
+
+{palevioletred}
+
+{palevioletred2}
+
+{palevioletred1}
+
+{pink4}
+
+{pink3}
+
+{pink2}
+
+{pink1}
+
+{pink}
+
+{lightpink}
+
+{lightpink4}
+
+{lightpink3}
+
+{lightpink2}
+
+{lightpink1}
+
+\hypertarget{alpha-1}{%
+\subsection{Alpha}\label{alpha-1}}
+
+The \texttt{alpha} argument changes transparency (0 = totally transparent, 1 = totally opaque).
+
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{appendix-e-plotstyles_files/figure-latex/alpha-demo-1} 
+
+}
+
+\caption{Varying alpha values.}\label{fig:alpha-demo}
+\end{figure}
+
+\hypertarget{shape}{%
+\subsection{Shape}\label{shape}}
+
+The \texttt{shape} argument changes the shape of points.
+
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{appendix-e-plotstyles_files/figure-latex/shape-demo-1} 
+
+}
+
+\caption{The 25 shape values}\label{fig:shape-demo}
+\end{figure}
+
+\hypertarget{linetype}{%
+\subsection{Linetype}\label{linetype}}
+
+You can probably guess what the \texttt{linetype} argument does.
+
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{appendix-e-plotstyles_files/figure-latex/linetype-demo-1} 
+
+}
+
+\caption{The 6 linetype values at different sizes.}\label{fig:linetype-demo}
+\end{figure}
+
+\hypertarget{palettes}{%
+\section{Palettes}\label{palettes}}
+
+Discrete palettes change depending on the number of categories.
+
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{appendix-e-plotstyles_files/figure-latex/unnamed-chunk-3-1} 
+
+}
+
+\caption{Default discrete palette with different numbers of levels.}\label{fig:unnamed-chunk-3}
+\end{figure}
+
+\hypertarget{viridis-palettes}{%
+\subsection{Viridis Palettes}\label{viridis-palettes}}
+
+Viridis palettes are very good for colourblind-safe and greyscale-safe plots. The work with any number of categories, but are best for larger numbers of categories or continuous colours.
+
+\hypertarget{discrete-viridis-palettes}{%
+\subsubsection{Discrete Viridis Palettes}\label{discrete-viridis-palettes}}
+
+Set discrete viridis colours with \texttt{scale\_colour\_viridis\_d()} or \texttt{scale\_fill\_viridis\_d()} and set the \texttt{option} argument to one of the options below. Set \texttt{direction\ =\ -1} to reverse the order of colours.
+
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{appendix-e-plotstyles_files/figure-latex/unnamed-chunk-4-1} 
+
+}
+
+\caption{Discrete viridis palettes.}\label{fig:unnamed-chunk-4}
+\end{figure}
+
+\begin{info}
+If the end colour is too light for your plot or the start colour too dark, you can set the \texttt{begin} and \texttt{end} arguments to values between 0 and 1, such as {scale\_colour\_viridis\_c}{(}begin {=} {0.1}, end {=} {0.9}{)}.
+
+\end{info}
+
+\hypertarget{continuous-viridis-palettes}{%
+\subsubsection{Continuous Viridis Palettes}\label{continuous-viridis-palettes}}
+
+Set continuous viridis colours with \texttt{scale\_colour\_viridis\_c()} or \texttt{scale\_fill\_viridis\_c()} and set the \texttt{option} argument to one of the options below. Set \texttt{direction\ =\ -1} to reverse the order of colours.
+
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{appendix-e-plotstyles_files/figure-latex/unnamed-chunk-5-1} 
+
+}
+
+\caption{Continuous viridis palettes.}\label{fig:unnamed-chunk-5}
+\end{figure}
+
+\hypertarget{brewer-palettes}{%
+\subsection{Brewer Palettes}\label{brewer-palettes}}
+
+Brewer palettes give you a lot of control over plot colour and fill. You set them with \texttt{scale\_color\_brewer()} or \texttt{scale\_fill\_brewer()} and set the \texttt{palette} argument to one of the palettes below. Set \texttt{direction\ =\ -1} to reverse the order of colours.
+
+\hypertarget{qualitative-brewer-palettes}{%
+\subsubsection{Qualitative Brewer Palettes}\label{qualitative-brewer-palettes}}
+
+These palettes are good for categorical data with up to 8 categories (some palettes can handle up to 12). The ``Paired'' palette is useful if your categories are arranged in pairs.
+
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{appendix-e-plotstyles_files/figure-latex/unnamed-chunk-6-1} 
+
+}
+
+\caption{Qualitative brewer palettes.}\label{fig:unnamed-chunk-6}
+\end{figure}
+
+\hypertarget{sequential-brewer-palettes}{%
+\subsubsection{Sequential Brewer Palettes}\label{sequential-brewer-palettes}}
+
+These palettes are good for up to 9 ordinal categories with a lot of categories.
+
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{appendix-e-plotstyles_files/figure-latex/unnamed-chunk-7-1} 
+
+}
+
+\caption{Sequential brewer palettes.}\label{fig:unnamed-chunk-7}
+\end{figure}
+
+\hypertarget{diverging-brewer-palettes}{%
+\subsubsection{Diverging Brewer Palettes}\label{diverging-brewer-palettes}}
+
+These palettes are good for ordinal categories with up to 11 levels where the centre level is a neutral or baseline category and the levels above and below it differ in an important way, such as agree versus disagree options.
+
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{appendix-e-plotstyles_files/figure-latex/unnamed-chunk-8-1} 
+
+}
+
+\caption{Diverging brewer palettes.}\label{fig:unnamed-chunk-8}
+\end{figure}
+
+\hypertarget{themes-1}{%
+\section{Themes}\label{themes-1}}
+
+ggplot2 has 8 built-in themes that you can add to a plot like \texttt{plot\ +\ theme\_bw()} or set as the default theme at the top of your script like \texttt{theme\_set(theme\_bw())}.
+
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{appendix-e-plotstyles_files/figure-latex/unnamed-chunk-9-1} 
+
+}
+
+\caption{{ggplot2} themes.}\label{fig:unnamed-chunk-9}
+\end{figure}
+
+\hypertarget{ggthemes}{%
+\subsection{ggthemes}\label{ggthemes}}
+
+You can get more themes from add-on packages, like ggthemes. Most of the themes also have custom \texttt{scale\_} functions like \texttt{scale\_colour\_economist()}. Their website has extensive examples and instructions for alternate or dark version sof these themes.
+
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{appendix-e-plotstyles_files/figure-latex/unnamed-chunk-10-1} 
+
+}
+
+\caption{{ggthemes} themes.}\label{fig:unnamed-chunk-10}
+\end{figure}
+
+\hypertarget{exercises}{%
+\chapter{Exercises}\label{exercises}}
+
+You can access exercises and answers for all of the chapters through the reprores package.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# run this to access the exercise}
+\NormalTok{reprores}\SpecialCharTok{::}\FunctionTok{exercise}\NormalTok{(}\DecValTok{1}\NormalTok{)}
+
+\CommentTok{\# run this to access the answers}
+\NormalTok{reprores}\SpecialCharTok{::}\FunctionTok{exercise}\NormalTok{(}\DecValTok{1}\NormalTok{, }\AttributeTok{answers =} \ConstantTok{TRUE}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+Alternatively, download all \href{exercises/exercises.zip}{exercises and data files} below as a ZIP archive. The answers are not included in the zip file.
+
+\begin{itemize}
+\tightlist
+\item
+  Chapter 1: Intro to R, functions, R markdown
+\item
+  Exercise: \href{exercises/01_intro_exercise.Rmd}{Rmd}\textbar{}\href{exercises/01_intro_exercise.html}{html}; Answers: \href{exercises/01_intro_answers.Rmd}{Rmd}\textbar{}\href{exercises/01_intro_answers.html}{html}
+\item
+  Chapter 2: Create an R Markdown project
+\item
+  Exercise: \href{exercises/02_repro_exercise.Rmd}{Rmd}\textbar{}\href{exercises/02_repro_exercise.html}{html}; Answers: \href{exercises/02_repro_answers.Rmd}{Rmd}\textbar{}\href{exercises/02_repro_answers.html}{html}
+\item
+  Chapter 3: Data visualisation
+\item
+  Exercise: \href{exercises/03_ggplot_exercise.Rmd}{Rmd}\textbar{}\href{exercises/03_ggplot_exercise.html}{html}; Answers: \href{exercises/03_ggplot_answers.Rmd}{Rmd}\textbar{}\href{exercises/03_ggplot_answers.html}{html}
+\item
+  Chapter 4: Data
+\item
+  Exercise: \href{exercises/04_data_exercise.Rmd}{Rmd}\textbar{}\href{exercises/04_data_exercise.html}{html}; Answers: \href{exercises/04_data_answers.Rmd}{Rmd}\textbar{}\href{exercises/04_data_answers.html}{html}
+\item
+  Chapter 5: Data relations
+\item
+  Exercise: \href{exercises/05_joins_exercise.Rmd}{Rmd}\textbar{}\href{exercises/05_joins_exercise.html}{html}; Answers: \href{exercises/05_joins_answers.Rmd}{Rmd}\textbar{}\href{exercises/05_joins_answers.html}{html}
+\item
+  Chapter 6: Tidy Data
+\item
+  Exercise: \href{exercises/06_tidyr_exercise.Rmd}{Rmd}\textbar{}\href{exercises/06_tidyr_exercise.html}{html}; Answers: \href{exercises/06_tidyr_answers.Rmd}{Rmd}\textbar{}\href{exercises/06_tidyr_answers.html}{html}
+\item
+  Chapter 7: Data wrangling
+\item
+  Exercise: \href{exercises/07_dplyr_exercise.Rmd}{Rmd}\textbar{}\href{exercises/07_dplyr_exercise.html}{html}; Answers: \href{exercises/07_dplyr_answers.Rmd}{Rmd}\textbar{}\href{exercises/07_dplyr_answers.html}{html}
+\item
+  Chapter 8: GLM
+\item
+  Exercise: \href{exercises/08_glm_exercise.Rmd}{Rmd}\textbar{}\href{exercises/08_glm_exercise.html}{html}; Answers: \href{exercises/08_glm_answers.Rmd}{Rmd}\textbar{}\href{exercises/08_glm_answers.html}{html}
+\item
+  Chapter 9: Functions and iteration
+\item
+  Exercise: \href{exercises/09_func_exercise.Rmd}{Rmd}\textbar{}\href{exercises/09_func_exercise.html}{html}; Answers: \href{exercises/09_func_answers.Rmd}{Rmd}\textbar{}\href{exercises/09_func_answers.html}{html}
+\item
+  Chapter 10: Simulation
+\item
+  Exercise: \href{exercises/10_sim_exercise.Rmd}{Rmd}\textbar{}\href{exercises/10_sim_exercise.html}{html}; Answers: \href{exercises/10_sim_answers.Rmd}{Rmd}\textbar{}\href{exercises/10_sim_answers.html}{html}
+\end{itemize}
+
 \hypertarget{bookrefs}{%
 \chapter{References}\label{bookrefs}}
 
-  \bibliography{book.bib}
+  \bibliography{book.bib,packages.bib}
 
 \end{document}

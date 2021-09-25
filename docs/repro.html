@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <title>Chapter 2 Reproducible Workflows | Data Skills for Reproducible Research</title>
 <meta name="description" content="2.1 Learning Objectives  Basic Organise a project (video) Create and compile an Rmarkdown document (video) Edit the YAML header to add table of contents and other options Include a table Include a...">
-<meta name="generator" content="bookdown 0.23 with bs4_book()">
+<meta name="generator" content="bookdown 0.24 with bs4_book()">
 <meta property="og:title" content="Chapter 2 Reproducible Workflows | Data Skills for Reproducible Research">
 <meta property="og:type" content="book">
 <meta property="og:url" content="https://psyteachr.github.io/reprores-v2/repro.html">
@@ -119,7 +119,7 @@
 <h2>
 <span class="header-section-number">2.2</span> Setup<a class="anchor" aria-label="anchor" href="#setup-repro"><i class="fas fa-link"></i></a>
 </h2>
-<div class="sourceCode" id="cb45"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb46"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span>
 <span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://yihui.org/knitr/">knitr</a></span><span class="op">)</span></code></pre></div>
 </div>
@@ -136,17 +136,19 @@
 <h2>
 <span class="header-section-number">2.4</span> Organising a project<a class="anchor" aria-label="anchor" href="#projects"><i class="fas fa-link"></i></a>
 </h2>
-<p>First, we need to get orgainsed.</p>
-<p><a class="glossary" target="_blank" title="A way to organise related files in RStudio" href="https://psyteachr.github.io/glossary/p#project">Projects</a> in RStudio are a way to group all of the files you need for one project. Most projects include scripts, data files, and output files like the PDF version of the script or images.</p>
-<div class="try">
-<p>Make a new <a class="glossary" target="_blank" title='A collection or "folder" of files on a computer.' href="https://psyteachr.github.io/glossary/d#directory">directory</a> where you will keep all of your materials for this class. If you're using a lab computer, make sure you make this directory in your network drive so you can access it from other computers.</p>
-<p>Choose <strong><code>New Project...</code></strong> under the <strong><code>File</code></strong> menu to create a new project called <code class="path">01-repro</code> in this directory.</p>
-</div>
-<div id="working-directory" class="section level3" number="2.4.1">
+<p>First, we need to get organised. <a class="glossary" target="_blank" title="A way to organise related files in RStudio" href="https://psyteachr.github.io/glossary/p#project">Projects</a> in RStudio are a way to group all of the files you need for one project. Most projects include scripts, data files, and output files like the PDF report created by the script or images.</p>
+<div id="file-system" class="section level3" number="2.4.1">
 <h3>
-<span class="header-section-number">2.4.1</span> Working Directory<a class="anchor" aria-label="anchor" href="#working-directory"><i class="fas fa-link"></i></a>
+<span class="header-section-number">2.4.1</span> File System<a class="anchor" aria-label="anchor" href="#file-system"><i class="fas fa-link"></i></a>
 </h3>
-<p>Where should you put all of your files? When developing an analysis, you usually want to have all of your scripts and data files in one subtree of your computer's directory structure. Usually there is a single <a class="glossary" target="_blank" title="The filepath where R is currently reading and writing files." href="https://psyteachr.github.io/glossary/w#working-directory">working directory</a> where your data and scripts are stored.</p>
+<p>Modern computers tend to hide the file system from users, but we need to understand a little bit about how files are stored on your computer in order to get a script to find your data. Your computer's file system is like a big box (or <a class="glossary" target="_blank" title='A collection or "folder" of files on a computer.' href="https://psyteachr.github.io/glossary/d#directory">directory</a>) that contains both files and smaller boxes, or "subdirectories". You can specify the location of a file with its name and the names of all the directories it is inside.</p>
+<p>For example, if Lisa is looking for a file called <code>report.Rmd</code>on their Desktop, they can specify the full file <a class="glossary" target="_blank" title="A string representing the location of a file or directory." href="https://psyteachr.github.io/glossary/p#path">path</a> like this: <code>/Users/lisad/Desktop/report.Rmd</code>, because the <code>Desktop</code> directory is inside the <code>lisad</code> directory, which is inside the <code>Users</code> directory, which is located at the base of the whole file system. If that file was on <em>your</em> desktop, you would probably have a different path unless your user directory is also called <code>lisad</code>. You can also use the <code><a href="https://rdrr.io/r/base/tilde.html">~</a></code> shortcut to represent the user directory of the person who is currently logged in, like this: <code>~/Desktop/report.Rmd</code>.</p>
+</div>
+<div id="working-directory" class="section level3" number="2.4.2">
+<h3>
+<span class="header-section-number">2.4.2</span> Working Directory<a class="anchor" aria-label="anchor" href="#working-directory"><i class="fas fa-link"></i></a>
+</h3>
+<p>Where should you put all of your files? You usually want to have all of your scripts and data files for a single project inside one folder on your computer, the <a class="glossary" target="_blank" title="The filepath where R is currently reading and writing files." href="https://psyteachr.github.io/glossary/w#working-directory">working directory</a> for that project. You can organise files in subdirectories inside this main project directory, such as putting all raw data files in a directory called <code class="path">data</code> and saving any image files to a directory called <code class="path">images</code>.</p>
 <p>Your script should only reference files in three locations, using the appropriate format.</p>
 <div class="inline-table"><table class="table table-sm">
 <thead><tr class="header">
@@ -156,76 +158,104 @@
 <tbody>
 <tr class="odd">
 <td>on the web</td>
-<td>"<a href="https://psyteachr.github.io/reprores/data/disgust_scores.csv" class="uri">https://psyteachr.github.io/reprores/data/disgust_scores.csv</a>"</td>
+<td>"<a href="https://psyteachr.github.io/ads-v1/data/widgets_gadgets.xlsx" class="uri">https://psyteachr.github.io/ads-v1/data/widgets_gadgets.xlsx</a>"</td>
 </tr>
 <tr class="even">
 <td>in the working directory</td>
-<td>"disgust_scores.csv"</td>
+<td>"widgets_gadgets.xlsx"</td>
 </tr>
 <tr class="odd">
 <td>in a subdirectory</td>
-<td>"data/disgust_scores.csv"</td>
+<td>"data/widgets_gadgets.xlsx"</td>
 </tr>
 </tbody>
 </table></div>
 <div class="warning">
 <p>Never set or change your working directory in a script.</p>
 </div>
-<p>If you are working with an R Markdown file, it will automatically use the same directory the .Rmd file is in as the working directory.</p>
-<p>If you are working with R scripts, store your main script file in the top-level directory and manually set your working directory to that location. You will have to reset the working directory each time you open RStudio, unless you create a <a class="glossary" target="_blank" title="A way to organise related files in RStudio" href="https://psyteachr.github.io/glossary/p#project">project</a> and access the script from the project.</p>
-<p>For instance, if you are on a Windows machine your data and scripts are in the directory <code class="path">C:'s_files_thesis_analysis</code>, you will set your working directory in one of two ways: (1) by going to the <strong><code>Session</code></strong> pull down menu in RStudio and choosing <strong><code>Set Working Directory</code></strong>, or (2) by typing <code><span class="fu"><a href="https://rdrr.io/r/base/getwd.html">setwd</a></span><span class="op">(</span><span class="st">"C:/Carla's_files/thesis2/my_thesis/new_analysis"</span><span class="op">)</span></code> in the console window.</p>
-<div class="warning">
-<p>It's tempting to make your life simple by putting the <code><span class="fu"><a href="https://rdrr.io/r/base/getwd.html">setwd</a></span><span class="op">(</span><span class="op">)</span></code> command in your script. Don't do this! Others will not have the same directory tree as you (and when your laptop dies and you get a new one, neither will you).</p>
-<p>When manually setting the working directory, always do so by using the <strong><code>Session &gt; Set Working Directory</code></strong> pull-down option or by typing <code><span class="fu"><a href="https://rdrr.io/r/base/getwd.html">setwd</a></span><span class="op">(</span><span class="op">)</span></code> in the console.</p>
-</div>
-<p>If your script needs a file in a subdirectory of <code class="path">new_analysis</code>, say, <code class="path">data/questionnaire.csv</code>, load it in using a <a class="glossary" target="_blank" title="The location of a file in relation to the working directory." href="https://psyteachr.github.io/glossary/r#relative-path">relative path</a> so that it is accessible if you move the folder <code class="path">new_analysis</code> to another location or computer:</p>
-<div class="sourceCode" id="cb46"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">dat</span> <span class="op">&lt;-</span> <span class="fu">read_csv</span><span class="op">(</span><span class="st">"data/questionnaire.csv"</span><span class="op">)</span>  <span class="co"># correct</span></code></pre></div>
-<p>Do not load it in using an <a class="glossary" target="_blank" title="A file path that starts with / and is not appended to the working directory" href="https://psyteachr.github.io/glossary/a#absolute-path">absolute path</a>:</p>
+<p>R Markdown files will automatically use the same directory the .Rmd file is in as the working directory.</p>
+<p>If your script needs a file in a subdirectory of your working directory, such as, <code class="path">data/widgets_gadgets.xlsx</code>, load it in using a <a class="glossary" target="_blank" title="The location of a file in relation to the working directory." href="https://psyteachr.github.io/glossary/r#relative-path">relative path</a> so that it is accessible if you move the working directory to another location or computer:</p>
 <div class="sourceCode" id="cb47"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">dat</span> <span class="op">&lt;-</span> <span class="fu">read_csv</span><span class="op">(</span><span class="st">"C:/Carla's_files/thesis22/my_thesis/new_analysis/data/questionnaire.csv"</span><span class="op">)</span>   <span class="co"># wrong</span></code></pre></div>
+<code class="sourceCode R"><span class="va">dat</span> <span class="op">&lt;-</span> <span class="fu">read_csv</span><span class="op">(</span><span class="st">"data/widgets_gadgets.xlsx"</span><span class="op">)</span>  <span class="co"># correct</span></code></pre></div>
+<p>Do not load it in using an <a class="glossary" target="_blank" title="A file path that starts with / and is not appended to the working directory" href="https://psyteachr.github.io/glossary/a#absolute-path">absolute path</a>:</p>
+<div class="sourceCode" id="cb48"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">dat</span> <span class="op">&lt;-</span> <span class="fu">read_csv</span><span class="op">(</span><span class="st">"C:/My Files/2020-2021/data/widgets_gadgets.xlsx"</span><span class="op">)</span>   <span class="co"># wrong</span></code></pre></div>
 <div class="info">
-<p>Also note the convention of using forward slashes, unlike the Windows-specific convention of using backward slashes. This is to make references to files platform independent.</p>
+<p>Also note the convention of using forward slashes, unlike the Windows-specific convention of using backward slashes. This is to make references to files work for everyone, regardless of their operating system.</p>
 </div>
 </div>
-<div id="naming-things" class="section level3" number="2.4.2">
+<div id="naming-things" class="section level3" number="2.4.3">
 <h3>
-<span class="header-section-number">2.4.2</span> Naming Things<a class="anchor" aria-label="anchor" href="#naming-things"><i class="fas fa-link"></i></a>
+<span class="header-section-number">2.4.3</span> Naming Things<a class="anchor" aria-label="anchor" href="#naming-things"><i class="fas fa-link"></i></a>
 </h3>
-<p>There are two perfect guides to naming files: Jenny Bryan's <a href="https://speakerdeck.com/jennybc/how-to-name-files" target="_blank">How to name files</a> and Danielle Navarro's <a href="https://slides.djnavarro.net/project-structure/" target="_blank">Project Structure</a> (which also has a YouTube video). I really recommend you check those out, but I'll list the most important principles here:</p>
+<p>Name files so that both people and computers can easily find things. Here are some important principles:</p>
 <ul>
 <li>file and directory names should only contain letters, numbers, dashes, and underscores, with a full stop (<code>.</code>) between the file name and <a class="glossary" target="_blank" title="The end part of a file name that tells you what type of file it is (e.g., .R or .Rmd)." href="https://psyteachr.github.io/glossary/e#extension">extension</a> (that means no spaces!)</li>
-<li>be consistent with capitalisation (I prefer to never use it to make it easy to remember)</li>
+<li>be consistent with capitalisation (set a rule to make it easy to remember, like always use lowercase)</li>
 <li>use underscores (<code>_</code>) to separate parts of the file name, and dashes (<code><a href="https://rdrr.io/r/base/Arithmetic.html">-</a></code>) to separate words in a section</li>
 <li>name files with a pattern that alphabetises in a sensible order and makes it easy for you to find the file you're looking for</li>
 <li>prefix a filename with an underscore to move it to the top of the list, or prefix all files with numbers to control their order</li>
 </ul>
 <p>For example, these file names are a mess:</p>
 <ul>
-<li><code class="path">analysis.R</code></li>
-<li><code class="path">analysis final.R</code></li>
-<li><code class="path">Data (Expmnt) 11-15.xls</code></li>
-<li><code class="path">Experiment Data Nov 12.xls</code></li>
-<li><code class="path">final analysis2.R</code></li>
+<li><code class="path">report.doc</code></li>
+<li><code class="path">report final.doc</code></li>
+<li><code class="path">Data (Customers) 11-15.xls</code></li>
+<li><code class="path">Customers Data Nov 12.xls</code></li>
+<li><code class="path">final report2.doc</code></li>
 <li><code class="path">project notes.txt</code></li>
-<li><code class="path">Subject Data November 15.xls</code></li>
+<li><code class="path">Vendor Data November 15.xls</code></li>
 </ul>
 <p>Here is one way to structure them so that similar files have the same structure and it's easy for a human to scan the list or to use code to find relevant files. See if you can figure out what the last one should be.</p>
 <ul>
 <li><code class="path">_project-notes.txt</code></li>
-<li><code class="path">analysis_v1.R</code></li>
-<li><code class="path">analysis_v2.R</code></li>
-<li><code class="path">analysis_v3.R</code></li>
-<li><code class="path">data_experiment_2021-11-12.xls</code></li>
-<li><code class="path">data_experiment_2021-11-15.xls</code></li>
+<li><code class="path">report_v1.doc</code></li>
+<li><code class="path">report_v2.doc</code></li>
+<li><code class="path">report_v3.doc</code></li>
+<li><code class="path">data_customer_2021-11-12.xls</code></li>
+<li><code class="path">data_customer_2021-11-15.xls</code></li>
 <li><select class="webex-select"><option value="blank"></option>
-<option value="">subject-data_2021-11-15.xls</option>
-<option value="">data-subjects-2021_11_15.xls</option>
-<option value="answer">data_subjects_2021-11-15.xls</option>
-<option value="">data_2021-11-15_subjects.xls</option></select></li>
+<option value="">vendor-data_2021-11-15.xls</option>
+<option value="">data-vendor-2021_11_15.xls</option>
+<option value="answer">data_vendor_2021-11-15.xls</option>
+<option value="">data_2021-11-15_vendor.xls</option></select></li>
 </ul>
 <div class="try">
-<p>Think of other ways to name the files above. Look at the project directory for your last study and see what you can improve.</p>
+<p>Think of other ways to name the files above. Look at some of your own project files and see what you can improve.</p>
+</div>
+</div>
+<div id="start-a-project" class="section level3" number="2.4.4">
+<h3>
+<span class="header-section-number">2.4.4</span> Start a Project<a class="anchor" aria-label="anchor" href="#start-a-project"><i class="fas fa-link"></i></a>
+</h3>
+<p>Now that we understand how the file system work and how to name things to make it easier for scripts to access them, we're ready to make our first project.</p>
+<p>First, make a new <a class="glossary" target="_blank" title='A collection or "folder" of files on a computer.' href="https://psyteachr.github.io/glossary/d#directory">directory</a> where you will keep all of your materials for this class. You can set this directory to be the default working directory under the General tab of the Global Options. This means that files will be saved here by default if you aren't working in a project.</p>
+<p>Next, choose <strong><code>New Project...</code></strong> under the <strong><code>File</code></strong> menu to create a new project called <code class="path">02-reports</code>. Make sure you save it inside the directory you just made. RStudio will restart itself and open with this new project directory as the working directory.</p>
+<div class="sourceCode" id="cb49"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/pkg/knitr/man/include_graphics.html">include_graphics</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"images/repro/new_proj_1.png"</span>,
+                   <span class="st">"images/repro/new_proj_2.png"</span>,
+                   <span class="st">"images/repro/new_proj_3.png"</span><span class="op">)</span><span class="op">)</span></code></pre></div>
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:unnamed-chunk-2-1"></span>
+<img src="images/repro/new_proj_1.png" alt="Starting a new project." width="100%"><p class="caption">
+Figure 2.1: Starting a new project.
+</p>
+</div>
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:unnamed-chunk-2-2"></span>
+<img src="images/repro/new_proj_2.png" alt="Starting a new project." width="100%"><p class="caption">
+Figure 2.2: Starting a new project.
+</p>
+</div>
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:unnamed-chunk-2-3"></span>
+<img src="images/repro/new_proj_3.png" alt="Starting a new project." width="100%"><p class="caption">
+Figure 2.3: Starting a new project.
+</p>
+</div>
+<p>Click on the Files tab in the lower right pane to see the contents of the project directory. You will see a file called <code>02-reports.Rproj</code>, which is a file that contains all of the project information.You can double-click on it to open up the project.</p>
+<div class="info">
+<p>Depending on your settings, you may also see a directory called <code>.Rproj.user</code>, which contains your specific user settings. You can ignore this and other "invisible" files that start with a full stop.</p>
 </div>
 </div>
 </div>
@@ -238,7 +268,7 @@
 <div class="figure" style="text-align: center">
 <span style="display:block;" id="fig:img-reproducible-script"></span>
 <img src="images/repro/reproducible_script.png" alt="A reproducible script." width="100%"><p class="caption">
-Figure 2.1: A reproducible script.
+Figure 2.4: A reproducible script.
 </p>
 </div>
 <p>If you open up a new R Markdown file from a template, you will see an example document with several code blocks in it. To create an HTML or PDF report from an R Markdown (Rmd) document, you compile it. Compiling a document is called <a class="glossary" target="_blank" title="To create an HTML, PDF, or Word document from an R Markdown (Rmd) document" href="https://psyteachr.github.io/glossary/k#knit">knitting</a> in RStudio. There is a button that looks like a ball of yarn with needles through it that you click on to compile your file into a report.</p>
@@ -275,7 +305,7 @@ output:
 <div class="figure" style="text-align: center">
 <span style="display:block;" id="fig:img-bootswatch"></span>
 <img src="images/repro/bootswatch.png" alt="Light themes in versions 3 and 4." width="100%"><p class="caption">
-Figure 2.2: Light themes in versions 3 and 4.
+Figure 2.5: Light themes in versions 3 and 4.
 </p>
 </div>
 </div>
@@ -286,14 +316,14 @@ Figure 2.2: Light themes in versions 3 and 4.
 <p>When you create a new R Markdown file in RStudio, a setup chunk is automatically created.</p>
 <div class="verbatim">
 <pre class="sourceCode r"><code class="sourceCode R">```{r setup, include=FALSE}</code></pre>
-<div class="sourceCode" id="cb49"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb51"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu">knitr</span><span class="fu">::</span><span class="va"><a href="https://rdrr.io/pkg/knitr/man/opts_chunk.html">opts_chunk</a></span><span class="op">$</span><span class="fu">set</span><span class="op">(</span>echo <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></code></pre></div>
 <pre class="sourceCode r"><code class="sourceCode R">```</code></pre>
 </div>
 <p>You can set more default options for code chunks here. See the <a href="https://yihui.name/knitr/options/" target="_blank">knitr options documentation</a> for explanations of the possible options.</p>
 <div class="verbatim">
 <pre class="sourceCode r"><code class="sourceCode R">```{r setup, include=FALSE}</code></pre>
-<div class="sourceCode" id="cb50"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb52"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu">knitr</span><span class="fu">::</span><span class="va"><a href="https://rdrr.io/pkg/knitr/man/opts_chunk.html">opts_chunk</a></span><span class="op">$</span><span class="fu">set</span><span class="op">(</span>
   fig.width  <span class="op">=</span> <span class="fl">8</span>, 
   fig.height <span class="op">=</span> <span class="fl">5</span>, 
@@ -351,24 +381,22 @@ Figure 2.2: Light themes in versions 3 and 4.
 </h3>
 <p>You can include <a class="glossary" target="_blank" title="A section of code in an R Markdown file" href="https://psyteachr.github.io/glossary/c#chunk">code chunks</a> that create and display images, tables, or computations to include in your text. Let's start by loading some data.</p>
 <p>First, create a code chunk in your document. This code loads some data from the web.</p>
-<div class="sourceCode" id="cb51"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb53"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">pets</span> <span class="op">&lt;-</span> <span class="fu">read_csv</span><span class="op">(</span><span class="st">"https://psyteachr.github.io/reprores/data/pets.csv"</span><span class="op">)</span></code></pre></div>
+<pre><code>## Rows: 800 Columns: 6</code></pre>
+<pre><code>## ── Column specification ────────────────────────────────────────────────────────
+## Delimiter: ","
+## chr (3): id, pet, country
+## dbl (3): score, age, weight</code></pre>
 <pre><code>## 
-## ── Column specification ────────────────────────────────────────────────────────
-## cols(
-##   id = col_character(),
-##   pet = col_character(),
-##   country = col_character(),
-##   score = col_double(),
-##   age = col_double(),
-##   weight = col_double()
-## )</code></pre>
+## ℹ Use `spec()` to retrieve the full column specification for this data.
+## ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
 <div id="comments" class="section level4" number="2.5.4.1">
 <h4>
 <span class="header-section-number">2.5.4.1</span> Comments<a class="anchor" aria-label="anchor" href="#comments"><i class="fas fa-link"></i></a>
 </h4>
 <p>You can add comments inside R chunks with the hash symbol (<code>#</code>). The R interpreter will ignore characters from the hash to the end of the line.</p>
-<div class="sourceCode" id="cb53"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb57"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># simulating new data</span>
 
 <span class="va">n</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/nrow.html">nrow</a></span><span class="op">(</span><span class="va">pets</span><span class="op">)</span> <span class="co"># the total number of pet</span>
@@ -385,7 +413,7 @@ Figure 2.2: Light themes in versions 3 and 4.
 <span class="header-section-number">2.5.4.2</span> Tables<a class="anchor" aria-label="anchor" href="#tables"><i class="fas fa-link"></i></a>
 </h4>
 <p>Next, create a code chunk where you want to display a table of the descriptives (e.g., Participants section of the Methods). We'll use tidyverse functions you will learn in the <a href="tidyr.html#tidyr">data wrangling lectures</a> to create summary statistics for each group.</p>
-<div class="sourceCode" id="cb54"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb58"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">pets</span> <span class="op">%&gt;%</span>
   <span class="fu">group_by</span><span class="op">(</span><span class="va">pet</span><span class="op">)</span> <span class="op">%&gt;%</span>
   <span class="fu">summarise</span><span class="op">(</span>
@@ -424,7 +452,7 @@ Figure 2.2: Light themes in versions 3 and 4.
 </table></div>
 </div>
 <p>The table above is OK, but it could be more reader-friendly by changing the column labels, rounding the means, and adding a caption. You can use <code><span class="fu">knitr</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/knitr/man/kable.html">kable</a></span><span class="op">(</span><span class="op">)</span></code> for this.</p>
-<div class="sourceCode" id="cb55"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb59"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">summary_table</span> <span class="op">&lt;-</span><span class="va">pets</span> <span class="op">%&gt;%</span>
   <span class="fu">group_by</span><span class="op">(</span><span class="va">pet</span><span class="op">)</span> <span class="op">%&gt;%</span>
   <span class="fu">summarise</span><span class="op">(</span>
@@ -441,7 +469,7 @@ Figure 2.2: Light themes in versions 3 and 4.
              caption <span class="op">=</span> <span class="st">"Summary statistics for the pets dataset."</span><span class="op">)</span></code></pre></div>
 <div class="inline-table"><table class="table table-sm">
 <caption>
-<span id="tab:unnamed-chunk-5">Table 2.1: </span>Summary statistics for the pets dataset.</caption>
+<span id="tab:unnamed-chunk-6">Table 2.1: </span>Summary statistics for the pets dataset.</caption>
 <thead><tr class="header">
 <th align="left">Pet Type</th>
 <th align="right">N</th>
@@ -493,13 +521,13 @@ ggplot(pets, aes(pet, score, fill = country)) +
 ```
 
 &lt;div class="figure" style="text-align: center"&gt;
-&lt;img src="02-repro_files/figure-html/unnamed-chunk-6-1.png" alt="Figure 1. Scores by pet type and country." width="100%" /&gt;
-&lt;p class="caption"&gt;(\#fig:unnamed-chunk-6)Figure 1. Scores by pet type and country.&lt;/p&gt;
+&lt;img src="02-repro_files/figure-html/unnamed-chunk-7-1.png" alt="Figure 1. Scores by pet type and country." width="100%" /&gt;
+&lt;p class="caption"&gt;(\#fig:unnamed-chunk-7)Figure 1. Scores by pet type and country.&lt;/p&gt;
 &lt;/div&gt;</code></pre>
 <div class="figure" style="text-align: center">
-<span style="display:block;" id="fig:unnamed-chunk-7"></span>
-<img src="02-repro_files/figure-html/unnamed-chunk-7-1.png" alt="Figure 1. Scores by pet type and country." width="100%"><p class="caption">
-Figure 2.3: Figure 1. Scores by pet type and country.
+<span style="display:block;" id="fig:unnamed-chunk-8"></span>
+<img src="02-repro_files/figure-html/unnamed-chunk-8-1.png" alt="Figure 1. Scores by pet type and country." width="100%"><p class="caption">
+Figure 2.6: Figure 1. Scores by pet type and country.
 </p>
 </div>
 <div class="info">
@@ -516,7 +544,7 @@ Figure 2.3: Figure 1. Scores by pet type and country.
 <span class="header-section-number">2.5.4.4</span> In-line R<a class="anchor" aria-label="anchor" href="#in-line-r"><i class="fas fa-link"></i></a>
 </h4>
 <p>Now let's analyse the pets data to see if cats are heavier than ferrets. First we'll run the analysis code. Then we'll save any numbers we might want to use in our manuscript to variables and round them appropriately. Finally, we'll use <code><span class="fu">glue</span><span class="fu">::</span><span class="fu"><a href="https://glue.tidyverse.org/reference/glue.html">glue</a></span><span class="op">(</span><span class="op">)</span></code> to format a results string.</p>
-<div class="sourceCode" id="cb58"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb62"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># analysis</span>
 <span class="va">cat_weight</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/filter.html">filter</a></span><span class="op">(</span><span class="va">pets</span>, <span class="va">pet</span> <span class="op">==</span> <span class="st">"cat"</span><span class="op">)</span> <span class="op">%&gt;%</span> <span class="fu">pull</span><span class="op">(</span><span class="va">weight</span><span class="op">)</span>
 <span class="va">ferret_weight</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/filter.html">filter</a></span><span class="op">(</span><span class="va">pets</span>, <span class="va">pet</span> <span class="op">==</span> <span class="st">"ferret"</span><span class="op">)</span> <span class="op">%&gt;%</span> <span class="fu">pull</span><span class="op">(</span><span class="va">weight</span><span class="op">)</span>
@@ -572,7 +600,7 @@ Cats were significantly heavier than ferrets (t = 18.42, df = 180.4, p &lt; 0.00
 <span class="header-section-number">2.5.5.3</span> Citing R packages<a class="anchor" aria-label="anchor" href="#citing-r-packages"><i class="fas fa-link"></i></a>
 </h4>
 <p>You can get the citation for an R package using the functions <code><a href="https://rdrr.io/r/utils/citation.html">citation()</a></code> and <code><a href="https://rdrr.io/r/utils/toLatex.html">toBibtex()</a></code>. You can paste the bibtex entry into your bibliography.bib file. Make sure to add a short name (e.g., "faux") before the first comma to refer to the reference.</p>
-<div class="sourceCode" id="cb60"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb64"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/citation.html">citation</a></span><span class="op">(</span>package<span class="op">=</span><span class="st">"faux"</span><span class="op">)</span> <span class="op">%&gt;%</span> <span class="fu"><a href="https://rdrr.io/r/utils/toLatex.html">toBibtex</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
 <pre><code>## @Manual{,
 ##   title = {faux: Simulation for Factorial Designs},
@@ -580,7 +608,7 @@ Cats were significantly heavier than ferrets (t = 18.42, df = 180.4, p &lt; 0.00
 ##   doi = {10.5281/zenodo.2669586},
 ##   publisher = {Zenodo},
 ##   year = {2021},
-##   note = {R package version 1.0.0.9006},
+##   note = {R package version 1.1.0},
 ##   url = {https://debruine.github.io/faux/},
 ## }</code></pre>
 </div>
@@ -680,26 +708,30 @@ eprint = {
 <td align="left">A way to specify formatting, such as headers, paragraphs, lists, bolding, and links.</td>
 </tr>
 <tr class="odd">
+<td align="left"><a href="https://psyteachr.github.io/glossary/p.html#path" class="glossary" target="_blank">path</a></td>
+<td align="left">A string representing the location of a file or directory.</td>
+</tr>
+<tr class="even">
 <td align="left"><a href="https://psyteachr.github.io/glossary/p.html#project" class="glossary" target="_blank">project</a></td>
 <td align="left">A way to organise related files in RStudio</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left"><a href="https://psyteachr.github.io/glossary/r.html#r-markdown" class="glossary" target="_blank">r markdown</a></td>
 <td align="left">The R-specific version of markdown: a way to specify formatting, such as headers, paragraphs, lists, bolding, and links, as well as code blocks and inline code.</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left"><a href="https://psyteachr.github.io/glossary/r.html#relative-path" class="glossary" target="_blank">relative path</a></td>
 <td align="left">The location of a file in relation to the working directory.</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left"><a href="https://psyteachr.github.io/glossary/r.html#reproducibility" class="glossary" target="_blank">reproducibility</a></td>
 <td align="left">The extent to which the findings of a study can be repeated in some other context</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left"><a href="https://psyteachr.github.io/glossary/w.html#working-directory" class="glossary" target="_blank">working directory</a></td>
 <td align="left">The filepath where R is currently reading and writing files.</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left"><a href="https://psyteachr.github.io/glossary/y.html#yaml" class="glossary" target="_blank">yaml</a></td>
 <td align="left">A structured format for information</td>
 </tr>
@@ -728,9 +760,6 @@ eprint = {
 <li><a href="https://the-turing-way.netlify.app/">The Turing Way</a></li>
 </ul>
 </div>
-</div>
-<div class="psyteachr_footer">
-  
 </div>
 <script>
 
@@ -940,8 +969,10 @@ $( document ).ready(function() {
 <li><a class="nav-link" href="#why-learn-reproducible-reports"><span class="header-section-number">2.3</span> Why learn reproducible reports?</a></li>
 <li>
 <a class="nav-link" href="#projects"><span class="header-section-number">2.4</span> Organising a project</a><ul class="nav navbar-nav">
-<li><a class="nav-link" href="#working-directory"><span class="header-section-number">2.4.1</span> Working Directory</a></li>
-<li><a class="nav-link" href="#naming-things"><span class="header-section-number">2.4.2</span> Naming Things</a></li>
+<li><a class="nav-link" href="#file-system"><span class="header-section-number">2.4.1</span> File System</a></li>
+<li><a class="nav-link" href="#working-directory"><span class="header-section-number">2.4.2</span> Working Directory</a></li>
+<li><a class="nav-link" href="#naming-things"><span class="header-section-number">2.4.3</span> Naming Things</a></li>
+<li><a class="nav-link" href="#start-a-project"><span class="header-section-number">2.4.4</span> Start a Project</a></li>
 </ul>
 </li>
 <li>
@@ -973,7 +1004,7 @@ $( document ).ready(function() {
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Data Skills for Reproducible Research</strong>: v2" was written by . It was last built on 2021-09-20.</p>
+    <p>"<strong>Data Skills for Reproducible Research</strong>: v2" was written by . It was last built on 2021-09-25.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

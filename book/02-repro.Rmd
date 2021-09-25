@@ -40,95 +40,101 @@ We will make reproducible reports following the principles of [literate programm
 
 ## Organising a project {#projects}
 
-First, we need to get orgainsed.
+First, we need to get organised. `r glossary("project", "Projects")` in RStudio are a way to group all of the files you need for one project. Most projects include scripts, data files, and output files like the PDF report created by the script or images. 
 
-`r glossary("project", "Projects")` in RStudio are a way to group all of the files you need for one project. Most projects include scripts, data files, and output files like the PDF version of the script or images.
+### File System
 
-::: {.try data-latex=""}
-Make a new `r glossary("directory")` where you will keep all of your materials for this class. If you're using a lab computer, make sure you make this directory in your network drive so you can access it from other computers. 
+Modern computers tend to hide the file system from users, but we need to understand a little bit about how files are stored on your computer in order to get a script to find your data. Your computer's file system is like a big box (or `r glossary("directory")`) that contains both files and smaller boxes, or "subdirectories". You can specify the location of a file with its name and the names of all the directories it is inside.
 
-Choose **`New Project...`** under the **`File`** menu to create a new project called `r path("01-repro")` in this directory.
-:::
-
+For example, if Lisa is looking for a file called `report.Rmd`on their Desktop, they can specify the full file `r glossary("path")` like this: `/Users/lisad/Desktop/report.Rmd`, because the `Desktop` directory is inside the `lisad` directory, which is inside the `Users` directory, which is located at the base of the whole file system. If that file was on *your* desktop, you would probably have a different path unless your user directory is also called `lisad`. You can also use the `~` shortcut to represent the user directory of the person who is currently logged in, like this: `~/Desktop/report.Rmd`.
 
 ### Working Directory
 
-Where should you put all of your files? When developing an analysis, you usually want to have all of your scripts and data files in one subtree of your computer's directory structure. Usually there is a single `r glossary("working directory")` where your data and scripts are stored.
+Where should you put all of your files? You usually want to have all of your scripts and data files for a single project inside one folder on your computer, the `r glossary("working directory")` for that project. You can organise files in subdirectories inside this main project directory, such as putting all raw data files in a directory called `r path("data")` and saving any image files to a directory called `r path("images")`.
 
 Your script should only reference files in three locations, using the appropriate format.
 
-| Where                    | Example |
-|--------------------------|---------|
-| on the web               | "https://psyteachr.github.io/reprores/data/disgust_scores.csv" |
-| in the working directory | "disgust_scores.csv"  |
-| in a subdirectory        | "data/disgust_scores.csv" |
+| Where                    | Example                                                          |
+|--------------------------|------------------------------------------------------------------|
+| on the web               | "<https://psyteachr.github.io/ads-v1/data/widgets_gadgets.xlsx>" |
+| in the working directory | "widgets_gadgets.xlsx"                                           |
+| in a subdirectory        | "data/widgets_gadgets.xlsx"                                      |
 
 ::: {.warning data-latex=""}
-Never set or change your working directory in a script. 
+Never set or change your working directory in a script.
 :::
 
-If you are working with an R Markdown file, it will automatically use the same directory the .Rmd file is in as the working directory. 
+R Markdown files will automatically use the same directory the .Rmd file is in as the working directory.
 
-If you are working with R scripts, store your main script file in the top-level directory and manually set your working directory to that location. You will have to reset the working directory each time you open RStudio, unless you create a `r glossary("project")` and access the script from the project. 
-
-For instance, if you are on a Windows machine your data and scripts are in the directory `r path("C:\\Carla's_files\\thesis2\\my_thesis\\new_analysis")`, you will set your working directory in one of two ways: (1) by going to the **`Session`** pull down menu in RStudio and choosing **`Set Working Directory`**, or (2) by typing `r hl(setwd("C:/Carla's_files/thesis2/my_thesis/new_analysis"))` in the console window.
-
-::: {.warning data-latex=""}
-It's tempting to make your life simple by putting the `r hl(setwd())` command in your script. Don't do this! Others will not have the same directory tree as you (and when your laptop dies and you get a new one, neither will you).
-
-When manually setting the working directory, always do so by using the **`Session > Set Working Directory`** pull-down option or by typing `r hl(setwd())` in the console.
-:::
-
-If your script needs a file in a subdirectory of `r path("new_analysis")`, say, `r path("data/questionnaire.csv")`, load it in using a `r glossary("relative path")` so that it is accessible if you move the folder `r path("new_analysis")` to another location or computer:
+If your script needs a file in a subdirectory of your working directory, such as, `r path("data/widgets_gadgets.xlsx")`, load it in using a `r glossary("relative path")` so that it is accessible if you move the working directory to another location or computer:
 
 ```{r read-csv, eval = FALSE}
-dat <- read_csv("data/questionnaire.csv")  # correct
+dat <- read_csv("data/widgets_gadgets.xlsx")  # correct
 ```
 
 Do not load it in using an `r glossary("absolute path")`:
 
 ```{r abs-path, eval = FALSE}
-dat <- read_csv("C:/Carla's_files/thesis22/my_thesis/new_analysis/data/questionnaire.csv")   # wrong
+dat <- read_csv("C:/My Files/2020-2021/data/widgets_gadgets.xlsx")   # wrong
 ```
 
 ::: {.info data-latex=""}
-Also note the convention of using forward slashes, unlike the Windows-specific convention of using backward slashes. This is to make references to files platform independent.
+Also note the convention of using forward slashes, unlike the Windows-specific convention of using backward slashes. This is to make references to files work for everyone, regardless of their operating system.
 :::
 
 ### Naming Things
 
-There are two perfect guides to naming files: Jenny Bryan's [How to name files](https://speakerdeck.com/jennybc/how-to-name-files){target="_blank"} and Danielle Navarro's [Project Structure](https://slides.djnavarro.net/project-structure/){target="_blank"} (which also has a YouTube video). I really recommend you check those out, but I'll list the most important principles here:
+Name files so that both people and computers can easily find things. Here are some important principles:
 
-* file and directory names should only contain letters, numbers, dashes, and underscores, with a full stop (`.`) between the file name and `r glossary("extension")` (that means no spaces!)
-* be consistent with capitalisation (I prefer to never use it to make it easy to remember)
-* use underscores (`_`) to separate parts of the file name, and dashes (`-`) to separate words in a section
-* name files with a pattern that alphabetises in a sensible order and makes it easy for you to find the file you're looking for
-* prefix a filename with an underscore to move it to the top of the list, or prefix all files with numbers to control their order
+-   file and directory names should only contain letters, numbers, dashes, and underscores, with a full stop (`.`) between the file name and `r glossary("extension")` (that means no spaces!)
+-   be consistent with capitalisation (set a rule to make it easy to remember, like always use lowercase)
+-   use underscores (`_`) to separate parts of the file name, and dashes (`-`) to separate words in a section
+-   name files with a pattern that alphabetises in a sensible order and makes it easy for you to find the file you're looking for
+-   prefix a filename with an underscore to move it to the top of the list, or prefix all files with numbers to control their order
 
 For example, these file names are a mess:
 
-* `r path("analysis.R")`
-* `r path("analysis final.R")`
-* `r path("Data (Expmnt) 11-15.xls")`
-* `r path("Experiment Data Nov 12.xls")`
-* `r path("final analysis2.R")`
-* `r path("project notes.txt")`
-* `r path("Subject Data November 15.xls")`
+-   `r path("report.doc")`
+-   `r path("report final.doc")`
+-   `r path("Data (Customers) 11-15.xls")`
+-   `r path("Customers Data Nov 12.xls")`
+-   `r path("final report2.doc")`
+-   `r path("project notes.txt")`
+-   `r path("Vendor Data November 15.xls")`
 
 Here is one way to structure them so that similar files have the same structure and it's easy for a human to scan the list or to use code to find relevant files. See if you can figure out what the last one should be.
 
-* `r path("_project-notes.txt")`
-* `r path("analysis_v1.R")`
-* `r path("analysis_v2.R")`
-* `r path("analysis_v3.R")`
-* `r path("data_experiment_2021-11-12.xls")`
-* `r path("data_experiment_2021-11-15.xls")`
-* `r mcq(c("subject-data_2021-11-15.xls", "data-subjects-2021_11_15.xls", answer = "data_subjects_2021-11-15.xls", "data_2021-11-15_subjects.xls"))`
+-   `r path("_project-notes.txt")`
+-   `r path("report_v1.doc")`
+-   `r path("report_v2.doc")`
+-   `r path("report_v3.doc")`
+-   `r path("data_customer_2021-11-12.xls")`
+-   `r path("data_customer_2021-11-15.xls")`
+-   `r mcq(c("vendor-data_2021-11-15.xls", "data-vendor-2021_11_15.xls", answer = "data_vendor_2021-11-15.xls", "data_2021-11-15_vendor.xls"))`
 
 ::: {.try data-latex=""}
-Think of other ways to name the files above. Look at the project directory for your last study and see what you can improve.
+Think of other ways to name the files above. Look at some of your own project files and see what you can improve.
 :::
 
+### Start a Project
+
+Now that we understand how the file system work and how to name things to make it easier for scripts to access them, we're ready to make our first project. 
+
+First, make a new `r glossary("directory")` where you will keep all of your materials for this class. You can set this directory to be the default working directory under the General tab of the Global Options. This means that files will be saved here by default if you aren't working in a project. 
+
+Next, choose **`New Project...`** under the **`File`** menu to create a new project called `r path("02-reports")`. Make sure you save it inside the directory you just made. RStudio will restart itself and open with this new project directory as the working directory. 
+
+```{r, fig.cap="Starting a new project."}
+include_graphics(c("images/repro/new_proj_1.png",
+                   "images/repro/new_proj_2.png",
+                   "images/repro/new_proj_3.png"))
+```
+
+Click on the Files tab in the lower right pane to see the contents of the project directory. You will see a file called `02-reports.Rproj`, which is a file that contains all of the project information.You can double-click on it to open up the project. 
+
+::: {.info data-latex=""}
+Depending on your settings, you may also see a directory called `.Rproj.user`, which contains your specific user settings. You can ignore this and other "invisible" files that start with a full stop.
+:::
 
 ## R Markdown
 

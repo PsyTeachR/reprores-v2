@@ -2,7 +2,7 @@
 title: Data Skills for Reproducible Research
 subtitle: v2
 authors: "Lisa DeBruine & Dale Barr"
-date: "2021-09-20"
+date: "2021-09-25"
 site: bookdown::bookdown_site
 documentclass: book
 classoption: oneside # for PDFs
@@ -46,9 +46,6 @@ The book is also available in [PDF](reprores-v2.pdf), [ePub](reprores-v2.epub) a
 * [glossary](https://psyteachr.github.io/glossary){target="_blank"}
     Coding and statistics both have a lot of specialist terms. Throughout this book, jargon will be linked to the glossary.
     
-<div class="right meme"><img src="images/memes/changing-stuff.jpg" 
-     alt="Fake O'Reilly-style book cover, line drawing of a kitten; title: Changing Stuff and Seeing What Happens; top text: How to actually learn any new programming concept" /></a></div>
-     
 ## How to learn data skills {-}
 
 <div class="left meme"><img src="images/memes/gym_sleep.jpg" 
@@ -57,7 +54,10 @@ The book is also available in [PDF](reprores-v2.pdf), [ePub](reprores-v2.epub) a
 Learning data skills is kind of like having a gym membership (HT to [Phil McAleer](https://twitter.com/McAleerP) for the analogy). You'll be given state-of-the-art equipment to use and instructions for how to use them, but your data skills won't get any stronger unless you practice. 
 
 Data skills do not require you to memorise lots of code. You will be introduced to many different functions, but the main skill to learn is how to efficiently find the information you need. This will require getting used to the structure of help files and [cheat sheets](https://www.rstudio.com/resources/cheatsheets/){target="_blank"}, learning how to Goggle your problem and choose a helpful solution, and learning how to read error messages.
-     
+
+<div class="right meme"><img src="images/memes/changing-stuff.jpg" 
+     alt="Fake O'Reilly-style book cover, line drawing of a kitten; title: Changing Stuff and Seeing What Happens; top text: How to actually learn any new programming concept" /></a></div>
+
 Learning to code involves making a **lot** of mistakes. These mistakes are completely essential to the process, so try not to feel too frustrated. Many of the chapter exercises will give you broken code to fix so you get experience seeing what common errors look like. As you become a more experienced coder, you might not make fewer errors, but you'll recover from them much faster.
 
 ## I found a bug! {-}
