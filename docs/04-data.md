@@ -282,7 +282,7 @@ ocean_sav  <- haven::read_sav("data/5factor.sav")
 
 Now that you've loaded some data, look the upper right hand window of RStudio, under the Environment tab. You will see the objects listed, along with their number of observations (rows) and variables (columns). This is your first check that everything went OK.
 
-Always, always, always, look at your data once you've created or loaded a table. Also look at it after each step that transforms your table. There are three main ways to look at your table: <code><span class='fu'><a href='https://rdrr.io/r/utils/View.html'>View</a></span><span class='op'>(</span><span class='op'>)</span></code>, <code><span class='fu'><a href='https://rdrr.io/r/base/print.html'>print</a></span><span class='op'>(</span><span class='op'>)</span></code>, <code><span class='fu'>tibble</span><span class='fu'>::</span><span class='fu'><a href='https://pillar.r-lib.org/reference/glimpse.html'>glimpse</a></span><span class='op'>(</span><span class='op'>)</span></code>. 
+Always, always, always, look at your data once you've created or loaded a table. Also look at it after each step that transforms your table. There are three main ways to look at your table: <code><span class='fu'><a href='https://rdrr.io/r/utils/View.html'>View</a></span><span class='op'>(</span><span class='op'>)</span></code>, <code><span class='fu'><a href='https://rdrr.io/r/base/print.html'>print</a></span><span class='op'>(</span><span class='op'>)</span></code>, <code><span class='fu'>tibble</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/pillar/man/glimpse.html'>glimpse</a></span><span class='op'>(</span><span class='op'>)</span></code>. 
 
 #### View() 
 
@@ -314,7 +314,7 @@ demo_tsv
 
 #### glimpse() 
 
-The function <code><span class='fu'>tibble</span><span class='fu'>::</span><span class='fu'><a href='https://pillar.r-lib.org/reference/glimpse.html'>glimpse</a></span><span class='op'>(</span><span class='op'>)</span></code> gives a sideways version of the table. This is useful if the table is very wide and you can't see all of the columns. It also tells you the <a class='glossary' target='_blank' title='The kind of data represented by an object.' href='https://psyteachr.github.io/glossary/d#data-type'>data type</a> of each column in angled brackets after each column name. 
+The function <code><span class='fu'>tibble</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/pillar/man/glimpse.html'>glimpse</a></span><span class='op'>(</span><span class='op'>)</span></code> gives a sideways version of the table. This is useful if the table is very wide and you can't see all of the columns. It also tells you the <a class='glossary' target='_blank' title='The kind of data represented by an object.' href='https://psyteachr.github.io/glossary/d#data-type'>data type</a> of each column in angled brackets after each column name. 
 
 
 ```r
@@ -428,7 +428,6 @@ demo <- read_sheet(sheet_id)
 * Save it to a CSV file called <code class='path'>family.csv</code>. 
 * Clear the object from your environment by restarting R or with the code <code><span class='fu'><a href='https://rdrr.io/r/base/rm.html'>remove</a></span><span class='op'>(</span><span class='va'>family</span><span class='op'>)</span></code>.
 * Load the data back in and view it.
-:::
 
 
 <div class='webex-solution'><button>Solution</button>
@@ -952,7 +951,7 @@ names(avatar) # what are the column names?
 
 #### Accessing rows and columns {#row-col-access}
 
-There are various ways of accessing specific columns or rows from a table. The ones below are from <a class='glossary' target='_blank' title='The set of R functions that come with a basic installation of R, before you add external packages' href='https://psyteachr.github.io/glossary/b#base-r'>base R</a> and are useful to know about, but you'll be learning easier (and more readable) ways in the [tidyr](#tidyr) and [dplyr](#dplyr) lessons. Examples of these base R accessing functions are provided here for reference, since you might see them in other people's scripts.
+There are various ways of accessing specific columns or rows from a table. The ones below are from <a class='glossary' target='_blank' title='The set of R functions that come with a basic installation of R, before you add external packages' href='https://psyteachr.github.io/glossary/b#base-r'>base R</a> and are useful to know about, but you'll be learning easier (and more readable) ways in Chapter\ \@ref(tidyr) and Chapter\ \@ref(dplyr). Examples of these base R accessing functions are provided here for reference, since you might see them in other people's scripts.
 
 
 ```r
@@ -971,7 +970,13 @@ The data directory you created with `reprores::getdata()` contains a file called
 
 
 ```r
-mess <- read_csv("data/mess.csv")
+# lazy = FALSE loads the data right away so you can see error messages
+# this default changed in late 2021 and might change back soon
+mess <- read_csv("data/mess.csv", lazy = FALSE)
+```
+
+```
+## Warning: One or more parsing issues, see `problems()` for details
 ```
 
 ```
@@ -990,7 +995,7 @@ mess <- read_csv("data/mess.csv")
 ## ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
 ```
 
-You'll get a warning with many parsing errors and `mess` is just a single column of the word "junk". View the file `data/mess.csv` by clicking on it in the File pane, and choosing "View File". Here are the first 10 lines. What went wrong?
+You'll get a warning with many parsing errors and the data table is just a single column. View the file `data/mess.csv` by clicking on it in the File pane, and choosing "View File". Here are the first 10 lines. What went wrong?
 
 ```
 This is my messy dataset
@@ -1009,7 +1014,9 @@ First, the file starts with a note: "This is my messy dataset". We want to skip 
 
 
 ```r
-mess <- read_csv("data/mess.csv", skip = 2)
+mess <- read_csv("data/mess.csv", 
+                 skip = 2, 
+                 lazy = FALSE)
 ```
 
 ```
@@ -1030,41 +1037,20 @@ mess <- read_csv("data/mess.csv", skip = 2)
 ```
 
 ```r
-mess
+glimpse(mess)
 ```
 
-<div class="kable-table">
-
-|junk |order   | score|letter |good  |min_max |date       |
-|:----|:-------|-----:|:------|:-----|:-------|:----------|
-|junk |1       | -1.00|a      |1     |1 - 2   |2020-01-1  |
-|junk |missing |  0.72|b      |1     |2 - 3   |2020-01-2  |
-|junk |3       | -0.62|c      |FALSE |3 - 4   |2020-01-3  |
-|junk |4       |  2.03|d      |T     |4 - 5   |2020-01-4  |
-|junk |5       |    NA|e      |1     |5 - 6   |2020-01-5  |
-|junk |6       |  0.99|f      |0     |6 - 7   |2020-01-6  |
-|junk |7       |  0.03|g      |T     |7 - 8   |2020-01-7  |
-|junk |8       |  0.67|h      |TRUE  |8 - 9   |2020-01-8  |
-|junk |9       |  0.57|i      |1     |9 - 10  |2020-01-9  |
-|junk |10      |  0.90|j      |T     |10 - 11 |2020-01-10 |
-|junk |11      | -1.55|k      |F     |11 - 12 |2020-01-11 |
-|junk |12      |    NA|l      |FALSE |12 - 13 |2020-01-12 |
-|junk |13      |  0.15|m      |T     |13 - 14 |2020-01-13 |
-|junk |14      | -0.66|n      |TRUE  |14 - 15 |2020-01-14 |
-|junk |15      | -0.99|o      |1     |15 - 16 |2020-01-15 |
-|junk |16      |  1.97|p      |T     |16 - 17 |2020-01-16 |
-|junk |17      | -0.44|q      |TRUE  |17 - 18 |2020-01-17 |
-|junk |18      | -0.90|r      |F     |18 - 19 |2020-01-18 |
-|junk |19      | -0.15|s      |FALSE |19 - 20 |2020-01-19 |
-|junk |20      | -0.83|t      |0     |20 - 21 |2020-01-20 |
-|junk |21      |  1.99|u      |T     |21 - 22 |2020-01-21 |
-|junk |22      |  0.04|v      |F     |22 - 23 |2020-01-22 |
-|junk |23      | -0.40|w      |F     |23 - 24 |2020-01-23 |
-|junk |24      | -0.47|x      |0     |24 - 25 |2020-01-24 |
-|junk |25      | -0.41|y      |TRUE  |25 - 26 |2020-01-25 |
-|junk |26      |  0.68|z      |0     |26 - 27 |2020-01-26 |
-
-</div>
+```
+## Rows: 26
+## Columns: 7
+## $ junk    <chr> "junk", "junk", "junk", "junk", "junk", "junk", "junk", "junk"…
+## $ order   <chr> "1", "missing", "3", "4", "5", "6", "7", "8", "9", "10", "11",…
+## $ score   <dbl> -1.00, 0.72, -0.62, 2.03, NA, 0.99, 0.03, 0.67, 0.57, 0.90, -1…
+## $ letter  <chr> "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m…
+## $ good    <chr> "1", "1", "FALSE", "T", "1", "0", "T", "TRUE", "1", "T", "F", …
+## $ min_max <chr> "1 - 2", "2 - 3", "3 - 4", "4 - 5", "5 - 6", "6 - 7", "7 - 8",…
+## $ date    <chr> "2020-01-1", "2020-01-2", "2020-01-3", "2020-01-4", "2020-01-5…
+```
 
 OK, that's a little better, but this table is still a serious mess in several ways:
 
@@ -1104,17 +1090,27 @@ ct <- list(
 
 tidier <- read_csv("data/mess.csv", 
                    skip = 2,
-                   col_types = ct)
+                   col_types = ct, 
+                   lazy = FALSE)
 ```
 
-You will get a message about "1 parsing failure" when you run this. Warnings look scary at first, but always start by reading the message. The table tells you what row (`2`) and column (`order`) the error was found in, what kind of data was expected (`integer`), and what the actual value was (<code><span class='st'>"missing"</span></code>). If you specifically tell <code><span class='fu'>read_csv</span><span class='op'>(</span><span class='op'>)</span></code> to import a column as an integer, any characters in the column will produce a warning like this and then be recorded as `NA`. You can manually set what the missing values were recorded as with the `na` argument.
+```
+## Warning: One or more parsing issues, see `problems()` for details
+```
+
+```r
+problems()
+```
+
+You will get a message about parsing issues when you run this that tells you to run the `problems()` function to see a table of the problems. Warnings look scary at first, but always start by reading the message. The table tells you what row (`3`) and column (`2`) the error was found in, what kind of data was expected (`an integer`), and what the actual value was (`missing`). If you specifically tell `read_csv()` to import a column as an integer, any characters in the column will produce a warning like this and then be recorded as `NA`. You can manually set what the missing values were recorded as with the `na` argument.
 
 
 ```r
 tidiest <- read_csv("data/mess.csv", 
                    skip = 2,
                    na = "missing",
-                   col_types = ct)
+                   col_types = ct,
+                   lazy = FALSE)
 ```
 
 Now `order` is an integer where "missing" is now `NA`, `good` is a logical value, where <code><span class='fl'>0</span></code> and <code><span class='cn'>F</span></code> are converted to <code><span class='cn'>FALSE</span></code> and <code><span class='fl'>1</span></code> and <code><span class='cn'>T</span></code> are converted to <code><span class='cn'>TRUE</span></code>, and `date` is a date type (adding leading zeros to the day). We'll learn in later chapters how to fix other problems, such as the `min_max` column containing two different types of data.

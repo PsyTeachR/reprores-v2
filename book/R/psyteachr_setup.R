@@ -3,7 +3,6 @@
 
 suppressPackageStartupMessages({
   library(tidyverse)
-  library(webex)
   library(glossary)
   library(patchwork)
 })
