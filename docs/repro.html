@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <title>Chapter 2 Reproducible Workflows | Data Skills for Reproducible Research</title>
 <meta name="description" content="2.1 Learning Objectives  Basic Organise a project (video) Create and compile an Rmarkdown document (video) Edit the YAML header to add table of contents and other options Include a table Include a...">
-<meta name="generator" content="bookdown 0.24 with bs4_book()">
+<meta name="generator" content="bookdown 0.26 with bs4_book()">
 <meta property="og:title" content="Chapter 2 Reproducible Workflows | Data Skills for Reproducible Research">
 <meta property="og:type" content="book">
 <meta property="og:url" content="https://psyteachr.github.io/reprores-v2/repro.html">
@@ -16,18 +16,45 @@
 <meta name="twitter:title" content="Chapter 2 Reproducible Workflows | Data Skills for Reproducible Research">
 <meta name="twitter:description" content="2.1 Learning Objectives  Basic Organise a project (video) Create and compile an Rmarkdown document (video) Edit the YAML header to add table of contents and other options Include a table Include a...">
 <meta name="twitter:image" content="https://psyteachr.github.io/reprores-v2/images/logos/logo.png">
-<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/header-attrs-2.11/header-attrs.js"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
-<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.3.0/transition.js"></script><script src="libs/bs3compat-0.3.0/tabs.js"></script><script src="libs/bs3compat-0.3.0/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
-<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="libs/htmlwidgets-1.5.4/htmlwidgets.js"></script><script src="libs/plotly-binding-4.9.4.1/plotly.js"></script><script src="libs/typedarray-0.1/typedarray.min.js"></script><link href="libs/crosstalk-1.1.1/css/crosstalk.css" rel="stylesheet">
-<script src="libs/crosstalk-1.1.1/js/crosstalk.min.js"></script><link href="libs/plotly-htmlwidgets-css-1.57.1/plotly-htmlwidgets.css" rel="stylesheet">
-<script src="libs/plotly-main-1.57.1/plotly-latest.min.js"></script><!-- Global site tag (gtag.js) - Google Analytics --><script async src="https://www.googletagmanager.com/gtag/js?id=G-6NP3MF25W3"></script><script>
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.3.1/transition.js"></script><script src="libs/bs3compat-0.3.1/tabs.js"></script><script src="libs/bs3compat-0.3.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="libs/kePrint-0.0.1/kePrint.js"></script><link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet">
+<script src="libs/htmlwidgets-1.5.4/htmlwidgets.js"></script><script src="libs/plotly-binding-4.10.0/plotly.js"></script><script src="libs/typedarray-0.1/typedarray.min.js"></script><link href="libs/crosstalk-1.2.0/css/crosstalk.min.css" rel="stylesheet">
+<script src="libs/crosstalk-1.2.0/js/crosstalk.min.js"></script><link href="libs/plotly-htmlwidgets-css-2.5.1/plotly-htmlwidgets.css" rel="stylesheet">
+<script src="libs/plotly-main-2.5.1/plotly-latest.min.js"></script><!-- Global site tag (gtag.js) - Google Analytics --><script async src="https://www.googletagmanager.com/gtag/js?id=G-6NP3MF25W3"></script><script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
 
       gtag('config', 'G-6NP3MF25W3');
-    </script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><link rel="stylesheet" href="include/webex.css">
+    </script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
+    
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  </style>
+<style type="text/css">
+    /* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+    div.csl-bib-body { }
+    div.csl-entry {
+      clear: both;
+        }
+    .hanging div.csl-entry {
+      margin-left:2em;
+      text-indent:-2em;
+    }
+    div.csl-left-margin {
+      min-width:2em;
+      float:left;
+    }
+    div.csl-right-inline {
+      margin-left:2em;
+      padding-left:1em;
+    }
+    div.csl-indent {
+      margin-left: 2em;
+    }
+  </style>
+<link rel="stylesheet" href="include/webex.css">
 <link rel="stylesheet" href="include/psyteachr.css">
 <link rel="stylesheet" href="include/style.css">
 </head>
@@ -39,8 +66,8 @@
 
     <div class="d-flex align-items-start justify-content-between">
       <h1>
-        <a href="index.html" title="v2">Data Skills for Reproducible Research</a>:
-        <small class="text-muted">v2</small>
+        <a href="index.html" title="&lt;br&gt;&lt;a href='https://doi.org/10.5281/zenodo.6527194'&gt;&lt;img src='https://zenodo.org/badge/DOI/10.5281/zenodo.6527194.svg' alt='DOI: 10.5281/zenodo.6527194'&gt;&lt;/a&gt;">Data Skills for Reproducible Research</a>:
+        <small class="text-muted"><br><a href="https://doi.org/10.5281/zenodo.6527194"><img src="https://zenodo.org/badge/DOI/10.5281/zenodo.6527194.svg" alt="DOI: 10.5281/zenodo.6527194"></a></small>
       </h1>
       <button class="btn btn-outline-primary d-lg-none ml-2 mt-1" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="true" aria-controls="main-nav"><i class="fas fa-bars"></i><span class="sr-only">Show table of contents</span></button>
     </div>
@@ -142,7 +169,7 @@
 <span class="header-section-number">2.4.1</span> File System<a class="anchor" aria-label="anchor" href="#file-system"><i class="fas fa-link"></i></a>
 </h3>
 <p>Modern computers tend to hide the file system from users, but we need to understand a little bit about how files are stored on your computer in order to get a script to find your data. Your computer's file system is like a big box (or <a class="glossary" target="_blank" title='A collection or "folder" of files on a computer.' href="https://psyteachr.github.io/glossary/d#directory">directory</a>) that contains both files and smaller boxes, or "subdirectories". You can specify the location of a file with its name and the names of all the directories it is inside.</p>
-<p>For example, if Lisa is looking for a file called <code>report.Rmd</code>on their Desktop, they can specify the full file <a class="glossary" target="_blank" title="A string representing the location of a file or directory." href="https://psyteachr.github.io/glossary/p#path">path</a> like this: <code>/Users/lisad/Desktop/report.Rmd</code>, because the <code>Desktop</code> directory is inside the <code>lisad</code> directory, which is inside the <code>Users</code> directory, which is located at the base of the whole file system. If that file was on <em>your</em> desktop, you would probably have a different path unless your user directory is also called <code>lisad</code>. You can also use the <code><a href="https://rdrr.io/r/base/tilde.html">~</a></code> shortcut to represent the user directory of the person who is currently logged in, like this: <code>~/Desktop/report.Rmd</code>.</p>
+<p>For example, if Lisa is looking for a file called <code>report.Rmd</code>on their Desktop, they can specify the full file <a class="glossary" target="_blank" title="A string representing the location of a file or directory." href="https://psyteachr.github.io/glossary/p#path">path</a> like this: <code>/Users/lisad/Desktop/report.Rmd</code>, because the <code>Desktop</code> directory is inside the <code>lisad</code> directory, which is inside the <code>Users</code> directory, which is located at the base of the whole file system. If that file was on <em>your</em> desktop, you would probably have a different path unless your user directory is also called <code>lisad</code>. You can also use the <code>~</code> shortcut to represent the user directory of the person who is currently logged in, like this: <code>~/Desktop/report.Rmd</code>.</p>
 </div>
 <div id="working-directory" class="section level3" number="2.4.2">
 <h3>
@@ -151,6 +178,10 @@
 <p>Where should you put all of your files? You usually want to have all of your scripts and data files for a single project inside one folder on your computer, the <a class="glossary" target="_blank" title="The filepath where R is currently reading and writing files." href="https://psyteachr.github.io/glossary/w#working-directory">working directory</a> for that project. You can organise files in subdirectories inside this main project directory, such as putting all raw data files in a directory called <code class="path">data</code> and saving any image files to a directory called <code class="path">images</code>.</p>
 <p>Your script should only reference files in three locations, using the appropriate format.</p>
 <div class="inline-table"><table class="table table-sm">
+<colgroup>
+<col width="28%">
+<col width="71%">
+</colgroup>
 <thead><tr class="header">
 <th>Where</th>
 <th>Example</th>
@@ -176,10 +207,10 @@
 <p>R Markdown files will automatically use the same directory the .Rmd file is in as the working directory.</p>
 <p>If your script needs a file in a subdirectory of your working directory, such as, <code class="path">data/widgets_gadgets.xlsx</code>, load it in using a <a class="glossary" target="_blank" title="The location of a file in relation to the working directory." href="https://psyteachr.github.io/glossary/r#relative-path">relative path</a> so that it is accessible if you move the working directory to another location or computer:</p>
 <div class="sourceCode" id="cb47"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">dat</span> <span class="op">&lt;-</span> <span class="fu">read_csv</span><span class="op">(</span><span class="st">"data/widgets_gadgets.xlsx"</span><span class="op">)</span>  <span class="co"># correct</span></code></pre></div>
+<code class="sourceCode R"><span class="va">dat</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://readr.tidyverse.org/reference/read_delim.html">read_csv</a></span><span class="op">(</span><span class="st">"data/widgets_gadgets.xlsx"</span><span class="op">)</span>  <span class="co"># correct</span></code></pre></div>
 <p>Do not load it in using an <a class="glossary" target="_blank" title="A file path that starts with / and is not appended to the working directory" href="https://psyteachr.github.io/glossary/a#absolute-path">absolute path</a>:</p>
 <div class="sourceCode" id="cb48"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">dat</span> <span class="op">&lt;-</span> <span class="fu">read_csv</span><span class="op">(</span><span class="st">"C:/My Files/2020-2021/data/widgets_gadgets.xlsx"</span><span class="op">)</span>   <span class="co"># wrong</span></code></pre></div>
+<code class="sourceCode R"><span class="va">dat</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://readr.tidyverse.org/reference/read_delim.html">read_csv</a></span><span class="op">(</span><span class="st">"C:/My Files/2020-2021/data/widgets_gadgets.xlsx"</span><span class="op">)</span>   <span class="co"># wrong</span></code></pre></div>
 <div class="info">
 <p>Also note the convention of using forward slashes, unlike the Windows-specific convention of using backward slashes. This is to make references to files work for everyone, regardless of their operating system.</p>
 </div>
@@ -192,7 +223,7 @@
 <ul>
 <li>file and directory names should only contain letters, numbers, dashes, and underscores, with a full stop (<code>.</code>) between the file name and <a class="glossary" target="_blank" title="The end part of a file name that tells you what type of file it is (e.g., .R or .Rmd)." href="https://psyteachr.github.io/glossary/e#extension">extension</a> (that means no spaces!)</li>
 <li>be consistent with capitalisation (set a rule to make it easy to remember, like always use lowercase)</li>
-<li>use underscores (<code>_</code>) to separate parts of the file name, and dashes (<code><a href="https://rdrr.io/r/base/Arithmetic.html">-</a></code>) to separate words in a section</li>
+<li>use underscores (<code>_</code>) to separate parts of the file name, and dashes (<code>-</code>) to separate words in a section</li>
 <li>name files with a pattern that alphabetises in a sensible order and makes it easy for you to find the file you're looking for</li>
 <li>prefix a filename with an underscore to move it to the top of the list, or prefix all files with numbers to control their order</li>
 </ul>
@@ -353,7 +384,7 @@ Figure 2.5: Light themes in versions 3 and 4.
 <code>cache      = FALSE</code> : run all the code to create all of the images and objects each time you knit (set to <code>TRUE</code> if you have time-consuming code)</li>
 </ul>
 <p>Find a list of the current chunk options by typing <code><span class="fu"><a href="https://rdrr.io/r/utils/str.html">str</a></span><span class="op">(</span><span class="fu">knitr</span><span class="fu">::</span><span class="va"><a href="https://rdrr.io/pkg/knitr/man/opts_chunk.html">opts_chunk</a></span><span class="op">$</span><span class="fu">get</span><span class="op">(</span><span class="op">)</span><span class="op">)</span></code> in the console.</p>
-<p>You can also add the packages you need in this chunk using <code><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="op">)</span></code>. Often when you are working on a script, you will realize that you need to load another add-on package. Don't bury the call to <code><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">package_I_need</span><span class="op">)</span></code> way down in the script. Put it in the top, so the user has an overview of what packages are needed.</p>
+<p>You can also add the packages you need in this chunk using <code><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="op">)</span></code>. Often when you are working on a script, you will realize that you need to load another add-on package. Don't bury the call to <code><a href="https://rdrr.io/r/base/library.html">library(package_I_need)</a></code> way down in the script. Put it in the top, so the user has an overview of what packages are needed.</p>
 <div class="try">
 <p>We'll be using function from the package <code class="package">tidyverse</code>, so load that in your setup chunk.</p>
 </div>
@@ -382,13 +413,13 @@ Figure 2.5: Light themes in versions 3 and 4.
 <p>You can include <a class="glossary" target="_blank" title="A section of code in an R Markdown file" href="https://psyteachr.github.io/glossary/c#chunk">code chunks</a> that create and display images, tables, or computations to include in your text. Let's start by loading some data.</p>
 <p>First, create a code chunk in your document. This code loads some data from the web.</p>
 <div class="sourceCode" id="cb53"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">pets</span> <span class="op">&lt;-</span> <span class="fu">read_csv</span><span class="op">(</span><span class="st">"https://psyteachr.github.io/reprores/data/pets.csv"</span><span class="op">)</span></code></pre></div>
-<pre><code>## Rows: 800 Columns: 6</code></pre>
-<pre><code>## ── Column specification ────────────────────────────────────────────────────────
+<code class="sourceCode R"><span class="va">pets</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://readr.tidyverse.org/reference/read_delim.html">read_csv</a></span><span class="op">(</span><span class="st">"https://psyteachr.github.io/reprores/data/pets.csv"</span><span class="op">)</span></code></pre></div>
+<pre><code>## Rows: 800 Columns: 6
+## ── Column specification ────────────────────────────────────────────────────────
 ## Delimiter: ","
 ## chr (3): id, pet, country
-## dbl (3): score, age, weight</code></pre>
-<pre><code>## 
+## dbl (3): score, age, weight
+## 
 ## ℹ Use `spec()` to retrieve the full column specification for this data.
 ## ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
 <div id="comments" class="section level4" number="2.5.4.1">
@@ -396,7 +427,7 @@ Figure 2.5: Light themes in versions 3 and 4.
 <span class="header-section-number">2.5.4.1</span> Comments<a class="anchor" aria-label="anchor" href="#comments"><i class="fas fa-link"></i></a>
 </h4>
 <p>You can add comments inside R chunks with the hash symbol (<code>#</code>). The R interpreter will ignore characters from the hash to the end of the line.</p>
-<div class="sourceCode" id="cb57"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb55"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># simulating new data</span>
 
 <span class="va">n</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/nrow.html">nrow</a></span><span class="op">(</span><span class="va">pets</span><span class="op">)</span> <span class="co"># the total number of pet</span>
@@ -413,50 +444,82 @@ Figure 2.5: Light themes in versions 3 and 4.
 <span class="header-section-number">2.5.4.2</span> Tables<a class="anchor" aria-label="anchor" href="#tables"><i class="fas fa-link"></i></a>
 </h4>
 <p>Next, create a code chunk where you want to display a table of the descriptives (e.g., Participants section of the Methods). We'll use tidyverse functions you will learn in the <a href="tidyr.html#tidyr">data wrangling lectures</a> to create summary statistics for each group.</p>
-<div class="sourceCode" id="cb58"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">pets</span> <span class="op">%&gt;%</span>
-  <span class="fu"><a href="https://rdrr.io/pkg/dplyr/man/group_by.html">group_by</a></span><span class="op">(</span><span class="va">pet</span><span class="op">)</span> <span class="op">%&gt;%</span>
-  <span class="fu"><a href="https://rdrr.io/pkg/dplyr/man/summarise.html">summarise</a></span><span class="op">(</span>
-    n <span class="op">=</span> <span class="fu">n</span><span class="op">(</span><span class="op">)</span>,
+<div class="sourceCode" id="cb56"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">pets</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span>
+  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span><span class="op">(</span><span class="va">pet</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span>
+  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/summarise.html">summarise</a></span><span class="op">(</span>
+    n <span class="op">=</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/context.html">n</a></span><span class="op">(</span><span class="op">)</span>,
     mean_weight <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">weight</span><span class="op">)</span>,
     mean_score <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">score</span><span class="op">)</span>
   <span class="op">)</span></code></pre></div>
 <div class="kable-table">
 <div class="inline-table"><table class="table table-sm">
-<thead><tr class="header">
-<th align="left">pet</th>
-<th align="right">n</th>
-<th align="right">mean_weight</th>
-<th align="right">mean_score</th>
+<thead><tr>
+<th style="text-align:left;">
+pet
+</th>
+<th style="text-align:right;">
+n
+</th>
+<th style="text-align:right;">
+mean_weight
+</th>
+<th style="text-align:right;">
+mean_score
+</th>
 </tr></thead>
 <tbody>
-<tr class="odd">
-<td align="left">cat</td>
-<td align="right">300</td>
-<td align="right">9.371613</td>
-<td align="right">90.23667</td>
+<tr>
+<td style="text-align:left;">
+cat
+</td>
+<td style="text-align:right;">
+300
+</td>
+<td style="text-align:right;">
+9.371613
+</td>
+<td style="text-align:right;">
+90.23667
+</td>
 </tr>
-<tr class="even">
-<td align="left">dog</td>
-<td align="right">400</td>
-<td align="right">19.067974</td>
-<td align="right">99.98250</td>
+<tr>
+<td style="text-align:left;">
+dog
+</td>
+<td style="text-align:right;">
+400
+</td>
+<td style="text-align:right;">
+19.067974
+</td>
+<td style="text-align:right;">
+99.98250
+</td>
 </tr>
-<tr class="odd">
-<td align="left">ferret</td>
-<td align="right">100</td>
-<td align="right">4.781569</td>
-<td align="right">111.78000</td>
+<tr>
+<td style="text-align:left;">
+ferret
+</td>
+<td style="text-align:right;">
+100
+</td>
+<td style="text-align:right;">
+4.781569
+</td>
+<td style="text-align:right;">
+111.78000
+</td>
 </tr>
 </tbody>
 </table></div>
 </div>
 <p>The table above is OK, but it could be more reader-friendly by changing the column labels, rounding the means, and adding a caption. You can use <code><span class="fu">knitr</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/knitr/man/kable.html">kable</a></span><span class="op">(</span><span class="op">)</span></code> for this.</p>
-<div class="sourceCode" id="cb59"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">summary_table</span> <span class="op">&lt;-</span><span class="va">pets</span> <span class="op">%&gt;%</span>
-  <span class="fu"><a href="https://rdrr.io/pkg/dplyr/man/group_by.html">group_by</a></span><span class="op">(</span><span class="va">pet</span><span class="op">)</span> <span class="op">%&gt;%</span>
-  <span class="fu"><a href="https://rdrr.io/pkg/dplyr/man/summarise.html">summarise</a></span><span class="op">(</span>
-    n <span class="op">=</span> <span class="fu">n</span><span class="op">(</span><span class="op">)</span>,
+<div class="sourceCode" id="cb57"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">summary_table</span> <span class="op">&lt;-</span><span class="va">pets</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span>
+  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span><span class="op">(</span><span class="va">pet</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span>
+  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/summarise.html">summarise</a></span><span class="op">(</span>
+    n <span class="op">=</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/context.html">n</a></span><span class="op">(</span><span class="op">)</span>,
     mean_weight <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">weight</span><span class="op">)</span>,
     mean_score <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">score</span><span class="op">)</span>
   <span class="op">)</span>
@@ -469,31 +532,64 @@ Figure 2.5: Light themes in versions 3 and 4.
              caption <span class="op">=</span> <span class="st">"Summary statistics for the pets dataset."</span><span class="op">)</span></code></pre></div>
 <div class="inline-table"><table class="table table-sm">
 <caption>
-<span id="tab:unnamed-chunk-6">Table 2.1: </span>Summary statistics for the pets dataset.</caption>
-<thead><tr class="header">
-<th align="left">Pet Type</th>
-<th align="right">N</th>
-<th align="right">Mean Weight</th>
-<th align="right">Mean Score</th>
+<span id="tab:unnamed-chunk-6">Table 2.1: </span>Summary statistics for the pets dataset.
+</caption>
+<thead><tr>
+<th style="text-align:left;">
+Pet Type
+</th>
+<th style="text-align:right;">
+N
+</th>
+<th style="text-align:right;">
+Mean Weight
+</th>
+<th style="text-align:right;">
+Mean Score
+</th>
 </tr></thead>
 <tbody>
-<tr class="odd">
-<td align="left">cat</td>
-<td align="right">300</td>
-<td align="right">9.37</td>
-<td align="right">90.24</td>
+<tr>
+<td style="text-align:left;">
+cat
+</td>
+<td style="text-align:right;">
+300
+</td>
+<td style="text-align:right;">
+9.37
+</td>
+<td style="text-align:right;">
+90.24
+</td>
 </tr>
-<tr class="even">
-<td align="left">dog</td>
-<td align="right">400</td>
-<td align="right">19.07</td>
-<td align="right">99.98</td>
+<tr>
+<td style="text-align:left;">
+dog
+</td>
+<td style="text-align:right;">
+400
+</td>
+<td style="text-align:right;">
+19.07
+</td>
+<td style="text-align:right;">
+99.98
+</td>
 </tr>
-<tr class="odd">
-<td align="left">ferret</td>
-<td align="right">100</td>
-<td align="right">4.78</td>
-<td align="right">111.78</td>
+<tr>
+<td style="text-align:left;">
+ferret
+</td>
+<td style="text-align:right;">
+100
+</td>
+<td style="text-align:right;">
+4.78
+</td>
+<td style="text-align:right;">
+111.78
+</td>
 </tr>
 </tbody>
 </table></div>
@@ -543,23 +639,23 @@ Figure 2.6: Figure 1. Scores by pet type and country.
 <h4>
 <span class="header-section-number">2.5.4.4</span> In-line R<a class="anchor" aria-label="anchor" href="#in-line-r"><i class="fas fa-link"></i></a>
 </h4>
-<p>Now let's analyse the pets data to see if cats are heavier than ferrets. First we'll run the analysis code. Then we'll save any numbers we might want to use in our manuscript to variables and round them appropriately. Finally, we'll use <code><span class="fu">glue</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/glue/man/glue.html">glue</a></span><span class="op">(</span><span class="op">)</span></code> to format a results string.</p>
-<div class="sourceCode" id="cb62"><pre class="downlit sourceCode r">
+<p>Now let's analyse the pets data to see if cats are heavier than ferrets. First we'll run the analysis code. Then we'll save any numbers we might want to use in our manuscript to variables and round them appropriately. Finally, we'll use <code><span class="fu">glue</span><span class="fu">::</span><span class="fu"><a href="https://glue.tidyverse.org/reference/glue.html">glue</a></span><span class="op">(</span><span class="op">)</span></code> to format a results string.</p>
+<div class="sourceCode" id="cb60"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># analysis</span>
-<span class="va">cat_weight</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/dplyr/man/filter.html">filter</a></span><span class="op">(</span><span class="va">pets</span>, <span class="va">pet</span> <span class="op">==</span> <span class="st">"cat"</span><span class="op">)</span> <span class="op">%&gt;%</span> <span class="fu">pull</span><span class="op">(</span><span class="va">weight</span><span class="op">)</span>
-<span class="va">ferret_weight</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/dplyr/man/filter.html">filter</a></span><span class="op">(</span><span class="va">pets</span>, <span class="va">pet</span> <span class="op">==</span> <span class="st">"ferret"</span><span class="op">)</span> <span class="op">%&gt;%</span> <span class="fu">pull</span><span class="op">(</span><span class="va">weight</span><span class="op">)</span>
+<span class="va">cat_weight</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">pets</span>, <span class="va">pet</span> <span class="op">==</span> <span class="st">"cat"</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/pull.html">pull</a></span><span class="op">(</span><span class="va">weight</span><span class="op">)</span>
+<span class="va">ferret_weight</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">pets</span>, <span class="va">pet</span> <span class="op">==</span> <span class="st">"ferret"</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/pull.html">pull</a></span><span class="op">(</span><span class="va">weight</span><span class="op">)</span>
 <span class="va">weight_test</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/t.test.html">t.test</a></span><span class="op">(</span><span class="va">cat_weight</span>, <span class="va">ferret_weight</span><span class="op">)</span>
 
 <span class="co"># round individual values you want to report</span>
-<span class="va">t</span> <span class="op">&lt;-</span> <span class="va">weight_test</span><span class="op">$</span><span class="va">statistic</span> <span class="op">%&gt;%</span> <span class="fu"><a href="https://rdrr.io/r/base/Round.html">round</a></span><span class="op">(</span><span class="fl">2</span><span class="op">)</span>
-<span class="va">df</span> <span class="op">&lt;-</span> <span class="va">weight_test</span><span class="op">$</span><span class="va">parameter</span> <span class="op">%&gt;%</span> <span class="fu"><a href="https://rdrr.io/r/base/Round.html">round</a></span><span class="op">(</span><span class="fl">1</span><span class="op">)</span>
-<span class="va">p</span> <span class="op">&lt;-</span> <span class="va">weight_test</span><span class="op">$</span><span class="va">p.value</span> <span class="op">%&gt;%</span> <span class="fu"><a href="https://rdrr.io/r/base/Round.html">round</a></span><span class="op">(</span><span class="fl">3</span><span class="op">)</span>
+<span class="va">t</span> <span class="op">&lt;-</span> <span class="va">weight_test</span><span class="op">$</span><span class="va">statistic</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://rdrr.io/r/base/Round.html">round</a></span><span class="op">(</span><span class="fl">2</span><span class="op">)</span>
+<span class="va">df</span> <span class="op">&lt;-</span> <span class="va">weight_test</span><span class="op">$</span><span class="va">parameter</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://rdrr.io/r/base/Round.html">round</a></span><span class="op">(</span><span class="fl">1</span><span class="op">)</span>
+<span class="va">p</span> <span class="op">&lt;-</span> <span class="va">weight_test</span><span class="op">$</span><span class="va">p.value</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://rdrr.io/r/base/Round.html">round</a></span><span class="op">(</span><span class="fl">3</span><span class="op">)</span>
 <span class="co"># handle p-values &lt; .001</span>
 <span class="va">p_symbol</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/ifelse.html">ifelse</a></span><span class="op">(</span><span class="va">p</span> <span class="op">&lt;</span> <span class="fl">.001</span>, <span class="st">"&lt;"</span>, <span class="st">"="</span><span class="op">)</span>
 <span class="kw">if</span> <span class="op">(</span><span class="va">p</span> <span class="op">&lt;</span> <span class="fl">.001</span><span class="op">)</span> <span class="va">p</span> <span class="op">&lt;-</span> <span class="fl">.001</span>
 
 <span class="co"># format the results string</span>
-<span class="va">weight_result</span> <span class="op">&lt;-</span> <span class="fu">glue</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/glue/man/glue.html">glue</a></span><span class="op">(</span><span class="st">"t = {t}, df = {df}, p {p_symbol} {p}"</span><span class="op">)</span></code></pre></div>
+<span class="va">weight_result</span> <span class="op">&lt;-</span> <span class="fu">glue</span><span class="fu">::</span><span class="fu"><a href="https://glue.tidyverse.org/reference/glue.html">glue</a></span><span class="op">(</span><span class="st">"t = {t}, df = {df}, p {p_symbol} {p}"</span><span class="op">)</span></code></pre></div>
 <p>You can insert the results into a paragraph with inline R code that looks like this:</p>
 <pre><code>Cats were significantly heavier than ferrets (`r weight_result`).</code></pre>
 <p><strong>Rendered text:</strong><br>
@@ -600,15 +696,15 @@ Cats were significantly heavier than ferrets (t = 18.42, df = 180.4, p &lt; 0.00
 <span class="header-section-number">2.5.5.3</span> Citing R packages<a class="anchor" aria-label="anchor" href="#citing-r-packages"><i class="fas fa-link"></i></a>
 </h4>
 <p>You can get the citation for an R package using the functions <code><a href="https://rdrr.io/r/utils/citation.html">citation()</a></code> and <code><a href="https://rdrr.io/r/utils/toLatex.html">toBibtex()</a></code>. You can paste the bibtex entry into your bibliography.bib file. Make sure to add a short name (e.g., "faux") before the first comma to refer to the reference.</p>
-<div class="sourceCode" id="cb64"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/citation.html">citation</a></span><span class="op">(</span>package<span class="op">=</span><span class="st">"faux"</span><span class="op">)</span> <span class="op">%&gt;%</span> <span class="fu"><a href="https://rdrr.io/r/utils/toLatex.html">toBibtex</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
+<div class="sourceCode" id="cb62"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/citation.html">citation</a></span><span class="op">(</span>package<span class="op">=</span><span class="st">"faux"</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://rdrr.io/r/utils/toLatex.html">toBibtex</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
 <pre><code>## @Manual{,
 ##   title = {faux: Simulation for Factorial Designs},
 ##   author = {Lisa DeBruine},
 ##   doi = {10.5281/zenodo.2669586},
 ##   publisher = {Zenodo},
-##   year = {2021},
-##   note = {R package version 1.1.0},
+##   year = {2022},
+##   note = {R package version 1.1.0.9004},
 ##   url = {https://debruine.github.io/faux/},
 ## }</code></pre>
 </div>
@@ -673,67 +769,119 @@ eprint = {
 <h2>
 <span class="header-section-number">2.6</span> Glossary<a class="anchor" aria-label="anchor" href="#glossary-repro"><i class="fas fa-link"></i></a>
 </h2>
-<div class="inline-table"><table class="table table-sm">
-<colgroup>
-<col width="42%">
-<col width="57%">
-</colgroup>
-<thead><tr class="header">
-<th align="left">term</th>
-<th align="left">definition</th>
+<div class="inline-table"><table class="table" style="margin-left: auto; margin-right: auto;">
+<thead><tr>
+<th style="text-align:left;">
+term
+</th>
+<th style="text-align:left;">
+definition
+</th>
 </tr></thead>
 <tbody>
-<tr class="odd">
-<td align="left"><a href="https://psyteachr.github.io/glossary/a.html#absolute-path" class="glossary" target="_blank">absolute path</a></td>
-<td align="left">A file path that starts with / and is not appended to the working directory</td>
+<tr>
+<td style="text-align:left;">
+<a href="https://psyteachr.github.io/glossary/a.html#absolute-path" class="glossary" target="_blank">absolute path</a>
+</td>
+<td style="text-align:left;">
+A file path that starts with / and is not appended to the working directory
+</td>
 </tr>
-<tr class="even">
-<td align="left"><a href="https://psyteachr.github.io/glossary/c.html#chunk" class="glossary" target="_blank">chunk</a></td>
-<td align="left">A section of code in an R Markdown file</td>
+<tr>
+<td style="text-align:left;">
+<a href="https://psyteachr.github.io/glossary/c.html#chunk" class="glossary" target="_blank">chunk</a>
+</td>
+<td style="text-align:left;">
+A section of code in an R Markdown file
+</td>
 </tr>
-<tr class="odd">
-<td align="left"><a href="https://psyteachr.github.io/glossary/d.html#directory" class="glossary" target="_blank">directory</a></td>
-<td align="left">A collection or "folder" of files on a computer.</td>
+<tr>
+<td style="text-align:left;">
+<a href="https://psyteachr.github.io/glossary/d.html#directory" class="glossary" target="_blank">directory</a>
+</td>
+<td style="text-align:left;">
+A collection or "folder" of files on a computer.
+</td>
 </tr>
-<tr class="even">
-<td align="left"><a href="https://psyteachr.github.io/glossary/e.html#extension" class="glossary" target="_blank">extension</a></td>
-<td align="left">The end part of a file name that tells you what type of file it is (e.g., .R or .Rmd).</td>
+<tr>
+<td style="text-align:left;">
+<a href="https://psyteachr.github.io/glossary/e.html#extension" class="glossary" target="_blank">extension</a>
+</td>
+<td style="text-align:left;">
+The end part of a file name that tells you what type of file it is (e.g., .R or .Rmd).
+</td>
 </tr>
-<tr class="odd">
-<td align="left"><a href="https://psyteachr.github.io/glossary/k.html#knit" class="glossary" target="_blank">knit</a></td>
-<td align="left">To create an HTML, PDF, or Word document from an R Markdown (Rmd) document</td>
+<tr>
+<td style="text-align:left;">
+<a href="https://psyteachr.github.io/glossary/k.html#knit" class="glossary" target="_blank">knit</a>
+</td>
+<td style="text-align:left;">
+To create an HTML, PDF, or Word document from an R Markdown (Rmd) document
+</td>
 </tr>
-<tr class="even">
-<td align="left"><a href="https://psyteachr.github.io/glossary/m.html#markdown" class="glossary" target="_blank">markdown</a></td>
-<td align="left">A way to specify formatting, such as headers, paragraphs, lists, bolding, and links.</td>
+<tr>
+<td style="text-align:left;">
+<a href="https://psyteachr.github.io/glossary/m.html#markdown" class="glossary" target="_blank">markdown</a>
+</td>
+<td style="text-align:left;">
+A way to specify formatting, such as headers, paragraphs, lists, bolding, and links.
+</td>
 </tr>
-<tr class="odd">
-<td align="left"><a href="https://psyteachr.github.io/glossary/p.html#path" class="glossary" target="_blank">path</a></td>
-<td align="left">A string representing the location of a file or directory.</td>
+<tr>
+<td style="text-align:left;">
+<a href="https://psyteachr.github.io/glossary/p.html#path" class="glossary" target="_blank">path</a>
+</td>
+<td style="text-align:left;">
+A string representing the location of a file or directory.
+</td>
 </tr>
-<tr class="even">
-<td align="left"><a href="https://psyteachr.github.io/glossary/p.html#project" class="glossary" target="_blank">project</a></td>
-<td align="left">A way to organise related files in RStudio</td>
+<tr>
+<td style="text-align:left;">
+<a href="https://psyteachr.github.io/glossary/p.html#project" class="glossary" target="_blank">project</a>
+</td>
+<td style="text-align:left;">
+A way to organise related files in RStudio
+</td>
 </tr>
-<tr class="odd">
-<td align="left"><a href="https://psyteachr.github.io/glossary/r.html#r-markdown" class="glossary" target="_blank">r markdown</a></td>
-<td align="left">The R-specific version of markdown: a way to specify formatting, such as headers, paragraphs, lists, bolding, and links, as well as code blocks and inline code.</td>
+<tr>
+<td style="text-align:left;">
+<a href="https://psyteachr.github.io/glossary/r.html#r-markdown" class="glossary" target="_blank">r markdown</a>
+</td>
+<td style="text-align:left;">
+The R-specific version of markdown: a way to specify formatting, such as headers, paragraphs, lists, bolding, and links, as well as code blocks and inline code.
+</td>
 </tr>
-<tr class="even">
-<td align="left"><a href="https://psyteachr.github.io/glossary/r.html#relative-path" class="glossary" target="_blank">relative path</a></td>
-<td align="left">The location of a file in relation to the working directory.</td>
+<tr>
+<td style="text-align:left;">
+<a href="https://psyteachr.github.io/glossary/r.html#relative-path" class="glossary" target="_blank">relative path</a>
+</td>
+<td style="text-align:left;">
+The location of a file in relation to the working directory.
+</td>
 </tr>
-<tr class="odd">
-<td align="left"><a href="https://psyteachr.github.io/glossary/r.html#reproducibility" class="glossary" target="_blank">reproducibility</a></td>
-<td align="left">The extent to which the findings of a study can be repeated in some other context</td>
+<tr>
+<td style="text-align:left;">
+<a href="https://psyteachr.github.io/glossary/r.html#reproducibility" class="glossary" target="_blank">reproducibility</a>
+</td>
+<td style="text-align:left;">
+The extent to which the findings of a study can be repeated in some other context
+</td>
 </tr>
-<tr class="even">
-<td align="left"><a href="https://psyteachr.github.io/glossary/w.html#working-directory" class="glossary" target="_blank">working directory</a></td>
-<td align="left">The filepath where R is currently reading and writing files.</td>
+<tr>
+<td style="text-align:left;">
+<a href="https://psyteachr.github.io/glossary/w.html#working-directory" class="glossary" target="_blank">working directory</a>
+</td>
+<td style="text-align:left;">
+The filepath where R is currently reading and writing files.
+</td>
 </tr>
-<tr class="odd">
-<td align="left"><a href="https://psyteachr.github.io/glossary/y.html#yaml" class="glossary" target="_blank">yaml</a></td>
-<td align="left">A structured format for information</td>
+<tr>
+<td style="text-align:left;">
+<a href="https://psyteachr.github.io/glossary/y.html#yaml" class="glossary" target="_blank">yaml</a>
+</td>
+<td style="text-align:left;">
+A structured format for information
+</td>
 </tr>
 </tbody>
 </table></div>
@@ -1007,7 +1155,7 @@ $( document ).ready(function() {
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Data Skills for Reproducible Research</strong>: v2" was written by . It was last built on 2021-10-15.</p>
+    <p>"<strong>Data Skills for Reproducible Research</strong>: <br><a href="https://doi.org/10.5281/zenodo.6527194"><img src="https://zenodo.org/badge/DOI/10.5281/zenodo.6527194.svg" alt="DOI: 10.5281/zenodo.6527194"></a>" was written by . It was last built on 2022-05-07.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

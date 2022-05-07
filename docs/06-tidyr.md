@@ -46,43 +46,213 @@ set.seed(8675309) # makes sure random numbers are reproducible
 
 This table has three observations per row and the `total_meanRT` column contains two values.
 
-
-
-Table: (\#tab:unnamed-chunk-1)Untidy table
-
-| id| score_1| score_2| score_3| rt_1| rt_2| rt_3|total_meanRT |
-|--:|-------:|-------:|-------:|----:|----:|----:|:------------|
-|  1|       4|       3|       7|  857|  890|  859|14 (869)     |
-|  2|       3|       1|       1|  902|  900|  959|5 (920)      |
-|  3|       2|       5|       4|  757|  823|  901|11 (827)     |
-|  4|       6|       2|       6|  844|  788|  624|14 (752)     |
-|  5|       1|       7|       2|  659|  764|  690|10 (704)     |
+<table>
+<caption>(\#tab:unnamed-chunk-1)Untidy table</caption>
+ <thead>
+  <tr>
+   <th style="text-align:right;"> id </th>
+   <th style="text-align:right;"> score_1 </th>
+   <th style="text-align:right;"> score_2 </th>
+   <th style="text-align:right;"> score_3 </th>
+   <th style="text-align:right;"> rt_1 </th>
+   <th style="text-align:right;"> rt_2 </th>
+   <th style="text-align:right;"> rt_3 </th>
+   <th style="text-align:left;"> total_meanRT </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 4 </td>
+   <td style="text-align:right;"> 3 </td>
+   <td style="text-align:right;"> 7 </td>
+   <td style="text-align:right;"> 857 </td>
+   <td style="text-align:right;"> 890 </td>
+   <td style="text-align:right;"> 859 </td>
+   <td style="text-align:left;"> 14 (869) </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 2 </td>
+   <td style="text-align:right;"> 3 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 902 </td>
+   <td style="text-align:right;"> 900 </td>
+   <td style="text-align:right;"> 959 </td>
+   <td style="text-align:left;"> 5 (920) </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 3 </td>
+   <td style="text-align:right;"> 2 </td>
+   <td style="text-align:right;"> 5 </td>
+   <td style="text-align:right;"> 4 </td>
+   <td style="text-align:right;"> 757 </td>
+   <td style="text-align:right;"> 823 </td>
+   <td style="text-align:right;"> 901 </td>
+   <td style="text-align:left;"> 11 (827) </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 4 </td>
+   <td style="text-align:right;"> 6 </td>
+   <td style="text-align:right;"> 2 </td>
+   <td style="text-align:right;"> 6 </td>
+   <td style="text-align:right;"> 844 </td>
+   <td style="text-align:right;"> 788 </td>
+   <td style="text-align:right;"> 624 </td>
+   <td style="text-align:left;"> 14 (752) </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 5 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 7 </td>
+   <td style="text-align:right;"> 2 </td>
+   <td style="text-align:right;"> 659 </td>
+   <td style="text-align:right;"> 764 </td>
+   <td style="text-align:right;"> 690 </td>
+   <td style="text-align:left;"> 10 (704) </td>
+  </tr>
+</tbody>
+</table>
 
 
 
 This is the tidy version.
 
-
-
-Table: (\#tab:unnamed-chunk-1)Tidy table
-
-| id|trial |  rt| score|total |mean_rt |
-|--:|:-----|---:|-----:|:-----|:-------|
-|  1|1     | 857|     4|14    |869     |
-|  1|2     | 890|     3|14    |869     |
-|  1|3     | 859|     7|14    |869     |
-|  2|1     | 902|     3|5     |920     |
-|  2|2     | 900|     1|5     |920     |
-|  2|3     | 959|     1|5     |920     |
-|  3|1     | 757|     2|11    |827     |
-|  3|2     | 823|     5|11    |827     |
-|  3|3     | 901|     4|11    |827     |
-|  4|1     | 844|     6|14    |752     |
-|  4|2     | 788|     2|14    |752     |
-|  4|3     | 624|     6|14    |752     |
-|  5|1     | 659|     1|10    |704     |
-|  5|2     | 764|     7|10    |704     |
-|  5|3     | 690|     2|10    |704     |
+<table>
+<caption>(\#tab:unnamed-chunk-1)Tidy table</caption>
+ <thead>
+  <tr>
+   <th style="text-align:right;"> id </th>
+   <th style="text-align:left;"> trial </th>
+   <th style="text-align:right;"> rt </th>
+   <th style="text-align:right;"> score </th>
+   <th style="text-align:left;"> total </th>
+   <th style="text-align:left;"> mean_rt </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:left;"> 1 </td>
+   <td style="text-align:right;"> 857 </td>
+   <td style="text-align:right;"> 4 </td>
+   <td style="text-align:left;"> 14 </td>
+   <td style="text-align:left;"> 869 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:left;"> 2 </td>
+   <td style="text-align:right;"> 890 </td>
+   <td style="text-align:right;"> 3 </td>
+   <td style="text-align:left;"> 14 </td>
+   <td style="text-align:left;"> 869 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:left;"> 3 </td>
+   <td style="text-align:right;"> 859 </td>
+   <td style="text-align:right;"> 7 </td>
+   <td style="text-align:left;"> 14 </td>
+   <td style="text-align:left;"> 869 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 2 </td>
+   <td style="text-align:left;"> 1 </td>
+   <td style="text-align:right;"> 902 </td>
+   <td style="text-align:right;"> 3 </td>
+   <td style="text-align:left;"> 5 </td>
+   <td style="text-align:left;"> 920 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 2 </td>
+   <td style="text-align:left;"> 2 </td>
+   <td style="text-align:right;"> 900 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:left;"> 5 </td>
+   <td style="text-align:left;"> 920 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 2 </td>
+   <td style="text-align:left;"> 3 </td>
+   <td style="text-align:right;"> 959 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:left;"> 5 </td>
+   <td style="text-align:left;"> 920 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 3 </td>
+   <td style="text-align:left;"> 1 </td>
+   <td style="text-align:right;"> 757 </td>
+   <td style="text-align:right;"> 2 </td>
+   <td style="text-align:left;"> 11 </td>
+   <td style="text-align:left;"> 827 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 3 </td>
+   <td style="text-align:left;"> 2 </td>
+   <td style="text-align:right;"> 823 </td>
+   <td style="text-align:right;"> 5 </td>
+   <td style="text-align:left;"> 11 </td>
+   <td style="text-align:left;"> 827 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 3 </td>
+   <td style="text-align:left;"> 3 </td>
+   <td style="text-align:right;"> 901 </td>
+   <td style="text-align:right;"> 4 </td>
+   <td style="text-align:left;"> 11 </td>
+   <td style="text-align:left;"> 827 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 4 </td>
+   <td style="text-align:left;"> 1 </td>
+   <td style="text-align:right;"> 844 </td>
+   <td style="text-align:right;"> 6 </td>
+   <td style="text-align:left;"> 14 </td>
+   <td style="text-align:left;"> 752 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 4 </td>
+   <td style="text-align:left;"> 2 </td>
+   <td style="text-align:right;"> 788 </td>
+   <td style="text-align:right;"> 2 </td>
+   <td style="text-align:left;"> 14 </td>
+   <td style="text-align:left;"> 752 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 4 </td>
+   <td style="text-align:left;"> 3 </td>
+   <td style="text-align:right;"> 624 </td>
+   <td style="text-align:right;"> 6 </td>
+   <td style="text-align:left;"> 14 </td>
+   <td style="text-align:left;"> 752 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 5 </td>
+   <td style="text-align:left;"> 1 </td>
+   <td style="text-align:right;"> 659 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:left;"> 10 </td>
+   <td style="text-align:left;"> 704 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 5 </td>
+   <td style="text-align:left;"> 2 </td>
+   <td style="text-align:right;"> 764 </td>
+   <td style="text-align:right;"> 7 </td>
+   <td style="text-align:left;"> 10 </td>
+   <td style="text-align:left;"> 704 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 5 </td>
+   <td style="text-align:left;"> 3 </td>
+   <td style="text-align:right;"> 690 </td>
+   <td style="text-align:right;"> 2 </td>
+   <td style="text-align:left;"> 10 </td>
+   <td style="text-align:left;"> 704 </td>
+  </tr>
+</tbody>
+</table>
 
 
 
@@ -92,27 +262,76 @@ Data tables can be in <a class='glossary' target='_blank' title='Data where all 
 
 Imagine a study where each subject completes a questionnaire with three items. Each answer is an <a class='glossary' target='_blank' title='All of the data about a single trial or question.' href='https://psyteachr.github.io/glossary/o#observation'>observation</a> of that subject. You are probably most familiar with data like this in a wide format, where the subject `id` is in one column, and each of the three item responses is in its own column.
 
-
-Table: (\#tab:wide-data)Wide data
-
-|id | Q1| Q2| Q3|
-|:--|--:|--:|--:|
-|A  |  1|  2|  3|
-|B  |  4|  5|  6|
+<table>
+<caption>(\#tab:wide-data)Wide data</caption>
+ <thead>
+  <tr>
+   <th style="text-align:left;"> id </th>
+   <th style="text-align:right;"> Q1 </th>
+   <th style="text-align:right;"> Q2 </th>
+   <th style="text-align:right;"> Q3 </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> A </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 2 </td>
+   <td style="text-align:right;"> 3 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> B </td>
+   <td style="text-align:right;"> 4 </td>
+   <td style="text-align:right;"> 5 </td>
+   <td style="text-align:right;"> 6 </td>
+  </tr>
+</tbody>
+</table>
 
 The same data can be represented in a long format by creating a new column that specifies what `item` the observation is from and a new column that specifies the `value` of that observation.
 
-
-Table: (\#tab:long-data)Long data
-
-|id |item | value|
-|:--|:----|-----:|
-|A  |Q1   |     1|
-|B  |Q1   |     4|
-|A  |Q2   |     2|
-|B  |Q2   |     5|
-|A  |Q3   |     3|
-|B  |Q3   |     6|
+<table>
+<caption>(\#tab:long-data)Long data</caption>
+ <thead>
+  <tr>
+   <th style="text-align:left;"> id </th>
+   <th style="text-align:left;"> item </th>
+   <th style="text-align:right;"> value </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> A </td>
+   <td style="text-align:left;"> Q1 </td>
+   <td style="text-align:right;"> 1 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> B </td>
+   <td style="text-align:left;"> Q1 </td>
+   <td style="text-align:right;"> 4 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> A </td>
+   <td style="text-align:left;"> Q2 </td>
+   <td style="text-align:right;"> 2 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> B </td>
+   <td style="text-align:left;"> Q2 </td>
+   <td style="text-align:right;"> 5 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> A </td>
+   <td style="text-align:left;"> Q3 </td>
+   <td style="text-align:right;"> 3 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> B </td>
+   <td style="text-align:left;"> Q3 </td>
+   <td style="text-align:right;"> 6 </td>
+  </tr>
+</tbody>
+</table>
 
 ::: {.try data-latex=""}
 
@@ -159,16 +378,327 @@ We will used the dataset `personality` from the reprores package (or download th
 data("personality", package = "reprores")
 ```
 
-
-
-| user_id|date       | Op1| Ne1| Ne2| Op2| Ex1| Ex2| Co1| Co2| Ne3| Ag1| Ag2| Ne4| Ex3| Co3| Op3| Ex4| Op4| Ex5| Ag3| Co4| Co5| Ne5| Op5| Ag4| Op6| Co6| Ex6| Ne6| Co7| Ag5| Co8| Ex7| Ne7| Co9| Op7| Ne8| Ag6| Ag7| Co10| Ex8| Ex9|
-|-------:|:----------|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|----:|---:|---:|
-|       0|2006-03-23 |   3|   4|   0|   6|   3|   3|   3|   3|   0|   2|   1|   3|   3|   2|   2|   1|   3|   3|   1|   3|   0|   3|   6|   1|   0|   6|   3|   1|   3|   3|   3|   3|  NA|   3|   0|   2|  NA|   3|    1|   2|   4|
-|       1|2006-02-08 |   6|   0|   6|   0|   0|   0|   0|   0|   0|   0|   6|   6|   6|   0|   6|   0|   0|   0|   0|   6|   6|   0|   6|   0|   6|   0|   6|   6|   6|   6|   0|   6|   0|   6|   6|   0|   6|   0|    6|   0|   6|
-|       2|2005-10-24 |   6|   0|   6|   0|   0|   0|   0|   0|   0|   0|   6|   6|   5|   1|   5|   1|   1|   1|   1|   5|   5|   1|   5|   1|   5|   1|   5|   5|   5|   5|   1|   5|   1|   5|   5|   1|   5|   1|    5|   1|   5|
-|       5|2005-12-07 |   6|   4|   4|   4|   2|   3|   3|   3|   1|   4|   0|   2|   5|   3|   5|   3|   6|   6|   1|   5|   5|   4|   2|   4|   1|   4|   3|   1|   1|   0|   1|   4|   2|   4|   5|   1|   2|   1|    5|   4|   5|
-|       8|2006-07-27 |   6|   1|   2|   6|   2|   3|   5|   4|   0|   6|   5|   3|   3|   4|   5|   3|   6|   3|   0|   5|   5|   1|   5|   6|   6|   6|   0|   0|   3|   2|   3|   1|   0|   3|   5|   1|   3|   1|    3|   3|   5|
-|     108|2006-02-28 |   3|   2|   1|   4|   4|   4|   4|   3|   1|   5|   4|   2|   3|   4|   4|   3|   3|   3|   4|   3|   3|   1|   4|   5|   4|   5|   4|   1|   4|   5|   4|   2|   2|   4|   4|   1|   4|   3|    5|   4|   2|
+<table>
+ <thead>
+  <tr>
+   <th style="text-align:right;"> user_id </th>
+   <th style="text-align:left;"> date </th>
+   <th style="text-align:right;"> Op1 </th>
+   <th style="text-align:right;"> Ne1 </th>
+   <th style="text-align:right;"> Ne2 </th>
+   <th style="text-align:right;"> Op2 </th>
+   <th style="text-align:right;"> Ex1 </th>
+   <th style="text-align:right;"> Ex2 </th>
+   <th style="text-align:right;"> Co1 </th>
+   <th style="text-align:right;"> Co2 </th>
+   <th style="text-align:right;"> Ne3 </th>
+   <th style="text-align:right;"> Ag1 </th>
+   <th style="text-align:right;"> Ag2 </th>
+   <th style="text-align:right;"> Ne4 </th>
+   <th style="text-align:right;"> Ex3 </th>
+   <th style="text-align:right;"> Co3 </th>
+   <th style="text-align:right;"> Op3 </th>
+   <th style="text-align:right;"> Ex4 </th>
+   <th style="text-align:right;"> Op4 </th>
+   <th style="text-align:right;"> Ex5 </th>
+   <th style="text-align:right;"> Ag3 </th>
+   <th style="text-align:right;"> Co4 </th>
+   <th style="text-align:right;"> Co5 </th>
+   <th style="text-align:right;"> Ne5 </th>
+   <th style="text-align:right;"> Op5 </th>
+   <th style="text-align:right;"> Ag4 </th>
+   <th style="text-align:right;"> Op6 </th>
+   <th style="text-align:right;"> Co6 </th>
+   <th style="text-align:right;"> Ex6 </th>
+   <th style="text-align:right;"> Ne6 </th>
+   <th style="text-align:right;"> Co7 </th>
+   <th style="text-align:right;"> Ag5 </th>
+   <th style="text-align:right;"> Co8 </th>
+   <th style="text-align:right;"> Ex7 </th>
+   <th style="text-align:right;"> Ne7 </th>
+   <th style="text-align:right;"> Co9 </th>
+   <th style="text-align:right;"> Op7 </th>
+   <th style="text-align:right;"> Ne8 </th>
+   <th style="text-align:right;"> Ag6 </th>
+   <th style="text-align:right;"> Ag7 </th>
+   <th style="text-align:right;"> Co10 </th>
+   <th style="text-align:right;"> Ex8 </th>
+   <th style="text-align:right;"> Ex9 </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> 2006-03-23 </td>
+   <td style="text-align:right;"> 3 </td>
+   <td style="text-align:right;"> 4 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 6 </td>
+   <td style="text-align:right;"> 3 </td>
+   <td style="text-align:right;"> 3 </td>
+   <td style="text-align:right;"> 3 </td>
+   <td style="text-align:right;"> 3 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 2 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 3 </td>
+   <td style="text-align:right;"> 3 </td>
+   <td style="text-align:right;"> 2 </td>
+   <td style="text-align:right;"> 2 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 3 </td>
+   <td style="text-align:right;"> 3 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 3 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 3 </td>
+   <td style="text-align:right;"> 6 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 6 </td>
+   <td style="text-align:right;"> 3 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 3 </td>
+   <td style="text-align:right;"> 3 </td>
+   <td style="text-align:right;"> 3 </td>
+   <td style="text-align:right;"> 3 </td>
+   <td style="text-align:right;"> NA </td>
+   <td style="text-align:right;"> 3 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 2 </td>
+   <td style="text-align:right;"> NA </td>
+   <td style="text-align:right;"> 3 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 2 </td>
+   <td style="text-align:right;"> 4 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:left;"> 2006-02-08 </td>
+   <td style="text-align:right;"> 6 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 6 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 6 </td>
+   <td style="text-align:right;"> 6 </td>
+   <td style="text-align:right;"> 6 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 6 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 6 </td>
+   <td style="text-align:right;"> 6 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 6 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 6 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 6 </td>
+   <td style="text-align:right;"> 6 </td>
+   <td style="text-align:right;"> 6 </td>
+   <td style="text-align:right;"> 6 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 6 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 6 </td>
+   <td style="text-align:right;"> 6 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 6 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 6 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 6 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 2 </td>
+   <td style="text-align:left;"> 2005-10-24 </td>
+   <td style="text-align:right;"> 6 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 6 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 6 </td>
+   <td style="text-align:right;"> 6 </td>
+   <td style="text-align:right;"> 5 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 5 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 5 </td>
+   <td style="text-align:right;"> 5 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 5 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 5 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 5 </td>
+   <td style="text-align:right;"> 5 </td>
+   <td style="text-align:right;"> 5 </td>
+   <td style="text-align:right;"> 5 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 5 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 5 </td>
+   <td style="text-align:right;"> 5 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 5 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 5 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 5 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 5 </td>
+   <td style="text-align:left;"> 2005-12-07 </td>
+   <td style="text-align:right;"> 6 </td>
+   <td style="text-align:right;"> 4 </td>
+   <td style="text-align:right;"> 4 </td>
+   <td style="text-align:right;"> 4 </td>
+   <td style="text-align:right;"> 2 </td>
+   <td style="text-align:right;"> 3 </td>
+   <td style="text-align:right;"> 3 </td>
+   <td style="text-align:right;"> 3 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 4 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 2 </td>
+   <td style="text-align:right;"> 5 </td>
+   <td style="text-align:right;"> 3 </td>
+   <td style="text-align:right;"> 5 </td>
+   <td style="text-align:right;"> 3 </td>
+   <td style="text-align:right;"> 6 </td>
+   <td style="text-align:right;"> 6 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 5 </td>
+   <td style="text-align:right;"> 5 </td>
+   <td style="text-align:right;"> 4 </td>
+   <td style="text-align:right;"> 2 </td>
+   <td style="text-align:right;"> 4 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 4 </td>
+   <td style="text-align:right;"> 3 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 4 </td>
+   <td style="text-align:right;"> 2 </td>
+   <td style="text-align:right;"> 4 </td>
+   <td style="text-align:right;"> 5 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 2 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 5 </td>
+   <td style="text-align:right;"> 4 </td>
+   <td style="text-align:right;"> 5 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 8 </td>
+   <td style="text-align:left;"> 2006-07-27 </td>
+   <td style="text-align:right;"> 6 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 2 </td>
+   <td style="text-align:right;"> 6 </td>
+   <td style="text-align:right;"> 2 </td>
+   <td style="text-align:right;"> 3 </td>
+   <td style="text-align:right;"> 5 </td>
+   <td style="text-align:right;"> 4 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 6 </td>
+   <td style="text-align:right;"> 5 </td>
+   <td style="text-align:right;"> 3 </td>
+   <td style="text-align:right;"> 3 </td>
+   <td style="text-align:right;"> 4 </td>
+   <td style="text-align:right;"> 5 </td>
+   <td style="text-align:right;"> 3 </td>
+   <td style="text-align:right;"> 6 </td>
+   <td style="text-align:right;"> 3 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 5 </td>
+   <td style="text-align:right;"> 5 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 5 </td>
+   <td style="text-align:right;"> 6 </td>
+   <td style="text-align:right;"> 6 </td>
+   <td style="text-align:right;"> 6 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 3 </td>
+   <td style="text-align:right;"> 2 </td>
+   <td style="text-align:right;"> 3 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 3 </td>
+   <td style="text-align:right;"> 5 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 3 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 3 </td>
+   <td style="text-align:right;"> 3 </td>
+   <td style="text-align:right;"> 5 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 108 </td>
+   <td style="text-align:left;"> 2006-02-28 </td>
+   <td style="text-align:right;"> 3 </td>
+   <td style="text-align:right;"> 2 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 4 </td>
+   <td style="text-align:right;"> 4 </td>
+   <td style="text-align:right;"> 4 </td>
+   <td style="text-align:right;"> 4 </td>
+   <td style="text-align:right;"> 3 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 5 </td>
+   <td style="text-align:right;"> 4 </td>
+   <td style="text-align:right;"> 2 </td>
+   <td style="text-align:right;"> 3 </td>
+   <td style="text-align:right;"> 4 </td>
+   <td style="text-align:right;"> 4 </td>
+   <td style="text-align:right;"> 3 </td>
+   <td style="text-align:right;"> 3 </td>
+   <td style="text-align:right;"> 3 </td>
+   <td style="text-align:right;"> 4 </td>
+   <td style="text-align:right;"> 3 </td>
+   <td style="text-align:right;"> 3 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 4 </td>
+   <td style="text-align:right;"> 5 </td>
+   <td style="text-align:right;"> 4 </td>
+   <td style="text-align:right;"> 5 </td>
+   <td style="text-align:right;"> 4 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 4 </td>
+   <td style="text-align:right;"> 5 </td>
+   <td style="text-align:right;"> 4 </td>
+   <td style="text-align:right;"> 2 </td>
+   <td style="text-align:right;"> 2 </td>
+   <td style="text-align:right;"> 4 </td>
+   <td style="text-align:right;"> 4 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 4 </td>
+   <td style="text-align:right;"> 3 </td>
+   <td style="text-align:right;"> 5 </td>
+   <td style="text-align:right;"> 4 </td>
+   <td style="text-align:right;"> 2 </td>
+  </tr>
+</tbody>
+</table>
 
 
 
@@ -498,18 +1028,67 @@ data
 
 <div class="kable-table">
 
-| id|     A_mean|    B_mean|
-|--:|----------:|---------:|
-|  1| -0.5938256| 1.0243046|
-|  2|  0.7440623| 2.7172046|
-|  3|  0.9309275| 3.9262358|
-|  4|  0.7197686| 1.9662632|
-|  5| -0.0280832| 1.9473456|
-|  6| -0.0982555| 3.2073687|
-|  7|  0.1256922| 0.9256321|
-|  8|  1.4526447| 2.3778116|
-|  9|  0.2976443| 1.6617481|
-| 10|  0.5589199| 2.1034679|
+<table>
+ <thead>
+  <tr>
+   <th style="text-align:right;"> id </th>
+   <th style="text-align:right;"> A_mean </th>
+   <th style="text-align:right;"> B_mean </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> -0.5938256 </td>
+   <td style="text-align:right;"> 1.0243046 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 2 </td>
+   <td style="text-align:right;"> 0.7440623 </td>
+   <td style="text-align:right;"> 2.7172046 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 3 </td>
+   <td style="text-align:right;"> 0.9309275 </td>
+   <td style="text-align:right;"> 3.9262358 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 4 </td>
+   <td style="text-align:right;"> 0.7197686 </td>
+   <td style="text-align:right;"> 1.9662632 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 5 </td>
+   <td style="text-align:right;"> -0.0280832 </td>
+   <td style="text-align:right;"> 1.9473456 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 6 </td>
+   <td style="text-align:right;"> -0.0982555 </td>
+   <td style="text-align:right;"> 3.2073687 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 7 </td>
+   <td style="text-align:right;"> 0.1256922 </td>
+   <td style="text-align:right;"> 0.9256321 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 8 </td>
+   <td style="text-align:right;"> 1.4526447 </td>
+   <td style="text-align:right;"> 2.3778116 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 9 </td>
+   <td style="text-align:right;"> 0.2976443 </td>
+   <td style="text-align:right;"> 1.6617481 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 10 </td>
+   <td style="text-align:right;"> 0.5589199 </td>
+   <td style="text-align:right;"> 2.1034679 </td>
+  </tr>
+</tbody>
+</table>
 
 </div>
 
@@ -620,14 +1199,47 @@ head(infmort)
 
 <div class="kable-table">
 
-|Country     | Year|Infant mortality rate (probability of dying between birth and age 1 per 1000 live births) |
-|:-----------|----:|:-----------------------------------------------------------------------------------------|
-|Afghanistan | 2015|66.3 [52.7-83.9]                                                                          |
-|Afghanistan | 2014|68.1 [55.7-83.6]                                                                          |
-|Afghanistan | 2013|69.9 [58.7-83.5]                                                                          |
-|Afghanistan | 2012|71.7 [61.6-83.7]                                                                          |
-|Afghanistan | 2011|73.4 [64.4-84.2]                                                                          |
-|Afghanistan | 2010|75.1 [66.9-85.1]                                                                          |
+<table>
+ <thead>
+  <tr>
+   <th style="text-align:left;"> Country </th>
+   <th style="text-align:right;"> Year </th>
+   <th style="text-align:left;"> Infant mortality rate (probability of dying between birth and age 1 per 1000 live births) </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> Afghanistan </td>
+   <td style="text-align:right;"> 2015 </td>
+   <td style="text-align:left;"> 66.3 [52.7-83.9] </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Afghanistan </td>
+   <td style="text-align:right;"> 2014 </td>
+   <td style="text-align:left;"> 68.1 [55.7-83.6] </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Afghanistan </td>
+   <td style="text-align:right;"> 2013 </td>
+   <td style="text-align:left;"> 69.9 [58.7-83.5] </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Afghanistan </td>
+   <td style="text-align:right;"> 2012 </td>
+   <td style="text-align:left;"> 71.7 [61.6-83.7] </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Afghanistan </td>
+   <td style="text-align:right;"> 2011 </td>
+   <td style="text-align:left;"> 73.4 [64.4-84.2] </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Afghanistan </td>
+   <td style="text-align:right;"> 2010 </td>
+   <td style="text-align:left;"> 75.1 [66.9-85.1] </td>
+  </tr>
+</tbody>
+</table>
 
 </div>
 
@@ -640,14 +1252,54 @@ head(matmort)
 
 <div class="kable-table">
 
-|Country     |1990                 |2000                 |2015              |
-|:-----------|:--------------------|:--------------------|:-----------------|
-|Afghanistan |1 340 [ 878 - 1 950] |1 100 [ 745 - 1 570] |396 [ 253 -  620] |
-|Albania     |71 [ 58 -  88]       |43 [ 33 -  56]       |29 [ 16 -  46]    |
-|Algeria     |216 [ 141 -  327]    |170 [ 118 -  241]    |140 [ 82 -  244]  |
-|Angola      |1 160 [ 627 - 2 020] |924 [ 472 - 1 730]   |477 [ 221 -  988] |
-|Argentina   |72 [ 64 -  80]       |60 [ 54 -  65]       |52 [ 44 -  63]    |
-|Armenia     |58 [ 51 -  65]       |40 [ 35 -  46]       |25 [ 21 -  31]    |
+<table>
+ <thead>
+  <tr>
+   <th style="text-align:left;"> Country </th>
+   <th style="text-align:left;"> 1990 </th>
+   <th style="text-align:left;"> 2000 </th>
+   <th style="text-align:left;"> 2015 </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> Afghanistan </td>
+   <td style="text-align:left;"> 1 340 [ 878 - 1 950] </td>
+   <td style="text-align:left;"> 1 100 [ 745 - 1 570] </td>
+   <td style="text-align:left;"> 396 [ 253 -  620] </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Albania </td>
+   <td style="text-align:left;"> 71 [ 58 -  88] </td>
+   <td style="text-align:left;"> 43 [ 33 -  56] </td>
+   <td style="text-align:left;"> 29 [ 16 -  46] </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Algeria </td>
+   <td style="text-align:left;"> 216 [ 141 -  327] </td>
+   <td style="text-align:left;"> 170 [ 118 -  241] </td>
+   <td style="text-align:left;"> 140 [ 82 -  244] </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Angola </td>
+   <td style="text-align:left;"> 1 160 [ 627 - 2 020] </td>
+   <td style="text-align:left;"> 924 [ 472 - 1 730] </td>
+   <td style="text-align:left;"> 477 [ 221 -  988] </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Argentina </td>
+   <td style="text-align:left;"> 72 [ 64 -  80] </td>
+   <td style="text-align:left;"> 60 [ 54 -  65] </td>
+   <td style="text-align:left;"> 52 [ 44 -  63] </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Armenia </td>
+   <td style="text-align:left;"> 58 [ 51 -  65] </td>
+   <td style="text-align:left;"> 40 [ 35 -  46] </td>
+   <td style="text-align:left;"> 25 [ 21 -  31] </td>
+  </tr>
+</tbody>
+</table>
 
 </div>
 
@@ -998,18 +1650,48 @@ The responses in the `dv` column have multiple types (e.g., <a class='glossary' 
 
 ## Glossary {#glossary-tidyr}
 
-
-
-|term                                                                                                     |definition                                                               |
-|:--------------------------------------------------------------------------------------------------------|:------------------------------------------------------------------------|
-|[character](https://psyteachr.github.io/glossary/c.html#character){class="glossary" target="_blank"}     |A data type representing strings of text.                                |
-|[double](https://psyteachr.github.io/glossary/d.html#double){class="glossary" target="_blank"}           |A data type representing a real decimal number                           |
-|[integer](https://psyteachr.github.io/glossary/i.html#integer){class="glossary" target="_blank"}         |A data type representing whole numbers.                                  |
-|[long](https://psyteachr.github.io/glossary/l.html#long){class="glossary" target="_blank"}               |Data where each observation is on a separate row                         |
-|[observation](https://psyteachr.github.io/glossary/o.html#observation){class="glossary" target="_blank"} |All of the data about a single trial or question.                        |
-|[value](https://psyteachr.github.io/glossary/v.html#value){class="glossary" target="_blank"}             |A single number or piece of data.                                        |
-|[variable](https://psyteachr.github.io/glossary/v.html#variable){class="glossary" target="_blank"}       |A word that identifies and stores the value of some data for later use.  |
-|[wide](https://psyteachr.github.io/glossary/w.html#wide){class="glossary" target="_blank"}               |Data where all of the observations about one subject are in the same row |
+<table class="table" style="margin-left: auto; margin-right: auto;">
+ <thead>
+  <tr>
+   <th style="text-align:left;"> term </th>
+   <th style="text-align:left;"> definition </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> [character](https://psyteachr.github.io/glossary/c.html#character){class="glossary" target="_blank"} </td>
+   <td style="text-align:left;"> A data type representing strings of text. </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> [double](https://psyteachr.github.io/glossary/d.html#double){class="glossary" target="_blank"} </td>
+   <td style="text-align:left;"> A data type representing a real decimal number </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> [integer](https://psyteachr.github.io/glossary/i.html#integer){class="glossary" target="_blank"} </td>
+   <td style="text-align:left;"> A data type representing whole numbers. </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> [long](https://psyteachr.github.io/glossary/l.html#long){class="glossary" target="_blank"} </td>
+   <td style="text-align:left;"> Data where each observation is on a separate row </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> [observation](https://psyteachr.github.io/glossary/o.html#observation){class="glossary" target="_blank"} </td>
+   <td style="text-align:left;"> All of the data about a single trial or question. </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> [value](https://psyteachr.github.io/glossary/v.html#value){class="glossary" target="_blank"} </td>
+   <td style="text-align:left;"> A single number or piece of data. </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> [variable](https://psyteachr.github.io/glossary/v.html#variable){class="glossary" target="_blank"} </td>
+   <td style="text-align:left;"> A word that identifies and stores the value of some data for later use. </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> [wide](https://psyteachr.github.io/glossary/w.html#wide){class="glossary" target="_blank"} </td>
+   <td style="text-align:left;"> Data where all of the observations about one subject are in the same row </td>
+  </tr>
+</tbody>
+</table>
 
 
 

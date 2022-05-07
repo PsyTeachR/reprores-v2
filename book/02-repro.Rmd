@@ -228,7 +228,7 @@ The code above sets the following options:
 Find a list of the current chunk options by typing `r hl(str(knitr::opts_chunk$get()))` in the console.
 
 
-You can also add the packages you need in this chunk using `r hl(library())`. Often when you are working on a script, you will realize that you need to load another add-on package. Don't bury the call to `r hl(library(package_I_need))` way down in the script. Put it in the top, so the user has an overview of what packages are needed.
+You can also add the packages you need in this chunk using `r hl(library())`. Often when you are working on a script, you will realize that you need to load another add-on package. Don't bury the call to `library(package_I_need)` way down in the script. Put it in the top, so the user has an overview of what packages are needed.
 
 ::: {.try data-latex=""}
 We'll be using function from the package `r pkg("tidyverse")`, so load that in your setup chunk.

@@ -346,8 +346,8 @@ rnorm(10)
 ```
 
 ```
-##  [1] -0.1261434  1.4589505 -0.4946816 -0.2404575 -2.0816079 -0.5191217
-##  [7] -0.2350644 -0.2667953  2.5186589 -0.1679481
+##  [1] -0.5344867 -0.2276507  1.0618645 -0.5595386 -1.6136703  1.3784837
+##  [7]  1.4968278 -0.2370074 -0.9416609 -0.2707848
 ```
 
 If you want 10 numbers from a normal distribution with a mean of 100:
@@ -358,8 +358,8 @@ rnorm(10, 100)
 ```
 
 ```
-##  [1]  99.47494 101.43160  99.74961 100.97629  98.47288 101.94459 100.96743
-##  [8] 100.32163  99.44986  99.86240
+##  [1] 100.97507  99.55528 100.56415  99.95180 100.60461 101.55358  98.32692
+##  [8] 100.93756  99.91524 100.75882
 ```
 
 This would be an equivalent but less efficient way of calling the function:
@@ -370,8 +370,8 @@ rnorm(n = 10, mean = 100)
 ```
 
 ```
-##  [1]  99.49811  99.03648 100.98953  98.25006 100.32395  98.36760 100.73478
-##  [8]  98.89632  99.63834 101.09409
+##  [1]  99.99917 100.74322 100.41184  99.84676  99.59341  99.59021  99.72071
+##  [8] 101.03546 100.54869 101.20280
 ```
 
 We don't need to name the arguments because R will recognize that we intended to fill in the first and second arguments by their position in the function call. However, if we want to change the default for an argument coming later in the list, then we need to name it. For instance, if we wanted to keep the default `mean = 0` but change the standard deviation to 100, we would do it this way:
@@ -382,8 +382,8 @@ rnorm(10, sd = 100)
 ```
 
 ```
-##  [1]   95.12395  121.25049   18.68161   22.52584 -170.54741   15.18297
-##  [7]   26.62335  -50.63976  -11.85407 -140.15247
+##  [1]    8.476711   91.711014 -184.296080   29.186023   57.578742  -62.537132
+##  [7] -195.088157   10.556623   52.547021   90.537665
 ```
 
 Some functions give a list of options after an argument; this means the default value is the first option. The usage entry for the <code><span class='fu'><a href='https://rdrr.io/r/stats/power.t.test.html'>power.t.test</a></span><span class='op'>(</span><span class='op'>)</span></code> function looks like this:
@@ -401,9 +401,9 @@ power.t.test(n = NULL, delta = NULL, sd = 1, sig.level = 0.05,
 
 
 
-* What is the default value for `sd`? <select class='webex-select'><option value='blank'></option><option value=''>NULL</option><option value=''>0.05</option><option value='answer'>1</option><option value=''>two.sample</option></select>
-* What is the default value for `type`? <select class='webex-select'><option value='blank'></option><option value='answer'>two.sample</option><option value=''>NULL</option><option value=''>one.sample</option><option value=''>paired</option></select>
-* Which is equivalent to <code><span class='fu'><a href='https://rdrr.io/r/stats/power.t.test.html'>power.t.test</a></span><span class='op'>(</span><span class='fl'>100</span>, <span class='fl'>0.5</span><span class='op'>)</span></code>? <div class='webex-radiogroup' id='radio_IFBIGISBGH'><label><input type="radio" autocomplete="off" name="radio_IFBIGISBGH" value="answer"></input> <span>power.t.test(delta = 0.5, n = 100)</span></label><label><input type="radio" autocomplete="off" name="radio_IFBIGISBGH" value=""></input> <span>power.t.test()</span></label><label><input type="radio" autocomplete="off" name="radio_IFBIGISBGH" value=""></input> <span>power.t.test(100, 0.5, sig.level = 1, sd = 0.05)</span></label><label><input type="radio" autocomplete="off" name="radio_IFBIGISBGH" value=""></input> <span>power.t.test(n = 100)</span></label></div>
+* What is the default value for `sd`? <select class='webex-select'><option value='blank'></option><option value='answer'>1</option><option value=''>two.sample</option><option value=''>NULL</option><option value=''>0.05</option></select>
+* What is the default value for `type`? <select class='webex-select'><option value='blank'></option><option value=''>one.sample</option><option value=''>NULL</option><option value=''>paired</option><option value='answer'>two.sample</option></select>
+* Which is equivalent to <code><span class='fu'><a href='https://rdrr.io/r/stats/power.t.test.html'>power.t.test</a></span><span class='op'>(</span><span class='fl'>100</span>, <span class='fl'>0.5</span><span class='op'>)</span></code>? <div class='webex-radiogroup' id='radio_GPVDVPGQGG'><label><input type="radio" autocomplete="off" name="radio_GPVDVPGQGG" value=""></input> <span>power.t.test(100, 0.5, sig.level = 1, sd = 0.05)</span></label><label><input type="radio" autocomplete="off" name="radio_GPVDVPGQGG" value="answer"></input> <span>power.t.test(delta = 0.5, n = 100)</span></label><label><input type="radio" autocomplete="off" name="radio_GPVDVPGQGG" value=""></input> <span>power.t.test()</span></label><label><input type="radio" autocomplete="off" name="radio_GPVDVPGQGG" value=""></input> <span>power.t.test(n = 100)</span></label></div>
 
 
 :::
@@ -456,7 +456,7 @@ library(esquisse)
 
 You might get some red text when you load a package, this is normal. It is usually warning you that this package has functions that have the same name as other packages you've already loaded.
 
-Now you can run the function <code><span class='fu'>esquisse</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/esquisse/man/esquisser.html'>esquisser</a></span><span class='op'>(</span><span class='op'>)</span></code>, which runs an interactive plotting example on the built-in dataset `diamonds` from the <code class='package'>ggplot2</code> package.
+Now you can run the function <code><span class='fu'>esquisse</span><span class='fu'>::</span><span class='fu'><a href='https://dreamrs.github.io/esquisse/reference/esquisser.html'>esquisser</a></span><span class='op'>(</span><span class='op'>)</span></code>, which runs an interactive plotting example on the built-in dataset `diamonds` from the <code class='package'>ggplot2</code> package.
 
 
 ```r
@@ -464,7 +464,7 @@ esquisse::esquisser(ggplot2::diamonds)
 ```
 
 ::: {.info data-latex=""}
-You can use the convention `package::function()` to indicate in which add-on package a function resides. For instance, if you see <code><span class='fu'>readr</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/readr/man/read_delim.html'>read_csv</a></span><span class='op'>(</span><span class='op'>)</span></code>, that refers to the function <code><span class='fu'>read_csv</span><span class='op'>(</span><span class='op'>)</span></code> in the <code class='package'>readr</code> add-on package.
+You can use the convention `package::function()` to indicate in which add-on package a function resides. For instance, if you see <code><span class='fu'>readr</span><span class='fu'>::</span><span class='fu'><a href='https://readr.tidyverse.org/reference/read_delim.html'>read_csv</a></span><span class='op'>(</span><span class='op'>)</span></code>, that refers to the function <code><span class='fu'>read_csv</span><span class='op'>(</span><span class='op'>)</span></code> in the <code class='package'>readr</code> add-on package.
 :::
 
 ### Tidyverse
@@ -589,32 +589,105 @@ glossary::book()
 ```
 
 
-
-
-|term                                                                                                                         |definition                                                                                                                                                                 |
-|:----------------------------------------------------------------------------------------------------------------------------|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|[argument](https://psyteachr.github.io/glossary/a.html#argument){class="glossary" target="_blank"}                           |A variable that provides input to a function.                                                                                                                              |
-|[assignment operator](https://psyteachr.github.io/glossary/a.html#assignment-operator){class="glossary" target="_blank"}     |The symbol <-, which functions like = and assigns the value on the right to the object on the left                                                                         |
-|[base r](https://psyteachr.github.io/glossary/b.html#base-r){class="glossary" target="_blank"}                               |The set of R functions that come with a basic installation of R, before you add external packages                                                                          |
-|[console](https://psyteachr.github.io/glossary/c.html#console){class="glossary" target="_blank"}                             |The pane in RStudio where you can type in commands and view output messages.                                                                                               |
-|[cran](https://psyteachr.github.io/glossary/c.html#cran){class="glossary" target="_blank"}                                   |The Comprehensive R Archive Network: a network of ftp and web servers around the world that store identical, up-to-date, versions of code and documentation for R.         |
-|[escape](https://psyteachr.github.io/glossary/e.html#escape){class="glossary" target="_blank"}                               |Include special characters like " inside of a string by prefacing them with a backslash.                                                                                   |
-|[factor](https://psyteachr.github.io/glossary/f.html#factor){class="glossary" target="_blank"}                               |A data type where a specific set of values are stored with labels; An explanatory variable manipulated by the experimenter                                                 |
-|[function](https://psyteachr.github.io/glossary/f.html#function){class="glossary" target="_blank"}                           |A named section of code that can be reused.                                                                                                                                |
-|[global environment](https://psyteachr.github.io/glossary/g.html#global-environment){class="glossary" target="_blank"}       |The interactive workspace where your script runs                                                                                                                           |
-|[ide](https://psyteachr.github.io/glossary/i.html#ide){class="glossary" target="_blank"}                                     |Integrated Development Environment: a program that serves as a text editor, file manager, and provides functions to help you read and write code. RStudio is an IDE for R. |
-|[normal distribution](https://psyteachr.github.io/glossary/n.html#normal-distribution){class="glossary" target="_blank"}     |A symmetric distribution of data where values near the centre are most probable.                                                                                           |
-|[object](https://psyteachr.github.io/glossary/o.html#object){class="glossary" target="_blank"}                               |A word that identifies and stores the value of some data for later use.                                                                                                    |
-|[package](https://psyteachr.github.io/glossary/p.html#package){class="glossary" target="_blank"}                             |A group of R functions.                                                                                                                                                    |
-|[panes](https://psyteachr.github.io/glossary/p.html#panes){class="glossary" target="_blank"}                                 |RStudio is arranged with four window "panes".                                                                                                                              |
-|[r markdown](https://psyteachr.github.io/glossary/r.html#r-markdown){class="glossary" target="_blank"}                       |The R-specific version of markdown: a way to specify formatting, such as headers, paragraphs, lists, bolding, and links, as well as code blocks and inline code.           |
-|[reproducible research](https://psyteachr.github.io/glossary/r.html#reproducible-research){class="glossary" target="_blank"} |Research that documents all of the steps between raw data and results in a way that can be verified.                                                                       |
-|[script](https://psyteachr.github.io/glossary/s.html#script){class="glossary" target="_blank"}                               |A plain-text file that contains commands in a coding language, such as R.                                                                                                  |
-|[standard deviation](https://psyteachr.github.io/glossary/s.html#standard-deviation){class="glossary" target="_blank"}       |A descriptive statistic that measures how spread out data are relative to the mean.                                                                                        |
-|[string](https://psyteachr.github.io/glossary/s.html#string){class="glossary" target="_blank"}                               |A piece of text inside of quotes.                                                                                                                                          |
-|[variable](https://psyteachr.github.io/glossary/v.html#variable){class="glossary" target="_blank"}                           |A word that identifies and stores the value of some data for later use.                                                                                                    |
-|[vector](https://psyteachr.github.io/glossary/v.html#vector){class="glossary" target="_blank"}                               |A type of data structure that collects values with the same data type, like T/F values, numbers, or strings.                                                               |
-|[whitespace](https://psyteachr.github.io/glossary/w.html#whitespace){class="glossary" target="_blank"}                       |Spaces, tabs and line breaks                                                                                                                                               |
+<table class="table" style="margin-left: auto; margin-right: auto;">
+ <thead>
+  <tr>
+   <th style="text-align:left;"> term </th>
+   <th style="text-align:left;"> definition </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> [argument](https://psyteachr.github.io/glossary/a.html#argument){class="glossary" target="_blank"} </td>
+   <td style="text-align:left;"> A variable that provides input to a function. </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> [assignment operator](https://psyteachr.github.io/glossary/a.html#assignment-operator){class="glossary" target="_blank"} </td>
+   <td style="text-align:left;"> The symbol 
+  </td>
+</tr>
+  <tr>
+   <td style="text-align:left;"> [base r](https://psyteachr.github.io/glossary/b.html#base-r){class="glossary" target="_blank"} </td>
+   <td style="text-align:left;"> The set of R functions that come with a basic installation of R, before you add external packages </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> [console](https://psyteachr.github.io/glossary/c.html#console){class="glossary" target="_blank"} </td>
+   <td style="text-align:left;"> The pane in RStudio where you can type in commands and view output messages. </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> [cran](https://psyteachr.github.io/glossary/c.html#cran){class="glossary" target="_blank"} </td>
+   <td style="text-align:left;"> The Comprehensive R Archive Network: a network of ftp and web servers around the world that store identical, up-to-date, versions of code and documentation for R. </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> [escape](https://psyteachr.github.io/glossary/e.html#escape){class="glossary" target="_blank"} </td>
+   <td style="text-align:left;"> Include special characters like " inside of a string by prefacing them with a backslash. </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> [factor](https://psyteachr.github.io/glossary/f.html#factor){class="glossary" target="_blank"} </td>
+   <td style="text-align:left;"> A data type where a specific set of values are stored with labels; An explanatory variable manipulated by the experimenter </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> [function](https://psyteachr.github.io/glossary/f.html#function){class="glossary" target="_blank"} </td>
+   <td style="text-align:left;"> A named section of code that can be reused. </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> [global environment](https://psyteachr.github.io/glossary/g.html#global-environment){class="glossary" target="_blank"} </td>
+   <td style="text-align:left;"> The interactive workspace where your script runs </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> [ide](https://psyteachr.github.io/glossary/i.html#ide){class="glossary" target="_blank"} </td>
+   <td style="text-align:left;"> Integrated Development Environment: a program that serves as a text editor, file manager, and provides functions to help you read and write code. RStudio is an IDE for R. </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> [normal distribution](https://psyteachr.github.io/glossary/n.html#normal-distribution){class="glossary" target="_blank"} </td>
+   <td style="text-align:left;"> A symmetric distribution of data where values near the centre are most probable. </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> [object](https://psyteachr.github.io/glossary/o.html#object){class="glossary" target="_blank"} </td>
+   <td style="text-align:left;"> A word that identifies and stores the value of some data for later use. </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> [package](https://psyteachr.github.io/glossary/p.html#package){class="glossary" target="_blank"} </td>
+   <td style="text-align:left;"> A group of R functions. </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> [panes](https://psyteachr.github.io/glossary/p.html#panes){class="glossary" target="_blank"} </td>
+   <td style="text-align:left;"> RStudio is arranged with four window "panes". </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> [r markdown](https://psyteachr.github.io/glossary/r.html#r-markdown){class="glossary" target="_blank"} </td>
+   <td style="text-align:left;"> The R-specific version of markdown: a way to specify formatting, such as headers, paragraphs, lists, bolding, and links, as well as code blocks and inline code. </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> [reproducible research](https://psyteachr.github.io/glossary/r.html#reproducible-research){class="glossary" target="_blank"} </td>
+   <td style="text-align:left;"> Research that documents all of the steps between raw data and results in a way that can be verified. </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> [script](https://psyteachr.github.io/glossary/s.html#script){class="glossary" target="_blank"} </td>
+   <td style="text-align:left;"> A plain-text file that contains commands in a coding language, such as R. </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> [standard deviation](https://psyteachr.github.io/glossary/s.html#standard-deviation){class="glossary" target="_blank"} </td>
+   <td style="text-align:left;"> A descriptive statistic that measures how spread out data are relative to the mean. </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> [string](https://psyteachr.github.io/glossary/s.html#string){class="glossary" target="_blank"} </td>
+   <td style="text-align:left;"> A piece of text inside of quotes. </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> [variable](https://psyteachr.github.io/glossary/v.html#variable){class="glossary" target="_blank"} </td>
+   <td style="text-align:left;"> A word that identifies and stores the value of some data for later use. </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> [vector](https://psyteachr.github.io/glossary/v.html#vector){class="glossary" target="_blank"} </td>
+   <td style="text-align:left;"> A type of data structure that collects values with the same data type, like T/F values, numbers, or strings. </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> [whitespace](https://psyteachr.github.io/glossary/w.html#whitespace){class="glossary" target="_blank"} </td>
+   <td style="text-align:left;"> Spaces, tabs and line breaks </td>
+  </tr>
+</tbody>
+</table>
 
 
 

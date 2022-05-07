@@ -210,11 +210,28 @@ tibble(
 
 <div class="kable-table">
 
-|n    |power             |
-|:----|:-----------------|
-|100  |0.290266404572217 |
-|...  |...               |
-|1000 |0.884788352886661 |
+<table>
+ <thead>
+  <tr>
+   <th style="text-align:left;"> n </th>
+   <th style="text-align:left;"> power </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> 100 </td>
+   <td style="text-align:left;"> 0.290266404572217 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> ... </td>
+   <td style="text-align:left;"> ... </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 1000 </td>
+   <td style="text-align:left;"> 0.884788352886661 </td>
+  </tr>
+</tbody>
+</table>
 
 </div>
 
@@ -602,9 +619,36 @@ tibble(
 
 <div class="kable-table">
 
-|   estimate| estimate1| estimate2| statistic|   p.value| parameter|  conf.low|  conf.high|method                  |alternative |
-|----------:|---------:|---------:|---------:|---------:|---------:|---------:|----------:|:-----------------------|:-----------|
-| -0.6422108|  5.044009|   5.68622| -2.310591| 0.0264905|  37.27083| -1.205237| -0.0791844|Welch Two Sample t-test |two.sided   |
+<table>
+ <thead>
+  <tr>
+   <th style="text-align:right;"> estimate </th>
+   <th style="text-align:right;"> estimate1 </th>
+   <th style="text-align:right;"> estimate2 </th>
+   <th style="text-align:right;"> statistic </th>
+   <th style="text-align:right;"> p.value </th>
+   <th style="text-align:right;"> parameter </th>
+   <th style="text-align:right;"> conf.low </th>
+   <th style="text-align:right;"> conf.high </th>
+   <th style="text-align:left;"> method </th>
+   <th style="text-align:left;"> alternative </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:right;"> -0.6422108 </td>
+   <td style="text-align:right;"> 5.044009 </td>
+   <td style="text-align:right;"> 5.68622 </td>
+   <td style="text-align:right;"> -2.310591 </td>
+   <td style="text-align:right;"> 0.0264905 </td>
+   <td style="text-align:right;"> 37.27083 </td>
+   <td style="text-align:right;"> -1.205237 </td>
+   <td style="text-align:right;"> -0.0791844 </td>
+   <td style="text-align:left;"> Welch Two Sample t-test </td>
+   <td style="text-align:left;"> two.sided </td>
+  </tr>
+</tbody>
+</table>
 
 </div>
 
@@ -767,16 +811,40 @@ Calculate power via simulation and `power.t.test` for the following tests:
 
 ## Glossary {#glossary-func}
 
-
-
-|term                                                                                                 |definition                                                                                   |
-|:----------------------------------------------------------------------------------------------------|:--------------------------------------------------------------------------------------------|
-|[argument](https://psyteachr.github.io/glossary/a.html#argument){class="glossary" target="_blank"}   |A variable that provides input to a function.                                                |
-|[data type](https://psyteachr.github.io/glossary/d.html#data-type){class="glossary" target="_blank"} |The kind of data represented by an object.                                                   |
-|[double](https://psyteachr.github.io/glossary/d.html#double){class="glossary" target="_blank"}       |A data type representing a real decimal number                                               |
-|[function](https://psyteachr.github.io/glossary/f.html#function){class="glossary" target="_blank"}   |A named section of code that can be reused.                                                  |
-|[iteration](https://psyteachr.github.io/glossary/i.html#iteration){class="glossary" target="_blank"} |Repeating a process or function                                                              |
-|[matrix](https://psyteachr.github.io/glossary/m.html#matrix){class="glossary" target="_blank"}       |A container data type consisting of numbers arranged into a fixed number of rows and columns |
+<table class="table" style="margin-left: auto; margin-right: auto;">
+ <thead>
+  <tr>
+   <th style="text-align:left;"> term </th>
+   <th style="text-align:left;"> definition </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> [argument](https://psyteachr.github.io/glossary/a.html#argument){class="glossary" target="_blank"} </td>
+   <td style="text-align:left;"> A variable that provides input to a function. </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> [data type](https://psyteachr.github.io/glossary/d.html#data-type){class="glossary" target="_blank"} </td>
+   <td style="text-align:left;"> The kind of data represented by an object. </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> [double](https://psyteachr.github.io/glossary/d.html#double){class="glossary" target="_blank"} </td>
+   <td style="text-align:left;"> A data type representing a real decimal number </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> [function](https://psyteachr.github.io/glossary/f.html#function){class="glossary" target="_blank"} </td>
+   <td style="text-align:left;"> A named section of code that can be reused. </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> [iteration](https://psyteachr.github.io/glossary/i.html#iteration){class="glossary" target="_blank"} </td>
+   <td style="text-align:left;"> Repeating a process or function </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> [matrix](https://psyteachr.github.io/glossary/m.html#matrix){class="glossary" target="_blank"} </td>
+   <td style="text-align:left;"> A container data type consisting of numbers arranged into a fixed number of rows and columns </td>
+  </tr>
+</tbody>
+</table>
 
 
 

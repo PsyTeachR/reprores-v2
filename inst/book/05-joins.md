@@ -46,15 +46,42 @@ subject <- tibble(
 )
 ```
 
-
-
-| id|gender | age|
-|--:|:------|---:|
-|  1|m      |  19|
-|  2|m      |  22|
-|  3|NA     |  NA|
-|  4|nb     |  19|
-|  5|f      |  18|
+<table>
+ <thead>
+  <tr>
+   <th style="text-align:right;"> id </th>
+   <th style="text-align:left;"> gender </th>
+   <th style="text-align:right;"> age </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:left;"> m </td>
+   <td style="text-align:right;"> 19 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 2 </td>
+   <td style="text-align:left;"> m </td>
+   <td style="text-align:right;"> 22 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 3 </td>
+   <td style="text-align:left;"> NA </td>
+   <td style="text-align:right;"> NA </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 4 </td>
+   <td style="text-align:left;"> nb </td>
+   <td style="text-align:right;"> 19 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 5 </td>
+   <td style="text-align:left;"> f </td>
+   <td style="text-align:right;"> 18 </td>
+  </tr>
+</tbody>
+</table>
 
 
 
@@ -68,19 +95,52 @@ exp <- tibble(
 )
 ```
 
-
-
-| id| score|
-|--:|-----:|
-|  2|    10|
-|  3|    18|
-|  4|    21|
-|  4|    23|
-|  5|     9|
-|  5|    11|
-|  6|    11|
-|  6|    12|
-|  7|     3|
+<table>
+ <thead>
+  <tr>
+   <th style="text-align:right;"> id </th>
+   <th style="text-align:right;"> score </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:right;"> 2 </td>
+   <td style="text-align:right;"> 10 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 3 </td>
+   <td style="text-align:right;"> 18 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 4 </td>
+   <td style="text-align:right;"> 21 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 4 </td>
+   <td style="text-align:right;"> 23 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 5 </td>
+   <td style="text-align:right;"> 9 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 5 </td>
+   <td style="text-align:right;"> 11 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 6 </td>
+   <td style="text-align:right;"> 11 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 6 </td>
+   <td style="text-align:right;"> 12 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 7 </td>
+   <td style="text-align:right;"> 3 </td>
+  </tr>
+</tbody>
+</table>
 
 
 
@@ -118,15 +178,60 @@ left_join(subject, exp, by = "id")
 
 <div class="kable-table">
 
-| id|gender | age| score|
-|--:|:------|---:|-----:|
-|  1|m      |  19|    NA|
-|  2|m      |  22|    10|
-|  3|NA     |  NA|    18|
-|  4|nb     |  19|    21|
-|  4|nb     |  19|    23|
-|  5|f      |  18|     9|
-|  5|f      |  18|    11|
+<table>
+ <thead>
+  <tr>
+   <th style="text-align:right;"> id </th>
+   <th style="text-align:left;"> gender </th>
+   <th style="text-align:right;"> age </th>
+   <th style="text-align:right;"> score </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:left;"> m </td>
+   <td style="text-align:right;"> 19 </td>
+   <td style="text-align:right;"> NA </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 2 </td>
+   <td style="text-align:left;"> m </td>
+   <td style="text-align:right;"> 22 </td>
+   <td style="text-align:right;"> 10 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 3 </td>
+   <td style="text-align:left;"> NA </td>
+   <td style="text-align:right;"> NA </td>
+   <td style="text-align:right;"> 18 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 4 </td>
+   <td style="text-align:left;"> nb </td>
+   <td style="text-align:right;"> 19 </td>
+   <td style="text-align:right;"> 21 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 4 </td>
+   <td style="text-align:left;"> nb </td>
+   <td style="text-align:right;"> 19 </td>
+   <td style="text-align:right;"> 23 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 5 </td>
+   <td style="text-align:left;"> f </td>
+   <td style="text-align:right;"> 18 </td>
+   <td style="text-align:right;"> 9 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 5 </td>
+   <td style="text-align:left;"> f </td>
+   <td style="text-align:right;"> 18 </td>
+   <td style="text-align:right;"> 11 </td>
+  </tr>
+</tbody>
+</table>
 
 </div>
 
@@ -144,17 +249,72 @@ left_join(exp, subject, by = "id")
 
 <div class="kable-table">
 
-| id| score|gender | age|
-|--:|-----:|:------|---:|
-|  2|    10|m      |  22|
-|  3|    18|NA     |  NA|
-|  4|    21|nb     |  19|
-|  4|    23|nb     |  19|
-|  5|     9|f      |  18|
-|  5|    11|f      |  18|
-|  6|    11|NA     |  NA|
-|  6|    12|NA     |  NA|
-|  7|     3|NA     |  NA|
+<table>
+ <thead>
+  <tr>
+   <th style="text-align:right;"> id </th>
+   <th style="text-align:right;"> score </th>
+   <th style="text-align:left;"> gender </th>
+   <th style="text-align:right;"> age </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:right;"> 2 </td>
+   <td style="text-align:right;"> 10 </td>
+   <td style="text-align:left;"> m </td>
+   <td style="text-align:right;"> 22 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 3 </td>
+   <td style="text-align:right;"> 18 </td>
+   <td style="text-align:left;"> NA </td>
+   <td style="text-align:right;"> NA </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 4 </td>
+   <td style="text-align:right;"> 21 </td>
+   <td style="text-align:left;"> nb </td>
+   <td style="text-align:right;"> 19 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 4 </td>
+   <td style="text-align:right;"> 23 </td>
+   <td style="text-align:left;"> nb </td>
+   <td style="text-align:right;"> 19 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 5 </td>
+   <td style="text-align:right;"> 9 </td>
+   <td style="text-align:left;"> f </td>
+   <td style="text-align:right;"> 18 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 5 </td>
+   <td style="text-align:right;"> 11 </td>
+   <td style="text-align:left;"> f </td>
+   <td style="text-align:right;"> 18 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 6 </td>
+   <td style="text-align:right;"> 11 </td>
+   <td style="text-align:left;"> NA </td>
+   <td style="text-align:right;"> NA </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 6 </td>
+   <td style="text-align:right;"> 12 </td>
+   <td style="text-align:left;"> NA </td>
+   <td style="text-align:right;"> NA </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 7 </td>
+   <td style="text-align:right;"> 3 </td>
+   <td style="text-align:left;"> NA </td>
+   <td style="text-align:right;"> NA </td>
+  </tr>
+</tbody>
+</table>
 
 </div>
 
@@ -174,17 +334,72 @@ right_join(subject, exp, by = "id")
 
 <div class="kable-table">
 
-| id|gender | age| score|
-|--:|:------|---:|-----:|
-|  2|m      |  22|    10|
-|  3|NA     |  NA|    18|
-|  4|nb     |  19|    21|
-|  4|nb     |  19|    23|
-|  5|f      |  18|     9|
-|  5|f      |  18|    11|
-|  6|NA     |  NA|    11|
-|  6|NA     |  NA|    12|
-|  7|NA     |  NA|     3|
+<table>
+ <thead>
+  <tr>
+   <th style="text-align:right;"> id </th>
+   <th style="text-align:left;"> gender </th>
+   <th style="text-align:right;"> age </th>
+   <th style="text-align:right;"> score </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:right;"> 2 </td>
+   <td style="text-align:left;"> m </td>
+   <td style="text-align:right;"> 22 </td>
+   <td style="text-align:right;"> 10 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 3 </td>
+   <td style="text-align:left;"> NA </td>
+   <td style="text-align:right;"> NA </td>
+   <td style="text-align:right;"> 18 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 4 </td>
+   <td style="text-align:left;"> nb </td>
+   <td style="text-align:right;"> 19 </td>
+   <td style="text-align:right;"> 21 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 4 </td>
+   <td style="text-align:left;"> nb </td>
+   <td style="text-align:right;"> 19 </td>
+   <td style="text-align:right;"> 23 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 5 </td>
+   <td style="text-align:left;"> f </td>
+   <td style="text-align:right;"> 18 </td>
+   <td style="text-align:right;"> 9 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 5 </td>
+   <td style="text-align:left;"> f </td>
+   <td style="text-align:right;"> 18 </td>
+   <td style="text-align:right;"> 11 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 6 </td>
+   <td style="text-align:left;"> NA </td>
+   <td style="text-align:right;"> NA </td>
+   <td style="text-align:right;"> 11 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 6 </td>
+   <td style="text-align:left;"> NA </td>
+   <td style="text-align:right;"> NA </td>
+   <td style="text-align:right;"> 12 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 7 </td>
+   <td style="text-align:left;"> NA </td>
+   <td style="text-align:right;"> NA </td>
+   <td style="text-align:right;"> 3 </td>
+  </tr>
+</tbody>
+</table>
 
 </div>
 
@@ -208,14 +423,54 @@ inner_join(subject, exp, by = "id")
 
 <div class="kable-table">
 
-| id|gender | age| score|
-|--:|:------|---:|-----:|
-|  2|m      |  22|    10|
-|  3|NA     |  NA|    18|
-|  4|nb     |  19|    21|
-|  4|nb     |  19|    23|
-|  5|f      |  18|     9|
-|  5|f      |  18|    11|
+<table>
+ <thead>
+  <tr>
+   <th style="text-align:right;"> id </th>
+   <th style="text-align:left;"> gender </th>
+   <th style="text-align:right;"> age </th>
+   <th style="text-align:right;"> score </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:right;"> 2 </td>
+   <td style="text-align:left;"> m </td>
+   <td style="text-align:right;"> 22 </td>
+   <td style="text-align:right;"> 10 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 3 </td>
+   <td style="text-align:left;"> NA </td>
+   <td style="text-align:right;"> NA </td>
+   <td style="text-align:right;"> 18 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 4 </td>
+   <td style="text-align:left;"> nb </td>
+   <td style="text-align:right;"> 19 </td>
+   <td style="text-align:right;"> 21 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 4 </td>
+   <td style="text-align:left;"> nb </td>
+   <td style="text-align:right;"> 19 </td>
+   <td style="text-align:right;"> 23 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 5 </td>
+   <td style="text-align:left;"> f </td>
+   <td style="text-align:right;"> 18 </td>
+   <td style="text-align:right;"> 9 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 5 </td>
+   <td style="text-align:left;"> f </td>
+   <td style="text-align:right;"> 18 </td>
+   <td style="text-align:right;"> 11 </td>
+  </tr>
+</tbody>
+</table>
 
 </div>
 
@@ -236,18 +491,78 @@ full_join(subject, exp, by = "id")
 
 <div class="kable-table">
 
-| id|gender | age| score|
-|--:|:------|---:|-----:|
-|  1|m      |  19|    NA|
-|  2|m      |  22|    10|
-|  3|NA     |  NA|    18|
-|  4|nb     |  19|    21|
-|  4|nb     |  19|    23|
-|  5|f      |  18|     9|
-|  5|f      |  18|    11|
-|  6|NA     |  NA|    11|
-|  6|NA     |  NA|    12|
-|  7|NA     |  NA|     3|
+<table>
+ <thead>
+  <tr>
+   <th style="text-align:right;"> id </th>
+   <th style="text-align:left;"> gender </th>
+   <th style="text-align:right;"> age </th>
+   <th style="text-align:right;"> score </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:left;"> m </td>
+   <td style="text-align:right;"> 19 </td>
+   <td style="text-align:right;"> NA </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 2 </td>
+   <td style="text-align:left;"> m </td>
+   <td style="text-align:right;"> 22 </td>
+   <td style="text-align:right;"> 10 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 3 </td>
+   <td style="text-align:left;"> NA </td>
+   <td style="text-align:right;"> NA </td>
+   <td style="text-align:right;"> 18 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 4 </td>
+   <td style="text-align:left;"> nb </td>
+   <td style="text-align:right;"> 19 </td>
+   <td style="text-align:right;"> 21 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 4 </td>
+   <td style="text-align:left;"> nb </td>
+   <td style="text-align:right;"> 19 </td>
+   <td style="text-align:right;"> 23 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 5 </td>
+   <td style="text-align:left;"> f </td>
+   <td style="text-align:right;"> 18 </td>
+   <td style="text-align:right;"> 9 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 5 </td>
+   <td style="text-align:left;"> f </td>
+   <td style="text-align:right;"> 18 </td>
+   <td style="text-align:right;"> 11 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 6 </td>
+   <td style="text-align:left;"> NA </td>
+   <td style="text-align:right;"> NA </td>
+   <td style="text-align:right;"> 11 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 6 </td>
+   <td style="text-align:left;"> NA </td>
+   <td style="text-align:right;"> NA </td>
+   <td style="text-align:right;"> 12 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 7 </td>
+   <td style="text-align:left;"> NA </td>
+   <td style="text-align:right;"> NA </td>
+   <td style="text-align:right;"> 3 </td>
+  </tr>
+</tbody>
+</table>
 
 </div>
 
@@ -272,12 +587,37 @@ semi_join(subject, exp, by = "id")
 
 <div class="kable-table">
 
-| id|gender | age|
-|--:|:------|---:|
-|  2|m      |  22|
-|  3|NA     |  NA|
-|  4|nb     |  19|
-|  5|f      |  18|
+<table>
+ <thead>
+  <tr>
+   <th style="text-align:right;"> id </th>
+   <th style="text-align:left;"> gender </th>
+   <th style="text-align:right;"> age </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:right;"> 2 </td>
+   <td style="text-align:left;"> m </td>
+   <td style="text-align:right;"> 22 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 3 </td>
+   <td style="text-align:left;"> NA </td>
+   <td style="text-align:right;"> NA </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 4 </td>
+   <td style="text-align:left;"> nb </td>
+   <td style="text-align:right;"> 19 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 5 </td>
+   <td style="text-align:left;"> f </td>
+   <td style="text-align:right;"> 18 </td>
+  </tr>
+</tbody>
+</table>
 
 </div>
 
@@ -299,14 +639,40 @@ semi_join(exp, subject, by = "id")
 
 <div class="kable-table">
 
-| id| score|
-|--:|-----:|
-|  2|    10|
-|  3|    18|
-|  4|    21|
-|  4|    23|
-|  5|     9|
-|  5|    11|
+<table>
+ <thead>
+  <tr>
+   <th style="text-align:right;"> id </th>
+   <th style="text-align:right;"> score </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:right;"> 2 </td>
+   <td style="text-align:right;"> 10 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 3 </td>
+   <td style="text-align:right;"> 18 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 4 </td>
+   <td style="text-align:right;"> 21 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 4 </td>
+   <td style="text-align:right;"> 23 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 5 </td>
+   <td style="text-align:right;"> 9 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 5 </td>
+   <td style="text-align:right;"> 11 </td>
+  </tr>
+</tbody>
+</table>
 
 </div>
 
@@ -326,9 +692,22 @@ anti_join(subject, exp, by = "id")
 
 <div class="kable-table">
 
-| id|gender | age|
-|--:|:------|---:|
-|  1|m      |  19|
+<table>
+ <thead>
+  <tr>
+   <th style="text-align:right;"> id </th>
+   <th style="text-align:left;"> gender </th>
+   <th style="text-align:right;"> age </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:left;"> m </td>
+   <td style="text-align:right;"> 19 </td>
+  </tr>
+</tbody>
+</table>
 
 </div>
 
@@ -346,11 +725,28 @@ anti_join(exp, subject, by = "id")
 
 <div class="kable-table">
 
-| id| score|
-|--:|-----:|
-|  6|    11|
-|  6|    12|
-|  7|     3|
+<table>
+ <thead>
+  <tr>
+   <th style="text-align:right;"> id </th>
+   <th style="text-align:right;"> score </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:right;"> 6 </td>
+   <td style="text-align:right;"> 11 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 6 </td>
+   <td style="text-align:right;"> 12 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 7 </td>
+   <td style="text-align:right;"> 3 </td>
+  </tr>
+</tbody>
+</table>
 
 </div>
 
@@ -377,17 +773,62 @@ bind_rows(subject, new_subjects)
 
 <div class="kable-table">
 
-| id|gender | age|
-|--:|:------|---:|
-|  1|m      |  19|
-|  2|m      |  22|
-|  3|NA     |  NA|
-|  4|nb     |  19|
-|  5|f      |  18|
-|  6|nb     |  19|
-|  7|m      |  16|
-|  8|f      |  20|
-|  9|f      |  19|
+<table>
+ <thead>
+  <tr>
+   <th style="text-align:right;"> id </th>
+   <th style="text-align:left;"> gender </th>
+   <th style="text-align:right;"> age </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:left;"> m </td>
+   <td style="text-align:right;"> 19 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 2 </td>
+   <td style="text-align:left;"> m </td>
+   <td style="text-align:right;"> 22 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 3 </td>
+   <td style="text-align:left;"> NA </td>
+   <td style="text-align:right;"> NA </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 4 </td>
+   <td style="text-align:left;"> nb </td>
+   <td style="text-align:right;"> 19 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 5 </td>
+   <td style="text-align:left;"> f </td>
+   <td style="text-align:right;"> 18 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 6 </td>
+   <td style="text-align:left;"> nb </td>
+   <td style="text-align:right;"> 19 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 7 </td>
+   <td style="text-align:left;"> m </td>
+   <td style="text-align:right;"> 16 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 8 </td>
+   <td style="text-align:left;"> f </td>
+   <td style="text-align:right;"> 20 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 9 </td>
+   <td style="text-align:left;"> f </td>
+   <td style="text-align:right;"> 19 </td>
+  </tr>
+</tbody>
+</table>
 
 </div>
 
@@ -409,18 +850,78 @@ bind_rows(subject, new_subjects)
 
 <div class="kable-table">
 
-| id|gender | age| new|
-|--:|:------|---:|---:|
-|  1|m      |  19|  NA|
-|  2|m      |  22|  NA|
-|  3|NA     |  NA|  NA|
-|  4|nb     |  19|  NA|
-|  5|f      |  18|  NA|
-|  5|f      |  18|   1|
-|  6|nb     |  19|   2|
-|  7|m      |  16|   3|
-|  8|f      |  20|   4|
-|  9|f      |  19|   5|
+<table>
+ <thead>
+  <tr>
+   <th style="text-align:right;"> id </th>
+   <th style="text-align:left;"> gender </th>
+   <th style="text-align:right;"> age </th>
+   <th style="text-align:right;"> new </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:left;"> m </td>
+   <td style="text-align:right;"> 19 </td>
+   <td style="text-align:right;"> NA </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 2 </td>
+   <td style="text-align:left;"> m </td>
+   <td style="text-align:right;"> 22 </td>
+   <td style="text-align:right;"> NA </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 3 </td>
+   <td style="text-align:left;"> NA </td>
+   <td style="text-align:right;"> NA </td>
+   <td style="text-align:right;"> NA </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 4 </td>
+   <td style="text-align:left;"> nb </td>
+   <td style="text-align:right;"> 19 </td>
+   <td style="text-align:right;"> NA </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 5 </td>
+   <td style="text-align:left;"> f </td>
+   <td style="text-align:right;"> 18 </td>
+   <td style="text-align:right;"> NA </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 5 </td>
+   <td style="text-align:left;"> f </td>
+   <td style="text-align:right;"> 18 </td>
+   <td style="text-align:right;"> 1 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 6 </td>
+   <td style="text-align:left;"> nb </td>
+   <td style="text-align:right;"> 19 </td>
+   <td style="text-align:right;"> 2 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 7 </td>
+   <td style="text-align:left;"> m </td>
+   <td style="text-align:right;"> 16 </td>
+   <td style="text-align:right;"> 3 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 8 </td>
+   <td style="text-align:left;"> f </td>
+   <td style="text-align:right;"> 20 </td>
+   <td style="text-align:right;"> 4 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 9 </td>
+   <td style="text-align:left;"> f </td>
+   <td style="text-align:right;"> 19 </td>
+   <td style="text-align:right;"> 5 </td>
+  </tr>
+</tbody>
+</table>
 
 </div>
 
@@ -439,13 +940,48 @@ bind_cols(subject, new_info)
 
 <div class="kable-table">
 
-| id|gender | age|colour |
-|--:|:------|---:|:------|
-|  1|m      |  19|red    |
-|  2|m      |  22|orange |
-|  3|NA     |  NA|yellow |
-|  4|nb     |  19|green  |
-|  5|f      |  18|blue   |
+<table>
+ <thead>
+  <tr>
+   <th style="text-align:right;"> id </th>
+   <th style="text-align:left;"> gender </th>
+   <th style="text-align:right;"> age </th>
+   <th style="text-align:left;"> colour </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:left;"> m </td>
+   <td style="text-align:right;"> 19 </td>
+   <td style="text-align:left;"> red </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 2 </td>
+   <td style="text-align:left;"> m </td>
+   <td style="text-align:right;"> 22 </td>
+   <td style="text-align:left;"> orange </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 3 </td>
+   <td style="text-align:left;"> NA </td>
+   <td style="text-align:right;"> NA </td>
+   <td style="text-align:left;"> yellow </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 4 </td>
+   <td style="text-align:left;"> nb </td>
+   <td style="text-align:right;"> 19 </td>
+   <td style="text-align:left;"> green </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 5 </td>
+   <td style="text-align:left;"> f </td>
+   <td style="text-align:right;"> 18 </td>
+   <td style="text-align:left;"> blue </td>
+  </tr>
+</tbody>
+</table>
 
 </div>
 
@@ -470,9 +1006,22 @@ intersect(subject, new_subjects)
 
 <div class="kable-table">
 
-| id|gender | age|
-|--:|:------|---:|
-|  5|f      |  18|
+<table>
+ <thead>
+  <tr>
+   <th style="text-align:right;"> id </th>
+   <th style="text-align:left;"> gender </th>
+   <th style="text-align:right;"> age </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:right;"> 5 </td>
+   <td style="text-align:left;"> f </td>
+   <td style="text-align:right;"> 18 </td>
+  </tr>
+</tbody>
+</table>
 
 </div>
 
@@ -485,9 +1034,10 @@ base::intersect(subject, new_subjects)
 ```
 
 ```
-## Error: Must subset rows with a valid subscript vector.
+## Error in `vectbl_as_row_location()`:
+## ! Must subset rows with a valid subscript vector.
 ## ℹ Logical subscripts must match the size of the indexed input.
-## x Input has size 6 but subscript `!duplicated(x, fromLast = fromLast, ...)` has size 0.
+## ✖ Input has size 6 but subscript `!duplicated(x, fromLast = fromLast, ...)` has size 0.
 ```
 :::
 
@@ -502,18 +1052,67 @@ union(subject, new_subjects)
 
 <div class="kable-table">
 
-| id|gender | age|
-|--:|:------|---:|
-|  1|m      |  19|
-|  2|m      |  22|
-|  3|NA     |  NA|
-|  4|nb     |  19|
-|  5|f      |  18|
-|  4|f      |  19|
-|  6|m      |  19|
-|  7|m      |  16|
-|  8|f      |  20|
-|  9|f      |  19|
+<table>
+ <thead>
+  <tr>
+   <th style="text-align:right;"> id </th>
+   <th style="text-align:left;"> gender </th>
+   <th style="text-align:right;"> age </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:left;"> m </td>
+   <td style="text-align:right;"> 19 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 2 </td>
+   <td style="text-align:left;"> m </td>
+   <td style="text-align:right;"> 22 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 3 </td>
+   <td style="text-align:left;"> NA </td>
+   <td style="text-align:right;"> NA </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 4 </td>
+   <td style="text-align:left;"> nb </td>
+   <td style="text-align:right;"> 19 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 5 </td>
+   <td style="text-align:left;"> f </td>
+   <td style="text-align:right;"> 18 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 4 </td>
+   <td style="text-align:left;"> f </td>
+   <td style="text-align:right;"> 19 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 6 </td>
+   <td style="text-align:left;"> m </td>
+   <td style="text-align:right;"> 19 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 7 </td>
+   <td style="text-align:left;"> m </td>
+   <td style="text-align:right;"> 16 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 8 </td>
+   <td style="text-align:left;"> f </td>
+   <td style="text-align:right;"> 20 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 9 </td>
+   <td style="text-align:left;"> f </td>
+   <td style="text-align:right;"> 19 </td>
+  </tr>
+</tbody>
+</table>
 
 </div>
 
@@ -558,12 +1157,37 @@ setdiff(subject, new_subjects)
 
 <div class="kable-table">
 
-| id|gender | age|
-|--:|:------|---:|
-|  1|m      |  19|
-|  2|m      |  22|
-|  3|NA     |  NA|
-|  4|nb     |  19|
+<table>
+ <thead>
+  <tr>
+   <th style="text-align:right;"> id </th>
+   <th style="text-align:left;"> gender </th>
+   <th style="text-align:right;"> age </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:left;"> m </td>
+   <td style="text-align:right;"> 19 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 2 </td>
+   <td style="text-align:left;"> m </td>
+   <td style="text-align:right;"> 22 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 3 </td>
+   <td style="text-align:left;"> NA </td>
+   <td style="text-align:right;"> NA </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 4 </td>
+   <td style="text-align:left;"> nb </td>
+   <td style="text-align:right;"> 19 </td>
+  </tr>
+</tbody>
+</table>
 
 </div>
 
@@ -576,13 +1200,42 @@ setdiff(new_subjects, subject)
 
 <div class="kable-table">
 
-| id| age|gender |
-|--:|---:|:------|
-|  4|  19|f      |
-|  6|  19|m      |
-|  7|  16|m      |
-|  8|  20|f      |
-|  9|  19|f      |
+<table>
+ <thead>
+  <tr>
+   <th style="text-align:right;"> id </th>
+   <th style="text-align:right;"> age </th>
+   <th style="text-align:left;"> gender </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:right;"> 4 </td>
+   <td style="text-align:right;"> 19 </td>
+   <td style="text-align:left;"> f </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 6 </td>
+   <td style="text-align:right;"> 19 </td>
+   <td style="text-align:left;"> m </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 7 </td>
+   <td style="text-align:right;"> 16 </td>
+   <td style="text-align:left;"> m </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 8 </td>
+   <td style="text-align:right;"> 20 </td>
+   <td style="text-align:left;"> f </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 9 </td>
+   <td style="text-align:right;"> 19 </td>
+   <td style="text-align:left;"> f </td>
+  </tr>
+</tbody>
+</table>
 
 </div>
 
@@ -596,28 +1249,78 @@ base::setdiff(subject, new_subjects)
 
 <div class="kable-table">
 
-| id|gender | age|
-|--:|:------|---:|
-|  1|m      |  19|
-|  2|m      |  22|
-|  3|NA     |  NA|
-|  4|nb     |  19|
-|  5|f      |  18|
+<table>
+ <thead>
+  <tr>
+   <th style="text-align:right;"> id </th>
+   <th style="text-align:left;"> gender </th>
+   <th style="text-align:right;"> age </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:left;"> m </td>
+   <td style="text-align:right;"> 19 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 2 </td>
+   <td style="text-align:left;"> m </td>
+   <td style="text-align:right;"> 22 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 3 </td>
+   <td style="text-align:left;"> NA </td>
+   <td style="text-align:right;"> NA </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 4 </td>
+   <td style="text-align:left;"> nb </td>
+   <td style="text-align:right;"> 19 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 5 </td>
+   <td style="text-align:left;"> f </td>
+   <td style="text-align:right;"> 18 </td>
+  </tr>
+</tbody>
+</table>
 
 </div>
 :::
 
 ## Glossary {#glossary-joins}
 
-
-
-|term                                                                                                             |definition                                                                                                                                              |
-|:----------------------------------------------------------------------------------------------------------------|:-------------------------------------------------------------------------------------------------------------------------------------------------------|
-|[base r](https://psyteachr.github.io/glossary/b.html#base-r){class="glossary" target="_blank"}                   |The set of R functions that come with a basic installation of R, before you add external packages                                                       |
-|[binding joins](https://psyteachr.github.io/glossary/b.html#binding-joins){class="glossary" target="_blank"}     |Joins that bind one table to another by adding their rows or columns together.                                                                          |
-|[filtering joins](https://psyteachr.github.io/glossary/f.html#filtering-joins){class="glossary" target="_blank"} |Joins that act like the dplyr::filter() function in that they remove rows from the data in one table based on the values in another table.              |
-|[mutating joins](https://psyteachr.github.io/glossary/m.html#mutating-joins){class="glossary" target="_blank"}   |Joins that act like the dplyr::mutate() function in that they add new columns to one table based on values in another table.                            |
-|[set operations](https://psyteachr.github.io/glossary/s.html#set-operations){class="glossary" target="_blank"}   |Functions that compare two tables and return rows that match (intersect), are in either table (union), or are in one table but not the other (setdiff). |
+<table class="table" style="margin-left: auto; margin-right: auto;">
+ <thead>
+  <tr>
+   <th style="text-align:left;"> term </th>
+   <th style="text-align:left;"> definition </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> [base r](https://psyteachr.github.io/glossary/b.html#base-r){class="glossary" target="_blank"} </td>
+   <td style="text-align:left;"> The set of R functions that come with a basic installation of R, before you add external packages </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> [binding joins](https://psyteachr.github.io/glossary/b.html#binding-joins){class="glossary" target="_blank"} </td>
+   <td style="text-align:left;"> Joins that bind one table to another by adding their rows or columns together. </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> [filtering joins](https://psyteachr.github.io/glossary/f.html#filtering-joins){class="glossary" target="_blank"} </td>
+   <td style="text-align:left;"> Joins that act like the dplyr::filter() function in that they remove rows from the data in one table based on the values in another table. </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> [mutating joins](https://psyteachr.github.io/glossary/m.html#mutating-joins){class="glossary" target="_blank"} </td>
+   <td style="text-align:left;"> Joins that act like the dplyr::mutate() function in that they add new columns to one table based on values in another table. </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> [set operations](https://psyteachr.github.io/glossary/s.html#set-operations){class="glossary" target="_blank"} </td>
+   <td style="text-align:left;"> Functions that compare two tables and return rows that match (intersect), are in either table (union), or are in one table but not the other (setdiff). </td>
+  </tr>
+</tbody>
+</table>
 
 
 

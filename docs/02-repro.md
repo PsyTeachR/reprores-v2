@@ -253,7 +253,7 @@ The code above sets the following options:
 Find a list of the current chunk options by typing <code><span class='fu'><a href='https://rdrr.io/r/utils/str.html'>str</a></span><span class='op'>(</span><span class='fu'>knitr</span><span class='fu'>::</span><span class='va'><a href='https://rdrr.io/pkg/knitr/man/opts_chunk.html'>opts_chunk</a></span><span class='op'>$</span><span class='fu'>get</span><span class='op'>(</span><span class='op'>)</span><span class='op'>)</span></code> in the console.
 
 
-You can also add the packages you need in this chunk using <code><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='op'>)</span></code>. Often when you are working on a script, you will realize that you need to load another add-on package. Don't bury the call to <code><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'>package_I_need</span><span class='op'>)</span></code> way down in the script. Put it in the top, so the user has an overview of what packages are needed.
+You can also add the packages you need in this chunk using <code><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='op'>)</span></code>. Often when you are working on a script, you will realize that you need to load another add-on package. Don't bury the call to `library(package_I_need)` way down in the script. Put it in the top, so the user has an overview of what packages are needed.
 
 ::: {.try data-latex=""}
 We'll be using function from the package <code class='package'>tidyverse</code>, so load that in your setup chunk.
@@ -288,16 +288,10 @@ pets <- read_csv("https://psyteachr.github.io/reprores/data/pets.csv")
 
 ```
 ## Rows: 800 Columns: 6
-```
-
-```
 ## ── Column specification ────────────────────────────────────────────────────────
 ## Delimiter: ","
 ## chr (3): id, pet, country
 ## dbl (3): score, age, weight
-```
-
-```
 ## 
 ## ℹ Use `spec()` to retrieve the full column specification for this data.
 ## ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
@@ -341,11 +335,36 @@ pets %>%
 
 <div class="kable-table">
 
-|pet    |   n| mean_weight| mean_score|
-|:------|---:|-----------:|----------:|
-|cat    | 300|    9.371613|   90.23667|
-|dog    | 400|   19.067974|   99.98250|
-|ferret | 100|    4.781569|  111.78000|
+<table>
+ <thead>
+  <tr>
+   <th style="text-align:left;"> pet </th>
+   <th style="text-align:right;"> n </th>
+   <th style="text-align:right;"> mean_weight </th>
+   <th style="text-align:right;"> mean_score </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> cat </td>
+   <td style="text-align:right;"> 300 </td>
+   <td style="text-align:right;"> 9.371613 </td>
+   <td style="text-align:right;"> 90.23667 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> dog </td>
+   <td style="text-align:right;"> 400 </td>
+   <td style="text-align:right;"> 19.067974 </td>
+   <td style="text-align:right;"> 99.98250 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> ferret </td>
+   <td style="text-align:right;"> 100 </td>
+   <td style="text-align:right;"> 4.781569 </td>
+   <td style="text-align:right;"> 111.78000 </td>
+  </tr>
+</tbody>
+</table>
 
 </div>
 
@@ -369,15 +388,37 @@ knitr::kable(summary_table,
              caption = "Summary statistics for the pets dataset.")
 ```
 
-
-
-Table: (\#tab:unnamed-chunk-6)Summary statistics for the pets dataset.
-
-|Pet Type |   N| Mean Weight| Mean Score|
-|:--------|---:|-----------:|----------:|
-|cat      | 300|        9.37|      90.24|
-|dog      | 400|       19.07|      99.98|
-|ferret   | 100|        4.78|     111.78|
+<table>
+<caption>(\#tab:unnamed-chunk-6)Summary statistics for the pets dataset.</caption>
+ <thead>
+  <tr>
+   <th style="text-align:left;"> Pet Type </th>
+   <th style="text-align:right;"> N </th>
+   <th style="text-align:right;"> Mean Weight </th>
+   <th style="text-align:right;"> Mean Score </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> cat </td>
+   <td style="text-align:right;"> 300 </td>
+   <td style="text-align:right;"> 9.37 </td>
+   <td style="text-align:right;"> 90.24 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> dog </td>
+   <td style="text-align:right;"> 400 </td>
+   <td style="text-align:right;"> 19.07 </td>
+   <td style="text-align:right;"> 99.98 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> ferret </td>
+   <td style="text-align:right;"> 100 </td>
+   <td style="text-align:right;"> 4.78 </td>
+   <td style="text-align:right;"> 111.78 </td>
+  </tr>
+</tbody>
+</table>
 
 
 ::: {.info data-latex=""}
@@ -431,7 +472,7 @@ You can also include images that you did not create in R using the typical markd
 
 #### In-line R
 
-Now let's analyse the pets data to see if cats are heavier than ferrets. First we'll run the analysis code. Then we'll save any numbers we might want to use in our manuscript to variables and round them appropriately. Finally, we'll use <code><span class='fu'>glue</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/glue/man/glue.html'>glue</a></span><span class='op'>(</span><span class='op'>)</span></code> to format a results string.
+Now let's analyse the pets data to see if cats are heavier than ferrets. First we'll run the analysis code. Then we'll save any numbers we might want to use in our manuscript to variables and round them appropriately. Finally, we'll use <code><span class='fu'>glue</span><span class='fu'>::</span><span class='fu'><a href='https://glue.tidyverse.org/reference/glue.html'>glue</a></span><span class='op'>(</span><span class='op'>)</span></code> to format a results string.
 
 
 ```r
@@ -505,8 +546,8 @@ citation(package="faux") %>% toBibtex()
 ##   author = {Lisa DeBruine},
 ##   doi = {10.5281/zenodo.2669586},
 ##   publisher = {Zenodo},
-##   year = {2021},
-##   note = {R package version 1.1.0},
+##   year = {2022},
+##   note = {R package version 1.1.0.9004},
 ##   url = {https://debruine.github.io/faux/},
 ## }
 ```
@@ -579,23 +620,68 @@ You can knit your file to PDF or Word if you have the right packages installed o
 
 ## Glossary {#glossary-repro}
 
-
-
-|term                                                                                                                 |definition                                                                                                                                                       |
-|:--------------------------------------------------------------------------------------------------------------------|:----------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|[absolute path](https://psyteachr.github.io/glossary/a.html#absolute-path){class="glossary" target="_blank"}         |A file path that starts with / and is not appended to the working directory                                                                                      |
-|[chunk](https://psyteachr.github.io/glossary/c.html#chunk){class="glossary" target="_blank"}                         |A section of code in an R Markdown file                                                                                                                          |
-|[directory](https://psyteachr.github.io/glossary/d.html#directory){class="glossary" target="_blank"}                 |A collection or "folder" of files on a computer.                                                                                                                 |
-|[extension](https://psyteachr.github.io/glossary/e.html#extension){class="glossary" target="_blank"}                 |The end part of a file name that tells you what type of file it is (e.g., .R or .Rmd).                                                                           |
-|[knit](https://psyteachr.github.io/glossary/k.html#knit){class="glossary" target="_blank"}                           |To create an HTML, PDF, or Word document from an R Markdown (Rmd) document                                                                                       |
-|[markdown](https://psyteachr.github.io/glossary/m.html#markdown){class="glossary" target="_blank"}                   |A way to specify formatting, such as headers, paragraphs, lists, bolding, and links.                                                                             |
-|[path](https://psyteachr.github.io/glossary/p.html#path){class="glossary" target="_blank"}                           |A string representing the location of a file or directory.                                                                                                       |
-|[project](https://psyteachr.github.io/glossary/p.html#project){class="glossary" target="_blank"}                     |A way to organise related files in RStudio                                                                                                                       |
-|[r markdown](https://psyteachr.github.io/glossary/r.html#r-markdown){class="glossary" target="_blank"}               |The R-specific version of markdown: a way to specify formatting, such as headers, paragraphs, lists, bolding, and links, as well as code blocks and inline code. |
-|[relative path](https://psyteachr.github.io/glossary/r.html#relative-path){class="glossary" target="_blank"}         |The location of a file in relation to the working directory.                                                                                                     |
-|[reproducibility](https://psyteachr.github.io/glossary/r.html#reproducibility){class="glossary" target="_blank"}     |The extent to which the findings of a study can be repeated in some other context                                                                                |
-|[working directory](https://psyteachr.github.io/glossary/w.html#working-directory){class="glossary" target="_blank"} |The filepath where R is currently reading and writing files.                                                                                                     |
-|[yaml](https://psyteachr.github.io/glossary/y.html#yaml){class="glossary" target="_blank"}                           |A structured format for information                                                                                                                              |
+<table class="table" style="margin-left: auto; margin-right: auto;">
+ <thead>
+  <tr>
+   <th style="text-align:left;"> term </th>
+   <th style="text-align:left;"> definition </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> [absolute path](https://psyteachr.github.io/glossary/a.html#absolute-path){class="glossary" target="_blank"} </td>
+   <td style="text-align:left;"> A file path that starts with / and is not appended to the working directory </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> [chunk](https://psyteachr.github.io/glossary/c.html#chunk){class="glossary" target="_blank"} </td>
+   <td style="text-align:left;"> A section of code in an R Markdown file </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> [directory](https://psyteachr.github.io/glossary/d.html#directory){class="glossary" target="_blank"} </td>
+   <td style="text-align:left;"> A collection or "folder" of files on a computer. </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> [extension](https://psyteachr.github.io/glossary/e.html#extension){class="glossary" target="_blank"} </td>
+   <td style="text-align:left;"> The end part of a file name that tells you what type of file it is (e.g., .R or .Rmd). </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> [knit](https://psyteachr.github.io/glossary/k.html#knit){class="glossary" target="_blank"} </td>
+   <td style="text-align:left;"> To create an HTML, PDF, or Word document from an R Markdown (Rmd) document </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> [markdown](https://psyteachr.github.io/glossary/m.html#markdown){class="glossary" target="_blank"} </td>
+   <td style="text-align:left;"> A way to specify formatting, such as headers, paragraphs, lists, bolding, and links. </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> [path](https://psyteachr.github.io/glossary/p.html#path){class="glossary" target="_blank"} </td>
+   <td style="text-align:left;"> A string representing the location of a file or directory. </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> [project](https://psyteachr.github.io/glossary/p.html#project){class="glossary" target="_blank"} </td>
+   <td style="text-align:left;"> A way to organise related files in RStudio </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> [r markdown](https://psyteachr.github.io/glossary/r.html#r-markdown){class="glossary" target="_blank"} </td>
+   <td style="text-align:left;"> The R-specific version of markdown: a way to specify formatting, such as headers, paragraphs, lists, bolding, and links, as well as code blocks and inline code. </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> [relative path](https://psyteachr.github.io/glossary/r.html#relative-path){class="glossary" target="_blank"} </td>
+   <td style="text-align:left;"> The location of a file in relation to the working directory. </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> [reproducibility](https://psyteachr.github.io/glossary/r.html#reproducibility){class="glossary" target="_blank"} </td>
+   <td style="text-align:left;"> The extent to which the findings of a study can be repeated in some other context </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> [working directory](https://psyteachr.github.io/glossary/w.html#working-directory){class="glossary" target="_blank"} </td>
+   <td style="text-align:left;"> The filepath where R is currently reading and writing files. </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> [yaml](https://psyteachr.github.io/glossary/y.html#yaml){class="glossary" target="_blank"} </td>
+   <td style="text-align:left;"> A structured format for information </td>
+  </tr>
+</tbody>
+</table>
 
 
 
