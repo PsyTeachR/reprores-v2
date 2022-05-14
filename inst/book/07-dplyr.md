@@ -179,9 +179,64 @@ disgust %>% filter(user_id == 1)
 
 <div class="kable-table">
 
-| id| user_id|date       | moral1| moral2| moral3| moral4| moral5| moral6| moral7| sexual1| sexual2| sexual3| sexual4| sexual5| sexual6| sexual7| pathogen1| pathogen2| pathogen3| pathogen4| pathogen5| pathogen6| pathogen7|
-|--:|-------:|:----------|------:|------:|------:|------:|------:|------:|------:|-------:|-------:|-------:|-------:|-------:|-------:|-------:|---------:|---------:|---------:|---------:|---------:|---------:|---------:|
-|  1|       1|2008-07-10 |      2|      2|      1|      2|      1|      1|      1|       3|       1|       1|       2|       1|       2|       2|         3|         2|         3|         3|         2|         3|         3|
+<table>
+ <thead>
+  <tr>
+   <th style="text-align:right;"> id </th>
+   <th style="text-align:right;"> user_id </th>
+   <th style="text-align:left;"> date </th>
+   <th style="text-align:right;"> moral1 </th>
+   <th style="text-align:right;"> moral2 </th>
+   <th style="text-align:right;"> moral3 </th>
+   <th style="text-align:right;"> moral4 </th>
+   <th style="text-align:right;"> moral5 </th>
+   <th style="text-align:right;"> moral6 </th>
+   <th style="text-align:right;"> moral7 </th>
+   <th style="text-align:right;"> sexual1 </th>
+   <th style="text-align:right;"> sexual2 </th>
+   <th style="text-align:right;"> sexual3 </th>
+   <th style="text-align:right;"> sexual4 </th>
+   <th style="text-align:right;"> sexual5 </th>
+   <th style="text-align:right;"> sexual6 </th>
+   <th style="text-align:right;"> sexual7 </th>
+   <th style="text-align:right;"> pathogen1 </th>
+   <th style="text-align:right;"> pathogen2 </th>
+   <th style="text-align:right;"> pathogen3 </th>
+   <th style="text-align:right;"> pathogen4 </th>
+   <th style="text-align:right;"> pathogen5 </th>
+   <th style="text-align:right;"> pathogen6 </th>
+   <th style="text-align:right;"> pathogen7 </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:left;"> 2008-07-10 </td>
+   <td style="text-align:right;"> 2 </td>
+   <td style="text-align:right;"> 2 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 2 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 3 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 2 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 2 </td>
+   <td style="text-align:right;"> 2 </td>
+   <td style="text-align:right;"> 3 </td>
+   <td style="text-align:right;"> 2 </td>
+   <td style="text-align:right;"> 3 </td>
+   <td style="text-align:right;"> 3 </td>
+   <td style="text-align:right;"> 2 </td>
+   <td style="text-align:right;"> 3 </td>
+   <td style="text-align:right;"> 3 </td>
+  </tr>
+</tbody>
+</table>
 
 </div>
 
@@ -249,18 +304,195 @@ disgust2010 <- disgust %>%
   filter(year(date) == 2010)
 ```
 
-
-
-Table: (\#tab:dates-year)Rows 1-6 from `disgust2010`
-
-|   id| user_id|date       | moral1| moral2| moral3| moral4| moral5| moral6| moral7| sexual1| sexual2| sexual3| sexual4| sexual5| sexual6| sexual7| pathogen1| pathogen2| pathogen3| pathogen4| pathogen5| pathogen6| pathogen7|
-|----:|-------:|:----------|------:|------:|------:|------:|------:|------:|------:|-------:|-------:|-------:|-------:|-------:|-------:|-------:|---------:|---------:|---------:|---------:|---------:|---------:|---------:|
-| 6902|    5469|2010-12-06 |      0|      1|      3|      4|      1|      0|      1|       3|       5|       2|       4|       6|       6|       5|         5|         2|         4|         4|         2|         2|         6|
-| 6158|    6066|2010-04-18 |      4|      5|      6|      5|      5|      4|      4|       3|       0|       1|       6|       3|       5|       3|         6|         5|         5|         5|         5|         5|         5|
-| 6362|    7129|2010-06-09 |      4|      4|      4|      4|      3|      3|      2|       4|       2|       1|       3|       2|       3|       6|         5|         2|         0|         4|         5|         5|         4|
-| 6302|   39318|2010-05-20 |      2|      4|      1|      4|      5|      6|      0|       1|       0|       0|       1|       0|       0|       1|         3|         2|         3|         2|         3|         2|         4|
-| 5429|   43029|2010-01-02 |      1|      1|      1|      3|      6|      4|      2|       2|       0|       1|       4|       6|       6|       6|         4|         6|         6|         6|         6|         6|         4|
-| 6732|   71955|2010-10-15 |      2|      5|      3|      6|      3|      2|      5|       4|       3|       3|       6|       6|       6|       5|         4|         2|         6|         5|         6|         6|         3|
+<table>
+<caption>(\#tab:dates-year)Rows 1-6 from `disgust2010`</caption>
+ <thead>
+  <tr>
+   <th style="text-align:right;"> id </th>
+   <th style="text-align:right;"> user_id </th>
+   <th style="text-align:left;"> date </th>
+   <th style="text-align:right;"> moral1 </th>
+   <th style="text-align:right;"> moral2 </th>
+   <th style="text-align:right;"> moral3 </th>
+   <th style="text-align:right;"> moral4 </th>
+   <th style="text-align:right;"> moral5 </th>
+   <th style="text-align:right;"> moral6 </th>
+   <th style="text-align:right;"> moral7 </th>
+   <th style="text-align:right;"> sexual1 </th>
+   <th style="text-align:right;"> sexual2 </th>
+   <th style="text-align:right;"> sexual3 </th>
+   <th style="text-align:right;"> sexual4 </th>
+   <th style="text-align:right;"> sexual5 </th>
+   <th style="text-align:right;"> sexual6 </th>
+   <th style="text-align:right;"> sexual7 </th>
+   <th style="text-align:right;"> pathogen1 </th>
+   <th style="text-align:right;"> pathogen2 </th>
+   <th style="text-align:right;"> pathogen3 </th>
+   <th style="text-align:right;"> pathogen4 </th>
+   <th style="text-align:right;"> pathogen5 </th>
+   <th style="text-align:right;"> pathogen6 </th>
+   <th style="text-align:right;"> pathogen7 </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:right;"> 6902 </td>
+   <td style="text-align:right;"> 5469 </td>
+   <td style="text-align:left;"> 2010-12-06 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 3 </td>
+   <td style="text-align:right;"> 4 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 3 </td>
+   <td style="text-align:right;"> 5 </td>
+   <td style="text-align:right;"> 2 </td>
+   <td style="text-align:right;"> 4 </td>
+   <td style="text-align:right;"> 6 </td>
+   <td style="text-align:right;"> 6 </td>
+   <td style="text-align:right;"> 5 </td>
+   <td style="text-align:right;"> 5 </td>
+   <td style="text-align:right;"> 2 </td>
+   <td style="text-align:right;"> 4 </td>
+   <td style="text-align:right;"> 4 </td>
+   <td style="text-align:right;"> 2 </td>
+   <td style="text-align:right;"> 2 </td>
+   <td style="text-align:right;"> 6 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 6158 </td>
+   <td style="text-align:right;"> 6066 </td>
+   <td style="text-align:left;"> 2010-04-18 </td>
+   <td style="text-align:right;"> 4 </td>
+   <td style="text-align:right;"> 5 </td>
+   <td style="text-align:right;"> 6 </td>
+   <td style="text-align:right;"> 5 </td>
+   <td style="text-align:right;"> 5 </td>
+   <td style="text-align:right;"> 4 </td>
+   <td style="text-align:right;"> 4 </td>
+   <td style="text-align:right;"> 3 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 6 </td>
+   <td style="text-align:right;"> 3 </td>
+   <td style="text-align:right;"> 5 </td>
+   <td style="text-align:right;"> 3 </td>
+   <td style="text-align:right;"> 6 </td>
+   <td style="text-align:right;"> 5 </td>
+   <td style="text-align:right;"> 5 </td>
+   <td style="text-align:right;"> 5 </td>
+   <td style="text-align:right;"> 5 </td>
+   <td style="text-align:right;"> 5 </td>
+   <td style="text-align:right;"> 5 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 6362 </td>
+   <td style="text-align:right;"> 7129 </td>
+   <td style="text-align:left;"> 2010-06-09 </td>
+   <td style="text-align:right;"> 4 </td>
+   <td style="text-align:right;"> 4 </td>
+   <td style="text-align:right;"> 4 </td>
+   <td style="text-align:right;"> 4 </td>
+   <td style="text-align:right;"> 3 </td>
+   <td style="text-align:right;"> 3 </td>
+   <td style="text-align:right;"> 2 </td>
+   <td style="text-align:right;"> 4 </td>
+   <td style="text-align:right;"> 2 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 3 </td>
+   <td style="text-align:right;"> 2 </td>
+   <td style="text-align:right;"> 3 </td>
+   <td style="text-align:right;"> 6 </td>
+   <td style="text-align:right;"> 5 </td>
+   <td style="text-align:right;"> 2 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 4 </td>
+   <td style="text-align:right;"> 5 </td>
+   <td style="text-align:right;"> 5 </td>
+   <td style="text-align:right;"> 4 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 6302 </td>
+   <td style="text-align:right;"> 39318 </td>
+   <td style="text-align:left;"> 2010-05-20 </td>
+   <td style="text-align:right;"> 2 </td>
+   <td style="text-align:right;"> 4 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 4 </td>
+   <td style="text-align:right;"> 5 </td>
+   <td style="text-align:right;"> 6 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 3 </td>
+   <td style="text-align:right;"> 2 </td>
+   <td style="text-align:right;"> 3 </td>
+   <td style="text-align:right;"> 2 </td>
+   <td style="text-align:right;"> 3 </td>
+   <td style="text-align:right;"> 2 </td>
+   <td style="text-align:right;"> 4 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 5429 </td>
+   <td style="text-align:right;"> 43029 </td>
+   <td style="text-align:left;"> 2010-01-02 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 3 </td>
+   <td style="text-align:right;"> 6 </td>
+   <td style="text-align:right;"> 4 </td>
+   <td style="text-align:right;"> 2 </td>
+   <td style="text-align:right;"> 2 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 4 </td>
+   <td style="text-align:right;"> 6 </td>
+   <td style="text-align:right;"> 6 </td>
+   <td style="text-align:right;"> 6 </td>
+   <td style="text-align:right;"> 4 </td>
+   <td style="text-align:right;"> 6 </td>
+   <td style="text-align:right;"> 6 </td>
+   <td style="text-align:right;"> 6 </td>
+   <td style="text-align:right;"> 6 </td>
+   <td style="text-align:right;"> 6 </td>
+   <td style="text-align:right;"> 4 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 6732 </td>
+   <td style="text-align:right;"> 71955 </td>
+   <td style="text-align:left;"> 2010-10-15 </td>
+   <td style="text-align:right;"> 2 </td>
+   <td style="text-align:right;"> 5 </td>
+   <td style="text-align:right;"> 3 </td>
+   <td style="text-align:right;"> 6 </td>
+   <td style="text-align:right;"> 3 </td>
+   <td style="text-align:right;"> 2 </td>
+   <td style="text-align:right;"> 5 </td>
+   <td style="text-align:right;"> 4 </td>
+   <td style="text-align:right;"> 3 </td>
+   <td style="text-align:right;"> 3 </td>
+   <td style="text-align:right;"> 6 </td>
+   <td style="text-align:right;"> 6 </td>
+   <td style="text-align:right;"> 6 </td>
+   <td style="text-align:right;"> 5 </td>
+   <td style="text-align:right;"> 4 </td>
+   <td style="text-align:right;"> 2 </td>
+   <td style="text-align:right;"> 6 </td>
+   <td style="text-align:right;"> 5 </td>
+   <td style="text-align:right;"> 6 </td>
+   <td style="text-align:right;"> 6 </td>
+   <td style="text-align:right;"> 3 </td>
+  </tr>
+</tbody>
+</table>
 
 
 
@@ -276,7 +508,7 @@ range(disgust_5ago$date)
 ```
 
 ```
-## [1] "2008-07-10" "2016-09-20"
+## [1] "2008-07-10" "2017-04-04"
 ```
 
 
@@ -290,18 +522,195 @@ disgust_order <- disgust %>%
   arrange(date, moral1)
 ```
 
-
-
-Table: (\#tab:arrange)Rows 1-6 from `disgust_order`
-
-| id| user_id|date       | moral1| moral2| moral3| moral4| moral5| moral6| moral7| sexual1| sexual2| sexual3| sexual4| sexual5| sexual6| sexual7| pathogen1| pathogen2| pathogen3| pathogen4| pathogen5| pathogen6| pathogen7|
-|--:|-------:|:----------|------:|------:|------:|------:|------:|------:|------:|-------:|-------:|-------:|-------:|-------:|-------:|-------:|---------:|---------:|---------:|---------:|---------:|---------:|---------:|
-|  1|       1|2008-07-10 |      2|      2|      1|      2|      1|      1|      1|       3|       1|       1|       2|       1|       2|       2|         3|         2|         3|         3|         2|         3|         3|
-|  3|  155324|2008-07-11 |      2|      4|      3|      5|      2|      1|      4|       1|       0|       1|       2|       2|       6|       1|         4|         3|         1|         0|         4|         4|         2|
-|  6|  155386|2008-07-12 |      2|      4|      0|      4|      0|      0|      0|       6|       0|       0|       6|       4|       4|       6|         4|         5|         5|         1|         6|         4|         2|
-|  7|  155409|2008-07-12 |      4|      5|      5|      4|      5|      1|      5|       3|       0|       1|       5|       2|       0|       0|         5|         5|         3|         4|         4|         2|         6|
-|  4|  155366|2008-07-12 |      6|      6|      6|      3|      6|      6|      6|       0|       0|       0|       0|       0|       0|       3|         4|         4|         5|         5|         4|         6|         0|
-|  5|  155370|2008-07-12 |      6|      6|      4|      6|      6|      6|      6|       2|       6|       4|       3|       6|       6|       6|         6|         6|         6|         2|         4|         4|         6|
+<table>
+<caption>(\#tab:arrange)Rows 1-6 from `disgust_order`</caption>
+ <thead>
+  <tr>
+   <th style="text-align:right;"> id </th>
+   <th style="text-align:right;"> user_id </th>
+   <th style="text-align:left;"> date </th>
+   <th style="text-align:right;"> moral1 </th>
+   <th style="text-align:right;"> moral2 </th>
+   <th style="text-align:right;"> moral3 </th>
+   <th style="text-align:right;"> moral4 </th>
+   <th style="text-align:right;"> moral5 </th>
+   <th style="text-align:right;"> moral6 </th>
+   <th style="text-align:right;"> moral7 </th>
+   <th style="text-align:right;"> sexual1 </th>
+   <th style="text-align:right;"> sexual2 </th>
+   <th style="text-align:right;"> sexual3 </th>
+   <th style="text-align:right;"> sexual4 </th>
+   <th style="text-align:right;"> sexual5 </th>
+   <th style="text-align:right;"> sexual6 </th>
+   <th style="text-align:right;"> sexual7 </th>
+   <th style="text-align:right;"> pathogen1 </th>
+   <th style="text-align:right;"> pathogen2 </th>
+   <th style="text-align:right;"> pathogen3 </th>
+   <th style="text-align:right;"> pathogen4 </th>
+   <th style="text-align:right;"> pathogen5 </th>
+   <th style="text-align:right;"> pathogen6 </th>
+   <th style="text-align:right;"> pathogen7 </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:left;"> 2008-07-10 </td>
+   <td style="text-align:right;"> 2 </td>
+   <td style="text-align:right;"> 2 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 2 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 3 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 2 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 2 </td>
+   <td style="text-align:right;"> 2 </td>
+   <td style="text-align:right;"> 3 </td>
+   <td style="text-align:right;"> 2 </td>
+   <td style="text-align:right;"> 3 </td>
+   <td style="text-align:right;"> 3 </td>
+   <td style="text-align:right;"> 2 </td>
+   <td style="text-align:right;"> 3 </td>
+   <td style="text-align:right;"> 3 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 3 </td>
+   <td style="text-align:right;"> 155324 </td>
+   <td style="text-align:left;"> 2008-07-11 </td>
+   <td style="text-align:right;"> 2 </td>
+   <td style="text-align:right;"> 4 </td>
+   <td style="text-align:right;"> 3 </td>
+   <td style="text-align:right;"> 5 </td>
+   <td style="text-align:right;"> 2 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 4 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 2 </td>
+   <td style="text-align:right;"> 2 </td>
+   <td style="text-align:right;"> 6 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 4 </td>
+   <td style="text-align:right;"> 3 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 4 </td>
+   <td style="text-align:right;"> 4 </td>
+   <td style="text-align:right;"> 2 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 6 </td>
+   <td style="text-align:right;"> 155386 </td>
+   <td style="text-align:left;"> 2008-07-12 </td>
+   <td style="text-align:right;"> 2 </td>
+   <td style="text-align:right;"> 4 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 4 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 6 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 6 </td>
+   <td style="text-align:right;"> 4 </td>
+   <td style="text-align:right;"> 4 </td>
+   <td style="text-align:right;"> 6 </td>
+   <td style="text-align:right;"> 4 </td>
+   <td style="text-align:right;"> 5 </td>
+   <td style="text-align:right;"> 5 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 6 </td>
+   <td style="text-align:right;"> 4 </td>
+   <td style="text-align:right;"> 2 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 7 </td>
+   <td style="text-align:right;"> 155409 </td>
+   <td style="text-align:left;"> 2008-07-12 </td>
+   <td style="text-align:right;"> 4 </td>
+   <td style="text-align:right;"> 5 </td>
+   <td style="text-align:right;"> 5 </td>
+   <td style="text-align:right;"> 4 </td>
+   <td style="text-align:right;"> 5 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 5 </td>
+   <td style="text-align:right;"> 3 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 5 </td>
+   <td style="text-align:right;"> 2 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 5 </td>
+   <td style="text-align:right;"> 5 </td>
+   <td style="text-align:right;"> 3 </td>
+   <td style="text-align:right;"> 4 </td>
+   <td style="text-align:right;"> 4 </td>
+   <td style="text-align:right;"> 2 </td>
+   <td style="text-align:right;"> 6 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 4 </td>
+   <td style="text-align:right;"> 155366 </td>
+   <td style="text-align:left;"> 2008-07-12 </td>
+   <td style="text-align:right;"> 6 </td>
+   <td style="text-align:right;"> 6 </td>
+   <td style="text-align:right;"> 6 </td>
+   <td style="text-align:right;"> 3 </td>
+   <td style="text-align:right;"> 6 </td>
+   <td style="text-align:right;"> 6 </td>
+   <td style="text-align:right;"> 6 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 3 </td>
+   <td style="text-align:right;"> 4 </td>
+   <td style="text-align:right;"> 4 </td>
+   <td style="text-align:right;"> 5 </td>
+   <td style="text-align:right;"> 5 </td>
+   <td style="text-align:right;"> 4 </td>
+   <td style="text-align:right;"> 6 </td>
+   <td style="text-align:right;"> 0 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 5 </td>
+   <td style="text-align:right;"> 155370 </td>
+   <td style="text-align:left;"> 2008-07-12 </td>
+   <td style="text-align:right;"> 6 </td>
+   <td style="text-align:right;"> 6 </td>
+   <td style="text-align:right;"> 4 </td>
+   <td style="text-align:right;"> 6 </td>
+   <td style="text-align:right;"> 6 </td>
+   <td style="text-align:right;"> 6 </td>
+   <td style="text-align:right;"> 6 </td>
+   <td style="text-align:right;"> 2 </td>
+   <td style="text-align:right;"> 6 </td>
+   <td style="text-align:right;"> 4 </td>
+   <td style="text-align:right;"> 3 </td>
+   <td style="text-align:right;"> 6 </td>
+   <td style="text-align:right;"> 6 </td>
+   <td style="text-align:right;"> 6 </td>
+   <td style="text-align:right;"> 6 </td>
+   <td style="text-align:right;"> 6 </td>
+   <td style="text-align:right;"> 6 </td>
+   <td style="text-align:right;"> 2 </td>
+   <td style="text-align:right;"> 4 </td>
+   <td style="text-align:right;"> 4 </td>
+   <td style="text-align:right;"> 6 </td>
+  </tr>
+</tbody>
+</table>
 
 
 
@@ -313,18 +722,195 @@ disgust_order_desc <- disgust %>%
   arrange(desc(date))
 ```
 
-
-
-Table: (\#tab:arrange-desc)Rows 1-6 from `disgust_order_desc`
-
-|    id| user_id|date       | moral1| moral2| moral3| moral4| moral5| moral6| moral7| sexual1| sexual2| sexual3| sexual4| sexual5| sexual6| sexual7| pathogen1| pathogen2| pathogen3| pathogen4| pathogen5| pathogen6| pathogen7|
-|-----:|-------:|:----------|------:|------:|------:|------:|------:|------:|------:|-------:|-------:|-------:|-------:|-------:|-------:|-------:|---------:|---------:|---------:|---------:|---------:|---------:|---------:|
-| 39456|  356866|2017-08-21 |      1|      1|      1|      1|      1|      1|      1|       1|       1|       1|       1|       1|       1|       1|         1|         1|         1|         1|         1|         1|         1|
-| 39447|  128727|2017-08-13 |      2|      4|      1|      2|      2|      5|      3|       0|       0|       1|       0|       0|       2|       1|         2|         0|         2|         1|         1|         1|         1|
-| 39371|  152955|2017-06-13 |      6|      6|      3|      6|      6|      6|      6|       1|       0|       0|       2|       1|       4|       4|         5|         0|         5|         4|         3|         6|         3|
-| 39342|   48303|2017-05-22 |      4|      5|      4|      4|      6|      4|      5|       2|       1|       4|       1|       1|       3|       1|         5|         5|         4|         4|         4|         4|         5|
-| 39159|  151633|2017-04-04 |      4|      5|      6|      5|      3|      6|      2|       6|       4|       0|       4|       0|       3|       6|         4|         4|         6|         6|         6|         6|         4|
-| 38942|  370464|2017-02-01 |      1|      5|      0|      6|      5|      5|      5|       0|       0|       0|       0|       0|       0|       0|         5|         0|         3|         3|         1|         6|         3|
+<table>
+<caption>(\#tab:arrange-desc)Rows 1-6 from `disgust_order_desc`</caption>
+ <thead>
+  <tr>
+   <th style="text-align:right;"> id </th>
+   <th style="text-align:right;"> user_id </th>
+   <th style="text-align:left;"> date </th>
+   <th style="text-align:right;"> moral1 </th>
+   <th style="text-align:right;"> moral2 </th>
+   <th style="text-align:right;"> moral3 </th>
+   <th style="text-align:right;"> moral4 </th>
+   <th style="text-align:right;"> moral5 </th>
+   <th style="text-align:right;"> moral6 </th>
+   <th style="text-align:right;"> moral7 </th>
+   <th style="text-align:right;"> sexual1 </th>
+   <th style="text-align:right;"> sexual2 </th>
+   <th style="text-align:right;"> sexual3 </th>
+   <th style="text-align:right;"> sexual4 </th>
+   <th style="text-align:right;"> sexual5 </th>
+   <th style="text-align:right;"> sexual6 </th>
+   <th style="text-align:right;"> sexual7 </th>
+   <th style="text-align:right;"> pathogen1 </th>
+   <th style="text-align:right;"> pathogen2 </th>
+   <th style="text-align:right;"> pathogen3 </th>
+   <th style="text-align:right;"> pathogen4 </th>
+   <th style="text-align:right;"> pathogen5 </th>
+   <th style="text-align:right;"> pathogen6 </th>
+   <th style="text-align:right;"> pathogen7 </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:right;"> 39456 </td>
+   <td style="text-align:right;"> 356866 </td>
+   <td style="text-align:left;"> 2017-08-21 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 1 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 39447 </td>
+   <td style="text-align:right;"> 128727 </td>
+   <td style="text-align:left;"> 2017-08-13 </td>
+   <td style="text-align:right;"> 2 </td>
+   <td style="text-align:right;"> 4 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 2 </td>
+   <td style="text-align:right;"> 2 </td>
+   <td style="text-align:right;"> 5 </td>
+   <td style="text-align:right;"> 3 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 2 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 2 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 2 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 1 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 39371 </td>
+   <td style="text-align:right;"> 152955 </td>
+   <td style="text-align:left;"> 2017-06-13 </td>
+   <td style="text-align:right;"> 6 </td>
+   <td style="text-align:right;"> 6 </td>
+   <td style="text-align:right;"> 3 </td>
+   <td style="text-align:right;"> 6 </td>
+   <td style="text-align:right;"> 6 </td>
+   <td style="text-align:right;"> 6 </td>
+   <td style="text-align:right;"> 6 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 2 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 4 </td>
+   <td style="text-align:right;"> 4 </td>
+   <td style="text-align:right;"> 5 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 5 </td>
+   <td style="text-align:right;"> 4 </td>
+   <td style="text-align:right;"> 3 </td>
+   <td style="text-align:right;"> 6 </td>
+   <td style="text-align:right;"> 3 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 39342 </td>
+   <td style="text-align:right;"> 48303 </td>
+   <td style="text-align:left;"> 2017-05-22 </td>
+   <td style="text-align:right;"> 4 </td>
+   <td style="text-align:right;"> 5 </td>
+   <td style="text-align:right;"> 4 </td>
+   <td style="text-align:right;"> 4 </td>
+   <td style="text-align:right;"> 6 </td>
+   <td style="text-align:right;"> 4 </td>
+   <td style="text-align:right;"> 5 </td>
+   <td style="text-align:right;"> 2 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 4 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 3 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 5 </td>
+   <td style="text-align:right;"> 5 </td>
+   <td style="text-align:right;"> 4 </td>
+   <td style="text-align:right;"> 4 </td>
+   <td style="text-align:right;"> 4 </td>
+   <td style="text-align:right;"> 4 </td>
+   <td style="text-align:right;"> 5 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 39159 </td>
+   <td style="text-align:right;"> 151633 </td>
+   <td style="text-align:left;"> 2017-04-04 </td>
+   <td style="text-align:right;"> 4 </td>
+   <td style="text-align:right;"> 5 </td>
+   <td style="text-align:right;"> 6 </td>
+   <td style="text-align:right;"> 5 </td>
+   <td style="text-align:right;"> 3 </td>
+   <td style="text-align:right;"> 6 </td>
+   <td style="text-align:right;"> 2 </td>
+   <td style="text-align:right;"> 6 </td>
+   <td style="text-align:right;"> 4 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 4 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 3 </td>
+   <td style="text-align:right;"> 6 </td>
+   <td style="text-align:right;"> 4 </td>
+   <td style="text-align:right;"> 4 </td>
+   <td style="text-align:right;"> 6 </td>
+   <td style="text-align:right;"> 6 </td>
+   <td style="text-align:right;"> 6 </td>
+   <td style="text-align:right;"> 6 </td>
+   <td style="text-align:right;"> 4 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 38942 </td>
+   <td style="text-align:right;"> 370464 </td>
+   <td style="text-align:left;"> 2017-02-01 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 5 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 6 </td>
+   <td style="text-align:right;"> 5 </td>
+   <td style="text-align:right;"> 5 </td>
+   <td style="text-align:right;"> 5 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 5 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 3 </td>
+   <td style="text-align:right;"> 3 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 6 </td>
+   <td style="text-align:right;"> 3 </td>
+  </tr>
+</tbody>
+</table>
 
 
 
@@ -347,18 +933,223 @@ disgust_total <- disgust %>%
   )
 ```
 
-
-
-Table: (\#tab:mutate)Rows 1-6 from `disgust_total`
-
-|    id|user_id |date       | moral1| moral2| moral3| moral4| moral5| moral6| moral7| sexual1| sexual2| sexual3| sexual4| sexual5| sexual6| sexual7| pathogen1| pathogen2| pathogen3| pathogen4| pathogen5| pathogen6| pathogen7| pathogen| moral| sexual| total|
-|-----:|:-------|:----------|------:|------:|------:|------:|------:|------:|------:|-------:|-------:|-------:|-------:|-------:|-------:|-------:|---------:|---------:|---------:|---------:|---------:|---------:|---------:|--------:|-----:|------:|-----:|
-|  1199|U0      |2008-10-07 |      5|      6|      4|      6|      5|      5|      6|       4|       0|       1|       0|       1|       4|       5|         6|         1|         6|         5|         4|         5|         6|       33|    37|     15|    85|
-|     1|U1      |2008-07-10 |      2|      2|      1|      2|      1|      1|      1|       3|       1|       1|       2|       1|       2|       2|         3|         2|         3|         3|         2|         3|         3|       19|    10|     12|    41|
-|  1599|U2      |2008-10-27 |      1|      1|      1|      1|     NA|     NA|      1|       1|      NA|       1|      NA|       1|      NA|      NA|        NA|        NA|         1|        NA|        NA|        NA|        NA|       NA|    NA|     NA|    NA|
-| 13332|U2118   |2012-01-02 |      0|      1|      1|      1|      1|      2|      1|       4|       3|       0|       6|       0|       3|       5|         5|         6|         4|         6|         5|         5|         4|       35|     7|     21|    63|
-|    23|U2311   |2008-07-15 |      4|      4|      4|      4|      4|      4|      4|       2|       1|       2|       1|       1|       1|       5|         5|         5|         4|         4|         5|         4|         3|       30|    28|     13|    71|
-|  1160|U3630   |2008-10-06 |      1|      5|     NA|      5|      5|      5|      1|       0|       5|       0|       2|       0|       1|       0|         6|         3|         1|         1|         3|         1|         0|       15|    NA|      8|    NA|
+<table>
+<caption>(\#tab:mutate)Rows 1-6 from `disgust_total`</caption>
+ <thead>
+  <tr>
+   <th style="text-align:right;"> id </th>
+   <th style="text-align:left;"> user_id </th>
+   <th style="text-align:left;"> date </th>
+   <th style="text-align:right;"> moral1 </th>
+   <th style="text-align:right;"> moral2 </th>
+   <th style="text-align:right;"> moral3 </th>
+   <th style="text-align:right;"> moral4 </th>
+   <th style="text-align:right;"> moral5 </th>
+   <th style="text-align:right;"> moral6 </th>
+   <th style="text-align:right;"> moral7 </th>
+   <th style="text-align:right;"> sexual1 </th>
+   <th style="text-align:right;"> sexual2 </th>
+   <th style="text-align:right;"> sexual3 </th>
+   <th style="text-align:right;"> sexual4 </th>
+   <th style="text-align:right;"> sexual5 </th>
+   <th style="text-align:right;"> sexual6 </th>
+   <th style="text-align:right;"> sexual7 </th>
+   <th style="text-align:right;"> pathogen1 </th>
+   <th style="text-align:right;"> pathogen2 </th>
+   <th style="text-align:right;"> pathogen3 </th>
+   <th style="text-align:right;"> pathogen4 </th>
+   <th style="text-align:right;"> pathogen5 </th>
+   <th style="text-align:right;"> pathogen6 </th>
+   <th style="text-align:right;"> pathogen7 </th>
+   <th style="text-align:right;"> pathogen </th>
+   <th style="text-align:right;"> moral </th>
+   <th style="text-align:right;"> sexual </th>
+   <th style="text-align:right;"> total </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:right;"> 1199 </td>
+   <td style="text-align:left;"> U0 </td>
+   <td style="text-align:left;"> 2008-10-07 </td>
+   <td style="text-align:right;"> 5 </td>
+   <td style="text-align:right;"> 6 </td>
+   <td style="text-align:right;"> 4 </td>
+   <td style="text-align:right;"> 6 </td>
+   <td style="text-align:right;"> 5 </td>
+   <td style="text-align:right;"> 5 </td>
+   <td style="text-align:right;"> 6 </td>
+   <td style="text-align:right;"> 4 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 4 </td>
+   <td style="text-align:right;"> 5 </td>
+   <td style="text-align:right;"> 6 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 6 </td>
+   <td style="text-align:right;"> 5 </td>
+   <td style="text-align:right;"> 4 </td>
+   <td style="text-align:right;"> 5 </td>
+   <td style="text-align:right;"> 6 </td>
+   <td style="text-align:right;"> 33 </td>
+   <td style="text-align:right;"> 37 </td>
+   <td style="text-align:right;"> 15 </td>
+   <td style="text-align:right;"> 85 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:left;"> U1 </td>
+   <td style="text-align:left;"> 2008-07-10 </td>
+   <td style="text-align:right;"> 2 </td>
+   <td style="text-align:right;"> 2 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 2 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 3 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 2 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 2 </td>
+   <td style="text-align:right;"> 2 </td>
+   <td style="text-align:right;"> 3 </td>
+   <td style="text-align:right;"> 2 </td>
+   <td style="text-align:right;"> 3 </td>
+   <td style="text-align:right;"> 3 </td>
+   <td style="text-align:right;"> 2 </td>
+   <td style="text-align:right;"> 3 </td>
+   <td style="text-align:right;"> 3 </td>
+   <td style="text-align:right;"> 19 </td>
+   <td style="text-align:right;"> 10 </td>
+   <td style="text-align:right;"> 12 </td>
+   <td style="text-align:right;"> 41 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 1599 </td>
+   <td style="text-align:left;"> U2 </td>
+   <td style="text-align:left;"> 2008-10-27 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> NA </td>
+   <td style="text-align:right;"> NA </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> NA </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> NA </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> NA </td>
+   <td style="text-align:right;"> NA </td>
+   <td style="text-align:right;"> NA </td>
+   <td style="text-align:right;"> NA </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> NA </td>
+   <td style="text-align:right;"> NA </td>
+   <td style="text-align:right;"> NA </td>
+   <td style="text-align:right;"> NA </td>
+   <td style="text-align:right;"> NA </td>
+   <td style="text-align:right;"> NA </td>
+   <td style="text-align:right;"> NA </td>
+   <td style="text-align:right;"> NA </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 13332 </td>
+   <td style="text-align:left;"> U2118 </td>
+   <td style="text-align:left;"> 2012-01-02 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 2 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 4 </td>
+   <td style="text-align:right;"> 3 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 6 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 3 </td>
+   <td style="text-align:right;"> 5 </td>
+   <td style="text-align:right;"> 5 </td>
+   <td style="text-align:right;"> 6 </td>
+   <td style="text-align:right;"> 4 </td>
+   <td style="text-align:right;"> 6 </td>
+   <td style="text-align:right;"> 5 </td>
+   <td style="text-align:right;"> 5 </td>
+   <td style="text-align:right;"> 4 </td>
+   <td style="text-align:right;"> 35 </td>
+   <td style="text-align:right;"> 7 </td>
+   <td style="text-align:right;"> 21 </td>
+   <td style="text-align:right;"> 63 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 23 </td>
+   <td style="text-align:left;"> U2311 </td>
+   <td style="text-align:left;"> 2008-07-15 </td>
+   <td style="text-align:right;"> 4 </td>
+   <td style="text-align:right;"> 4 </td>
+   <td style="text-align:right;"> 4 </td>
+   <td style="text-align:right;"> 4 </td>
+   <td style="text-align:right;"> 4 </td>
+   <td style="text-align:right;"> 4 </td>
+   <td style="text-align:right;"> 4 </td>
+   <td style="text-align:right;"> 2 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 2 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 5 </td>
+   <td style="text-align:right;"> 5 </td>
+   <td style="text-align:right;"> 5 </td>
+   <td style="text-align:right;"> 4 </td>
+   <td style="text-align:right;"> 4 </td>
+   <td style="text-align:right;"> 5 </td>
+   <td style="text-align:right;"> 4 </td>
+   <td style="text-align:right;"> 3 </td>
+   <td style="text-align:right;"> 30 </td>
+   <td style="text-align:right;"> 28 </td>
+   <td style="text-align:right;"> 13 </td>
+   <td style="text-align:right;"> 71 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 1160 </td>
+   <td style="text-align:left;"> U3630 </td>
+   <td style="text-align:left;"> 2008-10-06 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 5 </td>
+   <td style="text-align:right;"> NA </td>
+   <td style="text-align:right;"> 5 </td>
+   <td style="text-align:right;"> 5 </td>
+   <td style="text-align:right;"> 5 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 5 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 2 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 6 </td>
+   <td style="text-align:right;"> 3 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 3 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 15 </td>
+   <td style="text-align:right;"> NA </td>
+   <td style="text-align:right;"> 8 </td>
+   <td style="text-align:right;"> NA </td>
+  </tr>
+</tbody>
+</table>
 
 
 
@@ -386,13 +1177,33 @@ disgust_summary<- disgust_total %>%
   )
 ```
 
-
-
-Table: (\#tab:summarise)All rows from `disgust_summary`
-
-|     n| q25| q50| q75| avg_total| sd_total| min_total| max_total|
-|-----:|---:|---:|---:|---------:|--------:|---------:|---------:|
-| 20000|  59|  71|  83|   70.6868| 18.24253|         0|       126|
+<table>
+<caption>(\#tab:summarise)All rows from `disgust_summary`</caption>
+ <thead>
+  <tr>
+   <th style="text-align:right;"> n </th>
+   <th style="text-align:right;"> q25 </th>
+   <th style="text-align:right;"> q50 </th>
+   <th style="text-align:right;"> q75 </th>
+   <th style="text-align:right;"> avg_total </th>
+   <th style="text-align:right;"> sd_total </th>
+   <th style="text-align:right;"> min_total </th>
+   <th style="text-align:right;"> max_total </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:right;"> 20000 </td>
+   <td style="text-align:right;"> 59 </td>
+   <td style="text-align:right;"> 71 </td>
+   <td style="text-align:right;"> 83 </td>
+   <td style="text-align:right;"> 70.6868 </td>
+   <td style="text-align:right;"> 18.24253 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 126 </td>
+  </tr>
+</tbody>
+</table>
 
 
 
@@ -419,22 +1230,101 @@ disgust_groups <- disgust_total %>%
   )
 ```
 
-
-
-Table: (\#tab:group-by)All rows from `disgust_groups`
-
-| year|    n| avg_total| sd_total| min_total| max_total|
-|----:|----:|---------:|--------:|---------:|---------:|
-| 2008| 2578|  70.29975| 18.46251|         0|       126|
-| 2009| 2580|  69.74481| 18.61959|         3|       126|
-| 2010| 1514|  70.59238| 18.86846|         6|       126|
-| 2011| 6046|  71.34425| 17.79446|         0|       126|
-| 2012| 5938|  70.42530| 18.35782|         0|       126|
-| 2013| 1251|  71.59574| 17.61375|         0|       126|
-| 2014|   58|  70.46296| 17.23502|        19|       113|
-| 2015|   21|  74.26316| 16.89787|        43|       107|
-| 2016|    8|  67.87500| 32.62531|         0|       110|
-| 2017|    6|  57.16667| 27.93862|        21|        90|
+<table>
+<caption>(\#tab:group-by)All rows from `disgust_groups`</caption>
+ <thead>
+  <tr>
+   <th style="text-align:right;"> year </th>
+   <th style="text-align:right;"> n </th>
+   <th style="text-align:right;"> avg_total </th>
+   <th style="text-align:right;"> sd_total </th>
+   <th style="text-align:right;"> min_total </th>
+   <th style="text-align:right;"> max_total </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:right;"> 2008 </td>
+   <td style="text-align:right;"> 2578 </td>
+   <td style="text-align:right;"> 70.29975 </td>
+   <td style="text-align:right;"> 18.46251 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 126 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 2009 </td>
+   <td style="text-align:right;"> 2580 </td>
+   <td style="text-align:right;"> 69.74481 </td>
+   <td style="text-align:right;"> 18.61959 </td>
+   <td style="text-align:right;"> 3 </td>
+   <td style="text-align:right;"> 126 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 2010 </td>
+   <td style="text-align:right;"> 1514 </td>
+   <td style="text-align:right;"> 70.59238 </td>
+   <td style="text-align:right;"> 18.86846 </td>
+   <td style="text-align:right;"> 6 </td>
+   <td style="text-align:right;"> 126 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 2011 </td>
+   <td style="text-align:right;"> 6046 </td>
+   <td style="text-align:right;"> 71.34425 </td>
+   <td style="text-align:right;"> 17.79446 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 126 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 2012 </td>
+   <td style="text-align:right;"> 5938 </td>
+   <td style="text-align:right;"> 70.42530 </td>
+   <td style="text-align:right;"> 18.35782 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 126 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 2013 </td>
+   <td style="text-align:right;"> 1251 </td>
+   <td style="text-align:right;"> 71.59574 </td>
+   <td style="text-align:right;"> 17.61375 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 126 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 2014 </td>
+   <td style="text-align:right;"> 58 </td>
+   <td style="text-align:right;"> 70.46296 </td>
+   <td style="text-align:right;"> 17.23502 </td>
+   <td style="text-align:right;"> 19 </td>
+   <td style="text-align:right;"> 113 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 2015 </td>
+   <td style="text-align:right;"> 21 </td>
+   <td style="text-align:right;"> 74.26316 </td>
+   <td style="text-align:right;"> 16.89787 </td>
+   <td style="text-align:right;"> 43 </td>
+   <td style="text-align:right;"> 107 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 2016 </td>
+   <td style="text-align:right;"> 8 </td>
+   <td style="text-align:right;"> 67.87500 </td>
+   <td style="text-align:right;"> 32.62531 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 110 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 2017 </td>
+   <td style="text-align:right;"> 6 </td>
+   <td style="text-align:right;"> 57.16667 </td>
+   <td style="text-align:right;"> 27.93862 </td>
+   <td style="text-align:right;"> 21 </td>
+   <td style="text-align:right;"> 90 </td>
+  </tr>
+</tbody>
+</table>
 
 
 
@@ -456,19 +1346,53 @@ disgust_lowest <- disgust_total %>%
   arrange(year)
 ```
 
-
-
-Table: (\#tab:group-by-filter)All rows from `disgust_lowest`
-
-|user_id | year| total|
-|:-------|----:|-----:|
-|U236585 | 2009|     3|
-|U292359 | 2010|     6|
-|U245384 | 2013|     0|
-|U206293 | 2014|    19|
-|U407089 | 2015|    43|
-|U453237 | 2016|     0|
-|U356866 | 2017|    21|
+<table>
+<caption>(\#tab:group-by-filter)All rows from `disgust_lowest`</caption>
+ <thead>
+  <tr>
+   <th style="text-align:left;"> user_id </th>
+   <th style="text-align:right;"> year </th>
+   <th style="text-align:right;"> total </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> U236585 </td>
+   <td style="text-align:right;"> 2009 </td>
+   <td style="text-align:right;"> 3 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> U292359 </td>
+   <td style="text-align:right;"> 2010 </td>
+   <td style="text-align:right;"> 6 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> U245384 </td>
+   <td style="text-align:right;"> 2013 </td>
+   <td style="text-align:right;"> 0 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> U206293 </td>
+   <td style="text-align:right;"> 2014 </td>
+   <td style="text-align:right;"> 19 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> U407089 </td>
+   <td style="text-align:right;"> 2015 </td>
+   <td style="text-align:right;"> 43 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> U453237 </td>
+   <td style="text-align:right;"> 2016 </td>
+   <td style="text-align:right;"> 0 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> U356866 </td>
+   <td style="text-align:right;"> 2017 </td>
+   <td style="text-align:right;"> 21 </td>
+  </tr>
+</tbody>
+</table>
 
 
 
@@ -487,18 +1411,69 @@ disgust_smc <- disgust %>%
 Use `ungroup()` as soon as you are done with grouped functions, otherwise the data table will still be grouped when you use it in the future.
 :::
 
-
-
-Table: (\#tab:group-by-mutate)Rows 1-6 from `disgust_smc`
-
-|    id| user_id|date       |question | score|  score_smc|
-|-----:|-------:|:----------|:--------|-----:|----------:|
-|  1199|       0|2008-10-07 |moral1   |     5|  0.9523810|
-|     1|       1|2008-07-10 |moral1   |     2|  0.0476190|
-|  1599|       2|2008-10-27 |moral1   |     1|  0.0000000|
-| 13332|    2118|2012-01-02 |moral1   |     0| -3.0000000|
-|    23|    2311|2008-07-15 |moral1   |     4|  0.6190476|
-|  1160|    3630|2008-10-06 |moral1   |     1| -1.2500000|
+<table>
+<caption>(\#tab:group-by-mutate)Rows 1-6 from `disgust_smc`</caption>
+ <thead>
+  <tr>
+   <th style="text-align:right;"> id </th>
+   <th style="text-align:right;"> user_id </th>
+   <th style="text-align:left;"> date </th>
+   <th style="text-align:left;"> question </th>
+   <th style="text-align:right;"> score </th>
+   <th style="text-align:right;"> score_smc </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:right;"> 1199 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> 2008-10-07 </td>
+   <td style="text-align:left;"> moral1 </td>
+   <td style="text-align:right;"> 5 </td>
+   <td style="text-align:right;"> 0.9523810 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:left;"> 2008-07-10 </td>
+   <td style="text-align:left;"> moral1 </td>
+   <td style="text-align:right;"> 2 </td>
+   <td style="text-align:right;"> 0.0476190 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 1599 </td>
+   <td style="text-align:right;"> 2 </td>
+   <td style="text-align:left;"> 2008-10-27 </td>
+   <td style="text-align:left;"> moral1 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 13332 </td>
+   <td style="text-align:right;"> 2118 </td>
+   <td style="text-align:left;"> 2012-01-02 </td>
+   <td style="text-align:left;"> moral1 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> -3.0000000 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 23 </td>
+   <td style="text-align:right;"> 2311 </td>
+   <td style="text-align:left;"> 2008-07-15 </td>
+   <td style="text-align:left;"> moral1 </td>
+   <td style="text-align:right;"> 4 </td>
+   <td style="text-align:right;"> 0.6190476 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 1160 </td>
+   <td style="text-align:right;"> 3630 </td>
+   <td style="text-align:left;"> 2008-10-06 </td>
+   <td style="text-align:left;"> moral1 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> -1.2500000 </td>
+  </tr>
+</tbody>
+</table>
 
 
 
@@ -518,18 +1493,62 @@ disgust_tidy <- reprores::disgust %>%
   summarise(score = mean(score), .groups = "drop")
 ```
 
-
-
-Table: (\#tab:all-tidy)Rows 1-6 from `disgust_tidy`
-
-| id| user_id|date       |domain   |    score|
-|--:|-------:|:----------|:--------|--------:|
-|  1|       1|2008-07-10 |moral    | 1.428571|
-|  1|       1|2008-07-10 |pathogen | 2.714286|
-|  1|       1|2008-07-10 |sexual   | 1.714286|
-|  3|  155324|2008-07-11 |moral    | 3.000000|
-|  3|  155324|2008-07-11 |pathogen | 2.571429|
-|  3|  155324|2008-07-11 |sexual   | 1.857143|
+<table>
+<caption>(\#tab:all-tidy)Rows 1-6 from `disgust_tidy`</caption>
+ <thead>
+  <tr>
+   <th style="text-align:right;"> id </th>
+   <th style="text-align:right;"> user_id </th>
+   <th style="text-align:left;"> date </th>
+   <th style="text-align:left;"> domain </th>
+   <th style="text-align:right;"> score </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:left;"> 2008-07-10 </td>
+   <td style="text-align:left;"> moral </td>
+   <td style="text-align:right;"> 1.428571 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:left;"> 2008-07-10 </td>
+   <td style="text-align:left;"> pathogen </td>
+   <td style="text-align:right;"> 2.714286 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:left;"> 2008-07-10 </td>
+   <td style="text-align:left;"> sexual </td>
+   <td style="text-align:right;"> 1.714286 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 3 </td>
+   <td style="text-align:right;"> 155324 </td>
+   <td style="text-align:left;"> 2008-07-11 </td>
+   <td style="text-align:left;"> moral </td>
+   <td style="text-align:right;"> 3.000000 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 3 </td>
+   <td style="text-align:right;"> 155324 </td>
+   <td style="text-align:left;"> 2008-07-11 </td>
+   <td style="text-align:left;"> pathogen </td>
+   <td style="text-align:right;"> 2.571429 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 3 </td>
+   <td style="text-align:right;"> 155324 </td>
+   <td style="text-align:left;"> 2008-07-11 </td>
+   <td style="text-align:left;"> sexual </td>
+   <td style="text-align:right;"> 1.857143 </td>
+  </tr>
+</tbody>
+</table>
 
 
 
@@ -545,18 +1564,83 @@ disgust_scored <- disgust_tidy %>%
   arrange(user_id) 
 ```
 
-
-
-Table: (\#tab:all-scored)Rows 1-6 from `disgust_scored`
-
-|    id| user_id|date       |    moral| pathogen|   sexual|     total| year|
-|-----:|-------:|:----------|--------:|--------:|--------:|---------:|----:|
-|  1199|       0|2008-10-07 | 5.285714| 4.714286| 2.142857| 12.142857| 2008|
-|     1|       1|2008-07-10 | 1.428571| 2.714286| 1.714286|  5.857143| 2008|
-| 13332|    2118|2012-01-02 | 1.000000| 5.000000| 3.000000|  9.000000| 2012|
-|    23|    2311|2008-07-15 | 4.000000| 4.285714| 1.857143| 10.142857| 2008|
-|  7980|    4458|2011-09-05 | 3.428571| 3.571429| 3.000000| 10.000000| 2011|
-|   552|    4651|2008-08-23 | 3.857143| 4.857143| 4.285714| 13.000000| 2008|
+<table>
+<caption>(\#tab:all-scored)Rows 1-6 from `disgust_scored`</caption>
+ <thead>
+  <tr>
+   <th style="text-align:right;"> id </th>
+   <th style="text-align:right;"> user_id </th>
+   <th style="text-align:left;"> date </th>
+   <th style="text-align:right;"> moral </th>
+   <th style="text-align:right;"> pathogen </th>
+   <th style="text-align:right;"> sexual </th>
+   <th style="text-align:right;"> total </th>
+   <th style="text-align:right;"> year </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:right;"> 1199 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> 2008-10-07 </td>
+   <td style="text-align:right;"> 5.285714 </td>
+   <td style="text-align:right;"> 4.714286 </td>
+   <td style="text-align:right;"> 2.142857 </td>
+   <td style="text-align:right;"> 12.142857 </td>
+   <td style="text-align:right;"> 2008 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:left;"> 2008-07-10 </td>
+   <td style="text-align:right;"> 1.428571 </td>
+   <td style="text-align:right;"> 2.714286 </td>
+   <td style="text-align:right;"> 1.714286 </td>
+   <td style="text-align:right;"> 5.857143 </td>
+   <td style="text-align:right;"> 2008 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 13332 </td>
+   <td style="text-align:right;"> 2118 </td>
+   <td style="text-align:left;"> 2012-01-02 </td>
+   <td style="text-align:right;"> 1.000000 </td>
+   <td style="text-align:right;"> 5.000000 </td>
+   <td style="text-align:right;"> 3.000000 </td>
+   <td style="text-align:right;"> 9.000000 </td>
+   <td style="text-align:right;"> 2012 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 23 </td>
+   <td style="text-align:right;"> 2311 </td>
+   <td style="text-align:left;"> 2008-07-15 </td>
+   <td style="text-align:right;"> 4.000000 </td>
+   <td style="text-align:right;"> 4.285714 </td>
+   <td style="text-align:right;"> 1.857143 </td>
+   <td style="text-align:right;"> 10.142857 </td>
+   <td style="text-align:right;"> 2008 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 7980 </td>
+   <td style="text-align:right;"> 4458 </td>
+   <td style="text-align:left;"> 2011-09-05 </td>
+   <td style="text-align:right;"> 3.428571 </td>
+   <td style="text-align:right;"> 3.571429 </td>
+   <td style="text-align:right;"> 3.000000 </td>
+   <td style="text-align:right;"> 10.000000 </td>
+   <td style="text-align:right;"> 2011 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 552 </td>
+   <td style="text-align:right;"> 4651 </td>
+   <td style="text-align:left;"> 2008-08-23 </td>
+   <td style="text-align:right;"> 3.857143 </td>
+   <td style="text-align:right;"> 4.857143 </td>
+   <td style="text-align:right;"> 4.285714 </td>
+   <td style="text-align:right;"> 13.000000 </td>
+   <td style="text-align:right;"> 2008 </td>
+  </tr>
+</tbody>
+</table>
 
 
 
@@ -575,22 +1659,112 @@ disgust_summarised <- disgust_scored %>%
   )
 ```
 
-
-
-Table: (\#tab:all-summarised)Rows 1-6 from `disgust_summarised`
-
-| year|    n| avg_pathogen| avg_moral| avg_sexual| first_user| last_user|
-|----:|----:|------------:|---------:|----------:|----------:|---------:|
-| 2008| 2392|     3.697265|  3.806259|   2.539298|          0|    188708|
-| 2009| 2410|     3.674333|  3.760937|   2.528275|       6093|    251959|
-| 2010| 1418|     3.731412|  3.843139|   2.510075|       5469|    319641|
-| 2011| 5586|     3.756918|  3.806506|   2.628612|       4458|    406569|
-| 2012| 5375|     3.740465|  3.774591|   2.545701|       2118|    458194|
-| 2013| 1222|     3.771920|  3.906944|   2.549100|       7646|    462428|
-| 2014|   54|     3.759259|  4.000000|   2.306878|      11090|    461307|
-| 2015|   19|     3.781955|  4.451128|   2.375940|     102699|    460283|
-| 2016|    8|     3.696429|  3.625000|   2.375000|       4976|    453237|
-| 2017|    6|     3.071429|  3.690476|   1.404762|      48303|    370464|
+<table>
+<caption>(\#tab:all-summarised)Rows 1-6 from `disgust_summarised`</caption>
+ <thead>
+  <tr>
+   <th style="text-align:right;"> year </th>
+   <th style="text-align:right;"> n </th>
+   <th style="text-align:right;"> avg_pathogen </th>
+   <th style="text-align:right;"> avg_moral </th>
+   <th style="text-align:right;"> avg_sexual </th>
+   <th style="text-align:right;"> first_user </th>
+   <th style="text-align:right;"> last_user </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:right;"> 2008 </td>
+   <td style="text-align:right;"> 2392 </td>
+   <td style="text-align:right;"> 3.697265 </td>
+   <td style="text-align:right;"> 3.806259 </td>
+   <td style="text-align:right;"> 2.539298 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 188708 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 2009 </td>
+   <td style="text-align:right;"> 2410 </td>
+   <td style="text-align:right;"> 3.674333 </td>
+   <td style="text-align:right;"> 3.760937 </td>
+   <td style="text-align:right;"> 2.528275 </td>
+   <td style="text-align:right;"> 6093 </td>
+   <td style="text-align:right;"> 251959 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 2010 </td>
+   <td style="text-align:right;"> 1418 </td>
+   <td style="text-align:right;"> 3.731412 </td>
+   <td style="text-align:right;"> 3.843139 </td>
+   <td style="text-align:right;"> 2.510075 </td>
+   <td style="text-align:right;"> 5469 </td>
+   <td style="text-align:right;"> 319641 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 2011 </td>
+   <td style="text-align:right;"> 5586 </td>
+   <td style="text-align:right;"> 3.756918 </td>
+   <td style="text-align:right;"> 3.806506 </td>
+   <td style="text-align:right;"> 2.628612 </td>
+   <td style="text-align:right;"> 4458 </td>
+   <td style="text-align:right;"> 406569 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 2012 </td>
+   <td style="text-align:right;"> 5375 </td>
+   <td style="text-align:right;"> 3.740465 </td>
+   <td style="text-align:right;"> 3.774591 </td>
+   <td style="text-align:right;"> 2.545701 </td>
+   <td style="text-align:right;"> 2118 </td>
+   <td style="text-align:right;"> 458194 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 2013 </td>
+   <td style="text-align:right;"> 1222 </td>
+   <td style="text-align:right;"> 3.771920 </td>
+   <td style="text-align:right;"> 3.906944 </td>
+   <td style="text-align:right;"> 2.549100 </td>
+   <td style="text-align:right;"> 7646 </td>
+   <td style="text-align:right;"> 462428 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 2014 </td>
+   <td style="text-align:right;"> 54 </td>
+   <td style="text-align:right;"> 3.759259 </td>
+   <td style="text-align:right;"> 4.000000 </td>
+   <td style="text-align:right;"> 2.306878 </td>
+   <td style="text-align:right;"> 11090 </td>
+   <td style="text-align:right;"> 461307 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 2015 </td>
+   <td style="text-align:right;"> 19 </td>
+   <td style="text-align:right;"> 3.781955 </td>
+   <td style="text-align:right;"> 4.451128 </td>
+   <td style="text-align:right;"> 2.375940 </td>
+   <td style="text-align:right;"> 102699 </td>
+   <td style="text-align:right;"> 460283 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 2016 </td>
+   <td style="text-align:right;"> 8 </td>
+   <td style="text-align:right;"> 3.696429 </td>
+   <td style="text-align:right;"> 3.625000 </td>
+   <td style="text-align:right;"> 2.375000 </td>
+   <td style="text-align:right;"> 4976 </td>
+   <td style="text-align:right;"> 453237 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 2017 </td>
+   <td style="text-align:right;"> 6 </td>
+   <td style="text-align:right;"> 3.071429 </td>
+   <td style="text-align:right;"> 3.690476 </td>
+   <td style="text-align:right;"> 1.404762 </td>
+   <td style="text-align:right;"> 48303 </td>
+   <td style="text-align:right;"> 370464 </td>
+  </tr>
+</tbody>
+</table>
 
 
 
@@ -644,12 +1818,32 @@ distinct(dupes)
 
 <div class="kable-table">
 
-| id|dv |
-|--:|:--|
-|  1|A  |
-|  2|B  |
-|  1|C  |
-|  2|D  |
+<table>
+ <thead>
+  <tr>
+   <th style="text-align:right;"> id </th>
+   <th style="text-align:left;"> dv </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:left;"> A </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 2 </td>
+   <td style="text-align:left;"> B </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:left;"> C </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 2 </td>
+   <td style="text-align:left;"> D </td>
+  </tr>
+</tbody>
+</table>
 
 </div>
 
@@ -666,13 +1860,36 @@ starwars %>%
 
 <div class="kable-table">
 
-|sex            |  n|
-|:--------------|--:|
-|female         | 16|
-|hermaphroditic |  1|
-|male           | 60|
-|none           |  6|
-|NA             |  4|
+<table>
+ <thead>
+  <tr>
+   <th style="text-align:left;"> sex </th>
+   <th style="text-align:right;"> n </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> female </td>
+   <td style="text-align:right;"> 16 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> hermaphroditic </td>
+   <td style="text-align:right;"> 1 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> male </td>
+   <td style="text-align:right;"> 60 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> none </td>
+   <td style="text-align:right;"> 6 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> NA </td>
+   <td style="text-align:right;"> 4 </td>
+  </tr>
+</tbody>
+</table>
 
 </div>
 
@@ -683,13 +1900,36 @@ count(starwars, sex)
 
 <div class="kable-table">
 
-|sex            |  n|
-|:--------------|--:|
-|female         | 16|
-|hermaphroditic |  1|
-|male           | 60|
-|none           |  6|
-|NA             |  4|
+<table>
+ <thead>
+  <tr>
+   <th style="text-align:left;"> sex </th>
+   <th style="text-align:right;"> n </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> female </td>
+   <td style="text-align:right;"> 16 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> hermaphroditic </td>
+   <td style="text-align:right;"> 1 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> male </td>
+   <td style="text-align:right;"> 60 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> none </td>
+   <td style="text-align:right;"> 6 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> NA </td>
+   <td style="text-align:right;"> 4 </td>
+  </tr>
+</tbody>
+</table>
 
 </div>
 
@@ -703,12 +1943,92 @@ slice(starwars, 1:3, 10)
 
 <div class="kable-table">
 
-|name           | height| mass|hair_color    |skin_color  |eye_color | birth_year|sex  |gender    |homeworld |species |films                                                                                                                                                                   |vehicles                                     |starships                                                                                                                        |
-|:--------------|------:|----:|:-------------|:-----------|:---------|----------:|:----|:---------|:---------|:-------|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------|:--------------------------------------------|:--------------------------------------------------------------------------------------------------------------------------------|
-|Luke Skywalker |    172|   77|blond         |fair        |blue      |         19|male |masculine |Tatooine  |Human   |The Empire Strikes Back, Revenge of the Sith    , Return of the Jedi     , A New Hope             , The Force Awakens                                                   |Snowspeeder          , Imperial Speeder Bike |X-wing          , Imperial shuttle                                                                                               |
-|C-3PO          |    167|   75|NA            |gold        |yellow    |        112|none |masculine |Tatooine  |Droid   |The Empire Strikes Back, Attack of the Clones   , The Phantom Menace     , Revenge of the Sith    , Return of the Jedi     , A New Hope                                 |                                             |                                                                                                                                 |
-|R2-D2          |     96|   32|NA            |white, blue |red       |         33|none |masculine |Naboo     |Droid   |The Empire Strikes Back, Attack of the Clones   , The Phantom Menace     , Revenge of the Sith    , Return of the Jedi     , A New Hope             , The Force Awakens |                                             |                                                                                                                                 |
-|Obi-Wan Kenobi |    182|   77|auburn, white |fair        |blue-gray |         57|male |masculine |Stewjon   |Human   |The Empire Strikes Back, Attack of the Clones   , The Phantom Menace     , Revenge of the Sith    , Return of the Jedi     , A New Hope                                 |Tribubble bongo                              |Jedi starfighter        , Trade Federation cruiser, Naboo star skiff        , Jedi Interceptor        , Belbullab-22 starfighter |
+<table>
+ <thead>
+  <tr>
+   <th style="text-align:left;"> name </th>
+   <th style="text-align:right;"> height </th>
+   <th style="text-align:right;"> mass </th>
+   <th style="text-align:left;"> hair_color </th>
+   <th style="text-align:left;"> skin_color </th>
+   <th style="text-align:left;"> eye_color </th>
+   <th style="text-align:right;"> birth_year </th>
+   <th style="text-align:left;"> sex </th>
+   <th style="text-align:left;"> gender </th>
+   <th style="text-align:left;"> homeworld </th>
+   <th style="text-align:left;"> species </th>
+   <th style="text-align:left;"> films </th>
+   <th style="text-align:left;"> vehicles </th>
+   <th style="text-align:left;"> starships </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> Luke Skywalker </td>
+   <td style="text-align:right;"> 172 </td>
+   <td style="text-align:right;"> 77 </td>
+   <td style="text-align:left;"> blond </td>
+   <td style="text-align:left;"> fair </td>
+   <td style="text-align:left;"> blue </td>
+   <td style="text-align:right;"> 19 </td>
+   <td style="text-align:left;"> male </td>
+   <td style="text-align:left;"> masculine </td>
+   <td style="text-align:left;"> Tatooine </td>
+   <td style="text-align:left;"> Human </td>
+   <td style="text-align:left;"> The Empire Strikes Back, Revenge of the Sith    , Return of the Jedi     , A New Hope             , The Force Awakens </td>
+   <td style="text-align:left;"> Snowspeeder          , Imperial Speeder Bike </td>
+   <td style="text-align:left;"> X-wing          , Imperial shuttle </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> C-3PO </td>
+   <td style="text-align:right;"> 167 </td>
+   <td style="text-align:right;"> 75 </td>
+   <td style="text-align:left;"> NA </td>
+   <td style="text-align:left;"> gold </td>
+   <td style="text-align:left;"> yellow </td>
+   <td style="text-align:right;"> 112 </td>
+   <td style="text-align:left;"> none </td>
+   <td style="text-align:left;"> masculine </td>
+   <td style="text-align:left;"> Tatooine </td>
+   <td style="text-align:left;"> Droid </td>
+   <td style="text-align:left;"> The Empire Strikes Back, Attack of the Clones   , The Phantom Menace     , Revenge of the Sith    , Return of the Jedi     , A New Hope </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> R2-D2 </td>
+   <td style="text-align:right;"> 96 </td>
+   <td style="text-align:right;"> 32 </td>
+   <td style="text-align:left;"> NA </td>
+   <td style="text-align:left;"> white, blue </td>
+   <td style="text-align:left;"> red </td>
+   <td style="text-align:right;"> 33 </td>
+   <td style="text-align:left;"> none </td>
+   <td style="text-align:left;"> masculine </td>
+   <td style="text-align:left;"> Naboo </td>
+   <td style="text-align:left;"> Droid </td>
+   <td style="text-align:left;"> The Empire Strikes Back, Attack of the Clones   , The Phantom Menace     , Revenge of the Sith    , Return of the Jedi     , A New Hope             , The Force Awakens </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Obi-Wan Kenobi </td>
+   <td style="text-align:right;"> 182 </td>
+   <td style="text-align:right;"> 77 </td>
+   <td style="text-align:left;"> auburn, white </td>
+   <td style="text-align:left;"> fair </td>
+   <td style="text-align:left;"> blue-gray </td>
+   <td style="text-align:right;"> 57 </td>
+   <td style="text-align:left;"> male </td>
+   <td style="text-align:left;"> masculine </td>
+   <td style="text-align:left;"> Stewjon </td>
+   <td style="text-align:left;"> Human </td>
+   <td style="text-align:left;"> The Empire Strikes Back, Attack of the Clones   , The Phantom Menace     , Revenge of the Sith    , Return of the Jedi     , A New Hope </td>
+   <td style="text-align:left;"> Tribubble bongo </td>
+   <td style="text-align:left;"> Jedi starfighter        , Trade Federation cruiser, Naboo star skiff        , Jedi Interceptor        , Belbullab-22 starfighter </td>
+  </tr>
+</tbody>
+</table>
 
 </div>
 
@@ -751,22 +2071,134 @@ grades <- tibble(
          percentile = ntile(grade, 100))
 ```
 
-
-
-Table: (\#tab:unnamed-chunk-1)All rows from `grades`
-
-| id|class       | grade| row_number| rank| min_rank| dense_rank| quartile| percentile|
-|--:|:-----------|-----:|----------:|----:|--------:|----------:|--------:|----------:|
-|  1|Data Skills |    16|          1|  1.0|        1|          1|        1|          1|
-|  2|Data Skills |    17|          2|  2.5|        2|          2|        1|          2|
-|  3|Data Skills |    17|          3|  2.5|        2|          2|        2|          3|
-|  4|Data Skills |    19|          4|  4.0|        4|          3|        3|          4|
-|  5|Data Skills |    20|          5|  5.0|        5|          4|        4|          5|
-|  1|Statistics  |    14|          1|  1.0|        1|          1|        1|          1|
-|  2|Statistics  |    16|          2|  2.0|        2|          2|        1|          2|
-|  3|Statistics  |    18|          3|  3.5|        3|          3|        2|          3|
-|  4|Statistics  |    18|          4|  3.5|        3|          3|        3|          4|
-|  5|Statistics  |    19|          5|  5.0|        5|          4|        4|          5|
+<table>
+<caption>(\#tab:unnamed-chunk-1)All rows from `grades`</caption>
+ <thead>
+  <tr>
+   <th style="text-align:right;"> id </th>
+   <th style="text-align:left;"> class </th>
+   <th style="text-align:right;"> grade </th>
+   <th style="text-align:right;"> row_number </th>
+   <th style="text-align:right;"> rank </th>
+   <th style="text-align:right;"> min_rank </th>
+   <th style="text-align:right;"> dense_rank </th>
+   <th style="text-align:right;"> quartile </th>
+   <th style="text-align:right;"> percentile </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:left;"> Data Skills </td>
+   <td style="text-align:right;"> 16 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 1.0 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 1 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 2 </td>
+   <td style="text-align:left;"> Data Skills </td>
+   <td style="text-align:right;"> 17 </td>
+   <td style="text-align:right;"> 2 </td>
+   <td style="text-align:right;"> 2.5 </td>
+   <td style="text-align:right;"> 2 </td>
+   <td style="text-align:right;"> 2 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 2 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 3 </td>
+   <td style="text-align:left;"> Data Skills </td>
+   <td style="text-align:right;"> 17 </td>
+   <td style="text-align:right;"> 3 </td>
+   <td style="text-align:right;"> 2.5 </td>
+   <td style="text-align:right;"> 2 </td>
+   <td style="text-align:right;"> 2 </td>
+   <td style="text-align:right;"> 2 </td>
+   <td style="text-align:right;"> 3 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 4 </td>
+   <td style="text-align:left;"> Data Skills </td>
+   <td style="text-align:right;"> 19 </td>
+   <td style="text-align:right;"> 4 </td>
+   <td style="text-align:right;"> 4.0 </td>
+   <td style="text-align:right;"> 4 </td>
+   <td style="text-align:right;"> 3 </td>
+   <td style="text-align:right;"> 3 </td>
+   <td style="text-align:right;"> 4 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 5 </td>
+   <td style="text-align:left;"> Data Skills </td>
+   <td style="text-align:right;"> 20 </td>
+   <td style="text-align:right;"> 5 </td>
+   <td style="text-align:right;"> 5.0 </td>
+   <td style="text-align:right;"> 5 </td>
+   <td style="text-align:right;"> 4 </td>
+   <td style="text-align:right;"> 4 </td>
+   <td style="text-align:right;"> 5 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:left;"> Statistics </td>
+   <td style="text-align:right;"> 14 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 1.0 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 1 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 2 </td>
+   <td style="text-align:left;"> Statistics </td>
+   <td style="text-align:right;"> 16 </td>
+   <td style="text-align:right;"> 2 </td>
+   <td style="text-align:right;"> 2.0 </td>
+   <td style="text-align:right;"> 2 </td>
+   <td style="text-align:right;"> 2 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 2 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 3 </td>
+   <td style="text-align:left;"> Statistics </td>
+   <td style="text-align:right;"> 18 </td>
+   <td style="text-align:right;"> 3 </td>
+   <td style="text-align:right;"> 3.5 </td>
+   <td style="text-align:right;"> 3 </td>
+   <td style="text-align:right;"> 3 </td>
+   <td style="text-align:right;"> 2 </td>
+   <td style="text-align:right;"> 3 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 4 </td>
+   <td style="text-align:left;"> Statistics </td>
+   <td style="text-align:right;"> 18 </td>
+   <td style="text-align:right;"> 4 </td>
+   <td style="text-align:right;"> 3.5 </td>
+   <td style="text-align:right;"> 3 </td>
+   <td style="text-align:right;"> 3 </td>
+   <td style="text-align:right;"> 3 </td>
+   <td style="text-align:right;"> 4 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 5 </td>
+   <td style="text-align:left;"> Statistics </td>
+   <td style="text-align:right;"> 19 </td>
+   <td style="text-align:right;"> 5 </td>
+   <td style="text-align:right;"> 5.0 </td>
+   <td style="text-align:right;"> 5 </td>
+   <td style="text-align:right;"> 4 </td>
+   <td style="text-align:right;"> 4 </td>
+   <td style="text-align:right;"> 5 </td>
+  </tr>
+</tbody>
+</table>
 
 
 
@@ -792,16 +2224,43 @@ sw_mass <- starwars %>%
             .groups = "drop")
 ```
 
-
-
-Table: (\#tab:unnamed-chunk-2)All rows from `sw_mass`
-
-| tertile| min|  max|     mean|
-|-------:|---:|----:|--------:|
-|       1|  15|   68|  45.6600|
-|       2|  74|   82|  78.4100|
-|       3|  83| 1358| 171.5789|
-|      NA|  NA|   NA|       NA|
+<table>
+<caption>(\#tab:unnamed-chunk-2)All rows from `sw_mass`</caption>
+ <thead>
+  <tr>
+   <th style="text-align:right;"> tertile </th>
+   <th style="text-align:right;"> min </th>
+   <th style="text-align:right;"> max </th>
+   <th style="text-align:right;"> mean </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 15 </td>
+   <td style="text-align:right;"> 68 </td>
+   <td style="text-align:right;"> 45.6600 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 2 </td>
+   <td style="text-align:right;"> 74 </td>
+   <td style="text-align:right;"> 82 </td>
+   <td style="text-align:right;"> 78.4100 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 3 </td>
+   <td style="text-align:right;"> 83 </td>
+   <td style="text-align:right;"> 1358 </td>
+   <td style="text-align:right;"> 171.5789 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> NA </td>
+   <td style="text-align:right;"> NA </td>
+   <td style="text-align:right;"> NA </td>
+   <td style="text-align:right;"> NA </td>
+  </tr>
+</tbody>
+</table>
 
 
 
@@ -822,18 +2281,55 @@ lag_lead <- tibble(x = 1:6) %>%
          lead = lead(x, default = 0))
 ```
 
-
-
-Table: (\#tab:unnamed-chunk-3)All rows from `lag_lead`
-
-|  x| lag| lag2| lead|
-|--:|---:|----:|----:|
-|  1|  NA|   NA|    2|
-|  2|   1|   NA|    3|
-|  3|   2|    1|    4|
-|  4|   3|    2|    5|
-|  5|   4|    3|    6|
-|  6|   5|    4|    0|
+<table>
+<caption>(\#tab:unnamed-chunk-3)All rows from `lag_lead`</caption>
+ <thead>
+  <tr>
+   <th style="text-align:right;"> x </th>
+   <th style="text-align:right;"> lag </th>
+   <th style="text-align:right;"> lag2 </th>
+   <th style="text-align:right;"> lead </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> NA </td>
+   <td style="text-align:right;"> NA </td>
+   <td style="text-align:right;"> 2 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 2 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> NA </td>
+   <td style="text-align:right;"> 3 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 3 </td>
+   <td style="text-align:right;"> 2 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 4 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 4 </td>
+   <td style="text-align:right;"> 3 </td>
+   <td style="text-align:right;"> 2 </td>
+   <td style="text-align:right;"> 5 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 5 </td>
+   <td style="text-align:right;"> 4 </td>
+   <td style="text-align:right;"> 3 </td>
+   <td style="text-align:right;"> 6 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 6 </td>
+   <td style="text-align:right;"> 5 </td>
+   <td style="text-align:right;"> 4 </td>
+   <td style="text-align:right;"> 0 </td>
+  </tr>
+</tbody>
+</table>
 
 
 
@@ -854,22 +2350,90 @@ trials <- tibble(
   arrange(trial)
 ```
 
-
-
-Table: (\#tab:offset-adv)All rows from `trials`
-
-| trial|cond | score| score_change|change_cond |
-|-----:|:----|-----:|------------:|:-----------|
-|     1|ctrl |     8|           NA|TRUE        |
-|     2|ctrl |     4|           -4|FALSE       |
-|     3|exp  |     6|            2|TRUE        |
-|     4|ctrl |     2|           -4|TRUE        |
-|     5|ctrl |     3|            1|FALSE       |
-|     6|ctrl |     6|            3|FALSE       |
-|     7|ctrl |     2|           -4|FALSE       |
-|     8|exp  |     4|            2|TRUE        |
-|     9|ctrl |     4|            0|TRUE        |
-|    10|exp  |     3|           -1|TRUE        |
+<table>
+<caption>(\#tab:offset-adv)All rows from `trials`</caption>
+ <thead>
+  <tr>
+   <th style="text-align:right;"> trial </th>
+   <th style="text-align:left;"> cond </th>
+   <th style="text-align:right;"> score </th>
+   <th style="text-align:right;"> score_change </th>
+   <th style="text-align:left;"> change_cond </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:left;"> ctrl </td>
+   <td style="text-align:right;"> 8 </td>
+   <td style="text-align:right;"> NA </td>
+   <td style="text-align:left;"> TRUE </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 2 </td>
+   <td style="text-align:left;"> ctrl </td>
+   <td style="text-align:right;"> 4 </td>
+   <td style="text-align:right;"> -4 </td>
+   <td style="text-align:left;"> FALSE </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 3 </td>
+   <td style="text-align:left;"> exp </td>
+   <td style="text-align:right;"> 6 </td>
+   <td style="text-align:right;"> 2 </td>
+   <td style="text-align:left;"> TRUE </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 4 </td>
+   <td style="text-align:left;"> ctrl </td>
+   <td style="text-align:right;"> 2 </td>
+   <td style="text-align:right;"> -4 </td>
+   <td style="text-align:left;"> TRUE </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 5 </td>
+   <td style="text-align:left;"> ctrl </td>
+   <td style="text-align:right;"> 3 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:left;"> FALSE </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 6 </td>
+   <td style="text-align:left;"> ctrl </td>
+   <td style="text-align:right;"> 6 </td>
+   <td style="text-align:right;"> 3 </td>
+   <td style="text-align:left;"> FALSE </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 7 </td>
+   <td style="text-align:left;"> ctrl </td>
+   <td style="text-align:right;"> 2 </td>
+   <td style="text-align:right;"> -4 </td>
+   <td style="text-align:left;"> FALSE </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 8 </td>
+   <td style="text-align:left;"> exp </td>
+   <td style="text-align:right;"> 4 </td>
+   <td style="text-align:right;"> 2 </td>
+   <td style="text-align:left;"> TRUE </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 9 </td>
+   <td style="text-align:left;"> ctrl </td>
+   <td style="text-align:right;"> 4 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> TRUE </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 10 </td>
+   <td style="text-align:left;"> exp </td>
+   <td style="text-align:right;"> 3 </td>
+   <td style="text-align:right;"> -1 </td>
+   <td style="text-align:left;"> TRUE </td>
+  </tr>
+</tbody>
+</table>
 
 
 
@@ -900,22 +2464,112 @@ cumulative <- tibble(
   )
 ```
 
-
-
-Table: (\#tab:unnamed-chunk-4)All rows from `cumulative`
-
-| time| obs| cumsum| cummin| cummax|cumany |cumall |
-|----:|---:|------:|------:|------:|:------|:------|
-|    1|   2|      2|      2|      2|FALSE  |TRUE   |
-|    2|   2|      4|      2|      2|FALSE  |TRUE   |
-|    3|   1|      5|      1|      2|FALSE  |TRUE   |
-|    4|   2|      7|      1|      2|FALSE  |TRUE   |
-|    5|   4|     11|      1|      4|FALSE  |FALSE  |
-|    6|   3|     14|      1|      4|TRUE   |FALSE  |
-|    7|   1|     15|      1|      4|TRUE   |FALSE  |
-|    8|   0|     15|      0|      4|TRUE   |FALSE  |
-|    9|   3|     18|      0|      4|TRUE   |FALSE  |
-|   10|   5|     23|      0|      5|TRUE   |FALSE  |
+<table>
+<caption>(\#tab:unnamed-chunk-4)All rows from `cumulative`</caption>
+ <thead>
+  <tr>
+   <th style="text-align:right;"> time </th>
+   <th style="text-align:right;"> obs </th>
+   <th style="text-align:right;"> cumsum </th>
+   <th style="text-align:right;"> cummin </th>
+   <th style="text-align:right;"> cummax </th>
+   <th style="text-align:left;"> cumany </th>
+   <th style="text-align:left;"> cumall </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 2 </td>
+   <td style="text-align:right;"> 2 </td>
+   <td style="text-align:right;"> 2 </td>
+   <td style="text-align:right;"> 2 </td>
+   <td style="text-align:left;"> FALSE </td>
+   <td style="text-align:left;"> TRUE </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 2 </td>
+   <td style="text-align:right;"> 2 </td>
+   <td style="text-align:right;"> 4 </td>
+   <td style="text-align:right;"> 2 </td>
+   <td style="text-align:right;"> 2 </td>
+   <td style="text-align:left;"> FALSE </td>
+   <td style="text-align:left;"> TRUE </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 3 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 5 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 2 </td>
+   <td style="text-align:left;"> FALSE </td>
+   <td style="text-align:left;"> TRUE </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 4 </td>
+   <td style="text-align:right;"> 2 </td>
+   <td style="text-align:right;"> 7 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 2 </td>
+   <td style="text-align:left;"> FALSE </td>
+   <td style="text-align:left;"> TRUE </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 5 </td>
+   <td style="text-align:right;"> 4 </td>
+   <td style="text-align:right;"> 11 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 4 </td>
+   <td style="text-align:left;"> FALSE </td>
+   <td style="text-align:left;"> FALSE </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 6 </td>
+   <td style="text-align:right;"> 3 </td>
+   <td style="text-align:right;"> 14 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 4 </td>
+   <td style="text-align:left;"> TRUE </td>
+   <td style="text-align:left;"> FALSE </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 7 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 15 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 4 </td>
+   <td style="text-align:left;"> TRUE </td>
+   <td style="text-align:left;"> FALSE </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 8 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 15 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 4 </td>
+   <td style="text-align:left;"> TRUE </td>
+   <td style="text-align:left;"> FALSE </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 9 </td>
+   <td style="text-align:right;"> 3 </td>
+   <td style="text-align:right;"> 18 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 4 </td>
+   <td style="text-align:left;"> TRUE </td>
+   <td style="text-align:left;"> FALSE </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 10 </td>
+   <td style="text-align:right;"> 5 </td>
+   <td style="text-align:right;"> 23 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 5 </td>
+   <td style="text-align:left;"> TRUE </td>
+   <td style="text-align:left;"> FALSE </td>
+  </tr>
+</tbody>
+</table>
 
 
 
@@ -927,11 +2581,20 @@ Table: (\#tab:unnamed-chunk-4)All rows from `cumulative`
 
 ## Glossary {#glossary-dplyr}
 
-
-
-|term                                                                                                           |definition                                                                |
-|:--------------------------------------------------------------------------------------------------------------|:-------------------------------------------------------------------------|
-|[data wrangling](https://psyteachr.github.io/glossary/d.html#data-wrangling){class="glossary" target="_blank"} |The process of preparing data for visualisation and statistical analysis. |
+<table class="table" style="margin-left: auto; margin-right: auto;">
+ <thead>
+  <tr>
+   <th style="text-align:left;"> term </th>
+   <th style="text-align:left;"> definition </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> [data wrangling](https://psyteachr.github.io/glossary/d.html#data-wrangling){class="glossary" target="_blank"} </td>
+   <td style="text-align:left;"> The process of preparing data for visualisation and statistical analysis. </td>
+  </tr>
+</tbody>
+</table>
 
 
 

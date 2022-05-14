@@ -4,11 +4,11 @@ citEntry(
   entry    = "Manual",
   title    = "Data Skills for Reproducible Science",
   author   = "Lisa DeBruine and Dale Barr",
-  doi      = "10.5281/zenodo.3564348",
+  doi      = "10.5281/zenodo.6527194",
   publisher = "Zenodo",
-  year     = "2020",
-  month    = "August",
+  year     = "2021",
+  month    = "September",
   note     = "R package version 2.0",
   url      = "https://psyteachr.github.io/msc-data-skills/",
-  textVersion = paste("Lisa DeBruine and Dale Barr (2020, August 3). Data Skills for Reproducible Science. R package version 2.0. Zenodo. http://doi.org/10.5281/zenodo.3564348")
+  textVersion = paste("Lisa DeBruine and Dale Barr (2021, Septmeber 18). Data Skills for Reproducible Science. R package version 2.0. Zenodo. http://doi.org/10.5281/zenodo.6527194")
 )

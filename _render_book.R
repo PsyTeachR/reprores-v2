@@ -41,7 +41,6 @@ browseURL(
   xfun::in_dir("book", bookdown::render_book("index.Rmd", "bookdown::bs4_book"))
 )
 
-
 #browseURL(xfun::in_dir("book", bookdown::preview_chapter("06-tidyr.Rmd", output = "bookdown::bs4_book")))
 
 # copies dir

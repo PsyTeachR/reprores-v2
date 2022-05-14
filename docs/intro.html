@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <title>Chapter 1 Getting Started | Data Skills for Reproducible Research</title>
 <meta name="description" content="1.1 Learning Objectives Understand the components of the RStudio IDE (video) Type commands into the console (video) Understand coding terms and function syntax (video) Install a package (video)...">
-<meta name="generator" content="bookdown 0.24 with bs4_book()">
+<meta name="generator" content="bookdown 0.26 with bs4_book()">
 <meta property="og:title" content="Chapter 1 Getting Started | Data Skills for Reproducible Research">
 <meta property="og:type" content="book">
 <meta property="og:url" content="https://psyteachr.github.io/reprores-v2/intro.html">
@@ -16,18 +16,45 @@
 <meta name="twitter:title" content="Chapter 1 Getting Started | Data Skills for Reproducible Research">
 <meta name="twitter:description" content="1.1 Learning Objectives Understand the components of the RStudio IDE (video) Type commands into the console (video) Understand coding terms and function syntax (video) Install a package (video)...">
 <meta name="twitter:image" content="https://psyteachr.github.io/reprores-v2/images/logos/logo.png">
-<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/header-attrs-2.11/header-attrs.js"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
-<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.3.0/transition.js"></script><script src="libs/bs3compat-0.3.0/tabs.js"></script><script src="libs/bs3compat-0.3.0/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
-<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="libs/htmlwidgets-1.5.4/htmlwidgets.js"></script><script src="libs/plotly-binding-4.9.4.1/plotly.js"></script><script src="libs/typedarray-0.1/typedarray.min.js"></script><link href="libs/crosstalk-1.1.1/css/crosstalk.css" rel="stylesheet">
-<script src="libs/crosstalk-1.1.1/js/crosstalk.min.js"></script><link href="libs/plotly-htmlwidgets-css-1.57.1/plotly-htmlwidgets.css" rel="stylesheet">
-<script src="libs/plotly-main-1.57.1/plotly-latest.min.js"></script><!-- Global site tag (gtag.js) - Google Analytics --><script async src="https://www.googletagmanager.com/gtag/js?id=G-6NP3MF25W3"></script><script>
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.3.1/transition.js"></script><script src="libs/bs3compat-0.3.1/tabs.js"></script><script src="libs/bs3compat-0.3.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="libs/kePrint-0.0.1/kePrint.js"></script><link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet">
+<script src="libs/htmlwidgets-1.5.4/htmlwidgets.js"></script><script src="libs/plotly-binding-4.10.0/plotly.js"></script><script src="libs/typedarray-0.1/typedarray.min.js"></script><link href="libs/crosstalk-1.2.0/css/crosstalk.min.css" rel="stylesheet">
+<script src="libs/crosstalk-1.2.0/js/crosstalk.min.js"></script><link href="libs/plotly-htmlwidgets-css-2.5.1/plotly-htmlwidgets.css" rel="stylesheet">
+<script src="libs/plotly-main-2.5.1/plotly-latest.min.js"></script><!-- Global site tag (gtag.js) - Google Analytics --><script async src="https://www.googletagmanager.com/gtag/js?id=G-6NP3MF25W3"></script><script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
 
       gtag('config', 'G-6NP3MF25W3');
-    </script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><link rel="stylesheet" href="include/webex.css">
+    </script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
+    
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  </style>
+<style type="text/css">
+    /* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+    div.csl-bib-body { }
+    div.csl-entry {
+      clear: both;
+        }
+    .hanging div.csl-entry {
+      margin-left:2em;
+      text-indent:-2em;
+    }
+    div.csl-left-margin {
+      min-width:2em;
+      float:left;
+    }
+    div.csl-right-inline {
+      margin-left:2em;
+      padding-left:1em;
+    }
+    div.csl-indent {
+      margin-left: 2em;
+    }
+  </style>
+<link rel="stylesheet" href="include/webex.css">
 <link rel="stylesheet" href="include/psyteachr.css">
 <link rel="stylesheet" href="include/style.css">
 </head>
@@ -39,8 +66,8 @@
 
     <div class="d-flex align-items-start justify-content-between">
       <h1>
-        <a href="index.html" title="v2">Data Skills for Reproducible Research</a>:
-        <small class="text-muted">v2</small>
+        <a href="index.html" title="&lt;br&gt;&lt;a href='https://doi.org/10.5281/zenodo.6527194'&gt;&lt;img src='https://zenodo.org/badge/DOI/10.5281/zenodo.6527194.svg' alt='DOI: 10.5281/zenodo.6527194'&gt;&lt;/a&gt;">Data Skills for Reproducible Research</a>:
+        <small class="text-muted"><br><a href="https://doi.org/10.5281/zenodo.6527194"><img src="https://zenodo.org/badge/DOI/10.5281/zenodo.6527194.svg" alt="DOI: 10.5281/zenodo.6527194"></a></small>
       </h1>
       <button class="btn btn-outline-primary d-lg-none ml-2 mt-1" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="true" aria-controls="main-nav"><i class="fas fa-bars"></i><span class="sr-only">Show table of contents</span></button>
     </div>
@@ -338,7 +365,7 @@ He turned to me as if to say, \"Hurry boy, it's waiting there for you\"
 <span class="va">b</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>ctl  <span class="op">=</span> <span class="st">"Control Condition"</span>, 
           exp1 <span class="op">=</span> <span class="st">"Experimental Condition 1"</span>, 
           exp2 <span class="op">=</span> <span class="st">"Experimental Condition 2"</span><span class="op">)</span></code></pre></div>
-<p>When you see <code><a href="https://rdrr.io/r/base/Comparison.html">&gt;</a></code> at the beginning of a line, that means R is waiting for you to start a new command. However, if you see a <code><a href="https://rdrr.io/r/base/Arithmetic.html">+</a></code> instead of <code><a href="https://rdrr.io/r/base/Comparison.html">&gt;</a></code> at the start of the line, that means R is waiting for you to finish a command you started on a previous line. If you want to cancel whatever command you started, just press the Esc key in the console window and you'll get back to the <code><a href="https://rdrr.io/r/base/Comparison.html">&gt;</a></code> command prompt.</p>
+<p>When you see <code>&gt;</code> at the beginning of a line, that means R is waiting for you to start a new command. However, if you see a <code>+</code> instead of <code>&gt;</code> at the start of the line, that means R is waiting for you to finish a command you started on a previous line. If you want to cancel whatever command you started, just press the Esc key in the console window and you'll get back to the <code>&gt;</code> command prompt.</p>
 <div class="sourceCode" id="cb20"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># R waits until next line for evaluation</span>
 <span class="op">(</span><span class="fl">3</span> <span class="op">+</span> <span class="fl">2</span><span class="op">)</span> <span class="op">*</span>
@@ -376,23 +403,23 @@ He turned to me as if to say, \"Hurry boy, it's waiting there for you\"
 <p>If you want 10 random numbers from a normal distribution with mean of 0 and standard deviation, you can just use the defaults.</p>
 <div class="sourceCode" id="cb28"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span><span class="fl">10</span><span class="op">)</span></code></pre></div>
-<pre><code>##  [1] -0.1261434  1.4589505 -0.4946816 -0.2404575 -2.0816079 -0.5191217
-##  [7] -0.2350644 -0.2667953  2.5186589 -0.1679481</code></pre>
+<pre><code>##  [1] -0.5344867 -0.2276507  1.0618645 -0.5595386 -1.6136703  1.3784837
+##  [7]  1.4968278 -0.2370074 -0.9416609 -0.2707848</code></pre>
 <p>If you want 10 numbers from a normal distribution with a mean of 100:</p>
 <div class="sourceCode" id="cb30"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span><span class="fl">10</span>, <span class="fl">100</span><span class="op">)</span></code></pre></div>
-<pre><code>##  [1]  99.47494 101.43160  99.74961 100.97629  98.47288 101.94459 100.96743
-##  [8] 100.32163  99.44986  99.86240</code></pre>
+<pre><code>##  [1] 100.97507  99.55528 100.56415  99.95180 100.60461 101.55358  98.32692
+##  [8] 100.93756  99.91524 100.75882</code></pre>
 <p>This would be an equivalent but less efficient way of calling the function:</p>
 <div class="sourceCode" id="cb32"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span>n <span class="op">=</span> <span class="fl">10</span>, mean <span class="op">=</span> <span class="fl">100</span><span class="op">)</span></code></pre></div>
-<pre><code>##  [1]  99.49811  99.03648 100.98953  98.25006 100.32395  98.36760 100.73478
-##  [8]  98.89632  99.63834 101.09409</code></pre>
+<pre><code>##  [1]  99.99917 100.74322 100.41184  99.84676  99.59341  99.59021  99.72071
+##  [8] 101.03546 100.54869 101.20280</code></pre>
 <p>We don't need to name the arguments because R will recognize that we intended to fill in the first and second arguments by their position in the function call. However, if we want to change the default for an argument coming later in the list, then we need to name it. For instance, if we wanted to keep the default <code>mean = 0</code> but change the standard deviation to 100, we would do it this way:</p>
 <div class="sourceCode" id="cb34"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span><span class="fl">10</span>, sd <span class="op">=</span> <span class="fl">100</span><span class="op">)</span></code></pre></div>
-<pre><code>##  [1]   95.12395  121.25049   18.68161   22.52584 -170.54741   15.18297
-##  [7]   26.62335  -50.63976  -11.85407 -140.15247</code></pre>
+<pre><code>##  [1]    8.476711   91.711014 -184.296080   29.186023   57.578742  -62.537132
+##  [7] -195.088157   10.556623   52.547021   90.537665</code></pre>
 <p>Some functions give a list of options after an argument; this means the default value is the first option. The usage entry for the <code><span class="fu"><a href="https://rdrr.io/r/stats/power.t.test.html">power.t.test</a></span><span class="op">(</span><span class="op">)</span></code> function looks like this:</p>
 <div class="sourceCode" id="cb36"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/stats/power.t.test.html">power.t.test</a></span><span class="op">(</span>n <span class="op">=</span> <span class="cn">NULL</span>, delta <span class="op">=</span> <span class="cn">NULL</span>, sd <span class="op">=</span> <span class="fl">1</span>, sig.level <span class="op">=</span> <span class="fl">0.05</span>,
@@ -403,20 +430,20 @@ He turned to me as if to say, \"Hurry boy, it's waiting there for you\"
 <div class="try">
 <ul>
 <li>What is the default value for <code>sd</code>? <select class="webex-select"><option value="blank"></option>
-<option value="">NULL</option>
-<option value="">0.05</option>
 <option value="answer">1</option>
-<option value="">two.sample</option></select>
+<option value="">two.sample</option>
+<option value="">NULL</option>
+<option value="">0.05</option></select>
 </li>
 <li>What is the default value for <code>type</code>? <select class="webex-select"><option value="blank"></option>
-<option value="answer">two.sample</option>
-<option value="">NULL</option>
 <option value="">one.sample</option>
-<option value="">paired</option></select>
+<option value="">NULL</option>
+<option value="">paired</option>
+<option value="answer">two.sample</option></select>
 </li>
 <li>Which is equivalent to <code><span class="fu"><a href="https://rdrr.io/r/stats/power.t.test.html">power.t.test</a></span><span class="op">(</span><span class="fl">100</span>, <span class="fl">0.5</span><span class="op">)</span></code>?
-<div id="radio_IFBIGISBGH" class="webex-radiogroup">
-<label><input type="radio" autocomplete="off" name="radio_IFBIGISBGH" value="answer"><span>power.t.test(delta = 0.5, n = 100)</span></label><label><input type="radio" autocomplete="off" name="radio_IFBIGISBGH" value=""><span>power.t.test()</span></label><label><input type="radio" autocomplete="off" name="radio_IFBIGISBGH" value=""><span>power.t.test(100, 0.5, sig.level = 1, sd = 0.05)</span></label><label><input type="radio" autocomplete="off" name="radio_IFBIGISBGH" value=""><span>power.t.test(n = 100)</span></label>
+<div id="radio_GPVDVPGQGG" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_GPVDVPGQGG" value=""><span>power.t.test(100, 0.5, sig.level = 1, sd = 0.05)</span></label><label><input type="radio" autocomplete="off" name="radio_GPVDVPGQGG" value="answer"><span>power.t.test(delta = 0.5, n = 100)</span></label><label><input type="radio" autocomplete="off" name="radio_GPVDVPGQGG" value=""><span>power.t.test()</span></label><label><input type="radio" autocomplete="off" name="radio_GPVDVPGQGG" value=""><span>power.t.test(n = 100)</span></label>
 </div>
 </li>
 </ul>
@@ -458,13 +485,13 @@ He turned to me as if to say, \"Hurry boy, it's waiting there for you\"
 <p>This is done using <code><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">packagename</span><span class="op">)</span></code>. This is like <strong>launching</strong> an app on your phone: the functionality is only there where the app is launched and remains there until you close the app or restart. Likewise, when you run <code><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">packagename</span><span class="op">)</span></code> within a session, the functionality of the package referred to by <code>packagename</code> will be made available for your R session. The next time you start R, you will need to run the <code><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="op">)</span></code> function again if you want to access its functionality.</p>
 <p>You can load the functions in <code class="package">esquisse</code> for your current R session as follows:</p>
 <div class="sourceCode" id="cb38"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/dreamRs/esquisse">esquisse</a></span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://dreamrs.github.io/esquisse/">esquisse</a></span><span class="op">)</span></code></pre></div>
 <p>You might get some red text when you load a package, this is normal. It is usually warning you that this package has functions that have the same name as other packages you've already loaded.</p>
-<p>Now you can run the function <code><span class="fu">esquisse</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/esquisse/man/esquisser.html">esquisser</a></span><span class="op">(</span><span class="op">)</span></code>, which runs an interactive plotting example on the built-in dataset <code>diamonds</code> from the <code class="package">ggplot2</code> package.</p>
+<p>Now you can run the function <code><span class="fu">esquisse</span><span class="fu">::</span><span class="fu"><a href="https://dreamrs.github.io/esquisse/reference/esquisser.html">esquisser</a></span><span class="op">(</span><span class="op">)</span></code>, which runs an interactive plotting example on the built-in dataset <code>diamonds</code> from the <code class="package">ggplot2</code> package.</p>
 <div class="sourceCode" id="cb39"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu">esquisse</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/esquisse/man/esquisser.html">esquisser</a></span><span class="op">(</span><span class="fu">ggplot2</span><span class="fu">::</span><span class="va"><a href="https://rdrr.io/pkg/ggplot2/man/diamonds.html">diamonds</a></span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span class="fu">esquisse</span><span class="fu">::</span><span class="fu"><a href="https://dreamrs.github.io/esquisse/reference/esquisser.html">esquisser</a></span><span class="op">(</span><span class="fu">ggplot2</span><span class="fu">::</span><span class="va"><a href="https://ggplot2.tidyverse.org/reference/diamonds.html">diamonds</a></span><span class="op">)</span></code></pre></div>
 <div class="info">
-<p>You can use the convention <code>package::function()</code> to indicate in which add-on package a function resides. For instance, if you see <code><span class="fu">readr</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/readr/man/read_delim.html">read_csv</a></span><span class="op">(</span><span class="op">)</span></code>, that refers to the function <code><span class="fu">read_csv</span><span class="op">(</span><span class="op">)</span></code> in the <code class="package">readr</code> add-on package.</p>
+<p>You can use the convention <code>package::function()</code> to indicate in which add-on package a function resides. For instance, if you see <code><span class="fu">readr</span><span class="fu">::</span><span class="fu"><a href="https://readr.tidyverse.org/reference/read_delim.html">read_csv</a></span><span class="op">(</span><span class="op">)</span></code>, that refers to the function <code><span class="fu">read_csv</span><span class="op">(</span><span class="op">)</span></code> in the <code class="package">readr</code> add-on package.</p>
 </div>
 </div>
 <div id="tidyverse" class="section level3" number="1.5.3">
@@ -508,7 +535,7 @@ Figure 1.4: Check installed and loaded packages in the packages tab in the lower
 <code class="sourceCode R"><span class="co"># install devtools if you get</span>
 <span class="co"># Error in loadNamespace(name) : there is no package called ‘devtools’</span>
 <span class="co"># install.packages("devtools")</span>
-<span class="fu">devtools</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/devtools/man/remote-reexports.html">install_github</a></span><span class="op">(</span><span class="st">"psyteachr/reprores-v2"</span><span class="op">)</span></code></pre></div>
+<span class="fu">devtools</span><span class="fu">::</span><span class="fu"><a href="https://devtools.r-lib.org/reference/remote-reexports.html">install_github</a></span><span class="op">(</span><span class="st">"psyteachr/reprores-v2"</span><span class="op">)</span></code></pre></div>
 <p>After you install the <code class="package">reprores</code> package, load it using the <code><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="op">)</span></code> function. You can then try out some of the functions below.</p>
 <div class="sourceCode" id="cb41"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/psyteachr/reprores-v2">reprores</a></span><span class="op">)</span>
@@ -596,107 +623,195 @@ Figure 1.4: Check installed and loaded packages in the packages tab in the lower
 <p>Each chapter ends with a glossary table defining the jargon introduced in this chapter. The links below take you to the <a href="https://psyteachr.github.io/glossary">glossary book</a>, which you can also download for offline use.</p>
 <div class="sourceCode" id="cb45"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># install the glossary package (only once)</span>
-<span class="fu">devtools</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/devtools/man/remote-reexports.html">install_github</a></span><span class="op">(</span><span class="st">"psyteachr/glossary"</span><span class="op">)</span>
+<span class="fu">devtools</span><span class="fu">::</span><span class="fu"><a href="https://devtools.r-lib.org/reference/remote-reexports.html">install_github</a></span><span class="op">(</span><span class="st">"psyteachr/glossary"</span><span class="op">)</span>
 
 <span class="co"># open the glossary offline </span>
 <span class="fu">glossary</span><span class="fu">::</span><span class="fu">book</span><span class="op">(</span><span class="op">)</span></code></pre></div>
-<div class="inline-table"><table class="table table-sm">
-<colgroup>
-<col width="42%">
-<col width="57%">
-</colgroup>
-<thead><tr class="header">
-<th align="left">term</th>
-<th align="left">definition</th>
+<div class="inline-table"><table class="table" style="margin-left: auto; margin-right: auto;">
+<thead><tr>
+<th style="text-align:left;">
+term
+</th>
+<th style="text-align:left;">
+definition
+</th>
 </tr></thead>
 <tbody>
-<tr class="odd">
-<td align="left"><a href="https://psyteachr.github.io/glossary/a.html#argument" class="glossary" target="_blank">argument</a></td>
-<td align="left">A variable that provides input to a function.</td>
+<tr>
+<td style="text-align:left;">
+<a href="https://psyteachr.github.io/glossary/a.html#argument" class="glossary" target="_blank">argument</a>
+</td>
+<td style="text-align:left;">
+A variable that provides input to a function.
+</td>
 </tr>
-<tr class="even">
-<td align="left"><a href="https://psyteachr.github.io/glossary/a.html#assignment-operator" class="glossary" target="_blank">assignment operator</a></td>
-<td align="left">The symbol &lt;-, which functions like = and assigns the value on the right to the object on the left</td>
+<tr>
+<td style="text-align:left;">
+<a href="https://psyteachr.github.io/glossary/a.html#assignment-operator" class="glossary" target="_blank">assignment operator</a>
+</td>
+<td style="text-align:left;">
+The symbol
+</td>
 </tr>
-<tr class="odd">
-<td align="left"><a href="https://psyteachr.github.io/glossary/b.html#base-r" class="glossary" target="_blank">base r</a></td>
-<td align="left">The set of R functions that come with a basic installation of R, before you add external packages</td>
+<tr>
+<td style="text-align:left;">
+<a href="https://psyteachr.github.io/glossary/b.html#base-r" class="glossary" target="_blank">base r</a>
+</td>
+<td style="text-align:left;">
+The set of R functions that come with a basic installation of R, before you add external packages
+</td>
 </tr>
-<tr class="even">
-<td align="left"><a href="https://psyteachr.github.io/glossary/c.html#console" class="glossary" target="_blank">console</a></td>
-<td align="left">The pane in RStudio where you can type in commands and view output messages.</td>
+<tr>
+<td style="text-align:left;">
+<a href="https://psyteachr.github.io/glossary/c.html#console" class="glossary" target="_blank">console</a>
+</td>
+<td style="text-align:left;">
+The pane in RStudio where you can type in commands and view output messages.
+</td>
 </tr>
-<tr class="odd">
-<td align="left"><a href="https://psyteachr.github.io/glossary/c.html#cran" class="glossary" target="_blank">cran</a></td>
-<td align="left">The Comprehensive R Archive Network: a network of ftp and web servers around the world that store identical, up-to-date, versions of code and documentation for R.</td>
+<tr>
+<td style="text-align:left;">
+<a href="https://psyteachr.github.io/glossary/c.html#cran" class="glossary" target="_blank">cran</a>
+</td>
+<td style="text-align:left;">
+The Comprehensive R Archive Network: a network of ftp and web servers around the world that store identical, up-to-date, versions of code and documentation for R.
+</td>
 </tr>
-<tr class="even">
-<td align="left"><a href="https://psyteachr.github.io/glossary/e.html#escape" class="glossary" target="_blank">escape</a></td>
-<td align="left">Include special characters like " inside of a string by prefacing them with a backslash.</td>
+<tr>
+<td style="text-align:left;">
+<a href="https://psyteachr.github.io/glossary/e.html#escape" class="glossary" target="_blank">escape</a>
+</td>
+<td style="text-align:left;">
+Include special characters like " inside of a string by prefacing them with a backslash.
+</td>
 </tr>
-<tr class="odd">
-<td align="left"><a href="https://psyteachr.github.io/glossary/f.html#factor" class="glossary" target="_blank">factor</a></td>
-<td align="left">A data type where a specific set of values are stored with labels; An explanatory variable manipulated by the experimenter</td>
+<tr>
+<td style="text-align:left;">
+<a href="https://psyteachr.github.io/glossary/f.html#factor" class="glossary" target="_blank">factor</a>
+</td>
+<td style="text-align:left;">
+A data type where a specific set of values are stored with labels; An explanatory variable manipulated by the experimenter
+</td>
 </tr>
-<tr class="even">
-<td align="left"><a href="https://psyteachr.github.io/glossary/f.html#function" class="glossary" target="_blank">function</a></td>
-<td align="left">A named section of code that can be reused.</td>
+<tr>
+<td style="text-align:left;">
+<a href="https://psyteachr.github.io/glossary/f.html#function" class="glossary" target="_blank">function</a>
+</td>
+<td style="text-align:left;">
+A named section of code that can be reused.
+</td>
 </tr>
-<tr class="odd">
-<td align="left"><a href="https://psyteachr.github.io/glossary/g.html#global-environment" class="glossary" target="_blank">global environment</a></td>
-<td align="left">The interactive workspace where your script runs</td>
+<tr>
+<td style="text-align:left;">
+<a href="https://psyteachr.github.io/glossary/g.html#global-environment" class="glossary" target="_blank">global environment</a>
+</td>
+<td style="text-align:left;">
+The interactive workspace where your script runs
+</td>
 </tr>
-<tr class="even">
-<td align="left"><a href="https://psyteachr.github.io/glossary/i.html#ide" class="glossary" target="_blank">ide</a></td>
-<td align="left">Integrated Development Environment: a program that serves as a text editor, file manager, and provides functions to help you read and write code. RStudio is an IDE for R.</td>
+<tr>
+<td style="text-align:left;">
+<a href="https://psyteachr.github.io/glossary/i.html#ide" class="glossary" target="_blank">ide</a>
+</td>
+<td style="text-align:left;">
+Integrated Development Environment: a program that serves as a text editor, file manager, and provides functions to help you read and write code. RStudio is an IDE for R.
+</td>
 </tr>
-<tr class="odd">
-<td align="left"><a href="https://psyteachr.github.io/glossary/n.html#normal-distribution" class="glossary" target="_blank">normal distribution</a></td>
-<td align="left">A symmetric distribution of data where values near the centre are most probable.</td>
+<tr>
+<td style="text-align:left;">
+<a href="https://psyteachr.github.io/glossary/n.html#normal-distribution" class="glossary" target="_blank">normal distribution</a>
+</td>
+<td style="text-align:left;">
+A symmetric distribution of data where values near the centre are most probable.
+</td>
 </tr>
-<tr class="even">
-<td align="left"><a href="https://psyteachr.github.io/glossary/o.html#object" class="glossary" target="_blank">object</a></td>
-<td align="left">A word that identifies and stores the value of some data for later use.</td>
+<tr>
+<td style="text-align:left;">
+<a href="https://psyteachr.github.io/glossary/o.html#object" class="glossary" target="_blank">object</a>
+</td>
+<td style="text-align:left;">
+A word that identifies and stores the value of some data for later use.
+</td>
 </tr>
-<tr class="odd">
-<td align="left"><a href="https://psyteachr.github.io/glossary/p.html#package" class="glossary" target="_blank">package</a></td>
-<td align="left">A group of R functions.</td>
+<tr>
+<td style="text-align:left;">
+<a href="https://psyteachr.github.io/glossary/p.html#package" class="glossary" target="_blank">package</a>
+</td>
+<td style="text-align:left;">
+A group of R functions.
+</td>
 </tr>
-<tr class="even">
-<td align="left"><a href="https://psyteachr.github.io/glossary/p.html#panes" class="glossary" target="_blank">panes</a></td>
-<td align="left">RStudio is arranged with four window "panes".</td>
+<tr>
+<td style="text-align:left;">
+<a href="https://psyteachr.github.io/glossary/p.html#panes" class="glossary" target="_blank">panes</a>
+</td>
+<td style="text-align:left;">
+RStudio is arranged with four window "panes".
+</td>
 </tr>
-<tr class="odd">
-<td align="left"><a href="https://psyteachr.github.io/glossary/r.html#r-markdown" class="glossary" target="_blank">r markdown</a></td>
-<td align="left">The R-specific version of markdown: a way to specify formatting, such as headers, paragraphs, lists, bolding, and links, as well as code blocks and inline code.</td>
+<tr>
+<td style="text-align:left;">
+<a href="https://psyteachr.github.io/glossary/r.html#r-markdown" class="glossary" target="_blank">r markdown</a>
+</td>
+<td style="text-align:left;">
+The R-specific version of markdown: a way to specify formatting, such as headers, paragraphs, lists, bolding, and links, as well as code blocks and inline code.
+</td>
 </tr>
-<tr class="even">
-<td align="left"><a href="https://psyteachr.github.io/glossary/r.html#reproducible-research" class="glossary" target="_blank">reproducible research</a></td>
-<td align="left">Research that documents all of the steps between raw data and results in a way that can be verified.</td>
+<tr>
+<td style="text-align:left;">
+<a href="https://psyteachr.github.io/glossary/r.html#reproducible-research" class="glossary" target="_blank">reproducible research</a>
+</td>
+<td style="text-align:left;">
+Research that documents all of the steps between raw data and results in a way that can be verified.
+</td>
 </tr>
-<tr class="odd">
-<td align="left"><a href="https://psyteachr.github.io/glossary/s.html#script" class="glossary" target="_blank">script</a></td>
-<td align="left">A plain-text file that contains commands in a coding language, such as R.</td>
+<tr>
+<td style="text-align:left;">
+<a href="https://psyteachr.github.io/glossary/s.html#script" class="glossary" target="_blank">script</a>
+</td>
+<td style="text-align:left;">
+A plain-text file that contains commands in a coding language, such as R.
+</td>
 </tr>
-<tr class="even">
-<td align="left"><a href="https://psyteachr.github.io/glossary/s.html#standard-deviation" class="glossary" target="_blank">standard deviation</a></td>
-<td align="left">A descriptive statistic that measures how spread out data are relative to the mean.</td>
+<tr>
+<td style="text-align:left;">
+<a href="https://psyteachr.github.io/glossary/s.html#standard-deviation" class="glossary" target="_blank">standard deviation</a>
+</td>
+<td style="text-align:left;">
+A descriptive statistic that measures how spread out data are relative to the mean.
+</td>
 </tr>
-<tr class="odd">
-<td align="left"><a href="https://psyteachr.github.io/glossary/s.html#string" class="glossary" target="_blank">string</a></td>
-<td align="left">A piece of text inside of quotes.</td>
+<tr>
+<td style="text-align:left;">
+<a href="https://psyteachr.github.io/glossary/s.html#string" class="glossary" target="_blank">string</a>
+</td>
+<td style="text-align:left;">
+A piece of text inside of quotes.
+</td>
 </tr>
-<tr class="even">
-<td align="left"><a href="https://psyteachr.github.io/glossary/v.html#variable" class="glossary" target="_blank">variable</a></td>
-<td align="left">A word that identifies and stores the value of some data for later use.</td>
+<tr>
+<td style="text-align:left;">
+<a href="https://psyteachr.github.io/glossary/v.html#variable" class="glossary" target="_blank">variable</a>
+</td>
+<td style="text-align:left;">
+A word that identifies and stores the value of some data for later use.
+</td>
 </tr>
-<tr class="odd">
-<td align="left"><a href="https://psyteachr.github.io/glossary/v.html#vector" class="glossary" target="_blank">vector</a></td>
-<td align="left">A type of data structure that collects values with the same data type, like T/F values, numbers, or strings.</td>
+<tr>
+<td style="text-align:left;">
+<a href="https://psyteachr.github.io/glossary/v.html#vector" class="glossary" target="_blank">vector</a>
+</td>
+<td style="text-align:left;">
+A type of data structure that collects values with the same data type, like T/F values, numbers, or strings.
+</td>
 </tr>
-<tr class="even">
-<td align="left"><a href="https://psyteachr.github.io/glossary/w.html#whitespace" class="glossary" target="_blank">whitespace</a></td>
-<td align="left">Spaces, tabs and line breaks</td>
+<tr>
+<td style="text-align:left;">
+<a href="https://psyteachr.github.io/glossary/w.html#whitespace" class="glossary" target="_blank">whitespace</a>
+</td>
+<td style="text-align:left;">
+Spaces, tabs and line breaks
+</td>
 </tr>
 </tbody>
 </table></div>
@@ -966,7 +1081,7 @@ $( document ).ready(function() {
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Data Skills for Reproducible Research</strong>: v2" was written by . It was last built on 2021-10-15.</p>
+    <p>"<strong>Data Skills for Reproducible Research</strong>: <br><a href="https://doi.org/10.5281/zenodo.6527194"><img src="https://zenodo.org/badge/DOI/10.5281/zenodo.6527194.svg" alt="DOI: 10.5281/zenodo.6527194"></a>" was written by . It was last built on 2022-05-07.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

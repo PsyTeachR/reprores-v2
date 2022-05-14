@@ -431,20 +431,89 @@ decomp <- dat %>%
   mutate(err = Y - mu - a)     # calculate residual error
 ```
 
-
-
-|          Y|grp |        mu|         a|        err|
-|----------:|:---|---------:|---------:|----------:|
-| -1.4770938|A   | 0.1207513| -1.533501| -0.0643443|
-| -2.9508741|A   | 0.1207513| -1.533501| -1.5381246|
-| -0.6376736|A   | 0.1207513| -1.533501|  0.7750759|
-| -1.7579084|A   | 0.1207513| -1.533501| -0.3451589|
-| -0.2401977|A   | 0.1207513| -1.533501|  1.1725518|
-|  0.1968155|B   | 0.1207513|  1.533501| -1.4574367|
-|  2.6308008|B   | 0.1207513|  1.533501|  0.9765486|
-|  2.0293297|B   | 0.1207513|  1.533501|  0.3750775|
-|  2.1629037|B   | 0.1207513|  1.533501|  0.5086516|
-|  1.2514112|B   | 0.1207513|  1.533501| -0.4028410|
+<table>
+ <thead>
+  <tr>
+   <th style="text-align:right;"> Y </th>
+   <th style="text-align:left;"> grp </th>
+   <th style="text-align:right;"> mu </th>
+   <th style="text-align:right;"> a </th>
+   <th style="text-align:right;"> err </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:right;"> -1.4770938 </td>
+   <td style="text-align:left;"> A </td>
+   <td style="text-align:right;"> 0.1207513 </td>
+   <td style="text-align:right;"> -1.533501 </td>
+   <td style="text-align:right;"> -0.0643443 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> -2.9508741 </td>
+   <td style="text-align:left;"> A </td>
+   <td style="text-align:right;"> 0.1207513 </td>
+   <td style="text-align:right;"> -1.533501 </td>
+   <td style="text-align:right;"> -1.5381246 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> -0.6376736 </td>
+   <td style="text-align:left;"> A </td>
+   <td style="text-align:right;"> 0.1207513 </td>
+   <td style="text-align:right;"> -1.533501 </td>
+   <td style="text-align:right;"> 0.7750759 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> -1.7579084 </td>
+   <td style="text-align:left;"> A </td>
+   <td style="text-align:right;"> 0.1207513 </td>
+   <td style="text-align:right;"> -1.533501 </td>
+   <td style="text-align:right;"> -0.3451589 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> -0.2401977 </td>
+   <td style="text-align:left;"> A </td>
+   <td style="text-align:right;"> 0.1207513 </td>
+   <td style="text-align:right;"> -1.533501 </td>
+   <td style="text-align:right;"> 1.1725518 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 0.1968155 </td>
+   <td style="text-align:left;"> B </td>
+   <td style="text-align:right;"> 0.1207513 </td>
+   <td style="text-align:right;"> 1.533501 </td>
+   <td style="text-align:right;"> -1.4574367 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 2.6308008 </td>
+   <td style="text-align:left;"> B </td>
+   <td style="text-align:right;"> 0.1207513 </td>
+   <td style="text-align:right;"> 1.533501 </td>
+   <td style="text-align:right;"> 0.9765486 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 2.0293297 </td>
+   <td style="text-align:left;"> B </td>
+   <td style="text-align:right;"> 0.1207513 </td>
+   <td style="text-align:right;"> 1.533501 </td>
+   <td style="text-align:right;"> 0.3750775 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 2.1629037 </td>
+   <td style="text-align:left;"> B </td>
+   <td style="text-align:right;"> 0.1207513 </td>
+   <td style="text-align:right;"> 1.533501 </td>
+   <td style="text-align:right;"> 0.5086516 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 1.2514112 </td>
+   <td style="text-align:left;"> B </td>
+   <td style="text-align:right;"> 0.1207513 </td>
+   <td style="text-align:right;"> 1.533501 </td>
+   <td style="text-align:right;"> -0.4028410 </td>
+  </tr>
+</tbody>
+</table>
 
 
 
@@ -458,11 +527,22 @@ SS <- decomp %>%
             err = sum(err*err))
 ```
 
-
-
-|        mu|        a|      err|
-|---------:|--------:|--------:|
-| 0.1458088| 23.51625| 8.104182|
+<table>
+ <thead>
+  <tr>
+   <th style="text-align:right;"> mu </th>
+   <th style="text-align:right;"> a </th>
+   <th style="text-align:right;"> err </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:right;"> 0.1458088 </td>
+   <td style="text-align:right;"> 23.51625 </td>
+   <td style="text-align:right;"> 8.104182 </td>
+  </tr>
+</tbody>
+</table>
 
 
 
@@ -488,11 +568,22 @@ df <- c(mu = 1, a = K - 1, err = N - K)
 MS <- SS / df
 ```
 
-
-
-|        mu|        a|      err|
-|---------:|--------:|--------:|
-| 0.1458088| 23.51625| 1.013023|
+<table>
+ <thead>
+  <tr>
+   <th style="text-align:right;"> mu </th>
+   <th style="text-align:right;"> a </th>
+   <th style="text-align:right;"> err </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:right;"> 0.1458088 </td>
+   <td style="text-align:right;"> 23.51625 </td>
+   <td style="text-align:right;"> 1.013023 </td>
+  </tr>
+</tbody>
+</table>
 
 
 
@@ -520,13 +611,48 @@ my_calcs <- data.frame(
 )
 ```
 
-
-
-|    |term      | Df|     SS|     MS|      F|     p|
-|:---|:---------|--:|------:|------:|------:|-----:|
-|mu  |Intercept |  1|  0.146|  0.146|  0.144| 0.714|
-|a   |grp       |  1| 23.516| 23.516| 23.214| 0.001|
-|err |Residuals |  8|  8.104|  1.013|     NA|    NA|
+<table>
+ <thead>
+  <tr>
+   <th style="text-align:left;">   </th>
+   <th style="text-align:left;"> term </th>
+   <th style="text-align:right;"> Df </th>
+   <th style="text-align:right;"> SS </th>
+   <th style="text-align:right;"> MS </th>
+   <th style="text-align:right;"> F </th>
+   <th style="text-align:right;"> p </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> mu </td>
+   <td style="text-align:left;"> Intercept </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 0.146 </td>
+   <td style="text-align:right;"> 0.146 </td>
+   <td style="text-align:right;"> 0.144 </td>
+   <td style="text-align:right;"> 0.714 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> a </td>
+   <td style="text-align:left;"> grp </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 23.516 </td>
+   <td style="text-align:right;"> 23.516 </td>
+   <td style="text-align:right;"> 23.214 </td>
+   <td style="text-align:right;"> 0.001 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> err </td>
+   <td style="text-align:left;"> Residuals </td>
+   <td style="text-align:right;"> 8 </td>
+   <td style="text-align:right;"> 8.104 </td>
+   <td style="text-align:right;"> 1.013 </td>
+   <td style="text-align:right;"> NA </td>
+   <td style="text-align:right;"> NA </td>
+  </tr>
+</tbody>
+</table>
 
 
 
@@ -555,22 +681,64 @@ Using the code above, write your own function that takes a table of data and ret
 
 ## Glossary {#glossary-glm}
 
-
-
-|term                                                                                                                       |definition                                                                                                     |
-|:--------------------------------------------------------------------------------------------------------------------------|:--------------------------------------------------------------------------------------------------------------|
-|[categorical](https://psyteachr.github.io/glossary/c.html#categorical){class="glossary" target="_blank"}                   |Data that can only take certain values, such as types of pet.                                                  |
-|[coding scheme](https://psyteachr.github.io/glossary/c.html#coding-scheme){class="glossary" target="_blank"}               |How to represent categorical variables with numbers for use in models                                          |
-|[continuous](https://psyteachr.github.io/glossary/c.html#continuous){class="glossary" target="_blank"}                     |Data that can take on any values between other existing values.                                                |
-|[dependent variable](https://psyteachr.github.io/glossary/d.html#dependent-variable){class="glossary" target="_blank"}     |The target variable that is being analyzed, whose value is assumed to depend on other variables.               |
-|[effect code](https://psyteachr.github.io/glossary/e.html#effect-code){class="glossary" target="_blank"}                   |A coding scheme for categorical variables that contrasts each group mean with the mean of all the group means. |
-|[error term](https://psyteachr.github.io/glossary/e.html#error-term){class="glossary" target="_blank"}                     |The term in a model that represents the difference between the actual and predicted values                     |
-|[general linear model](https://psyteachr.github.io/glossary/g.html#general-linear-model){class="glossary" target="_blank"} |A mathematical model comparing how one or more independent variables affect a continuous dependent variable    |
-|[independent variable](https://psyteachr.github.io/glossary/i.html#independent-variable){class="glossary" target="_blank"} |A variable whose value is assumed to influence the value of a dependent variable.                              |
-|[normal distribution](https://psyteachr.github.io/glossary/n.html#normal-distribution){class="glossary" target="_blank"}   |A symmetric distribution of data where values near the centre are most probable.                               |
-|[residual error](https://psyteachr.github.io/glossary/r.html#residual-error){class="glossary" target="_blank"}             |                                                                                                               |
-|[simulation](https://psyteachr.github.io/glossary/s.html#simulation){class="glossary" target="_blank"}                     |Generating data from summary parameters                                                                        |
-|[standard deviation](https://psyteachr.github.io/glossary/s.html#standard-deviation){class="glossary" target="_blank"}     |A descriptive statistic that measures how spread out data are relative to the mean.                            |
+<table class="table" style="margin-left: auto; margin-right: auto;">
+ <thead>
+  <tr>
+   <th style="text-align:left;"> term </th>
+   <th style="text-align:left;"> definition </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> [categorical](https://psyteachr.github.io/glossary/c.html#categorical){class="glossary" target="_blank"} </td>
+   <td style="text-align:left;"> Data that can only take certain values, such as types of pet. </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> [coding scheme](https://psyteachr.github.io/glossary/c.html#coding-scheme){class="glossary" target="_blank"} </td>
+   <td style="text-align:left;"> How to represent categorical variables with numbers for use in models </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> [continuous](https://psyteachr.github.io/glossary/c.html#continuous){class="glossary" target="_blank"} </td>
+   <td style="text-align:left;"> Data that can take on any values between other existing values. </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> [dependent variable](https://psyteachr.github.io/glossary/d.html#dependent-variable){class="glossary" target="_blank"} </td>
+   <td style="text-align:left;"> The target variable that is being analyzed, whose value is assumed to depend on other variables. </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> [effect code](https://psyteachr.github.io/glossary/e.html#effect-code){class="glossary" target="_blank"} </td>
+   <td style="text-align:left;"> A coding scheme for categorical variables that contrasts each group mean with the mean of all the group means. </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> [error term](https://psyteachr.github.io/glossary/e.html#error-term){class="glossary" target="_blank"} </td>
+   <td style="text-align:left;"> The term in a model that represents the difference between the actual and predicted values </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> [general linear model](https://psyteachr.github.io/glossary/g.html#general-linear-model){class="glossary" target="_blank"} </td>
+   <td style="text-align:left;"> A mathematical model comparing how one or more independent variables affect a continuous dependent variable </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> [independent variable](https://psyteachr.github.io/glossary/i.html#independent-variable){class="glossary" target="_blank"} </td>
+   <td style="text-align:left;"> A variable whose value is assumed to influence the value of a dependent variable. </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> [normal distribution](https://psyteachr.github.io/glossary/n.html#normal-distribution){class="glossary" target="_blank"} </td>
+   <td style="text-align:left;"> A symmetric distribution of data where values near the centre are most probable. </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> [residual error](https://psyteachr.github.io/glossary/r.html#residual-error){class="glossary" target="_blank"} </td>
+   <td style="text-align:left;">  </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> [simulation](https://psyteachr.github.io/glossary/s.html#simulation){class="glossary" target="_blank"} </td>
+   <td style="text-align:left;"> Generating data from summary parameters </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> [standard deviation](https://psyteachr.github.io/glossary/s.html#standard-deviation){class="glossary" target="_blank"} </td>
+   <td style="text-align:left;"> A descriptive statistic that measures how spread out data are relative to the mean. </td>
+  </tr>
+</tbody>
+</table>
 
 
 

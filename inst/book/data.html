@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <title>Chapter 4 Working with Data | Data Skills for Reproducible Research</title>
 <meta name="description" content="4.1 Learning Objectives Load built-in datasets (video)  Import data from CSV and Excel files (video) Create a data table (video) Understand the use the basic data types (video) Understand and use...">
-<meta name="generator" content="bookdown 0.24 with bs4_book()">
+<meta name="generator" content="bookdown 0.26 with bs4_book()">
 <meta property="og:title" content="Chapter 4 Working with Data | Data Skills for Reproducible Research">
 <meta property="og:type" content="book">
 <meta property="og:url" content="https://psyteachr.github.io/reprores-v2/data.html">
@@ -16,18 +16,45 @@
 <meta name="twitter:title" content="Chapter 4 Working with Data | Data Skills for Reproducible Research">
 <meta name="twitter:description" content="4.1 Learning Objectives Load built-in datasets (video)  Import data from CSV and Excel files (video) Create a data table (video) Understand the use the basic data types (video) Understand and use...">
 <meta name="twitter:image" content="https://psyteachr.github.io/reprores-v2/images/logos/logo.png">
-<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/header-attrs-2.10.6/header-attrs.js"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
-<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.2.5.1/tabs.js"></script><script src="libs/bs3compat-0.2.5.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
-<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="libs/htmlwidgets-1.5.3/htmlwidgets.js"></script><script src="libs/plotly-binding-4.9.4.1/plotly.js"></script><script src="libs/typedarray-0.1/typedarray.min.js"></script><link href="libs/crosstalk-1.1.1/css/crosstalk.css" rel="stylesheet">
-<script src="libs/crosstalk-1.1.1/js/crosstalk.min.js"></script><link href="libs/plotly-htmlwidgets-css-1.57.1/plotly-htmlwidgets.css" rel="stylesheet">
-<script src="libs/plotly-main-1.57.1/plotly-latest.min.js"></script><!-- Global site tag (gtag.js) - Google Analytics --><script async src="https://www.googletagmanager.com/gtag/js?id=G-6NP3MF25W3"></script><script>
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.3.1/transition.js"></script><script src="libs/bs3compat-0.3.1/tabs.js"></script><script src="libs/bs3compat-0.3.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="libs/kePrint-0.0.1/kePrint.js"></script><link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet">
+<script src="libs/htmlwidgets-1.5.4/htmlwidgets.js"></script><script src="libs/plotly-binding-4.10.0/plotly.js"></script><script src="libs/typedarray-0.1/typedarray.min.js"></script><link href="libs/crosstalk-1.2.0/css/crosstalk.min.css" rel="stylesheet">
+<script src="libs/crosstalk-1.2.0/js/crosstalk.min.js"></script><link href="libs/plotly-htmlwidgets-css-2.5.1/plotly-htmlwidgets.css" rel="stylesheet">
+<script src="libs/plotly-main-2.5.1/plotly-latest.min.js"></script><!-- Global site tag (gtag.js) - Google Analytics --><script async src="https://www.googletagmanager.com/gtag/js?id=G-6NP3MF25W3"></script><script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
 
       gtag('config', 'G-6NP3MF25W3');
-    </script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><link rel="stylesheet" href="include/webex.css">
+    </script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
+    
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  </style>
+<style type="text/css">
+    /* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+    div.csl-bib-body { }
+    div.csl-entry {
+      clear: both;
+        }
+    .hanging div.csl-entry {
+      margin-left:2em;
+      text-indent:-2em;
+    }
+    div.csl-left-margin {
+      min-width:2em;
+      float:left;
+    }
+    div.csl-right-inline {
+      margin-left:2em;
+      padding-left:1em;
+    }
+    div.csl-indent {
+      margin-left: 2em;
+    }
+  </style>
+<link rel="stylesheet" href="include/webex.css">
 <link rel="stylesheet" href="include/psyteachr.css">
 <link rel="stylesheet" href="include/style.css">
 </head>
@@ -39,8 +66,8 @@
 
     <div class="d-flex align-items-start justify-content-between">
       <h1>
-        <a href="index.html" title="v2">Data Skills for Reproducible Research</a>:
-        <small class="text-muted">v2</small>
+        <a href="index.html" title="&lt;br&gt;&lt;a href='https://doi.org/10.5281/zenodo.6527194'&gt;&lt;img src='https://zenodo.org/badge/DOI/10.5281/zenodo.6527194.svg' alt='DOI: 10.5281/zenodo.6527194'&gt;&lt;/a&gt;">Data Skills for Reproducible Research</a>:
+        <small class="text-muted"><br><a href="https://doi.org/10.5281/zenodo.6527194"><img src="https://zenodo.org/badge/DOI/10.5281/zenodo.6527194.svg" alt="DOI: 10.5281/zenodo.6527194"></a></small>
       </h1>
       <button class="btn btn-outline-primary d-lg-none ml-2 mt-1" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="true" aria-controls="main-nav"><i class="fas fa-bars"></i><span class="sr-only">Show table of contents</span></button>
     </div>
@@ -112,7 +139,7 @@
 <h2>
 <span class="header-section-number">4.2</span> Setup<a class="anchor" aria-label="anchor" href="#setup-data"><i class="fas fa-link"></i></a>
 </h2>
-<div class="sourceCode" id="cb127"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb126"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># libraries needed for these examples</span>
 <span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span>
 <span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/psyteachr/reprores-v2">reprores</a></span><span class="op">)</span></code></pre></div>
@@ -126,168 +153,344 @@
 <span class="header-section-number">4.3.1</span> Built-in data<a class="anchor" aria-label="anchor" href="#builtin"><i class="fas fa-link"></i></a>
 </h3>
 <p>R comes with built-in datasets. Some packages, like tidyr and reprores, also contain data. The <code><a href="https://rdrr.io/r/utils/data.html">data()</a></code> function lists the datasets available in a package.</p>
-<div class="sourceCode" id="cb128"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb127"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># lists datasets in reprores</span>
 <span class="fu"><a href="https://rdrr.io/r/utils/data.html">data</a></span><span class="op">(</span>package <span class="op">=</span> <span class="st">"reprores"</span><span class="op">)</span></code></pre></div>
 <p>Type the name of a dataset into the console to see the data. Type <code><a href="https://rdrr.io/pkg/reprores/man/smalldata.html">?smalldata</a></code> into the console to see the dataset description.</p>
-<div class="sourceCode" id="cb129"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb128"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">smalldata</span></code></pre></div>
 <div class="kable-table">
 <div class="inline-table"><table class="table table-sm">
-<thead><tr class="header">
-<th align="left">id</th>
-<th align="left">group</th>
-<th align="right">pre</th>
-<th align="right">post</th>
+<thead><tr>
+<th style="text-align:left;">
+id
+</th>
+<th style="text-align:left;">
+group
+</th>
+<th style="text-align:right;">
+pre
+</th>
+<th style="text-align:right;">
+post
+</th>
 </tr></thead>
 <tbody>
-<tr class="odd">
-<td align="left">S01</td>
-<td align="left">control</td>
-<td align="right">98.46606</td>
-<td align="right">106.70508</td>
+<tr>
+<td style="text-align:left;">
+S01
+</td>
+<td style="text-align:left;">
+control
+</td>
+<td style="text-align:right;">
+98.46606
+</td>
+<td style="text-align:right;">
+106.70508
+</td>
 </tr>
-<tr class="even">
-<td align="left">S02</td>
-<td align="left">control</td>
-<td align="right">104.39774</td>
-<td align="right">89.09030</td>
+<tr>
+<td style="text-align:left;">
+S02
+</td>
+<td style="text-align:left;">
+control
+</td>
+<td style="text-align:right;">
+104.39774
+</td>
+<td style="text-align:right;">
+89.09030
+</td>
 </tr>
-<tr class="odd">
-<td align="left">S03</td>
-<td align="left">control</td>
-<td align="right">105.13377</td>
-<td align="right">123.67230</td>
+<tr>
+<td style="text-align:left;">
+S03
+</td>
+<td style="text-align:left;">
+control
+</td>
+<td style="text-align:right;">
+105.13377
+</td>
+<td style="text-align:right;">
+123.67230
+</td>
 </tr>
-<tr class="even">
-<td align="left">S04</td>
-<td align="left">control</td>
-<td align="right">92.42574</td>
-<td align="right">70.70178</td>
+<tr>
+<td style="text-align:left;">
+S04
+</td>
+<td style="text-align:left;">
+control
+</td>
+<td style="text-align:right;">
+92.42574
+</td>
+<td style="text-align:right;">
+70.70178
+</td>
 </tr>
-<tr class="odd">
-<td align="left">S05</td>
-<td align="left">control</td>
-<td align="right">123.53268</td>
-<td align="right">124.95526</td>
+<tr>
+<td style="text-align:left;">
+S05
+</td>
+<td style="text-align:left;">
+control
+</td>
+<td style="text-align:right;">
+123.53268
+</td>
+<td style="text-align:right;">
+124.95526
+</td>
 </tr>
-<tr class="even">
-<td align="left">S06</td>
-<td align="left">exp</td>
-<td align="right">97.48676</td>
-<td align="right">101.61697</td>
+<tr>
+<td style="text-align:left;">
+S06
+</td>
+<td style="text-align:left;">
+exp
+</td>
+<td style="text-align:right;">
+97.48676
+</td>
+<td style="text-align:right;">
+101.61697
+</td>
 </tr>
-<tr class="odd">
-<td align="left">S07</td>
-<td align="left">exp</td>
-<td align="right">87.75594</td>
-<td align="right">126.30077</td>
+<tr>
+<td style="text-align:left;">
+S07
+</td>
+<td style="text-align:left;">
+exp
+</td>
+<td style="text-align:right;">
+87.75594
+</td>
+<td style="text-align:right;">
+126.30077
+</td>
 </tr>
-<tr class="even">
-<td align="left">S08</td>
-<td align="left">exp</td>
-<td align="right">77.15375</td>
-<td align="right">72.31229</td>
+<tr>
+<td style="text-align:left;">
+S08
+</td>
+<td style="text-align:left;">
+exp
+</td>
+<td style="text-align:right;">
+77.15375
+</td>
+<td style="text-align:right;">
+72.31229
+</td>
 </tr>
-<tr class="odd">
-<td align="left">S09</td>
-<td align="left">exp</td>
-<td align="right">97.00283</td>
-<td align="right">108.80713</td>
+<tr>
+<td style="text-align:left;">
+S09
+</td>
+<td style="text-align:left;">
+exp
+</td>
+<td style="text-align:right;">
+97.00283
+</td>
+<td style="text-align:right;">
+108.80713
+</td>
 </tr>
-<tr class="even">
-<td align="left">S10</td>
-<td align="left">exp</td>
-<td align="right">102.32338</td>
-<td align="right">113.74732</td>
+<tr>
+<td style="text-align:left;">
+S10
+</td>
+<td style="text-align:left;">
+exp
+</td>
+<td style="text-align:right;">
+102.32338
+</td>
+<td style="text-align:right;">
+113.74732
+</td>
 </tr>
 </tbody>
 </table></div>
 </div>
 <p>You can also use the <code><a href="https://rdrr.io/r/utils/data.html">data()</a></code> function to load a dataset into your <a class="glossary" target="_blank" title="The interactive workspace where your script runs" href="https://psyteachr.github.io/glossary/g#global-environment">global environment</a>.</p>
-<div class="sourceCode" id="cb130"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb129"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># loads smalldata into the environment</span>
 <span class="fu"><a href="https://rdrr.io/r/utils/data.html">data</a></span><span class="op">(</span><span class="st">"smalldata"</span><span class="op">)</span></code></pre></div>
-<p>Always, always, always, look at your data once you've created or loaded a table. Also look at it after each step that transforms your table. There are three main ways to look at your tibble: <code><a href="https://rdrr.io/r/base/print.html">print()</a></code>, <code>glimpse()</code>, and <code><a href="https://rdrr.io/r/utils/View.html">View()</a></code>.</p>
+<p>Always, always, always, look at your data once you've created or loaded a table. Also look at it after each step that transforms your table. There are three main ways to look at your tibble: <code><a href="https://rdrr.io/r/base/print.html">print()</a></code>, <code><a href="https://pillar.r-lib.org/reference/glimpse.html">glimpse()</a></code>, and <code><a href="https://rdrr.io/r/utils/View.html">View()</a></code>.</p>
 <p>The <code><a href="https://rdrr.io/r/base/print.html">print()</a></code> method can be run explicitly, but is more commonly called by just typing the variable name on the blank line. The default is not to print the entire table, but just the first 10 rows. It's rare to print your data in a script; that is something you usually are doing for a sanity check, and you should just do it in the console.</p>
 <p>Let's look at the <code>smalldata</code> table that we made above.</p>
-<div class="sourceCode" id="cb131"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb130"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">smalldata</span></code></pre></div>
 <div class="kable-table">
 <div class="inline-table"><table class="table table-sm">
-<thead><tr class="header">
-<th align="left">id</th>
-<th align="left">group</th>
-<th align="right">pre</th>
-<th align="right">post</th>
+<thead><tr>
+<th style="text-align:left;">
+id
+</th>
+<th style="text-align:left;">
+group
+</th>
+<th style="text-align:right;">
+pre
+</th>
+<th style="text-align:right;">
+post
+</th>
 </tr></thead>
 <tbody>
-<tr class="odd">
-<td align="left">S01</td>
-<td align="left">control</td>
-<td align="right">98.46606</td>
-<td align="right">106.70508</td>
+<tr>
+<td style="text-align:left;">
+S01
+</td>
+<td style="text-align:left;">
+control
+</td>
+<td style="text-align:right;">
+98.46606
+</td>
+<td style="text-align:right;">
+106.70508
+</td>
 </tr>
-<tr class="even">
-<td align="left">S02</td>
-<td align="left">control</td>
-<td align="right">104.39774</td>
-<td align="right">89.09030</td>
+<tr>
+<td style="text-align:left;">
+S02
+</td>
+<td style="text-align:left;">
+control
+</td>
+<td style="text-align:right;">
+104.39774
+</td>
+<td style="text-align:right;">
+89.09030
+</td>
 </tr>
-<tr class="odd">
-<td align="left">S03</td>
-<td align="left">control</td>
-<td align="right">105.13377</td>
-<td align="right">123.67230</td>
+<tr>
+<td style="text-align:left;">
+S03
+</td>
+<td style="text-align:left;">
+control
+</td>
+<td style="text-align:right;">
+105.13377
+</td>
+<td style="text-align:right;">
+123.67230
+</td>
 </tr>
-<tr class="even">
-<td align="left">S04</td>
-<td align="left">control</td>
-<td align="right">92.42574</td>
-<td align="right">70.70178</td>
+<tr>
+<td style="text-align:left;">
+S04
+</td>
+<td style="text-align:left;">
+control
+</td>
+<td style="text-align:right;">
+92.42574
+</td>
+<td style="text-align:right;">
+70.70178
+</td>
 </tr>
-<tr class="odd">
-<td align="left">S05</td>
-<td align="left">control</td>
-<td align="right">123.53268</td>
-<td align="right">124.95526</td>
+<tr>
+<td style="text-align:left;">
+S05
+</td>
+<td style="text-align:left;">
+control
+</td>
+<td style="text-align:right;">
+123.53268
+</td>
+<td style="text-align:right;">
+124.95526
+</td>
 </tr>
-<tr class="even">
-<td align="left">S06</td>
-<td align="left">exp</td>
-<td align="right">97.48676</td>
-<td align="right">101.61697</td>
+<tr>
+<td style="text-align:left;">
+S06
+</td>
+<td style="text-align:left;">
+exp
+</td>
+<td style="text-align:right;">
+97.48676
+</td>
+<td style="text-align:right;">
+101.61697
+</td>
 </tr>
-<tr class="odd">
-<td align="left">S07</td>
-<td align="left">exp</td>
-<td align="right">87.75594</td>
-<td align="right">126.30077</td>
+<tr>
+<td style="text-align:left;">
+S07
+</td>
+<td style="text-align:left;">
+exp
+</td>
+<td style="text-align:right;">
+87.75594
+</td>
+<td style="text-align:right;">
+126.30077
+</td>
 </tr>
-<tr class="even">
-<td align="left">S08</td>
-<td align="left">exp</td>
-<td align="right">77.15375</td>
-<td align="right">72.31229</td>
+<tr>
+<td style="text-align:left;">
+S08
+</td>
+<td style="text-align:left;">
+exp
+</td>
+<td style="text-align:right;">
+77.15375
+</td>
+<td style="text-align:right;">
+72.31229
+</td>
 </tr>
-<tr class="odd">
-<td align="left">S09</td>
-<td align="left">exp</td>
-<td align="right">97.00283</td>
-<td align="right">108.80713</td>
+<tr>
+<td style="text-align:left;">
+S09
+</td>
+<td style="text-align:left;">
+exp
+</td>
+<td style="text-align:right;">
+97.00283
+</td>
+<td style="text-align:right;">
+108.80713
+</td>
 </tr>
-<tr class="even">
-<td align="left">S10</td>
-<td align="left">exp</td>
-<td align="right">102.32338</td>
-<td align="right">113.74732</td>
+<tr>
+<td style="text-align:left;">
+S10
+</td>
+<td style="text-align:left;">
+exp
+</td>
+<td style="text-align:right;">
+102.32338
+</td>
+<td style="text-align:right;">
+113.74732
+</td>
 </tr>
 </tbody>
 </table></div>
 </div>
-<p>The function <code>glimpse()</code> gives a sideways version of the tibble. This is useful if the table is very wide and you can't see all of the columns. It also tells you the data type of each column in angled brackets after each column name. We'll learn about <a href="data.html#data_types">data types</a> below.</p>
-<div class="sourceCode" id="cb132"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu">glimpse</span><span class="op">(</span><span class="va">smalldata</span><span class="op">)</span></code></pre></div>
+<p>The function <code><a href="https://pillar.r-lib.org/reference/glimpse.html">glimpse()</a></code> gives a sideways version of the tibble. This is useful if the table is very wide and you can't see all of the columns. It also tells you the data type of each column in angled brackets after each column name. We'll learn about <a href="data.html#data_types">data types</a> below.</p>
+<div class="sourceCode" id="cb131"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://pillar.r-lib.org/reference/glimpse.html">glimpse</a></span><span class="op">(</span><span class="va">smalldata</span><span class="op">)</span></code></pre></div>
 <pre><code>## Rows: 10
 ## Columns: 4
 ## $ id    &lt;chr&gt; "S01", "S02", "S03", "S04", "S05", "S06", "S07", "S08", "S09", "…
@@ -297,7 +500,7 @@
 <p>The other way to look at the table is a more graphical spreadsheet-like version given by <code><a href="https://rdrr.io/r/utils/View.html">View()</a></code> (capital 'V'). It can be useful in the console, but don't ever put this one in a script because it will create an annoying pop-up window when the user runs it.
 Now you can click on <code>smalldata</code> in the environment pane to open it up in a viewer that looks a bit like Excel.</p>
 <p>You can get a quick summary of a dataset with the <code><a href="https://rdrr.io/r/base/summary.html">summary()</a></code> function.</p>
-<div class="sourceCode" id="cb134"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb133"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="va">smalldata</span><span class="op">)</span></code></pre></div>
 <pre><code>##       id               group                pre              post       
 ##  Length:10          Length:10          Min.   : 77.15   Min.   : 70.70  
@@ -307,7 +510,7 @@ Now you can click on <code>smalldata</code> in the environment pane to open it u
 ##                                        3rd Qu.:103.88   3rd Qu.:121.19  
 ##                                        Max.   :123.53   Max.   :126.30</code></pre>
 <p>You can even do things like calculate the difference between the means of two columns.</p>
-<div class="sourceCode" id="cb136"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb135"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">pre_mean</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">smalldata</span><span class="op">$</span><span class="va">pre</span><span class="op">)</span>
 <span class="va">post_mean</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">smalldata</span><span class="op">$</span><span class="va">post</span><span class="op">)</span>
 <span class="va">post_mean</span> <span class="op">-</span> <span class="va">pre_mean</span></code></pre></div>
@@ -319,6 +522,12 @@ Now you can click on <code>smalldata</code> in the environment pane to open it u
 </h3>
 <p>Built-in data are nice for examples, but you're probably more interested in your own data. There are many different types of files that you might work with when doing data analysis. These different file types are usually distinguished by the three letter <a class="glossary" target="_blank" title="The end part of a file name that tells you what type of file it is (e.g., .R or .Rmd)." href="https://psyteachr.github.io/glossary/e#extension">extension</a> following a period at the end of the file name. Here are some examples of different types of files and the functions you would use to read them in or write them out.</p>
 <div class="inline-table"><table class="table table-sm">
+<colgroup>
+<col width="15%">
+<col width="28%">
+<col width="28%">
+<col width="26%">
+</colgroup>
 <thead><tr class="header">
 <th>Extension</th>
 <th>File Type</th>
@@ -364,10 +573,10 @@ Now you can click on <code>smalldata</code> in the environment pane to open it u
 </tr>
 </tbody>
 </table></div>
-<p>The double colon means that the function on the right comes from the package on the left, so <code><a href="https://readr.tidyverse.org/reference/read_delim.html">readr::read_csv()</a></code> refers to the <code>read_csv()</code> function in the <code class="package">readr</code> package, and <code><a href="https://readxl.tidyverse.org/reference/read_excel.html">readxl::read_excel()</a></code> refers to the function <code>read_excel()</code> in the <code class="package">readxl</code> package. The function <code><a href="https://rdrr.io/pkg/rio/man/import.html">rio::import()</a></code> from the <code class="package">rio</code> package will read almost any type of data file, including SPSS and Matlab. Check the help with <code><a href="https://rdrr.io/pkg/rio/man/import.html">?rio::import</a></code> to see a full list.</p>
+<p>The double colon means that the function on the right comes from the package on the left, so <code><a href="https://readr.tidyverse.org/reference/read_delim.html">readr::read_csv()</a></code> refers to the <code><a href="https://readr.tidyverse.org/reference/read_delim.html">read_csv()</a></code> function in the <code class="package">readr</code> package, and <code><a href="https://readxl.tidyverse.org/reference/read_excel.html">readxl::read_excel()</a></code> refers to the function <code>read_excel()</code> in the <code class="package">readxl</code> package. The function <code><a href="https://rdrr.io/pkg/rio/man/import.html">rio::import()</a></code> from the <code class="package">rio</code> package will read almost any type of data file, including SPSS and Matlab. Check the help with <code><a href="https://rdrr.io/pkg/rio/man/import.html">?rio::import</a></code> to see a full list.</p>
 <p>You can get a directory of data files used in this class for tutorials and exercises with the following code, which will create a directory called "data" in your project directory. Alternatively, you can download a <a href="data/data.zip">zip file of the datasets</a>.</p>
-<div class="sourceCode" id="cb138"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu">psyteachr</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/psyteachr/man/getdata.html">getdata</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
+<div class="sourceCode" id="cb137"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu">psyteachr</span><span class="fu">::</span><span class="fu">getdata</span><span class="op">(</span><span class="op">)</span></code></pre></div>
 <div id="csv-files" class="section level4" number="4.3.2.1">
 <h4>
 <span class="header-section-number">4.3.2.1</span> CSV Files<a class="anchor" aria-label="anchor" href="#csv-files"><i class="fas fa-link"></i></a>
@@ -385,25 +594,25 @@ F,6,6.5,TRUE,31-Aug-21
 ```</code></pre>
 <p>There are five variables in this dataset, and their names are given in the first line of the file: <code>character</code>, <code>integer</code>, <code>double</code> ,`<code>logical</code>, and <code>date</code>. You can see that the values for each of these variables are given in order, separated by commas, on each subsequent line of the file.</p>
 <p>Use <code><a href="https://readr.tidyverse.org/reference/read_delim.html">readr::read_csv()</a></code> to read in the data as assign it to an <a class="glossary" target="_blank" title="A word that identifies and stores the value of some data for later use." href="https://psyteachr.github.io/glossary/o#object">object</a> called <code>demo_csv</code>.</p>
-<div class="sourceCode" id="cb140"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb139"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">demo_csv</span>  <span class="op">&lt;-</span> <span class="fu">readr</span><span class="fu">::</span><span class="fu"><a href="https://readr.tidyverse.org/reference/read_delim.html">read_csv</a></span><span class="op">(</span><span class="st">"data/demo.csv"</span><span class="op">)</span></code></pre></div>
-<pre><code>## Rows: 6 Columns: 5</code></pre>
-<pre><code>## ── Column specification ────────────────────────────────────────────────────────
+<pre><code>## Rows: 6 Columns: 5
+## ── Column specification ────────────────────────────────────────────────────────
 ## Delimiter: ","
 ## chr (2): character, date
 ## dbl (2): integer, double
-## lgl (1): logical</code></pre>
-<pre><code>## 
+## lgl (1): logical
+## 
 ## ℹ Use `spec()` to retrieve the full column specification for this data.
 ## ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
 <p>This function will give you some information about the data you just read in so you can check the column names and <a href="data.html#data_types">data types</a>. If it makes a mistake, such as reading the "date" column as a <a class="glossary" target="_blank" title="A data type representing strings of text." href="https://psyteachr.github.io/glossary/c#character">character</a>, you can manually set the column data types. Just copy the "Column specification" that was printed when you first imported the data, and make any changes you need.</p>
-<div class="sourceCode" id="cb144"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">ct</span> <span class="op">&lt;-</span> <span class="fu">cols</span><span class="op">(</span>
-  character <span class="op">=</span> <span class="fu">col_character</span><span class="op">(</span><span class="op">)</span>,
-  integer <span class="op">=</span> <span class="fu">col_double</span><span class="op">(</span><span class="op">)</span>,
-  double <span class="op">=</span> <span class="fu">col_double</span><span class="op">(</span><span class="op">)</span>,
-  logical <span class="op">=</span> <span class="fu">col_logical</span><span class="op">(</span><span class="op">)</span>,
-  date <span class="op">=</span> <span class="fu">col_date</span><span class="op">(</span>format <span class="op">=</span> <span class="st">"%d-%b-%y"</span><span class="op">)</span>
+<div class="sourceCode" id="cb141"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">ct</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://readr.tidyverse.org/reference/cols.html">cols</a></span><span class="op">(</span>
+  character <span class="op">=</span> <span class="fu"><a href="https://readr.tidyverse.org/reference/parse_atomic.html">col_character</a></span><span class="op">(</span><span class="op">)</span>,
+  integer <span class="op">=</span> <span class="fu"><a href="https://readr.tidyverse.org/reference/parse_atomic.html">col_double</a></span><span class="op">(</span><span class="op">)</span>,
+  double <span class="op">=</span> <span class="fu"><a href="https://readr.tidyverse.org/reference/parse_atomic.html">col_double</a></span><span class="op">(</span><span class="op">)</span>,
+  logical <span class="op">=</span> <span class="fu"><a href="https://readr.tidyverse.org/reference/parse_atomic.html">col_logical</a></span><span class="op">(</span><span class="op">)</span>,
+  date <span class="op">=</span> <span class="fu"><a href="https://readr.tidyverse.org/reference/parse_datetime.html">col_date</a></span><span class="op">(</span>format <span class="op">=</span> <span class="st">"%d-%b-%y"</span><span class="op">)</span>
 <span class="op">)</span>
 
 <span class="va">demo</span>  <span class="op">&lt;-</span> <span class="fu">readr</span><span class="fu">::</span><span class="fu"><a href="https://readr.tidyverse.org/reference/read_delim.html">read_csv</a></span><span class="op">(</span><span class="st">"data/demo.csv"</span>, col_types <span class="op">=</span> <span class="va">ct</span><span class="op">)</span></code></pre></div>
@@ -417,18 +626,18 @@ F,6,6.5,TRUE,31-Aug-21
 <span class="header-section-number">4.3.2.2</span> Other File Types<a class="anchor" aria-label="anchor" href="#other-file-types"><i class="fas fa-link"></i></a>
 </h4>
 <p>Use the functions below to read in other file types.</p>
-<div class="sourceCode" id="cb145"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb142"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">demo_tsv</span>  <span class="op">&lt;-</span> <span class="fu">readr</span><span class="fu">::</span><span class="fu"><a href="https://readr.tidyverse.org/reference/read_delim.html">read_tsv</a></span><span class="op">(</span><span class="st">"data/demo.tsv"</span><span class="op">)</span>
 <span class="va">demo_xls</span>  <span class="op">&lt;-</span> <span class="fu">readxl</span><span class="fu">::</span><span class="fu"><a href="https://readxl.tidyverse.org/reference/read_excel.html">read_excel</a></span><span class="op">(</span><span class="st">"data/demo.xlsx"</span><span class="op">)</span>
 <span class="va">demo_sav</span>  <span class="op">&lt;-</span> <span class="fu">haven</span><span class="fu">::</span><span class="fu"><a href="https://haven.tidyverse.org/reference/read_spss.html">read_sav</a></span><span class="op">(</span><span class="st">"data/demo.sav"</span><span class="op">)</span>
 <span class="va">demo_json</span> <span class="op">&lt;-</span> <span class="fu">jsonlite</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/jsonlite/man/read_json.html">read_json</a></span><span class="op">(</span><span class="st">"data/demo.json"</span><span class="op">)</span></code></pre></div>
 <p>You can access Google Sheets directly from R using <code class="package"><a href="https://googlesheets4.tidyverse.org/" target="_blank">googlesheets4</a></code>.</p>
-<div class="sourceCode" id="cb146"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb143"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://googlesheets4.tidyverse.org">googlesheets4</a></span><span class="op">)</span>
 
 <span class="fu"><a href="https://googlesheets4.tidyverse.org/reference/gs4_deauth.html">gs4_deauth</a></span><span class="op">(</span><span class="op">)</span> <span class="co"># skip authorisation for public data</span>
 
-<span class="va">url</span> <span class="op">&lt;-</span> <span class="st">"https://docs.google.com/spreadsheets/d/1yhAPP0hk6fNssL9UdpJ7m_vx00VY5PQKHspx6DNQNSY/"</span>
+<span class="va">url</span> <span class="op">&lt;-</span> <span class="st">"https://docs.google.com/spreadsheets/d/16dkq0YL0J7fyAwT1pdgj1bNNrheckAU_2-DKuuM6aGI/"</span>
 
 <span class="va">demo_goo</span>  <span class="op">&lt;-</span> <span class="fu">googlesheets4</span><span class="fu">::</span><span class="fu"><a href="https://googlesheets4.tidyverse.org/reference/range_read.html">read_sheet</a></span><span class="op">(</span><span class="va">url</span><span class="op">)</span></code></pre></div>
 <div class="try">
@@ -437,7 +646,7 @@ F,6,6.5,TRUE,31-Aug-21
 <button>
 Solution
 </button>
-<div class="sourceCode" id="cb147"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb144"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">ocean_csv</span>  <span class="op">&lt;-</span> <span class="fu">readr</span><span class="fu">::</span><span class="fu"><a href="https://readr.tidyverse.org/reference/read_delim.html">read_csv</a></span><span class="op">(</span><span class="st">"data/5factor.csv"</span><span class="op">)</span>
 <span class="va">ocean_tsv</span>  <span class="op">&lt;-</span> <span class="fu">readr</span><span class="fu">::</span><span class="fu"><a href="https://readr.tidyverse.org/reference/read_delim.html">read_tsv</a></span><span class="op">(</span><span class="st">"data/5factor.txt"</span><span class="op">)</span>
 <span class="va">ocean_xls</span>  <span class="op">&lt;-</span> <span class="fu">readxl</span><span class="fu">::</span><span class="fu"><a href="https://readxl.tidyverse.org/reference/read_excel.html">read_excel</a></span><span class="op">(</span><span class="st">"data/5factor.xls"</span><span class="op">)</span>
@@ -465,59 +674,129 @@ Solution
 </h4>
 <p>The <code><span class="fu"><a href="https://rdrr.io/r/base/print.html">print</a></span><span class="op">(</span><span class="op">)</span></code> method can be run explicitly, but is more commonly called by just typing the variable name on the blank line. The default is not to print the entire table, but just the first 10 rows.</p>
 <p>Let's look at the <code>demo_tsv</code> table that we loaded above. Depending on how wide your screen is, you might need to click on an arrow at the right of the table to see the last column.</p>
-<div class="sourceCode" id="cb148"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb145"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">demo_tsv</span></code></pre></div>
 <div class="kable-table">
 <div class="inline-table"><table class="table table-sm">
-<thead><tr class="header">
-<th align="left">character</th>
-<th align="right">integer</th>
-<th align="right">double</th>
-<th align="left">logical</th>
-<th align="left">date</th>
+<thead><tr>
+<th style="text-align:left;">
+character
+</th>
+<th style="text-align:right;">
+integer
+</th>
+<th style="text-align:right;">
+double
+</th>
+<th style="text-align:left;">
+logical
+</th>
+<th style="text-align:left;">
+date
+</th>
 </tr></thead>
 <tbody>
-<tr class="odd">
-<td align="left">A</td>
-<td align="right">1</td>
-<td align="right">1.5</td>
-<td align="left">TRUE</td>
-<td align="left">05-Sep-21</td>
+<tr>
+<td style="text-align:left;">
+A
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+1.5
+</td>
+<td style="text-align:left;">
+TRUE
+</td>
+<td style="text-align:left;">
+05-Sep-21
+</td>
 </tr>
-<tr class="even">
-<td align="left">B</td>
-<td align="right">2</td>
-<td align="right">2.5</td>
-<td align="left">TRUE</td>
-<td align="left">04-Sep-21</td>
+<tr>
+<td style="text-align:left;">
+B
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:right;">
+2.5
+</td>
+<td style="text-align:left;">
+TRUE
+</td>
+<td style="text-align:left;">
+04-Sep-21
+</td>
 </tr>
-<tr class="odd">
-<td align="left">C</td>
-<td align="right">3</td>
-<td align="right">3.5</td>
-<td align="left">FALSE</td>
-<td align="left">03-Sep-21</td>
+<tr>
+<td style="text-align:left;">
+C
+</td>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:right;">
+3.5
+</td>
+<td style="text-align:left;">
+FALSE
+</td>
+<td style="text-align:left;">
+03-Sep-21
+</td>
 </tr>
-<tr class="even">
-<td align="left">D</td>
-<td align="right">4</td>
-<td align="right">4.5</td>
-<td align="left">FALSE</td>
-<td align="left">02-Sep-21</td>
+<tr>
+<td style="text-align:left;">
+D
+</td>
+<td style="text-align:right;">
+4
+</td>
+<td style="text-align:right;">
+4.5
+</td>
+<td style="text-align:left;">
+FALSE
+</td>
+<td style="text-align:left;">
+02-Sep-21
+</td>
 </tr>
-<tr class="odd">
-<td align="left">E</td>
-<td align="right">5</td>
-<td align="right">5.5</td>
-<td align="left">NA</td>
-<td align="left">01-Sep-21</td>
+<tr>
+<td style="text-align:left;">
+E
+</td>
+<td style="text-align:right;">
+5
+</td>
+<td style="text-align:right;">
+5.5
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+01-Sep-21
+</td>
 </tr>
-<tr class="even">
-<td align="left">F</td>
-<td align="right">6</td>
-<td align="right">6.5</td>
-<td align="left">TRUE</td>
-<td align="left">31-Aug-21</td>
+<tr>
+<td style="text-align:left;">
+F
+</td>
+<td style="text-align:right;">
+6
+</td>
+<td style="text-align:right;">
+6.5
+</td>
+<td style="text-align:left;">
+TRUE
+</td>
+<td style="text-align:left;">
+31-Aug-21
+</td>
 </tr>
 </tbody>
 </table></div>
@@ -528,8 +807,8 @@ Solution
 <span class="header-section-number">4.3.3.3</span> glimpse()<a class="anchor" aria-label="anchor" href="#glimpse"><i class="fas fa-link"></i></a>
 </h4>
 <p>The function <code><span class="fu">tibble</span><span class="fu">::</span><span class="fu"><a href="https://pillar.r-lib.org/reference/glimpse.html">glimpse</a></span><span class="op">(</span><span class="op">)</span></code> gives a sideways version of the table. This is useful if the table is very wide and you can't see all of the columns. It also tells you the <a class="glossary" target="_blank" title="The kind of data represented by an object." href="https://psyteachr.github.io/glossary/d#data-type">data type</a> of each column in angled brackets after each column name.</p>
-<div class="sourceCode" id="cb149"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu">glimpse</span><span class="op">(</span><span class="va">demo_xls</span><span class="op">)</span></code></pre></div>
+<div class="sourceCode" id="cb146"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://pillar.r-lib.org/reference/glimpse.html">glimpse</a></span><span class="op">(</span><span class="va">demo_xls</span><span class="op">)</span></code></pre></div>
 <pre><code>## Rows: 6
 ## Columns: 5
 ## $ character &lt;chr&gt; "A", "B", "C", "D", "E", "F"
@@ -543,7 +822,7 @@ Solution
 <span class="header-section-number">4.3.3.4</span> summary()<a class="anchor" aria-label="anchor" href="#summary-function"><i class="fas fa-link"></i></a>
 </h4>
 <p>You can get a quick summary of a dataset with the <code><span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="op">)</span></code> function.</p>
-<div class="sourceCode" id="cb151"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb148"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="va">demo_sav</span><span class="op">)</span></code></pre></div>
 <pre><code>##   character            integer         double        logical   
 ##  Length:6           Min.   :1.00   Min.   :1.50   Min.   :0.0  
@@ -568,10 +847,10 @@ Solution
 <span class="header-section-number">4.3.4</span> Creating data<a class="anchor" aria-label="anchor" href="#creating-data"><i class="fas fa-link"></i></a>
 </h3>
 <p>If we are creating a data table from scratch, we can use the <code><a href="https://tibble.tidyverse.org/reference/tibble.html">tibble::tibble()</a></code> function, and type the data right in. The <code class="package">tibble</code> package is part of the <a class="glossary" target="_blank" title="A set of R packages that help you create and work with tidy data" href="https://psyteachr.github.io/glossary/t#tidyverse">tidyverse</a> package that we loaded at the start of this chapter.</p>
-<p>Let's create a small table with the names of three Avatar characters and their bending type. The <code>tibble()</code> function takes arguments with the names that you want your columns to have. The values are vectors that list the column values in order.</p>
+<p>Let's create a small table with the names of three Avatar characters and their bending type. The <code><a href="https://tibble.tidyverse.org/reference/tibble.html">tibble()</a></code> function takes arguments with the names that you want your columns to have. The values are vectors that list the column values in order.</p>
 <p>If you don't know the value for one of the cells, you can enter <code>NA</code>, which we have to do for Sokka because he doesn't have any bending ability. If all the values in the column are the same, you can just enter one value and it will be copied for each row.</p>
-<div class="sourceCode" id="cb153"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">avatar</span> <span class="op">&lt;-</span> <span class="fu">tibble</span><span class="op">(</span>
+<div class="sourceCode" id="cb150"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">avatar</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://tibble.tidyverse.org/reference/tibble.html">tibble</a></span><span class="op">(</span>
   name <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Katara"</span>, <span class="st">"Toph"</span>, <span class="st">"Sokka"</span><span class="op">)</span>,
   bends <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"water"</span>, <span class="st">"earth"</span>, <span class="cn">NA</span><span class="op">)</span>,
   friendly <span class="op">=</span> <span class="cn">TRUE</span>
@@ -581,26 +860,50 @@ Solution
 <span class="va">avatar</span></code></pre></div>
 <div class="kable-table">
 <div class="inline-table"><table class="table table-sm">
-<thead><tr class="header">
-<th align="left">name</th>
-<th align="left">bends</th>
-<th align="left">friendly</th>
+<thead><tr>
+<th style="text-align:left;">
+name
+</th>
+<th style="text-align:left;">
+bends
+</th>
+<th style="text-align:left;">
+friendly
+</th>
 </tr></thead>
 <tbody>
-<tr class="odd">
-<td align="left">Katara</td>
-<td align="left">water</td>
-<td align="left">TRUE</td>
+<tr>
+<td style="text-align:left;">
+Katara
+</td>
+<td style="text-align:left;">
+water
+</td>
+<td style="text-align:left;">
+TRUE
+</td>
 </tr>
-<tr class="even">
-<td align="left">Toph</td>
-<td align="left">earth</td>
-<td align="left">TRUE</td>
+<tr>
+<td style="text-align:left;">
+Toph
+</td>
+<td style="text-align:left;">
+earth
+</td>
+<td style="text-align:left;">
+TRUE
+</td>
 </tr>
-<tr class="odd">
-<td align="left">Sokka</td>
-<td align="left">NA</td>
-<td align="left">TRUE</td>
+<tr>
+<td style="text-align:left;">
+Sokka
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+TRUE
+</td>
 </tr>
 </tbody>
 </table></div>
@@ -611,16 +914,16 @@ Solution
 <span class="header-section-number">4.3.5</span> Writing Data<a class="anchor" aria-label="anchor" href="#writing-data"><i class="fas fa-link"></i></a>
 </h3>
 <p>If you have data that you want to save to a CSV file, use <code><a href="https://readr.tidyverse.org/reference/write_delim.html">readr::write_csv()</a></code>, as follows.</p>
-<div class="sourceCode" id="cb154"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu">write_csv</span><span class="op">(</span><span class="va">avatar</span>, <span class="st">"avatar.csv"</span><span class="op">)</span></code></pre></div>
+<div class="sourceCode" id="cb151"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://readr.tidyverse.org/reference/write_delim.html">write_csv</a></span><span class="op">(</span><span class="va">avatar</span>, <span class="st">"avatar.csv"</span><span class="op">)</span></code></pre></div>
 <p>This will save the data in CSV format to your working directory.</p>
 <p>Writing to Google Sheets is a little trickier. Even if a Google Sheet is publicly editable, you can't add data to it without authorising your account.</p>
 <p>You can authorise interactively using the following code (and your own email), which will prompt you to authorise "Tidyverse API Packages" the first time you do this.</p>
-<div class="sourceCode" id="cb155"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb152"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://googlesheets4.tidyverse.org/reference/gs4_auth.html">gs4_auth</a></span><span class="op">(</span>email <span class="op">=</span> <span class="st">"debruine@gmail.com"</span><span class="op">)</span>
 <span class="va">sheet_id</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://googlesheets4.tidyverse.org/reference/gs4_create.html">gs4_create</a></span><span class="op">(</span><span class="st">"demo-file"</span>, sheets <span class="op">=</span> <span class="va">demo</span><span class="op">)</span>
 
-<span class="va">new_data</span> <span class="op">&lt;-</span> <span class="fu">tibble</span><span class="op">(</span>
+<span class="va">new_data</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://tibble.tidyverse.org/reference/tibble.html">tibble</a></span><span class="op">(</span>
   character <span class="op">=</span> <span class="st">"Z"</span>,
   integer <span class="op">=</span> <span class="fl">0L</span>,
   double <span class="op">=</span> <span class="fl">0.5</span>,
@@ -637,21 +940,20 @@ Solution
 <li>Clear the object from your environment by restarting R or with the code <code><span class="fu"><a href="https://rdrr.io/r/base/rm.html">remove</a></span><span class="op">(</span><span class="va">family</span><span class="op">)</span></code>.</li>
 <li>Load the data back in and view it.</li>
 </ul>
-</div>
 <div class="webex-solution">
 <button>
 Solution
 </button>
-<div class="sourceCode" id="cb156"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb153"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># create the table</span>
-<span class="va">family</span> <span class="op">&lt;-</span> <span class="fu">tribble</span><span class="op">(</span>
+<span class="va">family</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://tibble.tidyverse.org/reference/tribble.html">tribble</a></span><span class="op">(</span>
   <span class="op">~</span><span class="va">first_name</span>, <span class="op">~</span><span class="va">last_name</span>, <span class="op">~</span><span class="va">age</span>,
   <span class="st">"Lisa"</span>, <span class="st">"DeBruine"</span>, <span class="fl">45</span>,
   <span class="st">"Robbie"</span>, <span class="st">"Jones"</span>, <span class="fl">14</span>
 <span class="op">)</span>
 
 <span class="co"># save the data to CSV</span>
-<span class="fu"><a href="https://docs.ropensci.org/plotly/reference/export.html">export</a></span><span class="op">(</span><span class="va">family</span>, <span class="st">"data/family.csv"</span><span class="op">)</span>
+<span class="fu"><a href="https://rdrr.io/pkg/plotly/man/export.html">export</a></span><span class="op">(</span><span class="va">family</span>, <span class="st">"data/family.csv"</span><span class="op">)</span>
 
 <span class="co"># remove the object from the environment</span>
 <span class="fu"><a href="https://rdrr.io/r/base/rm.html">remove</a></span><span class="op">(</span><span class="va">family</span><span class="op">)</span>
@@ -659,7 +961,7 @@ Solution
 <span class="co"># load the data</span>
 <span class="va">family</span> <span class="op">&lt;-</span> <span class="fu">import</span><span class="op">(</span><span class="st">"data/family.csv"</span><span class="op">)</span></code></pre></div>
 </div>
-<p>:::</p>
+</div>
 <p>We'll be working with <a class="glossary" target="_blank" title="Data in a rectangular table format, where each row has an entry for each column." href="https://psyteachr.github.io/glossary/t#tabular-data">tabular data</a> a lot in this class, but tabular data is made up of <a class="glossary" target="_blank" title="A type of data structure that collects values with the same data type, like T/F values, numbers, or strings." href="https://psyteachr.github.io/glossary/v#vector">vectors</a>, which group together data with the same basic <a class="glossary" target="_blank" title="The kind of data represented by an object." href="https://psyteachr.github.io/glossary/d#data-type">data type</a>. The following sections explain some of this terminology to help you understand the functions we'll be learning to process and analyse data.</p>
 </div>
 </div>
@@ -674,7 +976,7 @@ Solution
 </h3>
 <p>All of the real numbers are <a class="glossary" target="_blank" title="A data type representing a real decimal number or integer." href="https://psyteachr.github.io/glossary/n#numeric">numeric</a> data types (imaginary numbers are "complex"). There are two types of numeric data, <a class="glossary" target="_blank" title="A data type representing whole numbers." href="https://psyteachr.github.io/glossary/i#integer">integer</a> and <a class="glossary" target="_blank" title="A data type representing a real decimal number" href="https://psyteachr.github.io/glossary/d#double">double</a>. Integers are the whole numbers, like <code><span class="op">-</span><span class="fl">1</span></code>, <code><span class="fl">0</span></code> and <code><span class="fl">1</span></code>. Doubles are numbers that can have fractional amounts. If you just type a plain number such as <code><span class="fl">10</span></code>, it is stored as a double, even if it doesn't have a decimal point. If you want it to be an exact integer, use the <code>L</code> suffix (<code><span class="fl">10L</span></code>).</p>
 <p>If you ever want to know the data type of something, use the <code><a href="https://rdrr.io/r/base/typeof.html">typeof()</a></code> function.</p>
-<div class="sourceCode" id="cb157"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb154"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/typeof.html">typeof</a></span><span class="op">(</span><span class="fl">10</span><span class="op">)</span>   <span class="co"># double</span>
 <span class="fu"><a href="https://rdrr.io/r/base/typeof.html">typeof</a></span><span class="op">(</span><span class="fl">10.0</span><span class="op">)</span> <span class="co"># double</span>
 <span class="fu"><a href="https://rdrr.io/r/base/typeof.html">typeof</a></span><span class="op">(</span><span class="fl">10L</span><span class="op">)</span>  <span class="co"># integer</span>
@@ -684,7 +986,7 @@ Solution
 ## [1] "integer"
 ## [1] "complex"</code></pre>
 <p>If you want to know if something is numeric (a double or an integer), you can use the function <code><a href="https://rdrr.io/r/base/numeric.html">is.numeric()</a></code> and it will tell you if it is numeric (<code>TRUE</code>) or not (<code>FALSE</code>).</p>
-<div class="sourceCode" id="cb159"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb156"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/numeric.html">is.numeric</a></span><span class="op">(</span><span class="fl">10L</span><span class="op">)</span>
 <span class="fu"><a href="https://rdrr.io/r/base/numeric.html">is.numeric</a></span><span class="op">(</span><span class="fl">10.0</span><span class="op">)</span>
 <span class="fu"><a href="https://rdrr.io/r/base/numeric.html">is.numeric</a></span><span class="op">(</span><span class="st">"Not a number"</span><span class="op">)</span></code></pre></div>
@@ -697,13 +999,13 @@ Solution
 <span class="header-section-number">4.4.2</span> Character data<a class="anchor" aria-label="anchor" href="#character-data"><i class="fas fa-link"></i></a>
 </h3>
 <p><a class="glossary" target="_blank" title="A data type representing strings of text." href="https://psyteachr.github.io/glossary/c#character">Character</a> strings are any text between quotation marks.</p>
-<div class="sourceCode" id="cb161"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb158"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/typeof.html">typeof</a></span><span class="op">(</span><span class="st">"This is a character string"</span><span class="op">)</span>
 <span class="fu"><a href="https://rdrr.io/r/base/typeof.html">typeof</a></span><span class="op">(</span><span class="st">'You can use double or single quotes'</span><span class="op">)</span></code></pre></div>
 <pre><code>## [1] "character"
 ## [1] "character"</code></pre>
 <p>This can include quotes, but you have to <a class="glossary" target="_blank" title='Include special characters like " inside of a string by prefacing them with a backslash.' href="https://psyteachr.github.io/glossary/e#escape">escape</a> it using a backslash to signal the the quote isn't meant to be the end of the string.</p>
-<div class="sourceCode" id="cb163"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb160"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">my_string</span> <span class="op">&lt;-</span> <span class="st">"The instructor said, \"R is cool,\" and the class agreed."</span>
 <span class="fu"><a href="https://rdrr.io/r/base/cat.html">cat</a></span><span class="op">(</span><span class="va">my_string</span><span class="op">)</span> <span class="co"># cat() prints the arguments</span></code></pre></div>
 <pre><code>## The instructor said, "R is cool," and the class agreed.</code></pre>
@@ -713,13 +1015,13 @@ Solution
 <span class="header-section-number">4.4.3</span> Logical Data<a class="anchor" aria-label="anchor" href="#logical-data"><i class="fas fa-link"></i></a>
 </h3>
 <p><a class="glossary" target="_blank" title="A data type representing TRUE or FALSE values." href="https://psyteachr.github.io/glossary/l#logical">Logical</a> data (also sometimes called "boolean" values) is one of two values: true or false. In R, we always write them in uppercase: <code>TRUE</code> and <code>FALSE</code>.</p>
-<div class="sourceCode" id="cb165"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb162"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/class.html">class</a></span><span class="op">(</span><span class="cn">TRUE</span><span class="op">)</span>
 <span class="fu"><a href="https://rdrr.io/r/base/class.html">class</a></span><span class="op">(</span><span class="cn">FALSE</span><span class="op">)</span></code></pre></div>
 <pre><code>## [1] "logical"
 ## [1] "logical"</code></pre>
 <p>When you compare two values with an <a class="glossary" target="_blank" title="A symbol that performs a mathematical operation, such as +, -, *, /" href="https://psyteachr.github.io/glossary/o#operator">operator</a>, such as checking to see if 10 is greater than 5, the resulting value is logical.</p>
-<div class="sourceCode" id="cb167"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb164"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/logical.html">is.logical</a></span><span class="op">(</span><span class="fl">10</span> <span class="op">&gt;</span> <span class="fl">5</span><span class="op">)</span></code></pre></div>
 <pre><code>## [1] TRUE</code></pre>
 <div class="info">
@@ -731,13 +1033,13 @@ Solution
 <span class="header-section-number">4.4.4</span> Factors<a class="anchor" aria-label="anchor" href="#factors"><i class="fas fa-link"></i></a>
 </h3>
 <p>A <a class="glossary" target="_blank" title="A data type where a specific set of values are stored with labels; An explanatory variable manipulated by the experimenter" href="https://psyteachr.github.io/glossary/f#factor">factor</a> is a specific type of integer that lets you specify the categories and their order. This is useful in data tables to make plots display with categories in the correct order.</p>
-<div class="sourceCode" id="cb169"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb166"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">myfactor</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/factor.html">factor</a></span><span class="op">(</span><span class="st">"B"</span>, levels <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"A"</span>, <span class="st">"B"</span>,<span class="st">"C"</span><span class="op">)</span><span class="op">)</span>
 <span class="va">myfactor</span></code></pre></div>
 <pre><code>## [1] B
 ## Levels: A B C</code></pre>
 <p>Factors are a type of integer, but you can tell that they are factors by checking their <code><a href="https://rdrr.io/r/base/class.html">class()</a></code>.</p>
-<div class="sourceCode" id="cb171"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb168"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/typeof.html">typeof</a></span><span class="op">(</span><span class="va">myfactor</span><span class="op">)</span>
 <span class="fu"><a href="https://rdrr.io/r/base/class.html">class</a></span><span class="op">(</span><span class="va">myfactor</span><span class="op">)</span></code></pre></div>
 <pre><code>## [1] "integer"
@@ -748,11 +1050,11 @@ Solution
 <span class="header-section-number">4.4.5</span> Dates and Times<a class="anchor" aria-label="anchor" href="#dates-and-times"><i class="fas fa-link"></i></a>
 </h3>
 <p>Dates and times are represented by doubles with special classes. Dates and times are very hard to work with, but the <code class="package"><a href="https://lubridate.tidyverse.org/" target="_blank">lubridate</a></code> package provides functions to help you with this.</p>
-<div class="sourceCode" id="cb173"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">today</span> <span class="op">&lt;-</span> <span class="fu">lubridate</span><span class="fu">::</span><span class="fu"><a href="http://lubridate.tidyverse.org/reference/now.html">today</a></span><span class="op">(</span><span class="op">)</span>
-<span class="va">now</span> <span class="op">&lt;-</span> <span class="fu">lubridate</span><span class="fu">::</span><span class="fu"><a href="http://lubridate.tidyverse.org/reference/now.html">now</a></span><span class="op">(</span>tzone <span class="op">=</span> <span class="st">"GMT"</span><span class="op">)</span></code></pre></div>
+<div class="sourceCode" id="cb170"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">today</span> <span class="op">&lt;-</span> <span class="fu">lubridate</span><span class="fu">::</span><span class="fu"><a href="https://lubridate.tidyverse.org/reference/now.html">today</a></span><span class="op">(</span><span class="op">)</span>
+<span class="va">now</span> <span class="op">&lt;-</span> <span class="fu">lubridate</span><span class="fu">::</span><span class="fu"><a href="https://lubridate.tidyverse.org/reference/now.html">now</a></span><span class="op">(</span>tzone <span class="op">=</span> <span class="st">"GMT"</span><span class="op">)</span></code></pre></div>
 <p>Date and datetimes are a type of double, but you can tell that they are dates by checking their <code><a href="https://rdrr.io/r/base/class.html">class()</a></code>. Datetimes can have one or more of a few classes that start with <code>POSIX</code>.</p>
-<div class="sourceCode" id="cb174"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb171"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/typeof.html">typeof</a></span><span class="op">(</span><span class="va">today</span><span class="op">)</span>
 <span class="fu"><a href="https://rdrr.io/r/base/typeof.html">typeof</a></span><span class="op">(</span><span class="va">now</span><span class="op">)</span>
 <span class="fu"><a href="https://rdrr.io/r/base/class.html">class</a></span><span class="op">(</span><span class="va">today</span><span class="op">)</span>
@@ -805,7 +1107,7 @@ Solution
 <option value="">factor</option></select>
 </li>
 <li>
-<code><a href="https://rdrr.io/r/base/factor.html">factor(100)</a></code> <select class="webex-select"><option value="blank"></option>
+<code>factor(100)</code> <select class="webex-select"><option value="blank"></option>
 <option value="">integer</option>
 <option value="">double</option>
 <option value="">character</option>
@@ -858,7 +1160,7 @@ Solution
 <span class="header-section-number">4.5.1</span> Vectors<a class="anchor" aria-label="anchor" href="#vectors"><i class="fas fa-link"></i></a>
 </h3>
 <p>A <a class="glossary" target="_blank" title="A type of data structure that collects values with the same data type, like T/F values, numbers, or strings." href="https://psyteachr.github.io/glossary/v#vector">vector</a> in R is like a vector in mathematics: a set of ordered elements. All of the elements in a vector must be of the same <a class="glossary" target="_blank" title="The kind of data represented by an object." href="https://psyteachr.github.io/glossary/d#data-type">data type</a> (<a class="glossary" target="_blank" title="A data type representing a real decimal number or integer." href="https://psyteachr.github.io/glossary/n#numeric">numeric</a>, <a class="glossary" target="_blank" title="A data type representing strings of text." href="https://psyteachr.github.io/glossary/c#character">character</a>, <a class="glossary" target="_blank" title="A data type representing TRUE or FALSE values." href="https://psyteachr.github.io/glossary/l#logical">logical</a>). You can create a vector by enclosing the elements in the function <code><a href="https://rdrr.io/r/base/c.html">c()</a></code>.</p>
-<div class="sourceCode" id="cb176"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb173"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co">## put information into a vector using c(...)</span>
 <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1</span>, <span class="fl">2</span>, <span class="fl">3</span>, <span class="fl">4</span><span class="op">)</span>
 <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"this"</span>, <span class="st">"is"</span>, <span class="st">"cool"</span><span class="op">)</span>
@@ -868,7 +1170,7 @@ Solution
 ## [1] 1 2 3 4 5 6</code></pre>
 <div class="try">
 <p>What happens when you mix types? What class is the variable <code>mixed</code>?</p>
-<div class="sourceCode" id="cb178"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb175"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">mixed</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">2</span>, <span class="st">"good"</span>, <span class="fl">2L</span>, <span class="st">"b"</span>, <span class="cn">TRUE</span><span class="op">)</span></code></pre></div>
 </div>
 <div class="warning">
@@ -879,28 +1181,28 @@ Solution
 <span class="header-section-number">4.5.1.1</span> Selecting values from a vector<a class="anchor" aria-label="anchor" href="#selecting-values-from-a-vector"><i class="fas fa-link"></i></a>
 </h4>
 <p>If we wanted to pick specific values out of a vector by position, we can use square brackets (an <a class="glossary" target="_blank" title="A symbol used to get values from a container object, such as [, [[, or $" href="https://psyteachr.github.io/glossary/e#extract-operator">extract operator</a>, or <code>[]</code>) after the vector.</p>
-<div class="sourceCode" id="cb179"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb176"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">values</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">10</span>, <span class="fl">20</span>, <span class="fl">30</span>, <span class="fl">40</span>, <span class="fl">50</span><span class="op">)</span>
 <span class="va">values</span><span class="op">[</span><span class="fl">2</span><span class="op">]</span> <span class="co"># selects the second value</span></code></pre></div>
 <pre><code>## [1] 20</code></pre>
 <p>You can select more than one value from the vector by putting a vector of numbers inside the square brackets. For example, you can select the 18th, 19th, 20th, 21st, 4th, 9th and 15th letter from the built-in vector <code>LETTERS</code> (which gives all the uppercase letters in the Latin alphabet).</p>
-<div class="sourceCode" id="cb181"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb178"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">word</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">18</span>, <span class="fl">19</span>, <span class="fl">20</span>, <span class="fl">21</span>, <span class="fl">4</span>, <span class="fl">9</span>, <span class="fl">15</span><span class="op">)</span>
 <span class="va">LETTERS</span><span class="op">[</span><span class="va">word</span><span class="op">]</span></code></pre></div>
 <pre><code>## [1] "R" "S" "T" "U" "D" "I" "O"</code></pre>
 <div class="try">
 <p>Can you decode the secret message?</p>
-<div class="sourceCode" id="cb183"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb180"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">secret</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">14</span>, <span class="fl">5</span>, <span class="fl">22</span>, <span class="fl">5</span>, <span class="fl">18</span>, <span class="fl">7</span>, <span class="fl">15</span>, <span class="fl">14</span>, <span class="fl">14</span>, <span class="fl">1</span>, <span class="fl">7</span>, <span class="fl">9</span>, <span class="fl">22</span>, <span class="fl">5</span>, <span class="fl">25</span>, <span class="fl">15</span>, <span class="fl">21</span>, <span class="fl">21</span>, <span class="fl">16</span><span class="op">)</span></code></pre></div>
 </div>
 <p>You can also create 'named' vectors, where each element has a name. For example:</p>
-<div class="sourceCode" id="cb184"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb181"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">vec</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span>first <span class="op">=</span> <span class="fl">77.9</span>, second <span class="op">=</span> <span class="op">-</span><span class="fl">13.2</span>, third <span class="op">=</span> <span class="fl">100.1</span><span class="op">)</span>
 <span class="va">vec</span></code></pre></div>
 <pre><code>##  first second  third 
 ##   77.9  -13.2  100.1</code></pre>
 <p>We can then access elements by name using a character vector within the square brackets. We can put them in any order we want, and we can repeat elements:</p>
-<div class="sourceCode" id="cb186"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb183"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">vec</span><span class="op">[</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"third"</span>, <span class="st">"second"</span>, <span class="st">"second"</span><span class="op">)</span><span class="op">]</span></code></pre></div>
 <pre><code>##  third second second 
 ##  100.1  -13.2  -13.2</code></pre>
@@ -908,7 +1210,7 @@ Solution
 <p>We can get the vector of names using the <code><a href="https://rdrr.io/r/base/names.html">names()</a></code> function, and we can set or change them using something like <code>names(vec2) &lt;- c("n1", "n2", "n3")</code>.</p>
 </div>
 <p>Another way to access elements is by using a logical vector within the square brackets. This will pull out the elements of the vector for which the corresponding element of the logical vector is <code>TRUE</code>. If the logical vector doesn't have the same length as the original, it will repeat. You can find out how long a vector is using the <code><a href="https://rdrr.io/r/base/length.html">length()</a></code> function.</p>
-<div class="sourceCode" id="cb188"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb185"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/length.html">length</a></span><span class="op">(</span><span class="va">LETTERS</span><span class="op">)</span>
 <span class="va">LETTERS</span><span class="op">[</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="cn">TRUE</span>, <span class="cn">FALSE</span><span class="op">)</span><span class="op">]</span></code></pre></div>
 <pre><code>## [1] 26
@@ -919,8 +1221,8 @@ Solution
 <span class="header-section-number">4.5.1.2</span> Repeating Sequences<a class="anchor" aria-label="anchor" href="#rep_seq"><i class="fas fa-link"></i></a>
 </h4>
 <p>Here are some useful tricks to save typing when creating vectors.</p>
-<p>In the command <code>x:y</code> the <code><a href="https://rdrr.io/r/base/Colon.html">:</a></code> operator would give you the sequence of number starting at <code>x</code>, and going to <code>y</code> in increments of 1.</p>
-<div class="sourceCode" id="cb190"><pre class="downlit sourceCode r">
+<p>In the command <code>x:y</code> the <code>:</code> operator would give you the sequence of number starting at <code>x</code>, and going to <code>y</code> in increments of 1.</p>
+<div class="sourceCode" id="cb187"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fl">1</span><span class="op">:</span><span class="fl">10</span>
 <span class="fl">15.3</span><span class="op">:</span><span class="fl">20.5</span>
 <span class="fl">0</span><span class="op">:</span><span class="op">-</span><span class="fl">10</span></code></pre></div>
@@ -928,7 +1230,7 @@ Solution
 ## [1] 15.3 16.3 17.3 18.3 19.3 20.3
 ##  [1]   0  -1  -2  -3  -4  -5  -6  -7  -8  -9 -10</code></pre>
 <p>What if you want to create a sequence but with something other than integer steps? You can use the <code><a href="https://rdrr.io/r/base/seq.html">seq()</a></code> function. Look at the examples below and work out what the arguments do.</p>
-<div class="sourceCode" id="cb192"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb189"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/seq.html">seq</a></span><span class="op">(</span>from <span class="op">=</span> <span class="op">-</span><span class="fl">1</span>, to <span class="op">=</span> <span class="fl">1</span>, by <span class="op">=</span> <span class="fl">0.2</span><span class="op">)</span>
 <span class="fu"><a href="https://rdrr.io/r/base/seq.html">seq</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">100</span>, length.out <span class="op">=</span> <span class="fl">11</span><span class="op">)</span>
 <span class="fu"><a href="https://rdrr.io/r/base/seq.html">seq</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">10</span>, along.with <span class="op">=</span> <span class="va">LETTERS</span><span class="op">)</span></code></pre></div>
@@ -937,7 +1239,7 @@ Solution
 ##  [1]  0.0  0.4  0.8  1.2  1.6  2.0  2.4  2.8  3.2  3.6  4.0  4.4  4.8  5.2  5.6
 ## [16]  6.0  6.4  6.8  7.2  7.6  8.0  8.4  8.8  9.2  9.6 10.0</code></pre>
 <p>What if you want to repeat a vector many times? You could either type it out (painful) or use the <code><a href="https://rdrr.io/r/base/rep.html">rep()</a></code> function, which can repeat vectors in different ways.</p>
-<div class="sourceCode" id="cb194"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb191"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/rep.html">rep</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">10</span><span class="op">)</span>                      <span class="co"># ten zeroes</span>
 <span class="fu"><a href="https://rdrr.io/r/base/rep.html">rep</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1L</span>, <span class="fl">3L</span><span class="op">)</span>, times <span class="op">=</span> <span class="fl">7</span><span class="op">)</span>       <span class="co"># alternating 1 and 3, 7 times</span>
 <span class="fu"><a href="https://rdrr.io/r/base/rep.html">rep</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"A"</span>, <span class="st">"B"</span>, <span class="st">"C"</span><span class="op">)</span>, each <span class="op">=</span> <span class="fl">2</span><span class="op">)</span> <span class="co"># A to C, 2 times each</span></code></pre></div>
@@ -945,7 +1247,7 @@ Solution
 ##  [1] 1 3 1 3 1 3 1 3 1 3 1 3 1 3
 ## [1] "A" "A" "B" "B" "C" "C"</code></pre>
 <p>The <code><a href="https://rdrr.io/r/base/rep.html">rep()</a></code> function is useful to create a vector of logical values (<code>TRUE</code>/<code>FALSE</code> or <code>1</code>/<code>0</code>) to select values from another vector.</p>
-<div class="sourceCode" id="cb196"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb193"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># Get subject IDs in the pattern Y Y N N ...</span>
 <span class="va">subject_ids</span> <span class="op">&lt;-</span> <span class="fl">1</span><span class="op">:</span><span class="fl">40</span>
 <span class="va">yynn</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/rep.html">rep</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="cn">TRUE</span>, <span class="cn">FALSE</span><span class="op">)</span>, each <span class="op">=</span> <span class="fl">2</span>, 
@@ -958,18 +1260,18 @@ Solution
 <span class="header-section-number">4.5.1.3</span> Vectorized Operations<a class="anchor" aria-label="anchor" href="#vectorized_ops"><i class="fas fa-link"></i></a>
 </h4>
 <p>R performs calculations on vectors in a special way. Let's look at an example using <span class="math inline">\(z\)</span>-scores. A <span class="math inline">\(z\)</span>-score is a <a class="glossary" target="_blank" title="A score minus the mean" href="https://psyteachr.github.io/glossary/d#deviation-score">deviation score</a>(a score minus a mean) divided by a standard deviation. Let's say we have a set of four IQ scores.</p>
-<div class="sourceCode" id="cb198"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb195"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co">## example IQ scores: mu = 100, sigma = 15</span>
 <span class="va">iq</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">86</span>, <span class="fl">101</span>, <span class="fl">127</span>, <span class="fl">99</span><span class="op">)</span></code></pre></div>
 <p>If we want to subtract the mean from these four scores, we just use the following code:</p>
-<div class="sourceCode" id="cb199"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb196"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">iq</span> <span class="op">-</span> <span class="fl">100</span></code></pre></div>
 <pre><code>## [1] -14   1  27  -1</code></pre>
 <p>This subtracts 100 from each element of the vector. R automatically assumes that this is what you wanted to do; it is called a <a class="glossary" target="_blank" title="An operator or function that acts on each element in a vector" href="https://psyteachr.github.io/glossary/v#vectorized">vectorized</a> operation and it makes it possible to express operations more efficiently.</p>
 <p>To calculate <span class="math inline">\(z\)</span>-scores we use the formula:</p>
 <p><span class="math inline">\(z = \frac{X - \mu}{\sigma}\)</span></p>
 <p>where X are the scores, <span class="math inline">\(\mu\)</span> is the mean, and <span class="math inline">\(\sigma\)</span> is the standard deviation. We can expression this formula in R as follows:</p>
-<div class="sourceCode" id="cb201"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb198"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co">## z-scores</span>
 <span class="op">(</span><span class="va">iq</span> <span class="op">-</span> <span class="fl">100</span><span class="op">)</span> <span class="op">/</span> <span class="fl">15</span></code></pre></div>
 <pre><code>## [1] -0.93333333  0.06666667  1.80000000 -0.06666667</code></pre>
@@ -981,7 +1283,7 @@ Solution
 <span class="header-section-number">4.5.2</span> Lists<a class="anchor" aria-label="anchor" href="#lists"><i class="fas fa-link"></i></a>
 </h3>
 <p>Recall that vectors can contain data of only one type. What if you want to store a collection of data of different data types? For that purpose you would use a <a class="glossary" target="_blank" title="A container data type that allows items with different data types to be grouped together." href="https://psyteachr.github.io/glossary/l#list">list</a>. Define a list using the <code><a href="https://rdrr.io/r/base/list.html">list()</a></code> function.</p>
-<div class="sourceCode" id="cb203"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb200"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">data_types</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>
   double <span class="op">=</span> <span class="fl">10.0</span>,
   integer <span class="op">=</span> <span class="fl">10L</span>,
@@ -995,13 +1297,13 @@ Solution
 ##  $ integer  : int 10
 ##  $ character: chr "10"
 ##  $ logical  : logi TRUE</code></pre>
-<p>You can refer to elements of a list using square brackets like a vector, but you can also use the dollar sign notation (<code><a href="https://rdrr.io/r/base/Extract.html">$</a></code>) if the list items have names.</p>
-<div class="sourceCode" id="cb205"><pre class="downlit sourceCode r">
+<p>You can refer to elements of a list using square brackets like a vector, but you can also use the dollar sign notation (<code>$</code>) if the list items have names.</p>
+<div class="sourceCode" id="cb202"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">data_types</span><span class="op">$</span><span class="va">logical</span></code></pre></div>
 <pre><code>## [1] TRUE</code></pre>
 <div class="try">
 <p>Explore the 5 ways shown below to extract a value from a list. What data type is each object? What is the difference between the single and double brackets? Which one is the same as the dollar sign?</p>
-<div class="sourceCode" id="cb207"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb204"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">bracket1</span> <span class="op">&lt;-</span> <span class="va">data_types</span><span class="op">[</span><span class="fl">1</span><span class="op">]</span>
 <span class="va">bracket2</span> <span class="op">&lt;-</span> <span class="va">data_types</span><span class="op">[[</span><span class="fl">1</span><span class="op">]</span><span class="op">]</span>
 <span class="va">name1</span>    <span class="op">&lt;-</span> <span class="va">data_types</span><span class="op">[</span><span class="st">"double"</span><span class="op">]</span>
@@ -1014,23 +1316,23 @@ Solution
 <span class="header-section-number">4.5.3</span> Tables<a class="anchor" aria-label="anchor" href="#tables-data"><i class="fas fa-link"></i></a>
 </h3>
 <p>The built-in, imported, and created data above are <a class="glossary" target="_blank" title="Data in a rectangular table format, where each row has an entry for each column." href="https://psyteachr.github.io/glossary/t#tabular-data">tabular data</a>, data arranged in the form of a table.</p>
-<p>Tabular data structures allow for a collection of data of different types (characters, integers, logical, etc.) but subject to the constraint that each "column" of the table (element of the list) must have the same number of elements. The base R version of a table is called a <code>data.frame</code>, while the 'tidyverse' version is called a <code>tibble</code>. Tibbles are far easier to work with, so we'll be using those. To learn more about differences between these two data structures, see <code>vignette("tibble")</code>.</p>
+<p>Tabular data structures allow for a collection of data of different types (characters, integers, logical, etc.) but subject to the constraint that each "column" of the table (element of the list) must have the same number of elements. The base R version of a table is called a <code>data.frame</code>, while the 'tidyverse' version is called a <code>tibble</code>. Tibbles are far easier to work with, so we'll be using those. To learn more about differences between these two data structures, see <code><a href="https://tibble.tidyverse.org/articles/tibble.html">vignette("tibble")</a></code>.</p>
 <p>Tabular data becomes especially important for when we talk about <a class="glossary" target="_blank" title="A format for data that maps the meaning onto the structure." href="https://psyteachr.github.io/glossary/t#tidy-data">tidy data</a> in <a href="tidyr.html#tidyr">chapter 4</a>, which consists of a set of simple principles for structuring data.</p>
 <div id="creating-a-table" class="section level4" number="4.5.3.1">
 <h4>
 <span class="header-section-number">4.5.3.1</span> Creating a table<a class="anchor" aria-label="anchor" href="#creating-a-table"><i class="fas fa-link"></i></a>
 </h4>
-<p>We learned how to create a table by importing a Excel or CSV file, and creating a table from scratch using the <code>tibble()</code> function. You can also use the <code><a href="https://tibble.tidyverse.org/reference/tribble.html">tibble::tribble()</a></code> function to create a table by row, rather than by column. You start by listing the column names, each preceded by a tilde (<code><a href="https://rdrr.io/r/base/tilde.html">~</a></code>), then you list the values for each column, row by row, separated by commas (don't forget a comma at the end of each row). This method can be easier for some data, but doesn't let you use shortcuts, like setting all of the values in a column to the same value or a <a href="data.html#rep_seq">repeating sequence</a>.</p>
-<div class="sourceCode" id="cb208"><pre class="downlit sourceCode r">
+<p>We learned how to create a table by importing a Excel or CSV file, and creating a table from scratch using the <code><a href="https://tibble.tidyverse.org/reference/tibble.html">tibble()</a></code> function. You can also use the <code><a href="https://tibble.tidyverse.org/reference/tribble.html">tibble::tribble()</a></code> function to create a table by row, rather than by column. You start by listing the column names, each preceded by a tilde (<code>~</code>), then you list the values for each column, row by row, separated by commas (don't forget a comma at the end of each row). This method can be easier for some data, but doesn't let you use shortcuts, like setting all of the values in a column to the same value or a <a href="data.html#rep_seq">repeating sequence</a>.</p>
+<div class="sourceCode" id="cb205"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># by column using tibble</span>
-<span class="va">avatar_by_col</span> <span class="op">&lt;-</span> <span class="fu">tibble</span><span class="op">(</span>
+<span class="va">avatar_by_col</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://tibble.tidyverse.org/reference/tibble.html">tibble</a></span><span class="op">(</span>
   name <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Katara"</span>, <span class="st">"Toph"</span>, <span class="st">"Sokka"</span>, <span class="st">"Azula"</span><span class="op">)</span>,
   bends <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"water"</span>, <span class="st">"earth"</span>, <span class="cn">NA</span>, <span class="st">"fire"</span><span class="op">)</span>,
   friendly <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/rep.html">rep</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="cn">TRUE</span>, <span class="cn">FALSE</span><span class="op">)</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">3</span>, <span class="fl">1</span><span class="op">)</span><span class="op">)</span>
 <span class="op">)</span>
 
 <span class="co"># by row using tribble</span>
-<span class="va">avatar_by_row</span> <span class="op">&lt;-</span> <span class="fu">tribble</span><span class="op">(</span>
+<span class="va">avatar_by_row</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://tibble.tidyverse.org/reference/tribble.html">tribble</a></span><span class="op">(</span>
   <span class="op">~</span><span class="va">name</span>,    <span class="op">~</span><span class="va">bends</span>, <span class="op">~</span><span class="va">friendly</span>,
   <span class="st">"Katara"</span>, <span class="st">"water"</span>,       <span class="cn">TRUE</span>,
   <span class="st">"Toph"</span>,   <span class="st">"earth"</span>,       <span class="cn">TRUE</span>,
@@ -1043,7 +1345,7 @@ Solution
 <span class="header-section-number">4.5.3.2</span> Table info<a class="anchor" aria-label="anchor" href="#table-info"><i class="fas fa-link"></i></a>
 </h4>
 <p>We can get information about the table using the functions <code><a href="https://rdrr.io/r/base/nrow.html">ncol()</a></code> (number of columns), <code><a href="https://rdrr.io/r/base/nrow.html">nrow()</a></code> (number of rows), <code><a href="https://rdrr.io/r/base/dim.html">dim()</a></code> (the number of rows and number of columns), and <code><a href="https://rdrr.io/r/base/name.html">name()</a></code> (the column names).</p>
-<div class="sourceCode" id="cb209"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb206"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/nrow.html">nrow</a></span><span class="op">(</span><span class="va">avatar</span><span class="op">)</span> <span class="co"># how many rows?</span>
 <span class="fu"><a href="https://rdrr.io/r/base/nrow.html">ncol</a></span><span class="op">(</span><span class="va">avatar</span><span class="op">)</span> <span class="co"># how many columns?</span>
 <span class="fu"><a href="https://rdrr.io/r/base/dim.html">dim</a></span><span class="op">(</span><span class="va">avatar</span><span class="op">)</span>  <span class="co"># what are the table dimensions?</span>
@@ -1057,8 +1359,8 @@ Solution
 <h4>
 <span class="header-section-number">4.5.3.3</span> Accessing rows and columns<a class="anchor" aria-label="anchor" href="#row-col-access"><i class="fas fa-link"></i></a>
 </h4>
-<p>There are various ways of accessing specific columns or rows from a table. The ones below are from <a class="glossary" target="_blank" title="The set of R functions that come with a basic installation of R, before you add external packages" href="https://psyteachr.github.io/glossary/b#base-r">base R</a> and are useful to know about, but you'll be learning easier (and more readable) ways in the <a href="tidyr.html#tidyr">tidyr</a> and <a href="dplyr.html#dplyr">dplyr</a> lessons. Examples of these base R accessing functions are provided here for reference, since you might see them in other people's scripts.</p>
-<div class="sourceCode" id="cb211"><pre class="downlit sourceCode r">
+<p>There are various ways of accessing specific columns or rows from a table. The ones below are from <a class="glossary" target="_blank" title="The set of R functions that come with a basic installation of R, before you add external packages" href="https://psyteachr.github.io/glossary/b#base-r">base R</a> and are useful to know about, but you'll be learning easier (and more readable) ways in Chapter <a href="tidyr.html#tidyr">6</a> and Chapter <a href="dplyr.html#dplyr">7</a>. Examples of these base R accessing functions are provided here for reference, since you might see them in other people's scripts.</p>
+<div class="sourceCode" id="cb208"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">katara</span>     <span class="op">&lt;-</span> <span class="va">avatar</span><span class="op">[</span><span class="fl">1</span>, <span class="op">]</span> <span class="co"># first row</span>
 <span class="va">type</span>       <span class="op">&lt;-</span> <span class="va">avatar</span><span class="op">[</span>, <span class="fl">2</span><span class="op">]</span> <span class="co"># second column (bends)</span>
 <span class="va">benders</span>    <span class="op">&lt;-</span> <span class="va">avatar</span><span class="op">[</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1</span>, <span class="fl">2</span><span class="op">)</span>, <span class="op">]</span> <span class="co"># selected rows (by number)</span>
@@ -1073,16 +1375,19 @@ Solution
 </h2>
 <p>What if you import some data and it guesses the wrong column type? The most common reason is that a numeric column has some non-numbers in it somewhere. Maybe someone wrote a note in an otherwise numeric column. Columns have to be all one data type, so if there are any characters, the whole column is converted to character strings, and numbers like <code><span class="fl">1.2</span></code> get represented as <code><span class="st">"1.2"</span></code>, which will cause very weird errors like <code>"100" &lt; "9" == TRUE</code>. You can catch this by using <code><span class="fu">glimpse</span><span class="op">(</span><span class="op">)</span></code> to check your data.</p>
 <p>The data directory you created with <code><a href="https://rdrr.io/pkg/reprores/man/getdata.html">reprores::getdata()</a></code> contains a file called "mess.csv". Let's try loading this dataset.</p>
-<div class="sourceCode" id="cb212"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">mess</span> <span class="op">&lt;-</span> <span class="fu">read_csv</span><span class="op">(</span><span class="st">"data/mess.csv"</span><span class="op">)</span></code></pre></div>
-<pre><code>## Rows: 27 Columns: 1</code></pre>
-<pre><code>## ── Column specification ────────────────────────────────────────────────────────
+<div class="sourceCode" id="cb209"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co"># lazy = FALSE loads the data right away so you can see error messages</span>
+<span class="co"># this default changed in late 2021 and might change back soon</span>
+<span class="va">mess</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://readr.tidyverse.org/reference/read_delim.html">read_csv</a></span><span class="op">(</span><span class="st">"data/mess.csv"</span>, lazy <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></code></pre></div>
+<pre><code>## Warning: One or more parsing issues, see `problems()` for details</code></pre>
+<pre><code>## Rows: 27 Columns: 1
+## ── Column specification ────────────────────────────────────────────────────────
 ## Delimiter: ","
-## chr (1): This is my messy dataset</code></pre>
-<pre><code>## 
+## chr (1): This is my messy dataset
+## 
 ## ℹ Use `spec()` to retrieve the full column specification for this data.
 ## ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
-<p>You'll get a warning with many parsing errors and <code>mess</code> is just a single column of the word "junk". View the file <code>data/mess.csv</code> by clicking on it in the File pane, and choosing "View File". Here are the first 10 lines. What went wrong?</p>
+<p>You'll get a warning with many parsing errors and the data table is just a single column. View the file <code>data/mess.csv</code> by clicking on it in the File pane, and choosing "View File". Here are the first 10 lines. What went wrong?</p>
 <pre><code>This is my messy dataset
 
 junk,order,score,letter,good,min_max,date
@@ -1093,268 +1398,30 @@ junk,missing,0.72,b,1,2 - 3,2020-01-2
 junk,3,-0.62,c,FALSE,3 - 4,2020-01-3
 
 junk,4,2.03,d,T,4 - 5,2020-01-4</code></pre>
-<p>First, the file starts with a note: "This is my messy dataset". We want to skip the first two lines. You can do this with the argument <code>skip</code> in <code>read_csv()</code>.</p>
-<div class="sourceCode" id="cb217"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">mess</span> <span class="op">&lt;-</span> <span class="fu">read_csv</span><span class="op">(</span><span class="st">"data/mess.csv"</span>, skip <span class="op">=</span> <span class="fl">2</span><span class="op">)</span></code></pre></div>
-<pre><code>## Rows: 26 Columns: 7</code></pre>
-<pre><code>## ── Column specification ────────────────────────────────────────────────────────
+<p>First, the file starts with a note: "This is my messy dataset". We want to skip the first two lines. You can do this with the argument <code>skip</code> in <code><a href="https://readr.tidyverse.org/reference/read_delim.html">read_csv()</a></code>.</p>
+<div class="sourceCode" id="cb213"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">mess</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://readr.tidyverse.org/reference/read_delim.html">read_csv</a></span><span class="op">(</span><span class="st">"data/mess.csv"</span>, 
+                 skip <span class="op">=</span> <span class="fl">2</span>, 
+                 lazy <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></code></pre></div>
+<pre><code>## Rows: 26 Columns: 7
+## ── Column specification ────────────────────────────────────────────────────────
 ## Delimiter: ","
 ## chr (6): junk, order, letter, good, min_max, date
-## dbl (1): score</code></pre>
-<pre><code>## 
+## dbl (1): score
+## 
 ## ℹ Use `spec()` to retrieve the full column specification for this data.
 ## ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
-<div class="sourceCode" id="cb221"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">mess</span></code></pre></div>
-<div class="kable-table">
-<div class="inline-table"><table class="table table-sm">
-<thead><tr class="header">
-<th align="left">junk</th>
-<th align="left">order</th>
-<th align="right">score</th>
-<th align="left">letter</th>
-<th align="left">good</th>
-<th align="left">min_max</th>
-<th align="left">date</th>
-</tr></thead>
-<tbody>
-<tr class="odd">
-<td align="left">junk</td>
-<td align="left">1</td>
-<td align="right">-1.00</td>
-<td align="left">a</td>
-<td align="left">1</td>
-<td align="left">1 - 2</td>
-<td align="left">2020-01-1</td>
-</tr>
-<tr class="even">
-<td align="left">junk</td>
-<td align="left">missing</td>
-<td align="right">0.72</td>
-<td align="left">b</td>
-<td align="left">1</td>
-<td align="left">2 - 3</td>
-<td align="left">2020-01-2</td>
-</tr>
-<tr class="odd">
-<td align="left">junk</td>
-<td align="left">3</td>
-<td align="right">-0.62</td>
-<td align="left">c</td>
-<td align="left">FALSE</td>
-<td align="left">3 - 4</td>
-<td align="left">2020-01-3</td>
-</tr>
-<tr class="even">
-<td align="left">junk</td>
-<td align="left">4</td>
-<td align="right">2.03</td>
-<td align="left">d</td>
-<td align="left">T</td>
-<td align="left">4 - 5</td>
-<td align="left">2020-01-4</td>
-</tr>
-<tr class="odd">
-<td align="left">junk</td>
-<td align="left">5</td>
-<td align="right">NA</td>
-<td align="left">e</td>
-<td align="left">1</td>
-<td align="left">5 - 6</td>
-<td align="left">2020-01-5</td>
-</tr>
-<tr class="even">
-<td align="left">junk</td>
-<td align="left">6</td>
-<td align="right">0.99</td>
-<td align="left">f</td>
-<td align="left">0</td>
-<td align="left">6 - 7</td>
-<td align="left">2020-01-6</td>
-</tr>
-<tr class="odd">
-<td align="left">junk</td>
-<td align="left">7</td>
-<td align="right">0.03</td>
-<td align="left">g</td>
-<td align="left">T</td>
-<td align="left">7 - 8</td>
-<td align="left">2020-01-7</td>
-</tr>
-<tr class="even">
-<td align="left">junk</td>
-<td align="left">8</td>
-<td align="right">0.67</td>
-<td align="left">h</td>
-<td align="left">TRUE</td>
-<td align="left">8 - 9</td>
-<td align="left">2020-01-8</td>
-</tr>
-<tr class="odd">
-<td align="left">junk</td>
-<td align="left">9</td>
-<td align="right">0.57</td>
-<td align="left">i</td>
-<td align="left">1</td>
-<td align="left">9 - 10</td>
-<td align="left">2020-01-9</td>
-</tr>
-<tr class="even">
-<td align="left">junk</td>
-<td align="left">10</td>
-<td align="right">0.90</td>
-<td align="left">j</td>
-<td align="left">T</td>
-<td align="left">10 - 11</td>
-<td align="left">2020-01-10</td>
-</tr>
-<tr class="odd">
-<td align="left">junk</td>
-<td align="left">11</td>
-<td align="right">-1.55</td>
-<td align="left">k</td>
-<td align="left">F</td>
-<td align="left">11 - 12</td>
-<td align="left">2020-01-11</td>
-</tr>
-<tr class="even">
-<td align="left">junk</td>
-<td align="left">12</td>
-<td align="right">NA</td>
-<td align="left">l</td>
-<td align="left">FALSE</td>
-<td align="left">12 - 13</td>
-<td align="left">2020-01-12</td>
-</tr>
-<tr class="odd">
-<td align="left">junk</td>
-<td align="left">13</td>
-<td align="right">0.15</td>
-<td align="left">m</td>
-<td align="left">T</td>
-<td align="left">13 - 14</td>
-<td align="left">2020-01-13</td>
-</tr>
-<tr class="even">
-<td align="left">junk</td>
-<td align="left">14</td>
-<td align="right">-0.66</td>
-<td align="left">n</td>
-<td align="left">TRUE</td>
-<td align="left">14 - 15</td>
-<td align="left">2020-01-14</td>
-</tr>
-<tr class="odd">
-<td align="left">junk</td>
-<td align="left">15</td>
-<td align="right">-0.99</td>
-<td align="left">o</td>
-<td align="left">1</td>
-<td align="left">15 - 16</td>
-<td align="left">2020-01-15</td>
-</tr>
-<tr class="even">
-<td align="left">junk</td>
-<td align="left">16</td>
-<td align="right">1.97</td>
-<td align="left">p</td>
-<td align="left">T</td>
-<td align="left">16 - 17</td>
-<td align="left">2020-01-16</td>
-</tr>
-<tr class="odd">
-<td align="left">junk</td>
-<td align="left">17</td>
-<td align="right">-0.44</td>
-<td align="left">q</td>
-<td align="left">TRUE</td>
-<td align="left">17 - 18</td>
-<td align="left">2020-01-17</td>
-</tr>
-<tr class="even">
-<td align="left">junk</td>
-<td align="left">18</td>
-<td align="right">-0.90</td>
-<td align="left">r</td>
-<td align="left">F</td>
-<td align="left">18 - 19</td>
-<td align="left">2020-01-18</td>
-</tr>
-<tr class="odd">
-<td align="left">junk</td>
-<td align="left">19</td>
-<td align="right">-0.15</td>
-<td align="left">s</td>
-<td align="left">FALSE</td>
-<td align="left">19 - 20</td>
-<td align="left">2020-01-19</td>
-</tr>
-<tr class="even">
-<td align="left">junk</td>
-<td align="left">20</td>
-<td align="right">-0.83</td>
-<td align="left">t</td>
-<td align="left">0</td>
-<td align="left">20 - 21</td>
-<td align="left">2020-01-20</td>
-</tr>
-<tr class="odd">
-<td align="left">junk</td>
-<td align="left">21</td>
-<td align="right">1.99</td>
-<td align="left">u</td>
-<td align="left">T</td>
-<td align="left">21 - 22</td>
-<td align="left">2020-01-21</td>
-</tr>
-<tr class="even">
-<td align="left">junk</td>
-<td align="left">22</td>
-<td align="right">0.04</td>
-<td align="left">v</td>
-<td align="left">F</td>
-<td align="left">22 - 23</td>
-<td align="left">2020-01-22</td>
-</tr>
-<tr class="odd">
-<td align="left">junk</td>
-<td align="left">23</td>
-<td align="right">-0.40</td>
-<td align="left">w</td>
-<td align="left">F</td>
-<td align="left">23 - 24</td>
-<td align="left">2020-01-23</td>
-</tr>
-<tr class="even">
-<td align="left">junk</td>
-<td align="left">24</td>
-<td align="right">-0.47</td>
-<td align="left">x</td>
-<td align="left">0</td>
-<td align="left">24 - 25</td>
-<td align="left">2020-01-24</td>
-</tr>
-<tr class="odd">
-<td align="left">junk</td>
-<td align="left">25</td>
-<td align="right">-0.41</td>
-<td align="left">y</td>
-<td align="left">TRUE</td>
-<td align="left">25 - 26</td>
-<td align="left">2020-01-25</td>
-</tr>
-<tr class="even">
-<td align="left">junk</td>
-<td align="left">26</td>
-<td align="right">0.68</td>
-<td align="left">z</td>
-<td align="left">0</td>
-<td align="left">26 - 27</td>
-<td align="left">2020-01-26</td>
-</tr>
-</tbody>
-</table></div>
-</div>
+<div class="sourceCode" id="cb215"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://pillar.r-lib.org/reference/glimpse.html">glimpse</a></span><span class="op">(</span><span class="va">mess</span><span class="op">)</span></code></pre></div>
+<pre><code>## Rows: 26
+## Columns: 7
+## $ junk    &lt;chr&gt; "junk", "junk", "junk", "junk", "junk", "junk", "junk", "junk"…
+## $ order   &lt;chr&gt; "1", "missing", "3", "4", "5", "6", "7", "8", "9", "10", "11",…
+## $ score   &lt;dbl&gt; -1.00, 0.72, -0.62, 2.03, NA, 0.99, 0.03, 0.67, 0.57, 0.90, -1…
+## $ letter  &lt;chr&gt; "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m…
+## $ good    &lt;chr&gt; "1", "1", "FALSE", "T", "1", "0", "T", "TRUE", "1", "T", "F", …
+## $ min_max &lt;chr&gt; "1 - 2", "2 - 3", "3 - 4", "4 - 5", "5 - 6", "6 - 7", "7 - 8",…
+## $ date    &lt;chr&gt; "2020-01-1", "2020-01-2", "2020-01-3", "2020-01-4", "2020-01-5…</code></pre>
 <p>OK, that's a little better, but this table is still a serious mess in several ways:</p>
 <ul>
 <li>
@@ -1435,246 +1502,575 @@ junk,4,2.03,d,T,4 - 5,2020-01-4</code></pre>
 </tr>
 </tbody>
 </table></div>
-<div class="sourceCode" id="cb222"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb217"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># omitted values are guessed</span>
 <span class="co"># ?col_date for format options</span>
 <span class="va">ct</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>
   junk <span class="op">=</span> <span class="st">"-"</span>, <span class="co"># skip this column</span>
   order <span class="op">=</span> <span class="st">"i"</span>,
   good <span class="op">=</span> <span class="st">"l"</span>,
-  date <span class="op">=</span> <span class="fu">col_date</span><span class="op">(</span>format <span class="op">=</span> <span class="st">"%Y-%m-%d"</span><span class="op">)</span>
+  date <span class="op">=</span> <span class="fu"><a href="https://readr.tidyverse.org/reference/parse_datetime.html">col_date</a></span><span class="op">(</span>format <span class="op">=</span> <span class="st">"%Y-%m-%d"</span><span class="op">)</span>
 <span class="op">)</span>
 
-<span class="va">tidier</span> <span class="op">&lt;-</span> <span class="fu">read_csv</span><span class="op">(</span><span class="st">"data/mess.csv"</span>, 
+<span class="va">tidier</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://readr.tidyverse.org/reference/read_delim.html">read_csv</a></span><span class="op">(</span><span class="st">"data/mess.csv"</span>, 
                    skip <span class="op">=</span> <span class="fl">2</span>,
-                   col_types <span class="op">=</span> <span class="va">ct</span><span class="op">)</span></code></pre></div>
-<p>You will get a message about "1 parsing failure" when you run this. Warnings look scary at first, but always start by reading the message. The table tells you what row (<code>2</code>) and column (<code>order</code>) the error was found in, what kind of data was expected (<code>integer</code>), and what the actual value was (<code><span class="st">"missing"</span></code>). If you specifically tell <code><span class="fu">read_csv</span><span class="op">(</span><span class="op">)</span></code> to import a column as an integer, any characters in the column will produce a warning like this and then be recorded as <code>NA</code>. You can manually set what the missing values were recorded as with the <code>na</code> argument.</p>
-<div class="sourceCode" id="cb223"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">tidiest</span> <span class="op">&lt;-</span> <span class="fu">read_csv</span><span class="op">(</span><span class="st">"data/mess.csv"</span>, 
+                   col_types <span class="op">=</span> <span class="va">ct</span>, 
+                   lazy <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></code></pre></div>
+<pre><code>## Warning: One or more parsing issues, see `problems()` for details</code></pre>
+<div class="sourceCode" id="cb219"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://readr.tidyverse.org/reference/problems.html">problems</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
+<p>You will get a message about parsing issues when you run this that tells you to run the <code><a href="https://readr.tidyverse.org/reference/problems.html">problems()</a></code> function to see a table of the problems. Warnings look scary at first, but always start by reading the message. The table tells you what row (<code>3</code>) and column (<code>2</code>) the error was found in, what kind of data was expected (<code>an integer</code>), and what the actual value was (<code>missing</code>). If you specifically tell <code><a href="https://readr.tidyverse.org/reference/read_delim.html">read_csv()</a></code> to import a column as an integer, any characters in the column will produce a warning like this and then be recorded as <code>NA</code>. You can manually set what the missing values were recorded as with the <code>na</code> argument.</p>
+<div class="sourceCode" id="cb220"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">tidiest</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://readr.tidyverse.org/reference/read_delim.html">read_csv</a></span><span class="op">(</span><span class="st">"data/mess.csv"</span>, 
                    skip <span class="op">=</span> <span class="fl">2</span>,
                    na <span class="op">=</span> <span class="st">"missing"</span>,
-                   col_types <span class="op">=</span> <span class="va">ct</span><span class="op">)</span></code></pre></div>
+                   col_types <span class="op">=</span> <span class="va">ct</span>,
+                   lazy <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></code></pre></div>
 <p>Now <code>order</code> is an integer where "missing" is now <code>NA</code>, <code>good</code> is a logical value, where <code><span class="fl">0</span></code> and <code><span class="cn">F</span></code> are converted to <code><span class="cn">FALSE</span></code> and <code><span class="fl">1</span></code> and <code><span class="cn">T</span></code> are converted to <code><span class="cn">TRUE</span></code>, and <code>date</code> is a date type (adding leading zeros to the day). We'll learn in later chapters how to fix other problems, such as the <code>min_max</code> column containing two different types of data.</p>
-<div class="sourceCode" id="cb224"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb221"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">tidiest</span></code></pre></div>
 <div class="kable-table">
 <div class="inline-table"><table class="table table-sm">
-<thead><tr class="header">
-<th align="right">order</th>
-<th align="left">score</th>
-<th align="left">letter</th>
-<th align="left">good</th>
-<th align="left">min_max</th>
-<th align="left">date</th>
+<thead><tr>
+<th style="text-align:right;">
+order
+</th>
+<th style="text-align:left;">
+score
+</th>
+<th style="text-align:left;">
+letter
+</th>
+<th style="text-align:left;">
+good
+</th>
+<th style="text-align:left;">
+min_max
+</th>
+<th style="text-align:left;">
+date
+</th>
 </tr></thead>
 <tbody>
-<tr class="odd">
-<td align="right">1</td>
-<td align="left">-1</td>
-<td align="left">a</td>
-<td align="left">TRUE</td>
-<td align="left">1 - 2</td>
-<td align="left">2020-01-01</td>
+<tr>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+-1
+</td>
+<td style="text-align:left;">
+a
+</td>
+<td style="text-align:left;">
+TRUE
+</td>
+<td style="text-align:left;">
+1 - 2
+</td>
+<td style="text-align:left;">
+2020-01-01
+</td>
 </tr>
-<tr class="even">
-<td align="right">NA</td>
-<td align="left">0.72</td>
-<td align="left">b</td>
-<td align="left">TRUE</td>
-<td align="left">2 - 3</td>
-<td align="left">2020-01-02</td>
+<tr>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:left;">
+0.72
+</td>
+<td style="text-align:left;">
+b
+</td>
+<td style="text-align:left;">
+TRUE
+</td>
+<td style="text-align:left;">
+2 - 3
+</td>
+<td style="text-align:left;">
+2020-01-02
+</td>
 </tr>
-<tr class="odd">
-<td align="right">3</td>
-<td align="left">-0.62</td>
-<td align="left">c</td>
-<td align="left">FALSE</td>
-<td align="left">3 - 4</td>
-<td align="left">2020-01-03</td>
+<tr>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:left;">
+-0.62
+</td>
+<td style="text-align:left;">
+c
+</td>
+<td style="text-align:left;">
+FALSE
+</td>
+<td style="text-align:left;">
+3 - 4
+</td>
+<td style="text-align:left;">
+2020-01-03
+</td>
 </tr>
-<tr class="even">
-<td align="right">4</td>
-<td align="left">2.03</td>
-<td align="left">d</td>
-<td align="left">TRUE</td>
-<td align="left">4 - 5</td>
-<td align="left">2020-01-04</td>
+<tr>
+<td style="text-align:right;">
+4
+</td>
+<td style="text-align:left;">
+2.03
+</td>
+<td style="text-align:left;">
+d
+</td>
+<td style="text-align:left;">
+TRUE
+</td>
+<td style="text-align:left;">
+4 - 5
+</td>
+<td style="text-align:left;">
+2020-01-04
+</td>
 </tr>
-<tr class="odd">
-<td align="right">5</td>
-<td align="left">NA</td>
-<td align="left">e</td>
-<td align="left">TRUE</td>
-<td align="left">5 - 6</td>
-<td align="left">2020-01-05</td>
+<tr>
+<td style="text-align:right;">
+5
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+e
+</td>
+<td style="text-align:left;">
+TRUE
+</td>
+<td style="text-align:left;">
+5 - 6
+</td>
+<td style="text-align:left;">
+2020-01-05
+</td>
 </tr>
-<tr class="even">
-<td align="right">6</td>
-<td align="left">0.99</td>
-<td align="left">f</td>
-<td align="left">FALSE</td>
-<td align="left">6 - 7</td>
-<td align="left">2020-01-06</td>
+<tr>
+<td style="text-align:right;">
+6
+</td>
+<td style="text-align:left;">
+0.99
+</td>
+<td style="text-align:left;">
+f
+</td>
+<td style="text-align:left;">
+FALSE
+</td>
+<td style="text-align:left;">
+6 - 7
+</td>
+<td style="text-align:left;">
+2020-01-06
+</td>
 </tr>
-<tr class="odd">
-<td align="right">7</td>
-<td align="left">0.03</td>
-<td align="left">g</td>
-<td align="left">TRUE</td>
-<td align="left">7 - 8</td>
-<td align="left">2020-01-07</td>
+<tr>
+<td style="text-align:right;">
+7
+</td>
+<td style="text-align:left;">
+0.03
+</td>
+<td style="text-align:left;">
+g
+</td>
+<td style="text-align:left;">
+TRUE
+</td>
+<td style="text-align:left;">
+7 - 8
+</td>
+<td style="text-align:left;">
+2020-01-07
+</td>
 </tr>
-<tr class="even">
-<td align="right">8</td>
-<td align="left">0.67</td>
-<td align="left">h</td>
-<td align="left">TRUE</td>
-<td align="left">8 - 9</td>
-<td align="left">2020-01-08</td>
+<tr>
+<td style="text-align:right;">
+8
+</td>
+<td style="text-align:left;">
+0.67
+</td>
+<td style="text-align:left;">
+h
+</td>
+<td style="text-align:left;">
+TRUE
+</td>
+<td style="text-align:left;">
+8 - 9
+</td>
+<td style="text-align:left;">
+2020-01-08
+</td>
 </tr>
-<tr class="odd">
-<td align="right">9</td>
-<td align="left">0.57</td>
-<td align="left">i</td>
-<td align="left">TRUE</td>
-<td align="left">9 - 10</td>
-<td align="left">2020-01-09</td>
+<tr>
+<td style="text-align:right;">
+9
+</td>
+<td style="text-align:left;">
+0.57
+</td>
+<td style="text-align:left;">
+i
+</td>
+<td style="text-align:left;">
+TRUE
+</td>
+<td style="text-align:left;">
+9 - 10
+</td>
+<td style="text-align:left;">
+2020-01-09
+</td>
 </tr>
-<tr class="even">
-<td align="right">10</td>
-<td align="left">0.9</td>
-<td align="left">j</td>
-<td align="left">TRUE</td>
-<td align="left">10 - 11</td>
-<td align="left">2020-01-10</td>
+<tr>
+<td style="text-align:right;">
+10
+</td>
+<td style="text-align:left;">
+0.9
+</td>
+<td style="text-align:left;">
+j
+</td>
+<td style="text-align:left;">
+TRUE
+</td>
+<td style="text-align:left;">
+10 - 11
+</td>
+<td style="text-align:left;">
+2020-01-10
+</td>
 </tr>
-<tr class="odd">
-<td align="right">11</td>
-<td align="left">-1.55</td>
-<td align="left">k</td>
-<td align="left">FALSE</td>
-<td align="left">11 - 12</td>
-<td align="left">2020-01-11</td>
+<tr>
+<td style="text-align:right;">
+11
+</td>
+<td style="text-align:left;">
+-1.55
+</td>
+<td style="text-align:left;">
+k
+</td>
+<td style="text-align:left;">
+FALSE
+</td>
+<td style="text-align:left;">
+11 - 12
+</td>
+<td style="text-align:left;">
+2020-01-11
+</td>
 </tr>
-<tr class="even">
-<td align="right">12</td>
-<td align="left">NA</td>
-<td align="left">l</td>
-<td align="left">FALSE</td>
-<td align="left">12 - 13</td>
-<td align="left">2020-01-12</td>
+<tr>
+<td style="text-align:right;">
+12
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+l
+</td>
+<td style="text-align:left;">
+FALSE
+</td>
+<td style="text-align:left;">
+12 - 13
+</td>
+<td style="text-align:left;">
+2020-01-12
+</td>
 </tr>
-<tr class="odd">
-<td align="right">13</td>
-<td align="left">0.15</td>
-<td align="left">m</td>
-<td align="left">TRUE</td>
-<td align="left">13 - 14</td>
-<td align="left">2020-01-13</td>
+<tr>
+<td style="text-align:right;">
+13
+</td>
+<td style="text-align:left;">
+0.15
+</td>
+<td style="text-align:left;">
+m
+</td>
+<td style="text-align:left;">
+TRUE
+</td>
+<td style="text-align:left;">
+13 - 14
+</td>
+<td style="text-align:left;">
+2020-01-13
+</td>
 </tr>
-<tr class="even">
-<td align="right">14</td>
-<td align="left">-0.66</td>
-<td align="left">n</td>
-<td align="left">TRUE</td>
-<td align="left">14 - 15</td>
-<td align="left">2020-01-14</td>
+<tr>
+<td style="text-align:right;">
+14
+</td>
+<td style="text-align:left;">
+-0.66
+</td>
+<td style="text-align:left;">
+n
+</td>
+<td style="text-align:left;">
+TRUE
+</td>
+<td style="text-align:left;">
+14 - 15
+</td>
+<td style="text-align:left;">
+2020-01-14
+</td>
 </tr>
-<tr class="odd">
-<td align="right">15</td>
-<td align="left">-0.99</td>
-<td align="left">o</td>
-<td align="left">TRUE</td>
-<td align="left">15 - 16</td>
-<td align="left">2020-01-15</td>
+<tr>
+<td style="text-align:right;">
+15
+</td>
+<td style="text-align:left;">
+-0.99
+</td>
+<td style="text-align:left;">
+o
+</td>
+<td style="text-align:left;">
+TRUE
+</td>
+<td style="text-align:left;">
+15 - 16
+</td>
+<td style="text-align:left;">
+2020-01-15
+</td>
 </tr>
-<tr class="even">
-<td align="right">16</td>
-<td align="left">1.97</td>
-<td align="left">p</td>
-<td align="left">TRUE</td>
-<td align="left">16 - 17</td>
-<td align="left">2020-01-16</td>
+<tr>
+<td style="text-align:right;">
+16
+</td>
+<td style="text-align:left;">
+1.97
+</td>
+<td style="text-align:left;">
+p
+</td>
+<td style="text-align:left;">
+TRUE
+</td>
+<td style="text-align:left;">
+16 - 17
+</td>
+<td style="text-align:left;">
+2020-01-16
+</td>
 </tr>
-<tr class="odd">
-<td align="right">17</td>
-<td align="left">-0.44</td>
-<td align="left">q</td>
-<td align="left">TRUE</td>
-<td align="left">17 - 18</td>
-<td align="left">2020-01-17</td>
+<tr>
+<td style="text-align:right;">
+17
+</td>
+<td style="text-align:left;">
+-0.44
+</td>
+<td style="text-align:left;">
+q
+</td>
+<td style="text-align:left;">
+TRUE
+</td>
+<td style="text-align:left;">
+17 - 18
+</td>
+<td style="text-align:left;">
+2020-01-17
+</td>
 </tr>
-<tr class="even">
-<td align="right">18</td>
-<td align="left">-0.9</td>
-<td align="left">r</td>
-<td align="left">FALSE</td>
-<td align="left">18 - 19</td>
-<td align="left">2020-01-18</td>
+<tr>
+<td style="text-align:right;">
+18
+</td>
+<td style="text-align:left;">
+-0.9
+</td>
+<td style="text-align:left;">
+r
+</td>
+<td style="text-align:left;">
+FALSE
+</td>
+<td style="text-align:left;">
+18 - 19
+</td>
+<td style="text-align:left;">
+2020-01-18
+</td>
 </tr>
-<tr class="odd">
-<td align="right">19</td>
-<td align="left">-0.15</td>
-<td align="left">s</td>
-<td align="left">FALSE</td>
-<td align="left">19 - 20</td>
-<td align="left">2020-01-19</td>
+<tr>
+<td style="text-align:right;">
+19
+</td>
+<td style="text-align:left;">
+-0.15
+</td>
+<td style="text-align:left;">
+s
+</td>
+<td style="text-align:left;">
+FALSE
+</td>
+<td style="text-align:left;">
+19 - 20
+</td>
+<td style="text-align:left;">
+2020-01-19
+</td>
 </tr>
-<tr class="even">
-<td align="right">20</td>
-<td align="left">-0.83</td>
-<td align="left">t</td>
-<td align="left">FALSE</td>
-<td align="left">20 - 21</td>
-<td align="left">2020-01-20</td>
+<tr>
+<td style="text-align:right;">
+20
+</td>
+<td style="text-align:left;">
+-0.83
+</td>
+<td style="text-align:left;">
+t
+</td>
+<td style="text-align:left;">
+FALSE
+</td>
+<td style="text-align:left;">
+20 - 21
+</td>
+<td style="text-align:left;">
+2020-01-20
+</td>
 </tr>
-<tr class="odd">
-<td align="right">21</td>
-<td align="left">1.99</td>
-<td align="left">u</td>
-<td align="left">TRUE</td>
-<td align="left">21 - 22</td>
-<td align="left">2020-01-21</td>
+<tr>
+<td style="text-align:right;">
+21
+</td>
+<td style="text-align:left;">
+1.99
+</td>
+<td style="text-align:left;">
+u
+</td>
+<td style="text-align:left;">
+TRUE
+</td>
+<td style="text-align:left;">
+21 - 22
+</td>
+<td style="text-align:left;">
+2020-01-21
+</td>
 </tr>
-<tr class="even">
-<td align="right">22</td>
-<td align="left">0.04</td>
-<td align="left">v</td>
-<td align="left">FALSE</td>
-<td align="left">22 - 23</td>
-<td align="left">2020-01-22</td>
+<tr>
+<td style="text-align:right;">
+22
+</td>
+<td style="text-align:left;">
+0.04
+</td>
+<td style="text-align:left;">
+v
+</td>
+<td style="text-align:left;">
+FALSE
+</td>
+<td style="text-align:left;">
+22 - 23
+</td>
+<td style="text-align:left;">
+2020-01-22
+</td>
 </tr>
-<tr class="odd">
-<td align="right">23</td>
-<td align="left">-0.4</td>
-<td align="left">w</td>
-<td align="left">FALSE</td>
-<td align="left">23 - 24</td>
-<td align="left">2020-01-23</td>
+<tr>
+<td style="text-align:right;">
+23
+</td>
+<td style="text-align:left;">
+-0.4
+</td>
+<td style="text-align:left;">
+w
+</td>
+<td style="text-align:left;">
+FALSE
+</td>
+<td style="text-align:left;">
+23 - 24
+</td>
+<td style="text-align:left;">
+2020-01-23
+</td>
 </tr>
-<tr class="even">
-<td align="right">24</td>
-<td align="left">-0.47</td>
-<td align="left">x</td>
-<td align="left">FALSE</td>
-<td align="left">24 - 25</td>
-<td align="left">2020-01-24</td>
+<tr>
+<td style="text-align:right;">
+24
+</td>
+<td style="text-align:left;">
+-0.47
+</td>
+<td style="text-align:left;">
+x
+</td>
+<td style="text-align:left;">
+FALSE
+</td>
+<td style="text-align:left;">
+24 - 25
+</td>
+<td style="text-align:left;">
+2020-01-24
+</td>
 </tr>
-<tr class="odd">
-<td align="right">25</td>
-<td align="left">-0.41</td>
-<td align="left">y</td>
-<td align="left">TRUE</td>
-<td align="left">25 - 26</td>
-<td align="left">2020-01-25</td>
+<tr>
+<td style="text-align:right;">
+25
+</td>
+<td style="text-align:left;">
+-0.41
+</td>
+<td style="text-align:left;">
+y
+</td>
+<td style="text-align:left;">
+TRUE
+</td>
+<td style="text-align:left;">
+25 - 26
+</td>
+<td style="text-align:left;">
+2020-01-25
+</td>
 </tr>
-<tr class="even">
-<td align="right">26</td>
-<td align="left">0.68</td>
-<td align="left">z</td>
-<td align="left">FALSE</td>
-<td align="left">26 - 27</td>
-<td align="left">2020-01-26</td>
+<tr>
+<td style="text-align:right;">
+26
+</td>
+<td style="text-align:left;">
+0.68
+</td>
+<td style="text-align:left;">
+z
+</td>
+<td style="text-align:left;">
+FALSE
+</td>
+<td style="text-align:left;">
+26 - 27
+</td>
+<td style="text-align:left;">
+2020-01-26
+</td>
 </tr>
 </tbody>
 </table></div>
@@ -1684,111 +2080,207 @@ junk,4,2.03,d,T,4 - 5,2020-01-4</code></pre>
 <h2>
 <span class="header-section-number">4.7</span> Glossary<a class="anchor" aria-label="anchor" href="#glossary-data"><i class="fas fa-link"></i></a>
 </h2>
-<div class="inline-table"><table class="table table-sm">
-<colgroup>
-<col width="49%">
-<col width="50%">
-</colgroup>
-<thead><tr class="header">
-<th align="left">term</th>
-<th align="left">definition</th>
+<div class="inline-table"><table class="table" style="margin-left: auto; margin-right: auto;">
+<thead><tr>
+<th style="text-align:left;">
+term
+</th>
+<th style="text-align:left;">
+definition
+</th>
 </tr></thead>
 <tbody>
-<tr class="odd">
-<td align="left"><a href="https://psyteachr.github.io/glossary/b.html#base-r" class="glossary" target="_blank">base r</a></td>
-<td align="left">The set of R functions that come with a basic installation of R, before you add external packages</td>
+<tr>
+<td style="text-align:left;">
+<a href="https://psyteachr.github.io/glossary/b.html#base-r" class="glossary" target="_blank">base r</a>
+</td>
+<td style="text-align:left;">
+The set of R functions that come with a basic installation of R, before you add external packages
+</td>
 </tr>
-<tr class="even">
-<td align="left"><a href="https://psyteachr.github.io/glossary/c.html#character" class="glossary" target="_blank">character</a></td>
-<td align="left">A data type representing strings of text.</td>
+<tr>
+<td style="text-align:left;">
+<a href="https://psyteachr.github.io/glossary/c.html#character" class="glossary" target="_blank">character</a>
+</td>
+<td style="text-align:left;">
+A data type representing strings of text.
+</td>
 </tr>
-<tr class="odd">
-<td align="left"><a href="https://psyteachr.github.io/glossary/c.html#coercion" class="glossary" target="_blank">coercion</a></td>
-<td align="left">Changing the data type of values in a vector to a single compatible type.</td>
+<tr>
+<td style="text-align:left;">
+<a href="https://psyteachr.github.io/glossary/c.html#coercion" class="glossary" target="_blank">coercion</a>
+</td>
+<td style="text-align:left;">
+Changing the data type of values in a vector to a single compatible type.
+</td>
 </tr>
-<tr class="even">
-<td align="left"><a href="https://psyteachr.github.io/glossary/c.html#csv" class="glossary" target="_blank">csv</a></td>
-<td align="left">Comma-separated variable: a file type for representing data where each variable is separated from the next by a comma.</td>
+<tr>
+<td style="text-align:left;">
+<a href="https://psyteachr.github.io/glossary/c.html#csv" class="glossary" target="_blank">csv</a>
+</td>
+<td style="text-align:left;">
+Comma-separated variable: a file type for representing data where each variable is separated from the next by a comma.
+</td>
 </tr>
-<tr class="odd">
-<td align="left"><a href="https://psyteachr.github.io/glossary/d.html#data-type" class="glossary" target="_blank">data type</a></td>
-<td align="left">The kind of data represented by an object.</td>
+<tr>
+<td style="text-align:left;">
+<a href="https://psyteachr.github.io/glossary/d.html#data-type" class="glossary" target="_blank">data type</a>
+</td>
+<td style="text-align:left;">
+The kind of data represented by an object.
+</td>
 </tr>
-<tr class="even">
-<td align="left"><a href="https://psyteachr.github.io/glossary/d.html#deviation-score" class="glossary" target="_blank">deviation score</a></td>
-<td align="left">A score minus the mean</td>
+<tr>
+<td style="text-align:left;">
+<a href="https://psyteachr.github.io/glossary/d.html#deviation-score" class="glossary" target="_blank">deviation score</a>
+</td>
+<td style="text-align:left;">
+A score minus the mean
+</td>
 </tr>
-<tr class="odd">
-<td align="left"><a href="https://psyteachr.github.io/glossary/d.html#double" class="glossary" target="_blank">double</a></td>
-<td align="left">A data type representing a real decimal number</td>
+<tr>
+<td style="text-align:left;">
+<a href="https://psyteachr.github.io/glossary/d.html#double" class="glossary" target="_blank">double</a>
+</td>
+<td style="text-align:left;">
+A data type representing a real decimal number
+</td>
 </tr>
-<tr class="even">
-<td align="left"><a href="https://psyteachr.github.io/glossary/e.html#escape" class="glossary" target="_blank">escape</a></td>
-<td align="left">Include special characters like " inside of a string by prefacing them with a backslash.</td>
+<tr>
+<td style="text-align:left;">
+<a href="https://psyteachr.github.io/glossary/e.html#escape" class="glossary" target="_blank">escape</a>
+</td>
+<td style="text-align:left;">
+Include special characters like " inside of a string by prefacing them with a backslash.
+</td>
 </tr>
-<tr class="odd">
-<td align="left"><a href="https://psyteachr.github.io/glossary/e.html#extension" class="glossary" target="_blank">extension</a></td>
-<td align="left">The end part of a file name that tells you what type of file it is (e.g., .R or .Rmd).</td>
+<tr>
+<td style="text-align:left;">
+<a href="https://psyteachr.github.io/glossary/e.html#extension" class="glossary" target="_blank">extension</a>
+</td>
+<td style="text-align:left;">
+The end part of a file name that tells you what type of file it is (e.g., .R or .Rmd).
+</td>
 </tr>
-<tr class="even">
-<td align="left"><a href="https://psyteachr.github.io/glossary/e.html#extract-operator" class="glossary" target="_blank">extract operator</a></td>
-<td align="left">A symbol used to get values from a container object, such as [, [[, or $</td>
+<tr>
+<td style="text-align:left;">
+<a href="https://psyteachr.github.io/glossary/e.html#extract-operator" class="glossary" target="_blank">extract operator</a>
+</td>
+<td style="text-align:left;">
+A symbol used to get values from a container object, such as [, [[, or $
+</td>
 </tr>
-<tr class="odd">
-<td align="left"><a href="https://psyteachr.github.io/glossary/f.html#factor" class="glossary" target="_blank">factor</a></td>
-<td align="left">A data type where a specific set of values are stored with labels; An explanatory variable manipulated by the experimenter</td>
+<tr>
+<td style="text-align:left;">
+<a href="https://psyteachr.github.io/glossary/f.html#factor" class="glossary" target="_blank">factor</a>
+</td>
+<td style="text-align:left;">
+A data type where a specific set of values are stored with labels; An explanatory variable manipulated by the experimenter
+</td>
 </tr>
-<tr class="even">
-<td align="left"><a href="https://psyteachr.github.io/glossary/g.html#global-environment" class="glossary" target="_blank">global environment</a></td>
-<td align="left">The interactive workspace where your script runs</td>
+<tr>
+<td style="text-align:left;">
+<a href="https://psyteachr.github.io/glossary/g.html#global-environment" class="glossary" target="_blank">global environment</a>
+</td>
+<td style="text-align:left;">
+The interactive workspace where your script runs
+</td>
 </tr>
-<tr class="odd">
-<td align="left"><a href="https://psyteachr.github.io/glossary/i.html#integer" class="glossary" target="_blank">integer</a></td>
-<td align="left">A data type representing whole numbers.</td>
+<tr>
+<td style="text-align:left;">
+<a href="https://psyteachr.github.io/glossary/i.html#integer" class="glossary" target="_blank">integer</a>
+</td>
+<td style="text-align:left;">
+A data type representing whole numbers.
+</td>
 </tr>
-<tr class="even">
-<td align="left"><a href="https://psyteachr.github.io/glossary/l.html#list" class="glossary" target="_blank">list</a></td>
-<td align="left">A container data type that allows items with different data types to be grouped together.</td>
+<tr>
+<td style="text-align:left;">
+<a href="https://psyteachr.github.io/glossary/l.html#list" class="glossary" target="_blank">list</a>
+</td>
+<td style="text-align:left;">
+A container data type that allows items with different data types to be grouped together.
+</td>
 </tr>
-<tr class="odd">
-<td align="left"><a href="https://psyteachr.github.io/glossary/l.html#logical" class="glossary" target="_blank">logical</a></td>
-<td align="left">A data type representing TRUE or FALSE values.</td>
+<tr>
+<td style="text-align:left;">
+<a href="https://psyteachr.github.io/glossary/l.html#logical" class="glossary" target="_blank">logical</a>
+</td>
+<td style="text-align:left;">
+A data type representing TRUE or FALSE values.
+</td>
 </tr>
-<tr class="even">
-<td align="left"><a href="https://psyteachr.github.io/glossary/n.html#numeric" class="glossary" target="_blank">numeric</a></td>
-<td align="left">A data type representing a real decimal number or integer.</td>
+<tr>
+<td style="text-align:left;">
+<a href="https://psyteachr.github.io/glossary/n.html#numeric" class="glossary" target="_blank">numeric</a>
+</td>
+<td style="text-align:left;">
+A data type representing a real decimal number or integer.
+</td>
 </tr>
-<tr class="odd">
-<td align="left"><a href="https://psyteachr.github.io/glossary/o.html#object" class="glossary" target="_blank">object</a></td>
-<td align="left">A word that identifies and stores the value of some data for later use.</td>
+<tr>
+<td style="text-align:left;">
+<a href="https://psyteachr.github.io/glossary/o.html#object" class="glossary" target="_blank">object</a>
+</td>
+<td style="text-align:left;">
+A word that identifies and stores the value of some data for later use.
+</td>
 </tr>
-<tr class="even">
-<td align="left"><a href="https://psyteachr.github.io/glossary/o.html#operator" class="glossary" target="_blank">operator</a></td>
-<td align="left">A symbol that performs a mathematical operation, such as +, -, *, /</td>
+<tr>
+<td style="text-align:left;">
+<a href="https://psyteachr.github.io/glossary/o.html#operator" class="glossary" target="_blank">operator</a>
+</td>
+<td style="text-align:left;">
+A symbol that performs a mathematical operation, such as +, -, *, /
+</td>
 </tr>
-<tr class="odd">
-<td align="left"><a href="https://psyteachr.github.io/glossary/p.html#panes" class="glossary" target="_blank">panes</a></td>
-<td align="left">RStudio is arranged with four window "panes".</td>
+<tr>
+<td style="text-align:left;">
+<a href="https://psyteachr.github.io/glossary/p.html#panes" class="glossary" target="_blank">panes</a>
+</td>
+<td style="text-align:left;">
+RStudio is arranged with four window "panes".
+</td>
 </tr>
-<tr class="even">
-<td align="left"><a href="https://psyteachr.github.io/glossary/t.html#tabular-data" class="glossary" target="_blank">tabular data</a></td>
-<td align="left">Data in a rectangular table format, where each row has an entry for each column.</td>
+<tr>
+<td style="text-align:left;">
+<a href="https://psyteachr.github.io/glossary/t.html#tabular-data" class="glossary" target="_blank">tabular data</a>
+</td>
+<td style="text-align:left;">
+Data in a rectangular table format, where each row has an entry for each column.
+</td>
 </tr>
-<tr class="odd">
-<td align="left"><a href="https://psyteachr.github.io/glossary/t.html#tidy-data" class="glossary" target="_blank">tidy data</a></td>
-<td align="left">A format for data that maps the meaning onto the structure.</td>
+<tr>
+<td style="text-align:left;">
+<a href="https://psyteachr.github.io/glossary/t.html#tidy-data" class="glossary" target="_blank">tidy data</a>
+</td>
+<td style="text-align:left;">
+A format for data that maps the meaning onto the structure.
+</td>
 </tr>
-<tr class="even">
-<td align="left"><a href="https://psyteachr.github.io/glossary/t.html#tidyverse" class="glossary" target="_blank">tidyverse</a></td>
-<td align="left">A set of R packages that help you create and work with tidy data</td>
+<tr>
+<td style="text-align:left;">
+<a href="https://psyteachr.github.io/glossary/t.html#tidyverse" class="glossary" target="_blank">tidyverse</a>
+</td>
+<td style="text-align:left;">
+A set of R packages that help you create and work with tidy data
+</td>
 </tr>
-<tr class="odd">
-<td align="left"><a href="https://psyteachr.github.io/glossary/v.html#vector" class="glossary" target="_blank">vector</a></td>
-<td align="left">A type of data structure that collects values with the same data type, like T/F values, numbers, or strings.</td>
+<tr>
+<td style="text-align:left;">
+<a href="https://psyteachr.github.io/glossary/v.html#vector" class="glossary" target="_blank">vector</a>
+</td>
+<td style="text-align:left;">
+A type of data structure that collects values with the same data type, like T/F values, numbers, or strings.
+</td>
 </tr>
-<tr class="even">
-<td align="left"><a href="https://psyteachr.github.io/glossary/v.html#vectorized" class="glossary" target="_blank">vectorized</a></td>
-<td align="left">An operator or function that acts on each element in a vector</td>
+<tr>
+<td style="text-align:left;">
+<a href="https://psyteachr.github.io/glossary/v.html#vectorized" class="glossary" target="_blank">vectorized</a>
+</td>
+<td style="text-align:left;">
+An operator or function that acts on each element in a vector
+</td>
 </tr>
 </tbody>
 </table></div>
@@ -1816,7 +2308,7 @@ update_total_correct = function() {
     var solvemes = document.getElementsByClassName("webex-solveme").length;
     var radiogroups = document.getElementsByClassName("webex-radiogroup").length;
     var selects = document.getElementsByClassName("webex-select").length;
-    
+
     t.innerHTML = correct + " of " + (solvemes + radiogroups + selects) + " correct";
   }
 }
@@ -1824,7 +2316,7 @@ update_total_correct = function() {
 /* webex-solution button toggling function */
 b_func = function() {
   console.log("webex: toggle hide");
-  
+
   var cl = this.parentElement.classList;
   if (cl.contains('open')) {
     cl.remove("open");
@@ -1883,9 +2375,9 @@ solveme_func = function(e) {
 /* function for checking select answers */
 select_func = function(e) {
   console.log("webex: check select");
-  
+
   var cl = this.classList
-  
+
   /* add style */
   cl.remove("webex-incorrect");
   cl.remove("webex-correct");
@@ -1894,7 +2386,7 @@ select_func = function(e) {
   } else if (this.value != "blank") {
     cl.add("webex-incorrect");
   }
-  
+
   update_total_correct();
 }
 
@@ -1905,25 +2397,25 @@ radiogroups_func = function(e) {
   var checked_button = document.querySelector('input[name=' + this.id + ']:checked');
   var cl = checked_button.parentElement.classList;
   var labels = checked_button.parentElement.parentElement.children;
-  
+
   /* get rid of styles */
   for (i = 0; i < labels.length; i++) {
     labels[i].classList.remove("webex-incorrect");
     labels[i].classList.remove("webex-correct");
   }
-  
+
   /* add style */
   if (checked_button.value == "answer") {
     cl.add("webex-correct");
   } else {
     cl.add("webex-incorrect");
   }
-  
+
   update_total_correct();
 }
 
 window.onload = function() {
-  console.log("onload");
+  console.log("webex onload");
   /* set up solution buttons */
   var buttons = document.getElementsByTagName("button");
 
@@ -1958,18 +2450,21 @@ window.onload = function() {
     /* attach checking function */
     solveme[i].onkeyup = solveme_func;
     solveme[i].onchange = solveme_func;
+
+    $(solveme[i]).after(" <span class='webex-icon'></span>");
   }
-  
+
   /* set up radiogroups */
   var radiogroups = document.getElementsByClassName("webex-radiogroup");
   for (var i = 0; i < radiogroups.length; i++) {
     radiogroups[i].onchange = radiogroups_func;
   }
-  
+
   /* set up selects */
   var selects = document.getElementsByClassName("webex-select");
   for (var i = 0; i < selects.length; i++) {
     selects[i].onchange = select_func;
+    $(selects[i]).after(" <span class='webex-icon'></span>");
   }
 
   update_total_correct();
@@ -2050,7 +2545,7 @@ $( document ).ready(function() {
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Data Skills for Reproducible Research</strong>: v2" was written by . It was last built on 2021-09-25.</p>
+    <p>"<strong>Data Skills for Reproducible Research</strong>: <br><a href="https://doi.org/10.5281/zenodo.6527194"><img src="https://zenodo.org/badge/DOI/10.5281/zenodo.6527194.svg" alt="DOI: 10.5281/zenodo.6527194"></a>" was written by . It was last built on 2022-05-07.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

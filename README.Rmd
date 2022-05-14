@@ -16,7 +16,8 @@ You can access the book online at <https://psyteachr.github.io/reprores/>, but y
 
 ## Citing
 
-Lisa DeBruine & Dale Barr. (2021). Data Skills for Reproducible Research Zenodo. doi:10.5281/zenodo.3564348
+Lisa DeBruine & Dale Barr. (2021). Data Skills for Reproducible Research (2.0.0) Zenodo. doi:10.5281/zenodo.6527194
 
-[![DOI](https://zenodo.org/badge/166541547.svg)](https://zenodo.org/badge/latestdoi/166541547)
+
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.6527195.svg)](https://doi.org/10.5281/zenodo.6527195)
 

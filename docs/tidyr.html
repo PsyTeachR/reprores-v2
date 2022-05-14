@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <title>Chapter 6 Tidy Data | Data Skills for Reproducible Research</title>
 <meta name="description" content="6.1 Learning Objectives  Basic Understand the concept of tidy data (video) Be able to convert between long and wide formats using pivot functions (video) pivot_longer() pivot_wider() Be able to...">
-<meta name="generator" content="bookdown 0.24 with bs4_book()">
+<meta name="generator" content="bookdown 0.26 with bs4_book()">
 <meta property="og:title" content="Chapter 6 Tidy Data | Data Skills for Reproducible Research">
 <meta property="og:type" content="book">
 <meta property="og:url" content="https://psyteachr.github.io/reprores-v2/tidyr.html">
@@ -16,18 +16,45 @@
 <meta name="twitter:title" content="Chapter 6 Tidy Data | Data Skills for Reproducible Research">
 <meta name="twitter:description" content="6.1 Learning Objectives  Basic Understand the concept of tidy data (video) Be able to convert between long and wide formats using pivot functions (video) pivot_longer() pivot_wider() Be able to...">
 <meta name="twitter:image" content="https://psyteachr.github.io/reprores-v2/images/logos/logo.png">
-<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/header-attrs-2.11/header-attrs.js"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
-<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.3.0/transition.js"></script><script src="libs/bs3compat-0.3.0/tabs.js"></script><script src="libs/bs3compat-0.3.0/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
-<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="libs/htmlwidgets-1.5.4/htmlwidgets.js"></script><script src="libs/plotly-binding-4.9.4.1/plotly.js"></script><script src="libs/typedarray-0.1/typedarray.min.js"></script><link href="libs/crosstalk-1.1.1/css/crosstalk.css" rel="stylesheet">
-<script src="libs/crosstalk-1.1.1/js/crosstalk.min.js"></script><link href="libs/plotly-htmlwidgets-css-1.57.1/plotly-htmlwidgets.css" rel="stylesheet">
-<script src="libs/plotly-main-1.57.1/plotly-latest.min.js"></script><!-- Global site tag (gtag.js) - Google Analytics --><script async src="https://www.googletagmanager.com/gtag/js?id=G-6NP3MF25W3"></script><script>
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.3.1/transition.js"></script><script src="libs/bs3compat-0.3.1/tabs.js"></script><script src="libs/bs3compat-0.3.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="libs/kePrint-0.0.1/kePrint.js"></script><link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet">
+<script src="libs/htmlwidgets-1.5.4/htmlwidgets.js"></script><script src="libs/plotly-binding-4.10.0/plotly.js"></script><script src="libs/typedarray-0.1/typedarray.min.js"></script><link href="libs/crosstalk-1.2.0/css/crosstalk.min.css" rel="stylesheet">
+<script src="libs/crosstalk-1.2.0/js/crosstalk.min.js"></script><link href="libs/plotly-htmlwidgets-css-2.5.1/plotly-htmlwidgets.css" rel="stylesheet">
+<script src="libs/plotly-main-2.5.1/plotly-latest.min.js"></script><!-- Global site tag (gtag.js) - Google Analytics --><script async src="https://www.googletagmanager.com/gtag/js?id=G-6NP3MF25W3"></script><script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
 
       gtag('config', 'G-6NP3MF25W3');
-    </script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><link rel="stylesheet" href="include/webex.css">
+    </script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
+    
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  </style>
+<style type="text/css">
+    /* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+    div.csl-bib-body { }
+    div.csl-entry {
+      clear: both;
+        }
+    .hanging div.csl-entry {
+      margin-left:2em;
+      text-indent:-2em;
+    }
+    div.csl-left-margin {
+      min-width:2em;
+      float:left;
+    }
+    div.csl-right-inline {
+      margin-left:2em;
+      padding-left:1em;
+    }
+    div.csl-indent {
+      margin-left: 2em;
+    }
+  </style>
+<link rel="stylesheet" href="include/webex.css">
 <link rel="stylesheet" href="include/psyteachr.css">
 <link rel="stylesheet" href="include/style.css">
 </head>
@@ -39,8 +66,8 @@
 
     <div class="d-flex align-items-start justify-content-between">
       <h1>
-        <a href="index.html" title="v2">Data Skills for Reproducible Research</a>:
-        <small class="text-muted">v2</small>
+        <a href="index.html" title="&lt;br&gt;&lt;a href='https://doi.org/10.5281/zenodo.6527194'&gt;&lt;img src='https://zenodo.org/badge/DOI/10.5281/zenodo.6527194.svg' alt='DOI: 10.5281/zenodo.6527194'&gt;&lt;/a&gt;">Data Skills for Reproducible Research</a>:
+        <small class="text-muted"><br><a href="https://doi.org/10.5281/zenodo.6527194"><img src="https://zenodo.org/badge/DOI/10.5281/zenodo.6527194.svg" alt="DOI: 10.5281/zenodo.6527194"></a></small>
       </h1>
       <button class="btn btn-outline-primary d-lg-none ml-2 mt-1" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="true" aria-controls="main-nav"><i class="fas fa-bars"></i><span class="sr-only">Show table of contents</span></button>
     </div>
@@ -126,7 +153,7 @@
 <h2>
 <span class="header-section-number">6.2</span> Setup<a class="anchor" aria-label="anchor" href="#setup-tidyr"><i class="fas fa-link"></i></a>
 </h2>
-<div class="sourceCode" id="cb253"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb246"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># libraries needed</span>
 <span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span>
 <span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/psyteachr/reprores-v2">reprores</a></span><span class="op">)</span>
@@ -149,202 +176,492 @@
 <p>This table has three observations per row and the <code>total_meanRT</code> column contains two values.</p>
 <div class="inline-table"><table class="table table-sm">
 <caption>
-<span id="tab:unnamed-chunk-1">Table 6.1: </span>Untidy table</caption>
-<thead><tr class="header">
-<th align="right">id</th>
-<th align="right">score_1</th>
-<th align="right">score_2</th>
-<th align="right">score_3</th>
-<th align="right">rt_1</th>
-<th align="right">rt_2</th>
-<th align="right">rt_3</th>
-<th align="left">total_meanRT</th>
+<span id="tab:unnamed-chunk-1">Table 6.1: </span>Untidy table
+</caption>
+<thead><tr>
+<th style="text-align:right;">
+id
+</th>
+<th style="text-align:right;">
+score_1
+</th>
+<th style="text-align:right;">
+score_2
+</th>
+<th style="text-align:right;">
+score_3
+</th>
+<th style="text-align:right;">
+rt_1
+</th>
+<th style="text-align:right;">
+rt_2
+</th>
+<th style="text-align:right;">
+rt_3
+</th>
+<th style="text-align:left;">
+total_meanRT
+</th>
 </tr></thead>
 <tbody>
-<tr class="odd">
-<td align="right">1</td>
-<td align="right">4</td>
-<td align="right">3</td>
-<td align="right">7</td>
-<td align="right">857</td>
-<td align="right">890</td>
-<td align="right">859</td>
-<td align="left">14 (869)</td>
+<tr>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+4
+</td>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:right;">
+7
+</td>
+<td style="text-align:right;">
+857
+</td>
+<td style="text-align:right;">
+890
+</td>
+<td style="text-align:right;">
+859
+</td>
+<td style="text-align:left;">
+14 (869)
+</td>
 </tr>
-<tr class="even">
-<td align="right">2</td>
-<td align="right">3</td>
-<td align="right">1</td>
-<td align="right">1</td>
-<td align="right">902</td>
-<td align="right">900</td>
-<td align="right">959</td>
-<td align="left">5 (920)</td>
+<tr>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+902
+</td>
+<td style="text-align:right;">
+900
+</td>
+<td style="text-align:right;">
+959
+</td>
+<td style="text-align:left;">
+5 (920)
+</td>
 </tr>
-<tr class="odd">
-<td align="right">3</td>
-<td align="right">2</td>
-<td align="right">5</td>
-<td align="right">4</td>
-<td align="right">757</td>
-<td align="right">823</td>
-<td align="right">901</td>
-<td align="left">11 (827)</td>
+<tr>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:right;">
+5
+</td>
+<td style="text-align:right;">
+4
+</td>
+<td style="text-align:right;">
+757
+</td>
+<td style="text-align:right;">
+823
+</td>
+<td style="text-align:right;">
+901
+</td>
+<td style="text-align:left;">
+11 (827)
+</td>
 </tr>
-<tr class="even">
-<td align="right">4</td>
-<td align="right">6</td>
-<td align="right">2</td>
-<td align="right">6</td>
-<td align="right">844</td>
-<td align="right">788</td>
-<td align="right">624</td>
-<td align="left">14 (752)</td>
+<tr>
+<td style="text-align:right;">
+4
+</td>
+<td style="text-align:right;">
+6
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:right;">
+6
+</td>
+<td style="text-align:right;">
+844
+</td>
+<td style="text-align:right;">
+788
+</td>
+<td style="text-align:right;">
+624
+</td>
+<td style="text-align:left;">
+14 (752)
+</td>
 </tr>
-<tr class="odd">
-<td align="right">5</td>
-<td align="right">1</td>
-<td align="right">7</td>
-<td align="right">2</td>
-<td align="right">659</td>
-<td align="right">764</td>
-<td align="right">690</td>
-<td align="left">10 (704)</td>
+<tr>
+<td style="text-align:right;">
+5
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+7
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:right;">
+659
+</td>
+<td style="text-align:right;">
+764
+</td>
+<td style="text-align:right;">
+690
+</td>
+<td style="text-align:left;">
+10 (704)
+</td>
 </tr>
 </tbody>
 </table></div>
 <p>This is the tidy version.</p>
 <div class="inline-table"><table class="table table-sm">
 <caption>
-<span id="tab:unnamed-chunk-1">Table 6.1: </span>Tidy table</caption>
-<thead><tr class="header">
-<th align="right">id</th>
-<th align="left">trial</th>
-<th align="right">rt</th>
-<th align="right">score</th>
-<th align="left">total</th>
-<th align="left">mean_rt</th>
+<span id="tab:unnamed-chunk-1">Table 6.1: </span>Tidy table
+</caption>
+<thead><tr>
+<th style="text-align:right;">
+id
+</th>
+<th style="text-align:left;">
+trial
+</th>
+<th style="text-align:right;">
+rt
+</th>
+<th style="text-align:right;">
+score
+</th>
+<th style="text-align:left;">
+total
+</th>
+<th style="text-align:left;">
+mean_rt
+</th>
 </tr></thead>
 <tbody>
-<tr class="odd">
-<td align="right">1</td>
-<td align="left">1</td>
-<td align="right">857</td>
-<td align="right">4</td>
-<td align="left">14</td>
-<td align="left">869</td>
+<tr>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+1
+</td>
+<td style="text-align:right;">
+857
+</td>
+<td style="text-align:right;">
+4
+</td>
+<td style="text-align:left;">
+14
+</td>
+<td style="text-align:left;">
+869
+</td>
 </tr>
-<tr class="even">
-<td align="right">1</td>
-<td align="left">2</td>
-<td align="right">890</td>
-<td align="right">3</td>
-<td align="left">14</td>
-<td align="left">869</td>
+<tr>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+2
+</td>
+<td style="text-align:right;">
+890
+</td>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:left;">
+14
+</td>
+<td style="text-align:left;">
+869
+</td>
 </tr>
-<tr class="odd">
-<td align="right">1</td>
-<td align="left">3</td>
-<td align="right">859</td>
-<td align="right">7</td>
-<td align="left">14</td>
-<td align="left">869</td>
+<tr>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+3
+</td>
+<td style="text-align:right;">
+859
+</td>
+<td style="text-align:right;">
+7
+</td>
+<td style="text-align:left;">
+14
+</td>
+<td style="text-align:left;">
+869
+</td>
 </tr>
-<tr class="even">
-<td align="right">2</td>
-<td align="left">1</td>
-<td align="right">902</td>
-<td align="right">3</td>
-<td align="left">5</td>
-<td align="left">920</td>
+<tr>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:left;">
+1
+</td>
+<td style="text-align:right;">
+902
+</td>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:left;">
+5
+</td>
+<td style="text-align:left;">
+920
+</td>
 </tr>
-<tr class="odd">
-<td align="right">2</td>
-<td align="left">2</td>
-<td align="right">900</td>
-<td align="right">1</td>
-<td align="left">5</td>
-<td align="left">920</td>
+<tr>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:left;">
+2
+</td>
+<td style="text-align:right;">
+900
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+5
+</td>
+<td style="text-align:left;">
+920
+</td>
 </tr>
-<tr class="even">
-<td align="right">2</td>
-<td align="left">3</td>
-<td align="right">959</td>
-<td align="right">1</td>
-<td align="left">5</td>
-<td align="left">920</td>
+<tr>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:left;">
+3
+</td>
+<td style="text-align:right;">
+959
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+5
+</td>
+<td style="text-align:left;">
+920
+</td>
 </tr>
-<tr class="odd">
-<td align="right">3</td>
-<td align="left">1</td>
-<td align="right">757</td>
-<td align="right">2</td>
-<td align="left">11</td>
-<td align="left">827</td>
+<tr>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:left;">
+1
+</td>
+<td style="text-align:right;">
+757
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:left;">
+11
+</td>
+<td style="text-align:left;">
+827
+</td>
 </tr>
-<tr class="even">
-<td align="right">3</td>
-<td align="left">2</td>
-<td align="right">823</td>
-<td align="right">5</td>
-<td align="left">11</td>
-<td align="left">827</td>
+<tr>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:left;">
+2
+</td>
+<td style="text-align:right;">
+823
+</td>
+<td style="text-align:right;">
+5
+</td>
+<td style="text-align:left;">
+11
+</td>
+<td style="text-align:left;">
+827
+</td>
 </tr>
-<tr class="odd">
-<td align="right">3</td>
-<td align="left">3</td>
-<td align="right">901</td>
-<td align="right">4</td>
-<td align="left">11</td>
-<td align="left">827</td>
+<tr>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:left;">
+3
+</td>
+<td style="text-align:right;">
+901
+</td>
+<td style="text-align:right;">
+4
+</td>
+<td style="text-align:left;">
+11
+</td>
+<td style="text-align:left;">
+827
+</td>
 </tr>
-<tr class="even">
-<td align="right">4</td>
-<td align="left">1</td>
-<td align="right">844</td>
-<td align="right">6</td>
-<td align="left">14</td>
-<td align="left">752</td>
+<tr>
+<td style="text-align:right;">
+4
+</td>
+<td style="text-align:left;">
+1
+</td>
+<td style="text-align:right;">
+844
+</td>
+<td style="text-align:right;">
+6
+</td>
+<td style="text-align:left;">
+14
+</td>
+<td style="text-align:left;">
+752
+</td>
 </tr>
-<tr class="odd">
-<td align="right">4</td>
-<td align="left">2</td>
-<td align="right">788</td>
-<td align="right">2</td>
-<td align="left">14</td>
-<td align="left">752</td>
+<tr>
+<td style="text-align:right;">
+4
+</td>
+<td style="text-align:left;">
+2
+</td>
+<td style="text-align:right;">
+788
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:left;">
+14
+</td>
+<td style="text-align:left;">
+752
+</td>
 </tr>
-<tr class="even">
-<td align="right">4</td>
-<td align="left">3</td>
-<td align="right">624</td>
-<td align="right">6</td>
-<td align="left">14</td>
-<td align="left">752</td>
+<tr>
+<td style="text-align:right;">
+4
+</td>
+<td style="text-align:left;">
+3
+</td>
+<td style="text-align:right;">
+624
+</td>
+<td style="text-align:right;">
+6
+</td>
+<td style="text-align:left;">
+14
+</td>
+<td style="text-align:left;">
+752
+</td>
 </tr>
-<tr class="odd">
-<td align="right">5</td>
-<td align="left">1</td>
-<td align="right">659</td>
-<td align="right">1</td>
-<td align="left">10</td>
-<td align="left">704</td>
+<tr>
+<td style="text-align:right;">
+5
+</td>
+<td style="text-align:left;">
+1
+</td>
+<td style="text-align:right;">
+659
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+10
+</td>
+<td style="text-align:left;">
+704
+</td>
 </tr>
-<tr class="even">
-<td align="right">5</td>
-<td align="left">2</td>
-<td align="right">764</td>
-<td align="right">7</td>
-<td align="left">10</td>
-<td align="left">704</td>
+<tr>
+<td style="text-align:right;">
+5
+</td>
+<td style="text-align:left;">
+2
+</td>
+<td style="text-align:right;">
+764
+</td>
+<td style="text-align:right;">
+7
+</td>
+<td style="text-align:left;">
+10
+</td>
+<td style="text-align:left;">
+704
+</td>
 </tr>
-<tr class="odd">
-<td align="right">5</td>
-<td align="left">3</td>
-<td align="right">690</td>
-<td align="right">2</td>
-<td align="left">10</td>
-<td align="left">704</td>
+<tr>
+<td style="text-align:right;">
+5
+</td>
+<td style="text-align:left;">
+3
+</td>
+<td style="text-align:right;">
+690
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:left;">
+10
+</td>
+<td style="text-align:left;">
+704
+</td>
 </tr>
 </tbody>
 </table></div>
@@ -357,67 +674,135 @@
 <p>Imagine a study where each subject completes a questionnaire with three items. Each answer is an <a class="glossary" target="_blank" title="All of the data about a single trial or question." href="https://psyteachr.github.io/glossary/o#observation">observation</a> of that subject. You are probably most familiar with data like this in a wide format, where the subject <code>id</code> is in one column, and each of the three item responses is in its own column.</p>
 <div class="inline-table"><table class="table table-sm">
 <caption>
-<span id="tab:wide-data">Table 6.2: </span>Wide data</caption>
-<thead><tr class="header">
-<th align="left">id</th>
-<th align="right">Q1</th>
-<th align="right">Q2</th>
-<th align="right">Q3</th>
+<span id="tab:wide-data">Table 6.2: </span>Wide data
+</caption>
+<thead><tr>
+<th style="text-align:left;">
+id
+</th>
+<th style="text-align:right;">
+Q1
+</th>
+<th style="text-align:right;">
+Q2
+</th>
+<th style="text-align:right;">
+Q3
+</th>
 </tr></thead>
 <tbody>
-<tr class="odd">
-<td align="left">A</td>
-<td align="right">1</td>
-<td align="right">2</td>
-<td align="right">3</td>
+<tr>
+<td style="text-align:left;">
+A
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:right;">
+3
+</td>
 </tr>
-<tr class="even">
-<td align="left">B</td>
-<td align="right">4</td>
-<td align="right">5</td>
-<td align="right">6</td>
+<tr>
+<td style="text-align:left;">
+B
+</td>
+<td style="text-align:right;">
+4
+</td>
+<td style="text-align:right;">
+5
+</td>
+<td style="text-align:right;">
+6
+</td>
 </tr>
 </tbody>
 </table></div>
 <p>The same data can be represented in a long format by creating a new column that specifies what <code>item</code> the observation is from and a new column that specifies the <code>value</code> of that observation.</p>
 <div class="inline-table"><table class="table table-sm">
 <caption>
-<span id="tab:long-data">Table 6.3: </span>Long data</caption>
-<thead><tr class="header">
-<th align="left">id</th>
-<th align="left">item</th>
-<th align="right">value</th>
+<span id="tab:long-data">Table 6.3: </span>Long data
+</caption>
+<thead><tr>
+<th style="text-align:left;">
+id
+</th>
+<th style="text-align:left;">
+item
+</th>
+<th style="text-align:right;">
+value
+</th>
 </tr></thead>
 <tbody>
-<tr class="odd">
-<td align="left">A</td>
-<td align="left">Q1</td>
-<td align="right">1</td>
+<tr>
+<td style="text-align:left;">
+A
+</td>
+<td style="text-align:left;">
+Q1
+</td>
+<td style="text-align:right;">
+1
+</td>
 </tr>
-<tr class="even">
-<td align="left">B</td>
-<td align="left">Q1</td>
-<td align="right">4</td>
+<tr>
+<td style="text-align:left;">
+B
+</td>
+<td style="text-align:left;">
+Q1
+</td>
+<td style="text-align:right;">
+4
+</td>
 </tr>
-<tr class="odd">
-<td align="left">A</td>
-<td align="left">Q2</td>
-<td align="right">2</td>
+<tr>
+<td style="text-align:left;">
+A
+</td>
+<td style="text-align:left;">
+Q2
+</td>
+<td style="text-align:right;">
+2
+</td>
 </tr>
-<tr class="even">
-<td align="left">B</td>
-<td align="left">Q2</td>
-<td align="right">5</td>
+<tr>
+<td style="text-align:left;">
+B
+</td>
+<td style="text-align:left;">
+Q2
+</td>
+<td style="text-align:right;">
+5
+</td>
 </tr>
-<tr class="odd">
-<td align="left">A</td>
-<td align="left">Q3</td>
-<td align="right">3</td>
+<tr>
+<td style="text-align:left;">
+A
+</td>
+<td style="text-align:left;">
+Q3
+</td>
+<td style="text-align:right;">
+3
+</td>
 </tr>
-<tr class="even">
-<td align="left">B</td>
-<td align="left">Q3</td>
-<td align="right">6</td>
+<tr>
+<td style="text-align:left;">
+B
+</td>
+<td style="text-align:left;">
+Q3
+</td>
+<td style="text-align:right;">
+6
+</td>
 </tr>
 </tbody>
 </table></div>
@@ -505,369 +890,926 @@ Answer
 <span class="header-section-number">6.4.1</span> Load Data<a class="anchor" aria-label="anchor" href="#load-data"><i class="fas fa-link"></i></a>
 </h3>
 <p>We will used the dataset <code>personality</code> from the reprores package (or download the data from <a href="./data/personality.csv">personality.csv</a>). These data are from a 5-factor (personality) personality questionnaire. Each question is labelled with the domain (Op = openness, Co = conscientiousness, Ex = extroversion, Ag = agreeableness, and Ne = neuroticism) and the question number.</p>
-<div class="sourceCode" id="cb254"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb247"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/data.html">data</a></span><span class="op">(</span><span class="st">"personality"</span>, package <span class="op">=</span> <span class="st">"reprores"</span><span class="op">)</span></code></pre></div>
-<div class="inline-table"><table style="width:100%;" class="table table-sm">
-<colgroup>
-<col width="4%">
-<col width="5%">
-<col width="2%">
-<col width="2%">
-<col width="2%">
-<col width="2%">
-<col width="2%">
-<col width="2%">
-<col width="2%">
-<col width="2%">
-<col width="2%">
-<col width="2%">
-<col width="2%">
-<col width="2%">
-<col width="2%">
-<col width="2%">
-<col width="2%">
-<col width="2%">
-<col width="2%">
-<col width="2%">
-<col width="2%">
-<col width="2%">
-<col width="2%">
-<col width="2%">
-<col width="2%">
-<col width="2%">
-<col width="2%">
-<col width="2%">
-<col width="2%">
-<col width="2%">
-<col width="2%">
-<col width="2%">
-<col width="2%">
-<col width="2%">
-<col width="2%">
-<col width="2%">
-<col width="2%">
-<col width="2%">
-<col width="2%">
-<col width="2%">
-<col width="2%">
-<col width="2%">
-<col width="2%">
-</colgroup>
-<thead><tr class="header">
-<th align="right">user_id</th>
-<th align="left">date</th>
-<th align="right">Op1</th>
-<th align="right">Ne1</th>
-<th align="right">Ne2</th>
-<th align="right">Op2</th>
-<th align="right">Ex1</th>
-<th align="right">Ex2</th>
-<th align="right">Co1</th>
-<th align="right">Co2</th>
-<th align="right">Ne3</th>
-<th align="right">Ag1</th>
-<th align="right">Ag2</th>
-<th align="right">Ne4</th>
-<th align="right">Ex3</th>
-<th align="right">Co3</th>
-<th align="right">Op3</th>
-<th align="right">Ex4</th>
-<th align="right">Op4</th>
-<th align="right">Ex5</th>
-<th align="right">Ag3</th>
-<th align="right">Co4</th>
-<th align="right">Co5</th>
-<th align="right">Ne5</th>
-<th align="right">Op5</th>
-<th align="right">Ag4</th>
-<th align="right">Op6</th>
-<th align="right">Co6</th>
-<th align="right">Ex6</th>
-<th align="right">Ne6</th>
-<th align="right">Co7</th>
-<th align="right">Ag5</th>
-<th align="right">Co8</th>
-<th align="right">Ex7</th>
-<th align="right">Ne7</th>
-<th align="right">Co9</th>
-<th align="right">Op7</th>
-<th align="right">Ne8</th>
-<th align="right">Ag6</th>
-<th align="right">Ag7</th>
-<th align="right">Co10</th>
-<th align="right">Ex8</th>
-<th align="right">Ex9</th>
+<div class="inline-table"><table class="table table-sm">
+<thead><tr>
+<th style="text-align:right;">
+user_id
+</th>
+<th style="text-align:left;">
+date
+</th>
+<th style="text-align:right;">
+Op1
+</th>
+<th style="text-align:right;">
+Ne1
+</th>
+<th style="text-align:right;">
+Ne2
+</th>
+<th style="text-align:right;">
+Op2
+</th>
+<th style="text-align:right;">
+Ex1
+</th>
+<th style="text-align:right;">
+Ex2
+</th>
+<th style="text-align:right;">
+Co1
+</th>
+<th style="text-align:right;">
+Co2
+</th>
+<th style="text-align:right;">
+Ne3
+</th>
+<th style="text-align:right;">
+Ag1
+</th>
+<th style="text-align:right;">
+Ag2
+</th>
+<th style="text-align:right;">
+Ne4
+</th>
+<th style="text-align:right;">
+Ex3
+</th>
+<th style="text-align:right;">
+Co3
+</th>
+<th style="text-align:right;">
+Op3
+</th>
+<th style="text-align:right;">
+Ex4
+</th>
+<th style="text-align:right;">
+Op4
+</th>
+<th style="text-align:right;">
+Ex5
+</th>
+<th style="text-align:right;">
+Ag3
+</th>
+<th style="text-align:right;">
+Co4
+</th>
+<th style="text-align:right;">
+Co5
+</th>
+<th style="text-align:right;">
+Ne5
+</th>
+<th style="text-align:right;">
+Op5
+</th>
+<th style="text-align:right;">
+Ag4
+</th>
+<th style="text-align:right;">
+Op6
+</th>
+<th style="text-align:right;">
+Co6
+</th>
+<th style="text-align:right;">
+Ex6
+</th>
+<th style="text-align:right;">
+Ne6
+</th>
+<th style="text-align:right;">
+Co7
+</th>
+<th style="text-align:right;">
+Ag5
+</th>
+<th style="text-align:right;">
+Co8
+</th>
+<th style="text-align:right;">
+Ex7
+</th>
+<th style="text-align:right;">
+Ne7
+</th>
+<th style="text-align:right;">
+Co9
+</th>
+<th style="text-align:right;">
+Op7
+</th>
+<th style="text-align:right;">
+Ne8
+</th>
+<th style="text-align:right;">
+Ag6
+</th>
+<th style="text-align:right;">
+Ag7
+</th>
+<th style="text-align:right;">
+Co10
+</th>
+<th style="text-align:right;">
+Ex8
+</th>
+<th style="text-align:right;">
+Ex9
+</th>
 </tr></thead>
 <tbody>
-<tr class="odd">
-<td align="right">0</td>
-<td align="left">2006-03-23</td>
-<td align="right">3</td>
-<td align="right">4</td>
-<td align="right">0</td>
-<td align="right">6</td>
-<td align="right">3</td>
-<td align="right">3</td>
-<td align="right">3</td>
-<td align="right">3</td>
-<td align="right">0</td>
-<td align="right">2</td>
-<td align="right">1</td>
-<td align="right">3</td>
-<td align="right">3</td>
-<td align="right">2</td>
-<td align="right">2</td>
-<td align="right">1</td>
-<td align="right">3</td>
-<td align="right">3</td>
-<td align="right">1</td>
-<td align="right">3</td>
-<td align="right">0</td>
-<td align="right">3</td>
-<td align="right">6</td>
-<td align="right">1</td>
-<td align="right">0</td>
-<td align="right">6</td>
-<td align="right">3</td>
-<td align="right">1</td>
-<td align="right">3</td>
-<td align="right">3</td>
-<td align="right">3</td>
-<td align="right">3</td>
-<td align="right">NA</td>
-<td align="right">3</td>
-<td align="right">0</td>
-<td align="right">2</td>
-<td align="right">NA</td>
-<td align="right">3</td>
-<td align="right">1</td>
-<td align="right">2</td>
-<td align="right">4</td>
+<tr>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:left;">
+2006-03-23
+</td>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:right;">
+4
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+6
+</td>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:right;">
+6
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+6
+</td>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:right;">
+4
+</td>
 </tr>
-<tr class="even">
-<td align="right">1</td>
-<td align="left">2006-02-08</td>
-<td align="right">6</td>
-<td align="right">0</td>
-<td align="right">6</td>
-<td align="right">0</td>
-<td align="right">0</td>
-<td align="right">0</td>
-<td align="right">0</td>
-<td align="right">0</td>
-<td align="right">0</td>
-<td align="right">0</td>
-<td align="right">6</td>
-<td align="right">6</td>
-<td align="right">6</td>
-<td align="right">0</td>
-<td align="right">6</td>
-<td align="right">0</td>
-<td align="right">0</td>
-<td align="right">0</td>
-<td align="right">0</td>
-<td align="right">6</td>
-<td align="right">6</td>
-<td align="right">0</td>
-<td align="right">6</td>
-<td align="right">0</td>
-<td align="right">6</td>
-<td align="right">0</td>
-<td align="right">6</td>
-<td align="right">6</td>
-<td align="right">6</td>
-<td align="right">6</td>
-<td align="right">0</td>
-<td align="right">6</td>
-<td align="right">0</td>
-<td align="right">6</td>
-<td align="right">6</td>
-<td align="right">0</td>
-<td align="right">6</td>
-<td align="right">0</td>
-<td align="right">6</td>
-<td align="right">0</td>
-<td align="right">6</td>
+<tr>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+2006-02-08
+</td>
+<td style="text-align:right;">
+6
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+6
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+6
+</td>
+<td style="text-align:right;">
+6
+</td>
+<td style="text-align:right;">
+6
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+6
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+6
+</td>
+<td style="text-align:right;">
+6
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+6
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+6
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+6
+</td>
+<td style="text-align:right;">
+6
+</td>
+<td style="text-align:right;">
+6
+</td>
+<td style="text-align:right;">
+6
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+6
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+6
+</td>
+<td style="text-align:right;">
+6
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+6
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+6
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+6
+</td>
 </tr>
-<tr class="odd">
-<td align="right">2</td>
-<td align="left">2005-10-24</td>
-<td align="right">6</td>
-<td align="right">0</td>
-<td align="right">6</td>
-<td align="right">0</td>
-<td align="right">0</td>
-<td align="right">0</td>
-<td align="right">0</td>
-<td align="right">0</td>
-<td align="right">0</td>
-<td align="right">0</td>
-<td align="right">6</td>
-<td align="right">6</td>
-<td align="right">5</td>
-<td align="right">1</td>
-<td align="right">5</td>
-<td align="right">1</td>
-<td align="right">1</td>
-<td align="right">1</td>
-<td align="right">1</td>
-<td align="right">5</td>
-<td align="right">5</td>
-<td align="right">1</td>
-<td align="right">5</td>
-<td align="right">1</td>
-<td align="right">5</td>
-<td align="right">1</td>
-<td align="right">5</td>
-<td align="right">5</td>
-<td align="right">5</td>
-<td align="right">5</td>
-<td align="right">1</td>
-<td align="right">5</td>
-<td align="right">1</td>
-<td align="right">5</td>
-<td align="right">5</td>
-<td align="right">1</td>
-<td align="right">5</td>
-<td align="right">1</td>
-<td align="right">5</td>
-<td align="right">1</td>
-<td align="right">5</td>
+<tr>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:left;">
+2005-10-24
+</td>
+<td style="text-align:right;">
+6
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+6
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+6
+</td>
+<td style="text-align:right;">
+6
+</td>
+<td style="text-align:right;">
+5
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+5
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+5
+</td>
+<td style="text-align:right;">
+5
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+5
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+5
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+5
+</td>
+<td style="text-align:right;">
+5
+</td>
+<td style="text-align:right;">
+5
+</td>
+<td style="text-align:right;">
+5
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+5
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+5
+</td>
+<td style="text-align:right;">
+5
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+5
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+5
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+5
+</td>
 </tr>
-<tr class="even">
-<td align="right">5</td>
-<td align="left">2005-12-07</td>
-<td align="right">6</td>
-<td align="right">4</td>
-<td align="right">4</td>
-<td align="right">4</td>
-<td align="right">2</td>
-<td align="right">3</td>
-<td align="right">3</td>
-<td align="right">3</td>
-<td align="right">1</td>
-<td align="right">4</td>
-<td align="right">0</td>
-<td align="right">2</td>
-<td align="right">5</td>
-<td align="right">3</td>
-<td align="right">5</td>
-<td align="right">3</td>
-<td align="right">6</td>
-<td align="right">6</td>
-<td align="right">1</td>
-<td align="right">5</td>
-<td align="right">5</td>
-<td align="right">4</td>
-<td align="right">2</td>
-<td align="right">4</td>
-<td align="right">1</td>
-<td align="right">4</td>
-<td align="right">3</td>
-<td align="right">1</td>
-<td align="right">1</td>
-<td align="right">0</td>
-<td align="right">1</td>
-<td align="right">4</td>
-<td align="right">2</td>
-<td align="right">4</td>
-<td align="right">5</td>
-<td align="right">1</td>
-<td align="right">2</td>
-<td align="right">1</td>
-<td align="right">5</td>
-<td align="right">4</td>
-<td align="right">5</td>
+<tr>
+<td style="text-align:right;">
+5
+</td>
+<td style="text-align:left;">
+2005-12-07
+</td>
+<td style="text-align:right;">
+6
+</td>
+<td style="text-align:right;">
+4
+</td>
+<td style="text-align:right;">
+4
+</td>
+<td style="text-align:right;">
+4
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+4
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:right;">
+5
+</td>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:right;">
+5
+</td>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:right;">
+6
+</td>
+<td style="text-align:right;">
+6
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+5
+</td>
+<td style="text-align:right;">
+5
+</td>
+<td style="text-align:right;">
+4
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:right;">
+4
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+4
+</td>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+4
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:right;">
+4
+</td>
+<td style="text-align:right;">
+5
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+5
+</td>
+<td style="text-align:right;">
+4
+</td>
+<td style="text-align:right;">
+5
+</td>
 </tr>
-<tr class="odd">
-<td align="right">8</td>
-<td align="left">2006-07-27</td>
-<td align="right">6</td>
-<td align="right">1</td>
-<td align="right">2</td>
-<td align="right">6</td>
-<td align="right">2</td>
-<td align="right">3</td>
-<td align="right">5</td>
-<td align="right">4</td>
-<td align="right">0</td>
-<td align="right">6</td>
-<td align="right">5</td>
-<td align="right">3</td>
-<td align="right">3</td>
-<td align="right">4</td>
-<td align="right">5</td>
-<td align="right">3</td>
-<td align="right">6</td>
-<td align="right">3</td>
-<td align="right">0</td>
-<td align="right">5</td>
-<td align="right">5</td>
-<td align="right">1</td>
-<td align="right">5</td>
-<td align="right">6</td>
-<td align="right">6</td>
-<td align="right">6</td>
-<td align="right">0</td>
-<td align="right">0</td>
-<td align="right">3</td>
-<td align="right">2</td>
-<td align="right">3</td>
-<td align="right">1</td>
-<td align="right">0</td>
-<td align="right">3</td>
-<td align="right">5</td>
-<td align="right">1</td>
-<td align="right">3</td>
-<td align="right">1</td>
-<td align="right">3</td>
-<td align="right">3</td>
-<td align="right">5</td>
+<tr>
+<td style="text-align:right;">
+8
+</td>
+<td style="text-align:left;">
+2006-07-27
+</td>
+<td style="text-align:right;">
+6
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:right;">
+6
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:right;">
+5
+</td>
+<td style="text-align:right;">
+4
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+6
+</td>
+<td style="text-align:right;">
+5
+</td>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:right;">
+4
+</td>
+<td style="text-align:right;">
+5
+</td>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:right;">
+6
+</td>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+5
+</td>
+<td style="text-align:right;">
+5
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+5
+</td>
+<td style="text-align:right;">
+6
+</td>
+<td style="text-align:right;">
+6
+</td>
+<td style="text-align:right;">
+6
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:right;">
+5
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:right;">
+5
+</td>
 </tr>
-<tr class="even">
-<td align="right">108</td>
-<td align="left">2006-02-28</td>
-<td align="right">3</td>
-<td align="right">2</td>
-<td align="right">1</td>
-<td align="right">4</td>
-<td align="right">4</td>
-<td align="right">4</td>
-<td align="right">4</td>
-<td align="right">3</td>
-<td align="right">1</td>
-<td align="right">5</td>
-<td align="right">4</td>
-<td align="right">2</td>
-<td align="right">3</td>
-<td align="right">4</td>
-<td align="right">4</td>
-<td align="right">3</td>
-<td align="right">3</td>
-<td align="right">3</td>
-<td align="right">4</td>
-<td align="right">3</td>
-<td align="right">3</td>
-<td align="right">1</td>
-<td align="right">4</td>
-<td align="right">5</td>
-<td align="right">4</td>
-<td align="right">5</td>
-<td align="right">4</td>
-<td align="right">1</td>
-<td align="right">4</td>
-<td align="right">5</td>
-<td align="right">4</td>
-<td align="right">2</td>
-<td align="right">2</td>
-<td align="right">4</td>
-<td align="right">4</td>
-<td align="right">1</td>
-<td align="right">4</td>
-<td align="right">3</td>
-<td align="right">5</td>
-<td align="right">4</td>
-<td align="right">2</td>
+<tr>
+<td style="text-align:right;">
+108
+</td>
+<td style="text-align:left;">
+2006-02-28
+</td>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+4
+</td>
+<td style="text-align:right;">
+4
+</td>
+<td style="text-align:right;">
+4
+</td>
+<td style="text-align:right;">
+4
+</td>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+5
+</td>
+<td style="text-align:right;">
+4
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:right;">
+4
+</td>
+<td style="text-align:right;">
+4
+</td>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:right;">
+4
+</td>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+4
+</td>
+<td style="text-align:right;">
+5
+</td>
+<td style="text-align:right;">
+4
+</td>
+<td style="text-align:right;">
+5
+</td>
+<td style="text-align:right;">
+4
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+4
+</td>
+<td style="text-align:right;">
+5
+</td>
+<td style="text-align:right;">
+4
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:right;">
+4
+</td>
+<td style="text-align:right;">
+4
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+4
+</td>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:right;">
+5
+</td>
+<td style="text-align:right;">
+4
+</td>
+<td style="text-align:right;">
+2
+</td>
 </tr>
 </tbody>
 </table></div>
@@ -876,7 +1818,7 @@ Answer
 <h3>
 <span class="header-section-number">6.4.2</span> pivot_longer()<a class="anchor" aria-label="anchor" href="#pivot_longer"><i class="fas fa-link"></i></a>
 </h3>
-<p><code>pivot_longer()</code> converts a wide data table to long format by converting the headers from specified columns into the values of new columns, and combining the values of those columns into a new condensed column.</p>
+<p><code><a href="https://tidyr.tidyverse.org/reference/pivot_longer.html">pivot_longer()</a></code> converts a wide data table to long format by converting the headers from specified columns into the values of new columns, and combining the values of those columns into a new condensed column.</p>
 <ul>
 <li>
 <code>cols</code> refers to the columns you want to make long You can refer to them by their names, like <code>col1, col2, col3, col4</code> or <code>col1:col4</code> or by their numbers, like <code>8, 9, 10</code> or <code>8:10</code>.</li>
@@ -887,15 +1829,15 @@ Answer
 <li>
 <code>values_to</code> is what you want to call the values in the columns <code>...</code>; they're "score" in this example.</li>
 </ul>
-<div class="sourceCode" id="cb255"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">personality_long</span> <span class="op">&lt;-</span> <span class="fu">pivot_longer</span><span class="op">(</span>
+<div class="sourceCode" id="cb248"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">personality_long</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://tidyr.tidyverse.org/reference/pivot_longer.html">pivot_longer</a></span><span class="op">(</span>
   data <span class="op">=</span> <span class="va">personality</span>, 
   cols <span class="op">=</span> <span class="va">Op1</span><span class="op">:</span><span class="va">Ex9</span>,                    <span class="co"># columns to make long </span>
   names_to <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"domain"</span>, <span class="st">"qnumber"</span><span class="op">)</span>, <span class="co"># new column names for headers</span>
   names_sep <span class="op">=</span> <span class="fl">2</span>,                     <span class="co"># how to split the headers</span>
   values_to <span class="op">=</span> <span class="st">"score"</span>                <span class="co"># new column name for values</span>
-<span class="op">)</span> <span class="op">%&gt;%</span>
-  <span class="fu">glimpse</span><span class="op">(</span><span class="op">)</span></code></pre></div>
+<span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span>
+  <span class="fu"><a href="https://pillar.r-lib.org/reference/glimpse.html">glimpse</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
 <pre><code>## Rows: 615,000
 ## Columns: 5
 ## $ user_id &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,…
@@ -904,7 +1846,7 @@ Answer
 ## $ qnumber &lt;chr&gt; "1", "1", "2", "2", "1", "2", "1", "2", "3", "1", "2", "4", "3…
 ## $ score   &lt;dbl&gt; 3, 4, 0, 6, 3, 3, 3, 3, 0, 2, 1, 3, 3, 2, 2, 1, 3, 3, 1, 3, 0,…</code></pre>
 <div class="info">
-<p>You can pipe a data table to <code>glimpse()</code> at the end to have a quick look at it. It will still save to the object.</p>
+<p>You can pipe a data table to <code><a href="https://pillar.r-lib.org/reference/glimpse.html">glimpse()</a></code> at the end to have a quick look at it. It will still save to the object.</p>
 </div>
 <div class="try">
 <p>What would you set <code>names_sep</code> to in order to split the <code>cols</code> headers listed below into the results?</p>
@@ -924,7 +1866,7 @@ Answer
 <td align="left">
 <code>A_1</code>, <code>A_2</code>, <code>B_1</code>, <code>B_2</code>
 </td>
-<td align="left"><code><a href="https://rdrr.io/r/base/c.html">c("condition", "version")</a></code></td>
+<td align="left"><code>c("condition", "version")</code></td>
 <td align="left"><select class="webex-select"><option value="blank"></option>
 <option value="">A</option>
 <option value="">B</option>
@@ -936,7 +1878,7 @@ Answer
 <td align="left">
 <code>A1</code>, <code>A2</code>, <code>B1</code>, <code>B2</code>
 </td>
-<td align="left"><code><a href="https://rdrr.io/r/base/c.html">c("condition", "version")</a></code></td>
+<td align="left"><code>c("condition", "version")</code></td>
 <td align="left"><select class="webex-select"><option value="blank"></option>
 <option value="">A</option>
 <option value="">B</option>
@@ -948,7 +1890,7 @@ Answer
 <td align="left">
 <code>cat-day&amp;pre</code>, <code>cat-day&amp;post</code>, <code>cat-night&amp;pre</code>, <code>cat-night&amp;post</code>, <code>dog-day&amp;pre</code>, <code>dog-day&amp;post</code>, <code>dog-night&amp;pre</code>, <code>dog-night&amp;post</code>
 </td>
-<td align="left"><code><a href="https://rdrr.io/r/base/c.html">c("pet", "time", "condition")</a></code></td>
+<td align="left"><code>c("pet", "time", "condition")</code></td>
 <td align="left"><select class="webex-select"><option value="blank"></option>
 <option value="">-</option>
 <option value="">&amp;</option>
@@ -963,7 +1905,7 @@ Answer
 <h3>
 <span class="header-section-number">6.4.3</span> pivot_wider()<a class="anchor" aria-label="anchor" href="#pivot_wider"><i class="fas fa-link"></i></a>
 </h3>
-<p>We can also go from long to wide format using the <code>pivot_wider()</code> function.</p>
+<p>We can also go from long to wide format using the <code><a href="https://tidyr.tidyverse.org/reference/pivot_wider.html">pivot_wider()</a></code> function.</p>
 <ul>
 <li>
 <code>names_from</code> is the columns that contain your new column headers.</li>
@@ -972,14 +1914,14 @@ Answer
 <li>
 <code>names_sep</code> is the character string used to join names if <code>names_from</code> is more than one column.</li>
 </ul>
-<div class="sourceCode" id="cb257"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">personality_wide</span> <span class="op">&lt;-</span> <span class="fu">pivot_wider</span><span class="op">(</span>
+<div class="sourceCode" id="cb250"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">personality_wide</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://tidyr.tidyverse.org/reference/pivot_wider.html">pivot_wider</a></span><span class="op">(</span>
   data <span class="op">=</span> <span class="va">personality_long</span>,
   names_from <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="va">domain</span>, <span class="va">qnumber</span><span class="op">)</span>,
   values_from <span class="op">=</span> <span class="va">score</span>,
   names_sep <span class="op">=</span> <span class="st">""</span>
-<span class="op">)</span> <span class="op">%&gt;%</span>
-  <span class="fu">glimpse</span><span class="op">(</span><span class="op">)</span></code></pre></div>
+<span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span>
+  <span class="fu"><a href="https://pillar.r-lib.org/reference/glimpse.html">glimpse</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
 <pre><code>## Rows: 15,000
 ## Columns: 43
 ## $ user_id &lt;dbl&gt; 0, 1, 2, 5, 8, 108, 233, 298, 426, 436, 685, 807, 871, 881, 94…
@@ -1036,24 +1978,24 @@ Answer
 <h3>
 <span class="header-section-number">6.5.1</span> gather()<a class="anchor" aria-label="anchor" href="#gather"><i class="fas fa-link"></i></a>
 </h3>
-<p>Much like <code>pivot_longer()</code>, <code>gather()</code> makes a wide data table long by creating a column for the headers and a column for the values. The main difference is that you cannot turn the headers into more than one column.</p>
+<p>Much like <code><a href="https://tidyr.tidyverse.org/reference/pivot_longer.html">pivot_longer()</a></code>, <code><a href="https://tidyr.tidyverse.org/reference/gather.html">gather()</a></code> makes a wide data table long by creating a column for the headers and a column for the values. The main difference is that you cannot turn the headers into more than one column.</p>
 <ul>
 <li>
-<code>key</code> is what you want to call the new column that the gathered column headers will go into; it's "question" in this example. It is like <code>names_to</code> in <code>pivot_longer()</code>, but can only take one value (multiple values need to be separated after <code>separate()</code>).</li>
+<code>key</code> is what you want to call the new column that the gathered column headers will go into; it's "question" in this example. It is like <code>names_to</code> in <code><a href="https://tidyr.tidyverse.org/reference/pivot_longer.html">pivot_longer()</a></code>, but can only take one value (multiple values need to be separated after <code><a href="https://tidyr.tidyverse.org/reference/separate.html">separate()</a></code>).</li>
 <li>
-<code>value</code> is what you want to call the values in the gathered columns; they're "score" in this example. It is like <code>values_to</code> in <code>pivot_longer()</code>.</li>
+<code>value</code> is what you want to call the values in the gathered columns; they're "score" in this example. It is like <code>values_to</code> in <code><a href="https://tidyr.tidyverse.org/reference/pivot_longer.html">pivot_longer()</a></code>.</li>
 <li>
-<code>...</code> refers to the columns you want to gather. It is like <code>cols</code> in <code>pivot_longer()</code>.</li>
+<code>...</code> refers to the columns you want to gather. It is like <code>cols</code> in <code><a href="https://tidyr.tidyverse.org/reference/pivot_longer.html">pivot_longer()</a></code>.</li>
 </ul>
-<p>The <code>gather()</code> function converts <code>personality</code> from a wide data table to long format, with a row for each user/question observation. The resulting data table should have the columns: <code>user_id</code>, <code>date</code>, <code>question</code>, and <code>score</code>.</p>
-<div class="sourceCode" id="cb259"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">personality_gathered</span> <span class="op">&lt;-</span> <span class="fu">gather</span><span class="op">(</span>
+<p>The <code><a href="https://tidyr.tidyverse.org/reference/gather.html">gather()</a></code> function converts <code>personality</code> from a wide data table to long format, with a row for each user/question observation. The resulting data table should have the columns: <code>user_id</code>, <code>date</code>, <code>question</code>, and <code>score</code>.</p>
+<div class="sourceCode" id="cb252"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">personality_gathered</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://tidyr.tidyverse.org/reference/gather.html">gather</a></span><span class="op">(</span>
   data <span class="op">=</span> <span class="va">personality</span>, 
   key <span class="op">=</span> <span class="st">"question"</span>, <span class="co"># new column name for gathered headers</span>
   value <span class="op">=</span> <span class="st">"score"</span>,  <span class="co"># new column name for gathered values</span>
   <span class="va">Op1</span><span class="op">:</span><span class="va">Ex9</span>           <span class="co"># columns to gather</span>
-<span class="op">)</span> <span class="op">%&gt;%</span>
-  <span class="fu">glimpse</span><span class="op">(</span><span class="op">)</span></code></pre></div>
+<span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span>
+  <span class="fu"><a href="https://pillar.r-lib.org/reference/glimpse.html">glimpse</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
 <pre><code>## Rows: 615,000
 ## Columns: 4
 ## $ user_id  &lt;dbl&gt; 0, 1, 2, 5, 8, 108, 233, 298, 426, 436, 685, 807, 871, 881, 9…
@@ -1071,18 +2013,18 @@ Answer
 <li>
 <code>into</code> is a vector of new column names</li>
 <li>
-<code>sep</code> is the character(s) that separate your new columns. This defaults to anything that isn't alphanumeric, like .<code>,_-/:</code> and is like the <code>names_sep</code> argument in <code>pivot_longer()</code>.</li>
+<code>sep</code> is the character(s) that separate your new columns. This defaults to anything that isn't alphanumeric, like .<code>,_-/:</code> and is like the <code>names_sep</code> argument in <code><a href="https://tidyr.tidyverse.org/reference/pivot_longer.html">pivot_longer()</a></code>.</li>
 </ul>
 <p>Split the <code>question</code> column into two columns: <code>domain</code> and <code>qnumber</code>.</p>
-<p>There is no character to split on, here, but you can separate a column after a specific number of characters by setting <code>sep</code> to an integer. For example, to split "abcde" after the third character, use <code>sep = 3</code>, which results in <code><a href="https://rdrr.io/r/base/c.html">c("abc", "de")</a></code>. You can also use negative number to split before the <em>n</em>th character from the right. For example, to split a column that has words of various lengths and 2-digit suffixes (like "lisa03"", "amanda38"), you can use <code>sep = -2</code>.</p>
-<div class="sourceCode" id="cb261"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">personality_sep</span> <span class="op">&lt;-</span> <span class="fu">separate</span><span class="op">(</span>
+<p>There is no character to split on, here, but you can separate a column after a specific number of characters by setting <code>sep</code> to an integer. For example, to split "abcde" after the third character, use <code>sep = 3</code>, which results in <code>c("abc", "de")</code>. You can also use negative number to split before the <em>n</em>th character from the right. For example, to split a column that has words of various lengths and 2-digit suffixes (like "lisa03"", "amanda38"), you can use <code>sep = -2</code>.</p>
+<div class="sourceCode" id="cb254"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">personality_sep</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://tidyr.tidyverse.org/reference/separate.html">separate</a></span><span class="op">(</span>
   data <span class="op">=</span> <span class="va">personality_gathered</span>, 
   col <span class="op">=</span> <span class="va">question</span>,                <span class="co"># column to separate</span>
   into <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"domain"</span>, <span class="st">"qnumber"</span><span class="op">)</span>, <span class="co"># new column names</span>
   sep <span class="op">=</span> <span class="fl">2</span>                        <span class="co"># where to separate</span>
-<span class="op">)</span> <span class="op">%&gt;%</span>
-  <span class="fu">glimpse</span><span class="op">(</span><span class="op">)</span></code></pre></div>
+<span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span>
+  <span class="fu"><a href="https://pillar.r-lib.org/reference/glimpse.html">glimpse</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
 <pre><code>## Rows: 615,000
 ## Columns: 5
 ## $ user_id &lt;dbl&gt; 0, 1, 2, 5, 8, 108, 233, 298, 426, 436, 685, 807, 871, 881, 94…
@@ -1107,14 +2049,14 @@ Answer
 <code>sep</code> is the character(s) that will separate your united columns</li>
 </ul>
 <p>Put the domain and qnumber columns back together into a new column named <code>domain_n</code>. Make it in a format like "Op_Q1".</p>
-<div class="sourceCode" id="cb263"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">personality_unite</span> <span class="op">&lt;-</span> <span class="fu">unite</span><span class="op">(</span>
+<div class="sourceCode" id="cb256"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">personality_unite</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://tidyr.tidyverse.org/reference/unite.html">unite</a></span><span class="op">(</span>
   data <span class="op">=</span> <span class="va">personality_sep</span>, 
   col <span class="op">=</span> <span class="st">"domain_n"</span>, <span class="co"># new column name</span>
   <span class="va">domain</span>, <span class="va">qnumber</span>,  <span class="co"># columns to unite</span>
   sep <span class="op">=</span> <span class="st">"_Q"</span>        <span class="co"># separation characters</span>
-<span class="op">)</span> <span class="op">%&gt;%</span>
-  <span class="fu">glimpse</span><span class="op">(</span><span class="op">)</span></code></pre></div>
+<span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span>
+  <span class="fu"><a href="https://pillar.r-lib.org/reference/glimpse.html">glimpse</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
 <pre><code>## Rows: 615,000
 ## Columns: 4
 ## $ user_id  &lt;dbl&gt; 0, 1, 2, 5, 8, 108, 233, 298, 426, 436, 685, 807, 871, 881, 9…
@@ -1129,17 +2071,17 @@ Answer
 <p>You can reverse the processes above, as well. For example, you can convert data from long format into wide format.</p>
 <ul>
 <li>
-<code>key</code> is the column that contains your new column headers. It is like <code>names_from</code> in <code>pivot_wider()</code>, but can only take one value (multiple values need to be merged first using <code>unite()</code>).</li>
+<code>key</code> is the column that contains your new column headers. It is like <code>names_from</code> in <code><a href="https://tidyr.tidyverse.org/reference/pivot_wider.html">pivot_wider()</a></code>, but can only take one value (multiple values need to be merged first using <code><a href="https://tidyr.tidyverse.org/reference/unite.html">unite()</a></code>).</li>
 <li>
-<code>value</code> is the column that contains the values in the new spread columns. It is like <code>values_from</code> in <code>pivot_wider()</code>.</li>
+<code>value</code> is the column that contains the values in the new spread columns. It is like <code>values_from</code> in <code><a href="https://tidyr.tidyverse.org/reference/pivot_wider.html">pivot_wider()</a></code>.</li>
 </ul>
-<div class="sourceCode" id="cb265"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">personality_spread</span> <span class="op">&lt;-</span> <span class="fu">spread</span><span class="op">(</span>
+<div class="sourceCode" id="cb258"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">personality_spread</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://tidyr.tidyverse.org/reference/spread.html">spread</a></span><span class="op">(</span>
   data <span class="op">=</span> <span class="va">personality_unite</span>,
   key <span class="op">=</span> <span class="va">domain_n</span>, <span class="co"># column that contains new headers</span>
   value <span class="op">=</span> <span class="va">score</span>   <span class="co"># column that contains new values</span>
-<span class="op">)</span> <span class="op">%&gt;%</span>
-  <span class="fu">glimpse</span><span class="op">(</span><span class="op">)</span></code></pre></div>
+<span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span>
+  <span class="fu"><a href="https://pillar.r-lib.org/reference/glimpse.html">glimpse</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
 <pre><code>## Rows: 15,000
 ## Columns: 43
 ## $ user_id &lt;dbl&gt; 0, 1, 2, 5, 8, 108, 233, 298, 426, 436, 685, 807, 871, 881, 94…
@@ -1197,9 +2139,9 @@ Answer
 <p>Pipes are a way to order your code in a more readable format.</p>
 <p>Let's say you have a small data table with 10 participant IDs, two columns with variable type A, and 2 columns with variable type B. You want to calculate the mean of the A variables and the mean of the B variables and return a table with 10 rows (1 for each participant) and 3 columns (<code>id</code>, <code>A_mean</code> and <code>B_mean</code>).</p>
 <p>One way you could do this is by creating a new object at every step and using that object in the next step. This is pretty clear, but you've created 6 unnecessary data objects in your environment. This can get confusing in very long scripts.</p>
-<div class="sourceCode" id="cb267"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb260"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># make a data table with 10 subjects</span>
-<span class="va">data_original</span> <span class="op">&lt;-</span> <span class="fu">tibble</span><span class="op">(</span>
+<span class="va">data_original</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://tibble.tidyverse.org/reference/tibble.html">tibble</a></span><span class="op">(</span>
   id <span class="op">=</span> <span class="fl">1</span><span class="op">:</span><span class="fl">10</span>,
   A1 <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span><span class="fl">10</span>, <span class="fl">0</span><span class="op">)</span>,
   A2 <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span><span class="fl">10</span>, <span class="fl">1</span><span class="op">)</span>,
@@ -1208,81 +2150,147 @@ Answer
 <span class="op">)</span>
 
 <span class="co"># gather columns A1 to B2 into "variable" and "value" columns</span>
-<span class="va">data_gathered</span> <span class="op">&lt;-</span> <span class="fu">gather</span><span class="op">(</span><span class="va">data_original</span>, <span class="va">variable</span>, <span class="va">value</span>, <span class="va">A1</span><span class="op">:</span><span class="va">B2</span><span class="op">)</span>
+<span class="va">data_gathered</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://tidyr.tidyverse.org/reference/gather.html">gather</a></span><span class="op">(</span><span class="va">data_original</span>, <span class="va">variable</span>, <span class="va">value</span>, <span class="va">A1</span><span class="op">:</span><span class="va">B2</span><span class="op">)</span>
 
 <span class="co"># separate the variable column at the _ into "var" and "var_n" columns</span>
-<span class="va">data_separated</span> <span class="op">&lt;-</span> <span class="fu">separate</span><span class="op">(</span><span class="va">data_gathered</span>, <span class="va">variable</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"var"</span>, <span class="st">"var_n"</span><span class="op">)</span>, sep <span class="op">=</span> <span class="fl">1</span><span class="op">)</span>
+<span class="va">data_separated</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://tidyr.tidyverse.org/reference/separate.html">separate</a></span><span class="op">(</span><span class="va">data_gathered</span>, <span class="va">variable</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"var"</span>, <span class="st">"var_n"</span><span class="op">)</span>, sep <span class="op">=</span> <span class="fl">1</span><span class="op">)</span>
 
 <span class="co"># group the data by id and var</span>
-<span class="va">data_grouped</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/dplyr/man/group_by.html">group_by</a></span><span class="op">(</span><span class="va">data_separated</span>, <span class="va">id</span>, <span class="va">var</span><span class="op">)</span>
+<span class="va">data_grouped</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span><span class="op">(</span><span class="va">data_separated</span>, <span class="va">id</span>, <span class="va">var</span><span class="op">)</span>
 
 <span class="co"># calculate the mean value for each id/var </span>
-<span class="va">data_summarised</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/dplyr/man/summarise.html">summarise</a></span><span class="op">(</span><span class="va">data_grouped</span>, mean <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">value</span><span class="op">)</span>, .groups <span class="op">=</span> <span class="st">"drop"</span><span class="op">)</span>
+<span class="va">data_summarised</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/summarise.html">summarise</a></span><span class="op">(</span><span class="va">data_grouped</span>, mean <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">value</span><span class="op">)</span>, .groups <span class="op">=</span> <span class="st">"drop"</span><span class="op">)</span>
 
 <span class="co"># spread the mean column into A and B columns</span>
-<span class="va">data_spread</span> <span class="op">&lt;-</span> <span class="fu">spread</span><span class="op">(</span><span class="va">data_summarised</span>, <span class="va">var</span>, <span class="va">mean</span><span class="op">)</span>
+<span class="va">data_spread</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://tidyr.tidyverse.org/reference/spread.html">spread</a></span><span class="op">(</span><span class="va">data_summarised</span>, <span class="va">var</span>, <span class="va">mean</span><span class="op">)</span>
 
 <span class="co"># rename A and B to A_mean and B_mean</span>
-<span class="va">data</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/dplyr/man/rename.html">rename</a></span><span class="op">(</span><span class="va">data_spread</span>, A_mean <span class="op">=</span> <span class="va">A</span>, B_mean <span class="op">=</span> <span class="va">B</span><span class="op">)</span>
+<span class="va">data</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/rename.html">rename</a></span><span class="op">(</span><span class="va">data_spread</span>, A_mean <span class="op">=</span> <span class="va">A</span>, B_mean <span class="op">=</span> <span class="va">B</span><span class="op">)</span>
 
 <span class="va">data</span></code></pre></div>
 <div class="kable-table">
 <div class="inline-table"><table class="table table-sm">
-<thead><tr class="header">
-<th align="right">id</th>
-<th align="right">A_mean</th>
-<th align="right">B_mean</th>
+<thead><tr>
+<th style="text-align:right;">
+id
+</th>
+<th style="text-align:right;">
+A_mean
+</th>
+<th style="text-align:right;">
+B_mean
+</th>
 </tr></thead>
 <tbody>
-<tr class="odd">
-<td align="right">1</td>
-<td align="right">-0.5938256</td>
-<td align="right">1.0243046</td>
+<tr>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+-0.5938256
+</td>
+<td style="text-align:right;">
+1.0243046
+</td>
 </tr>
-<tr class="even">
-<td align="right">2</td>
-<td align="right">0.7440623</td>
-<td align="right">2.7172046</td>
+<tr>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:right;">
+0.7440623
+</td>
+<td style="text-align:right;">
+2.7172046
+</td>
 </tr>
-<tr class="odd">
-<td align="right">3</td>
-<td align="right">0.9309275</td>
-<td align="right">3.9262358</td>
+<tr>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:right;">
+0.9309275
+</td>
+<td style="text-align:right;">
+3.9262358
+</td>
 </tr>
-<tr class="even">
-<td align="right">4</td>
-<td align="right">0.7197686</td>
-<td align="right">1.9662632</td>
+<tr>
+<td style="text-align:right;">
+4
+</td>
+<td style="text-align:right;">
+0.7197686
+</td>
+<td style="text-align:right;">
+1.9662632
+</td>
 </tr>
-<tr class="odd">
-<td align="right">5</td>
-<td align="right">-0.0280832</td>
-<td align="right">1.9473456</td>
+<tr>
+<td style="text-align:right;">
+5
+</td>
+<td style="text-align:right;">
+-0.0280832
+</td>
+<td style="text-align:right;">
+1.9473456
+</td>
 </tr>
-<tr class="even">
-<td align="right">6</td>
-<td align="right">-0.0982555</td>
-<td align="right">3.2073687</td>
+<tr>
+<td style="text-align:right;">
+6
+</td>
+<td style="text-align:right;">
+-0.0982555
+</td>
+<td style="text-align:right;">
+3.2073687
+</td>
 </tr>
-<tr class="odd">
-<td align="right">7</td>
-<td align="right">0.1256922</td>
-<td align="right">0.9256321</td>
+<tr>
+<td style="text-align:right;">
+7
+</td>
+<td style="text-align:right;">
+0.1256922
+</td>
+<td style="text-align:right;">
+0.9256321
+</td>
 </tr>
-<tr class="even">
-<td align="right">8</td>
-<td align="right">1.4526447</td>
-<td align="right">2.3778116</td>
+<tr>
+<td style="text-align:right;">
+8
+</td>
+<td style="text-align:right;">
+1.4526447
+</td>
+<td style="text-align:right;">
+2.3778116
+</td>
 </tr>
-<tr class="odd">
-<td align="right">9</td>
-<td align="right">0.2976443</td>
-<td align="right">1.6617481</td>
+<tr>
+<td style="text-align:right;">
+9
+</td>
+<td style="text-align:right;">
+0.2976443
+</td>
+<td style="text-align:right;">
+1.6617481
+</td>
 </tr>
-<tr class="even">
-<td align="right">10</td>
-<td align="right">0.5589199</td>
-<td align="right">2.1034679</td>
+<tr>
+<td style="text-align:right;">
+10
+</td>
+<td style="text-align:right;">
+0.5589199
+</td>
+<td style="text-align:right;">
+2.1034679
+</td>
 </tr>
 </tbody>
 </table></div>
@@ -1291,18 +2299,18 @@ Answer
 <p>You <em>can</em> name each object <code>data</code> and keep replacing the old data object with the new one at each step. This will keep your environment clean, but I don't recommend it because it makes it too easy to accidentally run your code out of order when you are running line-by-line for development or debugging.</p>
 </div>
 <p>One way to avoid extra objects is to nest your functions, literally replacing each data object with the code that generated it in the previous step. This can be fine for very short chains.</p>
-<div class="sourceCode" id="cb268"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb261"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">mean_petal_width</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/Round.html">round</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">iris</span><span class="op">$</span><span class="va">Petal.Width</span><span class="op">)</span>, <span class="fl">2</span><span class="op">)</span></code></pre></div>
 <p>But it gets extremely confusing for long chains:</p>
-<div class="sourceCode" id="cb269"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb262"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># do not ever do this!!</span>
-<span class="va">data</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/dplyr/man/rename.html">rename</a></span><span class="op">(</span>
-  <span class="fu">spread</span><span class="op">(</span>
-    <span class="fu"><a href="https://rdrr.io/pkg/dplyr/man/summarise.html">summarise</a></span><span class="op">(</span>
-      <span class="fu"><a href="https://rdrr.io/pkg/dplyr/man/group_by.html">group_by</a></span><span class="op">(</span>
-        <span class="fu">separate</span><span class="op">(</span>
-          <span class="fu">gather</span><span class="op">(</span>
-            <span class="fu">tibble</span><span class="op">(</span>
+<span class="va">data</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/rename.html">rename</a></span><span class="op">(</span>
+  <span class="fu"><a href="https://tidyr.tidyverse.org/reference/spread.html">spread</a></span><span class="op">(</span>
+    <span class="fu"><a href="https://dplyr.tidyverse.org/reference/summarise.html">summarise</a></span><span class="op">(</span>
+      <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span><span class="op">(</span>
+        <span class="fu"><a href="https://tidyr.tidyverse.org/reference/separate.html">separate</a></span><span class="op">(</span>
+          <span class="fu"><a href="https://tidyr.tidyverse.org/reference/gather.html">gather</a></span><span class="op">(</span>
+            <span class="fu"><a href="https://tibble.tidyverse.org/reference/tibble.html">tibble</a></span><span class="op">(</span>
               id <span class="op">=</span> <span class="fl">1</span><span class="op">:</span><span class="fl">10</span>,
               A1 <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span><span class="fl">10</span>, <span class="fl">0</span><span class="op">)</span>,
               A2 <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span><span class="fl">10</span>, <span class="fl">1</span><span class="op">)</span>,
@@ -1315,21 +2323,21 @@ Answer
     <span class="va">var</span>, <span class="va">mean</span><span class="op">)</span>, 
   A_mean <span class="op">=</span> <span class="va">A</span>, B_mean <span class="op">=</span> <span class="va">B</span><span class="op">)</span></code></pre></div>
 <p>The pipe lets you "pipe" the result of each function into the next function, allowing you to put your code in a logical order without creating too many extra objects.</p>
-<div class="sourceCode" id="cb270"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb263"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># calculate mean of A and B variables for each participant</span>
-<span class="va">data</span> <span class="op">&lt;-</span> <span class="fu">tibble</span><span class="op">(</span>
+<span class="va">data</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://tibble.tidyverse.org/reference/tibble.html">tibble</a></span><span class="op">(</span>
   id <span class="op">=</span> <span class="fl">1</span><span class="op">:</span><span class="fl">10</span>,
   A1 <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span><span class="fl">10</span>, <span class="fl">0</span><span class="op">)</span>,
   A2 <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span><span class="fl">10</span>, <span class="fl">1</span><span class="op">)</span>,
   B1 <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span><span class="fl">10</span>, <span class="fl">2</span><span class="op">)</span>,
   B2 <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span><span class="fl">10</span>,<span class="fl">3</span><span class="op">)</span>
-<span class="op">)</span> <span class="op">%&gt;%</span>
-  <span class="fu">gather</span><span class="op">(</span><span class="va">variable</span>, <span class="va">value</span>, <span class="va">A1</span><span class="op">:</span><span class="va">B2</span><span class="op">)</span> <span class="op">%&gt;%</span>
-  <span class="fu">separate</span><span class="op">(</span><span class="va">variable</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"var"</span>, <span class="st">"var_n"</span><span class="op">)</span>, sep<span class="op">=</span><span class="fl">1</span><span class="op">)</span> <span class="op">%&gt;%</span>
-  <span class="fu"><a href="https://rdrr.io/pkg/dplyr/man/group_by.html">group_by</a></span><span class="op">(</span><span class="va">id</span>, <span class="va">var</span><span class="op">)</span> <span class="op">%&gt;%</span>
-  <span class="fu"><a href="https://rdrr.io/pkg/dplyr/man/summarise.html">summarise</a></span><span class="op">(</span>mean <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">value</span><span class="op">)</span>, .groups <span class="op">=</span> <span class="st">"drop"</span><span class="op">)</span> <span class="op">%&gt;%</span>
-  <span class="fu">spread</span><span class="op">(</span><span class="va">var</span>, <span class="va">mean</span><span class="op">)</span> <span class="op">%&gt;%</span>
-  <span class="fu"><a href="https://rdrr.io/pkg/dplyr/man/rename.html">rename</a></span><span class="op">(</span>A_mean <span class="op">=</span> <span class="va">A</span>, B_mean <span class="op">=</span> <span class="va">B</span><span class="op">)</span></code></pre></div>
+<span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span>
+  <span class="fu"><a href="https://tidyr.tidyverse.org/reference/gather.html">gather</a></span><span class="op">(</span><span class="va">variable</span>, <span class="va">value</span>, <span class="va">A1</span><span class="op">:</span><span class="va">B2</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span>
+  <span class="fu"><a href="https://tidyr.tidyverse.org/reference/separate.html">separate</a></span><span class="op">(</span><span class="va">variable</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"var"</span>, <span class="st">"var_n"</span><span class="op">)</span>, sep<span class="op">=</span><span class="fl">1</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span>
+  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span><span class="op">(</span><span class="va">id</span>, <span class="va">var</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span>
+  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/summarise.html">summarise</a></span><span class="op">(</span>mean <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">value</span><span class="op">)</span>, .groups <span class="op">=</span> <span class="st">"drop"</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span>
+  <span class="fu"><a href="https://tidyr.tidyverse.org/reference/spread.html">spread</a></span><span class="op">(</span><span class="va">var</span>, <span class="va">mean</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span>
+  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/rename.html">rename</a></span><span class="op">(</span>A_mean <span class="op">=</span> <span class="va">A</span>, B_mean <span class="op">=</span> <span class="va">B</span><span class="op">)</span></code></pre></div>
 <p>You can read this code from top to bottom as follows:</p>
 <ol style="list-style-type: decimal">
 <li>Make a tibble called <code>data</code> with
@@ -1353,12 +2361,12 @@ Answer
 <p>You can debug a pipe by highlighting from the beginning to just before the pipe you want to stop at. Try this by highlighting from <code>data &lt;-</code> to the end of the <code>separate</code> function and typing cmd-return. What does <code>data</code> look like now?</p>
 </div>
 <p>Chain all the steps above using pipes.</p>
-<div class="sourceCode" id="cb271"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">personality_reshaped</span> <span class="op">&lt;-</span> <span class="va">personality</span> <span class="op">%&gt;%</span>
-  <span class="fu">gather</span><span class="op">(</span><span class="st">"question"</span>, <span class="st">"score"</span>, <span class="va">Op1</span><span class="op">:</span><span class="va">Ex9</span><span class="op">)</span> <span class="op">%&gt;%</span>
-  <span class="fu">separate</span><span class="op">(</span><span class="va">question</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"domain"</span>, <span class="st">"qnumber"</span><span class="op">)</span>, sep <span class="op">=</span> <span class="fl">2</span><span class="op">)</span> <span class="op">%&gt;%</span>
-  <span class="fu">unite</span><span class="op">(</span><span class="st">"domain_n"</span>, <span class="va">domain</span>, <span class="va">qnumber</span>, sep <span class="op">=</span> <span class="st">"_Q"</span><span class="op">)</span> <span class="op">%&gt;%</span>
-  <span class="fu">spread</span><span class="op">(</span><span class="va">domain_n</span>, <span class="va">score</span><span class="op">)</span></code></pre></div>
+<div class="sourceCode" id="cb264"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">personality_reshaped</span> <span class="op">&lt;-</span> <span class="va">personality</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span>
+  <span class="fu"><a href="https://tidyr.tidyverse.org/reference/gather.html">gather</a></span><span class="op">(</span><span class="st">"question"</span>, <span class="st">"score"</span>, <span class="va">Op1</span><span class="op">:</span><span class="va">Ex9</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span>
+  <span class="fu"><a href="https://tidyr.tidyverse.org/reference/separate.html">separate</a></span><span class="op">(</span><span class="va">question</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"domain"</span>, <span class="st">"qnumber"</span><span class="op">)</span>, sep <span class="op">=</span> <span class="fl">2</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span>
+  <span class="fu"><a href="https://tidyr.tidyverse.org/reference/unite.html">unite</a></span><span class="op">(</span><span class="st">"domain_n"</span>, <span class="va">domain</span>, <span class="va">qnumber</span>, sep <span class="op">=</span> <span class="st">"_Q"</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span>
+  <span class="fu"><a href="https://tidyr.tidyverse.org/reference/spread.html">spread</a></span><span class="op">(</span><span class="va">domain_n</span>, <span class="va">score</span><span class="op">)</span></code></pre></div>
 </div>
 <div id="more-complex-example" class="section level2" number="6.7">
 <h2>
@@ -1375,102 +2383,195 @@ Answer
 </li>
 <li><a href="https://psyteachr.github.io/reprores/data/matmort.xls">maternal mortality</a></li>
 </ul>
-<div class="sourceCode" id="cb272"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb265"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/data.html">data</a></span><span class="op">(</span><span class="st">"infmort"</span><span class="op">)</span>
 <span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">infmort</span><span class="op">)</span></code></pre></div>
 <div class="kable-table">
 <div class="inline-table"><table class="table table-sm">
-<colgroup>
-<col width="11%">
-<col width="4%">
-<col width="84%">
-</colgroup>
-<thead><tr class="header">
-<th align="left">Country</th>
-<th align="right">Year</th>
-<th align="left">Infant mortality rate (probability of dying between birth and age 1 per 1000 live births)</th>
+<thead><tr>
+<th style="text-align:left;">
+Country
+</th>
+<th style="text-align:right;">
+Year
+</th>
+<th style="text-align:left;">
+Infant mortality rate (probability of dying between birth and age 1 per 1000 live births)
+</th>
 </tr></thead>
 <tbody>
-<tr class="odd">
-<td align="left">Afghanistan</td>
-<td align="right">2015</td>
-<td align="left">66.3 [52.7-83.9]</td>
+<tr>
+<td style="text-align:left;">
+Afghanistan
+</td>
+<td style="text-align:right;">
+2015
+</td>
+<td style="text-align:left;">
+66.3 [52.7-83.9]
+</td>
 </tr>
-<tr class="even">
-<td align="left">Afghanistan</td>
-<td align="right">2014</td>
-<td align="left">68.1 [55.7-83.6]</td>
+<tr>
+<td style="text-align:left;">
+Afghanistan
+</td>
+<td style="text-align:right;">
+2014
+</td>
+<td style="text-align:left;">
+68.1 [55.7-83.6]
+</td>
 </tr>
-<tr class="odd">
-<td align="left">Afghanistan</td>
-<td align="right">2013</td>
-<td align="left">69.9 [58.7-83.5]</td>
+<tr>
+<td style="text-align:left;">
+Afghanistan
+</td>
+<td style="text-align:right;">
+2013
+</td>
+<td style="text-align:left;">
+69.9 [58.7-83.5]
+</td>
 </tr>
-<tr class="even">
-<td align="left">Afghanistan</td>
-<td align="right">2012</td>
-<td align="left">71.7 [61.6-83.7]</td>
+<tr>
+<td style="text-align:left;">
+Afghanistan
+</td>
+<td style="text-align:right;">
+2012
+</td>
+<td style="text-align:left;">
+71.7 [61.6-83.7]
+</td>
 </tr>
-<tr class="odd">
-<td align="left">Afghanistan</td>
-<td align="right">2011</td>
-<td align="left">73.4 [64.4-84.2]</td>
+<tr>
+<td style="text-align:left;">
+Afghanistan
+</td>
+<td style="text-align:right;">
+2011
+</td>
+<td style="text-align:left;">
+73.4 [64.4-84.2]
+</td>
 </tr>
-<tr class="even">
-<td align="left">Afghanistan</td>
-<td align="right">2010</td>
-<td align="left">75.1 [66.9-85.1]</td>
+<tr>
+<td style="text-align:left;">
+Afghanistan
+</td>
+<td style="text-align:right;">
+2010
+</td>
+<td style="text-align:left;">
+75.1 [66.9-85.1]
+</td>
 </tr>
 </tbody>
 </table></div>
 </div>
-<div class="sourceCode" id="cb273"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb266"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/data.html">data</a></span><span class="op">(</span><span class="st">"matmort"</span><span class="op">)</span>
 <span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">matmort</span><span class="op">)</span></code></pre></div>
 <div class="kable-table">
 <div class="inline-table"><table class="table table-sm">
-<thead><tr class="header">
-<th align="left">Country</th>
-<th align="left">1990</th>
-<th align="left">2000</th>
-<th align="left">2015</th>
+<thead><tr>
+<th style="text-align:left;">
+Country
+</th>
+<th style="text-align:left;">
+1990
+</th>
+<th style="text-align:left;">
+2000
+</th>
+<th style="text-align:left;">
+2015
+</th>
 </tr></thead>
 <tbody>
-<tr class="odd">
-<td align="left">Afghanistan</td>
-<td align="left">1 340 [ 878 - 1 950]</td>
-<td align="left">1 100 [ 745 - 1 570]</td>
-<td align="left">396 [ 253 - 620]</td>
+<tr>
+<td style="text-align:left;">
+Afghanistan
+</td>
+<td style="text-align:left;">
+1 340 [ 878 - 1 950]
+</td>
+<td style="text-align:left;">
+1 100 [ 745 - 1 570]
+</td>
+<td style="text-align:left;">
+396 [ 253 - 620]
+</td>
 </tr>
-<tr class="even">
-<td align="left">Albania</td>
-<td align="left">71 [ 58 - 88]</td>
-<td align="left">43 [ 33 - 56]</td>
-<td align="left">29 [ 16 - 46]</td>
+<tr>
+<td style="text-align:left;">
+Albania
+</td>
+<td style="text-align:left;">
+71 [ 58 - 88]
+</td>
+<td style="text-align:left;">
+43 [ 33 - 56]
+</td>
+<td style="text-align:left;">
+29 [ 16 - 46]
+</td>
 </tr>
-<tr class="odd">
-<td align="left">Algeria</td>
-<td align="left">216 [ 141 - 327]</td>
-<td align="left">170 [ 118 - 241]</td>
-<td align="left">140 [ 82 - 244]</td>
+<tr>
+<td style="text-align:left;">
+Algeria
+</td>
+<td style="text-align:left;">
+216 [ 141 - 327]
+</td>
+<td style="text-align:left;">
+170 [ 118 - 241]
+</td>
+<td style="text-align:left;">
+140 [ 82 - 244]
+</td>
 </tr>
-<tr class="even">
-<td align="left">Angola</td>
-<td align="left">1 160 [ 627 - 2 020]</td>
-<td align="left">924 [ 472 - 1 730]</td>
-<td align="left">477 [ 221 - 988]</td>
+<tr>
+<td style="text-align:left;">
+Angola
+</td>
+<td style="text-align:left;">
+1 160 [ 627 - 2 020]
+</td>
+<td style="text-align:left;">
+924 [ 472 - 1 730]
+</td>
+<td style="text-align:left;">
+477 [ 221 - 988]
+</td>
 </tr>
-<tr class="odd">
-<td align="left">Argentina</td>
-<td align="left">72 [ 64 - 80]</td>
-<td align="left">60 [ 54 - 65]</td>
-<td align="left">52 [ 44 - 63]</td>
+<tr>
+<td style="text-align:left;">
+Argentina
+</td>
+<td style="text-align:left;">
+72 [ 64 - 80]
+</td>
+<td style="text-align:left;">
+60 [ 54 - 65]
+</td>
+<td style="text-align:left;">
+52 [ 44 - 63]
+</td>
 </tr>
-<tr class="even">
-<td align="left">Armenia</td>
-<td align="left">58 [ 51 - 65]</td>
-<td align="left">40 [ 35 - 46]</td>
-<td align="left">25 [ 21 - 31]</td>
+<tr>
+<td style="text-align:left;">
+Armenia
+</td>
+<td style="text-align:left;">
+58 [ 51 - 65]
+</td>
+<td style="text-align:left;">
+40 [ 35 - 46]
+</td>
+<td style="text-align:left;">
+25 [ 21 - 31]
+</td>
 </tr>
 </tbody>
 </table></div>
@@ -1482,25 +2583,25 @@ Answer
 </h3>
 <p><code>matmort</code> is in wide format, with a separate column for each year. Change it to long format, with a row for each Country/Year observation.</p>
 <p>This example is complicated because the column names to gather <em>are</em> numbers. If the column names are non-standard (e.g., have spaces, start with numbers, or have special characters), you can enclose them in backticks (`) like the example below.</p>
-<div class="sourceCode" id="cb274"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">matmort_long</span> <span class="op">&lt;-</span> <span class="va">matmort</span> <span class="op">%&gt;%</span>
-  <span class="fu">pivot_longer</span><span class="op">(</span>cols <span class="op">=</span> <span class="va">`1990`</span><span class="op">:</span><span class="va">`2015`</span>,
+<div class="sourceCode" id="cb267"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">matmort_long</span> <span class="op">&lt;-</span> <span class="va">matmort</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span>
+  <span class="fu"><a href="https://tidyr.tidyverse.org/reference/pivot_longer.html">pivot_longer</a></span><span class="op">(</span>cols <span class="op">=</span> <span class="va">`1990`</span><span class="op">:</span><span class="va">`2015`</span>,
                names_to <span class="op">=</span> <span class="st">"Year"</span>,
-               values_to <span class="op">=</span> <span class="st">"stats"</span><span class="op">)</span> <span class="op">%&gt;%</span>
-  <span class="fu">glimpse</span><span class="op">(</span><span class="op">)</span></code></pre></div>
+               values_to <span class="op">=</span> <span class="st">"stats"</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span>
+  <span class="fu"><a href="https://pillar.r-lib.org/reference/glimpse.html">glimpse</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
 <pre><code>## Rows: 543
 ## Columns: 3
 ## $ Country &lt;chr&gt; "Afghanistan", "Afghanistan", "Afghanistan", "Albania", "Alban…
 ## $ Year    &lt;chr&gt; "1990", "2000", "2015", "1990", "2000", "2015", "1990", "2000"…
 ## $ stats   &lt;chr&gt; "1 340 [ 878 - 1 950]", "1 100 [ 745 - 1 570]", "396 [ 253 -  …</code></pre>
 <div class="info">
-<p>You can put <code>matmort</code> at the first argument to <code>pivot_longer()</code>; you don't have to pipe it in. But when I'm working on data processing I often find myself needing to insert or rearrange steps and I constantly introduce errors by forgetting to take the first argument out of a pipe chain, so now I start with the original data table and pipe from there.</p>
+<p>You can put <code>matmort</code> at the first argument to <code><a href="https://tidyr.tidyverse.org/reference/pivot_longer.html">pivot_longer()</a></code>; you don't have to pipe it in. But when I'm working on data processing I often find myself needing to insert or rearrange steps and I constantly introduce errors by forgetting to take the first argument out of a pipe chain, so now I start with the original data table and pipe from there.</p>
 </div>
-<p>Alternatively, you can use the <code>gather()</code> function.</p>
-<div class="sourceCode" id="cb276"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">matmort_long</span> <span class="op">&lt;-</span> <span class="va">matmort</span> <span class="op">%&gt;%</span>
-  <span class="fu">gather</span><span class="op">(</span><span class="st">"Year"</span>, <span class="st">"stats"</span>, <span class="va">`1990`</span><span class="op">:</span><span class="va">`2015`</span><span class="op">)</span> <span class="op">%&gt;%</span>
-  <span class="fu">glimpse</span><span class="op">(</span><span class="op">)</span></code></pre></div>
+<p>Alternatively, you can use the <code><a href="https://tidyr.tidyverse.org/reference/gather.html">gather()</a></code> function.</p>
+<div class="sourceCode" id="cb269"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">matmort_long</span> <span class="op">&lt;-</span> <span class="va">matmort</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span>
+  <span class="fu"><a href="https://tidyr.tidyverse.org/reference/gather.html">gather</a></span><span class="op">(</span><span class="st">"Year"</span>, <span class="st">"stats"</span>, <span class="va">`1990`</span><span class="op">:</span><span class="va">`2015`</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span>
+  <span class="fu"><a href="https://pillar.r-lib.org/reference/glimpse.html">glimpse</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
 <pre><code>## Rows: 543
 ## Columns: 3
 ## $ Country &lt;chr&gt; "Afghanistan", "Albania", "Algeria", "Angola", "Argentina", "A…
@@ -1511,13 +2612,13 @@ Answer
 <h3>
 <span class="header-section-number">6.7.3</span> One Piece of Data per Column<a class="anchor" aria-label="anchor" href="#one-piece-of-data-per-column"><i class="fas fa-link"></i></a>
 </h3>
-<p>The data in the <code>stats</code> column is in an unusual format with some sort of confidence interval in brackets and lots of extra spaces. We don't need any of the spaces, so first we'll remove them with <code><a href="https://rdrr.io/pkg/dplyr/man/mutate.html">mutate()</a></code>, which we'll learn more about in the next lesson.</p>
+<p>The data in the <code>stats</code> column is in an unusual format with some sort of confidence interval in brackets and lots of extra spaces. We don't need any of the spaces, so first we'll remove them with <code><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate()</a></code>, which we'll learn more about in the next lesson.</p>
 <p>The <code>separate</code> function will separate your data on anything that is not a number or letter, so try it first without specifying the <code>sep</code> argument. The <code>into</code> argument is a list of the new column names.</p>
-<div class="sourceCode" id="cb278"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">matmort_split</span> <span class="op">&lt;-</span> <span class="va">matmort_long</span> <span class="op">%&gt;%</span>
-  <span class="fu"><a href="https://rdrr.io/pkg/dplyr/man/mutate.html">mutate</a></span><span class="op">(</span>stats <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/grep.html">gsub</a></span><span class="op">(</span><span class="st">" "</span>, <span class="st">""</span>, <span class="va">stats</span><span class="op">)</span><span class="op">)</span> <span class="op">%&gt;%</span>
-  <span class="fu">separate</span><span class="op">(</span><span class="va">stats</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"rate"</span>, <span class="st">"ci_low"</span>, <span class="st">"ci_hi"</span><span class="op">)</span><span class="op">)</span> <span class="op">%&gt;%</span>
-  <span class="fu">glimpse</span><span class="op">(</span><span class="op">)</span></code></pre></div>
+<div class="sourceCode" id="cb271"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">matmort_split</span> <span class="op">&lt;-</span> <span class="va">matmort_long</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span>
+  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>stats <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/grep.html">gsub</a></span><span class="op">(</span><span class="st">" "</span>, <span class="st">""</span>, <span class="va">stats</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span>
+  <span class="fu"><a href="https://tidyr.tidyverse.org/reference/separate.html">separate</a></span><span class="op">(</span><span class="va">stats</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"rate"</span>, <span class="st">"ci_low"</span>, <span class="st">"ci_hi"</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span>
+  <span class="fu"><a href="https://pillar.r-lib.org/reference/glimpse.html">glimpse</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
 <pre><code>## Warning: Expected 3 pieces. Additional pieces discarded in 543 rows [1, 2, 3, 4,
 ## 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, ...].</code></pre>
 <pre><code>## Rows: 543
@@ -1528,9 +2629,9 @@ Answer
 ## $ ci_low  &lt;chr&gt; "878", "58", "141", "627", "64", "51", "7", "7", "56", "34", "…
 ## $ ci_hi   &lt;chr&gt; "1950", "88", "327", "2020", "80", "65", "9", "10", "74", "61"…</code></pre>
 <div class="info">
-<p>The <code><a href="https://rdrr.io/r/base/grep.html">gsub(pattern, replacement, x)</a></code> function is a
-flexible way to do search and replace. The example above replaces all occurances of the <code>pattern</code> " " (a space), with the <code>replacement</code> "" (nothing), in the string <code>x</code> (the <code>stats</code> column). Use <code><a href="https://rdrr.io/r/base/grep.html">sub()</a></code> instead if you only want to replace the first occurance of a pattern. We only used a simple pattern here, but you can use more complicated <a href="https://stat.ethz.ch/R-manual/R-devel/library/base/html/regex.html">regex</a> patterns to replace, for example, all even numbers (e.g., <code><a href="https://rdrr.io/r/base/grep.html">gsub("[:02468:]", "*", "id = 123456")</a></code>) or all occurances of the word colour in US or UK spelling
-(e.g., <code><a href="https://rdrr.io/r/base/grep.html">gsub("colo(u)?r", "***", "replace color, colour, or colours, but not collors")</a></code>).</p>
+<p>The <code>gsub(pattern, replacement, x)</code> function is a
+flexible way to do search and replace. The example above replaces all occurances of the <code>pattern</code> " " (a space), with the <code>replacement</code> "" (nothing), in the string <code>x</code> (the <code>stats</code> column). Use <code><a href="https://rdrr.io/r/base/grep.html">sub()</a></code> instead if you only want to replace the first occurance of a pattern. We only used a simple pattern here, but you can use more complicated <a href="https://stat.ethz.ch/R-manual/R-devel/library/base/html/regex.html">regex</a> patterns to replace, for example, all even numbers (e.g., <code>gsub("[:02468:]", "*", "id = 123456")</code>) or all occurances of the word colour in US or UK spelling
+(e.g., <code>gsub("colo(u)?r", "***", "replace color, colour, or colours, but not collors")</code>).</p>
 </div>
 <div id="extra" class="section level4" number="6.7.3.1">
 <h4>
@@ -1538,13 +2639,13 @@ flexible way to do search and replace. The example above replaces all occurances
 </h4>
 <div class="warning">
 <p>The previous example should have given you an error warning about
-"Additional pieces discarded in 543 rows". This is because <code>separate</code> splits the column at the brackets and dashes, so the text <code>100[90-110]</code> would split into four values <code><a href="https://rdrr.io/r/base/c.html">c("100", "90", "110", "")</a></code>, but we only specified 3 new columns. The fourth value is always empty (just the part after the last bracket), so we are happy to drop it, but <code>separate</code> generates a warning so you don't do that accidentally. You can turn off the warning by adding the <code>extra</code> argument and setting it to "drop". Look at the help for <code>??tidyr::separate</code> to see what the other options do.</p>
+"Additional pieces discarded in 543 rows". This is because <code>separate</code> splits the column at the brackets and dashes, so the text <code>100[90-110]</code> would split into four values <code>c("100", "90", "110", "")</code>, but we only specified 3 new columns. The fourth value is always empty (just the part after the last bracket), so we are happy to drop it, but <code>separate</code> generates a warning so you don't do that accidentally. You can turn off the warning by adding the <code>extra</code> argument and setting it to "drop". Look at the help for <code>??tidyr::separate</code> to see what the other options do.</p>
 </div>
-<div class="sourceCode" id="cb281"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">matmort_split</span> <span class="op">&lt;-</span> <span class="va">matmort_long</span> <span class="op">%&gt;%</span>
-  <span class="fu"><a href="https://rdrr.io/pkg/dplyr/man/mutate.html">mutate</a></span><span class="op">(</span>stats <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/grep.html">gsub</a></span><span class="op">(</span><span class="st">" "</span>, <span class="st">""</span>, <span class="va">stats</span><span class="op">)</span><span class="op">)</span> <span class="op">%&gt;%</span>
-  <span class="fu">separate</span><span class="op">(</span><span class="va">stats</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"rate"</span>, <span class="st">"ci_low"</span>, <span class="st">"ci_hi"</span><span class="op">)</span>, extra <span class="op">=</span> <span class="st">"drop"</span><span class="op">)</span> <span class="op">%&gt;%</span>
-  <span class="fu">glimpse</span><span class="op">(</span><span class="op">)</span></code></pre></div>
+<div class="sourceCode" id="cb274"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">matmort_split</span> <span class="op">&lt;-</span> <span class="va">matmort_long</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span>
+  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>stats <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/grep.html">gsub</a></span><span class="op">(</span><span class="st">" "</span>, <span class="st">""</span>, <span class="va">stats</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span>
+  <span class="fu"><a href="https://tidyr.tidyverse.org/reference/separate.html">separate</a></span><span class="op">(</span><span class="va">stats</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"rate"</span>, <span class="st">"ci_low"</span>, <span class="st">"ci_hi"</span><span class="op">)</span>, extra <span class="op">=</span> <span class="st">"drop"</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span>
+  <span class="fu"><a href="https://pillar.r-lib.org/reference/glimpse.html">glimpse</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
 <pre><code>## Rows: 543
 ## Columns: 5
 ## $ Country &lt;chr&gt; "Afghanistan", "Albania", "Algeria", "Angola", "Argentina", "A…
@@ -1558,10 +2659,10 @@ flexible way to do search and replace. The example above replaces all occurances
 <span class="header-section-number">6.7.3.2</span> Set delimiters with <code>sep</code><a class="anchor" aria-label="anchor" href="#sep"><i class="fas fa-link"></i></a>
 </h4>
 <p>Now do the same with <code>infmort</code>. It's already in long format, so you don't need to use <code>gather</code>, but the third column has a ridiculously long name, so we can just refer to it by its column number (3).</p>
-<div class="sourceCode" id="cb283"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">infmort_split</span> <span class="op">&lt;-</span> <span class="va">infmort</span> <span class="op">%&gt;%</span>
-  <span class="fu">separate</span><span class="op">(</span><span class="fl">3</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"rate"</span>, <span class="st">"ci_low"</span>, <span class="st">"ci_hi"</span><span class="op">)</span>, extra <span class="op">=</span> <span class="st">"drop"</span><span class="op">)</span> <span class="op">%&gt;%</span>
-  <span class="fu">glimpse</span><span class="op">(</span><span class="op">)</span></code></pre></div>
+<div class="sourceCode" id="cb276"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">infmort_split</span> <span class="op">&lt;-</span> <span class="va">infmort</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span>
+  <span class="fu"><a href="https://tidyr.tidyverse.org/reference/separate.html">separate</a></span><span class="op">(</span><span class="fl">3</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"rate"</span>, <span class="st">"ci_low"</span>, <span class="st">"ci_hi"</span><span class="op">)</span>, extra <span class="op">=</span> <span class="st">"drop"</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span>
+  <span class="fu"><a href="https://pillar.r-lib.org/reference/glimpse.html">glimpse</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
 <pre><code>## Rows: 5,044
 ## Columns: 5
 ## $ Country &lt;chr&gt; "Afghanistan", "Afghanistan", "Afghanistan", "Afghanistan", "A…
@@ -1577,15 +2678,15 @@ flexible way to do search and replace. The example above replaces all occurances
 <p>You can use <a href="https://stat.ethz.ch/R-manual/R-devel/library/base/html/regex.html">regular expressions</a>
 to separate complex columns. Here, we want to separate on dashes and brackets. You can separate on a list of delimiters by putting them in parentheses, separated by "|". It's a little more complicated because brackets have a special meaning in regex, so you need to "escape" the left one with two backslashes "\\".</p>
 </div>
-<div class="sourceCode" id="cb285"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">infmort_split</span> <span class="op">&lt;-</span> <span class="va">infmort</span> <span class="op">%&gt;%</span>
-  <span class="fu">separate</span><span class="op">(</span>
+<div class="sourceCode" id="cb278"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">infmort_split</span> <span class="op">&lt;-</span> <span class="va">infmort</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span>
+  <span class="fu"><a href="https://tidyr.tidyverse.org/reference/separate.html">separate</a></span><span class="op">(</span>
     col <span class="op">=</span> <span class="fl">3</span>, 
     into <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"rate"</span>, <span class="st">"ci_low"</span>, <span class="st">"ci_hi"</span><span class="op">)</span>, 
     extra <span class="op">=</span> <span class="st">"drop"</span>, 
     sep <span class="op">=</span> <span class="st">"(\\[|-|])"</span>
-  <span class="op">)</span> <span class="op">%&gt;%</span>
-  <span class="fu">glimpse</span><span class="op">(</span><span class="op">)</span></code></pre></div>
+  <span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span>
+  <span class="fu"><a href="https://pillar.r-lib.org/reference/glimpse.html">glimpse</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
 <pre><code>## Rows: 5,044
 ## Columns: 5
 ## $ Country &lt;chr&gt; "Afghanistan", "Afghanistan", "Afghanistan", "Afghanistan", "A…
@@ -1599,14 +2700,14 @@ to separate complex columns. Here, we want to separate on dashes and brackets. Y
 <span class="header-section-number">6.7.3.3</span> Fix data types with <code>convert</code><a class="anchor" aria-label="anchor" href="#convert"><i class="fas fa-link"></i></a>
 </h4>
 <p>That's better. Notice the <em><chr></chr></em> next to <code>Year</code>, <code>rate</code>, <code>ci_low</code> and <code>ci_hi</code>. That means these columns hold characters (like words), not numbers or integers. This can cause problems when you try to do thigs like average the numbers (you can't average words), so we can fix it by adding the argument <code>convert</code> and setting it to <code>TRUE</code>.</p>
-<div class="sourceCode" id="cb287"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">infmort_split</span> <span class="op">&lt;-</span> <span class="va">infmort</span> <span class="op">%&gt;%</span>
-  <span class="fu">separate</span><span class="op">(</span>col <span class="op">=</span> <span class="fl">3</span>, 
+<div class="sourceCode" id="cb280"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">infmort_split</span> <span class="op">&lt;-</span> <span class="va">infmort</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span>
+  <span class="fu"><a href="https://tidyr.tidyverse.org/reference/separate.html">separate</a></span><span class="op">(</span>col <span class="op">=</span> <span class="fl">3</span>, 
            into <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"rate"</span>, <span class="st">"ci_low"</span>, <span class="st">"ci_hi"</span><span class="op">)</span>, 
            extra <span class="op">=</span> <span class="st">"drop"</span>, 
            sep <span class="op">=</span> <span class="st">"(\\[|-|])"</span>, 
-           convert <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span> <span class="op">%&gt;%</span>
-  <span class="fu">glimpse</span><span class="op">(</span><span class="op">)</span></code></pre></div>
+           convert <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span>
+  <span class="fu"><a href="https://pillar.r-lib.org/reference/glimpse.html">glimpse</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
 <pre><code>## Rows: 5,044
 ## Columns: 5
 ## $ Country &lt;chr&gt; "Afghanistan", "Afghanistan", "Afghanistan", "Afghanistan", "A…
@@ -1615,14 +2716,14 @@ to separate complex columns. Here, we want to separate on dashes and brackets. Y
 ## $ ci_low  &lt;dbl&gt; 52.7, 55.7, 58.7, 61.6, 64.4, 66.9, 69.0, 71.2, 73.4, 75.5, 77…
 ## $ ci_hi   &lt;dbl&gt; 83.9, 83.6, 83.5, 83.7, 84.2, 85.1, 86.1, 87.3, 88.9, 90.7, 92…</code></pre>
 <p>Do the same for <code>matmort</code>.</p>
-<div class="sourceCode" id="cb289"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">matmort_split</span> <span class="op">&lt;-</span> <span class="va">matmort_long</span> <span class="op">%&gt;%</span>
-  <span class="fu"><a href="https://rdrr.io/pkg/dplyr/man/mutate.html">mutate</a></span><span class="op">(</span>stats <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/grep.html">gsub</a></span><span class="op">(</span><span class="st">" "</span>, <span class="st">""</span>, <span class="va">stats</span><span class="op">)</span><span class="op">)</span> <span class="op">%&gt;%</span>
-  <span class="fu">separate</span><span class="op">(</span>col <span class="op">=</span> <span class="va">stats</span>, 
+<div class="sourceCode" id="cb282"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">matmort_split</span> <span class="op">&lt;-</span> <span class="va">matmort_long</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span>
+  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>stats <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/grep.html">gsub</a></span><span class="op">(</span><span class="st">" "</span>, <span class="st">""</span>, <span class="va">stats</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span>
+  <span class="fu"><a href="https://tidyr.tidyverse.org/reference/separate.html">separate</a></span><span class="op">(</span>col <span class="op">=</span> <span class="va">stats</span>, 
            into <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"rate"</span>, <span class="st">"ci_low"</span>, <span class="st">"ci_hi"</span><span class="op">)</span>, 
            extra <span class="op">=</span> <span class="st">"drop"</span>, 
-           convert <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span> <span class="op">%&gt;%</span>
-  <span class="fu">glimpse</span><span class="op">(</span><span class="op">)</span></code></pre></div>
+           convert <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span>
+  <span class="fu"><a href="https://pillar.r-lib.org/reference/glimpse.html">glimpse</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
 <pre><code>## Rows: 543
 ## Columns: 5
 ## $ Country &lt;chr&gt; "Afghanistan", "Albania", "Algeria", "Angola", "Argentina", "A…
@@ -1637,17 +2738,17 @@ to separate complex columns. Here, we want to separate on dashes and brackets. Y
 <span class="header-section-number">6.7.4</span> All in one step<a class="anchor" aria-label="anchor" href="#all-in-one-step"><i class="fas fa-link"></i></a>
 </h3>
 <p>We can chain all the steps for <code>matmort</code> above together, since we don't need those intermediate data tables.</p>
-<div class="sourceCode" id="cb291"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">matmort2</span> <span class="op">&lt;-</span> <span class="va">matmort</span> <span class="op">%&gt;%</span>
-  <span class="fu">gather</span><span class="op">(</span><span class="st">"Year"</span>, <span class="st">"stats"</span>, <span class="va">`1990`</span><span class="op">:</span><span class="va">`2015`</span><span class="op">)</span> <span class="op">%&gt;%</span>
-  <span class="fu"><a href="https://rdrr.io/pkg/dplyr/man/mutate.html">mutate</a></span><span class="op">(</span>stats <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/grep.html">gsub</a></span><span class="op">(</span><span class="st">" "</span>, <span class="st">""</span>, <span class="va">stats</span><span class="op">)</span><span class="op">)</span> <span class="op">%&gt;%</span>
-  <span class="fu">separate</span><span class="op">(</span>
+<div class="sourceCode" id="cb284"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">matmort2</span> <span class="op">&lt;-</span> <span class="va">matmort</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span>
+  <span class="fu"><a href="https://tidyr.tidyverse.org/reference/gather.html">gather</a></span><span class="op">(</span><span class="st">"Year"</span>, <span class="st">"stats"</span>, <span class="va">`1990`</span><span class="op">:</span><span class="va">`2015`</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span>
+  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>stats <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/grep.html">gsub</a></span><span class="op">(</span><span class="st">" "</span>, <span class="st">""</span>, <span class="va">stats</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span>
+  <span class="fu"><a href="https://tidyr.tidyverse.org/reference/separate.html">separate</a></span><span class="op">(</span>
     col <span class="op">=</span> <span class="va">stats</span>, 
     into <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"rate"</span>, <span class="st">"ci_low"</span>, <span class="st">"ci_hi"</span><span class="op">)</span>, 
     extra <span class="op">=</span> <span class="st">"drop"</span>, 
     convert <span class="op">=</span> <span class="cn">TRUE</span>
-  <span class="op">)</span> <span class="op">%&gt;%</span>
-  <span class="fu">glimpse</span><span class="op">(</span><span class="op">)</span></code></pre></div>
+  <span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span>
+  <span class="fu"><a href="https://pillar.r-lib.org/reference/glimpse.html">glimpse</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
 <pre><code>## Rows: 543
 ## Columns: 5
 ## $ Country &lt;chr&gt; "Afghanistan", "Albania", "Algeria", "Angola", "Argentina", "A…
@@ -1661,9 +2762,9 @@ to separate complex columns. Here, we want to separate on dashes and brackets. Y
 <span class="header-section-number">6.7.5</span> Columns by Year<a class="anchor" aria-label="anchor" href="#columns-by-year"><i class="fas fa-link"></i></a>
 </h3>
 <p>Spread out the maternal mortality rate by year.</p>
-<div class="sourceCode" id="cb293"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">matmort_wide</span> <span class="op">&lt;-</span> <span class="va">matmort2</span> <span class="op">%&gt;%</span>
-  <span class="fu">spread</span><span class="op">(</span>key <span class="op">=</span> <span class="va">Year</span>, value <span class="op">=</span> <span class="va">rate</span><span class="op">)</span> <span class="op">%&gt;%</span>
+<div class="sourceCode" id="cb286"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">matmort_wide</span> <span class="op">&lt;-</span> <span class="va">matmort2</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span>
+  <span class="fu"><a href="https://tidyr.tidyverse.org/reference/spread.html">spread</a></span><span class="op">(</span>key <span class="op">=</span> <span class="va">Year</span>, value <span class="op">=</span> <span class="va">rate</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span>
   <span class="fu"><a href="https://rdrr.io/r/base/print.html">print</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
 <pre><code>## # A tibble: 542 × 6
 ##    Country     ci_low ci_hi `1990` `2000` `2015`
@@ -1682,15 +2783,15 @@ to separate complex columns. Here, we want to separate on dashes and brackets. Y
 <div class="warning">
 <p>Nope, that didn't work at all, but it's a really common mistake when spreading data. This is because <code>spread</code> matches on all the remaining columns, so Afghanistan with <code>ci_low</code> of 253 is treated as a different observation than Afghanistan with <code>ci_low</code> of 745.</p>
 </div>
-<p>This is where <code>pivot_wider()</code> can be very useful. You can set <code>values_from</code> to multiple column names and their names will be added to the <code>names_from</code> values.</p>
-<div class="sourceCode" id="cb295"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">matmort_wide</span> <span class="op">&lt;-</span> <span class="va">matmort2</span> <span class="op">%&gt;%</span>
-  <span class="fu">pivot_wider</span><span class="op">(</span>
+<p>This is where <code><a href="https://tidyr.tidyverse.org/reference/pivot_wider.html">pivot_wider()</a></code> can be very useful. You can set <code>values_from</code> to multiple column names and their names will be added to the <code>names_from</code> values.</p>
+<div class="sourceCode" id="cb288"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">matmort_wide</span> <span class="op">&lt;-</span> <span class="va">matmort2</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span>
+  <span class="fu"><a href="https://tidyr.tidyverse.org/reference/pivot_wider.html">pivot_wider</a></span><span class="op">(</span>
     names_from <span class="op">=</span> <span class="va">Year</span>,
     values_from <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="va">rate</span>, <span class="va">ci_low</span>, <span class="va">ci_hi</span><span class="op">)</span>
   <span class="op">)</span>
               
-<span class="fu">glimpse</span><span class="op">(</span><span class="va">matmort_wide</span><span class="op">)</span></code></pre></div>
+<span class="fu"><a href="https://pillar.r-lib.org/reference/glimpse.html">glimpse</a></span><span class="op">(</span><span class="va">matmort_wide</span><span class="op">)</span></code></pre></div>
 <pre><code>## Rows: 181
 ## Columns: 10
 ## $ Country     &lt;chr&gt; "Afghanistan", "Albania", "Algeria", "Angola", "Argentina"…
@@ -1728,12 +2829,12 @@ to separate complex columns. Here, we want to separate on dashes and brackets. Y
 <li>time: What time is it? (time)</li>
 </ul>
 <p>To get the dataset into wide format, where each question is in a separate column, use the following code:</p>
-<div class="sourceCode" id="cb297"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">q</span> <span class="op">&lt;-</span> <span class="va">experimentum_quests</span> <span class="op">%&gt;%</span>
-  <span class="fu">pivot_wider</span><span class="op">(</span>id_cols <span class="op">=</span> <span class="va">session_id</span><span class="op">:</span><span class="va">user_age</span>,
+<div class="sourceCode" id="cb290"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">q</span> <span class="op">&lt;-</span> <span class="va">experimentum_quests</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span>
+  <span class="fu"><a href="https://tidyr.tidyverse.org/reference/pivot_wider.html">pivot_wider</a></span><span class="op">(</span>id_cols <span class="op">=</span> <span class="va">session_id</span><span class="op">:</span><span class="va">user_age</span>,
               names_from <span class="op">=</span> <span class="va">q_name</span>,
-              values_from <span class="op">=</span> <span class="va">dv</span><span class="op">)</span> <span class="op">%&gt;%</span>
-  <span class="fu"><a href="https://rdrr.io/r/utils/type.convert.html">type.convert</a></span><span class="op">(</span>as.is <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span> <span class="op">%&gt;%</span>
+              values_from <span class="op">=</span> <span class="va">dv</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span>
+  <span class="fu"><a href="https://rdrr.io/r/utils/type.convert.html">type.convert</a></span><span class="op">(</span>as.is <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span>
   <span class="fu"><a href="https://rdrr.io/r/base/print.html">print</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
 <pre><code>## # A tibble: 24 × 15
 ##    session_id project_id quest_id user_id user_sex user_status user_age current
@@ -1759,47 +2860,79 @@ to separate complex columns. Here, we want to separate on dashes and brackets. Y
 <h2>
 <span class="header-section-number">6.8</span> Glossary<a class="anchor" aria-label="anchor" href="#glossary-tidyr"><i class="fas fa-link"></i></a>
 </h2>
-<div class="inline-table"><table class="table table-sm">
-<colgroup>
-<col width="58%">
-<col width="41%">
-</colgroup>
-<thead><tr class="header">
-<th align="left">term</th>
-<th align="left">definition</th>
+<div class="inline-table"><table class="table" style="margin-left: auto; margin-right: auto;">
+<thead><tr>
+<th style="text-align:left;">
+term
+</th>
+<th style="text-align:left;">
+definition
+</th>
 </tr></thead>
 <tbody>
-<tr class="odd">
-<td align="left"><a href="https://psyteachr.github.io/glossary/c.html#character" class="glossary" target="_blank">character</a></td>
-<td align="left">A data type representing strings of text.</td>
+<tr>
+<td style="text-align:left;">
+<a href="https://psyteachr.github.io/glossary/c.html#character" class="glossary" target="_blank">character</a>
+</td>
+<td style="text-align:left;">
+A data type representing strings of text.
+</td>
 </tr>
-<tr class="even">
-<td align="left"><a href="https://psyteachr.github.io/glossary/d.html#double" class="glossary" target="_blank">double</a></td>
-<td align="left">A data type representing a real decimal number</td>
+<tr>
+<td style="text-align:left;">
+<a href="https://psyteachr.github.io/glossary/d.html#double" class="glossary" target="_blank">double</a>
+</td>
+<td style="text-align:left;">
+A data type representing a real decimal number
+</td>
 </tr>
-<tr class="odd">
-<td align="left"><a href="https://psyteachr.github.io/glossary/i.html#integer" class="glossary" target="_blank">integer</a></td>
-<td align="left">A data type representing whole numbers.</td>
+<tr>
+<td style="text-align:left;">
+<a href="https://psyteachr.github.io/glossary/i.html#integer" class="glossary" target="_blank">integer</a>
+</td>
+<td style="text-align:left;">
+A data type representing whole numbers.
+</td>
 </tr>
-<tr class="even">
-<td align="left"><a href="https://psyteachr.github.io/glossary/l.html#long" class="glossary" target="_blank">long</a></td>
-<td align="left">Data where each observation is on a separate row</td>
+<tr>
+<td style="text-align:left;">
+<a href="https://psyteachr.github.io/glossary/l.html#long" class="glossary" target="_blank">long</a>
+</td>
+<td style="text-align:left;">
+Data where each observation is on a separate row
+</td>
 </tr>
-<tr class="odd">
-<td align="left"><a href="https://psyteachr.github.io/glossary/o.html#observation" class="glossary" target="_blank">observation</a></td>
-<td align="left">All of the data about a single trial or question.</td>
+<tr>
+<td style="text-align:left;">
+<a href="https://psyteachr.github.io/glossary/o.html#observation" class="glossary" target="_blank">observation</a>
+</td>
+<td style="text-align:left;">
+All of the data about a single trial or question.
+</td>
 </tr>
-<tr class="even">
-<td align="left"><a href="https://psyteachr.github.io/glossary/v.html#value" class="glossary" target="_blank">value</a></td>
-<td align="left">A single number or piece of data.</td>
+<tr>
+<td style="text-align:left;">
+<a href="https://psyteachr.github.io/glossary/v.html#value" class="glossary" target="_blank">value</a>
+</td>
+<td style="text-align:left;">
+A single number or piece of data.
+</td>
 </tr>
-<tr class="odd">
-<td align="left"><a href="https://psyteachr.github.io/glossary/v.html#variable" class="glossary" target="_blank">variable</a></td>
-<td align="left">A word that identifies and stores the value of some data for later use.</td>
+<tr>
+<td style="text-align:left;">
+<a href="https://psyteachr.github.io/glossary/v.html#variable" class="glossary" target="_blank">variable</a>
+</td>
+<td style="text-align:left;">
+A word that identifies and stores the value of some data for later use.
+</td>
 </tr>
-<tr class="even">
-<td align="left"><a href="https://psyteachr.github.io/glossary/w.html#wide" class="glossary" target="_blank">wide</a></td>
-<td align="left">Data where all of the observations about one subject are in the same row</td>
+<tr>
+<td style="text-align:left;">
+<a href="https://psyteachr.github.io/glossary/w.html#wide" class="glossary" target="_blank">wide</a>
+</td>
+<td style="text-align:left;">
+Data where all of the observations about one subject are in the same row
+</td>
 </tr>
 </tbody>
 </table></div>
@@ -2079,7 +3212,7 @@ $( document ).ready(function() {
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Data Skills for Reproducible Research</strong>: v2" was written by . It was last built on 2021-10-15.</p>
+    <p>"<strong>Data Skills for Reproducible Research</strong>: <br><a href="https://doi.org/10.5281/zenodo.6527194"><img src="https://zenodo.org/badge/DOI/10.5281/zenodo.6527194.svg" alt="DOI: 10.5281/zenodo.6527194"></a>" was written by . It was last built on 2022-05-07.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

@@ -45,18 +45,78 @@ smalldata
 
 <div class="kable-table">
 
-|id  |group   |       pre|      post|
-|:---|:-------|---------:|---------:|
-|S01 |control |  98.46606| 106.70508|
-|S02 |control | 104.39774|  89.09030|
-|S03 |control | 105.13377| 123.67230|
-|S04 |control |  92.42574|  70.70178|
-|S05 |control | 123.53268| 124.95526|
-|S06 |exp     |  97.48676| 101.61697|
-|S07 |exp     |  87.75594| 126.30077|
-|S08 |exp     |  77.15375|  72.31229|
-|S09 |exp     |  97.00283| 108.80713|
-|S10 |exp     | 102.32338| 113.74732|
+<table>
+ <thead>
+  <tr>
+   <th style="text-align:left;"> id </th>
+   <th style="text-align:left;"> group </th>
+   <th style="text-align:right;"> pre </th>
+   <th style="text-align:right;"> post </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> S01 </td>
+   <td style="text-align:left;"> control </td>
+   <td style="text-align:right;"> 98.46606 </td>
+   <td style="text-align:right;"> 106.70508 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> S02 </td>
+   <td style="text-align:left;"> control </td>
+   <td style="text-align:right;"> 104.39774 </td>
+   <td style="text-align:right;"> 89.09030 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> S03 </td>
+   <td style="text-align:left;"> control </td>
+   <td style="text-align:right;"> 105.13377 </td>
+   <td style="text-align:right;"> 123.67230 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> S04 </td>
+   <td style="text-align:left;"> control </td>
+   <td style="text-align:right;"> 92.42574 </td>
+   <td style="text-align:right;"> 70.70178 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> S05 </td>
+   <td style="text-align:left;"> control </td>
+   <td style="text-align:right;"> 123.53268 </td>
+   <td style="text-align:right;"> 124.95526 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> S06 </td>
+   <td style="text-align:left;"> exp </td>
+   <td style="text-align:right;"> 97.48676 </td>
+   <td style="text-align:right;"> 101.61697 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> S07 </td>
+   <td style="text-align:left;"> exp </td>
+   <td style="text-align:right;"> 87.75594 </td>
+   <td style="text-align:right;"> 126.30077 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> S08 </td>
+   <td style="text-align:left;"> exp </td>
+   <td style="text-align:right;"> 77.15375 </td>
+   <td style="text-align:right;"> 72.31229 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> S09 </td>
+   <td style="text-align:left;"> exp </td>
+   <td style="text-align:right;"> 97.00283 </td>
+   <td style="text-align:right;"> 108.80713 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> S10 </td>
+   <td style="text-align:left;"> exp </td>
+   <td style="text-align:right;"> 102.32338 </td>
+   <td style="text-align:right;"> 113.74732 </td>
+  </tr>
+</tbody>
+</table>
 
 </div>
 
@@ -82,18 +142,78 @@ smalldata
 
 <div class="kable-table">
 
-|id  |group   |       pre|      post|
-|:---|:-------|---------:|---------:|
-|S01 |control |  98.46606| 106.70508|
-|S02 |control | 104.39774|  89.09030|
-|S03 |control | 105.13377| 123.67230|
-|S04 |control |  92.42574|  70.70178|
-|S05 |control | 123.53268| 124.95526|
-|S06 |exp     |  97.48676| 101.61697|
-|S07 |exp     |  87.75594| 126.30077|
-|S08 |exp     |  77.15375|  72.31229|
-|S09 |exp     |  97.00283| 108.80713|
-|S10 |exp     | 102.32338| 113.74732|
+<table>
+ <thead>
+  <tr>
+   <th style="text-align:left;"> id </th>
+   <th style="text-align:left;"> group </th>
+   <th style="text-align:right;"> pre </th>
+   <th style="text-align:right;"> post </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> S01 </td>
+   <td style="text-align:left;"> control </td>
+   <td style="text-align:right;"> 98.46606 </td>
+   <td style="text-align:right;"> 106.70508 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> S02 </td>
+   <td style="text-align:left;"> control </td>
+   <td style="text-align:right;"> 104.39774 </td>
+   <td style="text-align:right;"> 89.09030 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> S03 </td>
+   <td style="text-align:left;"> control </td>
+   <td style="text-align:right;"> 105.13377 </td>
+   <td style="text-align:right;"> 123.67230 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> S04 </td>
+   <td style="text-align:left;"> control </td>
+   <td style="text-align:right;"> 92.42574 </td>
+   <td style="text-align:right;"> 70.70178 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> S05 </td>
+   <td style="text-align:left;"> control </td>
+   <td style="text-align:right;"> 123.53268 </td>
+   <td style="text-align:right;"> 124.95526 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> S06 </td>
+   <td style="text-align:left;"> exp </td>
+   <td style="text-align:right;"> 97.48676 </td>
+   <td style="text-align:right;"> 101.61697 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> S07 </td>
+   <td style="text-align:left;"> exp </td>
+   <td style="text-align:right;"> 87.75594 </td>
+   <td style="text-align:right;"> 126.30077 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> S08 </td>
+   <td style="text-align:left;"> exp </td>
+   <td style="text-align:right;"> 77.15375 </td>
+   <td style="text-align:right;"> 72.31229 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> S09 </td>
+   <td style="text-align:left;"> exp </td>
+   <td style="text-align:right;"> 97.00283 </td>
+   <td style="text-align:right;"> 108.80713 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> S10 </td>
+   <td style="text-align:left;"> exp </td>
+   <td style="text-align:right;"> 102.32338 </td>
+   <td style="text-align:right;"> 113.74732 </td>
+  </tr>
+</tbody>
+</table>
 
 </div>
 
@@ -197,17 +317,11 @@ demo_csv  <- readr::read_csv("data/demo.csv")
 
 ```
 ## Rows: 6 Columns: 5
-```
-
-```
 ## ── Column specification ────────────────────────────────────────────────────────
 ## Delimiter: ","
 ## chr (2): character, date
 ## dbl (2): integer, double
 ## lgl (1): logical
-```
-
-```
 ## 
 ## ℹ Use `spec()` to retrieve the full column specification for this data.
 ## ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
@@ -254,7 +368,7 @@ library(googlesheets4)
 
 gs4_deauth() # skip authorisation for public data
 
-url <- "https://docs.google.com/spreadsheets/d/1yhAPP0hk6fNssL9UdpJ7m_vx00VY5PQKHspx6DNQNSY/"
+url <- "https://docs.google.com/spreadsheets/d/16dkq0YL0J7fyAwT1pdgj1bNNrheckAU_2-DKuuM6aGI/"
 
 demo_goo  <- googlesheets4::read_sheet(url)
 ```
@@ -301,14 +415,61 @@ demo_tsv
 
 <div class="kable-table">
 
-|character | integer| double|logical |date      |
-|:---------|-------:|------:|:-------|:---------|
-|A         |       1|    1.5|TRUE    |05-Sep-21 |
-|B         |       2|    2.5|TRUE    |04-Sep-21 |
-|C         |       3|    3.5|FALSE   |03-Sep-21 |
-|D         |       4|    4.5|FALSE   |02-Sep-21 |
-|E         |       5|    5.5|NA      |01-Sep-21 |
-|F         |       6|    6.5|TRUE    |31-Aug-21 |
+<table>
+ <thead>
+  <tr>
+   <th style="text-align:left;"> character </th>
+   <th style="text-align:right;"> integer </th>
+   <th style="text-align:right;"> double </th>
+   <th style="text-align:left;"> logical </th>
+   <th style="text-align:left;"> date </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> A </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 1.5 </td>
+   <td style="text-align:left;"> TRUE </td>
+   <td style="text-align:left;"> 05-Sep-21 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> B </td>
+   <td style="text-align:right;"> 2 </td>
+   <td style="text-align:right;"> 2.5 </td>
+   <td style="text-align:left;"> TRUE </td>
+   <td style="text-align:left;"> 04-Sep-21 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> C </td>
+   <td style="text-align:right;"> 3 </td>
+   <td style="text-align:right;"> 3.5 </td>
+   <td style="text-align:left;"> FALSE </td>
+   <td style="text-align:left;"> 03-Sep-21 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> D </td>
+   <td style="text-align:right;"> 4 </td>
+   <td style="text-align:right;"> 4.5 </td>
+   <td style="text-align:left;"> FALSE </td>
+   <td style="text-align:left;"> 02-Sep-21 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> E </td>
+   <td style="text-align:right;"> 5 </td>
+   <td style="text-align:right;"> 5.5 </td>
+   <td style="text-align:left;"> NA </td>
+   <td style="text-align:left;"> 01-Sep-21 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> F </td>
+   <td style="text-align:right;"> 6 </td>
+   <td style="text-align:right;"> 6.5 </td>
+   <td style="text-align:left;"> TRUE </td>
+   <td style="text-align:left;"> 31-Aug-21 </td>
+  </tr>
+</tbody>
+</table>
 
 </div>
 
@@ -381,11 +542,32 @@ avatar
 
 <div class="kable-table">
 
-|name   |bends |friendly |
-|:------|:-----|:--------|
-|Katara |water |TRUE     |
-|Toph   |earth |TRUE     |
-|Sokka  |NA    |TRUE     |
+<table>
+ <thead>
+  <tr>
+   <th style="text-align:left;"> name </th>
+   <th style="text-align:left;"> bends </th>
+   <th style="text-align:left;"> friendly </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> Katara </td>
+   <td style="text-align:left;"> water </td>
+   <td style="text-align:left;"> TRUE </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Toph </td>
+   <td style="text-align:left;"> earth </td>
+   <td style="text-align:left;"> TRUE </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Sokka </td>
+   <td style="text-align:left;"> NA </td>
+   <td style="text-align:left;"> TRUE </td>
+  </tr>
+</tbody>
+</table>
 
 </div>
 
@@ -428,7 +610,6 @@ demo <- read_sheet(sheet_id)
 * Save it to a CSV file called <code class='path'>family.csv</code>. 
 * Clear the object from your environment by restarting R or with the code <code><span class='fu'><a href='https://rdrr.io/r/base/rm.html'>remove</a></span><span class='op'>(</span><span class='va'>family</span><span class='op'>)</span></code>.
 * Load the data back in and view it.
-:::
 
 
 <div class='webex-solution'><button>Solution</button>
@@ -952,7 +1133,7 @@ names(avatar) # what are the column names?
 
 #### Accessing rows and columns {#row-col-access}
 
-There are various ways of accessing specific columns or rows from a table. The ones below are from <a class='glossary' target='_blank' title='The set of R functions that come with a basic installation of R, before you add external packages' href='https://psyteachr.github.io/glossary/b#base-r'>base R</a> and are useful to know about, but you'll be learning easier (and more readable) ways in the [tidyr](#tidyr) and [dplyr](#dplyr) lessons. Examples of these base R accessing functions are provided here for reference, since you might see them in other people's scripts.
+There are various ways of accessing specific columns or rows from a table. The ones below are from <a class='glossary' target='_blank' title='The set of R functions that come with a basic installation of R, before you add external packages' href='https://psyteachr.github.io/glossary/b#base-r'>base R</a> and are useful to know about, but you'll be learning easier (and more readable) ways in Chapter\ \@ref(tidyr) and Chapter\ \@ref(dplyr). Examples of these base R accessing functions are provided here for reference, since you might see them in other people's scripts.
 
 
 ```r
@@ -971,26 +1152,26 @@ The data directory you created with `reprores::getdata()` contains a file called
 
 
 ```r
-mess <- read_csv("data/mess.csv")
+# lazy = FALSE loads the data right away so you can see error messages
+# this default changed in late 2021 and might change back soon
+mess <- read_csv("data/mess.csv", lazy = FALSE)
+```
+
+```
+## Warning: One or more parsing issues, see `problems()` for details
 ```
 
 ```
 ## Rows: 27 Columns: 1
-```
-
-```
 ## ── Column specification ────────────────────────────────────────────────────────
 ## Delimiter: ","
 ## chr (1): This is my messy dataset
-```
-
-```
 ## 
 ## ℹ Use `spec()` to retrieve the full column specification for this data.
 ## ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
 ```
 
-You'll get a warning with many parsing errors and `mess` is just a single column of the word "junk". View the file `data/mess.csv` by clicking on it in the File pane, and choosing "View File". Here are the first 10 lines. What went wrong?
+You'll get a warning with many parsing errors and the data table is just a single column. View the file `data/mess.csv` by clicking on it in the File pane, and choosing "View File". Here are the first 10 lines. What went wrong?
 
 ```
 This is my messy dataset
@@ -1009,62 +1190,37 @@ First, the file starts with a note: "This is my messy dataset". We want to skip 
 
 
 ```r
-mess <- read_csv("data/mess.csv", skip = 2)
+mess <- read_csv("data/mess.csv", 
+                 skip = 2, 
+                 lazy = FALSE)
 ```
 
 ```
 ## Rows: 26 Columns: 7
-```
-
-```
 ## ── Column specification ────────────────────────────────────────────────────────
 ## Delimiter: ","
 ## chr (6): junk, order, letter, good, min_max, date
 ## dbl (1): score
-```
-
-```
 ## 
 ## ℹ Use `spec()` to retrieve the full column specification for this data.
 ## ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
 ```
 
 ```r
-mess
+glimpse(mess)
 ```
 
-<div class="kable-table">
-
-|junk |order   | score|letter |good  |min_max |date       |
-|:----|:-------|-----:|:------|:-----|:-------|:----------|
-|junk |1       | -1.00|a      |1     |1 - 2   |2020-01-1  |
-|junk |missing |  0.72|b      |1     |2 - 3   |2020-01-2  |
-|junk |3       | -0.62|c      |FALSE |3 - 4   |2020-01-3  |
-|junk |4       |  2.03|d      |T     |4 - 5   |2020-01-4  |
-|junk |5       |    NA|e      |1     |5 - 6   |2020-01-5  |
-|junk |6       |  0.99|f      |0     |6 - 7   |2020-01-6  |
-|junk |7       |  0.03|g      |T     |7 - 8   |2020-01-7  |
-|junk |8       |  0.67|h      |TRUE  |8 - 9   |2020-01-8  |
-|junk |9       |  0.57|i      |1     |9 - 10  |2020-01-9  |
-|junk |10      |  0.90|j      |T     |10 - 11 |2020-01-10 |
-|junk |11      | -1.55|k      |F     |11 - 12 |2020-01-11 |
-|junk |12      |    NA|l      |FALSE |12 - 13 |2020-01-12 |
-|junk |13      |  0.15|m      |T     |13 - 14 |2020-01-13 |
-|junk |14      | -0.66|n      |TRUE  |14 - 15 |2020-01-14 |
-|junk |15      | -0.99|o      |1     |15 - 16 |2020-01-15 |
-|junk |16      |  1.97|p      |T     |16 - 17 |2020-01-16 |
-|junk |17      | -0.44|q      |TRUE  |17 - 18 |2020-01-17 |
-|junk |18      | -0.90|r      |F     |18 - 19 |2020-01-18 |
-|junk |19      | -0.15|s      |FALSE |19 - 20 |2020-01-19 |
-|junk |20      | -0.83|t      |0     |20 - 21 |2020-01-20 |
-|junk |21      |  1.99|u      |T     |21 - 22 |2020-01-21 |
-|junk |22      |  0.04|v      |F     |22 - 23 |2020-01-22 |
-|junk |23      | -0.40|w      |F     |23 - 24 |2020-01-23 |
-|junk |24      | -0.47|x      |0     |24 - 25 |2020-01-24 |
-|junk |25      | -0.41|y      |TRUE  |25 - 26 |2020-01-25 |
-|junk |26      |  0.68|z      |0     |26 - 27 |2020-01-26 |
-
-</div>
+```
+## Rows: 26
+## Columns: 7
+## $ junk    <chr> "junk", "junk", "junk", "junk", "junk", "junk", "junk", "junk"…
+## $ order   <chr> "1", "missing", "3", "4", "5", "6", "7", "8", "9", "10", "11",…
+## $ score   <dbl> -1.00, 0.72, -0.62, 2.03, NA, 0.99, 0.03, 0.67, 0.57, 0.90, -1…
+## $ letter  <chr> "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m…
+## $ good    <chr> "1", "1", "FALSE", "T", "1", "0", "T", "TRUE", "1", "T", "F", …
+## $ min_max <chr> "1 - 2", "2 - 3", "3 - 4", "4 - 5", "5 - 6", "6 - 7", "7 - 8",…
+## $ date    <chr> "2020-01-1", "2020-01-2", "2020-01-3", "2020-01-4", "2020-01-5…
+```
 
 OK, that's a little better, but this table is still a serious mess in several ways:
 
@@ -1104,17 +1260,27 @@ ct <- list(
 
 tidier <- read_csv("data/mess.csv", 
                    skip = 2,
-                   col_types = ct)
+                   col_types = ct, 
+                   lazy = FALSE)
 ```
 
-You will get a message about "1 parsing failure" when you run this. Warnings look scary at first, but always start by reading the message. The table tells you what row (`2`) and column (`order`) the error was found in, what kind of data was expected (`integer`), and what the actual value was (<code><span class='st'>"missing"</span></code>). If you specifically tell <code><span class='fu'>read_csv</span><span class='op'>(</span><span class='op'>)</span></code> to import a column as an integer, any characters in the column will produce a warning like this and then be recorded as `NA`. You can manually set what the missing values were recorded as with the `na` argument.
+```
+## Warning: One or more parsing issues, see `problems()` for details
+```
+
+```r
+problems()
+```
+
+You will get a message about parsing issues when you run this that tells you to run the `problems()` function to see a table of the problems. Warnings look scary at first, but always start by reading the message. The table tells you what row (`3`) and column (`2`) the error was found in, what kind of data was expected (`an integer`), and what the actual value was (`missing`). If you specifically tell `read_csv()` to import a column as an integer, any characters in the column will produce a warning like this and then be recorded as `NA`. You can manually set what the missing values were recorded as with the `na` argument.
 
 
 ```r
 tidiest <- read_csv("data/mess.csv", 
                    skip = 2,
                    na = "missing",
-                   col_types = ct)
+                   col_types = ct,
+                   lazy = FALSE)
 ```
 
 Now `order` is an integer where "missing" is now `NA`, `good` is a logical value, where <code><span class='fl'>0</span></code> and <code><span class='cn'>F</span></code> are converted to <code><span class='cn'>FALSE</span></code> and <code><span class='fl'>1</span></code> and <code><span class='cn'>T</span></code> are converted to <code><span class='cn'>TRUE</span></code>, and `date` is a date type (adding leading zeros to the day). We'll learn in later chapters how to fix other problems, such as the `min_max` column containing two different types of data.
@@ -1126,68 +1292,340 @@ tidiest
 
 <div class="kable-table">
 
-| order|score |letter |good  |min_max |date       |
-|-----:|:-----|:------|:-----|:-------|:----------|
-|     1|-1    |a      |TRUE  |1 - 2   |2020-01-01 |
-|    NA|0.72  |b      |TRUE  |2 - 3   |2020-01-02 |
-|     3|-0.62 |c      |FALSE |3 - 4   |2020-01-03 |
-|     4|2.03  |d      |TRUE  |4 - 5   |2020-01-04 |
-|     5|NA    |e      |TRUE  |5 - 6   |2020-01-05 |
-|     6|0.99  |f      |FALSE |6 - 7   |2020-01-06 |
-|     7|0.03  |g      |TRUE  |7 - 8   |2020-01-07 |
-|     8|0.67  |h      |TRUE  |8 - 9   |2020-01-08 |
-|     9|0.57  |i      |TRUE  |9 - 10  |2020-01-09 |
-|    10|0.9   |j      |TRUE  |10 - 11 |2020-01-10 |
-|    11|-1.55 |k      |FALSE |11 - 12 |2020-01-11 |
-|    12|NA    |l      |FALSE |12 - 13 |2020-01-12 |
-|    13|0.15  |m      |TRUE  |13 - 14 |2020-01-13 |
-|    14|-0.66 |n      |TRUE  |14 - 15 |2020-01-14 |
-|    15|-0.99 |o      |TRUE  |15 - 16 |2020-01-15 |
-|    16|1.97  |p      |TRUE  |16 - 17 |2020-01-16 |
-|    17|-0.44 |q      |TRUE  |17 - 18 |2020-01-17 |
-|    18|-0.9  |r      |FALSE |18 - 19 |2020-01-18 |
-|    19|-0.15 |s      |FALSE |19 - 20 |2020-01-19 |
-|    20|-0.83 |t      |FALSE |20 - 21 |2020-01-20 |
-|    21|1.99  |u      |TRUE  |21 - 22 |2020-01-21 |
-|    22|0.04  |v      |FALSE |22 - 23 |2020-01-22 |
-|    23|-0.4  |w      |FALSE |23 - 24 |2020-01-23 |
-|    24|-0.47 |x      |FALSE |24 - 25 |2020-01-24 |
-|    25|-0.41 |y      |TRUE  |25 - 26 |2020-01-25 |
-|    26|0.68  |z      |FALSE |26 - 27 |2020-01-26 |
+<table>
+ <thead>
+  <tr>
+   <th style="text-align:right;"> order </th>
+   <th style="text-align:left;"> score </th>
+   <th style="text-align:left;"> letter </th>
+   <th style="text-align:left;"> good </th>
+   <th style="text-align:left;"> min_max </th>
+   <th style="text-align:left;"> date </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:left;"> -1 </td>
+   <td style="text-align:left;"> a </td>
+   <td style="text-align:left;"> TRUE </td>
+   <td style="text-align:left;"> 1 - 2 </td>
+   <td style="text-align:left;"> 2020-01-01 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> NA </td>
+   <td style="text-align:left;"> 0.72 </td>
+   <td style="text-align:left;"> b </td>
+   <td style="text-align:left;"> TRUE </td>
+   <td style="text-align:left;"> 2 - 3 </td>
+   <td style="text-align:left;"> 2020-01-02 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 3 </td>
+   <td style="text-align:left;"> -0.62 </td>
+   <td style="text-align:left;"> c </td>
+   <td style="text-align:left;"> FALSE </td>
+   <td style="text-align:left;"> 3 - 4 </td>
+   <td style="text-align:left;"> 2020-01-03 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 4 </td>
+   <td style="text-align:left;"> 2.03 </td>
+   <td style="text-align:left;"> d </td>
+   <td style="text-align:left;"> TRUE </td>
+   <td style="text-align:left;"> 4 - 5 </td>
+   <td style="text-align:left;"> 2020-01-04 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 5 </td>
+   <td style="text-align:left;"> NA </td>
+   <td style="text-align:left;"> e </td>
+   <td style="text-align:left;"> TRUE </td>
+   <td style="text-align:left;"> 5 - 6 </td>
+   <td style="text-align:left;"> 2020-01-05 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 6 </td>
+   <td style="text-align:left;"> 0.99 </td>
+   <td style="text-align:left;"> f </td>
+   <td style="text-align:left;"> FALSE </td>
+   <td style="text-align:left;"> 6 - 7 </td>
+   <td style="text-align:left;"> 2020-01-06 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 7 </td>
+   <td style="text-align:left;"> 0.03 </td>
+   <td style="text-align:left;"> g </td>
+   <td style="text-align:left;"> TRUE </td>
+   <td style="text-align:left;"> 7 - 8 </td>
+   <td style="text-align:left;"> 2020-01-07 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 8 </td>
+   <td style="text-align:left;"> 0.67 </td>
+   <td style="text-align:left;"> h </td>
+   <td style="text-align:left;"> TRUE </td>
+   <td style="text-align:left;"> 8 - 9 </td>
+   <td style="text-align:left;"> 2020-01-08 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 9 </td>
+   <td style="text-align:left;"> 0.57 </td>
+   <td style="text-align:left;"> i </td>
+   <td style="text-align:left;"> TRUE </td>
+   <td style="text-align:left;"> 9 - 10 </td>
+   <td style="text-align:left;"> 2020-01-09 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 10 </td>
+   <td style="text-align:left;"> 0.9 </td>
+   <td style="text-align:left;"> j </td>
+   <td style="text-align:left;"> TRUE </td>
+   <td style="text-align:left;"> 10 - 11 </td>
+   <td style="text-align:left;"> 2020-01-10 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 11 </td>
+   <td style="text-align:left;"> -1.55 </td>
+   <td style="text-align:left;"> k </td>
+   <td style="text-align:left;"> FALSE </td>
+   <td style="text-align:left;"> 11 - 12 </td>
+   <td style="text-align:left;"> 2020-01-11 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 12 </td>
+   <td style="text-align:left;"> NA </td>
+   <td style="text-align:left;"> l </td>
+   <td style="text-align:left;"> FALSE </td>
+   <td style="text-align:left;"> 12 - 13 </td>
+   <td style="text-align:left;"> 2020-01-12 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 13 </td>
+   <td style="text-align:left;"> 0.15 </td>
+   <td style="text-align:left;"> m </td>
+   <td style="text-align:left;"> TRUE </td>
+   <td style="text-align:left;"> 13 - 14 </td>
+   <td style="text-align:left;"> 2020-01-13 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 14 </td>
+   <td style="text-align:left;"> -0.66 </td>
+   <td style="text-align:left;"> n </td>
+   <td style="text-align:left;"> TRUE </td>
+   <td style="text-align:left;"> 14 - 15 </td>
+   <td style="text-align:left;"> 2020-01-14 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 15 </td>
+   <td style="text-align:left;"> -0.99 </td>
+   <td style="text-align:left;"> o </td>
+   <td style="text-align:left;"> TRUE </td>
+   <td style="text-align:left;"> 15 - 16 </td>
+   <td style="text-align:left;"> 2020-01-15 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 16 </td>
+   <td style="text-align:left;"> 1.97 </td>
+   <td style="text-align:left;"> p </td>
+   <td style="text-align:left;"> TRUE </td>
+   <td style="text-align:left;"> 16 - 17 </td>
+   <td style="text-align:left;"> 2020-01-16 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 17 </td>
+   <td style="text-align:left;"> -0.44 </td>
+   <td style="text-align:left;"> q </td>
+   <td style="text-align:left;"> TRUE </td>
+   <td style="text-align:left;"> 17 - 18 </td>
+   <td style="text-align:left;"> 2020-01-17 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 18 </td>
+   <td style="text-align:left;"> -0.9 </td>
+   <td style="text-align:left;"> r </td>
+   <td style="text-align:left;"> FALSE </td>
+   <td style="text-align:left;"> 18 - 19 </td>
+   <td style="text-align:left;"> 2020-01-18 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 19 </td>
+   <td style="text-align:left;"> -0.15 </td>
+   <td style="text-align:left;"> s </td>
+   <td style="text-align:left;"> FALSE </td>
+   <td style="text-align:left;"> 19 - 20 </td>
+   <td style="text-align:left;"> 2020-01-19 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 20 </td>
+   <td style="text-align:left;"> -0.83 </td>
+   <td style="text-align:left;"> t </td>
+   <td style="text-align:left;"> FALSE </td>
+   <td style="text-align:left;"> 20 - 21 </td>
+   <td style="text-align:left;"> 2020-01-20 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 21 </td>
+   <td style="text-align:left;"> 1.99 </td>
+   <td style="text-align:left;"> u </td>
+   <td style="text-align:left;"> TRUE </td>
+   <td style="text-align:left;"> 21 - 22 </td>
+   <td style="text-align:left;"> 2020-01-21 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 22 </td>
+   <td style="text-align:left;"> 0.04 </td>
+   <td style="text-align:left;"> v </td>
+   <td style="text-align:left;"> FALSE </td>
+   <td style="text-align:left;"> 22 - 23 </td>
+   <td style="text-align:left;"> 2020-01-22 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 23 </td>
+   <td style="text-align:left;"> -0.4 </td>
+   <td style="text-align:left;"> w </td>
+   <td style="text-align:left;"> FALSE </td>
+   <td style="text-align:left;"> 23 - 24 </td>
+   <td style="text-align:left;"> 2020-01-23 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 24 </td>
+   <td style="text-align:left;"> -0.47 </td>
+   <td style="text-align:left;"> x </td>
+   <td style="text-align:left;"> FALSE </td>
+   <td style="text-align:left;"> 24 - 25 </td>
+   <td style="text-align:left;"> 2020-01-24 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 25 </td>
+   <td style="text-align:left;"> -0.41 </td>
+   <td style="text-align:left;"> y </td>
+   <td style="text-align:left;"> TRUE </td>
+   <td style="text-align:left;"> 25 - 26 </td>
+   <td style="text-align:left;"> 2020-01-25 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 26 </td>
+   <td style="text-align:left;"> 0.68 </td>
+   <td style="text-align:left;"> z </td>
+   <td style="text-align:left;"> FALSE </td>
+   <td style="text-align:left;"> 26 - 27 </td>
+   <td style="text-align:left;"> 2020-01-26 </td>
+  </tr>
+</tbody>
+</table>
 
 </div>
 
 
 ## Glossary {#glossary-data}
 
-
-
-|term                                                                                                                   |definition                                                                                                                 |
-|:----------------------------------------------------------------------------------------------------------------------|:--------------------------------------------------------------------------------------------------------------------------|
-|[base r](https://psyteachr.github.io/glossary/b.html#base-r){class="glossary" target="_blank"}                         |The set of R functions that come with a basic installation of R, before you add external packages                          |
-|[character](https://psyteachr.github.io/glossary/c.html#character){class="glossary" target="_blank"}                   |A data type representing strings of text.                                                                                  |
-|[coercion](https://psyteachr.github.io/glossary/c.html#coercion){class="glossary" target="_blank"}                     |Changing the data type of values in a vector to a single compatible type.                                                  |
-|[csv](https://psyteachr.github.io/glossary/c.html#csv){class="glossary" target="_blank"}                               |Comma-separated variable: a file type for representing data where each variable is separated from the next by a comma.     |
-|[data type](https://psyteachr.github.io/glossary/d.html#data-type){class="glossary" target="_blank"}                   |The kind of data represented by an object.                                                                                 |
-|[deviation score](https://psyteachr.github.io/glossary/d.html#deviation-score){class="glossary" target="_blank"}       |A score minus the mean                                                                                                     |
-|[double](https://psyteachr.github.io/glossary/d.html#double){class="glossary" target="_blank"}                         |A data type representing a real decimal number                                                                             |
-|[escape](https://psyteachr.github.io/glossary/e.html#escape){class="glossary" target="_blank"}                         |Include special characters like " inside of a string by prefacing them with a backslash.                                   |
-|[extension](https://psyteachr.github.io/glossary/e.html#extension){class="glossary" target="_blank"}                   |The end part of a file name that tells you what type of file it is (e.g., .R or .Rmd).                                     |
-|[extract operator](https://psyteachr.github.io/glossary/e.html#extract-operator){class="glossary" target="_blank"}     |A symbol used to get values from a container object, such as [, [[, or $                                                   |
-|[factor](https://psyteachr.github.io/glossary/f.html#factor){class="glossary" target="_blank"}                         |A data type where a specific set of values are stored with labels; An explanatory variable manipulated by the experimenter |
-|[global environment](https://psyteachr.github.io/glossary/g.html#global-environment){class="glossary" target="_blank"} |The interactive workspace where your script runs                                                                           |
-|[integer](https://psyteachr.github.io/glossary/i.html#integer){class="glossary" target="_blank"}                       |A data type representing whole numbers.                                                                                    |
-|[list](https://psyteachr.github.io/glossary/l.html#list){class="glossary" target="_blank"}                             |A container data type that allows items with different data types to be grouped together.                                  |
-|[logical](https://psyteachr.github.io/glossary/l.html#logical){class="glossary" target="_blank"}                       |A data type representing TRUE or FALSE values.                                                                             |
-|[numeric](https://psyteachr.github.io/glossary/n.html#numeric){class="glossary" target="_blank"}                       |A data type representing a real decimal number or integer.                                                                 |
-|[object](https://psyteachr.github.io/glossary/o.html#object){class="glossary" target="_blank"}                         |A word that identifies and stores the value of some data for later use.                                                    |
-|[operator](https://psyteachr.github.io/glossary/o.html#operator){class="glossary" target="_blank"}                     |A symbol that performs a mathematical operation, such as +, -, *, /                                                        |
-|[panes](https://psyteachr.github.io/glossary/p.html#panes){class="glossary" target="_blank"}                           |RStudio is arranged with four window "panes".                                                                              |
-|[tabular data](https://psyteachr.github.io/glossary/t.html#tabular-data){class="glossary" target="_blank"}             |Data in a rectangular table format, where each row has an entry for each column.                                           |
-|[tidy data](https://psyteachr.github.io/glossary/t.html#tidy-data){class="glossary" target="_blank"}                   |A format for data that maps the meaning onto the structure.                                                                |
-|[tidyverse](https://psyteachr.github.io/glossary/t.html#tidyverse){class="glossary" target="_blank"}                   |A set of R packages that help you create and work with tidy data                                                           |
-|[vector](https://psyteachr.github.io/glossary/v.html#vector){class="glossary" target="_blank"}                         |A type of data structure that collects values with the same data type, like T/F values, numbers, or strings.               |
-|[vectorized](https://psyteachr.github.io/glossary/v.html#vectorized){class="glossary" target="_blank"}                 |An operator or function that acts on each element in a vector                                                              |
+<table class="table" style="margin-left: auto; margin-right: auto;">
+ <thead>
+  <tr>
+   <th style="text-align:left;"> term </th>
+   <th style="text-align:left;"> definition </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> [base r](https://psyteachr.github.io/glossary/b.html#base-r){class="glossary" target="_blank"} </td>
+   <td style="text-align:left;"> The set of R functions that come with a basic installation of R, before you add external packages </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> [character](https://psyteachr.github.io/glossary/c.html#character){class="glossary" target="_blank"} </td>
+   <td style="text-align:left;"> A data type representing strings of text. </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> [coercion](https://psyteachr.github.io/glossary/c.html#coercion){class="glossary" target="_blank"} </td>
+   <td style="text-align:left;"> Changing the data type of values in a vector to a single compatible type. </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> [csv](https://psyteachr.github.io/glossary/c.html#csv){class="glossary" target="_blank"} </td>
+   <td style="text-align:left;"> Comma-separated variable: a file type for representing data where each variable is separated from the next by a comma. </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> [data type](https://psyteachr.github.io/glossary/d.html#data-type){class="glossary" target="_blank"} </td>
+   <td style="text-align:left;"> The kind of data represented by an object. </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> [deviation score](https://psyteachr.github.io/glossary/d.html#deviation-score){class="glossary" target="_blank"} </td>
+   <td style="text-align:left;"> A score minus the mean </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> [double](https://psyteachr.github.io/glossary/d.html#double){class="glossary" target="_blank"} </td>
+   <td style="text-align:left;"> A data type representing a real decimal number </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> [escape](https://psyteachr.github.io/glossary/e.html#escape){class="glossary" target="_blank"} </td>
+   <td style="text-align:left;"> Include special characters like " inside of a string by prefacing them with a backslash. </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> [extension](https://psyteachr.github.io/glossary/e.html#extension){class="glossary" target="_blank"} </td>
+   <td style="text-align:left;"> The end part of a file name that tells you what type of file it is (e.g., .R or .Rmd). </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> [extract operator](https://psyteachr.github.io/glossary/e.html#extract-operator){class="glossary" target="_blank"} </td>
+   <td style="text-align:left;"> A symbol used to get values from a container object, such as [, [[, or $ </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> [factor](https://psyteachr.github.io/glossary/f.html#factor){class="glossary" target="_blank"} </td>
+   <td style="text-align:left;"> A data type where a specific set of values are stored with labels; An explanatory variable manipulated by the experimenter </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> [global environment](https://psyteachr.github.io/glossary/g.html#global-environment){class="glossary" target="_blank"} </td>
+   <td style="text-align:left;"> The interactive workspace where your script runs </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> [integer](https://psyteachr.github.io/glossary/i.html#integer){class="glossary" target="_blank"} </td>
+   <td style="text-align:left;"> A data type representing whole numbers. </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> [list](https://psyteachr.github.io/glossary/l.html#list){class="glossary" target="_blank"} </td>
+   <td style="text-align:left;"> A container data type that allows items with different data types to be grouped together. </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> [logical](https://psyteachr.github.io/glossary/l.html#logical){class="glossary" target="_blank"} </td>
+   <td style="text-align:left;"> A data type representing TRUE or FALSE values. </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> [numeric](https://psyteachr.github.io/glossary/n.html#numeric){class="glossary" target="_blank"} </td>
+   <td style="text-align:left;"> A data type representing a real decimal number or integer. </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> [object](https://psyteachr.github.io/glossary/o.html#object){class="glossary" target="_blank"} </td>
+   <td style="text-align:left;"> A word that identifies and stores the value of some data for later use. </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> [operator](https://psyteachr.github.io/glossary/o.html#operator){class="glossary" target="_blank"} </td>
+   <td style="text-align:left;"> A symbol that performs a mathematical operation, such as +, -, *, / </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> [panes](https://psyteachr.github.io/glossary/p.html#panes){class="glossary" target="_blank"} </td>
+   <td style="text-align:left;"> RStudio is arranged with four window "panes". </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> [tabular data](https://psyteachr.github.io/glossary/t.html#tabular-data){class="glossary" target="_blank"} </td>
+   <td style="text-align:left;"> Data in a rectangular table format, where each row has an entry for each column. </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> [tidy data](https://psyteachr.github.io/glossary/t.html#tidy-data){class="glossary" target="_blank"} </td>
+   <td style="text-align:left;"> A format for data that maps the meaning onto the structure. </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> [tidyverse](https://psyteachr.github.io/glossary/t.html#tidyverse){class="glossary" target="_blank"} </td>
+   <td style="text-align:left;"> A set of R packages that help you create and work with tidy data </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> [vector](https://psyteachr.github.io/glossary/v.html#vector){class="glossary" target="_blank"} </td>
+   <td style="text-align:left;"> A type of data structure that collects values with the same data type, like T/F values, numbers, or strings. </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> [vectorized](https://psyteachr.github.io/glossary/v.html#vectorized){class="glossary" target="_blank"} </td>
+   <td style="text-align:left;"> An operator or function that acts on each element in a vector </td>
+  </tr>
+</tbody>
+</table>
 
 
 

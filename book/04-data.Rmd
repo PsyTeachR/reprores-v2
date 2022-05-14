@@ -29,7 +29,7 @@ library(reprores)
 
 R comes with built-in datasets. Some packages, like tidyr and reprores, also contain data. The `data()` function lists the datasets available in a package.
 
-```{r built-in-data}
+```{r built-in-data, eval = FALSE}
 # lists datasets in reprores
 data(package = "reprores")
 ```
@@ -166,7 +166,7 @@ library(googlesheets4)
 
 gs4_deauth() # skip authorisation for public data
 
-url <- "https://docs.google.com/spreadsheets/d/1yhAPP0hk6fNssL9UdpJ7m_vx00VY5PQKHspx6DNQNSY/"
+url <- "https://docs.google.com/spreadsheets/d/16dkq0YL0J7fyAwT1pdgj1bNNrheckAU_2-DKuuM6aGI/"
 
 demo_goo  <- googlesheets4::read_sheet(url)
 ```
