@@ -468,7 +468,7 @@ Paste the reference into your bibliography.bib file. Change `doi:10.1177/2515245
 
 #### In-text citations
 
-You can cite reference in text like this: 
+You can cite references in text like this: 
 
 ```
 This tutorial uses several R packages [@tidyverse;@rmarkdown].
@@ -484,13 +484,32 @@ Lakens, Scheel and Isengar [-@TOSTtutorial] wrote a tutorial explaining how to t
 
 Lakens, Scheel and Isengar [-@TOSTtutorial] wrote a tutorial explaining how to test for the absence of an effect.
 
+#### Uncited references
+
+If you want to add an item to the reference section without citing, it, add it to the YAML header like this:
+
+```
+nocite: |
+  @ref1, @ref2, @ref3
+```
+
+Or add all of the items in the .bib file like this:
+
+```
+nocite: '@*'
+```
+
 #### Citation Styles
 
 You can search a [list of style files](https://www.zotero.org/styles){target="_blank"} for various journals and download a file that will format your bibliography for a specific journal's style. You'll need to add the line `csl: filename.csl` to your YAML header. 
 
-::: {.info data-latex=""}
+::: {.try data-latex=""}
 Add some citations to your bibliography.bib file, reference them in your text, and render your manuscript to see the automatically generated reference section. Try a few different citation style files.
 :::
+
+#### Reference Section
+
+By default, the reference section is added to the end of the document. If you want to change the position (e.g., to add figures and tables after the references), include `<div id="refs"></div>` where you want the references. 
 
 
 ### Output Formats
