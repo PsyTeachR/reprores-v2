@@ -3,14 +3,14 @@
 This book will use the following conventions:
 
 * Generic code: `list(number = 1, letter = "A")`
-* Highlighted code: <code><span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span>number <span class='op'>=</span> <span class='fl'>1</span>, letter <span class='op'>=</span> <span class='st'>"A"</span><span class='op'>)</span></code>
+* Highlighted code: <code><span><span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span>number <span class='op'>=</span> <span class='fl'>1</span>, letter <span class='op'>=</span> <span class='st'>"A"</span><span class='op'>)</span></span></code>
 * File paths: <code class='path'>data/sales.csv</code>
 * R Packages: <code class='package'>tidyverse</code>
-* Functions: <code><span class='fu'><a href='https://rdrr.io/r/base/paste.html'>paste</a></span><span class='op'>(</span><span class='op'>)</span></code>
-* Strings: <code><span class='st'>"Lisa"</span></code>, <code><span class='st'>"Dale"</span></code>
-* Numbers: <code><span class='fl'>100</span></code>, <code><span class='fl'>3.14</span></code>
-* Logical values: <code><span class='cn'>TRUE</span></code>, <code><span class='cn'>FALSE</span></code>
-* Glossary items: <a class='glossary' target='_blank' title='Discrete variables that have an inherent order, such as number of legs' href='https://psyteachr.github.io/glossary/o#ordinal'>ordinal</a>
+* Functions: <code><span><span class='fu'><a href='https://rdrr.io/r/base/paste.html'>paste</a></span><span class='op'>(</span><span class='op'>)</span></span></code>
+* Strings: <code><span><span class='st'>"Lisa"</span></span></code>, <code><span><span class='st'>"Dale"</span></span></code>
+* Numbers: <code><span><span class='fl'>100</span></span></code>, <code><span><span class='fl'>3.14</span></span></code>
+* Logical values: <code><span><span class='cn'>TRUE</span></span></code>, <code><span><span class='cn'>FALSE</span></span></code>
+* Glossary items: <a class='glossary' target='_blank' title='Discrete variables that have an inherent order, such as level of education or dislike/like.' href='https://psyteachr.github.io/glossary/o#ordinal'>ordinal</a>
 * Citations: @R-tidyverse
 * Internal links: Chapter\ \@ref(intro)
 * External links: [Mastering Shiny](https://mastering-shiny.org/){target="_blank"}

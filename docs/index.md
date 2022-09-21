@@ -1,8 +1,8 @@
 --- 
 title: Data Skills for Reproducible Research
-subtitle: "<br><a href='https://doi.org/10.5281/zenodo.6527194'><img src='https://zenodo.org/badge/DOI/10.5281/zenodo.6527194.svg' alt='DOI: 10.5281/zenodo.6527194'></a>"
+subtitle: "<br><a href='https://psyteachr.github.io/reprores/' style='color: red;'>Access the most up-to-date version</a><br><a href='https://doi.org/10.5281/zenodo.6527194'><img src='https://zenodo.org/badge/DOI/10.5281/zenodo.6527194.svg' alt='DOI: 10.5281/zenodo.6527194'></a>"
 authors: "Lisa DeBruine & Dale Barr"
-date: "2022-05-07"
+date: "2022-09-21"
 site: bookdown::bookdown_site
 documentclass: book
 classoption: oneside # for PDFs

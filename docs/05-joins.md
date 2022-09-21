@@ -1026,7 +1026,7 @@ intersect(subject, new_subjects)
 </div>
 
 ::: {.warning data-latex=""}
-If you've forgotten to load dplyr or the tidyverse, <a class='glossary' target='_blank' title='The set of R functions that come with a basic installation of R, before you add external packages' href='https://psyteachr.github.io/glossary/b#base-r'>base R</a> also has an `intersect()` function. The error message can be confusing and looks something like this:
+If you've forgotten to load dplyr or the tidyverse, <a class='glossary' target='_blank' title='The set of R functions that come with a basic installation of R, before you add external packages.' href='https://psyteachr.github.io/glossary/b#base-r'>base R</a> also has an `intersect()` function. The error message can be confusing and looks something like this:
 
 
 ```r
@@ -1034,10 +1034,7 @@ base::intersect(subject, new_subjects)
 ```
 
 ```
-## Error in `vectbl_as_row_location()`:
-## ! Must subset rows with a valid subscript vector.
-## ℹ Logical subscripts must match the size of the indexed input.
-## ✖ Input has size 6 but subscript `!duplicated(x, fromLast = fromLast, ...)` has size 0.
+## list()
 ```
 :::
 
@@ -1118,7 +1115,7 @@ union(subject, new_subjects)
 
 
 ::: {.warning data-latex=""}
-If you've forgotten to load dplyr or the tidyverse, <a class='glossary' target='_blank' title='The set of R functions that come with a basic installation of R, before you add external packages' href='https://psyteachr.github.io/glossary/b#base-r'>base R</a> also has a `union()` function. You usually won't get an error message, but the output won't be what you expect.
+If you've forgotten to load dplyr or the tidyverse, <a class='glossary' target='_blank' title='The set of R functions that come with a basic installation of R, before you add external packages.' href='https://psyteachr.github.io/glossary/b#base-r'>base R</a> also has a `union()` function. You usually won't get an error message, but the output won't be what you expect.
 
 
 ```r
@@ -1240,53 +1237,23 @@ setdiff(new_subjects, subject)
 </div>
 
 ::: {.warning data-latex=""}
-If you've forgotten to load dplyr or the tidyverse, <a class='glossary' target='_blank' title='The set of R functions that come with a basic installation of R, before you add external packages' href='https://psyteachr.github.io/glossary/b#base-r'>base R</a> also has a `setdiff()` function. You usually won't get an error message, but the output might not be what you expect because the base R `setdiff()` expects columns to be in the same order, so id 5 here registers as different between the two tables.
+If you've forgotten to load dplyr or the tidyverse, <a class='glossary' target='_blank' title='The set of R functions that come with a basic installation of R, before you add external packages.' href='https://psyteachr.github.io/glossary/b#base-r'>base R</a> also has a `setdiff()` function. You usually won't get an error message, but the output might not be what you expect because the base R `setdiff()` expects columns to be in the same order, so id 5 here registers as different between the two tables.
 
 
 ```r
 base::setdiff(subject, new_subjects)
 ```
 
-<div class="kable-table">
-
-<table>
- <thead>
-  <tr>
-   <th style="text-align:right;"> id </th>
-   <th style="text-align:left;"> gender </th>
-   <th style="text-align:right;"> age </th>
-  </tr>
- </thead>
-<tbody>
-  <tr>
-   <td style="text-align:right;"> 1 </td>
-   <td style="text-align:left;"> m </td>
-   <td style="text-align:right;"> 19 </td>
-  </tr>
-  <tr>
-   <td style="text-align:right;"> 2 </td>
-   <td style="text-align:left;"> m </td>
-   <td style="text-align:right;"> 22 </td>
-  </tr>
-  <tr>
-   <td style="text-align:right;"> 3 </td>
-   <td style="text-align:left;"> NA </td>
-   <td style="text-align:right;"> NA </td>
-  </tr>
-  <tr>
-   <td style="text-align:right;"> 4 </td>
-   <td style="text-align:left;"> nb </td>
-   <td style="text-align:right;"> 19 </td>
-  </tr>
-  <tr>
-   <td style="text-align:right;"> 5 </td>
-   <td style="text-align:left;"> f </td>
-   <td style="text-align:right;"> 18 </td>
-  </tr>
-</tbody>
-</table>
-
-</div>
+```
+## $id
+## [1] 1 2 3 4 5
+## 
+## $gender
+## [1] "m"  "m"  NA   "nb" "f" 
+## 
+## $age
+## [1] 19 22 NA 19 18
+```
 :::
 
 ## Glossary {#glossary-joins}
@@ -1301,7 +1268,7 @@ base::setdiff(subject, new_subjects)
 <tbody>
   <tr>
    <td style="text-align:left;"> [base r](https://psyteachr.github.io/glossary/b.html#base-r){class="glossary" target="_blank"} </td>
-   <td style="text-align:left;"> The set of R functions that come with a basic installation of R, before you add external packages </td>
+   <td style="text-align:left;"> The set of R functions that come with a basic installation of R, before you add external packages. </td>
   </tr>
   <tr>
    <td style="text-align:left;"> [binding joins](https://psyteachr.github.io/glossary/b.html#binding-joins){class="glossary" target="_blank"} </td>

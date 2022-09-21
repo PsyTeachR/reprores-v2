@@ -38,7 +38,7 @@ set.seed(8675309) # makes sure random numbers are reproducible
 
 ### Three Rules
 
-* Each <a class='glossary' target='_blank' title='A word that identifies and stores the value of some data for later use.' href='https://psyteachr.github.io/glossary/v#variable'>variable</a> must have its own column
+* Each <a class='glossary' target='_blank' title='(coding): A word that identifies and stores the value of some data for later use; (stats): An attribute or characteristic of an observation that you can measure, count, or describe' href='https://psyteachr.github.io/glossary/v#variable'>variable</a> must have its own column
 * Each <a class='glossary' target='_blank' title='All of the data about a single trial or question.' href='https://psyteachr.github.io/glossary/o#observation'>observation</a> must have its own row
 * Each <a class='glossary' target='_blank' title='A single number or piece of data.' href='https://psyteachr.github.io/glossary/v#value'>value</a> must have its own cell
 
@@ -258,7 +258,7 @@ This is the tidy version.
 
 ### Wide versus long {#wide_long}
 
-Data tables can be in <a class='glossary' target='_blank' title='Data where all of the observations about one subject are in the same row' href='https://psyteachr.github.io/glossary/w#wide'>wide</a> format or <a class='glossary' target='_blank' title='Data where each observation is on a separate row' href='https://psyteachr.github.io/glossary/l#long'>long</a> format (and sometimes a mix of the two). Wide data are where all of the observations about one subject are in the same row, while long data are where each observation is on a separate row. You often need to convert between these formats to do different types of analyses or data processing.
+Data tables can be in <a class='glossary' target='_blank' title='A data format where all of the observations about one subject are in the same row' href='https://psyteachr.github.io/glossary/w#wide'>wide</a> format or <a class='glossary' target='_blank' title='A data format where each observation is on a separate row' href='https://psyteachr.github.io/glossary/l#long'>long</a> format (and sometimes a mix of the two). Wide data are where all of the observations about one subject are in the same row, while long data are where each observation is on a separate row. You often need to convert between these formats to do different types of analyses or data processing.
 
 Imagine a study where each subject completes a questionnaire with three items. Each answer is an <a class='glossary' target='_blank' title='All of the data about a single trial or question.' href='https://psyteachr.github.io/glossary/o#observation'>observation</a> of that subject. You are probably most familiar with data like this in a wide format, where the subject `id` is in one column, and each of the three item responses is in its own column.
 
@@ -1627,20 +1627,21 @@ q <- experimentum_quests %>%
 
 ```
 ## # A tibble: 24 × 15
-##    session_id project_id quest_id user_id user_sex user_status user_age current
-##         <int>      <int>    <int>   <int> <chr>    <chr>          <dbl>   <int>
-##  1      34034          1        1   31105 female   guest           28.2       1
-##  2      34104          1        1   31164 male     registered      19.4       1
-##  3      34326          1        1   31392 female   guest           17         0
-##  4      34343          1        1   31397 male     guest           22         1
-##  5      34765          1        1   31770 female   guest           44         1
-##  6      34796          1        1   31796 female   guest           35.9       0
-##  7      34806          1        1   31798 female   guest           35         0
-##  8      34822          1        1   31802 female   guest           58         1
-##  9      34864          1        1   31820 male     guest           20         0
-## 10      35014          1        1   31921 female   student         39.2       1
-## # … with 14 more rows, and 7 more variables: past <int>, name <chr>,
-## #   good <int>, country <chr>, text <chr>, good_borzoi <int>, time <chr>
+##    session…¹ proje…² quest…³ user_id user_…⁴ user_…⁵ user_…⁶ current  past name 
+##        <int>   <int>   <int>   <int> <chr>   <chr>     <dbl>   <int> <int> <chr>
+##  1     34034       1       1   31105 female  guest      28.2       1     1 Ruby 
+##  2     34104       1       1   31164 male    regist…    19.4       1     1 stev…
+##  3     34326       1       1   31392 female  guest      17         0     0 Cat  
+##  4     34343       1       1   31397 male    guest      22         1     1 Dukee
+##  5     34765       1       1   31770 female  guest      44         1     1 <NA> 
+##  6     34796       1       1   31796 female  guest      35.9       0     0 Patch
+##  7     34806       1       1   31798 female  guest      35         0     1 Teddy
+##  8     34822       1       1   31802 female  guest      58         1     1 Lara 
+##  9     34864       1       1   31820 male    guest      20         0     0 Pawpy
+## 10     35014       1       1   31921 female  student    39.2       1     1 Herb…
+## # … with 14 more rows, 5 more variables: good <int>, country <chr>, text <chr>,
+## #   good_borzoi <int>, time <chr>, and abbreviated variable names ¹​session_id,
+## #   ²​project_id, ³​quest_id, ⁴​user_sex, ⁵​user_status, ⁶​user_age
 ```
 
 ::: {.info data-latex=""}
@@ -1672,7 +1673,7 @@ The responses in the `dv` column have multiple types (e.g., <a class='glossary' 
   </tr>
   <tr>
    <td style="text-align:left;"> [long](https://psyteachr.github.io/glossary/l.html#long){class="glossary" target="_blank"} </td>
-   <td style="text-align:left;"> Data where each observation is on a separate row </td>
+   <td style="text-align:left;"> A data format where each observation is on a separate row </td>
   </tr>
   <tr>
    <td style="text-align:left;"> [observation](https://psyteachr.github.io/glossary/o.html#observation){class="glossary" target="_blank"} </td>
@@ -1684,11 +1685,11 @@ The responses in the `dv` column have multiple types (e.g., <a class='glossary' 
   </tr>
   <tr>
    <td style="text-align:left;"> [variable](https://psyteachr.github.io/glossary/v.html#variable){class="glossary" target="_blank"} </td>
-   <td style="text-align:left;"> A word that identifies and stores the value of some data for later use. </td>
+   <td style="text-align:left;"> (coding): A word that identifies and stores the value of some data for later use; (stats): An attribute or characteristic of an observation that you can measure, count, or describe </td>
   </tr>
   <tr>
    <td style="text-align:left;"> [wide](https://psyteachr.github.io/glossary/w.html#wide){class="glossary" target="_blank"} </td>
-   <td style="text-align:left;"> Data where all of the observations about one subject are in the same row </td>
+   <td style="text-align:left;"> A data format where all of the observations about one subject are in the same row </td>
   </tr>
 </tbody>
 </table>

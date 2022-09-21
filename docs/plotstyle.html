@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <title>E Styling Plots | Data Skills for Reproducible Research</title>
 <meta name="description" content="E.1 Aesthetics  E.1.1 Colour/Fill The colour argument changes the point and line colour, while the fill argument changes the interior colour of shapes. Type colours() into the console to see a...">
-<meta name="generator" content="bookdown 0.26 with bs4_book()">
+<meta name="generator" content="bookdown 0.27 with bs4_book()">
 <meta property="og:title" content="E Styling Plots | Data Skills for Reproducible Research">
 <meta property="og:type" content="book">
 <meta property="og:url" content="https://psyteachr.github.io/reprores-v2/plotstyle.html">
@@ -18,7 +18,7 @@
 <meta name="twitter:image" content="https://psyteachr.github.io/reprores-v2/images/logos/logo.png">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
-<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.3.1/transition.js"></script><script src="libs/bs3compat-0.3.1/tabs.js"></script><script src="libs/bs3compat-0.3.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.4.0/transition.js"></script><script src="libs/bs3compat-0.4.0/tabs.js"></script><script src="libs/bs3compat-0.4.0/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
 <script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="libs/kePrint-0.0.1/kePrint.js"></script><link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet">
 <script src="libs/htmlwidgets-1.5.4/htmlwidgets.js"></script><script src="libs/plotly-binding-4.10.0/plotly.js"></script><script src="libs/typedarray-0.1/typedarray.min.js"></script><link href="libs/crosstalk-1.2.0/css/crosstalk.min.css" rel="stylesheet">
 <script src="libs/crosstalk-1.2.0/js/crosstalk.min.js"></script><link href="libs/plotly-htmlwidgets-css-2.5.1/plotly-htmlwidgets.css" rel="stylesheet">
@@ -66,8 +66,8 @@
 
     <div class="d-flex align-items-start justify-content-between">
       <h1>
-        <a href="index.html" title="&lt;br&gt;&lt;a href='https://doi.org/10.5281/zenodo.6527194'&gt;&lt;img src='https://zenodo.org/badge/DOI/10.5281/zenodo.6527194.svg' alt='DOI: 10.5281/zenodo.6527194'&gt;&lt;/a&gt;">Data Skills for Reproducible Research</a>:
-        <small class="text-muted"><br><a href="https://doi.org/10.5281/zenodo.6527194"><img src="https://zenodo.org/badge/DOI/10.5281/zenodo.6527194.svg" alt="DOI: 10.5281/zenodo.6527194"></a></small>
+        <a href="index.html" title="&lt;br&gt;&lt;a href='https://psyteachr.github.io/reprores/' style='color: red;'&gt;Access the most up-to-date version&lt;/a&gt;&lt;br&gt;&lt;a href='https://doi.org/10.5281/zenodo.6527194'&gt;&lt;img src='https://zenodo.org/badge/DOI/10.5281/zenodo.6527194.svg' alt='DOI: 10.5281/zenodo.6527194'&gt;&lt;/a&gt;">Data Skills for Reproducible Research</a>:
+        <small class="text-muted"><br><a href="https://psyteachr.github.io/reprores/" style="color: red;">Access the most up-to-date version</a><br><a href="https://doi.org/10.5281/zenodo.6527194"><img src="https://zenodo.org/badge/DOI/10.5281/zenodo.6527194.svg" alt="DOI: 10.5281/zenodo.6527194"></a></small>
       </h1>
       <button class="btn btn-outline-primary d-lg-none ml-2 mt-1" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="true" aria-controls="main-nav"><i class="fas fa-bars"></i><span class="sr-only">Show table of contents</span></button>
     </div>
@@ -143,25 +143,25 @@
   }
 </style>
 <ul class="colordemo">
-<li style="background-color: #000000;">
+<li style="background-color: #000;">
 <span>black</span>
 </li>
-<li style="background-color: #030303;">
+<li style="background-color: #333;">
 <span>gray1</span>
 </li>
-<li style="background-color: #050505;">
+<li style="background-color: #555;">
 <span>gray2</span>
 </li>
-<li style="background-color: #080808;">
+<li style="background-color: #888;">
 <span>gray3</span>
 </li>
-<li style="background-color: #0a0a0a;">
+<li style="background-color: #aaa;">
 <span>gray4</span>
 </li>
-<li style="background-color: #0d0d0d;">
+<li style="background-color: #ddd;">
 <span>gray5</span>
 </li>
-<li style="background-color: #0f0f0f;">
+<li style="background-color: #fff;">
 <span>gray6</span>
 </li>
 <li style="background-color: #121212;">
@@ -533,16 +533,16 @@
 <li style="background-color: #ee2c2c;">
 <span>firebrick2</span>
 </li>
-<li style="background-color: #8b0000;">
+<li style="background-color: #8b00;">
 <span>darkred</span>
 </li>
-<li style="background-color: #cd0000;">
+<li style="background-color: #cd00;">
 <span>red3</span>
 </li>
-<li style="background-color: #ee0000;">
+<li style="background-color: #ee00;">
 <span>red2</span>
 </li>
-<li style="background-color: #ff0000;">
+<li style="background-color: #ff00;">
 <span>red</span>
 </li>
 <li style="background-color: #cdb7b5;">
@@ -602,13 +602,13 @@
 <li style="background-color: #ff7f50;">
 <span>coral</span>
 </li>
-<li style="background-color: #8b2500;">
+<li style="background-color: #8b250;">
 <span>orangered4</span>
 </li>
-<li style="background-color: #cd3700;">
+<li style="background-color: #cd370;">
 <span>orangered3</span>
 </li>
-<li style="background-color: #ee4000;">
+<li style="background-color: #ee400;">
 <span>orangered2</span>
 </li>
 <li style="background-color: #cd8162;">
@@ -638,7 +638,7 @@
 <li style="background-color: #8b4726;">
 <span>sienna4</span>
 </li>
-<li style="background-color: #ff4500;">
+<li style="background-color: #ff450;">
 <span>orangered</span>
 </li>
 <li style="background-color: #8b8682;">
@@ -698,16 +698,16 @@
 <li style="background-color: #ffa54f;">
 <span>tan1</span>
 </li>
-<li style="background-color: #8b4500;">
+<li style="background-color: #8b450;">
 <span>darkorange4</span>
 </li>
-<li style="background-color: #cd6600;">
+<li style="background-color: #cd660;">
 <span>darkorange3</span>
 </li>
-<li style="background-color: #ee7600;">
+<li style="background-color: #ee760;">
 <span>darkorange2</span>
 </li>
-<li style="background-color: #ff7f00;">
+<li style="background-color: #ff7f0;">
 <span>darkorange1</span>
 </li>
 <li style="background-color: #cdc0b0;">
@@ -746,7 +746,7 @@
 <li style="background-color: #ffd39b;">
 <span>burlywood1</span>
 </li>
-<li style="background-color: #ff8c00;">
+<li style="background-color: #ff8c0;">
 <span>darkorange</span>
 </li>
 <li style="background-color: #8b8378;">
@@ -800,16 +800,16 @@
 <li style="background-color: #ffe4b5;">
 <span>moccasin</span>
 </li>
-<li style="background-color: #8b5a00;">
+<li style="background-color: #8b5a0;">
 <span>orange4</span>
 </li>
-<li style="background-color: #cd8500;">
+<li style="background-color: #cd850;">
 <span>orange3</span>
 </li>
-<li style="background-color: #ee9a00;">
+<li style="background-color: #ee9a0;">
 <span>orange2</span>
 </li>
-<li style="background-color: #ffa500;">
+<li style="background-color: #ffa50;">
 <span>orange</span>
 </li>
 <li style="background-color: #daa520;">
@@ -827,19 +827,19 @@
 <li style="background-color: #eeb422;">
 <span>goldenrod2</span>
 </li>
-<li style="background-color: #8b6508;">
+<li style="background-color: #8b658;">
 <span>darkgoldenrod4</span>
 </li>
-<li style="background-color: #b8860b;">
+<li style="background-color: #b886b;">
 <span>darkgoldenrod</span>
 </li>
-<li style="background-color: #cd950c;">
+<li style="background-color: #cd95c;">
 <span>darkgoldenrod3</span>
 </li>
-<li style="background-color: #eead0e;">
+<li style="background-color: #eeade;">
 <span>darkgoldenrod2</span>
 </li>
-<li style="background-color: #ffb90f;">
+<li style="background-color: #ffb9f;">
 <span>darkgoldenrod1</span>
 </li>
 <li style="background-color: #fff8dc;">
@@ -869,16 +869,16 @@
 <li style="background-color: #ffec8b;">
 <span>lightgoldenrod1</span>
 </li>
-<li style="background-color: #8b7500;">
+<li style="background-color: #8b750;">
 <span>gold4</span>
 </li>
-<li style="background-color: #cdad00;">
+<li style="background-color: #cdad0;">
 <span>gold3</span>
 </li>
-<li style="background-color: #eec900;">
+<li style="background-color: #eec90;">
 <span>gold2</span>
 </li>
-<li style="background-color: #ffd700;">
+<li style="background-color: #ffd70;">
 <span>gold</span>
 </li>
 <li style="background-color: #8b8970;">
@@ -944,16 +944,16 @@
 <li style="background-color: #fafad2;">
 <span>lightgoldenrodyellow</span>
 </li>
-<li style="background-color: #8b8b00;">
+<li style="background-color: #8b8b0;">
 <span>yellow4</span>
 </li>
-<li style="background-color: #cdcd00;">
+<li style="background-color: #cdcd0;">
 <span>yellow3</span>
 </li>
-<li style="background-color: #eeee00;">
+<li style="background-color: #eeee0;">
 <span>yellow2</span>
 </li>
-<li style="background-color: #ffff00;">
+<li style="background-color: #ffff0;">
 <span>yellow</span>
 </li>
 <li style="background-color: #6b8e23;">
@@ -989,19 +989,19 @@
 <li style="background-color: #adff2f;">
 <span>greenyellow</span>
 </li>
-<li style="background-color: #458b00;">
+<li style="background-color: #458b0;">
 <span>chartreuse4</span>
 </li>
-<li style="background-color: #66cd00;">
+<li style="background-color: #66cd0;">
 <span>chartreuse3</span>
 </li>
-<li style="background-color: #76ee00;">
+<li style="background-color: #76ee0;">
 <span>chartreuse2</span>
 </li>
-<li style="background-color: #7cfc00;">
+<li style="background-color: #7cfc0;">
 <span>lawngreen</span>
 </li>
-<li style="background-color: #7fff00;">
+<li style="background-color: #7fff0;">
 <span>chartreuse</span>
 </li>
 <li style="background-color: #838b83;">
@@ -1052,19 +1052,19 @@
 <li style="background-color: #32cd32;">
 <span>limegreen</span>
 </li>
-<li style="background-color: #006400;">
+<li style="background-color: #0640;">
 <span>darkgreen</span>
 </li>
-<li style="background-color: #008b00;">
+<li style="background-color: #08b0;">
 <span>green4</span>
 </li>
-<li style="background-color: #00cd00;">
+<li style="background-color: #0cd0;">
 <span>green3</span>
 </li>
-<li style="background-color: #00ee00;">
+<li style="background-color: #0ee0;">
 <span>green2</span>
 </li>
-<li style="background-color: #00ff00;">
+<li style="background-color: #0ff0;">
 <span>green</span>
 </li>
 <li style="background-color: #3cb371;">
@@ -1085,16 +1085,16 @@
 <li style="background-color: #f5fffa;">
 <span>mintcream</span>
 </li>
-<li style="background-color: #008b45;">
+<li style="background-color: #08b45;">
 <span>springgreen4</span>
 </li>
-<li style="background-color: #00cd66;">
+<li style="background-color: #0cd66;">
 <span>springgreen3</span>
 </li>
-<li style="background-color: #00ee76;">
+<li style="background-color: #0ee76;">
 <span>springgreen2</span>
 </li>
-<li style="background-color: #00ff7f;">
+<li style="background-color: #0ff7f;">
 <span>springgreen</span>
 </li>
 <li style="background-color: #66cdaa;">
@@ -1106,7 +1106,7 @@
 <li style="background-color: #7fffd4;">
 <span>aquamarine</span>
 </li>
-<li style="background-color: #00fa9a;">
+<li style="background-color: #0fa9a;">
 <span>mediumspringgreen</span>
 </li>
 <li style="background-color: #458b74;">
@@ -1175,19 +1175,19 @@
 <li style="background-color: #97ffff;">
 <span>darkslategray1</span>
 </li>
-<li style="background-color: #008b8b;">
+<li style="background-color: #08b8b;">
 <span>cyan4</span>
 </li>
-<li style="background-color: #00cdcd;">
+<li style="background-color: #0cdcd;">
 <span>cyan3</span>
 </li>
-<li style="background-color: #00ced1;">
+<li style="background-color: #0ced1;">
 <span>darkturquoise</span>
 </li>
-<li style="background-color: #00eeee;">
+<li style="background-color: #0eeee;">
 <span>cyan2</span>
 </li>
-<li style="background-color: #00ffff;">
+<li style="background-color: #0ffff;">
 <span>cyan</span>
 </li>
 <li style="background-color: #53868b;">
@@ -1196,16 +1196,16 @@
 <li style="background-color: #5f9ea0;">
 <span>cadetblue</span>
 </li>
-<li style="background-color: #00868b;">
+<li style="background-color: #0868b;">
 <span>turquoise4</span>
 </li>
-<li style="background-color: #00c5cd;">
+<li style="background-color: #0c5cd;">
 <span>turquoise3</span>
 </li>
-<li style="background-color: #00e5ee;">
+<li style="background-color: #0e5ee;">
 <span>turquoise2</span>
 </li>
-<li style="background-color: #00f5ff;">
+<li style="background-color: #0f5ff;">
 <span>turquoise1</span>
 </li>
 <li style="background-color: #b0e0e6;">
@@ -1235,16 +1235,16 @@
 <li style="background-color: #bfefff;">
 <span>lightblue1</span>
 </li>
-<li style="background-color: #00688b;">
+<li style="background-color: #0688b;">
 <span>deepskyblue4</span>
 </li>
-<li style="background-color: #009acd;">
+<li style="background-color: #09acd;">
 <span>deepskyblue3</span>
 </li>
-<li style="background-color: #00b2ee;">
+<li style="background-color: #0b2ee;">
 <span>deepskyblue2</span>
 </li>
-<li style="background-color: #00bfff;">
+<li style="background-color: #0bfff;">
 <span>deepskyblue</span>
 </li>
 <li style="background-color: #87ceeb;">
@@ -1367,19 +1367,19 @@
 <li style="background-color: #191970;">
 <span>midnightblue</span>
 </li>
-<li style="background-color: #000080;">
+<li style="background-color: #0080;">
 <span>navy</span>
 </li>
-<li style="background-color: #00008b;">
+<li style="background-color: #008b;">
 <span>blue4</span>
 </li>
-<li style="background-color: #0000cd;">
+<li style="background-color: #00cd;">
 <span>blue3</span>
 </li>
-<li style="background-color: #0000ee;">
+<li style="background-color: #00ee;">
 <span>blue2</span>
 </li>
-<li style="background-color: #0000ff;">
+<li style="background-color: #00ff;">
 <span>blue</span>
 </li>
 <li style="background-color: #483d8b;">
@@ -1454,7 +1454,7 @@
 <li style="background-color: #bf3eff;">
 <span>darkorchid1</span>
 </li>
-<li style="background-color: #9400d3;">
+<li style="background-color: #940d3;">
 <span>darkviolet</span>
 </li>
 <li style="background-color: #7a378b;">
@@ -1505,16 +1505,16 @@
 <li style="background-color: #ee82ee;">
 <span>violet</span>
 </li>
-<li style="background-color: #8b008b;">
+<li style="background-color: #8b08b;">
 <span>darkmagenta</span>
 </li>
-<li style="background-color: #cd00cd;">
+<li style="background-color: #cd0cd;">
 <span>magenta3</span>
 </li>
-<li style="background-color: #ee00ee;">
+<li style="background-color: #ee0ee;">
 <span>magenta2</span>
 </li>
-<li style="background-color: #ff00ff;">
+<li style="background-color: #ff0ff;">
 <span>magenta</span>
 </li>
 <li style="background-color: #8b4789;">
@@ -1559,7 +1559,7 @@
 <li style="background-color: #ff1493;">
 <span>deeppink</span>
 </li>
-<li style="background-color: #8b0a50;">
+<li style="background-color: #8ba50;">
 <span>deeppink4</span>
 </li>
 <li style="background-color: #ee6aa7;">
@@ -1716,7 +1716,7 @@ Figure E.5: Discrete viridis palettes.
 </p>
 </div>
 <div class="info">
-<p>If the end colour is too light for your plot or the start colour too dark, you can set the <code>begin</code> and <code>end</code> arguments to values between 0 and 1, such as <code><span class="fu">scale_colour_viridis_c</span><span class="op">(</span>begin <span class="op">=</span> <span class="fl">0.1</span>, end <span class="op">=</span> <span class="fl">0.9</span><span class="op">)</span></code>.</p>
+<p>If the end colour is too light for your plot or the start colour too dark, you can set the <code>begin</code> and <code>end</code> arguments to values between 0 and 1, such as <code><span><span class="fu">scale_colour_viridis_c</span><span class="op">(</span>begin <span class="op">=</span> <span class="fl">0.1</span>, end <span class="op">=</span> <span class="fl">0.9</span><span class="op">)</span></span></code>.</p>
 </div>
 </div>
 <div id="continuous-viridis-palettes" class="section level4" number="15.2.1.2">
@@ -1753,7 +1753,7 @@ Figure E.7: Qualitative brewer palettes.
 <h4>
 <span class="header-section-number">E.2.2.2</span> Sequential Brewer Palettes<a class="anchor" aria-label="anchor" href="#sequential-brewer-palettes"><i class="fas fa-link"></i></a>
 </h4>
-<p>These palettes are good for up to 9 <a class="glossary" target="_blank" title="Discrete variables that have an inherent order, such as number of legs" href="https://psyteachr.github.io/glossary/o#ordinal">ordinal</a> categories with a lot of categories.</p>
+<p>These palettes are good for up to 9 <a class="glossary" target="_blank" title="Discrete variables that have an inherent order, such as level of education or dislike/like." href="https://psyteachr.github.io/glossary/o#ordinal">ordinal</a> categories with a lot of categories.</p>
 <div class="figure" style="text-align: center">
 <span style="display:block;" id="fig:unnamed-chunk-7"></span>
 <img src="appendix-e-plotstyles_files/figure-html/unnamed-chunk-7-1.png" alt="Sequential brewer palettes." width="100%"><p class="caption">
@@ -1765,7 +1765,7 @@ Figure E.8: Sequential brewer palettes.
 <h4>
 <span class="header-section-number">E.2.2.3</span> Diverging Brewer Palettes<a class="anchor" aria-label="anchor" href="#diverging-brewer-palettes"><i class="fas fa-link"></i></a>
 </h4>
-<p>These palettes are good for <a class="glossary" target="_blank" title="Discrete variables that have an inherent order, such as number of legs" href="https://psyteachr.github.io/glossary/o#ordinal">ordinal</a> categories with up to 11 levels where the centre level is a neutral or baseline category and the levels above and below it differ in an important way, such as agree versus disagree options.</p>
+<p>These palettes are good for <a class="glossary" target="_blank" title="Discrete variables that have an inherent order, such as level of education or dislike/like." href="https://psyteachr.github.io/glossary/o#ordinal">ordinal</a> categories with up to 11 levels where the centre level is a neutral or baseline category and the levels above and below it differ in an important way, such as agree versus disagree options.</p>
 <div class="figure" style="text-align: center">
 <span style="display:block;" id="fig:unnamed-chunk-8"></span>
 <img src="appendix-e-plotstyles_files/figure-html/unnamed-chunk-8-1.png" alt="Diverging brewer palettes." width="100%"><p class="caption">
@@ -2036,7 +2036,7 @@ $( document ).ready(function() {
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Data Skills for Reproducible Research</strong>: <br><a href="https://doi.org/10.5281/zenodo.6527194"><img src="https://zenodo.org/badge/DOI/10.5281/zenodo.6527194.svg" alt="DOI: 10.5281/zenodo.6527194"></a>" was written by . It was last built on 2022-05-07.</p>
+    <p>"<strong>Data Skills for Reproducible Research</strong>: <br><a href="https://psyteachr.github.io/reprores/" style="color: red;">Access the most up-to-date version</a><br><a href="https://doi.org/10.5281/zenodo.6527194"><img src="https://zenodo.org/badge/DOI/10.5281/zenodo.6527194.svg" alt="DOI: 10.5281/zenodo.6527194"></a>" was written by . It was last built on 2022-09-21.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

@@ -36,13 +36,13 @@ Hover over a colour to see its R name.
 
 
 <ul class='colordemo'>
-    <li style='background-color: #000000;'><span>black</span></li>
-    <li style='background-color: #030303;'><span>gray1</span></li>
-    <li style='background-color: #050505;'><span>gray2</span></li>
-    <li style='background-color: #080808;'><span>gray3</span></li>
-    <li style='background-color: #0a0a0a;'><span>gray4</span></li>
-    <li style='background-color: #0d0d0d;'><span>gray5</span></li>
-    <li style='background-color: #0f0f0f;'><span>gray6</span></li>
+    <li style='background-color: #000;'><span>black</span></li>
+    <li style='background-color: #333;'><span>gray1</span></li>
+    <li style='background-color: #555;'><span>gray2</span></li>
+    <li style='background-color: #888;'><span>gray3</span></li>
+    <li style='background-color: #aaa;'><span>gray4</span></li>
+    <li style='background-color: #ddd;'><span>gray5</span></li>
+    <li style='background-color: #fff;'><span>gray6</span></li>
     <li style='background-color: #121212;'><span>gray7</span></li>
     <li style='background-color: #141414;'><span>gray8</span></li>
     <li style='background-color: #171717;'><span>gray9</span></li>
@@ -166,10 +166,10 @@ Hover over a colour to see its R name.
     <li style='background-color: #cd2626;'><span>firebrick3</span></li>
     <li style='background-color: #ff3030;'><span>firebrick1</span></li>
     <li style='background-color: #ee2c2c;'><span>firebrick2</span></li>
-    <li style='background-color: #8b0000;'><span>darkred</span></li>
-    <li style='background-color: #cd0000;'><span>red3</span></li>
-    <li style='background-color: #ee0000;'><span>red2</span></li>
-    <li style='background-color: #ff0000;'><span>red</span></li>
+    <li style='background-color: #8b00;'><span>darkred</span></li>
+    <li style='background-color: #cd00;'><span>red3</span></li>
+    <li style='background-color: #ee00;'><span>red2</span></li>
+    <li style='background-color: #ff00;'><span>red</span></li>
     <li style='background-color: #cdb7b5;'><span>mistyrose3</span></li>
     <li style='background-color: #8b7d7b;'><span>mistyrose4</span></li>
     <li style='background-color: #eed5d2;'><span>mistyrose2</span></li>
@@ -189,9 +189,9 @@ Hover over a colour to see its R name.
     <li style='background-color: #ee8262;'><span>salmon2</span></li>
     <li style='background-color: #ff8c69;'><span>salmon1</span></li>
     <li style='background-color: #ff7f50;'><span>coral</span></li>
-    <li style='background-color: #8b2500;'><span>orangered4</span></li>
-    <li style='background-color: #cd3700;'><span>orangered3</span></li>
-    <li style='background-color: #ee4000;'><span>orangered2</span></li>
+    <li style='background-color: #8b250;'><span>orangered4</span></li>
+    <li style='background-color: #cd370;'><span>orangered3</span></li>
+    <li style='background-color: #ee400;'><span>orangered2</span></li>
     <li style='background-color: #cd8162;'><span>lightsalmon3</span></li>
     <li style='background-color: #ee9572;'><span>lightsalmon2</span></li>
     <li style='background-color: #ffa07a;'><span>lightsalmon</span></li>
@@ -201,7 +201,7 @@ Hover over a colour to see its R name.
     <li style='background-color: #ee7942;'><span>sienna2</span></li>
     <li style='background-color: #ff8247;'><span>sienna1</span></li>
     <li style='background-color: #8b4726;'><span>sienna4</span></li>
-    <li style='background-color: #ff4500;'><span>orangered</span></li>
+    <li style='background-color: #ff450;'><span>orangered</span></li>
     <li style='background-color: #8b8682;'><span>seashell4</span></li>
     <li style='background-color: #cdc5bf;'><span>seashell3</span></li>
     <li style='background-color: #eee5de;'><span>seashell2</span></li>
@@ -221,10 +221,10 @@ Hover over a colour to see its R name.
     <li style='background-color: #cd853f;'><span>peru</span></li>
     <li style='background-color: #ee9a49;'><span>tan2</span></li>
     <li style='background-color: #ffa54f;'><span>tan1</span></li>
-    <li style='background-color: #8b4500;'><span>darkorange4</span></li>
-    <li style='background-color: #cd6600;'><span>darkorange3</span></li>
-    <li style='background-color: #ee7600;'><span>darkorange2</span></li>
-    <li style='background-color: #ff7f00;'><span>darkorange1</span></li>
+    <li style='background-color: #8b450;'><span>darkorange4</span></li>
+    <li style='background-color: #cd660;'><span>darkorange3</span></li>
+    <li style='background-color: #ee760;'><span>darkorange2</span></li>
+    <li style='background-color: #ff7f0;'><span>darkorange1</span></li>
     <li style='background-color: #cdc0b0;'><span>antiquewhite3</span></li>
     <li style='background-color: #eedfcc;'><span>antiquewhite2</span></li>
     <li style='background-color: #ffefdb;'><span>antiquewhite1</span></li>
@@ -237,7 +237,7 @@ Hover over a colour to see its R name.
     <li style='background-color: #deb887;'><span>burlywood</span></li>
     <li style='background-color: #eec591;'><span>burlywood2</span></li>
     <li style='background-color: #ffd39b;'><span>burlywood1</span></li>
-    <li style='background-color: #ff8c00;'><span>darkorange</span></li>
+    <li style='background-color: #ff8c0;'><span>darkorange</span></li>
     <li style='background-color: #8b8378;'><span>antiquewhite4</span></li>
     <li style='background-color: #faebd7;'><span>antiquewhite</span></li>
     <li style='background-color: #ffefd5;'><span>papayawhip</span></li>
@@ -255,20 +255,20 @@ Hover over a colour to see its R name.
     <li style='background-color: #f5deb3;'><span>wheat</span></li>
     <li style='background-color: #ffe7ba;'><span>wheat1</span></li>
     <li style='background-color: #ffe4b5;'><span>moccasin</span></li>
-    <li style='background-color: #8b5a00;'><span>orange4</span></li>
-    <li style='background-color: #cd8500;'><span>orange3</span></li>
-    <li style='background-color: #ee9a00;'><span>orange2</span></li>
-    <li style='background-color: #ffa500;'><span>orange</span></li>
+    <li style='background-color: #8b5a0;'><span>orange4</span></li>
+    <li style='background-color: #cd850;'><span>orange3</span></li>
+    <li style='background-color: #ee9a0;'><span>orange2</span></li>
+    <li style='background-color: #ffa50;'><span>orange</span></li>
     <li style='background-color: #daa520;'><span>goldenrod</span></li>
     <li style='background-color: #ffc125;'><span>goldenrod1</span></li>
     <li style='background-color: #8b6914;'><span>goldenrod4</span></li>
     <li style='background-color: #cd9b1d;'><span>goldenrod3</span></li>
     <li style='background-color: #eeb422;'><span>goldenrod2</span></li>
-    <li style='background-color: #8b6508;'><span>darkgoldenrod4</span></li>
-    <li style='background-color: #b8860b;'><span>darkgoldenrod</span></li>
-    <li style='background-color: #cd950c;'><span>darkgoldenrod3</span></li>
-    <li style='background-color: #eead0e;'><span>darkgoldenrod2</span></li>
-    <li style='background-color: #ffb90f;'><span>darkgoldenrod1</span></li>
+    <li style='background-color: #8b658;'><span>darkgoldenrod4</span></li>
+    <li style='background-color: #b886b;'><span>darkgoldenrod</span></li>
+    <li style='background-color: #cd95c;'><span>darkgoldenrod3</span></li>
+    <li style='background-color: #eeade;'><span>darkgoldenrod2</span></li>
+    <li style='background-color: #ffb9f;'><span>darkgoldenrod1</span></li>
     <li style='background-color: #fff8dc;'><span>cornsilk</span></li>
     <li style='background-color: #8b8878;'><span>cornsilk4</span></li>
     <li style='background-color: #cdc8b1;'><span>cornsilk3</span></li>
@@ -278,10 +278,10 @@ Hover over a colour to see its R name.
     <li style='background-color: #eedd82;'><span>lightgoldenrod</span></li>
     <li style='background-color: #eedc82;'><span>lightgoldenrod2</span></li>
     <li style='background-color: #ffec8b;'><span>lightgoldenrod1</span></li>
-    <li style='background-color: #8b7500;'><span>gold4</span></li>
-    <li style='background-color: #cdad00;'><span>gold3</span></li>
-    <li style='background-color: #eec900;'><span>gold2</span></li>
-    <li style='background-color: #ffd700;'><span>gold</span></li>
+    <li style='background-color: #8b750;'><span>gold4</span></li>
+    <li style='background-color: #cdad0;'><span>gold3</span></li>
+    <li style='background-color: #eec90;'><span>gold2</span></li>
+    <li style='background-color: #ffd70;'><span>gold</span></li>
     <li style='background-color: #8b8970;'><span>lemonchiffon4</span></li>
     <li style='background-color: #cdc9a5;'><span>lemonchiffon3</span></li>
     <li style='background-color: #eee9bf;'><span>lemonchiffon2</span></li>
@@ -303,10 +303,10 @@ Hover over a colour to see its R name.
     <li style='background-color: #eeeed1;'><span>lightyellow2</span></li>
     <li style='background-color: #ffffe0;'><span>lightyellow</span></li>
     <li style='background-color: #fafad2;'><span>lightgoldenrodyellow</span></li>
-    <li style='background-color: #8b8b00;'><span>yellow4</span></li>
-    <li style='background-color: #cdcd00;'><span>yellow3</span></li>
-    <li style='background-color: #eeee00;'><span>yellow2</span></li>
-    <li style='background-color: #ffff00;'><span>yellow</span></li>
+    <li style='background-color: #8b8b0;'><span>yellow4</span></li>
+    <li style='background-color: #cdcd0;'><span>yellow3</span></li>
+    <li style='background-color: #eeee0;'><span>yellow2</span></li>
+    <li style='background-color: #ffff0;'><span>yellow</span></li>
     <li style='background-color: #6b8e23;'><span>olivedrab</span></li>
     <li style='background-color: #698b22;'><span>olivedrab4</span></li>
     <li style='background-color: #9acd32;'><span>olivedrab3</span></li>
@@ -318,11 +318,11 @@ Hover over a colour to see its R name.
     <li style='background-color: #bcee68;'><span>darkolivegreen2</span></li>
     <li style='background-color: #caff70;'><span>darkolivegreen1</span></li>
     <li style='background-color: #adff2f;'><span>greenyellow</span></li>
-    <li style='background-color: #458b00;'><span>chartreuse4</span></li>
-    <li style='background-color: #66cd00;'><span>chartreuse3</span></li>
-    <li style='background-color: #76ee00;'><span>chartreuse2</span></li>
-    <li style='background-color: #7cfc00;'><span>lawngreen</span></li>
-    <li style='background-color: #7fff00;'><span>chartreuse</span></li>
+    <li style='background-color: #458b0;'><span>chartreuse4</span></li>
+    <li style='background-color: #66cd0;'><span>chartreuse3</span></li>
+    <li style='background-color: #76ee0;'><span>chartreuse2</span></li>
+    <li style='background-color: #7cfc0;'><span>lawngreen</span></li>
+    <li style='background-color: #7fff0;'><span>chartreuse</span></li>
     <li style='background-color: #838b83;'><span>honeydew4</span></li>
     <li style='background-color: #c1cdc1;'><span>honeydew3</span></li>
     <li style='background-color: #e0eee0;'><span>honeydew2</span></li>
@@ -339,25 +339,25 @@ Hover over a colour to see its R name.
     <li style='background-color: #9aff9a;'><span>palegreen1</span></li>
     <li style='background-color: #228b22;'><span>forestgreen</span></li>
     <li style='background-color: #32cd32;'><span>limegreen</span></li>
-    <li style='background-color: #006400;'><span>darkgreen</span></li>
-    <li style='background-color: #008b00;'><span>green4</span></li>
-    <li style='background-color: #00cd00;'><span>green3</span></li>
-    <li style='background-color: #00ee00;'><span>green2</span></li>
-    <li style='background-color: #00ff00;'><span>green</span></li>
+    <li style='background-color: #0640;'><span>darkgreen</span></li>
+    <li style='background-color: #08b0;'><span>green4</span></li>
+    <li style='background-color: #0cd0;'><span>green3</span></li>
+    <li style='background-color: #0ee0;'><span>green2</span></li>
+    <li style='background-color: #0ff0;'><span>green</span></li>
     <li style='background-color: #3cb371;'><span>mediumseagreen</span></li>
     <li style='background-color: #2e8b57;'><span>seagreen</span></li>
     <li style='background-color: #43cd80;'><span>seagreen3</span></li>
     <li style='background-color: #4eee94;'><span>seagreen2</span></li>
     <li style='background-color: #54ff9f;'><span>seagreen1</span></li>
     <li style='background-color: #f5fffa;'><span>mintcream</span></li>
-    <li style='background-color: #008b45;'><span>springgreen4</span></li>
-    <li style='background-color: #00cd66;'><span>springgreen3</span></li>
-    <li style='background-color: #00ee76;'><span>springgreen2</span></li>
-    <li style='background-color: #00ff7f;'><span>springgreen</span></li>
+    <li style='background-color: #08b45;'><span>springgreen4</span></li>
+    <li style='background-color: #0cd66;'><span>springgreen3</span></li>
+    <li style='background-color: #0ee76;'><span>springgreen2</span></li>
+    <li style='background-color: #0ff7f;'><span>springgreen</span></li>
     <li style='background-color: #66cdaa;'><span>aquamarine3</span></li>
     <li style='background-color: #76eec6;'><span>aquamarine2</span></li>
     <li style='background-color: #7fffd4;'><span>aquamarine</span></li>
-    <li style='background-color: #00fa9a;'><span>mediumspringgreen</span></li>
+    <li style='background-color: #0fa9a;'><span>mediumspringgreen</span></li>
     <li style='background-color: #458b74;'><span>aquamarine4</span></li>
     <li style='background-color: #40e0d0;'><span>turquoise</span></li>
     <li style='background-color: #48d1cc;'><span>mediumturquoise</span></li>
@@ -380,17 +380,17 @@ Hover over a colour to see its R name.
     <li style='background-color: #79cdcd;'><span>darkslategray3</span></li>
     <li style='background-color: #8deeee;'><span>darkslategray2</span></li>
     <li style='background-color: #97ffff;'><span>darkslategray1</span></li>
-    <li style='background-color: #008b8b;'><span>cyan4</span></li>
-    <li style='background-color: #00cdcd;'><span>cyan3</span></li>
-    <li style='background-color: #00ced1;'><span>darkturquoise</span></li>
-    <li style='background-color: #00eeee;'><span>cyan2</span></li>
-    <li style='background-color: #00ffff;'><span>cyan</span></li>
+    <li style='background-color: #08b8b;'><span>cyan4</span></li>
+    <li style='background-color: #0cdcd;'><span>cyan3</span></li>
+    <li style='background-color: #0ced1;'><span>darkturquoise</span></li>
+    <li style='background-color: #0eeee;'><span>cyan2</span></li>
+    <li style='background-color: #0ffff;'><span>cyan</span></li>
     <li style='background-color: #53868b;'><span>cadetblue4</span></li>
     <li style='background-color: #5f9ea0;'><span>cadetblue</span></li>
-    <li style='background-color: #00868b;'><span>turquoise4</span></li>
-    <li style='background-color: #00c5cd;'><span>turquoise3</span></li>
-    <li style='background-color: #00e5ee;'><span>turquoise2</span></li>
-    <li style='background-color: #00f5ff;'><span>turquoise1</span></li>
+    <li style='background-color: #0868b;'><span>turquoise4</span></li>
+    <li style='background-color: #0c5cd;'><span>turquoise3</span></li>
+    <li style='background-color: #0e5ee;'><span>turquoise2</span></li>
+    <li style='background-color: #0f5ff;'><span>turquoise1</span></li>
     <li style='background-color: #b0e0e6;'><span>powderblue</span></li>
     <li style='background-color: #7ac5cd;'><span>cadetblue3</span></li>
     <li style='background-color: #8ee5ee;'><span>cadetblue2</span></li>
@@ -400,10 +400,10 @@ Hover over a colour to see its R name.
     <li style='background-color: #add8e6;'><span>lightblue</span></li>
     <li style='background-color: #b2dfee;'><span>lightblue2</span></li>
     <li style='background-color: #bfefff;'><span>lightblue1</span></li>
-    <li style='background-color: #00688b;'><span>deepskyblue4</span></li>
-    <li style='background-color: #009acd;'><span>deepskyblue3</span></li>
-    <li style='background-color: #00b2ee;'><span>deepskyblue2</span></li>
-    <li style='background-color: #00bfff;'><span>deepskyblue</span></li>
+    <li style='background-color: #0688b;'><span>deepskyblue4</span></li>
+    <li style='background-color: #09acd;'><span>deepskyblue3</span></li>
+    <li style='background-color: #0b2ee;'><span>deepskyblue2</span></li>
+    <li style='background-color: #0bfff;'><span>deepskyblue</span></li>
     <li style='background-color: #87ceeb;'><span>skyblue</span></li>
     <li style='background-color: #607b8b;'><span>lightskyblue4</span></li>
     <li style='background-color: #8db6cd;'><span>lightskyblue3</span></li>
@@ -444,11 +444,11 @@ Hover over a colour to see its R name.
     <li style='background-color: #f8f8ff;'><span>ghostwhite</span></li>
     <li style='background-color: #e6e6fa;'><span>lavender</span></li>
     <li style='background-color: #191970;'><span>midnightblue</span></li>
-    <li style='background-color: #000080;'><span>navy</span></li>
-    <li style='background-color: #00008b;'><span>blue4</span></li>
-    <li style='background-color: #0000cd;'><span>blue3</span></li>
-    <li style='background-color: #0000ee;'><span>blue2</span></li>
-    <li style='background-color: #0000ff;'><span>blue</span></li>
+    <li style='background-color: #0080;'><span>navy</span></li>
+    <li style='background-color: #008b;'><span>blue4</span></li>
+    <li style='background-color: #00cd;'><span>blue3</span></li>
+    <li style='background-color: #00ee;'><span>blue2</span></li>
+    <li style='background-color: #00ff;'><span>blue</span></li>
     <li style='background-color: #483d8b;'><span>darkslateblue</span></li>
     <li style='background-color: #6a5acd;'><span>slateblue</span></li>
     <li style='background-color: #7b68ee;'><span>mediumslateblue</span></li>
@@ -473,7 +473,7 @@ Hover over a colour to see its R name.
     <li style='background-color: #9a32cd;'><span>darkorchid3</span></li>
     <li style='background-color: #b23aee;'><span>darkorchid2</span></li>
     <li style='background-color: #bf3eff;'><span>darkorchid1</span></li>
-    <li style='background-color: #9400d3;'><span>darkviolet</span></li>
+    <li style='background-color: #940d3;'><span>darkviolet</span></li>
     <li style='background-color: #7a378b;'><span>mediumorchid4</span></li>
     <li style='background-color: #b452cd;'><span>mediumorchid3</span></li>
     <li style='background-color: #ba55d3;'><span>mediumorchid</span></li>
@@ -490,10 +490,10 @@ Hover over a colour to see its R name.
     <li style='background-color: #ffbbff;'><span>plum1</span></li>
     <li style='background-color: #dda0dd;'><span>plum</span></li>
     <li style='background-color: #ee82ee;'><span>violet</span></li>
-    <li style='background-color: #8b008b;'><span>darkmagenta</span></li>
-    <li style='background-color: #cd00cd;'><span>magenta3</span></li>
-    <li style='background-color: #ee00ee;'><span>magenta2</span></li>
-    <li style='background-color: #ff00ff;'><span>magenta</span></li>
+    <li style='background-color: #8b08b;'><span>darkmagenta</span></li>
+    <li style='background-color: #cd0cd;'><span>magenta3</span></li>
+    <li style='background-color: #ee0ee;'><span>magenta2</span></li>
+    <li style='background-color: #ff0ff;'><span>magenta</span></li>
     <li style='background-color: #8b4789;'><span>orchid4</span></li>
     <li style='background-color: #cd69c9;'><span>orchid3</span></li>
     <li style='background-color: #da70d6;'><span>orchid</span></li>
@@ -508,7 +508,7 @@ Hover over a colour to see its R name.
     <li style='background-color: #cd1076;'><span>deeppink3</span></li>
     <li style='background-color: #ee1289;'><span>deeppink2</span></li>
     <li style='background-color: #ff1493;'><span>deeppink</span></li>
-    <li style='background-color: #8b0a50;'><span>deeppink4</span></li>
+    <li style='background-color: #8ba50;'><span>deeppink4</span></li>
     <li style='background-color: #ee6aa7;'><span>hotpink2</span></li>
     <li style='background-color: #ff6eb4;'><span>hotpink1</span></li>
     <li style='background-color: #8b3a62;'><span>hotpink4</span></li>
@@ -596,7 +596,7 @@ Set <a class='glossary' target='_blank' title='Data that can only take certain v
 
 
 ::: {.info data-latex=""}
-If the end colour is too light for your plot or the start colour too dark, you can set the `begin` and `end` arguments to values between 0 and 1, such as <code><span class='fu'>scale_colour_viridis_c</span><span class='op'>(</span>begin <span class='op'>=</span> <span class='fl'>0.1</span>, end <span class='op'>=</span> <span class='fl'>0.9</span><span class='op'>)</span></code>.
+If the end colour is too light for your plot or the start colour too dark, you can set the `begin` and `end` arguments to values between 0 and 1, such as <code><span><span class='fu'>scale_colour_viridis_c</span><span class='op'>(</span>begin <span class='op'>=</span> <span class='fl'>0.1</span>, end <span class='op'>=</span> <span class='fl'>0.9</span><span class='op'>)</span></span></code>.
 :::
 
 #### Continuous Viridis Palettes
@@ -623,7 +623,7 @@ These palettes are good for <a class='glossary' target='_blank' title='Data that
 
 #### Sequential Brewer Palettes
 
-These palettes are good for up to 9 <a class='glossary' target='_blank' title='Discrete variables that have an inherent order, such as number of legs' href='https://psyteachr.github.io/glossary/o#ordinal'>ordinal</a> categories with a lot of categories.
+These palettes are good for up to 9 <a class='glossary' target='_blank' title='Discrete variables that have an inherent order, such as level of education or dislike/like.' href='https://psyteachr.github.io/glossary/o#ordinal'>ordinal</a> categories with a lot of categories.
 
 <div class="figure" style="text-align: center">
 <img src="appendix-e-plotstyles_files/figure-html/unnamed-chunk-7-1.png" alt="Sequential brewer palettes." width="100%" />
@@ -632,7 +632,7 @@ These palettes are good for up to 9 <a class='glossary' target='_blank' title='D
 
 #### Diverging Brewer Palettes
 
-These palettes are good for <a class='glossary' target='_blank' title='Discrete variables that have an inherent order, such as number of legs' href='https://psyteachr.github.io/glossary/o#ordinal'>ordinal</a> categories with up to 11 levels where the centre level is a neutral or baseline category and the levels above and below it differ in an important way, such as agree versus disagree options.
+These palettes are good for <a class='glossary' target='_blank' title='Discrete variables that have an inherent order, such as level of education or dislike/like.' href='https://psyteachr.github.io/glossary/o#ordinal'>ordinal</a> categories with up to 11 levels where the centre level is a neutral or baseline category and the levels above and below it differ in an important way, such as agree versus disagree options.
 
 <div class="figure" style="text-align: center">
 <img src="appendix-e-plotstyles_files/figure-html/unnamed-chunk-8-1.png" alt="Diverging brewer palettes." width="100%" />

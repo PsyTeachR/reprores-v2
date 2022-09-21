@@ -151,7 +151,9 @@ create-a-bibtex-file-manually
 citing-r-packages
 download-citation-info
 in-text-citations
+uncited-references
 citation-styles
+reference-section
 output-formats
 glossary-repro
 resources-repro

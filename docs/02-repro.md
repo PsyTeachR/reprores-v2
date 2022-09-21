@@ -250,10 +250,10 @@ The code above sets the following options:
 * `cache      = FALSE` : run all the code to create all of the images and objects each time you knit (set to `TRUE` if you have time-consuming code)
 
 
-Find a list of the current chunk options by typing <code><span class='fu'><a href='https://rdrr.io/r/utils/str.html'>str</a></span><span class='op'>(</span><span class='fu'>knitr</span><span class='fu'>::</span><span class='va'><a href='https://rdrr.io/pkg/knitr/man/opts_chunk.html'>opts_chunk</a></span><span class='op'>$</span><span class='fu'>get</span><span class='op'>(</span><span class='op'>)</span><span class='op'>)</span></code> in the console.
+Find a list of the current chunk options by typing <code><span><span class='fu'><a href='https://rdrr.io/r/utils/str.html'>str</a></span><span class='op'>(</span><span class='fu'>knitr</span><span class='fu'>::</span><span class='va'><a href='https://rdrr.io/pkg/knitr/man/opts_chunk.html'>opts_chunk</a></span><span class='op'>$</span><span class='fu'>get</span><span class='op'>(</span><span class='op'>)</span><span class='op'>)</span></span></code> in the console.
 
 
-You can also add the packages you need in this chunk using <code><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='op'>)</span></code>. Often when you are working on a script, you will realize that you need to load another add-on package. Don't bury the call to `library(package_I_need)` way down in the script. Put it in the top, so the user has an overview of what packages are needed.
+You can also add the packages you need in this chunk using <code><span><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='op'>)</span></span></code>. Often when you are working on a script, you will realize that you need to load another add-on package. Don't bury the call to `library(package_I_need)` way down in the script. Put it in the top, so the user has an overview of what packages are needed.
 
 ::: {.try data-latex=""}
 We'll be using function from the package <code class='package'>tidyverse</code>, so load that in your setup chunk.
@@ -368,7 +368,7 @@ pets %>%
 
 </div>
 
-The table above is OK, but it could be more reader-friendly by changing the column labels, rounding the means, and adding a caption. You can use <code><span class='fu'>knitr</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/knitr/man/kable.html'>kable</a></span><span class='op'>(</span><span class='op'>)</span></code> for this.
+The table above is OK, but it could be more reader-friendly by changing the column labels, rounding the means, and adding a caption. You can use <code><span><span class='fu'>knitr</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/knitr/man/kable.html'>kable</a></span><span class='op'>(</span><span class='op'>)</span></span></code> for this.
 
 
 ```r
@@ -472,7 +472,7 @@ You can also include images that you did not create in R using the typical markd
 
 #### In-line R
 
-Now let's analyse the pets data to see if cats are heavier than ferrets. First we'll run the analysis code. Then we'll save any numbers we might want to use in our manuscript to variables and round them appropriately. Finally, we'll use <code><span class='fu'>glue</span><span class='fu'>::</span><span class='fu'><a href='https://glue.tidyverse.org/reference/glue.html'>glue</a></span><span class='op'>(</span><span class='op'>)</span></code> to format a results string.
+Now let's analyse the pets data to see if cats are heavier than ferrets. First we'll run the analysis code. Then we'll save any numbers we might want to use in our manuscript to variables and round them appropriately. Finally, we'll use <code><span><span class='fu'>glue</span><span class='fu'>::</span><span class='fu'><a href='https://glue.tidyverse.org/reference/glue.html'>glue</a></span><span class='op'>(</span><span class='op'>)</span></span></code> to format a results string.
 
 
 ```r
@@ -546,8 +546,8 @@ citation(package="faux") %>% toBibtex()
 ##   author = {Lisa DeBruine},
 ##   doi = {10.5281/zenodo.2669586},
 ##   publisher = {Zenodo},
-##   year = {2022},
-##   note = {R package version 1.1.0.9004},
+##   year = {2021},
+##   note = {R package version 1.1.0},
 ##   url = {https://debruine.github.io/faux/},
 ## }
 ```
@@ -588,7 +588,7 @@ Paste the reference into your bibliography.bib file. Change `doi:10.1177/2515245
 
 #### In-text citations
 
-You can cite reference in text like this: 
+You can cite references in text like this: 
 
 ```
 This tutorial uses several R packages [@tidyverse;@rmarkdown].
@@ -604,13 +604,32 @@ Lakens, Scheel and Isengar [-@TOSTtutorial] wrote a tutorial explaining how to t
 
 Lakens, Scheel and Isengar [-@TOSTtutorial] wrote a tutorial explaining how to test for the absence of an effect.
 
+#### Uncited references
+
+If you want to add an item to the reference section without citing, it, add it to the YAML header like this:
+
+```
+nocite: |
+  @ref1, @ref2, @ref3
+```
+
+Or add all of the items in the .bib file like this:
+
+```
+nocite: '@*'
+```
+
 #### Citation Styles
 
 You can search a [list of style files](https://www.zotero.org/styles){target="_blank"} for various journals and download a file that will format your bibliography for a specific journal's style. You'll need to add the line `csl: filename.csl` to your YAML header. 
 
-::: {.info data-latex=""}
+::: {.try data-latex=""}
 Add some citations to your bibliography.bib file, reference them in your text, and render your manuscript to see the automatically generated reference section. Try a few different citation style files.
 :::
+
+#### Reference Section
+
+By default, the reference section is added to the end of the document. If you want to change the position (e.g., to add figures and tables after the references), include `<div id="refs"></div>` where you want the references. 
 
 
 ### Output Formats

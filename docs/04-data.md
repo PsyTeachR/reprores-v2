@@ -343,7 +343,7 @@ demo  <- readr::read_csv("data/demo.csv", col_types = ct)
 ```
 
 ::: {.info data-latex=""}
-For dates, you might need to set the format. See `?strptime` for a list of the codes used to represent different date formats. Above, <code><span class='st'>"%d-%b-%y"</span></code> means that the dates are formatted like `{day number}-{month abbreviation}-{2-digit year}`. 
+For dates, you might need to set the format. See `?strptime` for a list of the codes used to represent different date formats. Above, <code><span><span class='st'>"%d-%b-%y"</span></span></code> means that the dates are formatted like `{day number}-{month abbreviation}-{2-digit year}`. 
 :::
 
 We'll learn more about how to fix data import problems in the [troubleshooting](#troubleshooting) section below.
@@ -396,15 +396,15 @@ ocean_sav  <- haven::read_sav("data/5factor.sav")
 
 Now that you've loaded some data, look the upper right hand window of RStudio, under the Environment tab. You will see the objects listed, along with their number of observations (rows) and variables (columns). This is your first check that everything went OK.
 
-Always, always, always, look at your data once you've created or loaded a table. Also look at it after each step that transforms your table. There are three main ways to look at your table: <code><span class='fu'><a href='https://rdrr.io/r/utils/View.html'>View</a></span><span class='op'>(</span><span class='op'>)</span></code>, <code><span class='fu'><a href='https://rdrr.io/r/base/print.html'>print</a></span><span class='op'>(</span><span class='op'>)</span></code>, <code><span class='fu'>tibble</span><span class='fu'>::</span><span class='fu'><a href='https://pillar.r-lib.org/reference/glimpse.html'>glimpse</a></span><span class='op'>(</span><span class='op'>)</span></code>. 
+Always, always, always, look at your data once you've created or loaded a table. Also look at it after each step that transforms your table. There are three main ways to look at your table: <code><span><span class='fu'><a href='https://rdrr.io/r/utils/View.html'>View</a></span><span class='op'>(</span><span class='op'>)</span></span></code>, <code><span><span class='fu'><a href='https://rdrr.io/r/base/print.html'>print</a></span><span class='op'>(</span><span class='op'>)</span></span></code>, <code><span><span class='fu'>tibble</span><span class='fu'>::</span><span class='fu'><a href='https://pillar.r-lib.org/reference/glimpse.html'>glimpse</a></span><span class='op'>(</span><span class='op'>)</span></span></code>. 
 
 #### View() 
 
-A familiar way to look at the table is given by <code><span class='fu'><a href='https://rdrr.io/r/utils/View.html'>View</a></span><span class='op'>(</span><span class='op'>)</span></code> (uppercase 'V'). This command can be useful in the console, but don't ever put this one in a script because it will create an annoying pop-up window when the user runs it. Or you can click on an objects in the  <a class='glossary' target='_blank' title='RStudio is arranged with four window "panes".' href='https://psyteachr.github.io/glossary/p#panes'>environment pane</a> to open it up in a viewer that looks a bit like Excel. You can close the tab when you're done looking at it; it won't remove the object.
+A familiar way to look at the table is given by <code><span><span class='fu'><a href='https://rdrr.io/r/utils/View.html'>View</a></span><span class='op'>(</span><span class='op'>)</span></span></code> (uppercase 'V'). This command can be useful in the console, but don't ever put this one in a script because it will create an annoying pop-up window when the user runs it. Or you can click on an objects in the  <a class='glossary' target='_blank' title='RStudio is arranged with four window "panes".' href='https://psyteachr.github.io/glossary/p#panes'>environment pane</a> to open it up in a viewer that looks a bit like Excel. You can close the tab when you're done looking at it; it won't remove the object.
 
 #### print() 
 
-The <code><span class='fu'><a href='https://rdrr.io/r/base/print.html'>print</a></span><span class='op'>(</span><span class='op'>)</span></code> method can be run explicitly, but is more commonly called by just typing the variable name on the blank line. The default is not to print the entire table, but just the first 10 rows. 
+The <code><span><span class='fu'><a href='https://rdrr.io/r/base/print.html'>print</a></span><span class='op'>(</span><span class='op'>)</span></span></code> method can be run explicitly, but is more commonly called by just typing the variable name on the blank line. The default is not to print the entire table, but just the first 10 rows. 
 
 Let's look at the `demo_tsv` table that we loaded above. Depending on how wide your screen is, you might need to click on an arrow at the right of the table to see the last column. 
 
@@ -475,7 +475,7 @@ demo_tsv
 
 #### glimpse() 
 
-The function <code><span class='fu'>tibble</span><span class='fu'>::</span><span class='fu'><a href='https://pillar.r-lib.org/reference/glimpse.html'>glimpse</a></span><span class='op'>(</span><span class='op'>)</span></code> gives a sideways version of the table. This is useful if the table is very wide and you can't see all of the columns. It also tells you the <a class='glossary' target='_blank' title='The kind of data represented by an object.' href='https://psyteachr.github.io/glossary/d#data-type'>data type</a> of each column in angled brackets after each column name. 
+The function <code><span><span class='fu'>tibble</span><span class='fu'>::</span><span class='fu'><a href='https://pillar.r-lib.org/reference/glimpse.html'>glimpse</a></span><span class='op'>(</span><span class='op'>)</span></span></code> gives a sideways version of the table. This is useful if the table is very wide and you can't see all of the columns. It also tells you the <a class='glossary' target='_blank' title='The kind of data represented by an object.' href='https://psyteachr.github.io/glossary/d#data-type'>data type</a> of each column in angled brackets after each column name. 
 
 
 ```r
@@ -494,7 +494,7 @@ glimpse(demo_xls)
 
 #### summary() {#summary-function}
 
-You can get a quick summary of a dataset with the <code><span class='fu'><a href='https://rdrr.io/r/base/summary.html'>summary</a></span><span class='op'>(</span><span class='op'>)</span></code> function.
+You can get a quick summary of a dataset with the <code><span><span class='fu'><a href='https://rdrr.io/r/base/summary.html'>summary</a></span><span class='op'>(</span><span class='op'>)</span></span></code> function.
 
 
 ```r
@@ -608,7 +608,7 @@ demo <- read_sheet(sheet_id)
 ::: {.try data-latex=""}
 * Create a new table called `family` with the first name, last name, and age of your family members. 
 * Save it to a CSV file called <code class='path'>family.csv</code>. 
-* Clear the object from your environment by restarting R or with the code <code><span class='fu'><a href='https://rdrr.io/r/base/rm.html'>remove</a></span><span class='op'>(</span><span class='va'>family</span><span class='op'>)</span></code>.
+* Clear the object from your environment by restarting R or with the code <code><span><span class='fu'><a href='https://rdrr.io/r/base/rm.html'>remove</a></span><span class='op'>(</span><span class='va'>family</span><span class='op'>)</span></span></code>.
 * Load the data back in and view it.
 
 
@@ -644,7 +644,7 @@ Data can be numbers, words, true/false values or combinations of these. In order
 
 ### Numeric data
 
-All of the real numbers are <a class='glossary' target='_blank' title='A data type representing a real decimal number or integer.' href='https://psyteachr.github.io/glossary/n#numeric'>numeric</a> data types (imaginary numbers are "complex"). There are two types of numeric data, <a class='glossary' target='_blank' title='A data type representing whole numbers.' href='https://psyteachr.github.io/glossary/i#integer'>integer</a> and <a class='glossary' target='_blank' title='A data type representing a real decimal number' href='https://psyteachr.github.io/glossary/d#double'>double</a>. Integers are the whole numbers, like <code><span class='op'>-</span><span class='fl'>1</span></code>, <code><span class='fl'>0</span></code> and <code><span class='fl'>1</span></code>. Doubles are numbers that can have fractional amounts. If you just type a plain number such as <code><span class='fl'>10</span></code>, it is stored as a double, even if it doesn't have a decimal point. If you want it to be an exact integer, use the `L` suffix (<code><span class='fl'>10L</span></code>).
+All of the real numbers are <a class='glossary' target='_blank' title='A data type representing a real decimal number or integer.' href='https://psyteachr.github.io/glossary/n#numeric'>numeric</a> data types (imaginary numbers are "complex"). There are two types of numeric data, <a class='glossary' target='_blank' title='A data type representing whole numbers.' href='https://psyteachr.github.io/glossary/i#integer'>integer</a> and <a class='glossary' target='_blank' title='A data type representing a real decimal number' href='https://psyteachr.github.io/glossary/d#double'>double</a>. Integers are the whole numbers, like <code><span><span class='op'>-</span><span class='fl'>1</span></span></code>, <code><span><span class='fl'>0</span></span></code> and <code><span><span class='fl'>1</span></span></code>. Doubles are numbers that can have fractional amounts. If you just type a plain number such as <code><span><span class='fl'>10</span></span></code>, it is stored as a double, even if it doesn't have a decimal point. If you want it to be an exact integer, use the `L` suffix (<code><span><span class='fl'>10L</span></span></code>).
 
 If you ever want to know the data type of something, use the `typeof()` function.
 
@@ -720,7 +720,7 @@ class(FALSE)
 ## [1] "logical"
 ```
 
-When you compare two values with an <a class='glossary' target='_blank' title='A symbol that performs a mathematical operation, such as +, -, *, /' href='https://psyteachr.github.io/glossary/o#operator'>operator</a>, such as checking to see if 10 is greater than 5, the resulting value is logical.
+When you compare two values with an <a class='glossary' target='_blank' title='A symbol that performs some mathematical or comparative process. ' href='https://psyteachr.github.io/glossary/o#operator'>operator</a>, such as checking to see if 10 is greater than 5, the resulting value is logical.
 
 
 ```r
@@ -1133,7 +1133,7 @@ names(avatar) # what are the column names?
 
 #### Accessing rows and columns {#row-col-access}
 
-There are various ways of accessing specific columns or rows from a table. The ones below are from <a class='glossary' target='_blank' title='The set of R functions that come with a basic installation of R, before you add external packages' href='https://psyteachr.github.io/glossary/b#base-r'>base R</a> and are useful to know about, but you'll be learning easier (and more readable) ways in Chapter\ \@ref(tidyr) and Chapter\ \@ref(dplyr). Examples of these base R accessing functions are provided here for reference, since you might see them in other people's scripts.
+There are various ways of accessing specific columns or rows from a table. The ones below are from <a class='glossary' target='_blank' title='The set of R functions that come with a basic installation of R, before you add external packages.' href='https://psyteachr.github.io/glossary/b#base-r'>base R</a> and are useful to know about, but you'll be learning easier (and more readable) ways in Chapter\ \@ref(tidyr) and Chapter\ \@ref(dplyr). Examples of these base R accessing functions are provided here for reference, since you might see them in other people's scripts.
 
 
 ```r
@@ -1146,7 +1146,7 @@ friendly   <- avatar$friendly  # by column name
 
 ## Troubleshooting
 
-What if you import some data and it guesses the wrong column type? The most common reason is that a numeric column has some non-numbers in it somewhere. Maybe someone wrote a note in an otherwise numeric column. Columns have to be all one data type, so if there are any characters, the whole column is converted to character strings, and numbers like <code><span class='fl'>1.2</span></code> get represented as <code><span class='st'>"1.2"</span></code>, which will cause very weird errors like `"100" < "9" == TRUE`. You can catch this by using <code><span class='fu'>glimpse</span><span class='op'>(</span><span class='op'>)</span></code> to check your data.
+What if you import some data and it guesses the wrong column type? The most common reason is that a numeric column has some non-numbers in it somewhere. Maybe someone wrote a note in an otherwise numeric column. Columns have to be all one data type, so if there are any characters, the whole column is converted to character strings, and numbers like <code><span><span class='fl'>1.2</span></span></code> get represented as <code><span><span class='st'>"1.2"</span></span></code>, which will cause very weird errors like `"100" < "9" == TRUE`. You can catch this by using <code><span><span class='fu'>glimpse</span><span class='op'>(</span><span class='op'>)</span></span></code> to check your data.
 
 The data directory you created with `reprores::getdata()` contains a file called "mess.csv". Let's try loading this dataset.
 
@@ -1231,7 +1231,7 @@ OK, that's a little better, but this table is still a serious mess in several wa
 * `min_max` contains two pieces of numeric information, but is a character column
 * `date` should be a date column
 
-We'll learn how to deal with this mess in Chapters\ \@ref(tidyr) and \@ref(dplyr), but we can fix a few things by setting the `col_types` argument in <code><span class='fu'>read_csv</span><span class='op'>(</span><span class='op'>)</span></code> to specify the column types for our two columns that were guessed wrong and skip the "junk" column. The argument `col_types` takes a list where the name of each item in the list is a column name and the value is from the table below. You can use the function, like <code><span class='fu'>col_double</span><span class='op'>(</span><span class='op'>)</span></code> or the abbreviation, like <code><span class='st'>"l"</span></code>. Omitted column names are guessed.
+We'll learn how to deal with this mess in Chapters\ \@ref(tidyr) and \@ref(dplyr), but we can fix a few things by setting the `col_types` argument in <code><span><span class='fu'>read_csv</span><span class='op'>(</span><span class='op'>)</span></span></code> to specify the column types for our two columns that were guessed wrong and skip the "junk" column. The argument `col_types` takes a list where the name of each item in the list is a column name and the value is from the table below. You can use the function, like <code><span><span class='fu'>col_double</span><span class='op'>(</span><span class='op'>)</span></span></code> or the abbreviation, like <code><span><span class='st'>"l"</span></span></code>. Omitted column names are guessed.
 
 | function | |abbreviation | type |
 |:---------|:--------------|:-----|
@@ -1283,7 +1283,7 @@ tidiest <- read_csv("data/mess.csv",
                    lazy = FALSE)
 ```
 
-Now `order` is an integer where "missing" is now `NA`, `good` is a logical value, where <code><span class='fl'>0</span></code> and <code><span class='cn'>F</span></code> are converted to <code><span class='cn'>FALSE</span></code> and <code><span class='fl'>1</span></code> and <code><span class='cn'>T</span></code> are converted to <code><span class='cn'>TRUE</span></code>, and `date` is a date type (adding leading zeros to the day). We'll learn in later chapters how to fix other problems, such as the `min_max` column containing two different types of data.
+Now `order` is an integer where "missing" is now `NA`, `good` is a logical value, where <code><span><span class='fl'>0</span></span></code> and <code><span><span class='cn'>F</span></span></code> are converted to <code><span><span class='cn'>FALSE</span></span></code> and <code><span><span class='fl'>1</span></span></code> and <code><span><span class='cn'>T</span></span></code> are converted to <code><span><span class='cn'>TRUE</span></span></code>, and `date` is a date type (adding leading zeros to the day). We'll learn in later chapters how to fix other problems, such as the `min_max` column containing two different types of data.
 
 
 ```r
@@ -1530,7 +1530,7 @@ tidiest
 <tbody>
   <tr>
    <td style="text-align:left;"> [base r](https://psyteachr.github.io/glossary/b.html#base-r){class="glossary" target="_blank"} </td>
-   <td style="text-align:left;"> The set of R functions that come with a basic installation of R, before you add external packages </td>
+   <td style="text-align:left;"> The set of R functions that come with a basic installation of R, before you add external packages. </td>
   </tr>
   <tr>
    <td style="text-align:left;"> [character](https://psyteachr.github.io/glossary/c.html#character){class="glossary" target="_blank"} </td>
@@ -1598,7 +1598,7 @@ tidiest
   </tr>
   <tr>
    <td style="text-align:left;"> [operator](https://psyteachr.github.io/glossary/o.html#operator){class="glossary" target="_blank"} </td>
-   <td style="text-align:left;"> A symbol that performs a mathematical operation, such as +, -, *, / </td>
+   <td style="text-align:left;"> A symbol that performs some mathematical or comparative process. </td>
   </tr>
   <tr>
    <td style="text-align:left;"> [panes](https://psyteachr.github.io/glossary/p.html#panes){class="glossary" target="_blank"} </td>
